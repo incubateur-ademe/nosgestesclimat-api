@@ -1,0 +1,9 @@
+{
+  "name": "nosgestesclimat-api",
+  "version": "0.1.0",
+  "description": "NGC's model API",
+  "main": "src/api.ts",
+  "repository": "git@github.com:incubateur-ademe/nosgestesclimat-api.git",
+  "author": "Emile Rolley <emile.rolley@tuta.io>",
+  "license": "Apache 2.0"
+}
