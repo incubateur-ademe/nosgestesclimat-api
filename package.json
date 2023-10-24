@@ -7,7 +7,7 @@
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
-    "dev": "bun --watch run src/api.ts",
+    "dev": "NODE_ENV=development bun --watch run src/api.ts",
     "start": "bun src/api.ts"
   },
   "devDependencies": {

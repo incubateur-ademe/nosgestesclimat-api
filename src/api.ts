@@ -10,7 +10,12 @@ interface Context extends Koa.DefaultContext {}
 const app = new Koa<State, Context>();
 const router = new Router<State, Context>();
 
-app.use(cors());
+const origin =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3000"
+    : "https://nosgestesclimat-api.osc-fr1.scalingo.io";
+
+app.use(cors({ origin }));
 
 // Create middleware with your Engine
 const apiRoutes = publicodesAPI(
