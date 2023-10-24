@@ -5,9 +5,10 @@
   "repository": "git@github.com:incubateur-ademe/nosgestesclimat-api.git",
   "author": "Emile Rolley <emile.rolley@tuta.io>",
   "license": "Apache-2.0",
+  "type": "module",
   "scripts": {
     "dev": "bun --watch run src/api.ts",
-    "start": "bun run src/api.ts"
+    "start": "bun src/api.ts"
   },
   "devDependencies": {
     "@incubateur-ademe/publicodes-tools": "^0.4.2",
@@ -16,7 +17,6 @@
     "@types/koa__cors": "^4.0.2",
     "@types/koa__router": "^12.0.2",
     "bun": "^1.0.7",
-    "bun-types": "^1.0.7",
     "prettier": "^3.0.3",
     "publicodes": "^1.0.0-beta.77",
     "typescript": "^5.2.2",
