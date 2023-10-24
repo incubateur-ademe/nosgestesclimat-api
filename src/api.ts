@@ -6,9 +6,7 @@ import Engine from "publicodes";
 import { parse } from "yaml";
 
 interface State extends Koa.DefaultState {}
-
 interface Context extends Koa.DefaultContext {}
-
 const app = new Koa<State, Context>();
 const router = new Router<State, Context>();
 
