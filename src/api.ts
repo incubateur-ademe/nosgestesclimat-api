@@ -62,7 +62,7 @@ router.use("/v1", apiRoutes);
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-const port = 3002;
+const port = process.env.PORT || 3001;
 
 app.listen(port, function () {
   console.log("listening on port:", port);
