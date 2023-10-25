@@ -3,7 +3,7 @@ import Router from "@koa/router";
 import { koaMiddleware as publicodesAPI } from "@publicodes/api";
 import Koa from "koa";
 import Engine from "publicodes";
-import { parse } from "yaml";
+import { readFileSync } from "fs";
 
 interface State extends Koa.DefaultState {}
 interface Context extends Koa.DefaultContext {}
@@ -20,20 +20,38 @@ app.use(cors({ origin }));
 // Create middleware with your Engine
 const apiRoutes = publicodesAPI(
   new Engine(
-    parse(`
-prix:
-prix . carottes: 2€/kg
-prix . champignons: 5€/kg
-prix . avocat: 2€/avocat
-
-dépenses primeur:
-  formule:
-    somme:
-      - prix . carottes * 1.5 kg
-      - prix . champignons * 500g
-`),
+    JSON.parse(readFileSync("data/1.6.0/co2-model.FR-lang.fr.json", "utf-8")),
   ),
 );
+
+router.get("/", (ctx) => {
+  ctx.body = `
+<h1>API REST du modèle Nos Gestes Climat</h1>
+
+<h2>Endpoints</h2>
+
+<ul>
+	<li>
+		<p>
+			<code>POST</code> <code>/evaluate</code> Évalue une ou plusieurs expressions avec une situation donnée
+		</p>
+		<p>
+	</li>
+	<li>
+		<p>
+			<code>GET</code> <code>/rules</code> Retourne la liste de toutes vos règles
+		</p>
+	</li>
+	<li>
+		<p>
+			<code>GET</code> <code>/rules/{rule}</code> Retourne une règle spécifique
+		</p>
+	</li>
+</ul>
+
+<p>See the <a href="https://publi.codes/docs/api/api-rest">documentation page</a> for more information.</p>
+	`;
+});
 
 // Basic routes usage (/evaluate, /rules, etc.)
 router.use(apiRoutes);
