@@ -12,8 +12,13 @@ const origin =
 
 app.use(cors({ origin }))
 
-app.use(getRouter().routes())
-app.use(getRouter().allowedMethods())
+const router = getRouter()
+app.use(router.routes())
+app.use(router.allowedMethods())
+
+app.on("error", (err, ctx) => {
+  console.error("server error", err, ctx)
+})
 
 const port = process.env.PORT || 3001
 
