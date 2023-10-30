@@ -32,9 +32,9 @@ export async function getRouter(): Promise<Router<State, Context>> {
     }
     availableVersions.push(version)
 
-    const supportedRegions: SupportedRegions = await Bun.file(
-      `data/${version}/supportedRegions.json`,
-    ).json()
+    const supportedRegions: SupportedRegions = JSON.parse(
+      fs.readFileSync(`data/${version}/supportedRegions.json`, "utf-8"),
+    )
     const supportedRegionsValues = Object.values(supportedRegions)
     if (supportedRegionsValues.length === 0) {
       console.warn(
