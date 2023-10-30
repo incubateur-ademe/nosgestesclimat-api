@@ -25,18 +25,6 @@ export function getRouter(): Router<State, Context> {
   const router = getEmptyRouter()
   const availableVersions: string[] = []
 
-  // Create middleware with your Engine
-  // const apiRoutes = publicodesAPI(
-  //   new Engine(
-  //     JSON.parse(
-  //       fs.readFileSync("data/preprod/co2-model.FR-lang.fr.json", "utf-8"),
-  //     ),
-  //   ),
-  // )
-
-  // Basic routes usage (/evaluate, /rules, etc.)
-  // router.use(`/preprod/fr/FR`, apiRoutes)
-
   versions.forEach((version) => {
     if (!fs.existsSync(`data/${version}/supportedRegions.json`)) {
       console.warn(

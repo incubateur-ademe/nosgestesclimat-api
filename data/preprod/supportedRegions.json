@@ -1,14 +1,14 @@
 {
   "FR": {
     "fr": { "nom": "France métropolitaine", "gentilé": "française" },
-    "en-us": { "nom": "metropolitan France", "gentilé": "french" }
+    "en": { "nom": "metropolitan France", "gentilé": "french" }
   },
   "BE": {
-    "en-us": { "code": "BE", "nom": "Belgium", "gentilé": "Belgian" },
+    "en": { "code": "BE", "nom": "Belgium", "gentilé": "Belgian" },
     "fr": { "code": "BE", "nom": "Belgique", "gentilé": "belge" }
   },
   "CA": {
-    "en-us": {
+    "en": {
       "nom": "Canada",
       "code": "CA",
       "gentilé": "québec",
@@ -32,15 +32,15 @@
     }
   },
   "CH": {
-    "en-us": { "code": "CH", "nom": "Switzerland", "gentilé": "Swiss" },
+    "en": { "code": "CH", "nom": "Switzerland", "gentilé": "Swiss" },
     "fr": { "code": "CH", "nom": "Suisse", "gentilé": "suisse" }
   },
   "DE": {
-    "en-us": { "code": "DE", "nom": "Germany", "gentilé": "German" },
+    "en": { "code": "DE", "nom": "Germany", "gentilé": "German" },
     "fr": { "code": "DE", "nom": "Allemagne", "gentilé": "allemande" }
   },
   "GF": {
-    "en-us": {
+    "en": {
       "code": "GF",
       "nom": "Guyana",
       "gentilé": "Guyanese",
@@ -54,7 +54,7 @@
     }
   },
   "GP": {
-    "en-us": {
+    "en": {
       "code": "GP",
       "nom": "Guadeloupe",
       "gentilé": "Guadeloupean",
@@ -82,15 +82,15 @@
     }
   },
   "IT": {
-    "en-us": { "code": "IT", "nom": "Italy", "gentilé": "Italian" },
+    "en": { "code": "IT", "nom": "Italy", "gentilé": "Italian" },
     "fr": { "code": "IT", "nom": "Italie", "gentilé": "italienne" }
   },
   "LU": {
-    "en-us": { "code": "LU", "nom": "Luxembourg", "gentilé": "Luxembourgish" },
+    "en": { "code": "LU", "nom": "Luxembourg", "gentilé": "Luxembourgish" },
     "fr": { "code": "LU", "nom": "Luxembourg", "gentilé": "luxembourgeoise" }
   },
   "MQ": {
-    "en-us": {
+    "en": {
       "code": "MQ",
       "nom": "Martinique",
       "gentilé": "Martiniquaise",
@@ -104,7 +104,7 @@
     }
   },
   "PF": {
-    "en-us": {
+    "en": {
       "code": "PF",
       "nom": "French Polynesia",
       "gentilé": "Polynesian",
@@ -118,15 +118,15 @@
     }
   },
   "PL": {
-    "en-us": { "code": "PL", "nom": "Poland", "gentilé": "Polish" },
+    "en": { "code": "PL", "nom": "Poland", "gentilé": "Polish" },
     "fr": { "code": "PL", "nom": "Pologne", "gentilé": "polonaise" }
   },
   "PT": {
-    "en-us": { "code": "PT", "nom": "Portugal", "gentilé": "Portuguese" },
+    "en": { "code": "PT", "nom": "Portugal", "gentilé": "Portuguese" },
     "fr": { "code": "PT", "nom": "Portugal", "gentilé": "portugaise" }
   },
   "RE": {
-    "en-us": {
+    "en": {
       "code": "RE",
       "nom": "Reunion Island",
       "gentilé": "Reunionese",
@@ -140,7 +140,7 @@
     }
   },
   "TN": {
-    "en-us": {
+    "en": {
       "nom": "Tunisia",
       "code": "TN",
       "gentilé": "tunisian",
@@ -164,11 +164,11 @@
     }
   },
   "TR": {
-    "en-us": { "code": "TR", "nom": "Turkey", "gentilé": "Turkish" },
+    "en": { "code": "TR", "nom": "Turkey", "gentilé": "Turkish" },
     "fr": { "code": "TR", "nom": "Turquie", "gentilé": "turque" }
   },
   "UK": {
-    "en-us": {
+    "en": {
       "code": "UK",
       "nom": "United Kingdom",
       "gentilé": "English",
@@ -182,7 +182,7 @@
     }
   },
   "YT": {
-    "en-us": {
+    "en": {
       "code": "YT",
       "nom": "Mayotte",
       "gentilé": "of Mayotte",
