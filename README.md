@@ -7,7 +7,7 @@ API pour modèle Publicodes de Nos Gestes Climat.
 Schéma général de l'API :
 
 ```
-https://data.nosgestesclimat.fr/<version>/<langue>/<region>/<route>
+https://data.nosgestesclimat.fr/<version>/<langue>/<region>
 ```
 
 Avec :
@@ -16,16 +16,13 @@ Avec :
   dernière version)
 - `langue` - la langue à utiliser (`fr` ou `en`)
 - `region` - la région à utiliser (`FR`, `CA`, `BE`, `CH`, etc...)
-- `route` - la commande à effectuer parmi :
-    - `rules` : retourne l'ensemble des règles du modèle
-    - `rules/{rule}` : retourne la règle `{rule}` du modèle
-    - `evaluate` : évalue une règle avec la situation passée en
-      paramètre
-    - `versions` : retourne l'ensemble des versions du modèle
-    - `versions/{version}` : retourne les informations de la version
-      `{version}` (date, notes de version, scripts de migrations,
-      langues et régions supportées)
-    - `personas` : retourne l'ensemble des personas du modèle
+- `/versions` : retourne l'ensemble des versions du modèle
+- `/versions/{version}` :retourne les langues et régions supportées par la
+  version `{version}`
+- `<version>/personas` : retourne l'ensemble des personas du modèle
+- `<version>/<langue>/<region>/rules/` - retourne l'ensemble des règles du modèle
+- `<version>/<langue>/<region>/optim-rules/` - retourne l'ensemble des règles optimisées du modèle
+- `<version>/<langue>/<region>/rules/<rule>` - retourne la règle `{rule}` du modèle
 
 ## Développement
 
