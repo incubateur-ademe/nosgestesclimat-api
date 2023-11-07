@@ -20,7 +20,7 @@ type Region = {
 }
 type SupportedRegions = Record<RegionCode, Region>
 
-export async function getRouter(): Promise<Router<State, Context>> {
+export function getRouter(): Router<State, Context> {
   const versions = fs.readdirSync("data")
   const router = getEmptyRouter(versions)
   const availableVersions: string[] = []
@@ -55,13 +55,14 @@ export async function getRouter(): Promise<Router<State, Context>> {
       }
     })
 
-    supportedLanguages.map(async (lang) => {
-      const personas = await Bun.file(
-        `data/${version}/personas-${lang}.json`,
-      ).json()
-      router.get(`/${versionName}/${lang}/personas`, (ctx) => {
-        ctx.type = "application/json"
-        ctx.body = personas
+    supportedLanguages.map((lang) => {
+      fs.readFile(`data/${version}/personas-${lang}.json`, (err, data) => {
+        if (err) throw err
+
+        router.get(`/${versionName}/${lang}/personas`, (ctx) => {
+          ctx.type = "application/json"
+          ctx.body = JSON.parse(data.toString("utf-8"))
+        })
       })
       ;(Object.keys(supportedRegions) as RegionCode[]).map(
         (region: RegionCode) => {
@@ -78,33 +79,37 @@ export async function getRouter(): Promise<Router<State, Context>> {
 }
 
 // TODO: validate inputs
-async function addAPIRoutes(
+function addAPIRoutes(
   lang: string,
   region: RegionCode,
   version: string,
   versionRoute: string,
   router: Router<State, Context>,
   optim?: boolean,
-): Promise<void> {
-  const rules = await Bun.file(
+) {
+  fs.readFile(
     `data/${version}/co2-model.${region}-lang.${lang}${
       optim ? "-opti" : ""
     }.json`,
-  ).json()
+    (err, data) => {
+      if (err) throw err
+      const rules = JSON.parse(data.toString("utf-8"))
 
-  const route = `/${versionRoute}/${lang}/${region}/${
-    optim ? "optim-" : ""
-  }rules`
-  router.get(route, (ctx) => {
-    ctx.type = "application/json"
-    ctx.body = rules
-  })
-  router.get(`${route}/:rule`, (ctx) => {
-    const { rule } = ctx.params
-    ctx.type = "application/json"
-    ctx.body = rules[rule]
-  })
-  console.log(`[INFO] - Routes added for ${route}`)
+      const route = `/${versionRoute}/${lang}/${region}/${
+        optim ? "optim-" : ""
+      }rules`
+      router.get(route, (ctx) => {
+        ctx.type = "application/json"
+        ctx.body = rules
+      })
+      router.get(`${route}/:rule`, (ctx) => {
+        const { rule } = ctx.params
+        ctx.type = "application/json"
+        ctx.body = rules[rule]
+      })
+      console.log(`[INFO] - Routes added for ${route}`)
+    },
+  )
 }
 
 function getEmptyRouter(versions: string[]): Router<State, Context> {

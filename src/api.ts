@@ -12,7 +12,7 @@ const origin =
 
 app.use(cors({ origin }))
 
-const router = await getRouter()
+const router = getRouter()
 app.use(router.routes())
 app.use(router.allowedMethods())
 
