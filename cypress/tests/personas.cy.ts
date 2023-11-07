@@ -1,9 +1,25 @@
+function assertValidPersona(name: string, content: object) {
+  assert(name.startsWith("persona"))
+  expect(content).to.have.property("nom")
+  expect(content).to.have.property("situation")
+}
+
 context("GET /personas", () => {
-  it("GET /latest/fr/FR/personas", () => {
-    cy.request("GET", "/latest/fr/FR/personas").then((response) => {
+  it("GET /latest/fr/personas", () => {
+    cy.request("GET", "/latest/fr/personas").then((response) => {
       expect(response.status).to.eq(200)
-      cy.log(JSON.stringify(response.body))
-      // expect(Object.keys(response.body)).length.to.be.greaterThan(1)
+      Object.entries(response.body).forEach(([name, content]) => {
+        assertValidPersona(name, content)
+      })
+    })
+  })
+
+  it("GET /latest/en/personas", () => {
+    cy.request("GET", "/latest/en/personas").then((response) => {
+      expect(response.status).to.eq(200)
+      Object.entries(response.body).forEach(([name, content]) => {
+        assertValidPersona(name, content)
+      })
     })
   })
 })

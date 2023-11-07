@@ -48,13 +48,21 @@ export async function getRouter(): Promise<Router<State, Context>> {
 
     const supportedLanguages = Object.keys(Object.values(supportedRegions)[0])
     router.get(`/${versionName}`, (ctx) => {
+      ctx.type = "application/json"
       ctx.body = {
         languages: supportedLanguages,
         regions: supportedRegions,
       }
     })
 
-    supportedLanguages.map((lang) => {
+    supportedLanguages.map(async (lang) => {
+      const personas = await Bun.file(
+        `data/${version}/personas-${lang}.json`,
+      ).json()
+      router.get(`/${versionName}/${lang}/personas`, (ctx) => {
+        ctx.type = "application/json"
+        ctx.body = personas
+      })
       ;(Object.keys(supportedRegions) as RegionCode[]).map(
         (region: RegionCode) => {
           addAPIRoutes(lang, region, version, versionName, router)
@@ -117,7 +125,7 @@ function getEmptyRouter(versions: string[]): Router<State, Context> {
 <li><code>region</code> - la région à utiliser (<code>FR</code>, <code>CA</code>, <code>BE</code>, <code>CH</code>, etc…)</li>
 <li><code>/versions</code> : retourne l’ensemble des versions du modèle</li>
 <li><code>/{version}</code> :retourne les langues et régions supportées par la version <code>{version}</code></li>
-<li><code>&lt;version&gt;/personas</code> : retourne l’ensemble des personas du modèle</li>
+<li><code>&lt;version&gt;/&lt;langue&gt;/personas</code> : retourne l’ensemble des personas du modèle</li>
 <li><code>&lt;version&gt;/&lt;langue&gt;/&lt;region&gt;/rules/</code> - retourne l’ensemble des règles du modèle</li>
 <li><code>&lt;version&gt;/&lt;langue&gt;/&lt;region&gt;/optim-rules/</code> - retourne l’ensemble des règles optimisées du modèle</li>
 <li><code>&lt;version&gt;/&lt;langue&gt;/&lt;region&gt;/rules/&lt;rule&gt;</code> - retourne la règle <code>{rule}</code> du modèle</li>
