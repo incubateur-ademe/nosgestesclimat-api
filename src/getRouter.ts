@@ -2,6 +2,8 @@ import Router from "@koa/router"
 import fs from "fs"
 import { Context, State } from "./commons"
 
+const LATEST_VERSION = "latest"
+
 type Author = {
   nom: string
   url: string
@@ -24,14 +26,14 @@ export async function getRouter(): Promise<Router<State, Context>> {
   const availableVersions: string[] = []
 
   versions.sort().forEach(async (version, i) => {
-    const versionRoute = `/${i === 0 ? "latest" : version}`
+    const versionName = `${i === 0 ? LATEST_VERSION : version}`
     if (!fs.existsSync(`data/${version}/supportedRegions.json`)) {
       console.warn(
         `[WARN] - No supportedRegions.json file found for version ${version}, skipping...`,
       )
       return
     }
-    availableVersions.push(version)
+    availableVersions.push(versionName)
 
     const supportedRegions: SupportedRegions = JSON.parse(
       fs.readFileSync(`data/${version}/supportedRegions.json`, "utf-8"),
@@ -45,7 +47,7 @@ export async function getRouter(): Promise<Router<State, Context>> {
     }
 
     const supportedLanguages = Object.keys(Object.values(supportedRegions)[0])
-    router.get(versionRoute, (ctx) => {
+    router.get(`/${versionName}`, (ctx) => {
       ctx.body = {
         languages: supportedLanguages,
         regions: supportedRegions,
@@ -55,8 +57,8 @@ export async function getRouter(): Promise<Router<State, Context>> {
     supportedLanguages.map((lang) => {
       ;(Object.keys(supportedRegions) as RegionCode[]).map(
         (region: RegionCode) => {
-          addAPIRoutes(lang, region, version, versionRoute, router)
-          addAPIRoutes(lang, region, version, versionRoute, router, true)
+          addAPIRoutes(lang, region, version, versionName, router)
+          addAPIRoutes(lang, region, version, versionName, router, true)
         },
       )
     })
@@ -67,7 +69,7 @@ export async function getRouter(): Promise<Router<State, Context>> {
   return router
 }
 
-// TODO: valide inputs
+// TODO: validate inputs
 async function addAPIRoutes(
   lang: string,
   region: RegionCode,
@@ -82,7 +84,7 @@ async function addAPIRoutes(
     }.json`,
   ).json()
 
-  const route = `${versionRoute}/${lang}/${region}/${
+  const route = `/${versionRoute}/${lang}/${region}/${
     optim ? "optim-" : ""
   }rules`
   router.get(route, (ctx) => {
@@ -114,7 +116,7 @@ function getEmptyRouter(versions: string[]): Router<State, Context> {
 <li><code>langue</code> - la langue à utiliser (<code>fr</code> ou <code>en</code>)</li>
 <li><code>region</code> - la région à utiliser (<code>FR</code>, <code>CA</code>, <code>BE</code>, <code>CH</code>, etc…)</li>
 <li><code>/versions</code> : retourne l’ensemble des versions du modèle</li>
-<li><code>/versions/{version}</code> :retourne les langues et régions supportées par la version <code>{version}</code></li>
+<li><code>/{version}</code> :retourne les langues et régions supportées par la version <code>{version}</code></li>
 <li><code>&lt;version&gt;/personas</code> : retourne l’ensemble des personas du modèle</li>
 <li><code>&lt;version&gt;/&lt;langue&gt;/&lt;region&gt;/rules/</code> - retourne l’ensemble des règles du modèle</li>
 <li><code>&lt;version&gt;/&lt;langue&gt;/&lt;region&gt;/optim-rules/</code> - retourne l’ensemble des règles optimisées du modèle</li>

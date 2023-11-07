@@ -8,7 +8,8 @@
   "type": "module",
   "scripts": {
     "dev": "NODE_ENV=development bun --watch run src/api.ts",
-    "start": "bun src/api.ts"
+    "start": "bun src/api.ts",
+    "test": "cypress run"
   },
   "devDependencies": {
     "@incubateur-ademe/publicodes-tools": "^0.4.2",
@@ -17,6 +18,7 @@
     "@types/koa__router": "^12.0.2",
     "bun": "^1.0.7",
     "bun-types": "^1.0.7",
+    "cypress": "^13.4.0",
     "prettier": "^3.0.3",
     "prettier-plugin-organize-imports": "^3.2.3",
     "typescript": "^5.2.2",

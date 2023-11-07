@@ -7,7 +7,7 @@ const app = new Koa<State, Context>()
 
 const origin =
   process.env.NODE_ENV === "development"
-    ? "http://localhost:3000"
+    ? "http://localhost"
     : "https://nosgestesclimat-api.osc-fr1.scalingo.io"
 
 app.use(cors({ origin }))
@@ -20,8 +20,8 @@ app.on("error", (err, ctx) => {
   console.error("server error", err, ctx)
 })
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 3000
 
 app.listen(port, function () {
-  console.log("listening on port:", port)
+  console.log(`listening on: ${origin}:${port}`)
 })
