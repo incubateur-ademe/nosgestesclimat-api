@@ -17,9 +17,9 @@ Avec :
 - `langue` - la langue à utiliser (`fr` ou `en`)
 - `region` - la région à utiliser (`FR`, `CA`, `BE`, `CH`, etc...)
 - `/versions` : retourne l'ensemble des versions du modèle
-- `/versions/{version}` :retourne les langues et régions supportées par la
-  version `{version}`
-- `<version>/personas` : retourne l'ensemble des personas du modèle
+- `/<version>` :retourne les langues et régions supportées par la
+  version `<version>`
+- `<version>/<langue>/personas` : retourne l'ensemble des personas du modèle
 - `<version>/<langue>/<region>/rules/` - retourne l'ensemble des règles du modèle
 - `<version>/<langue>/<region>/optim-rules/` - retourne l'ensemble des règles optimisées du modèle
 - `<version>/<langue>/<region>/rules/<rule>` - retourne la règle `{rule}` du modèle
