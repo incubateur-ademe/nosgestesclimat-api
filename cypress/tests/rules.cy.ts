@@ -28,4 +28,11 @@ context("GET /rules", () => {
       assertValidRules(response.body)
     })
   })
+  it("GET /latest/fr/FR/rules/bilan", () => {
+    cy.request("GET", "/latest/fr/FR/rules/bilan").then((response) => {
+      expect(response.status).to.eq(200)
+      assert(response.body["titre"] === "Votre bilan climat personnel")
+      expect(response.body).to.have.property("formule")
+    })
+  })
 })
