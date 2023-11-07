@@ -23,7 +23,8 @@ export async function getRouter(): Promise<Router<State, Context>> {
   const router = getEmptyRouter(versions)
   const availableVersions: string[] = []
 
-  versions.forEach(async (version) => {
+  versions.sort().forEach(async (version, i) => {
+    const versionRoute = `/${i === 0 ? "latest" : version}`
     if (!fs.existsSync(`data/${version}/supportedRegions.json`)) {
       console.warn(
         `[WARN] - No supportedRegions.json file found for version ${version}, skipping...`,
@@ -44,7 +45,7 @@ export async function getRouter(): Promise<Router<State, Context>> {
     }
 
     const supportedLanguages = Object.keys(Object.values(supportedRegions)[0])
-    router.get(`/${version}`, (ctx) => {
+    router.get(versionRoute, (ctx) => {
       ctx.body = {
         languages: supportedLanguages,
         regions: supportedRegions,
@@ -54,8 +55,8 @@ export async function getRouter(): Promise<Router<State, Context>> {
     supportedLanguages.map((lang) => {
       ;(Object.keys(supportedRegions) as RegionCode[]).map(
         (region: RegionCode) => {
-          addAPIRoutes(lang, region, version, router)
-          addAPIRoutes(lang, region, version, router, true)
+          addAPIRoutes(lang, region, version, versionRoute, router)
+          addAPIRoutes(lang, region, version, versionRoute, router, true)
         },
       )
     })
@@ -71,6 +72,7 @@ async function addAPIRoutes(
   lang: string,
   region: RegionCode,
   version: string,
+  versionRoute: string,
   router: Router<State, Context>,
   optim?: boolean,
 ): Promise<void> {
@@ -80,7 +82,9 @@ async function addAPIRoutes(
     }.json`,
   ).json()
 
-  const route = `/${version}/${lang}/${region}/${optim ? "optim-" : ""}rules`
+  const route = `${versionRoute}/${lang}/${region}/${
+    optim ? "optim-" : ""
+  }rules`
   router.get(route, (ctx) => {
     ctx.type = "application/json"
     ctx.body = rules
