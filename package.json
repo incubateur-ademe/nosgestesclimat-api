@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "NODE_ENV=development bun --watch run src/api.ts",
     "start": "bun src/api.ts",
+    "ci-start": "NODE_ENV=production bun src/api.ts",
     "test": "cypress run"
   },
   "devDependencies": {
