@@ -12,6 +12,7 @@ context("Test basic routes", () => {
     cy.request("GET", "/versions").then((response) => {
       expect(response.status).to.eq(200)
       expect(response.body).to.contain("latest")
+      expect(response.body).to.contain("nightly")
     })
   })
 
@@ -21,6 +22,17 @@ context("Test basic routes", () => {
       const keys = Object.keys(response.body)
       expect(keys).to.contain("languages")
       expect(keys).to.contain("regions")
+      expect(keys).to.contain("version")
+    })
+  })
+
+  it("GET /nightly", () => {
+    cy.request("GET", "/latest").then((response) => {
+      expect(response.status).to.eq(200)
+      const keys = Object.keys(response.body)
+      expect(keys).to.contain("languages")
+      expect(keys).to.contain("regions")
+      expect(keys).to.contain("version")
     })
   })
 })
