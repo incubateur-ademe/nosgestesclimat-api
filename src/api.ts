@@ -5,10 +5,7 @@ import { getRouter } from "./getRouter"
 
 const app = new Koa<State, Context>()
 
-const origin =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost"
-    : "https://nosgestesclimat-api.osc-fr1.scalingo.io"
+const origin = "*"
 
 app.use(cors({ origin }))
 
