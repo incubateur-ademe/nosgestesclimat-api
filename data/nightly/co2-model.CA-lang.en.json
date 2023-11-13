@@ -13404,6 +13404,7 @@
     "titre.auto": "hours per week"
   },
   "transport . mobilité douce": {
+    "icônes": "🚲",
     "résumé": "Your \"short-distance\" travel modes for efficient mobility\n",
     "mosaique": {
       "type": "selection",
