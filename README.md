@@ -24,6 +24,27 @@ Avec :
 - `<version>/<langue>/<region>/optim-rules/` - retourne l'ensemble des règles optimisées du modèle
 - `<version>/<langue>/<region>/rules/<rule>` - retourne la règle `{rule}` du modèle
 
+## Déploiement
+
+Le déploiement est fait automatiquement par
+[Scalingo](https://dashboard.scalingo.com/apps/osc-fr1/nosgestesclimat-api) à
+chaque push sur la branche `main`.
+
+> [!IMPORTANT]
+> La mise à jours des version se fait via les GitHub Actions du dépôt
+> [`nosgestesclimat`](https://github.com/incubateur-ademe/nosgestesclimat). En
+> particulier, à chaque :
+> - **nouvelle release de
+>   [`nosgestesclimat`](https://github.com/incubateur-ademe/nosgestesclimat)**,
+>   une nouvelle branche est créée dans ce dépôt avec le nouveau dossier
+>   `data/<version>`. Il ne restera plus qu'à la merge dans `main` pour quelle
+>   soit automatiquement déployée sur
+>   [Scalingo](https://dashboard.scalingo.com/apps/osc-fr1/nosgestesclimat-api).
+> - **push dans dans la branche `preprod` du dépôt
+> [`nosgestesclimat`](https://github.com/incubateur-ademe/nosgestesclimat)**,
+> la version `nightly` est automatiquement mise à jours dans `main` est
+> déployée en prod.
+
 ## Développement
 
 `npm` est utilisé comme gestionnaire de paquets avec
@@ -41,10 +62,3 @@ npm run dev # ou bun dev
 npm start # ou bun start
 ```
 
-## Déploiement
-
-Le déploiement est fait automatiquement par
-[Scalingo](https://scalingo.com/) à chaque push sur la branche `main`.
-
-> [!IMPORTANT]
-> La version `nightly` est synchronisée à chaque push dans la branche `preprod` du dépôt [`nosgestesclimat`](https://github.com/incubateur-ademe/nosgestesclimat)
