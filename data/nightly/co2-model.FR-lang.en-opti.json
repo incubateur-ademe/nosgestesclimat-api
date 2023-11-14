@@ -5674,7 +5674,9 @@
   },
   "logement . chauffage . fioul kWh au litre": {
     "unité": "l/kWh",
-    "note": "Selon la base carbone (https://bilans-ges.ademe.fr/fr/accueil/documentation-gene/index/page/New_liquides),\nle pouvoir calorifique du fioul domestique est de 42GT/T et sa masse volumique est de 845 kg/m3.\nAprès conversion on trouve un facteur de pour passer des kWh au litre de fioul.\n",
+    "note": "According to the carbon base (https://bilans-ges.ademe.fr/fr/accueil/documentation-gene/index/page/New_liquides),\nthe calorific value of heating oil is 42GT/T and its density is 845 kg/m3.\nAfter conversion we find a factor of to pass from kWh to liter of fuel oil.\n",
+    "titre": "fuel oil kWh per liter",
+    "titre.auto": "fuel oil kWh per liter",
     "valeur": "0.101436943",
     "optimized": true
   },
@@ -8420,7 +8422,7 @@
       ]
     },
     "formule": "usage réel + construction amortie",
-    "note": "On considère une surconsommation pour les km parcourus avec la caravance.\n",
+    "note": "Excess fuel consumption is calculated for the kilometres travelled with the caravan.\n",
     "titre.auto": "Caravan"
   },
   "transport . vacances . caravane . propriétaire": {
@@ -8430,9 +8432,10 @@
     "titre.auto": "owner"
   },
   "transport . vacances . caravane . usage réel": {
-    "titre": "Usage Caravane",
+    "titre": "Caravan use",
     "formule": "(surconsommation * distance) / logement . habitants",
-    "unité": "kgCO2e"
+    "unité": "kgCO2e",
+    "titre.auto": "Caravan use"
   },
   "transport . vacances . caravane . surconsommation": {
     "formule": "voiture . empreinte au kilomètre * ratio surconsommation",
@@ -8455,14 +8458,17 @@
     "titre.auto": "distance"
   },
   "transport . vacances . caravane . construction amortie": {
-    "titre": "Construction de la caravane",
+    "titre": "Construction of the caravan",
     "formule": "(construction / durée de vie) / logement . habitants",
-    "unité": "kgCO2e"
+    "unité": "kgCO2e",
+    "titre.auto": "Construction of the caravan"
   },
   "transport . vacances . caravane . construction": {
     "formule": "7600 * (caravane . poids / 1500)",
     "unité": "kgCO2e",
-    "note": "On extrapole l'impact de la fabrication d'une caravane car à partir d'un ratio sur le poids et en considérant les données de construction \"Berline\" (6300 kgCO2e et 1500 kg)\nSource Figure 6 et tableau 1 [FNH-Carbone4](https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf)\nOn considère un poids de 750 kg pour une caravane.\n",
+    "note": "We extrapolate the impact of manufacturing a caravan using a weight ratio and considering \"Saloon\" construction data (6300 kgCO2e and 1500 kg)\nSource Figure 6 and Table 1 <a href=\"https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf\">FNH-Carbone4</a>\nA caravan weight of 750 kg is assumed.\n",
+    "titre": "construction",
+    "titre.auto": "construction",
     "optimized": true
   },
   "transport . vacances . caravane . poids": {
@@ -8496,19 +8502,23 @@
     "titre.auto": "owner"
   },
   "transport . vacances . camping car . usage réel": {
-    "titre": "Usage Camping Car",
+    "titre": "Camping Car Use",
     "formule": "usage / logement . habitants",
-    "unité": "kgCO2e"
+    "unité": "kgCO2e",
+    "titre.auto": "Camping Car Use"
   },
   "transport . vacances . camping car . construction amortie": {
-    "titre": "Construction du camping car",
+    "titre": "Construction of the motor home",
     "formule": "(construction / durée de vie) / logement . habitants",
-    "unité": "kgCO2e"
+    "unité": "kgCO2e",
+    "titre.auto": "Construction of the motor home"
   },
   "transport . vacances . camping car . construction": {
     "formule": "7600 * (camping car . poids / 1500)",
     "unité": "kgCO2e",
-    "note": "On extrapole l'impact de la fabrication d'une caravane car à partir d'un ratio sur le poids et en considérant les données de construction \"Berline\" (6300 kgCO2e et 1500 kg)\nSource Figure 6 et tableau 1 [FNH-Carbone4](https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf)\nOn considère un poids de 3t pour le camping car la limite roulante (avec permis B) est à 3,5t (ce qui laisse 500 kg pour l'aménagement intérieur).\n",
+    "note": "We extrapolate the impact of manufacturing a caravan based on a weight ratio and considering \"Saloon\" construction data (6300 kgCO2e and 1500 kg)\nSource Figure 6 and Table 1 <a href=\"https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf\">FNH-Carbone4</a>\nWe assume a weight of 3t for camping cars, with a rolling limit (with a B driving license) of 3.5t (leaving 500 kg for interior fittings).\n",
+    "titre": "construction",
+    "titre.auto": "construction",
     "optimized": true
   },
   "transport . vacances . camping car . poids": {
@@ -8562,7 +8572,9 @@
   },
   "transport . vacances . camping car . usage": {
     "formule": "camping car . km * empreinte au kilomètre",
-    "unité": "kgCO2e"
+    "unité": "kgCO2e",
+    "titre": "use",
+    "titre.auto": "use"
   },
   "transport . vacances . van": {
     "titre": "Van",
