@@ -7,7 +7,7 @@ API pour modèle Publicodes de Nos Gestes Climat.
 Schéma général de l'API :
 
 ```
-https://data.nosgestesclimat.fr/<version>/<langue>/<region>
+https://nosgestesclimat-api.osc-fr1.scalingo.io/<version>/<langue>/<region>
 ```
 
 Avec :
@@ -45,3 +45,6 @@ npm start # ou bun start
 
 Le déploiement est fait automatiquement par
 [Scalingo](https://scalingo.com/) à chaque push sur la branche `main`.
+
+> [!IMPORTANT]
+> La version `nightly` est synchronisée à chaque push dans la branche `preprod` du dépôt [`nosgestesclimat`](https://github.com/incubateur-ademe/nosgestesclimat)
