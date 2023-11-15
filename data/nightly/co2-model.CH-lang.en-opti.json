@@ -8330,11 +8330,11 @@
     "question": "How many kilometers do you travel by train per year?",
     "description": "Suggestions are based on the distance as the crow flies doubled to\nconsider a round trip.\n",
     "suggestions": {
-      "crossing of a region": 300,
+      "crossing a region": 300,
       "Zurich ⇄ Geneva": 450,
       "Zurich ⇄ Paris": 1000,
-      "💳 great traveler": 10000,
-      "💳 great traveler plus ultra": 25000
+      "💳 frequent flyer": 10000,
+      "💳 grand voyageur plus ultra": 25000
     },
     "unité": "km",
     "par défaut": 1000,

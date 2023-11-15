@@ -4432,7 +4432,7 @@
     "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/incubateur-ademe/publicodes-commun\">`@incubator-ademe/publicodes-commun`</a> model.\n\n\nAverage intensity, all types of consumption combined, year 2022.",
     "formule": 0.153,
     "unité": "kgCO2e/kWh",
-    "note": "[Electricity Map](https://app.electricitymaps.com/map) view 5 years, 2022\n",
+    "note": "[Electricity Map](https://app.electricitymaps.com/map) 5-year view, 2022\n",
     "titre.auto": "Carbon intensity of the French electricity mix"
   },
   "commun . mois par an": {
@@ -12459,7 +12459,7 @@
     "titre": "Average distance travelled by a Swiss on short-haul flights",
     "formule": "0.024 * 9000",
     "unité": "km",
-    "description": "<a href=\"https://www.bfs.admin.ch/bfs/fr/home/actualites/quoi-de-neuf.assetdetail.1840421.html\">The Swiss Federal Statistical Office</a> indicates that the Swiss travel 9000km per year by air.\nThe difference between the types of trips (short, medium or long haul) is not made. We propose here to apply the ratios of the French model to obtain the average distance traveled \nby the Swiss for each type of trip, i.e:\n  - Short-haul: 2.4%\n  - Medium-haul: 7.4\n  - Long-haul: 90.2%\n",
+    "description": "<a href=\"https://www.bfs.admin.ch/bfs/fr/home/actualites/quoi-de-neuf.assetdetail.1840421.html\">The Swiss Federal Statistical Office</a> reports that the Swiss travel 9,000km a year by air.\nNo distinction is made between types of journey (short, medium or long haul). We propose here to apply the ratios of the French model to obtain the average distance travelled \nby the Swiss for each type of journey, i.e. :\n  - Short-haul: 2.4\n  - Medium-haul: 7.4\n  - Long-haul: 90.2%\n",
     "titre.auto": "Average distance travelled by a French person on short-haul flights"
   },
   "transport . avion . court courrier . durée max": {
@@ -12521,7 +12521,7 @@
     "titre": "Average distance travelled by a Swiss on medium-haul flights",
     "formule": "0.074 * 9000",
     "unité": "km",
-    "description": "<a href=\"https://www.bfs.admin.ch/bfs/fr/home/actualites/quoi-de-neuf.assetdetail.1840421.html\">The Swiss Federal Statistical Office</a> indicates that the Swiss travel 9000km per year by air.\nThe difference between the types of trips (short, medium or long haul) is not made. We propose here to apply the ratios of the French model to obtain the average distance traveled \nby the Swiss for each type of trip, i.e:\n  - Short-haul: 2.4%\n  - Medium-haul: 7.4\n  - Long-haul: 90.2%\n",
+    "description": "<a href=\"https://www.bfs.admin.ch/bfs/fr/home/actualites/quoi-de-neuf.assetdetail.1840421.html\">The Swiss Federal Statistical Office</a> reports that the Swiss travel 9,000km a year by air.\nNo distinction is made between types of journey (short, medium or long haul). We propose here to apply the ratios of the French model to obtain the average distance travelled \nby the Swiss for each type of journey, i.e. :\n  - Short-haul: 2.4\n  - Medium-haul: 7.4\n  - Long-haul: 90.2%\n",
     "titre.auto": "Average distance travelled by a French person on medium-haul flights"
   },
   "transport . avion . moyen courrier . km moyen": {
@@ -12584,7 +12584,7 @@
     "titre": "Average distance travelled by a Swiss on long-haul flights",
     "formule": "0.902 * 9000",
     "unité": "km",
-    "description": "<a href=\"https://www.bfs.admin.ch/bfs/fr/home/actualites/quoi-de-neuf.assetdetail.1840421.html\">The Swiss Federal Statistical Office</a> indicates that the Swiss travel 9000km per year by air.\nThe difference between the types of trips (short, medium or long haul) is not made. We propose here to apply the ratios of the French model to obtain the average distance traveled \nby the Swiss for each type of trip, i.e:\n  - Short-haul: 2.4%\n  - Medium-haul: 7.4\n  - Long-haul: 90.2%\n",
+    "description": "<a href=\"https://www.bfs.admin.ch/bfs/fr/home/actualites/quoi-de-neuf.assetdetail.1840421.html\">The Swiss Federal Statistical Office</a> reports that the Swiss travel 9,000km a year by air.\nNo distinction is made between types of journey (short, medium or long haul). We propose here to apply the ratios of the French model to obtain the average distance travelled \nby the Swiss for each type of journey, i.e. :\n  - Short-haul: 2.4\n  - Medium-haul: 7.4\n  - Long-haul: 90.2%\n",
     "titre.auto": "Average distance travelled by a French person on long-haul flights"
   },
   "transport . avion . long courrier . km moyen": {
@@ -13644,11 +13644,11 @@
     "question": "How many kilometers do you travel by train per year?",
     "description": "Suggestions are based on the distance as the crow flies doubled to\nconsider a round trip.\n",
     "suggestions": {
-      "crossing of a region": 300,
+      "crossing a region": 300,
       "Zurich ⇄ Geneva": 450,
       "Zurich ⇄ Paris": 1000,
-      "💳 great traveler": 10000,
-      "💳 great traveler plus ultra": 25000
+      "💳 frequent flyer": 10000,
+      "💳 grand voyageur plus ultra": 25000
     },
     "unité": "km",
     "par défaut": 1000,
