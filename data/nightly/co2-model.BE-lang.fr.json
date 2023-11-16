@@ -559,7 +559,7 @@
         "parc français . consommation électricité totale relative * électricité . intensité carbone * part chauffage électricité",
         "parc français . chauffage . consommation gaz moyenne relative * chauffage . gaz . facteur d'émission base carbone * part chauffage gaz",
         "parc français . chauffage . consommation fioul moyenne relative en litres * chauffage . intensité carbone fioul litre * part chauffage fioul",
-        "parc français . chauffage . consommation bois moyenne relative * ((chauffage . bois . facteur d'émission bûche + chauffage . bois . facteur d'émission granulés) / 2) * part chauffage bois",
+        "parc français . chauffage . consommation bois moyenne relative * ((chauffage . bois . facteur d'émission bûches + chauffage . bois . facteur d'émission granulés) / 2) * part chauffage bois",
         "parc français . chauffage . consommation réseau de chaleur moyenne relative * chauffage . réseau de chaleur . intensité carbone * part chauffage réseau de chaleur",
         "parc français . chauffage . consommation GPL moyenne relative * chauffage . intensité carbone GPL * part chauffage GPL"
       ]
@@ -8039,7 +8039,7 @@
       "somme": [
         "parc français . chauffage . consommation gaz moyenne relative * gaz . facteur d'émission base carbone",
         "parc français . chauffage . consommation fioul moyenne relative en litres * intensité carbone fioul litre",
-        "parc français . chauffage . consommation bois moyenne relative * ((bois . facteur d'émission bûche + bois . facteur d'émission granulés) / 2)",
+        "parc français . chauffage . consommation bois moyenne relative * ((bois . facteur d'émission bûches + bois . facteur d'émission granulés) / 2)",
         "parc français . chauffage . consommation réseau de chaleur moyenne relative * réseau de chaleur . intensité carbone",
         "parc français . chauffage . consommation GPL moyenne relative * intensité carbone GPL"
       ]
@@ -8376,8 +8376,8 @@
     "formule": {
       "variations": [
         {
-          "si": "type = 'bûche'",
-          "alors": "type . bûche . consommation * facteur d'émission bûche"
+          "si": "type = 'bûches'",
+          "alors": "type . bûches . consommation * bois . type . bûches . intensité énergétique * facteur d'émission bûches"
         },
         {
           "si": "type = 'granulés'",
@@ -8398,15 +8398,15 @@
       "une possibilité": {
         "choix obligatoire": "oui",
         "possibilités": [
-          "bûche",
+          "bûches",
           "granulés"
         ]
       }
     },
-    "par défaut": "'bûche'",
+    "par défaut": "'bûches'",
     "note": "Les poêles à bûches représentent [70% des poêles vendus](https://www.planetoscope.com/Source-d-energie/1521-.html)."
   },
-  "logement . chauffage . bois . type . bûche": {
+  "logement . chauffage . bois . type . bûches": {
     "titre": "Bûches"
   },
   "logement . chauffage . bois . type . granulés": {
@@ -8426,29 +8426,26 @@
     "formule": "granulés . prix kWh",
     "note": "Cette formule nous permet de passer des €/mois aux kWh/an : le kWh coût x centimes par mois sur 12 mois.\n"
   },
-  "logement . chauffage . bois . type . bûche . consommation": {
-    "formule": "saisie * intensité énergétique"
-  },
-  "logement . chauffage . bois . type . bûche . intensité énergétique": {
+  "logement . chauffage . bois . type . bûches . intensité énergétique": {
     "formule": 1610,
     "unité": "kWh/stère",
     "note": "Nous faisons l'hypothèse d'une consommation de bûches de 20% d'humidité, d'après l'[étude ADEME sur le chauffahe domestique au bois](https://librairie.ademe.fr/produire-autrement/872-etude-sur-le-chauffage-domestique-au-bois.html), page 10."
   },
-  "logement . chauffage . bois . type . bûche . consommation . saisie": {
+  "logement . chauffage . bois . type . bûches . consommation": {
     "question": "Quelle la consommation annuelle de bois en bûches de votre foyer ?",
     "aide": "estimation via le coût",
     "description": "La consommation de bois de chauffage se compte traditionnellement en stères, ce qui correspond approximativement à un mètre cube de bûches.\n\n![](https://upload.wikimedia.org/wikipedia/commons/7/7c/Raummeter_hg.jpg)\n",
     "unité": "stère",
     "par défaut": "parc français . chauffage . consommation bois par m2 * surface / intensité énergétique"
   },
-  "logement . chauffage . bois . type . bûche . estimation via le coût": {
+  "logement . chauffage . bois . type . bûches . estimation via le coût": {
     "question": "Pas de facture ? Entrez vos dépenses approximatives par mois",
     "unité": "€/stère",
     "formule": "prix stère 2023",
     "note": "Cette formule nous permet de passer des €/mois au nombre de stères par an.\n\nPrix calculé sur la base de l'indice prix bois énergie publié par l'INSEE.\n"
   },
-  "logement . chauffage . bois . facteur d'émission bûche": {
-    "titre": "Empreinte bois bûche",
+  "logement . chauffage . bois . facteur d'émission bûches": {
+    "titre": "Empreinte bois bûches",
     "formule": 0.046,
     "unité": "kgCO2e/kWh",
     "note": "Attention faute de facteur d'émission de statut \"validé générique\" pour le bois bûche dans la Base Carbone nous optons pour un facteur d'émission \"validé spécifique\" (initiative E+/C- = label Energie Positive et Réduction Carbone) afin d'assurer une\ncertaine cohérence pour l'utilisateur parcourant le modèle de calcul. Cependant, les facteurs d'émissions E+/C- suivent des règles d'élaboration parfois différentes des\nrègles de calcul de la Base Carbone. Il est donc probable que ce facteur d'émission sous-estime légèrement l'impact GES de la consommation d'un kWh de bois bûche en ne prenant pas en \ncompte les émissions de méthane imbrulé.\n"
@@ -9466,12 +9463,12 @@
     "description": "Il est question ici de piscine privées **enterrées**, et non de piscines hors-sol, dont l'empreinte carbone est bien inférieure. Cette option sera néanmoins disponible prochainement !\n",
     "note": "Aujourd'hui, nous posons la question à toutes les personnes qui possèdent une maison.\nAfin de limiter l'apparition de cette question pour les utilisateurs qui ne possèdent pas de terrain, ou qui ne sont absoluement pas concernés par la piscine, \non pourrait filtrer l'affichage de la question selon la surface de la maison par exemple.\n"
   },
-  "logement . chauffage . bois . type . bûche . prix stère 2017": {
+  "logement . chauffage . bois . type . bûches . prix stère 2017": {
     "formule": 71,
     "unité": "€/stère",
     "note": "Chiffre issu de l'étude ADEME [Etude sur le chauffage domestique bois](https://www.ademe.fr/etude-chauffage-domestique-bois), fichier 3_presentation.pdf, page 34."
   },
-  "logement . chauffage . bois . type . bûche . prix stère 2023": {
+  "logement . chauffage . bois . type . bûches . prix stère 2023": {
     "formule": "prix stère 2017 * (indice prix bois / 100)",
     "unité": "€/stère",
     "description": "Il n'existe pas de prix récent pour la stère de bois. L'idée est de prendre en compte la hausse des tarifs via l'indice d'inflation."

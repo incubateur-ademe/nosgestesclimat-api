@@ -5711,8 +5711,8 @@
     "formule": {
       "variations": [
         {
-          "si": "type = 'bûche'",
-          "alors": "type . bûche . consommation * facteur d'émission bûche"
+          "si": "type = 'bûches'",
+          "alors": "type . bûches . consommation * bois . type . bûches . intensité énergétique * facteur d'émission bûches"
         },
         {
           "si": "type = 'granulés'",
@@ -5736,16 +5736,16 @@
       "une possibilité": {
         "choix obligatoire": "oui",
         "possibilités": [
-          "bûche",
+          "bûches",
           "granulés"
         ]
       }
     },
-    "par défaut": "'bûche'",
+    "par défaut": "'bûches'",
     "note": "Log-burning stoves account for <a href=\"https://www.planetoscope.com/Source-d-energie/1521-.html\">70% of all stoves sold</a>.",
     "titre.auto": "type of wood"
   },
-  "logement . chauffage . bois . type . bûche": {
+  "logement . chauffage . bois . type . bûches": {
     "titre": "Logs",
     "titre.auto": "Logs"
   },
@@ -5771,13 +5771,7 @@
     "titre": "estimation via cost",
     "titre.auto": "estimation via cost"
   },
-  "logement . chauffage . bois . type . bûche . consommation": {
-    "formule": "saisie * 1610",
-    "titre": "consumption",
-    "titre.auto": "consumption",
-    "optimized": true
-  },
-  "logement . chauffage . bois . type . bûche . intensité énergétique": {
+  "logement . chauffage . bois . type . bûches . intensité énergétique": {
     "unité": "kWh/stère",
     "note": "We have assumed consumption of logs with a moisture content of 20%, according to the<a href=\"https://librairie.ademe.fr/produire-autrement/872-etude-sur-le-chauffage-domestique-au-bois.html\">ADEME</a> study<a href=\"https://librairie.ademe.fr/produire-autrement/872-etude-sur-le-chauffage-domestique-au-bois.html\">on domestic wood heating</a>, page 10.",
     "titre": "energy intensity",
@@ -5785,16 +5779,16 @@
     "valeur": "1610",
     "optimized": true
   },
-  "logement . chauffage . bois . type . bûche . consommation . saisie": {
-    "question": "What is the annual wood consumption of your household?",
+  "logement . chauffage . bois . type . bûches . consommation": {
+    "question": "What is your household's annual wood consumption?",
     "aide": "estimation via le coût",
-    "description": "The consumption of firewood is traditionally counted in steres, which\ncorresponds approximately to one cubic meter of logs.\n\n![](https://upload.wikimedia.org/wikipedia/commons/7/7c/Raummeter_hg.jpg)\n",
+    "description": "Traditionally, firewood consumption is measured in steres, which is roughly equivalent to one cubic metre of logs.\n\n![](https://upload.wikimedia.org/wikipedia/commons/7/7c/Raummeter_hg.jpg)\n",
     "unité": "stère",
     "par défaut": "parc français . chauffage . consommation bois par m2 * surface / intensité énergétique",
-    "titre": "input",
-    "titre.auto": "input"
+    "titre": "consumption",
+    "titre.auto": "consumption"
   },
-  "logement . chauffage . bois . type . bûche . estimation via le coût": {
+  "logement . chauffage . bois . type . bûches . estimation via le coût": {
     "question": "No invoice? Enter your approximate monthly expenses",
     "unité": "€/stère",
     "formule": "prix stère 2023",
@@ -5802,10 +5796,10 @@
     "titre": "estimation via cost",
     "titre.auto": "estimation via cost"
   },
-  "logement . chauffage . bois . facteur d'émission bûche": {
+  "logement . chauffage . bois . facteur d'émission bûches": {
     "titre": "Wood log footprint",
     "unité": "kgCO2e/kWh",
-    "note": "In the absence of a \"generic validated\" emission factor for wood logs in the Base Carbone, we have opted for a \"specific validated\" emission factor (E+/C- initiative = Positive Energy and Carbon Reduction label) in order to ensure a degree of consistency for the user browsing the calculation model\nconsistency for the user browsing the calculation model. However, E+/C- emissions factors are sometimes calculated according to rules that differ from those of the Base Carbone\nbase Carbone calculation rules. It is therefore likely that this emission factor slightly underestimates the GHG impact of consuming one kWh of wood logs, as it does not take into account unburned methane emissions \nunburnt methane emissions.\n",
+    "note": "In the absence of a \"generic validated\" emission factor for wood logs in the Base Carbone, we have opted for a \"specific validated\" emission factor (E+/C- initiative = Positive Energy and Carbon Reduction label) in order to ensure a degree of consistency for the user of the calculation model\nconsistency for the user browsing the calculation model. However, the E+/C- emissions factors follow rules that are sometimes different from the\ncalculation rules of the Base Carbone. It is therefore likely that this emission factor slightly underestimates the GHG impact of the consumption of one kWh of wood logs by not taking into account the emissions of unburnt methane \nunburnt methane emissions.\n",
     "titre.auto": "Wood log footprint",
     "valeur": "0.046",
     "optimized": true
@@ -6689,7 +6683,7 @@
     "titre": "present",
     "titre.auto": "present"
   },
-  "logement . chauffage . bois . type . bûche . prix stère 2023": {
+  "logement . chauffage . bois . type . bûches . prix stère 2023": {
     "formule": "71 * (150.4 / 100)",
     "unité": "€/stère",
     "description": "There is no recent price for a stere of wood. The idea is to take into account the increase in rates via the inflation index.",
