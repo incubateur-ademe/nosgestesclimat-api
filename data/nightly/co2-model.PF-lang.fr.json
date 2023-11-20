@@ -536,7 +536,7 @@
           "alors": "empreinte chauffage air utilisateur"
         },
         {
-          "sinon": "empreinte par défaut chauffage air"
+          "sinon": "parc français . chauffage . empreinte moyenne chauffage air par m2 * logement . surface"
         }
       ]
     },
@@ -545,43 +545,13 @@
   "logement . empreinte chauffage air utilisateur": {
     "formule": {
       "somme": [
-        "chauffage . électricité . présent * électricité * part chauffage électricité",
-        "(chauffage . gaz . présent * chauffage . gaz + chauffage . citerne propane . présent * chauffage . citerne propane) * part chauffage gaz",
-        "chauffage . bois . présent * chauffage . bois * part chauffage bois",
-        "chauffage . fioul . présent * chauffage . fioul * part chauffage fioul",
-        "chauffage . réseau de chaleur . présent * chauffage . réseau de chaleur * part chauffage réseau de chaleur"
+        "chauffage . électricité . présent * électricité * parc français . chauffage . part chauffage air électricité",
+        "(chauffage . gaz . présent * chauffage . gaz + chauffage . citerne propane . présent * chauffage . citerne propane) * parc français . chauffage . part chauffage air gaz",
+        "chauffage . bois . présent * chauffage . bois * parc français . chauffage . part chauffage air bois",
+        "chauffage . fioul . présent * chauffage . fioul * parc français . chauffage . part chauffage air fioul",
+        "chauffage . réseau de chaleur . présent * chauffage . réseau de chaleur * parc français . chauffage . part chauffage air réseau de chaleur"
       ]
     }
-  },
-  "logement . empreinte par défaut chauffage air": {
-    "formule": {
-      "somme": [
-        "parc français . consommation électricité totale relative * électricité . intensité carbone * part chauffage électricité",
-        "parc français . chauffage . consommation gaz moyenne relative * chauffage . gaz . facteur d'émission base carbone * part chauffage gaz",
-        "parc français . chauffage . consommation fioul moyenne relative en litres * chauffage . intensité carbone fioul litre * part chauffage fioul",
-        "parc français . chauffage . consommation bois moyenne relative * ((chauffage . bois . facteur d'émission bûches + chauffage . bois . facteur d'émission granulés) / 2) * part chauffage bois",
-        "parc français . chauffage . consommation réseau de chaleur moyenne relative * chauffage . réseau de chaleur . intensité carbone * part chauffage réseau de chaleur",
-        "parc français . chauffage . consommation GPL moyenne relative * chauffage . intensité carbone GPL * part chauffage GPL"
-      ]
-    }
-  },
-  "logement . part chauffage électricité": {
-    "formule": "parc français . chauffage . consommation électricité . chauffage / (parc français . chauffage . consommation électricité + parc français . consommation électricité autre)"
-  },
-  "logement . part chauffage gaz": {
-    "formule": "parc français . chauffage . consommation gaz . chauffage / parc français . chauffage . consommation gaz"
-  },
-  "logement . part chauffage bois": {
-    "formule": "parc français . chauffage . consommation bois . chauffage / parc français . chauffage . consommation bois"
-  },
-  "logement . part chauffage fioul": {
-    "formule": "parc français . chauffage . consommation fioul . chauffage / parc français . chauffage . consommation fioul"
-  },
-  "logement . part chauffage réseau de chaleur": {
-    "formule": "parc français . chauffage . consommation réseau de chaleur . chauffage / parc français . chauffage . consommation réseau de chaleur"
-  },
-  "logement . part chauffage GPL": {
-    "formule": "parc français . chauffage . consommation GPL . chauffage / parc français . chauffage . consommation GPL"
   },
   "logement . éteindre appareils": {
     "formule": "empreinte du foyer / habitants",
@@ -8040,15 +8010,7 @@
   },
   "logement . chauffage . empreinte par défaut": {
     "résumé": "Un calcul statistique du **chauffage** résidentiel français moyen",
-    "formule": {
-      "somme": [
-        "parc français . chauffage . consommation gaz moyenne relative * gaz . facteur d'émission base carbone",
-        "parc français . chauffage . consommation fioul moyenne relative en litres * intensité carbone fioul litre",
-        "parc français . chauffage . consommation bois moyenne relative * ((bois . facteur d'émission bûches + bois . facteur d'émission granulés) / 2)",
-        "parc français . chauffage . consommation réseau de chaleur moyenne relative * réseau de chaleur . intensité carbone",
-        "parc français . chauffage . consommation GPL moyenne relative * intensité carbone GPL"
-      ]
-    },
+    "formule": "parc français . chauffage . empreinte moyenne par m2 hors électricité * logement . surface",
     "unité": "kgCO2e"
   },
   "logement . chauffage . choix utilisateur": {
@@ -8609,26 +8571,42 @@
   "parc français . surface . part GPL": {
     "formule": "GPL / surface"
   },
-  "parc français . consommation électricité totale": {
+  "parc français . empreinte électricité totale par m2": {
     "formule": {
       "somme": [
-        "chauffage . consommation électricité moyenne",
-        "consommation électricité autre moyenne"
+        "chauffage . empreinte électricité par m2",
+        "empreinte électricité autre par m2"
       ]
     },
-    "unité": "kWh"
+    "unité": "kgCO2e/m2"
   },
-  "parc français . consommation électricité totale relative": {
+  "parc français . empreinte électricité relative par m2": {
     "formule": {
       "somme": [
-        "chauffage . consommation électricité moyenne relative",
-        "consommation électricité autre moyenne"
+        "chauffage . empreinte électricité moyenne par m2",
+        "empreinte électricité autre par m2"
       ]
     },
-    "unité": "kWh"
+    "unité": "kgCO2e/m2"
   },
   "parc français . chauffage": {
     "note": "La consommation pour l'eau chaude sanitaire (ECS) et pour la cuisson sont également intégrées dans les consommations.\n"
+  },
+  "parc français . chauffage . empreinte moyenne par m2 hors électricité": {
+    "note": "L'électricité est traitée séparément.",
+    "formule": {
+      "somme": [
+        "surface . part gaz * empreinte gaz par m2",
+        "surface . part fioul * empreinte fioul par m2",
+        "surface . part bois * empreinte buches par m2 / 2",
+        "surface . part bois * empreinte granulés par m2 / 2",
+        "surface . part réseau de chaleur * empreinte réseau de chaleur par m2",
+        "surface . part GPL * empreinte GPL par m2"
+      ]
+    }
+  },
+  "parc français . chauffage . empreinte électricité moyenne par m2": {
+    "formule": "surface . part électricité * empreinte électricité par m2"
   },
   "parc français . chauffage . consommation électricité": {
     "formule": "chauffage + ecs + cuisson",
@@ -8671,7 +8649,7 @@
   },
   "parc français . chauffage . consommation moyenne gaz cuisson": {
     "note": "Variable utilisée pour la valeur par défaut de la consommation de bouteilles de gaz",
-    "formule": "consommation gaz . cuisson / surface . gaz * surface moyenne",
+    "formule": "consommation gaz . cuisson / surface . gaz * logement . surface",
     "unité": "kWh"
   },
   "parc français . chauffage . consommation fioul": {
@@ -8761,63 +8739,62 @@
     "formule": "consommation GPL / surface . GPL",
     "unité": "kWh/m2"
   },
+  "parc français . chauffage . empreinte électricité par m2": {
+    "formule": "consommation électricité par m2 * logement . électricité . intensité carbone",
+    "unité": "kgCO2e/m2"
+  },
+  "parc français . chauffage . empreinte gaz par m2": {
+    "formule": "consommation gaz par m2 * logement . chauffage . gaz . facteur d'émission base carbone",
+    "unité": "kgCO2e/m2"
+  },
+  "parc français . chauffage . empreinte fioul par m2": {
+    "formule": "consommation fioul par m2 * intensité carbone fioul kwh",
+    "unité": "kgCO2e/m2"
+  },
+  "parc français . chauffage . empreinte fioul par m2 . intensité carbone fioul kwh": {
+    "formule": 0.324,
+    "unité": "kgCO2e/kWh"
+  },
+  "parc français . chauffage . empreinte buches par m2": {
+    "formule": "consommation bois par m2 * logement . chauffage . bois . facteur d'émission bûches",
+    "unité": "kgCO2e/m2"
+  },
+  "parc français . chauffage . empreinte granulés par m2": {
+    "formule": "consommation bois par m2 * logement . chauffage . bois . facteur d'émission granulés",
+    "unité": "kgCO2e/m2"
+  },
+  "parc français . chauffage . empreinte réseau de chaleur par m2": {
+    "formule": "consommation réseau de chaleur par m2 * logement . chauffage . réseau de chaleur . intensité carbone",
+    "unité": "kgCO2e/m2"
+  },
+  "parc français . chauffage . empreinte GPL par m2": {
+    "formule": "consommation GPL par m2 * logement . chauffage . intensité carbone GPL",
+    "unité": "kgCO2e/m2"
+  },
   "parc français . chauffage . consommation électricité moyenne": {
-    "formule": "consommation électricité par m2 * surface moyenne",
+    "formule": "consommation électricité par m2 * logement . surface",
     "note": "électricité + pompe à chaleur",
     "unité": "kWh"
   },
   "parc français . chauffage . consommation gaz moyenne": {
-    "formule": "consommation gaz par m2 * surface moyenne",
+    "formule": "consommation gaz par m2 * logement . surface",
     "unité": "kWh"
   },
   "parc français . chauffage . consommation fioul moyenne": {
-    "formule": "consommation fioul par m2 * surface moyenne",
+    "formule": "consommation fioul par m2 * logement . surface",
     "unité": "kWh"
   },
   "parc français . chauffage . consommation bois moyenne": {
-    "formule": "consommation bois par m2 * surface moyenne",
+    "formule": "consommation bois par m2 * logement . surface",
     "unité": "kWh"
   },
   "parc français . chauffage . consommation réseau de chaleur moyenne": {
-    "formule": "consommation réseau de chaleur par m2 * surface moyenne",
+    "formule": "consommation réseau de chaleur par m2 * logement . surface",
     "unité": "kWh"
   },
   "parc français . chauffage . consommation GPL moyenne": {
-    "formule": "consommation GPL par m2 * surface moyenne",
+    "formule": "consommation GPL par m2 * logement . surface",
     "unité": "kWh"
-  },
-  "parc français . chauffage . consommation électricité moyenne relative": {
-    "formule": "consommation électricité moyenne * surface . part électricité",
-    "note": "électricité + pompe à chaleur",
-    "unité": "kWh"
-  },
-  "parc français . chauffage . consommation gaz moyenne relative": {
-    "formule": "consommation gaz moyenne * surface . part gaz",
-    "unité": "kWh"
-  },
-  "parc français . chauffage . consommation fioul moyenne relative": {
-    "formule": "consommation fioul moyenne * surface . part fioul",
-    "unité": "kWh"
-  },
-  "parc français . chauffage . consommation bois moyenne relative": {
-    "formule": "consommation bois moyenne * surface . part bois",
-    "unité": "kWh"
-  },
-  "parc français . chauffage . consommation réseau de chaleur moyenne relative": {
-    "formule": "consommation réseau de chaleur moyenne * surface . part réseau de chaleur",
-    "unité": "kWh"
-  },
-  "parc français . chauffage . consommation GPL moyenne relative": {
-    "formule": "consommation GPL moyenne * surface . part GPL",
-    "unité": "kWh"
-  },
-  "parc français . chauffage . consommation fioul moyenne relative en litres": {
-    "formule": "consommation fioul moyenne * surface . part fioul * logement . chauffage . fioul kWh au litre",
-    "unité": "l"
-  },
-  "parc français . chauffage . consommation fioul moyenne en litres": {
-    "formule": "consommation fioul moyenne * logement . chauffage . fioul kWh au litre",
-    "unité": "l"
   },
   "parc français . consommation électricité autre": {
     "formule": 79384041653,
@@ -8827,9 +8804,40 @@
     "formule": "consommation électricité autre / surface totale",
     "unité": "kWh/m2"
   },
-  "parc français . consommation électricité autre moyenne": {
-    "formule": "consommation électricité autre par m2 * surface moyenne",
-    "unité": "kWh"
+  "parc français . empreinte électricité autre par m2": {
+    "formule": "consommation électricité autre par m2 * logement . électricité . intensité carbone",
+    "unité": "kgCO2e/m2"
+  },
+  "parc français . chauffage . empreinte moyenne chauffage air par m2": {
+    "formule": {
+      "somme": [
+        "empreinte électricité par m2 * part chauffage air électricité",
+        "empreinte gaz par m2 * part chauffage air gaz",
+        "empreinte fioul par m2 * part chauffage air fioul",
+        "empreinte buches par m2 * part chauffage air bois / 2",
+        "empreinte granulés par m2 * part chauffage air bois / 2",
+        "empreinte réseau de chaleur par m2 * part chauffage air réseau de chaleur",
+        "empreinte GPL par m2 * part chauffage air GPL"
+      ]
+    }
+  },
+  "parc français . chauffage . part chauffage air électricité": {
+    "formule": "consommation électricité . chauffage / (consommation électricité + consommation électricité autre)"
+  },
+  "parc français . chauffage . part chauffage air gaz": {
+    "formule": "consommation gaz . chauffage / consommation gaz"
+  },
+  "parc français . chauffage . part chauffage air bois": {
+    "formule": "consommation bois . chauffage / consommation bois"
+  },
+  "parc français . chauffage . part chauffage air fioul": {
+    "formule": "consommation fioul . chauffage / consommation fioul"
+  },
+  "parc français . chauffage . part chauffage air réseau de chaleur": {
+    "formule": "consommation réseau de chaleur . chauffage / consommation réseau de chaleur"
+  },
+  "parc français . chauffage . part chauffage air GPL": {
+    "formule": "consommation GPL . chauffage / consommation GPL"
   },
   "logement . climatisation": {
     "icônes": "❄️",
@@ -8926,7 +8934,14 @@
     "par défaut": {
       "variations": [
         {
-          "si": "appartement",
+          "si": {
+            "toutes ces conditions": [
+              {
+                "est défini": "logement . appartement"
+              },
+              "appartement"
+            ]
+          },
           "alors": 0.2
         },
         {
@@ -8965,7 +8980,14 @@
           "alors": 144
         },
         {
-          "si": "appartement",
+          "si": {
+            "toutes ces conditions": [
+              {
+                "est défini": "appartement"
+              },
+              "appartement"
+            ]
+          },
           "alors": 525
         },
         {
@@ -8996,7 +9018,7 @@
       "variations": [
         {
           "si": "logement . chauffage . choix utilisateur = non",
-          "alors": "parc français . consommation électricité totale relative"
+          "alors": "surface * (parc français . consommation électricité autre par m2 + parc français . surface . part électricité * parc français . chauffage . consommation électricité par m2)"
         },
         {
           "si": {
@@ -9010,10 +9032,10 @@
               }
             ]
           },
-          "alors": "parc français . consommation électricité autre moyenne + surface * parc français . chauffage . consommation électricité par m2"
+          "alors": "surface * (parc français . consommation électricité autre par m2 + parc français . chauffage . consommation électricité par m2)"
         },
         {
-          "sinon": "parc français . consommation électricité autre moyenne"
+          "sinon": "surface * parc français . consommation électricité autre par m2"
         }
       ]
     },
@@ -9085,11 +9107,23 @@
     "par défaut": {
       "variations": [
         {
-          "si": "appartement",
-          "alors": "parc français . surface moyenne appartement"
+          "si": {
+            "est défini": "appartement"
+          },
+          "alors": {
+            "variations": [
+              {
+                "si": "appartement",
+                "alors": "parc français . surface moyenne appartement"
+              },
+              {
+                "sinon": "parc français . surface moyenne maison"
+              }
+            ]
+          }
         },
         {
-          "sinon": "parc français . surface moyenne maison"
+          "sinon": "parc français . surface moyenne"
         }
       ]
     },
@@ -9111,7 +9145,6 @@
   "logement . appartement": {
     "titre": "Appartement",
     "question": "Votre logement est-il un appartement ?",
-    "par défaut": "non",
     "description": "Par opposition à une maison individuelle.\n\nL'augmentation de l'habitat en appartements peut nous faire oublier que la maison reste le logement majoritaire des foyers français en 2018.\n\nCette information influence notamment l'empreinte de construction, mais aussi les possibilités de travaux d'isolation par exemple.\n\n> Si vous vivez dans un habitat original, par exemple un camping-car / un camion / une péniche, pas de problème : choisissez \"appartement\" et saisissez les m² de ce qui constitue quand même votre logement.\n",
     "note": "En 2018, l’habitat individuel représente 56 % des logements ([Source INSEE](https://www.insee.fr/fr/statistiques/3676693?sommaire=3696937)) : il est majoritaire parmi les résidences principales comme parmi les résidences secondaires et logements occasionnels. Après avoir progressé entre 1999 et 2008 sa part recule légèrement, car le nombre de logements collectifs augmente plus vite que celui des logements individuels du fait des évolutions récentes de la construction neuve.\nNotons qu'il s'agit d'une proportion de logements ; or on peut s'attendre (à vérifier) à ce que les maisons contiennent davantage de gens en moyenne que les appartements, ce qui renforce le choix de la valeur par défaut.\n"
   },
@@ -9462,7 +9495,14 @@
     "note": "Afin de mieux comprendre le calcul de l'empreinte de la piscine, quelques élements:\n  \n  - L'empreinte de l'eau dépend à la fois de l'acheminement et du traitement      \n  - L'évaporation de l'eau n'est pas prise en compte\n  - On considère que la piscine est re-remplie chaque année : c'est une hypothèse forte mais acceptable dans le sens ou les personnes qui conservent l'eau de leur piscine l'hiver consommeront davantage de produits chimiques.\n  - La construction prend en compte de nombreux facteurs : maçonnerie, étanchéité, équipements techniques etc...  pour des piscines \"béton\"\n  - Le traitement chimique est aujourd'hui une constante. On pourrait imaginer le variabiliser selon la taile ou le nombre de mois d'utilisation de la piscine.\n  - L'éventuel abri de piscine, les acccessoires type jeux ne sont pas pris en compte pour le moment\n\nIl est important de noter que ce modèle de calcul est amélioré en continu. (Voir https://github.com/laem/futureco-data/issues/97)\n"
   },
   "logement . piscine . présent": {
-    "non applicable si": "logement . appartement",
+    "non applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "logement . appartement"
+        },
+        "appartement"
+      ]
+    },
     "question": "Votre logement dispose-t-il d'une piscine privée (enterrée/creusée) ?",
     "par défaut": "non",
     "description": "Il est question ici de piscine privées **enterrées**, et non de piscines hors-sol, dont l'empreinte carbone est bien inférieure. Cette option sera néanmoins disponible prochainement !\n",

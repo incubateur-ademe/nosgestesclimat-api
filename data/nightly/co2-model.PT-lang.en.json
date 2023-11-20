@@ -630,7 +630,7 @@
           "alors": "empreinte chauffage air utilisateur"
         },
         {
-          "sinon": "empreinte par défaut chauffage air"
+          "sinon": "parc français . chauffage . empreinte moyenne chauffage air par m2 * logement . surface"
         }
       ]
     },
@@ -641,59 +641,15 @@
   "logement . empreinte chauffage air utilisateur": {
     "formule": {
       "somme": [
-        "chauffage . électricité . présent * électricité * part chauffage électricité",
-        "(chauffage . gaz . présent * chauffage . gaz + chauffage . citerne propane . présent * chauffage . citerne propane) * part chauffage gaz",
-        "chauffage . bois . présent * chauffage . bois * part chauffage bois",
-        "chauffage . fioul . présent * chauffage . fioul * part chauffage fioul",
-        "chauffage . réseau de chaleur . présent * chauffage . réseau de chaleur * part chauffage réseau de chaleur"
+        "chauffage . électricité . présent * électricité * parc français . chauffage . part chauffage air électricité",
+        "(chauffage . gaz . présent * chauffage . gaz + chauffage . citerne propane . présent * chauffage . citerne propane) * parc français . chauffage . part chauffage air gaz",
+        "chauffage . bois . présent * chauffage . bois * parc français . chauffage . part chauffage air bois",
+        "chauffage . fioul . présent * chauffage . fioul * parc français . chauffage . part chauffage air fioul",
+        "chauffage . réseau de chaleur . présent * chauffage . réseau de chaleur * parc français . chauffage . part chauffage air réseau de chaleur"
       ]
     },
     "titre": "footprint heating user air",
     "titre.auto": "footprint heating user air"
-  },
-  "logement . empreinte par défaut chauffage air": {
-    "formule": {
-      "somme": [
-        "parc français . consommation électricité totale relative * électricité . intensité carbone * part chauffage électricité",
-        "parc français . chauffage . consommation gaz moyenne relative * chauffage . gaz . facteur d'émission base carbone * part chauffage gaz",
-        "parc français . chauffage . consommation fioul moyenne relative en litres * chauffage . intensité carbone fioul litre * part chauffage fioul",
-        "parc français . chauffage . consommation bois moyenne relative * ((chauffage . bois . facteur d'émission bûches + chauffage . bois . facteur d'émission granulés) / 2) * part chauffage bois",
-        "parc français . chauffage . consommation réseau de chaleur moyenne relative * chauffage . réseau de chaleur . intensité carbone * part chauffage réseau de chaleur",
-        "parc français . chauffage . consommation GPL moyenne relative * chauffage . intensité carbone GPL * part chauffage GPL"
-      ]
-    },
-    "titre": "default footprint heating air",
-    "titre.auto": "default footprint heating air"
-  },
-  "logement . part chauffage électricité": {
-    "formule": "parc français . chauffage . consommation électricité . chauffage / (parc français . chauffage . consommation électricité + parc français . consommation électricité autre)",
-    "titre": "share heating electricity",
-    "titre.auto": "share heating electricity"
-  },
-  "logement . part chauffage gaz": {
-    "formule": "parc français . chauffage . consommation gaz . chauffage / parc français . chauffage . consommation gaz",
-    "titre": "gas heating share",
-    "titre.auto": "gas heating portion"
-  },
-  "logement . part chauffage bois": {
-    "formule": "parc français . chauffage . consommation bois . chauffage / parc français . chauffage . consommation bois",
-    "titre": "share of wood heating",
-    "titre.auto": "share of wood heating"
-  },
-  "logement . part chauffage fioul": {
-    "formule": "parc français . chauffage . consommation fioul . chauffage / parc français . chauffage . consommation fioul",
-    "titre": "share of oil heating",
-    "titre.auto": "share of oil heating"
-  },
-  "logement . part chauffage réseau de chaleur": {
-    "formule": "parc français . chauffage . consommation réseau de chaleur . chauffage / parc français . chauffage . consommation réseau de chaleur",
-    "titre": "share of heating network",
-    "titre.auto": "share of heating network"
-  },
-  "logement . part chauffage GPL": {
-    "formule": "parc français . chauffage . consommation GPL . chauffage / parc français . chauffage . consommation GPL",
-    "titre": "share of LPG heating",
-    "titre.auto": "share of LPG heating"
   },
   "logement . éteindre appareils": {
     "formule": "empreinte du foyer / habitants",
@@ -9791,15 +9747,7 @@
   },
   "logement . chauffage . empreinte par défaut": {
     "résumé": "A statistical calculation of the average French residential heating",
-    "formule": {
-      "somme": [
-        "parc français . chauffage . consommation gaz moyenne relative * gaz . facteur d'émission base carbone",
-        "parc français . chauffage . consommation fioul moyenne relative en litres * intensité carbone fioul litre",
-        "parc français . chauffage . consommation bois moyenne relative * ((bois . facteur d'émission bûches + bois . facteur d'émission granulés) / 2)",
-        "parc français . chauffage . consommation réseau de chaleur moyenne relative * réseau de chaleur . intensité carbone",
-        "parc français . chauffage . consommation GPL moyenne relative * intensité carbone GPL"
-      ]
-    },
+    "formule": "parc français . chauffage . empreinte moyenne par m2 hors électricité * logement . surface",
     "unité": "kgCO2e",
     "titre": "default footprint",
     "titre.auto": "default footprint"
@@ -10500,32 +10448,52 @@
     "titre": "lPG share",
     "titre.auto": "lPG share"
   },
-  "parc français . consommation électricité totale": {
+  "parc français . empreinte électricité totale par m2": {
     "formule": {
       "somme": [
-        "chauffage . consommation électricité moyenne",
-        "consommation électricité autre moyenne"
+        "chauffage . empreinte électricité par m2",
+        "empreinte électricité autre par m2"
       ]
     },
-    "unité": "kWh",
-    "titre": "total electricity consumption",
-    "titre.auto": "total electricity consumption"
+    "unité": "kgCO2e/m2",
+    "titre": "total electricity footprint per m2",
+    "titre.auto": "total electricity footprint per m2"
   },
-  "parc français . consommation électricité totale relative": {
+  "parc français . empreinte électricité relative par m2": {
     "formule": {
       "somme": [
-        "chauffage . consommation électricité moyenne relative",
-        "consommation électricité autre moyenne"
+        "chauffage . empreinte électricité moyenne par m2",
+        "empreinte électricité autre par m2"
       ]
     },
-    "unité": "kWh",
-    "titre": "total relative electricity consumption",
-    "titre.auto": "total relative electricity consumption"
+    "unité": "kgCO2e/m2",
+    "titre": "relative electricity footprint per m2",
+    "titre.auto": "relative electricity footprint per m2"
   },
   "parc français . chauffage": {
     "note": "Consumption for domestic hot water (DHW) and cooking are also included in the consumption figures.\n",
     "titre": "heating",
     "titre.auto": "heating"
+  },
+  "parc français . chauffage . empreinte moyenne par m2 hors électricité": {
+    "note": "Electricity is treated separately.",
+    "formule": {
+      "somme": [
+        "surface . part gaz * empreinte gaz par m2",
+        "surface . part fioul * empreinte fioul par m2",
+        "surface . part bois * empreinte buches par m2 / 2",
+        "surface . part bois * empreinte granulés par m2 / 2",
+        "surface . part réseau de chaleur * empreinte réseau de chaleur par m2",
+        "surface . part GPL * empreinte GPL par m2"
+      ]
+    },
+    "titre": "average footprint per m2 excluding electricity",
+    "titre.auto": "average footprint per m2 excluding electricity"
+  },
+  "parc français . chauffage . empreinte électricité moyenne par m2": {
+    "formule": "surface . part électricité * empreinte électricité par m2",
+    "titre": "average electricity footprint per m2",
+    "titre.auto": "average electricity footprint per m2"
   },
   "parc français . chauffage . consommation électricité": {
     "formule": "chauffage + ecs + cuisson",
@@ -10578,7 +10546,7 @@
   },
   "parc français . chauffage . consommation moyenne gaz cuisson": {
     "note": "Variable used for the default value of gas cylinder consumption",
-    "formule": "consommation gaz . cuisson / surface . gaz * surface moyenne",
+    "formule": "consommation gaz . cuisson / surface . gaz * logement . surface",
     "unité": "kWh",
     "titre": "average cooking gas consumption",
     "titre.auto": "average cooking gas consumption"
@@ -10699,91 +10667,90 @@
     "titre": "lPG consumption per m2",
     "titre.auto": "lPG consumption per m2"
   },
+  "parc français . chauffage . empreinte électricité par m2": {
+    "formule": "consommation électricité par m2 * logement . électricité . intensité carbone",
+    "unité": "kgCO2e/m2",
+    "titre": "electricity footprint per m2",
+    "titre.auto": "electricity footprint per m2"
+  },
+  "parc français . chauffage . empreinte gaz par m2": {
+    "formule": "consommation gaz par m2 * logement . chauffage . gaz . facteur d'émission base carbone",
+    "unité": "kgCO2e/m2",
+    "titre": "gas footprint per m2",
+    "titre.auto": "gas footprint per m2"
+  },
+  "parc français . chauffage . empreinte fioul par m2": {
+    "formule": "consommation fioul par m2 * intensité carbone fioul kwh",
+    "unité": "kgCO2e/m2",
+    "titre": "fuel footprint per m2",
+    "titre.auto": "fuel footprint per m2"
+  },
+  "parc français . chauffage . empreinte fioul par m2 . intensité carbone fioul kwh": {
+    "formule": 0.324,
+    "unité": "kgCO2e/kWh",
+    "titre": "carbon intensity fuel kwh",
+    "titre.auto": "carbon intensity fuel kwh"
+  },
+  "parc français . chauffage . empreinte buches par m2": {
+    "formule": "consommation bois par m2 * logement . chauffage . bois . facteur d'émission bûches",
+    "unité": "kgCO2e/m2",
+    "titre": "log footprint per m2",
+    "titre.auto": "log footprint per m2"
+  },
+  "parc français . chauffage . empreinte granulés par m2": {
+    "formule": "consommation bois par m2 * logement . chauffage . bois . facteur d'émission granulés",
+    "unité": "kgCO2e/m2",
+    "titre": "granule footprint per m2",
+    "titre.auto": "granule footprint per m2"
+  },
+  "parc français . chauffage . empreinte réseau de chaleur par m2": {
+    "formule": "consommation réseau de chaleur par m2 * logement . chauffage . réseau de chaleur . intensité carbone",
+    "unité": "kgCO2e/m2",
+    "titre": "heating network footprint per m2",
+    "titre.auto": "heating network footprint per m2"
+  },
+  "parc français . chauffage . empreinte GPL par m2": {
+    "formule": "consommation GPL par m2 * logement . chauffage . intensité carbone GPL",
+    "unité": "kgCO2e/m2",
+    "titre": "lPG footprint per m2",
+    "titre.auto": "lPG footprint per m2"
+  },
   "parc français . chauffage . consommation électricité moyenne": {
-    "formule": "consommation électricité par m2 * surface moyenne",
+    "formule": "consommation électricité par m2 * logement . surface",
     "note": "electricity + heat pump",
     "unité": "kWh",
     "titre": "average electricity consumption",
     "titre.auto": "average electricity consumption"
   },
   "parc français . chauffage . consommation gaz moyenne": {
-    "formule": "consommation gaz par m2 * surface moyenne",
+    "formule": "consommation gaz par m2 * logement . surface",
     "unité": "kWh",
     "titre": "average gas consumption",
     "titre.auto": "average gas consumption"
   },
   "parc français . chauffage . consommation fioul moyenne": {
-    "formule": "consommation fioul par m2 * surface moyenne",
+    "formule": "consommation fioul par m2 * logement . surface",
     "unité": "kWh",
     "titre": "average fuel consumption",
     "titre.auto": "average fuel consumption"
   },
   "parc français . chauffage . consommation bois moyenne": {
-    "formule": "consommation bois par m2 * surface moyenne",
+    "formule": "consommation bois par m2 * logement . surface",
     "unité": "kWh",
     "titre": "average wood consumption",
     "titre.auto": "average wood consumption"
   },
   "parc français . chauffage . consommation réseau de chaleur moyenne": {
-    "formule": "consommation réseau de chaleur par m2 * surface moyenne",
+    "formule": "consommation réseau de chaleur par m2 * logement . surface",
     "unité": "kWh",
     "titre": "average district heating consumption",
     "titre.auto": "average heat network consumption"
   },
   "parc français . chauffage . consommation GPL moyenne": {
-    "formule": "consommation GPL par m2 * surface moyenne",
+    "formule": "consommation GPL par m2 * logement . surface",
     "unité": "kWh",
     "titre": "average LPG consumption",
     "titre.auto": "average LPG consumption"
-  },
-  "parc français . chauffage . consommation électricité moyenne relative": {
-    "formule": "consommation électricité moyenne * surface . part électricité",
-    "note": "electricity + heat pump",
-    "unité": "kWh",
-    "titre": "relative average electricity consumption",
-    "titre.auto": "relative average electricity consumption"
-  },
-  "parc français . chauffage . consommation gaz moyenne relative": {
-    "formule": "consommation gaz moyenne * surface . part gaz",
-    "unité": "kWh",
-    "titre": "relative average gas consumption",
-    "titre.auto": "relative average gas consumption"
-  },
-  "parc français . chauffage . consommation fioul moyenne relative": {
-    "formule": "consommation fioul moyenne * surface . part fioul",
-    "unité": "kWh",
-    "titre": "relative average fuel consumption",
-    "titre.auto": "relative average fuel consumption"
-  },
-  "parc français . chauffage . consommation bois moyenne relative": {
-    "formule": "consommation bois moyenne * surface . part bois",
-    "unité": "kWh",
-    "titre": "relative average wood consumption",
-    "titre.auto": "relative average wood consumption"
-  },
-  "parc français . chauffage . consommation réseau de chaleur moyenne relative": {
-    "formule": "consommation réseau de chaleur moyenne * surface . part réseau de chaleur",
-    "unité": "kWh",
-    "titre": "relative average district heating consumption",
-    "titre.auto": "relative average heat network consumption"
-  },
-  "parc français . chauffage . consommation GPL moyenne relative": {
-    "formule": "consommation GPL moyenne * surface . part GPL",
-    "unité": "kWh",
-    "titre": "relative average LPG consumption",
-    "titre.auto": "relative average LPG consumption"
-  },
-  "parc français . chauffage . consommation fioul moyenne relative en litres": {
-    "formule": "consommation fioul moyenne * surface . part fioul * logement . chauffage . fioul kWh au litre",
-    "unité": "l",
-    "titre": "average relative fuel consumption in liters",
-    "titre.auto": "average relative fuel consumption in liters"
-  },
-  "parc français . chauffage . consommation fioul moyenne en litres": {
-    "formule": "consommation fioul moyenne * logement . chauffage . fioul kWh au litre",
-    "unité": "l",
-    "titre": "average fuel consumption in liters",
-    "titre.auto": "average fuel consumption in liters"
   },
   "parc français . consommation électricité autre": {
     "formule": 79384041653,
@@ -10797,11 +10764,56 @@
     "titre": "other electricity consumption per m2",
     "titre.auto": "other electricity consumption per m2"
   },
-  "parc français . consommation électricité autre moyenne": {
-    "formule": "consommation électricité autre par m2 * surface moyenne",
-    "unité": "kWh",
-    "titre": "average other electricity consumption",
-    "titre.auto": "average other electricity consumption"
+  "parc français . empreinte électricité autre par m2": {
+    "formule": "consommation électricité autre par m2 * logement . électricité . intensité carbone",
+    "unité": "kgCO2e/m2",
+    "titre": "other electricity footprint per m2",
+    "titre.auto": "other electricity footprint per m2"
+  },
+  "parc français . chauffage . empreinte moyenne chauffage air par m2": {
+    "formule": {
+      "somme": [
+        "empreinte électricité par m2 * part chauffage air électricité",
+        "empreinte gaz par m2 * part chauffage air gaz",
+        "empreinte fioul par m2 * part chauffage air fioul",
+        "empreinte buches par m2 * part chauffage air bois / 2",
+        "empreinte granulés par m2 * part chauffage air bois / 2",
+        "empreinte réseau de chaleur par m2 * part chauffage air réseau de chaleur",
+        "empreinte GPL par m2 * part chauffage air GPL"
+      ]
+    },
+    "titre": "average air heating footprint per m2",
+    "titre.auto": "average air heating footprint per m2"
+  },
+  "parc français . chauffage . part chauffage air électricité": {
+    "formule": "consommation électricité . chauffage / (consommation électricité + consommation électricité autre)",
+    "titre": "share of air heating electricity",
+    "titre.auto": "share of air heating electricity"
+  },
+  "parc français . chauffage . part chauffage air gaz": {
+    "formule": "consommation gaz . chauffage / consommation gaz",
+    "titre": "air gas heating share",
+    "titre.auto": "air gas heating share"
+  },
+  "parc français . chauffage . part chauffage air bois": {
+    "formule": "consommation bois . chauffage / consommation bois",
+    "titre": "wood air heating share",
+    "titre.auto": "wood air heating share"
+  },
+  "parc français . chauffage . part chauffage air fioul": {
+    "formule": "consommation fioul . chauffage / consommation fioul",
+    "titre": "share of oil-fired air heating",
+    "titre.auto": "share of oil-fired air heating"
+  },
+  "parc français . chauffage . part chauffage air réseau de chaleur": {
+    "formule": "consommation réseau de chaleur . chauffage / consommation réseau de chaleur",
+    "titre": "share of air heating network",
+    "titre.auto": "share of air heating network"
+  },
+  "parc français . chauffage . part chauffage air GPL": {
+    "formule": "consommation GPL . chauffage / consommation GPL",
+    "titre": "proportion of LPG air heating",
+    "titre.auto": "proportion of LPG air heating"
   },
   "logement . climatisation": {
     "icônes": "❄️",
@@ -10927,7 +10939,14 @@
     "par défaut": {
       "variations": [
         {
-          "si": "appartement",
+          "si": {
+            "toutes ces conditions": [
+              {
+                "est défini": "logement . appartement"
+              },
+              "appartement"
+            ]
+          },
           "alors": 0.2
         },
         {
@@ -10972,7 +10991,14 @@
           "alors": 144
         },
         {
-          "si": "appartement",
+          "si": {
+            "toutes ces conditions": [
+              {
+                "est défini": "appartement"
+              },
+              "appartement"
+            ]
+          },
           "alors": 525
         },
         {
@@ -11011,7 +11037,7 @@
       "variations": [
         {
           "si": "logement . chauffage . choix utilisateur = non",
-          "alors": "parc français . consommation électricité totale relative"
+          "alors": "surface * (parc français . consommation électricité autre par m2 + parc français . surface . part électricité * parc français . chauffage . consommation électricité par m2)"
         },
         {
           "si": {
@@ -11025,10 +11051,10 @@
               }
             ]
           },
-          "alors": "parc français . consommation électricité autre moyenne + surface * parc français . chauffage . consommation électricité par m2"
+          "alors": "surface * (parc français . consommation électricité autre par m2 + parc français . chauffage . consommation électricité par m2)"
         },
         {
-          "sinon": "parc français . consommation électricité autre moyenne"
+          "sinon": "surface * parc français . consommation électricité autre par m2"
         }
       ]
     },
@@ -11113,11 +11139,23 @@
     "par défaut": {
       "variations": [
         {
-          "si": "appartement",
-          "alors": "parc français . surface moyenne appartement"
+          "si": {
+            "est défini": "appartement"
+          },
+          "alors": {
+            "variations": [
+              {
+                "si": "appartement",
+                "alors": "parc français . surface moyenne appartement"
+              },
+              {
+                "sinon": "parc français . surface moyenne maison"
+              }
+            ]
+          }
         },
         {
-          "sinon": "parc français . surface moyenne maison"
+          "sinon": "parc français . surface moyenne"
         }
       ]
     },
@@ -11142,7 +11180,6 @@
   "logement . appartement": {
     "titre": "Flat",
     "question": "Is your home a flat?",
-    "par défaut": "non",
     "description": "As opposed to a single-family home.\n\nThe increase in apartment housing can make us forget that the house remains the majority dwelling for French households in 2018.\n\nThis information influences not only the construction footprint, but also the possibilities for insulation work, for example.\n\n> If you live in an unusual type of dwelling, such as a camper van / truck / barge, no problem: choose \"apartment\" and enter the m² of what constitutes your dwelling.\n",
     "note": "In 2018, single-family homes accounted for 56% of all housing units ( <a href=\"https://www.insee.fr/fr/statistiques/3676693?sommaire=3696937\">Source: INSEE</a>): the majority of both primary residences and secondary and occasional homes. After increasing between 1999 and 2008, its share is declining slightly, as the number of multi-family dwellings is increasing faster than that of single-family dwellings due to recent trends in new construction.\nIt should be noted that this is a proportion of dwellings; however, it can be expected (to be verified) that houses contain more people on average than apartments, which reinforces the choice of the default value.\n",
     "titre.auto": "Apartment"
@@ -11602,7 +11639,14 @@
     "titre.auto": "footprint"
   },
   "logement . piscine . présent": {
-    "non applicable si": "logement . appartement",
+    "non applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "logement . appartement"
+        },
+        "appartement"
+      ]
+    },
     "question": "Do you have a private in-ground swimming pool ?",
     "par défaut": "non",
     "description": "We're talking here about private **in-ground** pools, not above-ground pools, which have a much smaller carbon footprint. However, this option will be available soon!\n",
