@@ -31,7 +31,7 @@ export function getRouter(): Router<State, Context> {
   const sortedVersions: string[] = versions.sort((a, b) => {
     if (a === NIGHTLY_VERSION) return 1
     if (b === NIGHTLY_VERSION) return -1
-    return a.localeCompare(b)
+    return b.localeCompare(a)
   })
 
   sortedVersions.forEach(async (version) => {
@@ -55,8 +55,6 @@ function addVersionRoutes(
   version: string,
   versionName: string = version,
 ) {
-  console.log(`[INFO] - Adding routes for version ${versionName} (${version})`)
-
   if (!fs.existsSync(`data/${version}/supportedRegions.json`)) {
     console.warn(
       `[WARN] - No supportedRegions.json file found for version ${version}, skipping...`,
@@ -101,6 +99,13 @@ function addVersionRoutes(
       },
     )
   })
+
+  console.log(
+    `[INFO] - Added routes for version ${versionName}${
+      versionName !== version ? ` (${version})` : ""
+    }`,
+  )
+
   return versionName
 }
 
@@ -133,7 +138,6 @@ function addAPIRoutes(
         ctx.type = "application/json"
         ctx.body = rules[rule]
       })
-      console.log(`[INFO] - Routes added for ${route}`)
     },
   )
 }
