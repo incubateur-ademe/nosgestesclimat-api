@@ -26,68 +26,82 @@ export function getRouter(): Router<State, Context> {
   const router = getEmptyRouter(versions)
   const availableVersions: string[] = []
 
-  versions
-    .sort((a, b) => {
-      if (a === NIGHTLY_VERSION) return 1
-      if (b === NIGHTLY_VERSION) return -1
-      return a.localeCompare(b)
-    })
-    .forEach(async (version, i) => {
-      const versionName = i === 0 ? LATEST_VERSION : version
-      console.log(
-        `[INFO] - Adding routes for version ${versionName} (${version})`,
-      )
+  // Sort versions by name, to get the latest version first
+  // and the nightly version last
+  const sortedVersions: string[] = versions.sort((a, b) => {
+    if (a === NIGHTLY_VERSION) return 1
+    if (b === NIGHTLY_VERSION) return -1
+    return a.localeCompare(b)
+  })
 
-      if (!fs.existsSync(`data/${version}/supportedRegions.json`)) {
-        console.warn(
-          `[WARN] - No supportedRegions.json file found for version ${version}, skipping...`,
-        )
-        return
-      }
+  sortedVersions.forEach(async (version) => {
+    const addedVersion = addVersionRoutes(router, version)
+    if (addedVersion) {
+      availableVersions.push(addedVersion)
+    }
+  })
 
-      const supportedRegions: SupportedRegions = JSON.parse(
-        fs.readFileSync(`data/${version}/supportedRegions.json`, "utf-8"),
-      )
-      const supportedRegionsValues = Object.values(supportedRegions)
-      if (supportedRegionsValues.length === 0) {
-        console.warn(
-          `[WARN] - No supported regions for the version ${version}, skipping...`,
-        )
-        return
-      }
-
-      const supportedLanguages = Object.keys(Object.values(supportedRegions)[0])
-      router.get(`/${versionName}`, (ctx) => {
-        ctx.type = "application/json"
-        ctx.body = {
-          version,
-          languages: supportedLanguages,
-          regions: supportedRegions,
-        }
-      })
-
-      supportedLanguages.map((lang) => {
-        fs.readFile(`data/${version}/personas-${lang}.json`, (err, data) => {
-          if (err) throw err
-
-          router.get(`/${versionName}/${lang}/personas`, (ctx) => {
-            ctx.type = "application/json"
-            ctx.body = JSON.parse(data.toString("utf-8"))
-          })
-        })
-        ;(Object.keys(supportedRegions) as RegionCode[]).map(
-          (region: RegionCode) => {
-            addAPIRoutes(lang, region, version, versionName, router)
-            addAPIRoutes(lang, region, version, versionName, router, true)
-          },
-        )
-      })
-      availableVersions.push(versionName)
-    })
+  const latestVersion = sortedVersions[0]
+  addVersionRoutes(router, latestVersion, LATEST_VERSION)
+  availableVersions.push(LATEST_VERSION)
 
   router.get("/versions", (ctx) => (ctx.body = availableVersions))
 
   return router
+}
+
+function addVersionRoutes(
+  router: Router<State, Context>,
+  version: string,
+  versionName: string = version,
+) {
+  console.log(`[INFO] - Adding routes for version ${versionName} (${version})`)
+
+  if (!fs.existsSync(`data/${version}/supportedRegions.json`)) {
+    console.warn(
+      `[WARN] - No supportedRegions.json file found for version ${version}, skipping...`,
+    )
+    return
+  }
+
+  const supportedRegions: SupportedRegions = JSON.parse(
+    fs.readFileSync(`data/${version}/supportedRegions.json`, "utf-8"),
+  )
+  const supportedRegionsValues = Object.values(supportedRegions)
+  if (supportedRegionsValues.length === 0) {
+    console.warn(
+      `[WARN] - No supported regions for the version ${version}, skipping...`,
+    )
+    return
+  }
+
+  const supportedLanguages = Object.keys(Object.values(supportedRegions)[0])
+  router.get(`/${versionName}`, (ctx) => {
+    ctx.type = "application/json"
+    ctx.body = {
+      version,
+      languages: supportedLanguages,
+      regions: supportedRegions,
+    }
+  })
+
+  supportedLanguages.map((lang) => {
+    fs.readFile(`data/${version}/personas-${lang}.json`, (err, data) => {
+      if (err) throw err
+
+      router.get(`/${versionName}/${lang}/personas`, (ctx) => {
+        ctx.type = "application/json"
+        ctx.body = JSON.parse(data.toString("utf-8"))
+      })
+    })
+    ;(Object.keys(supportedRegions) as RegionCode[]).map(
+      (region: RegionCode) => {
+        addAPIRoutes(lang, region, version, versionName, router)
+        addAPIRoutes(lang, region, version, versionName, router, true)
+      },
+    )
+  })
+  return versionName
 }
 
 // TODO: validate inputs

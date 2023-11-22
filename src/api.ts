@@ -5,9 +5,7 @@ import { getRouter } from "./getRouter"
 
 const app = new Koa<State, Context>()
 
-const origin = "*"
-
-app.use(cors({ origin }))
+app.use(cors({ origin: "*" }))
 
 const router = getRouter()
 app.use(router.routes())
@@ -20,5 +18,5 @@ app.on("error", (err, ctx) => {
 const port = process.env.PORT || 3000
 
 app.listen(port, function () {
-  console.log(`listening on: ${origin}:${port}`)
+  console.log(`listening on port: ${port}`)
 })
