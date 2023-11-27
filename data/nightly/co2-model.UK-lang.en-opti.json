@@ -8465,9 +8465,9 @@
         }
       }
     },
-    "question": "What do you use for your weekends away or your vacations?",
+    "question": "What do you own for your weekends and holidays (apart from your main vehicle)?",
     "icônes": "🏖",
-    "description": "Here you can select what you need for your vacations. For the moment, the choice is restricted to caravans and motorhomes.\n\n> Please note that their footprint is split in two: the use part is added to transport, while the construction part is integrated into housing.\n\n💡 If you don't own or rent a motorhome or caravan, you can click on \"none\" just below this question, then \"Next\". Rental is not yet available in our model**.\n",
+    "description": "Here you can select what you need for your holidays. The \"converted van\" category includes converted vans and lorries. \n\nIf you have already entered the kilometres travelled in a converted van previously, indicating \"light commercial vehicle\" as the main vehicle used for travel, then you can tick \"none\" here.\n\n💡 If you don't own a motorhome, caravan or converted van, or if you hire them out, you can click on \"none\" just below this question, then \"Next\". Rental is not yet available in our model**.\n",
     "formule": {
       "somme": [
         "caravane",
@@ -8646,15 +8646,90 @@
     "titre": "Van",
     "icônes": "🚐",
     "applicable si": "propriétaire",
-    "formule": 0,
+    "formule": "usage réel + construction amortie",
     "titre.auto": "Van"
   },
   "transport . vacances . van . propriétaire": {
     "question": "Do you own a van?",
     "par défaut": "non",
-    "inactif": "oui",
     "titre": "owner",
     "titre.auto": "owner"
+  },
+  "transport . vacances . van . usage réel": {
+    "titre": "Van use",
+    "formule": "usage / logement . habitants",
+    "unité": "kgCO2e",
+    "titre.auto": "Van use"
+  },
+  "transport . vacances . van . usage": {
+    "formule": "van . km * empreinte au kilomètre",
+    "unité": "kgCO2e",
+    "titre": "use",
+    "titre.auto": "use"
+  },
+  "transport . vacances . van . km": {
+    "titre": "km by van",
+    "applicable si": "propriétaire",
+    "question": "How far do you travel by van each year?",
+    "description": "Please note that these van kilometres should not be entered in the car kilometers (a question you have probably already answered), as they are two different questions.\n",
+    "par défaut": 9310,
+    "unité": "km",
+    "note": "According to the French federation of campers, caravanners and motor-home owners, a \"vanlifer\" travels an average of 9,310 km a year ( <a href=\"https://ffcc.fr/actualite/qui-sont-les-camping-caristes-et-les-vanlifers-en-2021/\">source</a>)",
+    "titre.auto": "km by van"
+  },
+  "transport . vacances . van . empreinte au kilomètre": {
+    "titre": "footprint per km motorhome",
+    "formule": "consommation au kilomètre * empreinte au litre",
+    "unité": "kgCO2e/km",
+    "titre.auto": "footprint per km motorhome"
+  },
+  "transport . vacances . van . consommation au kilomètre": {
+    "formule": "consommation aux 100 / 100 km/centkm",
+    "unité": "l/km",
+    "titre": "consumption per kilometre",
+    "titre.auto": "consumption per kilometre"
+  },
+  "transport . vacances . van . consommation aux 100": {
+    "question": "Do you know the average fuel consumption of your van?",
+    "par défaut": 9,
+    "unité": "l/centkm",
+    "note": "The default fuel consumption is <a href=\"https://www.wikicampers.fr/blog/van-vs-fourgon-lequel-choisir/\">9 litres per 100 km</a>\n",
+    "titre": "consumption per 100",
+    "titre.auto": "consumption per 100"
+  },
+  "transport . vacances . van . empreinte au litre": {
+    "formule": 2.7,
+    "unité": "kgCO2e/l",
+    "note": "Source: <a href=\"https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element/categorie/405\">Base Carbone</a>\n",
+    "titre": "footprint per litre",
+    "titre.auto": "footprint per litre"
+  },
+  "transport . vacances . van . construction amortie": {
+    "titre": "Building footprint of the van",
+    "formule": "(construction / durée de vie) / logement . habitants",
+    "unité": "kgCO2e",
+    "titre.auto": "Building the van"
+  },
+  "transport . vacances . van . construction": {
+    "formule": "7600 * (van . poids / 1500)",
+    "unité": "kgCO2e",
+    "note": "The impact of manufacturing a caravan is extrapolated from a ratio based on weight and considering \"Saloon\" construction data (6300 kgCO2e and 1500 kg)\nSource Figure 6 and Table 1 <a href=\"https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf\">FNH-Carbone4</a>\nAssuming a weight of 3t for the van, the rolling limit (with a B driving licence) is 3.5t (which leaves 500 kg for the interior fittings).\n",
+    "titre": "construction",
+    "titre.auto": "construction",
+    "optimized": true
+  },
+  "transport . vacances . van . poids": {
+    "formule": 3000,
+    "unité": "kg",
+    "note": "The weight of a converted van varies between 2.6 and 3.5 tonnes (above 3.5 tonnes, the vehicle's maximum permissible weight changes to become a \"heavy goods vehicle\", requiring a different licence)",
+    "titre": "weight",
+    "titre.auto": "weight"
+  },
+  "transport . vacances . van . durée de vie": {
+    "formule": 25,
+    "note": "We consider the life of a converted van to be the same as that of a motorhome.",
+    "titre": "service life",
+    "titre.auto": "service life"
   },
   "transport . voiture": {
     "titre": "car",
