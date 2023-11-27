@@ -1735,6 +1735,7 @@
     "unité": "kgCO2e/semaine"
   },
   "alimentation . plats": {
+    "icônes": "🍽️",
     "résumé": "**6 repas** représentatifs de notre consommation\n",
     "mosaique": {
       "type": "nombre",
@@ -2205,6 +2206,7 @@
     "résumé": "Le coeur de Nos Gestes Climat, c'est **le bilan** d'empreinte climat personelle",
     "titre": "Votre bilan climat personnel",
     "exposé": "oui",
+    "icônes": "👤",
     "description": "Voici une estimation de votre empreinte climat à l'année. Elle évolue en fonction de vos réponses.\n\nC'est votre part des émissions de gaz à effet de serre, donc du réchauffement climatique.\n\nToute l'empreinte des entreprises y est intégrée. Par exemple, si vous roulez en 🚗 voiture sur 10 km, les émissions ne sont pas attribuées au pays qui a extrait du sol ce pétrole, ni à l'entreprise qui l'a raffiné et distribué en station essence, mais au consommateur final dans sa voiture.\n\nSi l'on fait la somme de cette empreinte pour chaque français et chaque autre 🌍 terrien, on obtient l'impact total des activités humaines sur le climat.\n\n*À noter : ce simulateur donne l'ordre de grandeur de votre empreinte et de celle des français : l'estimation n'est pas à prendre au dixième près.*\n\nMais qu'est-ce qu'elle signifie, cette dizaine de tonnes d'équivalent CO₂ ? Pourquoi c'est important ? **On vous dit tout sur l'empreinte climat** et comment situer cette empreinte (faible, élevée ?) [➡ dans cet article](https://datagir.ademe.fr/blog/budget-empreinte-carbone-c-est-quoi/).\n<RavijenChart/>\n",
     "formule": {
       "somme": [
@@ -4528,6 +4530,7 @@
     "unité": "kgCO2e"
   },
   "logement . chauffage . empreinte par défaut": {
+    "icônes": "🌡️",
     "résumé": "Un calcul statistique du **chauffage** résidentiel français moyen",
     "formule": "18.14619718355944 * logement . surface",
     "unité": "kgCO2e",

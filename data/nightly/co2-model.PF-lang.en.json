@@ -3787,6 +3787,7 @@
     "titre.auto": "Lunches and dinners per week"
   },
   "alimentation . plats": {
+    "icônes": "🍽️",
     "résumé": "**6 meals** representative of our consumption\n",
     "mosaique": {
       "type": "nombre",
@@ -4371,6 +4372,7 @@
     "résumé": "The heart of Nos Gestes Climat is **the personal climate footprint** assessment",
     "titre": "Your personal climate report",
     "exposé": "oui",
+    "icônes": "👤",
     "description": "Here is an estimate of your climate footprint for the year. It evolves according to your answers.\n\nIt is your share of greenhouse gas emissions, and therefore of global warming.\n\nAll the footprints of companies are included. For example, if you drive a car 🚗 10 km, the emissions are not attributed to the country that extracted this oil from the ground, nor to the company that refined it and distributed it in gas stations, but to the final consumer in his car.\n\nIf we add up this footprint for each French person and each other 🌍 earthling, we get the total impact of human activities on the climate.\n\n*Please note: this simulator gives the order of magnitude of your footprint and that of the French: the estimate is not to be taken to the nearest tenth.*\n\nBut what does it mean, this ten tons of CO₂ equivalent? Why is it important? **We tell you all about the climate footprint** and how to locate this footprint (low, high?) <a href=\"https://datagir.ademe.fr/blog/budget-empreinte-carbone-c-est-quoi/\">➡ in this article</a>.\n\n<RavijenChart/>\n",
     "formule": {
       "somme": [
@@ -9751,6 +9753,7 @@
     "titre.auto": "total footprint"
   },
   "logement . chauffage . empreinte par défaut": {
+    "icônes": "🌡️",
     "résumé": "A statistical calculation of the average French residential heating",
     "formule": "parc français . chauffage . empreinte moyenne par m2 hors électricité * logement . surface",
     "unité": "kgCO2e",
