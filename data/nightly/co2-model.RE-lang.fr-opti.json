@@ -2597,7 +2597,7 @@
     "formule": {
       "somme": [
         "alimentation",
-        "3.966386554621849",
+        "3.189075630252101",
         "1.6698"
       ]
     },
@@ -2668,7 +2668,7 @@
     "formule": {
       "somme": [
         "alimentation",
-        "3.966386554621849"
+        "3.189075630252101"
       ]
     },
     "optimized": true
@@ -2699,7 +2699,7 @@
     "formule": {
       "somme": [
         "alimentation",
-        "3.966386554621849"
+        "3.189075630252101"
       ]
     },
     "optimized": true
@@ -2730,7 +2730,7 @@
     "formule": {
       "somme": [
         "alimentation",
-        "3.966386554621849"
+        "3.189075630252101"
       ]
     },
     "optimized": true
@@ -2816,7 +2816,7 @@
     "abréviation": "autres prod.",
     "icônes": "📦",
     "description": "Ce sous-poste permet de capter l'empreinte des achats de produits neufs, liée aux dépenses et niveau de vie d'une personne, via une approche macro-économique.\nÀ l'image de la méthode utilisée pour les services sociétaux, on utilise [les résultats du travail du SDES](https://nosgestesclimat.fr/documentation/empreinte-SDES)\nafin de reconstituer l'empreinte carbone des achats non captés \"ailleurs\" dans le test pour un français moyen.\n\nMalgré des limites importantes (on en parle juste après), cette question est présente pour plusieurs raisons:\n  - Élargir le scope de consommations couvert par Nos Gestes Climat : on prend en compte ici les dépenses qui ne sont pas captées dans le reste du test\n  tel que **la décoration, les plantes, le jardinage, le matériel de cuisine, le linge de maison, les matériaux pour les loisirs créatifs, le bricolage.** Ces achats étant souvent utilisés sur le long terme et devraient donc être amortis selon le type de produit, mais dans cette approche\n  nous considérons que l'empreinte des achats est équivalente d'année en année et que l'amortissement n'est pas nécessaire.\n  - Permettre de regrouper en une question nos achats de produits neufs et éviter de mettre l'accent sur \"des petites postes\"\n  avec un nombre de questions qui deviendrait trop important: combien de vases ? Combien de livres ? Combien de tapis de bain ?\n  Combien de couverts ? etc.\n  - Sensibiliser sur les achats de produits neufs. Dans Nos Gestes Climat l'empreinte des produits d'occasion est attribuée à l'acheteur initial de l'objet.\n  Ainsi, l'empreinte d'un produit d'occasion est considérée comme nulle à l'heure actuelle (ce qui est bien précisé dans la question).\n\nAinsi, nous avons considéré dans cette question une [répartition](https://github.com/incubateur-ademe/nosgestesclimat/blob/master/scripts/services-societaux/input/r%C3%A9partition_autres_produits.yaml) des postes suivants dont le contenu carbone a été attribué parmi l'ensemble des branches / sous branches économiques :\n  - Horticulture (plantes, accessoires, livraison)\n  - Verrerie, vaisselle, ustensiles de cuisine\n  - Maroquinerie, accessoires (briquet, parapluie, lunettes de soleil…), équipements pour bébés\n  - Tapis et autres revêtements, pose et réparation\n  - Outillage pour la maison et le jardin\n  - Services de réparation d'ordinateurs et de biens personnels et domestiques\n  - Produits destinés aux travaux courants d’entretien et de réparation du logement\n  - Autres produits manufacturés type jeux, jouets, article sport, instrument musique, joaillerie/horlogerie\n\n> Par exemple, le poste horticulture est constitué de la sous-branche \"Reproduction de plantes\" représentant, en chiffre d'affaires, 2% de la branche \n\"Produits de l'agriculture et de la chasse et services annexes par habitant\", de la sous-branche \"Commerce de gros de fleurs et plantes\" représentant \n0,2% de la branche \"Commerce de gros, à l'exclusion des automobiles et des motocycles par habitant\" et enfin de la sous-branche \"Commerce de détail de fleurs, \nplantes, graines, engrais, animaux de compagnie et aliments pour ces animaux en magasin spécialisé\" représentant 1,5% de la branche \"Commerce de détail, \nà l'exclusion des automobiles et des motocycles par habitant\"\n\nCependant, **l'empreinte captée dans cette question est à prendre avec des pincettes**.\n\nEn effet, l'approche macro-économique présente plusieurs limites exposées dans [notre guide technique sur les services sociétaux](https://github.com/incubateur-ademe/nosgestesclimat/wiki/Guide-technique-services-sociétaux),\nnotamment du fait de la précision des données de départ. On retire également de ce calcul un chiffre unique, identique pour l'ensemble des citoyens. On propose tout de même dans cette question une modularisation de l'empreinte\nvia une question sur le nivy a plusieurs enjeux :\nNéanmoins, cette méthode de calcul est privilégiée ici en lieu et place de ratios monétaires qui possèdent une incertitude de 80%. \nCes facteurs d'émission de la base carbone ne sont pas à jour avec le niveau d'inflation connu aujourd'hui et ceux moyennés pour cette question\nsont très hétérogènes (on agrège à la fois le facteur associé à l'édition (livres), mais également celui associé au plastique\nou aux métaux). Pour finir sur le sujet, et c'est sans doute le plus gros frein à l'utilisation de ratios monétaires, l'intensité carbone\nd'un euro dépensé pour un achat n'est pas du tout représentative de l'empreinte réelle du produit. Par exemple, il n'est pas du tout évident \nqu'un livre qui coûte plus cher ait une plus grosse empreinte. De même, un ensemble de draps en lin pourrait très bien avoir une empreinte 5 fois \nplus faible qu'un ensemble en coton (la culture du lin demande très peu de ressources), et pourtant ce dernier est susceptible de coûter jusqu'à 10 fois plus cher.\n",
-    "formule": "facteur correctif * 129.58599603962483",
+    "formule": "facteur correctif * 128.61669402392369",
     "unité": "kgCO2e",
     "optimized": true
   },
@@ -3324,7 +3324,7 @@
   "divers . loisirs . culture . empreinte par défaut": {
     "description": "Un calcul statistique des pratiques culturelles pour un Français moyen.",
     "unité": "kgCO2e",
-    "valeur": "76.72255398402042",
+    "valeur": "82.26310763444036",
     "optimized": true
   },
   "divers . loisirs . culture . choix utilisateur": {
@@ -3365,7 +3365,7 @@
     "par défaut": "non"
   },
   "divers . loisirs . culture . concerts et spectacles . moyenne macro pondérée": {
-    "formule": "26.545110451025288 * fréquence pondérée",
+    "formule": "29.166453136993262 * fréquence pondérée",
     "unité": "kgCO2e",
     "optimized": true
   },
@@ -3401,7 +3401,7 @@
     "par défaut": "non"
   },
   "divers . loisirs . culture . musées et monuments . moyenne macro pondérée": {
-    "formule": "(0.9105274676634706 * fréquence approximée) / 0.69",
+    "formule": "(1.5904279122674436 * fréquence approximée) / 0.69",
     "optimized": true
   },
   "divers . loisirs . culture . musées et monuments . fréquence approximée": {
@@ -3456,7 +3456,7 @@
     "par défaut": "non"
   },
   "divers . loisirs . culture . édition . moyenne macro pondérée": {
-    "formule": "47.90924772729798 * fréquence pondérée",
+    "formule": "50.22209532078437 * fréquence pondérée",
     "optimized": true
   },
   "divers . loisirs . culture . édition . fréquence pondérée": {
@@ -3525,7 +3525,7 @@
     "par défaut": "non"
   },
   "divers . loisirs . culture . pratique de la musique . moyenne macro pondérée": {
-    "valeur": "3.6693738865775183",
+    "valeur": "3.4706250389061672",
     "optimized": true
   },
   "divers . loisirs . sports": {
@@ -3569,7 +3569,7 @@
     "titre": "Empreinte des loisirs sportifs",
     "formule": {
       "somme": [
-        "27.437738865574428",
+        "24.889603786069056",
         "empreinte club",
         "empreinte fitness",
         "empreinte montagne"
@@ -3579,7 +3579,7 @@
     "optimized": true
   },
   "divers . loisirs . sports . empreinte par défaut": {
-    "formule": "42.871466977460045",
+    "formule": "38.8900059157329",
     "note": "Nous prenons ici la répartition sur la population française de l'empreinte totale des activités liées au sport (63% de R93).\n([Voir le détail de cette branche](https://nosgestesclimat.fr/documentation/empreinte-branche/R93-par-hab))\n",
     "optimized": true
   },
@@ -3809,7 +3809,7 @@
   "divers . loisirs . sports . empreinte SDES sport par français": {
     "unité": "kgCO2e",
     "note": "63% correspond au chiffre d'affaire de la sous-branche 'Activités liées au sport' de la branche 'Services sportifs, récréatifs et de loisirs'.\n([Voir le détail de cette branche](https://nosgestesclimat.fr/documentation/empreinte-branche/R93-par-hab))\n",
-    "valeur": "42.871466977460045",
+    "valeur": "38.8900059157329",
     "optimized": true
   },
   "divers . numérique": {
@@ -4343,8 +4343,8 @@
     "avec": {
       "ratio horticulture": "2%"
     },
-    "description": "Produits de l'agriculture et de la chasse et services annexes par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Cultures non permanentes (67%)**\n\t- Culture de céréales (à l'exception du riz), de légumineuses et de graines oléagineuses (14%)\n\t- Culture de légumes, de melons, de racines et de tubercules (3%)\n\t- Culture du tabac (0%)\n\t- Culture de plantes à fibres (1%)\n\t- Autres cultures non permanentes (82%)\n- **Cultures permanentes (2%)**\n\t- Culture de la vigne (60%)\n\t- Culture de plantes à épices, aromatiques, médicinales et pharmaceutiques (40%)\n- **Reproduction de plantes (2%)**\n- **Production animale (27%)**\n\t- Élevage de vaches laitières (0%)\n\t- Élevage de chevaux et d'autres équidés (0%)\n\t- Élevage de porcins (2%)\n\t- Élevage de volailles (96%)\n\t- Élevage d'autres animaux (1%)\n- **Culture et élevage associés (0%)**\n- **Activités de soutien à l'agriculture et traitement primaire des récoltes (2%)**\n\t- Activités de soutien aux cultures (52%)\n\t- Activités de soutien à la production animale (46%)\n\t- Traitement primaire des récoltes (2%)",
-    "formule": "(35689 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Produits de l'agriculture et de la chasse et services annexes par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Cultures non permanentes (58%)**\n\t- Culture de céréales (à l'exception du riz), de légumineuses et de graines oléagineuses (16%)\n\t- Culture de légumes, de melons, de racines et de tubercules (2%)\n\t- Culture de plantes à fibres (1%)\n\t- Autres cultures non permanentes (81%)\n- **Cultures permanentes (4%)**\n\t- Culture de la vigne (76%)\n\t- Culture de plantes à boissons (0%)\n\t- Culture de plantes à épices, aromatiques, médicinales et pharmaceutiques (24%)\n\t- Autres cultures permanentes (0%)\n- **Reproduction de plantes (0%)**\n- **Production animale (34%)**\n\t- Élevage de vaches laitières (0%)\n\t- Élevage de porcins (1%)\n\t- Élevage de volailles (99%)\n\t- Élevage d'autres animaux (0%)\n- **Culture et élevage associés (0%)**\n- **Activités de soutien à l'agriculture et traitement primaire des récoltes (3%)**\n\t- Activités de soutien aux cultures (45%)\n\t- Activités de soutien à la production animale (32%)\n\t- Traitement primaire des récoltes (22%)",
+    "formule": "(34018 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Produits de l'agriculture et de la chasse et services annexes par habitant",
     "unité": "kgCO2e",
     "optimized": true
@@ -4354,8 +4354,8 @@
       "ratio maroquinerie": "73%",
       "ratio tapis": "6%"
     },
-    "description": "Industrie du cuir et de la chaussure par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Apprêt et tannage des cuirs ; préparation et teinture des fourrures ; fabrication d'articles de voyage, de maroquinerie et de sellerie (83%)**\n\t- Apprêt et tannage des cuirs ; préparation et teinture des fourrures (12%)\n\t- Fabrication d'articles de voyage, de maroquinerie et de sellerie (88%)\n- **Fabrication de chaussures (17%)**",
-    "formule": "(2072.52 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Industrie du cuir et de la chaussure par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Apprêt et tannage des cuirs ; préparation et teinture des fourrures ; fabrication d'articles de voyage, de maroquinerie et de sellerie (87%)**\n\t- Apprêt et tannage des cuirs ; préparation et teinture des fourrures (8%)\n\t- Fabrication d'articles de voyage, de maroquinerie et de sellerie (92%)\n- **Fabrication de chaussures (13%)**",
+    "formule": "(2153.4 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Industrie du cuir et de la chaussure par habitant",
     "unité": "kgCO2e",
     "optimized": true
@@ -4364,8 +4364,8 @@
     "avec": {
       "ratio produits petits travaux": "0.7%"
     },
-    "description": "Bois, articles en bois et en liège, à l'exclusion des meubles; articles de vannerie et de sparterie par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Sciage et rabotage du bois (31%)**\n- **Fabrication d'articles en bois, liège, vannerie et sparterie (69%)**\n\t- Fabrication de placage et de panneaux de bois (20%)\n\t- Fabrication de parquets assemblés (1%)\n\t- Fabrication de charpentes et d'autres menuiseries (38%)\n\t- Fabrication d'emballages en bois (30%)\n\t- Fabrication d'objets divers en bois ; fabrication d'objets en liège, vannerie et sparterie (10%)",
-    "formule": "(208 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Bois, articles en bois et en liège, à l'exclusion des meubles; articles de vannerie et de sparterie par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Sciage et rabotage du bois (32%)**\n- **Fabrication d'articles en bois, liège, vannerie et sparterie (68%)**\n\t- Fabrication de placage et de panneaux de bois (20%)\n\t- Fabrication de parquets assemblés (1%)\n\t- Fabrication de charpentes et d'autres menuiseries (40%)\n\t- Fabrication d'emballages en bois (29%)\n\t- Fabrication d'objets divers en bois ; fabrication d'objets en liège, vannerie et sparterie (10%)",
+    "formule": "(231 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Bois, articles en bois et en liège, à l'exclusion des meubles; articles de vannerie et de sparterie par habitant",
     "unité": "kgCO2e",
     "optimized": true
@@ -4374,8 +4374,8 @@
     "avec": {
       "ratio produits petits travaux": "0.2%"
     },
-    "description": "Papier et carton par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de pâte à papier, de papier et de carton (37%)**\n\t- Fabrication de pâte à papier (10%)\n\t- Fabrication de papier et de carton (90%)\n- **Fabrication d'articles en papier ou en carton (63%)**\n\t- Fabrication de papier et carton ondulés et d'emballages en papier ou en carton (60%)\n\t- Fabrication d'articles en papier à usage sanitaire ou domestique (18%)\n\t- Fabrication d'articles de papeterie (6%)\n\t- Fabrication de papiers peints (0%)\n\t- Fabrication d'autres articles en papier ou en carton (15%)",
-    "formule": "(1716 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Papier et carton par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de pâte à papier, de papier et de carton (32%)**\n\t- Fabrication de pâte à papier (10%)\n\t- Fabrication de papier et de carton (90%)\n- **Fabrication d'articles en papier ou en carton (68%)**\n\t- Fabrication de papier et carton ondulés et d'emballages en papier ou en carton (60%)\n\t- Fabrication d'articles en papier à usage sanitaire ou domestique (18%)\n\t- Fabrication d'articles de papeterie (6%)\n\t- Fabrication de papiers peints (0%)\n\t- Fabrication d'autres articles en papier ou en carton (15%)",
+    "formule": "(1867 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Papier et carton par habitant",
     "unité": "kgCO2e",
     "optimized": true
@@ -4384,8 +4384,8 @@
     "avec": {
       "ratio produits petits travaux": "6.1%"
     },
-    "description": "Produits chimiques par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de produits chimiques de base, de produits azotés et d'engrais, de matières plastiques de base et de caoutchouc synthétique (50%)**\n\t- Fabrication de gaz industriels (3%)\n\t- Fabrication de colorants et de pigments (2%)\n\t- Fabrication d'autres produits chimiques inorganiques de base (17%)\n\t- Fabrication d'autres produits chimiques organiques de base (41%)\n\t- Fabrication de produits azotés et d'engrais (5%)\n\t- Fabrication de matières plastiques de base (29%)\n\t- Fabrication de caoutchouc synthétique (3%)\n- **Fabrication de pesticides et d’autres produits agrochimiques (4%)**\n- **Fabrication de peintures, vernis, encres et mastics (5%)**\n- **Fabrication de savons, de produits d'entretien et de parfums (27%)**\n\t- Fabrication de savons, détergents et produits d'entretien (10%)\n\t- Fabrication de parfums et de produits pour la toilette (90%)\n- **Fabrication d'autres produits chimiques (14%)**\n\t- Fabrication de produits explosifs (7%)\n\t- Fabrication de colles (8%)\n\t- Fabrication d'huiles essentielles (19%)\n\t- Fabrication d'autres produits chimiques n.c.a. (66%)\n- **Fabrication de fibres artificielles ou synthétiques (0%)**",
-    "formule": "(6631 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Produits chimiques par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de produits chimiques de base, de produits azotés et d'engrais, de matières plastiques de base et de caoutchouc synthétique (48%)**\n\t- Fabrication de gaz industriels (S)\n\t- Fabrication de colorants et de pigments (2%)\n\t- Fabrication d'autres produits chimiques inorganiques de base (17%)\n\t- Fabrication d'autres produits chimiques organiques de base (39%)\n\t- Fabrication de produits azotés et d'engrais (6%)\n\t- Fabrication de matières plastiques de base (29%)\n\t- Fabrication de caoutchouc synthétique (S)\n- **Fabrication de pesticides et d’autres produits agrochimiques (4%)**\n- **Fabrication de peintures, vernis, encres et mastics (6%)**\n- **Fabrication de savons, de produits d'entretien et de parfums (28%)**\n\t- Fabrication de savons, détergents et produits d'entretien (9%)\n\t- Fabrication de parfums et de produits pour la toilette (91%)\n- **Fabrication d'autres produits chimiques (15%)**\n\t- Fabrication de produits explosifs (7%)\n\t- Fabrication de colles (8%)\n\t- Fabrication d'huiles essentielles (18%)\n\t- Fabrication d'autres produits chimiques n.c.a. (67%)\n- **Fabrication de fibres artificielles ou synthétiques (0%)**",
+    "formule": "(6655 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Produits chimiques par habitant",
     "unité": "kgCO2e",
     "optimized": true
@@ -4394,8 +4394,8 @@
     "avec": {
       "ratio vaisselle": "8.9%"
     },
-    "description": "Autres produits minéraux non métalliques par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de verre et d'articles en verre (27%)**\n\t- Fabrication de verre plat (8%)\n\t- Façonnage et transformation du verre plat (28%)\n\t- Fabrication de verre creux (44%)\n\t- Fabrication de fibres de verre (13%)\n\t- Fabrication et façonnage d'autres articles en verre, y compris verre technique (6%)\n- **Fabrication de produits réfractaires (2%)**\n- **Fabrication de matériaux de construction en terre cuite (4%)**\n\t- Fabrication de carreaux en céramique (17%)\n\t- Fabrication de briques, tuiles et produits de construction, en terre cuite (83%)\n- **Fabrication d'autres produits en céramique et en porcelaine (3%)**\n\t- Fabrication d'articles céramiques à usage domestique ou ornemental (42%)\n\t- Fabrication d'appareils sanitaires en céramique (17%)\n\t- Fabrication d'isolateurs et pièces isolantes en céramique (5%)\n\t- Fabrication d'autres produits céramiques à usage technique (32%)\n\t- Fabrication d'autres produits céramiques (4%)\n- **Fabrication de ciment, chaux et plâtre (12%)**\n\t- Fabrication de ciment (S)\n\t- Fabrication de chaux et plâtre (S)\n- **Fabrication d'ouvrages en béton, en ciment ou en plâtre (38%)**\n\t- Fabrication d'éléments en béton pour la construction (29%)\n\t- Fabrication d'éléments en plâtre pour la construction (8%)\n\t- Fabrication de béton prêt à l'emploi (53%)\n\t- Fabrication de mortiers et bétons secs (7%)\n\t- Fabrication d'ouvrages en fibre-ciment (0%)\n\t- Fabrication d'autres ouvrages en béton, en ciment ou en plâtre (3%)\n- **Taille, façonnage et finissage de pierres (3%)**\n- **Fabrication de produits abrasifs et de produits minéraux non métalliques n.c.a. (11%)**\n\t- Fabrication de produits abrasifs (7%)\n\t- Fabrication d'autres produits minéraux non métalliques n.c.a. (93%)",
-    "formule": "(3067 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Autres produits minéraux non métalliques par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de verre et d'articles en verre (27%)**\n\t- Fabrication de verre plat (7%)\n\t- Façonnage et transformation du verre plat (29%)\n\t- Fabrication de verre creux (46%)\n\t- Fabrication de fibres de verre (12%)\n\t- Fabrication et façonnage d'autres articles en verre, y compris verre technique (6%)\n- **Fabrication de produits réfractaires (2%)**\n- **Fabrication de matériaux de construction en terre cuite (5%)**\n\t- Fabrication de carreaux en céramique (14%)\n\t- Fabrication de briques, tuiles et produits de construction, en terre cuite (86%)\n- **Fabrication d'autres produits en céramique et en porcelaine (2%)**\n\t- Fabrication d'articles céramiques à usage domestique ou ornemental (41%)\n\t- Fabrication d'appareils sanitaires en céramique (S)\n\t- Fabrication d'isolateurs et pièces isolantes en céramique (5%)\n\t- Fabrication d'autres produits céramiques à usage technique (28%)\n\t- Fabrication d'autres produits céramiques (S)\n- **Fabrication de ciment, chaux et plâtre (11%)**\n\t- Fabrication de ciment (S)\n\t- Fabrication de chaux et plâtre (S)\n- **Fabrication d'ouvrages en béton, en ciment ou en plâtre (40%)**\n\t- Fabrication d'éléments en béton pour la construction (28%)\n\t- Fabrication d'éléments en plâtre pour la construction (8%)\n\t- Fabrication de béton prêt à l'emploi (51%)\n\t- Fabrication de mortiers et bétons secs (8%)\n\t- Fabrication d'ouvrages en fibre-ciment (1%)\n\t- Fabrication d'autres ouvrages en béton, en ciment ou en plâtre (3%)\n- **Taille, façonnage et finissage de pierres (3%)**\n- **Fabrication de produits abrasifs et de produits minéraux non métalliques n.c.a. (10%)**\n\t- Fabrication de produits abrasifs (8%)\n\t- Fabrication d'autres produits minéraux non métalliques n.c.a. (92%)",
+    "formule": "(3400 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Autres produits minéraux non métalliques par habitant",
     "unité": "kgCO2e",
     "optimized": true
@@ -4405,8 +4405,8 @@
       "ratio outillage jardin": "4.6%",
       "ratio vaisselle": "0.4%"
     },
-    "description": "Produits métalliques, à l'exclusion des machines et équipements par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication d'éléments en métal pour la construction (23%)**\n\t- Fabrication de structures métalliques et de parties de structures (69%)\n\t- Fabrication de portes et fenêtres en métal (31%)\n- **Fabrication de réservoirs, citernes et conteneurs métalliques (2%)**\n\t- Fabrication de radiateurs et de chaudières pour le chauffage central (100%)\n\t- Fabrication d'autres réservoirs, citernes et conteneurs métalliques (S)\n- **Fabrication de générateurs de vapeur, à l'exception des chaudières pour le chauffage central (1%)**\n- **Fabrication d'armes et de munitions (S)**\n- **Forge, emboutissage, estampage ; métallurgie des poudres (16%)**\n- **Traitement et revêtement des métaux ; usinage (28%)**\n\t- Traitement et revêtement des métaux (23%)\n\t- Usinage (77%)\n- **Fabrication de coutellerie, d'outillage et de quincaillerie (7%)**\n\t- Fabrication de coutellerie (6%)\n\t- Fabrication de serrures et de ferrures (29%)\n\t- Fabrication d'outillage (65%)\n- **Fabrication d'autres ouvrages en métaux (18%)**\n\t- Fabrication de fûts et emballages métalliques similaires (2%)\n\t- Fabrication d'emballages métalliques légers (19%)\n\t- Fabrication d'articles en fils métalliques, de chaînes et de ressorts (24%)\n\t- Fabrication de vis et de boulons (16%)\n\t- Fabrication d'autres produits métalliques n.c.a. (39%)",
-    "formule": "(3627 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Produits métalliques, à l'exclusion des machines et équipements par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication d'éléments en métal pour la construction (16%)**\n\t- Fabrication de structures métalliques et de parties de structures (100%)\n\t- Fabrication de portes et fenêtres en métal (S)\n- **Fabrication de réservoirs, citernes et conteneurs métalliques (1%)**\n\t- Fabrication de radiateurs et de chaudières pour le chauffage central (S)\n\t- Fabrication d'autres réservoirs, citernes et conteneurs métalliques (100%)\n- **Fabrication de générateurs de vapeur, à l'exception des chaudières pour le chauffage central (0%)**\n- **Fabrication d'armes et de munitions (S)**\n- **Forge, emboutissage, estampage ; métallurgie des poudres (15%)**\n- **Traitement et revêtement des métaux ; usinage (27%)**\n\t- Traitement et revêtement des métaux (24%)\n\t- Usinage (76%)\n- **Fabrication de coutellerie, d'outillage et de quincaillerie (7%)**\n\t- Fabrication de coutellerie (6%)\n\t- Fabrication de serrures et de ferrures (31%)\n\t- Fabrication d'outillage (63%)\n- **Fabrication d'autres ouvrages en métaux (17%)**\n\t- Fabrication de fûts et emballages métalliques similaires (2%)\n\t- Fabrication d'emballages métalliques légers (21%)\n\t- Fabrication d'articles en fils métalliques, de chaînes et de ressorts (23%)\n\t- Fabrication de vis et de boulons (14%)\n\t- Fabrication d'autres produits métalliques n.c.a. (40%)",
+    "formule": "(3598 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Produits métalliques, à l'exclusion des machines et équipements par habitant",
     "unité": "kgCO2e",
     "optimized": true
@@ -4415,8 +4415,8 @@
     "avec": {
       "ratio autres produits manufacturés": "1%"
     },
-    "description": "Produits informatiques, électroniques et optiques par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de composants et cartes électroniques (31%)**\n\t- Fabrication de composants électroniques (61%)\n\t- Fabrication de cartes électroniques assemblées (39%)\n- **Fabrication d'ordinateurs et d'équipements périphériques (5%)**\n- **Fabrication d'équipements de communication (15%)**\n- **Fabrication de produits électroniques grand public (1%)**\n- **Fabrication d'instruments et d'appareils de mesure, d'essai et de navigation ; horlogerie (38%)**\n\t- Fabrication d'instruments et d'appareils de mesure, d'essai et de navigation (97%)\n\t- Horlogerie (3%)\n- **Fabrication d'équipements d'irradiation médicale, d'équipements électromédicaux et électrothérapeutiques (6%)**\n- **Fabrication de matériels optique et photographique (4%)**\n- **Fabrication de supports magnétiques et optiques (0%)**",
-    "formule": "(5509 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Produits informatiques, électroniques et optiques par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de composants et cartes électroniques (33%)**\n\t- Fabrication de composants électroniques (63%)\n\t- Fabrication de cartes électroniques assemblées (37%)\n- **Fabrication d'ordinateurs et d'équipements périphériques (4%)**\n- **Fabrication d'équipements de communication (21%)**\n- **Fabrication de produits électroniques grand public (1%)**\n- **Fabrication d'instruments et d'appareils de mesure, d'essai et de navigation ; horlogerie (34%)**\n\t- Fabrication d'instruments et d'appareils de mesure, d'essai et de navigation (96%)\n\t- Horlogerie (4%)\n- **Fabrication d'équipements d'irradiation médicale, d'équipements électromédicaux et électrothérapeutiques (4%)**\n- **Fabrication de matériels optique et photographique (3%)**\n- **Fabrication de supports magnétiques et optiques (0%)**",
+    "formule": "(4987 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Produits informatiques, électroniques et optiques par habitant",
     "unité": "kgCO2e",
     "optimized": true
@@ -4425,8 +4425,8 @@
     "avec": {
       "ratio outillage jardin": "0.4%"
     },
-    "description": "Machines et équipements n.c.a. par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de machines d'usage général (31%)**\n\t- Fabrication de moteurs et turbines, à l'exception des moteurs d’avions et de véhicules (26%)\n\t- Fabrication d'équipements hydrauliques et pneumatiques (13%)\n\t- Fabrication d'autres pompes et compresseurs (25%)\n\t- Fabrication d'autres articles de robinetterie (17%)\n\t- Fabrication d'engrenages et d'organes mécaniques de transmission (19%)\n- **Fabrication d'autres machines d'usage général (37%)**\n\t- Fabrication de fours et brûleurs (4%)\n\t- Fabrication de matériel de levage et de manutention (36%)\n\t- Fabrication de machines et d'équipements de bureau (à l'exception des ordinateurs et équipements périphériques) (2%)\n\t- Fabrication d'outillage portatif à moteur incorporé (1%)\n\t- Fabrication d'équipements aérauliques et frigorifiques industriels (28%)\n\t- Fabrication de machines diverses d'usage général (30%)\n- **Fabrication de machines agricoles et forestières (11%)**\n- **Fabrication de machines de formage des métaux et de machines-outils (3%)**\n\t- Fabrication de machines de formage des métaux (81%)\n\t- Fabrication d'autres machines-outils (19%)\n- **Fabrication d'autres machines d'usage spécifique (18%)**\n\t- Fabrication de machines pour la métallurgie (1%)\n\t- Fabrication de machines pour l'extraction ou la construction (23%)\n\t- Fabrication de machines pour l'industrie agro-alimentaire (23%)\n\t- Fabrication de machines pour les industries textiles (10%)\n\t- Fabrication de machines pour les industries du papier et du carton (7%)\n\t- Fabrication de machines pour le travail du caoutchouc ou des plastiques (8%)\n\t- Fabrication d'autres machines d'usage spécifique n.c.a. (28%)",
-    "formule": "(4537 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Machines et équipements n.c.a. par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de machines d'usage général (29%)**\n\t- Fabrication de moteurs et turbines, à l'exception des moteurs d’avions et de véhicules (24%)\n\t- Fabrication d'équipements hydrauliques et pneumatiques (13%)\n\t- Fabrication d'autres pompes et compresseurs (26%)\n\t- Fabrication d'autres articles de robinetterie (16%)\n\t- Fabrication d'engrenages et d'organes mécaniques de transmission (20%)\n- **Fabrication d'autres machines d'usage général (38%)**\n\t- Fabrication de fours et brûleurs (5%)\n\t- Fabrication de matériel de levage et de manutention (37%)\n\t- Fabrication de machines et d'équipements de bureau (à l'exception des ordinateurs et équipements périphériques) (2%)\n\t- Fabrication d'outillage portatif à moteur incorporé (1%)\n\t- Fabrication d'équipements aérauliques et frigorifiques industriels (28%)\n\t- Fabrication de machines diverses d'usage général (28%)\n- **Fabrication de machines agricoles et forestières (11%)**\n- **Fabrication de machines de formage des métaux et de machines-outils (3%)**\n\t- Fabrication de machines de formage des métaux (81%)\n\t- Fabrication d'autres machines-outils (19%)\n- **Fabrication d'autres machines d'usage spécifique (19%)**\n\t- Fabrication de machines pour la métallurgie (2%)\n\t- Fabrication de machines pour l'extraction ou la construction (24%)\n\t- Fabrication de machines pour l'industrie agro-alimentaire (22%)\n\t- Fabrication de machines pour les industries textiles (10%)\n\t- Fabrication de machines pour les industries du papier et du carton (6%)\n\t- Fabrication de machines pour le travail du caoutchouc ou des plastiques (9%)\n\t- Fabrication d'autres machines d'usage spécifique n.c.a. (27%)",
+    "formule": "(4804 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Machines et équipements n.c.a. par habitant",
     "unité": "kgCO2e",
     "optimized": true
@@ -4436,8 +4436,8 @@
       "ratio autres produits manufacturés": "38%",
       "ratio produits petits travaux": "1.2%"
     },
-    "description": "Autres industries manufacturières par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication d’articles de joaillerie, bijouterie et articles similaires (15%)**\n\t- Frappe de monnaie (S)\n\t- Fabrication d’articles de joaillerie et bijouterie (S)\n\t- Fabrication d’articles de bijouterie fantaisie et articles similaires (20%)\n- **Fabrication d'instruments de musique (2%)**\n- **Fabrication d'articles de sport (7%)**\n- **Fabrication de jeux et jouets (3%)**\n- **Fabrication d'instruments et de fournitures à usage médical et dentaire (60%)**\n- **Activités manufacturières n.c.a. (13%)**\n\t- Fabrication d’articles de brosserie (9%)\n\t- Autres activités manufacturières n.c.a. (91%)",
-    "formule": "(4532.88 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Autres industries manufacturières par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication d’articles de joaillerie, bijouterie et articles similaires (17%)**\n\t- Frappe de monnaie (S)\n\t- Fabrication d’articles de joaillerie et bijouterie (S)\n\t- Fabrication d’articles de bijouterie fantaisie et articles similaires (20%)\n- **Fabrication d'instruments de musique (2%)**\n- **Fabrication d'articles de sport (6%)**\n- **Fabrication de jeux et jouets (3%)**\n- **Fabrication d'instruments et de fournitures à usage médical et dentaire (59%)**\n- **Activités manufacturières n.c.a. (12%)**\n\t- Fabrication d’articles de brosserie (8%)\n\t- Autres activités manufacturières n.c.a. (92%)",
+    "formule": "(4287.36 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Autres industries manufacturières par habitant",
     "unité": "kgCO2e",
     "optimized": true
@@ -4452,8 +4452,8 @@
       "ratio tapis": "0.4%",
       "ratio vaisselle": "0.7%"
     },
-    "description": "Commerce de gros, à l'exclusion des automobiles et des motocycles par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Intermédiaires du commerce de gros (17%)**\n\t- Intermédiaires du commerce en matières premières agricoles, animaux vivants, matières premières textiles et produits semi-finis (1%)\n\t- Intermédiaires du commerce en combustibles, métaux, minéraux et produits chimiques (23%)\n\t- Intermédiaires du commerce en bois et matériaux de construction (0%)\n\t- Intermédiaires du commerce en machines, équipements industriels, navires et avions (3%)\n\t- Intermédiaires du commerce en meubles, articles de ménage et quincaillerie (1%)\n\t- Intermédiaires du commerce en textiles, habillement, fourrures, chaussures et articles en cuir (0%)\n\t- Intermédiaires du commerce en denrées, boissons et tabac (46%)\n\t- Intermédiaires spécialisés dans le commerce d'autres produits spécifiques (4%)\n\t- Intermédiaires du commerce en produits divers (21%)\n- **Commerce de gros de produits agricoles bruts et d'animaux vivants (6%)**\n\t- Commerce de gros de céréales, de tabac non manufacturé, de semences et d'aliments pour le bétail (68%)\n\t- Commerce de gros de fleurs et plantes (3%)\n\t- Commerce de gros d'animaux vivants (28%)\n\t- Commerce de gros de cuirs et peaux (1%)\n- **Commerce de gros de produits alimentaires, de boissons et de tabac (16%)**\n\t- Commerce de gros de fruits et légumes (16%)\n\t- Commerce de gros de viandes et de produits à base de viande (7%)\n\t- Commerce de gros de produits laitiers, œufs, huiles et matières grasses comestibles (10%)\n\t- Commerce de gros de boissons (18%)\n\t- Commerce de gros de produits à base de tabac (2%)\n\t- Commerce de gros de sucre, chocolat et confiserie (8%)\n\t- Commerce de gros de café, thé, cacao et épices (5%)\n\t- Commerce de gros d'autres produits alimentaires, y compris poissons, crustacés et mollusques (14%)\n\t- Commerce de gros non spécialisé de denrées, boissons et tabac (21%)\n- **Commerce de gros de biens domestiques (19%)**\n\t- Commerce de gros de textiles (2%)\n\t- Commerce de gros d'habillement et de chaussures (12%)\n\t- Commerce de gros d'appareils électroménagers (8%)\n\t- Commerce de gros de vaisselle, verrerie et produits d'entretien (4%)\n\t- Commerce de gros de parfumerie et de produits de beauté (7%)\n\t- Commerce de gros de produits pharmaceutiques (45%)\n\t- Commerce de gros de meubles, de tapis et d'appareils d'éclairage (2%)\n\t- Commerce de gros d'articles d'horlogerie et de bijouterie (2%)\n\t- Commerce de gros d'autres biens domestiques (19%)\n- **Commerce de gros d'équipements de l'information et de la communication (7%)**\n\t- Commerce de gros d'ordinateurs, d'équipements informatiques périphériques et de logiciels (57%)\n\t- Commerce de gros de composants et d'équipements électroniques et de télécommunication (43%)\n- **Commerce de gros d'autres équipements industriels (14%)**\n\t- Commerce de gros de matériel agricole (14%)\n\t- Commerce de gros de machines-outils (2%)\n\t- Commerce de gros de machines pour l'extraction, la construction et le génie civil (6%)\n\t- Commerce de gros de machines pour l'industrie textile et l'habillement (0%)\n\t- Commerce de gros de mobilier de bureau (1%)\n\t- Commerce de gros d'autres machines et équipements de bureau (3%)\n\t- Commerce de gros d'autres machines et équipements (73%)\n- **Autres commerces de gros spécialisés (19%)**\n\t- Commerce de gros de combustibles et de produits annexes (35%)\n\t- Commerce de gros de minerais et métaux (7%)\n\t- Commerce de gros de bois, de matériaux de construction et d'appareils sanitaires (22%)\n\t- Commerce de gros de quincaillerie et fournitures pour plomberie et chauffage (10%)\n\t- Commerce de gros de produits chimiques (17%)\n\t- Commerce de gros d'autres produits intermédiaires (7%)\n\t- Commerce de gros de déchets et débris (2%)\n- **Commerce de gros non spécialisé (2%)**",
-    "formule": "(7698 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Commerce de gros, à l'exclusion des automobiles et des motocycles par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Intermédiaires du commerce de gros (17%)**\n\t- Intermédiaires du commerce en matières premières agricoles, animaux vivants, matières premières textiles et produits semi-finis (1%)\n\t- Intermédiaires du commerce en combustibles, métaux, minéraux et produits chimiques (25%)\n\t- Intermédiaires du commerce en bois et matériaux de construction (0%)\n\t- Intermédiaires du commerce en machines, équipements industriels, navires et avions (2%)\n\t- Intermédiaires du commerce en meubles, articles de ménage et quincaillerie (1%)\n\t- Intermédiaires du commerce en textiles, habillement, fourrures, chaussures et articles en cuir (0%)\n\t- Intermédiaires du commerce en denrées, boissons et tabac (44%)\n\t- Intermédiaires spécialisés dans le commerce d'autres produits spécifiques (5%)\n\t- Intermédiaires du commerce en produits divers (21%)\n- **Commerce de gros de produits agricoles bruts et d'animaux vivants (6%)**\n\t- Commerce de gros de céréales, de tabac non manufacturé, de semences et d'aliments pour le bétail (68%)\n\t- Commerce de gros de fleurs et plantes (3%)\n\t- Commerce de gros d'animaux vivants (28%)\n\t- Commerce de gros de cuirs et peaux (1%)\n- **Commerce de gros de produits alimentaires, de boissons et de tabac (16%)**\n\t- Commerce de gros de fruits et légumes (15%)\n\t- Commerce de gros de viandes et de produits à base de viande (6%)\n\t- Commerce de gros de produits laitiers, œufs, huiles et matières grasses comestibles (9%)\n\t- Commerce de gros de boissons (18%)\n\t- Commerce de gros de produits à base de tabac (2%)\n\t- Commerce de gros de sucre, chocolat et confiserie (7%)\n\t- Commerce de gros de café, thé, cacao et épices (6%)\n\t- Commerce de gros d'autres produits alimentaires, y compris poissons, crustacés et mollusques (14%)\n\t- Commerce de gros non spécialisé de denrées, boissons et tabac (23%)\n- **Commerce de gros de biens domestiques (18%)**\n\t- Commerce de gros de textiles (2%)\n\t- Commerce de gros d'habillement et de chaussures (12%)\n\t- Commerce de gros d'appareils électroménagers (9%)\n\t- Commerce de gros de vaisselle, verrerie et produits d'entretien (3%)\n\t- Commerce de gros de parfumerie et de produits de beauté (6%)\n\t- Commerce de gros de produits pharmaceutiques (46%)\n\t- Commerce de gros de meubles, de tapis et d'appareils d'éclairage (2%)\n\t- Commerce de gros d'articles d'horlogerie et de bijouterie (2%)\n\t- Commerce de gros d'autres biens domestiques (18%)\n- **Commerce de gros d'équipements de l'information et de la communication (7%)**\n\t- Commerce de gros d'ordinateurs, d'équipements informatiques périphériques et de logiciels (60%)\n\t- Commerce de gros de composants et d'équipements électroniques et de télécommunication (40%)\n- **Commerce de gros d'autres équipements industriels (14%)**\n\t- Commerce de gros de matériel agricole (15%)\n\t- Commerce de gros de machines-outils (2%)\n\t- Commerce de gros de machines pour l'extraction, la construction et le génie civil (6%)\n\t- Commerce de gros de machines pour l'industrie textile et l'habillement (0%)\n\t- Commerce de gros de mobilier de bureau (1%)\n\t- Commerce de gros d'autres machines et équipements de bureau (3%)\n\t- Commerce de gros d'autres machines et équipements (73%)\n- **Autres commerces de gros spécialisés (19%)**\n\t- Commerce de gros de combustibles et de produits annexes (36%)\n\t- Commerce de gros de minerais et métaux (8%)\n\t- Commerce de gros de bois, de matériaux de construction et d'appareils sanitaires (22%)\n\t- Commerce de gros de quincaillerie et fournitures pour plomberie et chauffage (9%)\n\t- Commerce de gros de produits chimiques (17%)\n\t- Commerce de gros d'autres produits intermédiaires (7%)\n\t- Commerce de gros de déchets et débris (1%)\n- **Commerce de gros non spécialisé (2%)**",
+    "formule": "(7112 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Commerce de gros, à l'exclusion des automobiles et des motocycles par habitant",
     "unité": "kgCO2e",
     "optimized": true
@@ -4466,8 +4466,8 @@
       "ratio produits petits travaux": "4.4%",
       "ratio tapis": "0.2%"
     },
-    "description": "Commerce de détail, à l'exclusion des automobiles et des motocycles par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Commerce de détail en magasin non spécialisé (40%)**\n\t- Commerce de détail en magasin non spécialisé à prédominance alimentaire (91%)\n\t- Autre commerce de détail en magasin non spécialisé (9%)\n- **Commerce de détail alimentaire en magasin spécialisé (4%)**\n\t- Commerce de détail de fruits et légumes en magasin spécialisé (11%)\n\t- Commerce de détail de viandes et de produits à base de viande en magasin spécialisé (27%)\n\t- Commerce de détail de poissons, crustacés et mollusques en magasin spécialisé (4%)\n\t- Commerce de détail de pain, pâtisserie et confiserie en magasin spécialisé (7%)\n\t- Commerce de détail de boissons en magasin spécialisé (17%)\n\t- Commerce de détail de produits à base de tabac en magasin spécialisé (7%)\n\t- Autres commerces de détail alimentaires en magasin spécialisé (27%)\n- **Commerce de détail de carburants en magasin spécialisé (8%)**\n- **Commerce de détail d'équipements de l'information et de la communication en magasin spécialisé (1%)**\n\t- Commerce de détail d'ordinateurs, d'unités périphériques et de logiciels en magasin spécialisé (44%)\n\t- Commerce de détail de matériels de télécommunication en magasin spécialisé (48%)\n\t- Commerce de détail de matériels audio/vidéo en magasin spécialisé (8%)\n- **Commerce de détail d'autres équipements du foyer en magasin spécialisé (10%)**\n\t- Commerce de détail de textiles en magasin spécialisé (2%)\n\t- Commerce de détail de quincaillerie, peintures et verres en magasin spécialisé (44%)\n\t- Commerce de détail de tapis, moquettes et revêtements de murs et de sols en magasin spécialisé (2%)\n\t- Commerce de détail d'appareils électroménagers en magasin spécialisé (18%)\n\t- Commerce de détail de meubles, appareils d'éclairage et autres articles de ménage en magasin spécialisé (34%)\n- **Commerce de détail de biens culturels et de loisirs en magasin spécialisé (4%)**\n\t- Commerce de détail de livres en magasin spécialisé (25%)\n\t- Commerce de détail de journaux et papeterie en magasin spécialisé (12%)\n\t- Commerce de détail d'enregistrements musicaux et vidéo en magasin spécialisé (1%)\n\t- Commerce de détail d'articles de sport en magasin spécialisé (54%)\n\t- Commerce de détail de jeux et jouets en magasin spécialisé (9%)\n- **Autres commerces de détail en magasin spécialisé (25%)**\n\t- Commerce de détail d'habillement en magasin spécialisé (25%)\n\t- Commerce de détail de chaussures et d'articles en cuir en magasin spécialisé (6%)\n\t- Commerce de détail de produits pharmaceutiques en magasin spécialisé (32%)\n\t- Commerce de détail d'articles médicaux et orthopédiques en magasin spécialisé (2%)\n\t- Commerce de détail de parfumerie et de produits de beauté en magasin spécialisé (5%)\n\t- Commerce de détail de fleurs, plantes, graines, engrais, animaux de compagnie et aliments pour ces animaux en magasin spécialisé (6%)\n\t- Commerce de détail d'articles d'horlogerie et de bijouterie en magasin spécialisé (4%)\n\t- Autre commerce de détail de biens neufs en magasin spécialisé (19%)\n\t- Commerce de détail de biens d'occasion en magasin (2%)\n- **Commerce de détail sur éventaires et marchés (1%)**\n\t- Commerce de détail alimentaire sur éventaires et marchés (72%)\n\t- Commerce de détail de textiles, d'habillement et de chaussures sur éventaires et marchés (4%)\n\t- Autres commerces de détail sur éventaires et marchés (24%)\n- **Commerce de détail hors magasin, éventaires ou marchés (7%)**\n\t- Vente à distance (89%)\n\t- Autres commerces de détail hors magasin, éventaires ou marchés (11%)",
-    "formule": "(21224 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Commerce de détail, à l'exclusion des automobiles et des motocycles par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Commerce de détail en magasin non spécialisé (39%)**\n\t- Commerce de détail en magasin non spécialisé à prédominance alimentaire (91%)\n\t- Autre commerce de détail en magasin non spécialisé (9%)\n- **Commerce de détail alimentaire en magasin spécialisé (5%)**\n\t- Commerce de détail de fruits et légumes en magasin spécialisé (15%)\n\t- Commerce de détail de viandes et de produits à base de viande en magasin spécialisé (25%)\n\t- Commerce de détail de poissons, crustacés et mollusques en magasin spécialisé (4%)\n\t- Commerce de détail de pain, pâtisserie et confiserie en magasin spécialisé (6%)\n\t- Commerce de détail de boissons en magasin spécialisé (17%)\n\t- Commerce de détail de produits à base de tabac en magasin spécialisé (7%)\n\t- Autres commerces de détail alimentaires en magasin spécialisé (27%)\n- **Commerce de détail de carburants en magasin spécialisé (9%)**\n- **Commerce de détail d'équipements de l'information et de la communication en magasin spécialisé (1%)**\n\t- Commerce de détail d'ordinateurs, d'unités périphériques et de logiciels en magasin spécialisé (42%)\n\t- Commerce de détail de matériels de télécommunication en magasin spécialisé (46%)\n\t- Commerce de détail de matériels audio/vidéo en magasin spécialisé (12%)\n- **Commerce de détail d'autres équipements du foyer en magasin spécialisé (9%)**\n\t- Commerce de détail de textiles en magasin spécialisé (3%)\n\t- Commerce de détail de quincaillerie, peintures et verres en magasin spécialisé (49%)\n\t- Commerce de détail de tapis, moquettes et revêtements de murs et de sols en magasin spécialisé (2%)\n\t- Commerce de détail d'appareils électroménagers en magasin spécialisé (10%)\n\t- Commerce de détail de meubles, appareils d'éclairage et autres articles de ménage en magasin spécialisé (36%)\n- **Commerce de détail de biens culturels et de loisirs en magasin spécialisé (4%)**\n\t- Commerce de détail de livres en magasin spécialisé (27%)\n\t- Commerce de détail de journaux et papeterie en magasin spécialisé (12%)\n\t- Commerce de détail d'enregistrements musicaux et vidéo en magasin spécialisé (1%)\n\t- Commerce de détail d'articles de sport en magasin spécialisé (54%)\n\t- Commerce de détail de jeux et jouets en magasin spécialisé (7%)\n- **Autres commerces de détail en magasin spécialisé (24%)**\n\t- Commerce de détail d'habillement en magasin spécialisé (24%)\n\t- Commerce de détail de chaussures et d'articles en cuir en magasin spécialisé (6%)\n\t- Commerce de détail de produits pharmaceutiques en magasin spécialisé (31%)\n\t- Commerce de détail d'articles médicaux et orthopédiques en magasin spécialisé (2%)\n\t- Commerce de détail de parfumerie et de produits de beauté en magasin spécialisé (5%)\n\t- Commerce de détail de fleurs, plantes, graines, engrais, animaux de compagnie et aliments pour ces animaux en magasin spécialisé (5%)\n\t- Commerce de détail d'articles d'horlogerie et de bijouterie en magasin spécialisé (3%)\n\t- Autre commerce de détail de biens neufs en magasin spécialisé (21%)\n\t- Commerce de détail de biens d'occasion en magasin (2%)\n- **Commerce de détail sur éventaires et marchés (1%)**\n\t- Commerce de détail alimentaire sur éventaires et marchés (75%)\n\t- Commerce de détail de textiles, d'habillement et de chaussures sur éventaires et marchés (5%)\n\t- Autres commerces de détail sur éventaires et marchés (20%)\n- **Commerce de détail hors magasin, éventaires ou marchés (7%)**\n\t- Vente à distance (89%)\n\t- Autres commerces de détail hors magasin, éventaires ou marchés (11%)",
+    "formule": "(21574 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Commerce de détail, à l'exclusion des automobiles et des motocycles par habitant",
     "unité": "kgCO2e",
     "optimized": true
@@ -4476,8 +4476,8 @@
     "avec": {
       "ratio réparations": "100%"
     },
-    "description": "Services de réparation d'ordinateurs et de biens personnels et domestiques par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Réparation d'ordinateurs et d'équipements de communication (67%)**\n\t- Réparation d'ordinateurs et d'équipements périphériques (87%)\n\t- Réparation d'équipements de communication (13%)\n- **Réparation de biens personnels et domestiques (33%)**\n\t- Réparation de produits électroniques grand public (11%)\n\t- Réparation d'appareils électroménagers et d'équipements pour la maison et le jardin (28%)\n\t- Réparation de chaussures et d'articles en cuir (16%)\n\t- Réparation de meubles et d'équipements du foyer (8%)\n\t- Réparation d'articles d'horlogerie et de bijouterie (9%)\n\t- Réparation d'autres biens personnels et domestiques (27%)",
-    "formule": "(1152 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Services de réparation d'ordinateurs et de biens personnels et domestiques par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Réparation d'ordinateurs et d'équipements de communication (64%)**\n\t- Réparation d'ordinateurs et d'équipements périphériques (83%)\n\t- Réparation d'équipements de communication (17%)\n- **Réparation de biens personnels et domestiques (36%)**\n\t- Réparation de produits électroniques grand public (12%)\n\t- Réparation d'appareils électroménagers et d'équipements pour la maison et le jardin (27%)\n\t- Réparation de chaussures et d'articles en cuir (18%)\n\t- Réparation de meubles et d'équipements du foyer (8%)\n\t- Réparation d'articles d'horlogerie et de bijouterie (7%)\n\t- Réparation d'autres biens personnels et domestiques (29%)",
+    "formule": "(1114 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "autres services personnels par habitant",
     "unité": "kgCO2e",
     "optimized": true
@@ -6050,7 +6050,7 @@
     "icônes": "✉️",
     "titre": "Services marchands",
     "unité": "kgCO2e",
-    "valeur": "196.13147429582455",
+    "valeur": "194.71226747966386",
     "optimized": true
   },
   "services publics": {
@@ -6060,7 +6060,7 @@
     "icônes": "🏛",
     "titre": "Services publics",
     "unité": "kgCO2e",
-    "valeur": "1357.504335263881",
+    "valeur": "1279.3145022075946",
     "optimized": true
   },
   "services sociétaux": {
@@ -6284,7 +6284,7 @@
     "unité": "kgCO2e"
   },
   "transport . deux roues . empreinte moyenne": {
-    "valeur": "23.33841431096073",
+    "valeur": "23.337765465556135",
     "optimized": true
   },
   "transport . deux roues . km": {
@@ -6374,7 +6374,7 @@
     "note": "Nous choisissons de pondérer l'entretien des scooters électriques par le même facteur qui réduit celui des véhicules électriques par rapport aux véhicules thermiques."
   },
   "transport . deux roues . entretien": {
-    "formule": "(((((6140 * 1000000kgCO2e/ktCO2e) * 0.02) * 0.07) / (0.69 + 0.07)) / 2700000) / 3000",
+    "formule": "(((((6036 * 1000000kgCO2e/ktCO2e) * 0.02) * 0.07) / (0.68 + 0.07)) / 2700000) / 3000",
     "unité": "kgCO2e/km",
     "note": "Dans le poste G45, nous proratisons le poste Commerce et réparation de motocycles (2%) sur le même rapport que les voitures pour extraire l'entretien de ce poste comprenant également le commerce.\nNous le divisons par le nombre de véhicules en circulation, puis par 3000 km (la moyenne de km effectués par véhicule) pour obtenir une empreinte en kgCO2e / km.\n",
     "optimized": true
@@ -7639,7 +7639,7 @@
   "transport . voiture . entretien": {
     "unité": "kgCO2e/km",
     "note": "Dans le poste G45, nous prenons la part Entretien et réparation de véhicules automobiles (7%).\nNous le divisons par le nombre de véhicules en circulation, puis par 12200 km (la moyenne de km effectués par véhicule) pour obtenir une empreinte en kgCO2e / km.\n",
-    "valeur": "0.0007885379098131",
+    "valeur": "0.0007751815673668",
     "optimized": true
   },
   "transport . voiture . par km personne": {

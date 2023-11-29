@@ -3029,7 +3029,7 @@
     "formule": {
       "somme": [
         "alimentation",
-        "3.966386554621849",
+        "3.189075630252101",
         "1.6698"
       ]
     },
@@ -3115,7 +3115,7 @@
     "formule": {
       "somme": [
         "alimentation",
-        "3.966386554621849"
+        "3.189075630252101"
       ]
     },
     "titre.auto": "Fingerprint of a small dog",
@@ -3152,7 +3152,7 @@
     "formule": {
       "somme": [
         "alimentation",
-        "3.966386554621849"
+        "3.189075630252101"
       ]
     },
     "titre.auto": "Fingerprint of a medium-sized dog",
@@ -3189,7 +3189,7 @@
     "formule": {
       "somme": [
         "alimentation",
-        "3.966386554621849"
+        "3.189075630252101"
       ]
     },
     "titre.auto": "Footprint of a big dog",
@@ -3289,7 +3289,7 @@
     "abréviation": "other products",
     "icônes": "📦",
     "description": "This sub-item captures the footprint of new product purchases, linked to a person's expenditure and standard of living, via a macro-economic approach.\nAs with the method used for societal services, we use <a href=\"https://nosgestesclimat.fr/documentation/empreinte-SDES\">the results of the SDES work</a>\nto reconstitute the carbon footprint of purchases not captured \"elsewhere\" in the test for an average French person.\n\nDespite significant limitations (to be discussed shortly), this question is relevant for a number of reasons:\n  - To broaden the scope of consumption covered by Nos Gestes Climat: here, we take into account expenses that are not captured in the rest of the test, such as **decoration, plants, etc.**\n  such as **decoration, plants, gardening, kitchen equipment, household linen, materials for creative hobbies, DIY.** These purchases are often used over the long term and should therefore be amortized according to the type of product, but in this approach\n  we consider that the footprint of purchases is equivalent from year to year and that depreciation is not necessary.\n  - Enable us to group our purchases of new products into a single question and avoid focusing on \"small items\"\n  with too many questions: how many vases? How many books? How many bath mats?\n  How many cutlery sets? etc.\n  - Raising awareness of new product purchases. In Nos Gestes Climat, the footprint of second-hand products is attributed to the original purchaser of the item.\n  Thus, the footprint of a second-hand product is currently considered to be zero (which is clearly stated in the question).\n\nWe have therefore considered in this question a <a href=\"https://github.com/incubateur-ademe/nosgestesclimat/blob/master/scripts/services-societaux/input/r%C3%A9partition_autres_produits.yaml\">breakdown of</a> the following items whose carbon content has been assigned among all economic branches / sub-branches:\n  - Horticulture (plants, accessories, delivery)\n  - Glassware, tableware, kitchen utensils\n  - Leather goods, accessories (lighters, umbrellas, sunglasses, etc.), baby equipment\n  - Carpets and other coverings, installation and repair\n  - Home and garden tools\n  - Repair services for computers and personal and household goods\n  - Products for routine home maintenance and repairs\n  - Other manufactured products such as games, toys, sports equipment, musical instruments, jewelry and watches\n\n> For example, the \"Horticulture\" item comprises the \"Plant reproduction\" sub-branch, representing 2% of the \"Agriculture and horticulture products\" branch in terms of sales \n\"the \"Wholesale of flowers and plants\" sub-branch, which accounts for \n0.2% of the \"Wholesale trade, excluding automobiles and motorcycles per inhabitant\" branch, and finally the \"Retail trade of flowers, \nplants, seeds, fertilizers, pets and pet food in specialized stores\", representing 1.5% of the \"Retail trade, \nexcluding automobiles and motorcycles per capita\" branch\n\nHowever, **the footprint captured in this question should be taken with a grain of salt**.\n\nIndeed, the macro-economic approach has several limitations, as outlined in <a href=\"https://github.com/incubateur-ademe/nosgestesclimat/wiki/Guide-technique-services-sociétaux\">our technical guide on societal services</a>,\nin particular due to the precision of the initial data. The calculation is also based on a single figure, identical for all citizens. Nevertheless, this question proposes a modularization of the footprint\nvia a multi-stake nivy question:\nNevertheless, this method of calculation is preferred here to monetary ratios, which have an uncertainty of 80%. \nThe emission factors in the carbon base are not up to date with today's inflation levels, and those averaged for this question\nare very heterogeneous (we aggregate the factor associated with publishing (books), but also that associated with plastics\nor metals). To conclude on this subject, and this is undoubtedly the biggest obstacle to the use of monetary ratios, the carbon intensity\nof a euro spent on a purchase is not at all representative of the product's real footprint. For example, it's not at all obvious \nthat a more expensive book has a bigger footprint. Similarly, a set of linen sheets could very well have a footprint 5 times smaller than a set of cotton sheets \nlower than a set made from cotton (flax requires very few resources to grow), yet the latter is likely to cost up to 10 times as much.\n",
-    "formule": "facteur correctif * 129.58599603962483",
+    "formule": "facteur correctif * 128.61669402392369",
     "unité": "kgCO2e",
     "titre.auto": "New manufactured products",
     "optimized": true
@@ -3868,7 +3868,7 @@
     "unité": "kgCO2e",
     "titre": "default fingerprint",
     "titre.auto": "default fingerprint",
-    "valeur": "76.72255398402042",
+    "valeur": "82.26310763444036",
     "optimized": true
   },
   "divers . loisirs . culture . choix utilisateur": {
@@ -3915,7 +3915,7 @@
     "titre.auto": "present"
   },
   "divers . loisirs . culture . concerts et spectacles . moyenne macro pondérée": {
-    "formule": "26.545110451025288 * fréquence pondérée",
+    "formule": "29.166453136993262 * fréquence pondérée",
     "unité": "kgCO2e",
     "titre": "weighted macro average",
     "titre.auto": "weighted macro average",
@@ -3961,7 +3961,7 @@
     "titre.auto": "present"
   },
   "divers . loisirs . culture . musées et monuments . moyenne macro pondérée": {
-    "formule": "(0.9105274676634706 * fréquence approximée) / 0.69",
+    "formule": "(1.5904279122674436 * fréquence approximée) / 0.69",
     "titre": "weighted macro average",
     "titre.auto": "weighted macro average",
     "optimized": true
@@ -4028,7 +4028,7 @@
     "titre.auto": "present"
   },
   "divers . loisirs . culture . édition . moyenne macro pondérée": {
-    "formule": "47.90924772729798 * fréquence pondérée",
+    "formule": "50.22209532078437 * fréquence pondérée",
     "titre": "weighted macro average",
     "titre.auto": "weighted macro average",
     "optimized": true
@@ -4113,7 +4113,7 @@
   "divers . loisirs . culture . pratique de la musique . moyenne macro pondérée": {
     "titre": "weighted macro average",
     "titre.auto": "weighted macro average",
-    "valeur": "3.6693738865775183",
+    "valeur": "3.4706250389061672",
     "optimized": true
   },
   "divers . loisirs . sports": {
@@ -4158,7 +4158,7 @@
     "titre": "Sports leisure footprint",
     "formule": {
       "somme": [
-        "27.437738865574428",
+        "24.889603786069056",
         "empreinte club",
         "empreinte fitness",
         "empreinte montagne"
@@ -4169,7 +4169,7 @@
     "optimized": true
   },
   "divers . loisirs . sports . empreinte par défaut": {
-    "formule": "42.871466977460045",
+    "formule": "38.8900059157329",
     "note": "Here we take the distribution of the total footprint of sports-related activities (63% of R93) over the French population.\n<a href=\"https://nosgestesclimat.fr/documentation/empreinte-branche/R93-par-hab\">See details of this branch</a>)\n",
     "titre": "default fingerprint",
     "titre.auto": "default fingerprint",
@@ -4459,7 +4459,7 @@
     "note": "63% corresponds to sales in the 'Sports-related activities' sub-branch of the 'Sports, leisure and recreation services' branch.\n<a href=\"https://nosgestesclimat.fr/documentation/empreinte-branche/R93-par-hab\">See details of this branch</a>)\n",
     "titre": "SDES sport footprint per French person",
     "titre.auto": "sDES sport footprint by French",
-    "valeur": "42.871466977460045",
+    "valeur": "38.8900059157329",
     "optimized": true
   },
   "divers . numérique": {
@@ -5104,8 +5104,8 @@
     "avec": {
       "ratio horticulture": "2%"
     },
-    "description": "Agricultural and hunting products and related services per capita \n\n> The description below corresponds to the share of each subclass of the branch (in % of turnover) \n\n- **Non-permanent crops (67%)**\n\t- Growing of cereals (except rice), pulses and oil seeds (14%)\n\t- Growing of vegetables, melons, roots and tubers (3%)\n\t- Cultivation of tobacco (0%)\n\t- Growing of fiber crops (1%)\n\t- Other non-permanent crops (82%)\n- **Permanent crops (2%)\n\t- Grapevine cultivation (60%)\n\t- Growing of spices, aromatic, medicinal and pharmaceutical plants (40%)\n- **Plant production (2%)\n- **Animal production (27%)**\n\t- Dairy farming (0%)\n\t- Horse and other equine breeding (0%)\n\t- Pig farming (2%)\n\t- Poultry farming (96%)\n\t- Raising other animals (1%)\n- farming and associated animal husbandry (0%)** **Support activities for agriculture\n- support Activities for Agriculture and Primary Crop Processing (2%)** ** Support Activities for Crops (52%)\n\t- Support activities for crop production (52%)\n\t- Support Activities for Animal Production (46%)\n\t- Primary Crop Processing (2%)",
-    "formule": "(35689 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Agricultural and hunting products and related services per inhabitant\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- **Non-permanent crops (58%)**\n\t- Growing of cereals (except rice), pulses and oil seeds (16%)\n\t- Growing of vegetables, melons, roots and tubers (2%)\n\t- Fibre crops (1%)\n\t- Other non-permanent crops (81%)\n- **Permanent crops (4%)**\n\t- Growing of vines (76%)\n\t- Growing of beverage crops (0%)\n\t- Growing of spices, aromatic, medicinal and pharmaceutical plants (24%)\n\t- Other permanent crops (0%)\n- plant production (0%)** ** Livestock production (34%)\n- **Animal production (34%)**\n\t- Dairy cows (0%)\n\t- Pig farming (1%)\n\t- Poultry farming (99%)\n\t- Other livestock (0%)\n- **Associated crop and livestock farming (0%)**\n- **Support activities for agriculture and primary crop processing (3%)**\n\t- Support activities for crop production (45%)\n\t- Support activities for animal production (32%)\n\t- Primary crop processing (22%)",
+    "formule": "(34018 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Agricultural and hunting products and related services per capita",
     "unité": "kgCO2e",
     "titre.auto": "Agricultural and hunting products and related services per capita",
@@ -5116,8 +5116,8 @@
       "ratio maroquinerie": "73%",
       "ratio tapis": "6%"
     },
-    "description": "Leather and footwear industry per capita \n\n> The description below corresponds to the share of each subclass of the industry (in % of turnover) \n\n- **Leather dressing and tanning; preparation and dyeing of furs; manufacture of travel goods, leather goods and saddlery (83%)**\n\t- Leather dressing and tanning; fur preparation and dyeing (12%)\n\t- Travel goods, leather goods and saddlery manufacturing (88%)\n- **Footwear Manufacturing (17%)**",
-    "formule": "(2072.52 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Leather and footwear industry per capita\n\n> The description below corresponds to the share of each subclass in the industry (in % of turnover)\n\n- **Finishing and tanning of leather; dressing and dyeing of fur; manufacture of luggage, handbags, saddlery and harness (87%)\n\t- Tanning and dressing of leather; dressing and dyeing of fur (8%)\n\t- Manufacture of travel goods, leather goods and saddlery (92%)\n- **Manufacture of footwear (13%)**",
+    "formule": "(2153.4 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Leather and footwear industry per capita",
     "unité": "kgCO2e",
     "titre.auto": "Leather and footwear industry per capita",
@@ -5127,8 +5127,8 @@
     "avec": {
       "ratio produits petits travaux": "0.7%"
     },
-    "description": "Wood and articles of wood and cork, except furniture; basketware and wickerwork per capita \n\n> The description below corresponds to the share of each subclass of the industry (in % of turnover) \n\n- sawing and planing of wood (31%)** **Making of wooden articles (31%)\n- **Wood, cork, basketry and straw goods manufacturing (69%)\n\t- Veneer and wood panel manufacturing (20%)\n\t- Manufacture of assembled parquet (1%)\n\t- Manufacturing of carpentry and other joinery (38%)\n\t- Wood Packaging Manufacturing (30%)\n\t- Manufacture of various wooden objects; manufacture of cork, basketry and straw goods (10%)",
-    "formule": "(208 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Wood and articles of wood and cork, except furniture; basketware and wickerwork per capita\n\n> The description below corresponds to the share of each subclass in the industry (in % of turnover)\n\n- sawing and planing of wood (32%)** **Manufacture of articles of straw and plaiting materials (32%)\n- **Manufacture of articles of wood, cork, straw and plaiting materials (68%)**\n\t- Manufacture of veneer and wood panels (20%)\n\t- Manufacture of assembled parquet flooring (1%)\n\t- Manufacture of carpentry and other joinery (40%)\n\t- Manufacture of wooden packaging (29%)\n\t- Manufacture of miscellaneous wooden articles; manufacture of articles of cork, straw and plaiting materials (10%)",
+    "formule": "(231 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Wood and articles of wood and cork, except furniture; basketware and wickerwork per capita",
     "unité": "kgCO2e",
     "titre.auto": "Wood and articles of wood and cork, except furniture; basketware and wickerwork per capita",
@@ -5138,8 +5138,8 @@
     "avec": {
       "ratio produits petits travaux": "0.2%"
     },
-    "description": "Paper and cardboard per capita \n\n> The description below corresponds to the share of each subclass in the industry (in % of turnover) \n\n- **Pulp, paper and paperboard manufacturing (37%)**\n\t- Manufacture of pulp (10%)\n\t- Manufacture of paper and paperboard (90%)\n- manufacture of paper and paperboard articles (63%)** ** Manufacture of corrugated paper and paperboard (15%)\n\t- Corrugated Paper and Paperboard and Paper or Paperboard Packaging Manufacturing (60%)\n\t- Manufacture of paper products for sanitary or domestic use (18%)\n\t- Stationery Manufacturing (6%)\n\t- Wallpaper Manufacturing (0%)\n\t- Other Paper and Paperboard Product Manufacturing (15%)",
-    "formule": "(1716 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Paper and cardboard per capita\n\n> The description below corresponds to the share of each sub-class in the industry (as a % of turnover)\n\n- manufacture of pulp, paper and paperboard (32%)** ** Manufacture of paper pulp (10%)\n\t- Manufacture of paper pulp (10%)\n\t- Manufacture of paper and paperboard (90%)\n- **Manufacture of articles of paper and paperboard (68%)**\n\t- Manufacture of corrugated paper and board and paper and board packaging (60%)\n\t- Manufacture of sanitary and household paper products (18%)\n\t- Manufacture of stationery (6%)\n\t- Manufacture of wallpaper (0%)\n\t- Manufacture of other articles of paper and paperboard (15%)",
+    "formule": "(1867 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Paper and cardboard per capita",
     "unité": "kgCO2e",
     "titre.auto": "Paper and cardboard per capita",
@@ -5149,8 +5149,8 @@
     "avec": {
       "ratio produits petits travaux": "6.1%"
     },
-    "description": "Chemicals per capita \n\n> The description below corresponds to the share of each sub-class in the industry (in % of turnover) \n\n- **Manufacture of basic chemicals, nitrogen products and fertilizers, basic plastics and synthetic rubber (50%)**\n\t- Manufacturing of industrial gases (3%)\n\t- Dye and Pigment Manufacturing (2%)\n\t- Other Basic Inorganic Chemical Manufacturing (17%)\n\t- Other Basic Organic Chemical Manufacturing (41%)\n\t- Nitrogenous Product and Fertilizer Manufacturing (5%)\n\t- Basic Plastics Manufacturing (29%)\n\t- Synthetic Rubber Manufacturing (3%)\n- **Pesticide and Other Agrochemical Manufacturing (4%)\n- manufacture of paints, varnishes, inks and sealants (5%)** ** Manufacture of soaps, detergents and other chemical products (5%)\n- manufacturing of soaps, cleaning products and perfumes (27%)** ** Manufacturing of soaps, detergents and cleaning products (27%)** Manufacturing of paints, varnishes, inks and mastics (5%)** Manufacturing of paints, varnishes, inks and mastics\n\t- Manufacture of soaps, detergents and cleaning products (10%)\n\t- Manufacture of perfumes and toiletries (90%)\n- **Other Chemical Product Manufacturing (14%)**\n\t- Explosives Manufacturing (7%)\n\t- Glue Manufacturing (8%)\n\t- Essential Oil Manufacturing (19%)\n\t- Other Chemical Product Manufacturing n.e.c. (66%)\n- **Artificial or Synthetic Fiber Manufacturing (0%)**",
-    "formule": "(6631 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Chemical products per capita\n\n> The description below corresponds to the share of each sub-class in the sector (as a % of turnover)\n\n- **Manufacture of basic chemicals, nitrogen products and fertilisers, basic plastics and synthetic rubber (48%)** Manufacture of industrial gases (S)\n\t- Manufacture of industrial gases (S)\n\t- Manufacture of dyes and pigments (2%)\n\t- Manufacture of other basic inorganic chemicals (17%)\n\t- Manufacture of other basic organic chemicals (39%)\n\t- Manufacture of Nitrogenous Products and Fertilisers (6%)\n\t- Manufacture of basic plastics (29%)\n\t- Manufacture of synthetic rubber (S)\n- manufacture of pesticides and other agrochemicals (4%)** ** Manufacture of paints, varnishes and similar coatings (4%)\n- manufacture of paints, varnishes, inks and mastics (6%)** **Manufacture of soaps, paints and coatings (6%)\n- manufacture of soaps, detergents, cleaning products and perfumes (28%)** **Manufacture of paints, varnishes, inks and mastics (6%)\n\t- Manufacture of soaps, detergents and cleaning products (9%)\n\t- Manufacture of perfumes and toiletries (91%)\n- **Manufacture of other chemical products (15%)**\n\t- Manufacture of explosives (7%)\n\t- Manufacture of glues (8%)\n\t- Manufacture of essential oils (18%)\n\t- Manufacture of other chemical products n.e.c. (67%)\n- **Manufacture of artificial or synthetic fibres (0%)**",
+    "formule": "(6655 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Chemicals per capita",
     "unité": "kgCO2e",
     "titre.auto": "Chemicals per capita",
@@ -5160,8 +5160,8 @@
     "avec": {
       "ratio vaisselle": "8.9%"
     },
-    "description": "Other non-metallic mineral products per capita \n\n> The description below corresponds to the share of each subclass of the industry (in % of turnover) \n\n- **Glass and glassware manufacturing (27%)**\n\t- Manufacture of flat glass (8%)\n\t- Shaping and processing of flat glass (28%)\n\t- Hollow glass manufacturing (44%)\n\t- Glass Fiber Manufacturing (13%)\n\t- Other Glassware Manufacturing and Processing, including Technical Glass (6%)\n- **Manufacture of refractory products (2%)\n- **Clay Building Material Manufacturing (4%)** Ceramic Tile Manufacturing (17%)\n\t- Ceramic Tile Manufacturing (17%)\n\t- Manufacture of bricks, tiles and construction products, clay (83%)\n- **Manufacture of other ceramic and porcelain products (3%)**\n\t- Manufacture of ceramic articles for domestic or ornamental use (42%)\n\t- Manufacture of ceramic sanitary ware (17%)\n\t- Ceramic Insulator and Insulating Parts Manufacturing (5%)\n\t- Manufacture of other ceramic products for technical use (32%)\n\t- Manufacture of other ceramic products (4%)\n- **Cement, Lime and Gypsum Manufacturing (12%)** Cement Manufacturing (S)\n\t- Cement Manufacturing (S)\n\t- Lime and Plaster Manufacturing (S)\n- concrete, Cement and Gypsum Manufacturing (38%)** ** Concrete Component Manufacturing for the Construction Industry\n\t- Manufacture of concrete elements for construction (29%)\n\t- Manufacture of plaster elements for construction (8%)\n\t- Manufacture of ready-mixed concrete (53%)\n\t- Manufacture of dry mortars and concretes (7%)\n\t- Manufacture of fibre cement (0%)\n\t- Manufacture of other concrete, cement and plaster products (3%)\n- **Stone Cutting, Shaping and Finishing (3%)\n- **Abrasive and Non-Metallic Mineral Product Manufacturing n.e.c. (11%)\n\t- Abrasive Product Manufacturing (7%)\n\t- Other Non-Metallic Mineral Product Manufacturing n.e.c. (93%)",
-    "formule": "(3067 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Other non-metallic mineral products per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- **Manufacture of glass and glassware (27%)** Manufacture of flat glass (7%)\n\t- Manufacture of flat glass (7%)\n\t- Shaping and processing of flat glass (29%)\n\t- Manufacture of hollow glass (46%)\n\t- Manufacture of glass fibres (12%)\n\t- Manufacture and processing of other glass, including technical glass (6%)\n- manufacture of refractory products (2%)** ** Manufacture of building materials (2%)\n- **Manufacture of clay building materials (5%)** Manufacture of ceramic tiles (14%)\n\t- Manufacture of ceramic tiles (14%)\n\t- Manufacture of clay bricks, tiles and construction products (86%)\n- **Manufacture of other ceramic and porcelain products (2%)**\n\t- Manufacture of ceramic household and ornamental articles (41%)\n\t- Manufacture of ceramic sanitary ware (S)\n\t- Manufacture of ceramic insulators and insulating fittings (5%)\n\t- Manufacture of other technical ceramic products (28%)\n\t- Manufacture of other ceramic products (S)\n- **Manufacture of cement, lime and plaster (11%)** Manufacture of cement (S)\n\t- Manufacture of cement (S)\n\t- Manufacture of lime and plaster (S)\n- **Manufacture of concrete, cement and plaster products (40%)**\n\t- Manufacture of concrete components for construction (28%)\n\t- Manufacture of plaster components for construction (8%)\n\t- Manufacture of ready-mixed concrete (51%)\n\t- Manufacture of mortar and dry concrete (8%)\n\t- Manufacture of fibre cement products (1%)\n\t- Manufacture of other articles of concrete, cement or plaster (3%)\n- **Stone cutting, shaping and finishing (3%)\n- manufacture of abrasive products and non-metallic mineral products n.e.c. (10%)** **Manufacture of abrasive products (8%)\n\t- Manufacture of abrasive products (8%)\n\t- Manufacture of other non-metallic mineral products n.e.c. (92%)",
+    "formule": "(3400 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Other non-metallic mineral products per capita",
     "unité": "kgCO2e",
     "titre.auto": "Other non-metallic mineral products per capita",
@@ -5172,8 +5172,8 @@
       "ratio outillage jardin": "4.6%",
       "ratio vaisselle": "0.4%"
     },
-    "description": "Metal products, excluding machinery and equipment per capita \n\n> The description below corresponds to the share of each subclass of the industry (in % of turnover) \n\n- **Manufacture of metal components for construction (23%)**\n\t- Manufacturing of metal structures and parts of structures (69%)\n\t- Manufacture of metal doors and windows (31%)\n- **Metal Tank, Vessel and Container Manufacturing (2%)\n\t- Manufacture of central heating radiators and boilers (100%)\n\t- Other Metal Tank, Cistern and Container Manufacturing (S)\n- manufacture of steam generators, except central heating boilers (1%)** ** Manufacture of weapons and equipment (1%)\n- manufacture of weapons and ammunition (S)** **Forge, stamped and die-cutting (S)\n- **Forging, pressing, stamping; powder metallurgy (16%)\n- metal processing and coating; machining (28%)** ** Metal processing and coating (23%)\n\t- Metal processing and coating (23%)\n\t- Machining (77%)\n- **Cutlery, Tool and Hardware Manufacturing (7%)** Cutlery Manufacturing (6%)\n\t- Cutlery Manufacturing (6%)\n\t- Locks and Fittings Manufacturing (29%)\n\t- Tooling Manufacturing (65%)\n- **Other Metal Fabrication (18%)\n\t- Drum and Similar Metal Packaging Manufacturing (2%)\n\t- Light Metal Packaging Manufacturing (19%)\n\t- Wire, Chain and Spring Manufacturing (24%)\n\t- Screw and Bolt Manufacturing (16%)\n\t- Other Fabricated Metal Product Manufacturing n.e.c. (39%)",
-    "formule": "(3627 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Metal products, excluding machinery and equipment per capita\n\n> The description below corresponds to the share of each subclass in the industry (in % of turnover)\n\n- **Manufacture of structural metal products (16%)** Manufacture of metal structures and parts of structures (100%)\n\t- Manufacture of metal structures and parts of structures (100%)\n\t- Manufacture of metal doors and windows (S)\n- **Manufacture of metal tanks, reservoirs and containers (1%)**\n\t- Manufacture of central heating radiators and boilers (S)\n\t- Manufacture of other tanks, reservoirs and containers of metal (100%)\n- manufacture of steam generators, except central heating boilers (0%)** **Manufacture of weapons and ammunition (100%)\n- manufacture of weapons and ammunition (S)** **Forging, pressing and stamping (S)\n- forging, pressing, stamping; powder metallurgy (15%)** **Metal treatment and coating; powder metallurgy (15%)** **Powder metallurgy (15%)\n- **Metal treatment and coating; machining (27%)**\n\t- Metal treatment and coating (24%)\n\t- Machining (76%)\n- **Cutlery, Tools and Hardware Manufacturing (7%)** Cutlery Manufacturing (6%)\n\t- Manufacture of cutlery (6%)\n\t- Manufacture of locks and fittings (31%)\n\t- Manufacture of tools (63%)\n- **Manufacture of other fabricated metal products (17%)**\n\t- Manufacture of drums and similar metal packaging (2%)\n\t- Manufacture of light metal packaging (21%)\n\t- Manufacture of wire products, chain and springs (23%)\n\t- Manufacture of screws and bolts (14%)\n\t- Manufacture of other fabricated metal products n.e.c. (40%)",
+    "formule": "(3598 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Metal products, excluding machinery and equipment per capita",
     "unité": "kgCO2e",
     "titre.auto": "Metal products, excluding machinery and equipment per capita",
@@ -5183,8 +5183,8 @@
     "avec": {
       "ratio autres produits manufacturés": "1%"
     },
-    "description": "Computer, electronic and optical products per capita \n\n> The description below corresponds to the share of each subclass in the industry (in % of turnover) \n\n- **Electronic component and card manufacturing (31%)**\n\t- Electronic component manufacturing (61%)\n\t- Manufacturing of assembled electronic boards (39%)\n- manufacturing of computers and peripheral equipment (5%)** **Manufacturing of electronic components and boards (31%)\n- communication Equipment Manufacturing (15%)** ** Large Electronics Manufacturing (15%)\n- \n- \n\t- Manufacture of measuring, testing and navigational instruments and devices (97%)\n\t- Watchmaking (3%)\n- manufacture of medical irradiation equipment, electromedical and electrotherapeutic equipment (6%)** ** Manufacture of optical and electronic equipment (6%)\n- manufacturing of optical and photographic materials (4%)** ** Manufacturing of magnetic media (4%)\n-",
-    "formule": "(5509 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Computer, electronic and optical products per capita\n\n> The description below shows the share of each subclass in the sector (as a % of turnover)\n\n- **Manufacture of electronic components and boards (33%)**\n\t- Manufacture of electronic components (63%)\n\t- Manufacture of assembled electronic boards (37%)\n- manufacture of computers and peripheral equipment (4%)** **Manufacture of computers and peripheral equipment (4%)**Manufacture of computers and peripheral equipment (4%)\n- **Communications equipment manufacturing (21%)**\n- **Consumer electronics manufacturing (1%)**\n- **Manufacture of measuring, testing and navigational instruments and appliances; watches and clocks (34%)\n\t- Manufacture of measuring, testing and navigating instruments and appliances (96%)\n\t- Watchmaking (4%)\n- manufacture of medical irradiation equipment, electromedical and electrotherapeutic equipment (4%)** ** Manufacture of optical and electronic equipment (4%)\n- manufacture of optical and photographic equipment (3%)** **Manufacture of magnetic media (3%)\n- **Manufacture of magnetic and optical media (0%)**",
+    "formule": "(4987 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Computer, electronic and optical products per capita",
     "unité": "kgCO2e",
     "titre.auto": "Computer, electronic and optical products per capita",
@@ -5194,8 +5194,8 @@
     "avec": {
       "ratio outillage jardin": "0.4%"
     },
-    "description": "Machinery and equipment n.e.c. per capita \n\n> The description below corresponds to the share of each subclass of the industry (in % of turnover) \n\n- **Manufacture of general-purpose machinery (31%)**\n\t- Manufacture of engines and turbines, except aircraft and vehicle engines (26%)\n\t- Manufacture of hydraulic and pneumatic equipment (13%)\n\t- Other Pump and Compressor Manufacturing (25%)\n\t- Manufacture of other valves and fittings (17%)\n\t- Manufacture of gears and mechanical transmission components (19%)\n- **Other General Purpose Machinery Manufacturing (37%)\n\t- Manufacture of ovens and burners (4%)\n\t- Manufacture of lifting and handling equipment (36%)\n\t- Office Machinery and Equipment Manufacturing (except Computer and Peripheral Equipment) (2%)\n\t- Manufacture of portable power tools (1%)\n\t- Manufacture of industrial air-conditioning and refrigeration equipment (28%)\n\t- Manufacture of other general-purpose machinery (30%)\n- agricultural and Forestry Machinery Manufacturing (11%)** ** Forming Machinery Manufacturing (10%)\n- **Metal Forming Machinery and Machine Tool Manufacturing (3%)\n\t- Metal Forming Machinery Manufacturing (81%)\n\t- Other Machine Tool Manufacturing (19%)\n- **Other Special Purpose Machine Manufacturing (18%)**\n\t- Manufacture of machinery for metallurgy (1%)\n\t- Manufacture of mining and construction machinery (23%)\n\t- Manufacture of machinery for the food industry (23%)\n\t- Manufacture of machinery for the textile industry (10%)\n\t- Manufacture of machinery for the paper and paperboard industries (7%)\n\t- Manufacture of machinery for working rubber or plastics (8%)\n\t- Manufacture of other special purpose machinery n.e.c. (28%)",
-    "formule": "(4537 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Machinery and equipment n.e.c. per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- **Manufacture of general-purpose machinery (29%)**\n\t- Manufacture of engines and turbines, except aircraft and vehicle engines (24%)\n\t- Manufacture of hydraulic and pneumatic equipment (13%)\n\t- Manufacture of other pumps and compressors (26%)\n\t- Manufacture of other valves and fittings (16%)\n\t- Manufacture of gears and mechanical transmission components (20%)\n- **Manufacture of other general-purpose machinery (38%)**\n\t- Manufacture of ovens and burners (5%)\n\t- Manufacture of lifting and handling equipment (37%)\n\t- Manufacture of office machinery and equipment (except computers and peripheral equipment) (2%)\n\t- Manufacture of portable power tools (1%)\n\t- Manufacture of industrial air-conditioning and refrigeration equipment (28%)\n\t- Manufacture of other general-purpose machinery (28%)\n- **Manufacture of agricultural and forestry machinery (11%)\n- **Manufacture of metal forming machinery and machine tools (3%)** Manufacture of other general-purpose machinery (28%)\n\t- Manufacture of metal forming machinery (81%)\n\t- Manufacture of other machine tools (19%)\n- **Manufacture of other special-purpose machinery (19%)**\n\t- Manufacture of machinery for metallurgy (2%)\n\t- Manufacture of machinery for mining, quarrying and construction (24%)\n\t- Manufacture of food processing machinery (22%)\n\t- Manufacture of machinery for the textile industry (10%)\n\t- Manufacture of machinery for paper and paperboard production (6%)\n\t- Manufacture of machinery for working rubber or plastics (9%)\n\t- Manufacture of other special-purpose machinery n.e.c. (27%)",
+    "formule": "(4804 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Machinery and equipment n.e.c. per capita",
     "unité": "kgCO2e",
     "titre.auto": "Machinery and equipment n.e.c. per capita",
@@ -5206,8 +5206,8 @@
       "ratio autres produits manufacturés": "38%",
       "ratio produits petits travaux": "1.2%"
     },
-    "description": "Other manufacturing per capita \n\n> The description below corresponds to the share of each subclass of the industry (in % of turnover) \n\n- **Manufacture of jewelry and related articles (15%)\n\t- Minting of coins (S)\n\t- Manufacture of jewelry and related articles (S)\n\t- Manufacture of costume jewelry and similar articles (20%)\n- **Musical Instrument Manufacturing (2%)\n- manufacture of sporting goods (7%)** **Manufacture of games and toys\n- manufacture of games and toys (3%)** **Manufacture of musical instruments (2%)\n- medical and Dental Instruments and Supplies Manufacturing (60%)** **Manufacturing of Musical Instruments (2%)\n- **Manufacturing n.e.c. (13%)**\n\t- Brushware Manufacturing (9%)\n\t- Other Manufacturing n.e.c. (91%)",
-    "formule": "(4532.88 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Other manufacturing per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- **Manufacture of jewellery and related articles (17%)** Coin minting (S)\n\t- Coin minting (S)\n\t- Manufacture of jewellery and related articles (S)\n\t- Manufacture of imitation jewellery and similar articles (20%)\n- manufacture of musical instruments (2%)** **Manufacture of musical instruments (2%)\n- manufacture of musical instruments (2%)** **Manufacture of sports goods (6%)**\n- **Manufacture of games and toys (3%)\n- manufacture of instruments and supplies for medical and dental use (59%)** **Manufacture of toys and games\n- **Manufacturing n.e.c. (12%)**\n\t- Manufacture of brushware (8%)\n\t- Other manufacturing n.e.c. (92%)",
+    "formule": "(4287.36 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Other manufacturing per capita",
     "unité": "kgCO2e",
     "titre.auto": "Other manufacturing per capita",
@@ -5223,8 +5223,8 @@
       "ratio tapis": "0.4%",
       "ratio vaisselle": "0.7%"
     },
-    "description": "Wholesale trade, excluding automobiles and motorcycles per capita \n\n> The description below corresponds to the share of each subclass of the branch (in % of turnover) \n\n- **Intermediaries in wholesale trade (17%)\n\t- Intermediaries in the trade of agricultural raw materials, live animals, textile raw materials and semi-finished products (1%)\n\t- Intermediaries in the trade of fuels, metals, minerals and chemical products (23%)\n\t- Intermediaries in the trade of wood and building materials (0%)\n\t- Agents involved in the sale of machinery, industrial equipment, ships and aircraft (3%)\n\t- Agents involved in the sale of furniture, household goods and hardware (1%)\n\t- Agents involved in the sale of textiles, clothing, furs, shoes and leather goods (0%)\n\t- Intermediaries in the food, beverage and tobacco trade (46%)\n\t- Intermediaries specializing in the trade of other specific products (4%)\n\t- Intermediaries in the trade of miscellaneous products (21%)\n- **Wholesale of raw agricultural products and live animals (6%)\n\t- Wholesale of grain, unmanufactured tobacco, seeds and animal feed (68%)\n\t- Wholesale of flowers and plants (3%)\n\t- Wholesale of live animals (28%)\n\t- Wholesale of hides and skins (1%)\n- **Wholesale of food, beverages and tobacco (16%)\n\t- Wholesale of fruit and vegetables (16%)\n\t- Wholesale of meat and meat products (7%)\n\t- Wholesale of dairy products, eggs, edible oils and fats (10%)\n\t- Wholesale of beverages (18%)\n\t- Wholesale of tobacco products (2%)\n\t- Wholesale of sugar, chocolate and confectionery (8%)\n\t- Wholesale of coffee, tea, cocoa and spices (5%)\n\t- Wholesale of other food products, including fish, crustaceans and molluscs (14%)\n\t- Non-specialized wholesale of food, beverages and tobacco (21%)\n- **Wholesale of household goods (19%)\n\t- Wholesale of textiles (2%)\n\t- Wholesale of clothing and footwear (12%)\n\t- Wholesale of household appliances (8%)\n\t- Wholesale of tableware, glassware and cleaning products (4%)\n\t- Wholesale of perfumery and beauty products (7%)\n\t- Wholesale of pharmaceutical products (45%)\n\t- Wholesale of furniture, carpets and lighting equipment (2%)\n\t- Wholesale of watches and jewelry (2%)\n\t- Wholesale of other household goods (19%)\n- **Wholesale of information and communication equipment (7%)\n\t- Wholesale of computers, computer peripheral equipment and software (57%)\n\t- Wholesale of electronic and telecommunication components and equipment (43%)\n- **Wholesale of other industrial equipment (14%)\n\t- Wholesale of agricultural equipment (14%)\n\t- Wholesale of machine tools (2%)\n\t- Wholesale of mining, construction and civil engineering machinery (6%)\n\t- Wholesale of machinery for the textile and clothing industry (0%)\n\t- Wholesale of office furniture (1%)\n\t- Wholesale of other office machinery and equipment (3%)\n\t- Wholesale of other machinery and equipment (73%)\n- **Other specialized wholesale (19%)\n\t- Wholesale of fuels and related products (35%)\n\t- Wholesale of ores and metals (7%)\n\t- Wholesale of wood, building materials and sanitary appliances (22%)\n\t- Wholesale of hardware, plumbing and heating supplies (10%)\n\t- Wholesale of chemical products (17%)\n\t- Wholesale of other intermediate products (7%)\n\t- Wholesale of waste and scrap (2%)\n- **Non-specialized wholesale trade (2%)**",
-    "formule": "(7698 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Wholesale trade, except of motor vehicles and motorbikes per capita\n\n> The description below corresponds to the share of each subclass in the sector (in % of turnover)\n\n- **Intermediaries in wholesale trade (17%)**\n\t- Agents involved in the sale of agricultural raw materials, live animals, textile raw materials and semi-finished products (1%)\n\t- Agents involved in the sale of fuels, metals, minerals and chemical products (25%)\n\t- Agents involved in the sale of wood and construction materials (0%)\n\t- Agents involved in the sale of machinery, industrial equipment, ships and aircraft (2%)\n\t- Agents involved in the sale of furniture, household goods and hardware (1%)\n\t- Agents involved in the sale of textiles, clothing, furs, footwear and leather goods (0%)\n\t- Agents involved in the sale of food, beverages and tobacco (44%)\n\t- Agents specialising in the sale of other specific products (5%)\n\t- Agents specialising in the sale of miscellaneous products (21%)\n- **Wholesale of agricultural raw materials and live animals (6%)\n\t- Wholesale of cereals, unmanufactured tobacco, seeds and animal feed (68%)\n\t- Wholesale of flowers and plants (3%)\n\t- Wholesale of live animals (28%)\n\t- Wholesale of hides and skins (1%)\n- **Wholesale of food, beverages and tobacco (16%)\n\t- Wholesale of fruit and vegetables (15%)\n\t- Wholesale of meat and meat products (6%)\n\t- Wholesale of dairy products, eggs, edible oils and fats (9%)\n\t- Wholesale of beverages (18%)\n\t- Wholesale of tobacco products (2%)\n\t- Wholesale of sugar, chocolate and confectionery (7%)\n\t- Wholesale of coffee, tea, cocoa and spices (6%)\n\t- Wholesale of other food products, including fish, crustaceans and molluscs (14%)\n\t- Non-specialised wholesale of food, beverages and tobacco (23%)\n- **Wholesale of household goods (18%)** Wholesale of textiles (2%)\n\t- Wholesale of textiles (2%)\n\t- Wholesale of clothing and footwear (12%)\n\t- Wholesale of household appliances (9%)\n\t- Wholesale of crockery, glassware and cleaning products (3%)\n\t- Wholesale of perfume and beauty products (6%)\n\t- Wholesale of pharmaceutical products (46%)\n\t- Wholesale of furniture, carpets and lighting equipment (2%)\n\t- Wholesale of watches, clocks and jewellery (2%)\n\t- Wholesale of other household goods (18%)\n- **Wholesale of information and communication equipment (7%)\n\t- Wholesale of computers, computer peripheral equipment and software (60%)\n\t- Wholesale of electronic and telecommunications components and equipment (40%)\n- **Wholesale of other industrial equipment (14%)**\n\t- Wholesale of agricultural equipment (15%)\n\t- Wholesale of machine tools (2%)\n\t- Wholesale of mining, construction and civil engineering machinery (6%)\n\t- Wholesale of machinery for the textile and clothing industry (0%)\n\t- Wholesale of office furniture (1%)\n\t- Wholesale of other office machinery and equipment (3%)\n\t- Wholesale of other machinery and equipment (73%)\n- **Other specialised wholesale (19%)**\n\t- Wholesale of fuels and related products (36%)\n\t- Wholesale of ores and metals (8%)\n\t- Wholesale of wood, building materials and sanitary equipment (22%)\n\t- Wholesale of hardware, plumbing and heating supplies (9%)\n\t- Wholesale of chemical products (17%)\n\t- Wholesale of other intermediate products (7%)\n\t- Wholesale of waste and scrap (1%)\n- **Non-specialised wholesale (2%)**",
+    "formule": "(7112 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Wholesale trade, excluding automobiles and motorcycles per capita",
     "unité": "kgCO2e",
     "titre.auto": "Wholesale trade, excluding automobiles and motorcycles per capita",
@@ -5238,8 +5238,8 @@
       "ratio produits petits travaux": "4.4%",
       "ratio tapis": "0.2%"
     },
-    "description": "Retail trade, except automobiles and motorcycles per capita \n\n> The description below corresponds to the share of each subclass of the branch (in % of turnover) \n\n- **Retail trade in non-specialized stores (40%)** > Retail trade in non-specialized stores\n\t- Retail sale in non-specialized stores with food predominating (91%)\n\t- Other retail trade in non-specialized stores (9%)\n- **Food retailing in specialized stores (4%)**\n\t- Retail sale of fruit and vegetables in specialized stores (11%)\n\t- Retail sale of meat and meat products in specialized stores (27%)\n\t- Retail sale of fish, crustaceans and molluscs in specialized stores (4%)\n\t- Retail sale of bread, pastry and confectionery in specialized stores (7%)\n\t- Retail sale of beverages in specialized stores (17%)\n\t- Retail sale of tobacco products in specialized stores (7%)\n\t- Other food retailing in specialized stores (27%)\n- retail sale of motor fuels in specialized stores (8%)** ** Retail sale of motorcycles and motorcycles in specialized stores (8%)\n- **Retail sale of information and communication equipment in specialized stores (1%)\n\t- Retail sale of computers, peripheral units and software in specialized stores (44%)\n\t- Retail sale of telecommunication equipment in specialized stores (48%)\n\t- Retail sale of audio/video equipment in specialized stores (8%)\n- **Retail sale of other household equipment in specialized stores (10%)\n\t- Retail sale of textiles in specialized stores (2%)\n\t- Retail sale of hardware, paint and glass in specialized stores (44%)\n\t- Retail sale of carpets, rugs and wall and floor coverings in specialized stores (2%)\n\t- Retail sale of household appliances in specialized stores (18%)\n\t- Retail sale of furniture, lighting equipment and other household articles in specialized stores (34%)\n- retail sale of cultural and leisure goods in specialized stores (4%)** ** Retail sale of books in specialized stores (4%)\n\t- Retail sale of books in specialized stores (25%)\n\t- Retail sale of newspapers and stationery in specialized stores (12%)\n\t- Retail sale of music and video recordings in specialized stores (1%)\n\t- Retail sale of sporting goods in specialized stores (54%)\n\t- Retail sale of games and toys in specialized stores (9%)\n- **Other retail trade in specialized stores (25%)\n\t- Retail sale of clothing in specialized stores (25%)\n\t- Retail sale of shoes and leather goods in specialized stores (6%)\n\t- Retail sale of pharmaceutical products in specialized stores (32%)\n\t- Retail sale of medical and orthopedic articles in specialized stores (2%)\n\t- Retail sale of perfumery and beauty products in specialized stores (5%)\n\t- Retail sale of flowers, plants, seeds, fertilizers, pets and food for these animals in specialized stores (6%)\n\t- Retail sale of watches and jewelry in specialized stores (4%)\n\t- Other retail sale of new goods in specialized stores (19%)\n\t- Retail sale of second-hand goods in stores (2%)\n- **Retail trade in stalls and markets (1%)\n\t- Retail sale of food in stalls and markets (72%)\n\t- Retail sale of textiles, clothing and footwear in stalls and markets (4%)\n\t- Other retail trade on stalls and markets (24%)\n- **Retail trade outside stores, stalls or markets (7%)** Distance selling (89%)\n\t- Distance Selling (89%)\n\t- Other non-store, stall or market retail (11%)",
-    "formule": "(21224 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Retail trade, except of motor vehicles and motorbikes per inhabitant\n\n> The description below corresponds to the share of each subclass in the sector (in % of turnover)\n\n- retail sale in non-specialised shops (39%)** ** Retail sale in non-specialised stores (39%)\n\t- Retail sale in non-specialised shops with food predominating (91%)\n\t- Other retail sale in non-specialised shops (9%)\n- food retailing in specialised shops (5%)** ** Fruit and vegetable retailing in non-specialised stores (5%)\n\t- Retail sale of fruit and vegetables in specialised shops (15%)\n\t- Retail sale of meat and meat products in specialised shops (25%)\n\t- Retail sale of fish, crustaceans and molluscs in specialised shops (4%)\n\t- Retail sale of bread, cakes, pastries and confectionery in specialised shops (6%)\n\t- Retail sale of beverages in specialised shops (17%)\n\t- Retail sale of tobacco products in specialised shops (7%)\n\t- Other food retailing in specialised shops (27%)\n- fuel retailing in specialised shops (9%)** ** Other food retailing in specialised stores (27%)\n- retail sale of information and communication equipment in specialised shops (1%)** ** Retail sale of computers, personal computers and peripheral equipment in specialised stores (1%)\n\t- Retail sale of computers, peripheral units and software in specialised shops (42%)\n\t- Retail sale of telecommunications equipment in specialised shops (46%)\n\t- Retail sale of audio/video equipment in specialised shops (12%)\n- retail sale of other household equipment in specialised shops (9%)** ** Retail sale of textiles in specialised stores (9%)\n\t- Retail sale of textiles in specialised shops (3%)\n\t- Retail sale of hardware, paints and glass in specialised shops (49%)\n\t- Retail sale of carpets, wall and floor coverings in specialised shops (2%)\n\t- Retail sale of electrical household appliances in specialised shops (10%)\n\t- Retail sale of furniture, lighting equipment and other household articles in specialised shops (36%)\n- retail sale of cultural and leisure goods in specialised shops (4%)** ** Retail sale of books in specialised stores (4%)\n\t- Retail sale of books in specialised shops (27%)\n\t- Retail sale of newspapers and stationery in specialised shops (12%)\n\t- Retail sale of music and video recordings in specialised shops (1%)\n\t- Retail sale of sports goods in specialised shops (54%)\n\t- Retail sale of games and toys in specialised shops (7%)\n- **Other retail sale in specialised shops (24%)**\n\t- Retail sale of clothing in specialised shops (24%)\n\t- Retail sale of footwear and leather goods in specialised shops (6%)\n\t- Retail sale of pharmaceutical products in specialised shops (31%)\n\t- Retail sale of medical and orthopaedic goods in specialised shops (2%)\n\t- Retail sale of perfume and beauty products in specialised shops (5%)\n\t- Retail sale of flowers, plants, seeds, fertilisers, pets and pet food in specialised shops (5%)\n\t- Retail sale of watches, clocks and jewellery in specialised shops (3%)\n\t- Other retail sale of new goods in specialised shops (21%)\n\t- Retail sale of second-hand goods in specialised shops (2%)\n- retail sale of second-hand goods in stores (2%) **Retail sale of stalls and markets (1%)**\n\t- Retail sale of food, beverages and tobacco in stalls and markets (75%)\n\t- Retail sale of textiles, clothing and footwear in stalls and markets (5%)\n\t- Other retail sale via stalls and markets (20%)\n- **Retail trade not in shops, stalls or markets (7%)\n\t- Distance selling (89%)\n\t- Other non-store, stall or market retail (11%)",
+    "formule": "(21574 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Retail trade, except automobiles and motorcycles per capita",
     "unité": "kgCO2e",
     "titre.auto": "Retail trade, except automobiles and motorcycles per capita",
@@ -5249,8 +5249,8 @@
     "avec": {
       "ratio réparations": "100%"
     },
-    "description": "Computer and personal and household goods repair services per capita \n\n> The description below corresponds to the share of each subclass of the industry (in % of turnover) \n\n- repair of computers and communication equipment (67%)** ** Repair of computers and peripheral equipment\n\t- Repair of computers and peripheral equipment (87%)\n\t- Repair of communication equipment (13%)\n- **Repair of personal and household goods (33%)**\n\t- Repair of consumer electronics (11%)\n\t- Repair of household appliances and home and garden equipment (28%)\n\t- Repair of shoes and leather goods (16%)\n\t- Repair of furniture and home furnishings (8%)\n\t- Repair of watches and jewelry (9%)\n\t- Repair of other personal and household goods (27%)",
-    "formule": "(1152 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "description": "Repair services of computers and personal and household goods per inhabitant\n\n> The description below shows the share of each subclass in the industry (in % of turnover)\n\n- **Repair of computers and communications equipment (64%)\n\t- Repair of computers and peripheral equipment (83%)\n\t- Repair of communications equipment (17%)\n- **Repair of personal and household goods (36%)**\n\t- Repair of consumer electronics (12%)\n\t- Repair of household appliances and home and garden equipment (27%)\n\t- Repair of footwear and leather goods (18%)\n\t- Repair of furniture and household equipment (8%)\n\t- Repair of watches, clocks and jewellery (7%)\n\t- Repair of other personal and household goods (29%)",
+    "formule": "(1114 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "other personal services per capita",
     "unité": "kgCO2e",
     "titre.auto": "other personal services per capita",
@@ -7248,7 +7248,7 @@
     "titre": "Market services",
     "unité": "kgCO2e",
     "titre.auto": "Market services",
-    "valeur": "196.13147429582455",
+    "valeur": "194.71226747966386",
     "optimized": true
   },
   "services publics": {
@@ -7259,7 +7259,7 @@
     "titre": "Public Services",
     "unité": "kgCO2e",
     "titre.auto": "Public services",
-    "valeur": "1357.504335263881",
+    "valeur": "1279.3145022075946",
     "optimized": true
   },
   "services sociétaux": {
@@ -7502,7 +7502,7 @@
   "transport . deux roues . empreinte moyenne": {
     "titre": "average footprint",
     "titre.auto": "average footprint",
-    "valeur": "23.33841431096073",
+    "valeur": "23.337765465556135",
     "optimized": true
   },
   "transport . deux roues . km": {
@@ -7606,7 +7606,7 @@
     "titre.auto": "weighted interview"
   },
   "transport . deux roues . entretien": {
-    "formule": "(((((6140 * 1000000kgCO2e/ktCO2e) * 0.02) * 0.07) / (0.69 + 0.07)) / 2700000) / 3000",
+    "formule": "(((((6036 * 1000000kgCO2e/ktCO2e) * 0.02) * 0.07) / (0.68 + 0.07)) / 2700000) / 3000",
     "unité": "kgCO2e/km",
     "note": "In item G45, we prorate the motorcycle trade and repair item (2%) on the same ratio as cars to extract maintenance from this item, which also includes trade.\nWe divide it by the number of vehicles in circulation, then by 3000 km (the average number of km driven per vehicle) to obtain a footprint in kgCO2e / km.\n",
     "titre": "maintenance",
@@ -9140,7 +9140,7 @@
     "note": "In item G45, we take the share of vehicle maintenance and repair (7%).\nWe divide it by the number of vehicles in circulation, then by 12,200 km (the average number of km driven per vehicle) to obtain a footprint in kgCO2e / km.\n",
     "titre": "maintenance",
     "titre.auto": "maintenance",
-    "valeur": "0.0007885379098131",
+    "valeur": "0.0007751815673668",
     "optimized": true
   },
   "transport . voiture . par km personne": {
