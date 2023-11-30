@@ -1769,7 +1769,6 @@
     "titre.auto": "Alcohol consumption"
   },
   "alimentation . déchets": {
-    "résumé": "A novel waste footprint model",
     "icônes": "🚮",
     "description": "We have classified this item in the \"Food\" category because a large part of our waste has a food origin (85% of the packaging thrown away by households is food packaging)\nhouseholds are food packaging)\n",
     "formule": {
@@ -2036,7 +2035,6 @@
   },
   "alimentation . plats": {
     "icônes": "🍽️",
-    "résumé": "**6 meals** representative of our consumption\n",
     "mosaique": {
       "type": "nombre",
       "clé": "nombre",
@@ -2578,7 +2576,6 @@
     "optimized": true
   },
   "bilan": {
-    "résumé": "The heart of Nos Gestes Climat is **the personal climate footprint** assessment",
     "titre": "Your personal climate report",
     "exposé": "oui",
     "icônes": "👤",
@@ -5308,7 +5305,6 @@
   },
   "logement . chauffage . empreinte par défaut": {
     "icônes": "🌡️",
-    "résumé": "A statistical calculation of the average French residential heating",
     "formule": "18.14619718355944 * logement . surface",
     "unité": "kgCO2e",
     "titre": "default footprint",
@@ -7263,7 +7259,6 @@
     "optimized": true
   },
   "services sociétaux": {
-    "résumé": "The constants of **public and market services** calculated from the work of the SDES.",
     "titre": "Societal services",
     "applicable si": "question rhétorique",
     "couleur": "#0c2461",
@@ -8206,7 +8201,6 @@
   },
   "transport . mobilité douce": {
     "icônes": "🚲",
-    "résumé": "Your \"short-distance\" travel modes for efficient mobility\n",
     "mosaique": {
       "type": "selection",
       "clé": "présent",
@@ -8734,7 +8728,6 @@
   "transport . voiture": {
     "titre": "car",
     "icônes": "🚘️",
-    "résumé": "The largest average footprint, the unavoidable **individual car**",
     "formule": {
       "variations": [
         {

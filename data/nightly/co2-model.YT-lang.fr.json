@@ -1636,7 +1636,6 @@
     "note": "La consommation d'alcool en France est de 79,6 litres d'alcool, tous alcools confondus, soit à peu près 1,5 litres par semaine ([source](https://www.insee.fr/fr/statistiques/4319377#graphique-figure2))"
   },
   "alimentation . déchets": {
-    "résumé": "Un modèle inédit d'empreinte des **déchets**",
     "icônes": "🚮",
     "description": "Nous avons rangé ce poste dans la catégorie \"Alimentation\" car une grande partie de nos déchets ont une origine alimentaire (85% des emballages jetés par \nles ménages sont des emballages alimentaires)\n",
     "formule": {
@@ -2941,7 +2940,6 @@
   },
   "alimentation . plats": {
     "icônes": "🍽️",
-    "résumé": "**6 repas** représentatifs de notre consommation\n",
     "mosaique": {
       "type": "nombre",
       "clé": "nombre",
@@ -3438,7 +3436,6 @@
     "note": "Cette méthode de calcul est imparfaite : idéalement, nous pourrions faire la différence saison / de saison sur chaque plat du régime personnalisé de l'utilisateur. Nous pourrons cependant dans une prochaine version du calcul différencier le pourcentage pour chaque élément du régime.\n\nElle a cependant le mérite de donner un premier ordre de grandeur.\n\n🧮 Le tableur du calcul détaillé est [disponible ici](<https://github.com/datagir/nosgestesclimat/blob/master/data/alimentation/alimentation . de saison . pourcentage saisonable.ods>).\n"
   },
   "bilan": {
-    "résumé": "Le coeur de Nos Gestes Climat, c'est **le bilan** d'empreinte climat personelle",
     "titre": "Votre bilan climat personnel",
     "exposé": "oui",
     "icônes": "👤",
@@ -8007,7 +8004,6 @@
   },
   "logement . chauffage . empreinte par défaut": {
     "icônes": "🌡️",
-    "résumé": "Un calcul statistique du **chauffage** résidentiel français moyen",
     "formule": "parc français . chauffage . empreinte moyenne par m2 hors électricité * logement . surface",
     "unité": "kgCO2e"
   },
@@ -9957,7 +9953,6 @@
     "unité": "kgCO2e"
   },
   "services sociétaux": {
-    "résumé": "Les constantes de **services publics et marchands** calculées à partir des travaux du SDES.",
     "titre": "Services sociétaux",
     "applicable si": "question rhétorique",
     "couleur": "#0c2461",
@@ -10812,7 +10807,6 @@
   },
   "transport . mobilité douce": {
     "icônes": "🚲",
-    "résumé": "Vos modes de déplacements \"courte distance\" en mobilité efficace\n",
     "mosaique": {
       "type": "selection",
       "clé": "présent",
@@ -11257,7 +11251,6 @@
   "transport . voiture": {
     "titre": "voiture",
     "icônes": "🚘️",
-    "résumé": "Le premier poste moyen d'empreinte, l'incontournable **voiture individuelle**",
     "formule": {
       "variations": [
         {
