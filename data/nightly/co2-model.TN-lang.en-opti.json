@@ -367,7 +367,7 @@
     "titre.auto": "recalculation"
   },
   "alimentation . boisson . eau en bouteille . arrêter": {
-    "applicable si": "consommateur = 'affirmatif'",
+    "applicable si": "consommateur",
     "titre": "Stop using bottled water",
     "formule": "consommation annuelle * empreinte",
     "icônes": "➡️🚰",
@@ -1451,7 +1451,11 @@
   "alimentation . boisson . chaude": {
     "mosaique": {
       "type": "nombre",
-      "clé": "nombre",
+      "options": [
+        "café . nombre",
+        "thé . nombre",
+        "chocolat chaud . nombre"
+      ],
       "suggestions": {
         "no hot drinks": {
           "café . nombre": 0,
@@ -1650,57 +1654,29 @@
     "titre.auto": "cold"
   },
   "alimentation . boisson . eau en bouteille": {
+    "titre": "Bottled water",
     "formule": {
       "variations": [
         {
-          "si": "consommateur = 'affirmatif'",
+          "si": {
+            "est défini": "consommateur"
+          },
           "alors": "consommation annuelle * empreinte"
         },
         {
-          "si": "consommateur = 'négatif'",
-          "alors": 0
-        },
-        {
-          "si": "consommateur = 'moyenne'",
-          "alors": "consommation moyenne * empreinte"
+          "sinon": "consommation moyenne * empreinte"
         }
       ]
     },
     "unité": "kgCO2e",
-    "titre": "bottled water",
-    "titre.auto": "bottled water"
-  },
-  "alimentation . boisson . eau en bouteille . consommateur": {
-    "titre": "Bottled water",
-    "question": "Do you drink bottled water?",
-    "avec": {
-      "moyenne": null,
-      "affirmatif": {
-        "titre": "Oui"
-      },
-      "négatif": {
-        "titre": "Non"
-      }
-    },
-    "par défaut": "'moyenne'",
-    "formule": {
-      "une possibilité": {
-        "choix obligatoire": "oui",
-        "possibilités": [
-          "affirmatif",
-          "négatif"
-        ]
-      }
-    },
-    "description": "If you mainly drink tap water, and your consumption of bottled water is limited to rare occasions (for example, one bakery meal a week, with their famous \"sandwich + dessert + bottled plastic drink\" menu), answer no. We'll be happy to help you.\n\nIf you regularly buy packs of bottled water at the supermarket, or buy a small bottle every day at the canteen at work, answer yes.\n\n> You should know that drinking tap water has such a small climate footprint that we won't ask you about your water consumption.\n",
-    "note": "On average, the French drink between 100 and 150 liters of bottled water a year <a href=\"https://www.planetoscope.com/consommation-eau/854-litres-d-eau-en-bouteille-vendus-en-france.html\">,</a> or around a third of our daily requirement of 1-1.5 liters <a href=\"https://www.mangerbouger.fr/Le-Mag/Bien-etre/L-eau-indispensable-a-notre-bonne-sante\">.</a>\n\nWe therefore considered the default value to be \"no\".\n",
     "titre.auto": "Bottled water"
   },
-  "affirmatif": {
-    "titre": "Oui"
-  },
-  "négatif": {
-    "titre": "Non"
+  "alimentation . boisson . eau en bouteille . consommateur": {
+    "question": "Do you drink bottled water?",
+    "description": "If you mainly drink tap water, and your consumption of bottled water is limited to rare occasions (for example, one bakery meal a week, with their famous \"sandwich + dessert + bottled plastic drink\" menu), answer no. We'll be happy to help you.\n\nIf you regularly buy packs of bottled water at the supermarket, or buy a small bottle every day at the canteen at work, answer yes.\n\n> You should know that drinking tap water has such a small climate footprint that we won't ask you about your water consumption.\n",
+    "note": "On average, the French drink between 100 and 150 liters of bottled water a year <a href=\"https://www.planetoscope.com/consommation-eau/854-litres-d-eau-en-bouteille-vendus-en-france.html\">,</a> or around a third of our daily requirement of 1-1.5 liters <a href=\"https://www.mangerbouger.fr/Le-Mag/Bien-etre/L-eau-indispensable-a-notre-bonne-sante\">.</a>\n\nWe therefore considered the default value to be \"no\".\n",
+    "titre": "consumer",
+    "titre.auto": "consumer"
   },
   "alimentation . boisson . eau en bouteille . empreinte": {
     "unité": "kgCO2e/l",
@@ -1719,12 +1695,12 @@
     "optimized": true
   },
   "alimentation . boisson . eau en bouteille . consommation annuelle": {
-    "formule": "365 * 1.5l/jour",
+    "applicable si": "consommateur",
+    "formule": "commun . jours par an * 1.5 l/jour",
     "unité": "l",
     "description": "It is assumed that each person drinks 1.5 liters of water per day.\n",
     "titre": "annual consumption",
-    "titre.auto": "annual consumption",
-    "optimized": true
+    "titre.auto": "annual consumption"
   },
   "alimentation . boisson . sucrées": {
     "description": "Note that alternatives to soda, very simple to prepare at home, are\npossible: this is the case of\n[kefir](https://fr.wikipedia.org/wiki/K%C3%A9fir) or\n[Kombucha](https://fr.wikipedia.org/wiki/Kombucha). We have not yet\nevaluated the footprint gains offered by these alternatives.\n",
@@ -1778,7 +1754,12 @@
           "alors": "niveau zéro déchets"
         },
         {
-          "sinon": "niveau moyen"
+          "sinon": {
+            "somme": [
+              "niveau moyen",
+              "gestes"
+            ]
+          }
         }
       ]
     },
@@ -1832,24 +1813,22 @@
     "optimized": true
   },
   "alimentation . déchets . niveau moyen": {
-    "formule": {
-      "somme": [
-        "96.015712",
-        "48.512508999999994",
-        "49.9611611",
-        "gestes"
-      ]
-    },
     "description": "This level corresponds to the French average.\n",
     "titre": "average level",
     "titre.auto": "average level",
+    "valeur": "194.4893821",
     "optimized": true
   },
   "alimentation . déchets . gestes": {
     "applicable si": "quantité jetée = 'réduction'",
     "mosaique": {
       "type": "selection",
-      "clé": "présent",
+      "options": [
+        "compostage biodéchets . présent",
+        "gaspillage alimentaire",
+        "stop pub . présent",
+        "acheter en vrac . présent"
+      ],
       "suggestions": {
         "none": {
           "compostage biodéchets . présent": "non",
@@ -2037,8 +2016,14 @@
     "icônes": "🍽️",
     "mosaique": {
       "type": "nombre",
-      "clé": "nombre",
-      "total": 14,
+      "options": [
+        "végétalien . nombre",
+        "végétarien . nombre",
+        "viande 1 . nombre",
+        "viande 2 . nombre",
+        "poisson 1 . nombre",
+        "poisson 2 . nombre"
+      ],
       "suggestions": {
         "i am vegan": {
           "végétalien . nombre": 14,
@@ -2599,6 +2584,14 @@
     "valeur": "52",
     "optimized": true
   },
+  "commun . jours par an": {
+    "titre": "Number of days per year",
+    "unité": "jour",
+    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/incubateur-ademe/publicodes-commun\">`@incubator-ademe/publicodes-commun`</a> model.",
+    "titre.auto": "Number of days per year",
+    "valeur": "365",
+    "optimized": true
+  },
   "divers . ameublement": {
     "icônes": "🛋️",
     "note": "We only count the footprint of furniture manufacturing and distribution. So be careful not to confuse ADEME's LCA data \ndata (which take into account the entire life cycle: from cradle to grave) and the Base Carbone's EFs, which only give the impact of a product's manufacture \nthe impact of a product's manufacture (although the \"distribution\" phase is included in the EF). \n\nThese EFs do not take into account the \"end-of-life\" phase, which is taken into account via <a href=\"https://nosgestesclimat.fr/documentation/alimentation/d%C3%A9chets\">the NGC waste model</a> (which takes into account the quantities of waste taken to waste collection centers, where furniture is (theoretically) taken at the end of its life).\n\nWe consider that all the furniture is used by the whole household, even if some of it may only be used individually, which is a limitation of the test.\n",
@@ -2611,7 +2604,18 @@
     "titre": "Furniture",
     "mosaique": {
       "type": "nombre",
-      "clé": "nombre",
+      "options": [
+        "armoire . nombre",
+        "canapé . nombre",
+        "matelas . nombre",
+        "lit . nombre",
+        "table . nombre",
+        "chaise . nombre",
+        "petit meuble . nombre",
+        "grand meuble . nombre",
+        "salon de jardin bois . nombre",
+        "salon de jardin résine ou métal . nombre"
+      ],
       "suggestions": {
         "none": {
           "armoire . nombre": 0,
@@ -2940,52 +2944,23 @@
     "description": "Dog or cat, it's time to take into account our faithful companions.\n\n> 🦴 The impact of your pet is largely related to its bowl!\n",
     "mosaique": {
       "type": "nombre",
-      "clé": "nombre",
+      "options": [
+        "petit chien . nombre",
+        "chien moyen . nombre",
+        "gros chien . nombre",
+        "chats . nombre"
+      ],
       "suggestions": {
         "no animals": {
           "petit chien . nombre": 0,
           "chien moyen . nombre": 0,
           "gros chien . nombre": 0,
-          "chats . nombre": 0,
-          "choix utilisateur": "oui"
+          "chats . nombre": 0
         }
       }
     },
-    "formule": {
-      "variations": [
-        {
-          "si": "choix utilisateur",
-          "alors": "empreinte totale"
-        },
-        {
-          "sinon": "empreinte par défaut"
-        }
-      ]
-    },
+    "formule": "empreinte totale",
     "titre.auto": "Annual footprint of household pets"
-  },
-  "divers . animaux domestiques . empreinte . choix utilisateur": {
-    "description": "Has the user made a choice of animals?",
-    "formule": {
-      "variations": [
-        {
-          "si": {
-            "une de ces conditions": [
-              "empreinte . chats . nombre > 0",
-              "empreinte . petit chien . nombre > 0",
-              "empreinte . chien moyen . nombre > 0",
-              "empreinte . gros chien . nombre > 0"
-            ]
-          },
-          "alors": "oui"
-        },
-        {
-          "sinon": "non"
-        }
-      ]
-    },
-    "titre": "user selection",
-    "titre.auto": "user selection"
   },
   "divers . animaux domestiques . empreinte totale": {
     "formule": {
@@ -2997,17 +2972,6 @@
     "titre": "total footprint",
     "titre.auto": "total footprint"
   },
-  "divers . animaux domestiques . empreinte par défaut": {
-    "formule": {
-      "somme": [
-        "0.49 * empreinte . chats . empreinte",
-        "0.25 * empreinte . chien moyen . empreinte"
-      ]
-    },
-    "titre": "default fingerprint",
-    "titre.auto": "default fingerprint",
-    "optimized": true
-  },
   "divers . animaux domestiques . empreinte . chats": {
     "icônes": "🐱",
     "titre": "Cat",
@@ -3016,7 +2980,7 @@
   },
   "divers . animaux domestiques . empreinte . chats . nombre": {
     "question": "How many cats do you have in your household?",
-    "par défaut": 0,
+    "par défaut": 0.49,
     "titre": "number",
     "titre.auto": "number"
   },
@@ -3139,7 +3103,7 @@
   },
   "divers . animaux domestiques . empreinte . chien moyen . nombre": {
     "question": "How many dogs do you have in your household?",
-    "par défaut": 0,
+    "par défaut": 0.25,
     "titre": "number",
     "titre.auto": "number"
   },
@@ -3226,9 +3190,6 @@
     "titre.auto": "daily energy requirements"
   },
   "divers . animaux domestiques . empreinte . chiens . alimentation . besoins énergétiques journaliers . facteur poids": {
-    "avec": {
-      "taille chien": null
-    },
     "formule": {
       "variations": [
         {
@@ -3249,7 +3210,20 @@
     "titre": "weight factor",
     "titre.auto": "weight factor"
   },
-  "taille chien": {},
+  "divers . animaux domestiques . empreinte . chiens . alimentation . besoins énergétiques journaliers . facteur poids . taille chien": {
+    "formule": {
+      "une possibilité": {
+        "choix obligatoire": "oui",
+        "possibilités": [
+          "gros chien",
+          "chien moyen",
+          "petit chien"
+        ]
+      }
+    },
+    "titre": "dog size",
+    "titre.auto": "dog size"
+  },
   "divers . animaux domestiques . empreinte . chiens . alimentation . besoins énergétiques journaliers . facteur énergie": {
     "formule": {
       "variations": [
@@ -3377,7 +3351,23 @@
   "divers . électroménager . appareils": {
     "mosaique": {
       "type": "nombre",
-      "clé": "nombre",
+      "options": [
+        "réfrigérateur . nombre",
+        "mini réfrigérateur . nombre",
+        "congélateur . nombre",
+        "lave-linge . nombre",
+        "sèche-linge . nombre",
+        "lave-vaisselle . nombre",
+        "four . nombre",
+        "micro-onde . nombre",
+        "plaques . nombre",
+        "hotte . nombre",
+        "bouilloire . nombre",
+        "cafetière . nombre",
+        "aspirateur . nombre",
+        "robot cuisine . nombre",
+        "tondeuse électrique . nombre"
+      ],
       "suggestions": {
         "none": {
           "réfrigérateur . nombre": 0,
@@ -3819,14 +3809,18 @@
     "icônes": "🎭",
     "mosaique": {
       "type": "selection",
-      "clé": "présent",
+      "options": [
+        "concerts et spectacles . présent",
+        "musées et monuments . présent",
+        "édition . présent",
+        "pratique de la musique . présent"
+      ],
       "suggestions": {
         "none": {
           "concerts et spectacles . présent": "non",
           "musées et monuments . présent": "non",
           "édition . présent": "non",
-          "pratique de la musique . présent": "non",
-          "choix utilisateur": "oui"
+          "pratique de la musique . présent": "non"
         }
       }
     },
@@ -3869,27 +3863,24 @@
     "optimized": true
   },
   "divers . loisirs . culture . choix utilisateur": {
-    "description": "Has the user made a choice of cultural practices?",
+    "titre": "User choice for cultural practices",
     "formule": {
-      "variations": [
+      "une de ces conditions": [
         {
-          "si": {
-            "une de ces conditions": [
-              "concerts et spectacles . présent",
-              "musées et monuments . présent",
-              "édition . présent",
-              "pratique de la musique . présent"
-            ]
-          },
-          "alors": "oui"
+          "est défini": "concerts et spectacles . présent"
         },
         {
-          "sinon": "non"
+          "est défini": "musées et monuments . présent"
+        },
+        {
+          "est défini": "édition . présent"
+        },
+        {
+          "est défini": "pratique de la musique . présent"
         }
       ]
     },
-    "titre": "user selection",
-    "titre.auto": "user selection"
+    "titre.auto": "User choice for cultural practices"
   },
   "divers . loisirs . culture . empreinte concerts et spectacles": {
     "titre": "Empreinte concerts and shows",
@@ -3907,7 +3898,6 @@
   },
   "divers . loisirs . culture . concerts et spectacles . présent": {
     "question": "Do you ever attend concerts or shows?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -3953,7 +3943,6 @@
   },
   "divers . loisirs . culture . musées et monuments . présent": {
     "question": "Do you ever visit museums, monuments and national parks?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -4020,7 +4009,6 @@
   },
   "divers . loisirs . culture . édition . présent": {
     "question": "Do you ever buy books, magazines or newspapers?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -4103,7 +4091,6 @@
   },
   "divers . loisirs . culture . pratique de la musique . présent": {
     "question": "Do you own a musical instrument?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -4116,7 +4103,20 @@
   "divers . loisirs . sports": {
     "mosaique": {
       "type": "selection",
-      "clé": "présent",
+      "options": [
+        "individuel extérieur . présent",
+        "balle ou ballon . présent",
+        "aquatique . présent",
+        "martial ou combat . présent",
+        "athlétisme . présent",
+        "salle de sport . présent",
+        "équitation . présent",
+        "golf . présent",
+        "nautique . présent",
+        "hiver montagne . présent",
+        "sports énergivores . présent",
+        "autres sports . présent"
+      ],
       "suggestions": {
         "no sport": {
           "individuel extérieur . présent": "non",
@@ -4130,8 +4130,7 @@
           "nautique . présent": "non",
           "hiver montagne . présent": "non",
           "sports énergivores . présent": "non",
-          "autres sports . présent": "non",
-          "choix utilisateur": "oui"
+          "autres sports . présent": "non"
         }
       }
     },
@@ -4155,15 +4154,14 @@
     "titre": "Sports leisure footprint",
     "formule": {
       "somme": [
-        "24.889603786069056",
+        "empreinte répartie",
         "empreinte club",
         "empreinte fitness",
         "empreinte montagne"
       ]
     },
     "note": "> There are so many questions that could be asked to estimate the footprint of sports-related leisure activities... \n\nTo be exhaustive, we'd need to list all existing sports, ask about frequency of practice, facilities used, whether or not people belong to a club, and how often personal equipment is renewed.\n\nBut that would be far too many questions, given the weight of sport in the final footprint.\n\n> For the moment, we estimate this footprint using a \"macro\" approach, i.e. we start with the footprint of the sector in France, which we then relate to the individual, weighting the values using \"market\" data: number of people practising, number of club members...\n\nThe macro subdivision we have at our disposal enables us to isolate: the use of sports facilities or general sports services (attributed to all sportsmen and women), sports club membership (attributed to all sportsmen and women whose sport is *majority* club-based), and fitness club membership (attributed to those who tick \"gym or weight room\").\n\nIn addition, a study carried out on behalf of the resorts of Tignes, Le Grand Bornand and La Clusaz has enabled us to allocate a footprint to winter sports enthusiasts.\n",
-    "titre.auto": "Sports leisure footprint",
-    "optimized": true
+    "titre.auto": "Sports leisure footprint"
   },
   "divers . loisirs . sports . empreinte par défaut": {
     "formule": "38.8900059157329",
@@ -4173,35 +4171,48 @@
     "optimized": true
   },
   "divers . loisirs . sports . choix utilisateur": {
-    "description": "has the user chosen a sport?",
+    "titre": "User choice for sports activities",
     "formule": {
-      "variations": [
+      "une de ces conditions": [
         {
-          "si": {
-            "une de ces conditions": [
-              "balle ou ballon . présent",
-              "aquatique . présent",
-              "martial ou combat . présent",
-              "athlétisme . présent",
-              "équitation . présent",
-              "golf . présent",
-              "nautique . présent",
-              "hiver montagne . présent",
-              "autres sports . présent",
-              "individuel extérieur . présent",
-              "salle de sport . présent",
-              "sports énergivores . présent"
-            ]
-          },
-          "alors": "oui"
+          "est défini": "balle ou ballon . présent"
         },
         {
-          "sinon": "non"
+          "est défini": "aquatique . présent"
+        },
+        {
+          "est défini": "martial ou combat . présent"
+        },
+        {
+          "est défini": "athlétisme . présent"
+        },
+        {
+          "est défini": "équitation . présent"
+        },
+        {
+          "est défini": "golf . présent"
+        },
+        {
+          "est défini": "nautique . présent"
+        },
+        {
+          "est défini": "hiver montagne . présent"
+        },
+        {
+          "est défini": "autres sports . présent"
+        },
+        {
+          "est défini": "individuel extérieur . présent"
+        },
+        {
+          "est défini": "salle de sport . présent"
+        },
+        {
+          "est défini": "sports énergivores . présent"
         }
       ]
     },
-    "titre": "user selection",
-    "titre.auto": "user selection"
+    "titre.auto": "User choice for sports activities"
   },
   "divers . loisirs . sports . individuel extérieur": {
     "titre": "Individual outdoor sports",
@@ -4212,7 +4223,6 @@
   },
   "divers . loisirs . sports . individuel extérieur . présent": {
     "question": "Do you rollerblade or skateboard?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -4225,7 +4235,6 @@
   },
   "divers . loisirs . sports . balle ou ballon . présent": {
     "question": "Do you play a racket sport?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -4238,7 +4247,6 @@
   },
   "divers . loisirs . sports . aquatique . présent": {
     "question": "Do you practice any sports in the pool?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -4251,7 +4259,6 @@
   },
   "divers . loisirs . sports . martial ou combat . présent": {
     "question": "Do you practice a martial or fighting art?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -4263,7 +4270,6 @@
   },
   "divers . loisirs . sports . athlétisme . présent": {
     "question": "Do you practice athletics?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -4276,7 +4282,6 @@
   },
   "divers . loisirs . sports . salle de sport . présent": {
     "question": "Do you go to a gym, fitness center or bodybuilding studio?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -4288,7 +4293,6 @@
   },
   "divers . loisirs . sports . équitation . présent": {
     "question": "Do you ride?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -4300,7 +4304,6 @@
   },
   "divers . loisirs . sports . golf . présent": {
     "question": "Do you play golf?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -4313,7 +4316,6 @@
   },
   "divers . loisirs . sports . nautique . présent": {
     "question": "Do you practice any water sports?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -4326,7 +4328,6 @@
   },
   "divers . loisirs . sports . hiver montagne . présent": {
     "question": "Do you practice a winter or mountain sport?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -4339,7 +4340,6 @@
   },
   "divers . loisirs . sports . sports énergivores . présent": {
     "question": "Do you practice a sport involving a motorized vehicle?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -4352,7 +4352,6 @@
   },
   "divers . loisirs . sports . autres sports . présent": {
     "question": "Do you practice a sport that is not listed?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -4419,6 +4418,29 @@
     "titre.auto": "proportion of fitness subscribers",
     "valeur": "0.08925565308016915",
     "optimized": true
+  },
+  "divers . loisirs . sports . empreinte répartie": {
+    "applicable si": {
+      "une de ces conditions": [
+        "balle ou ballon . présent",
+        "aquatique . présent",
+        "martial ou combat . présent",
+        "athlétisme . présent",
+        "équitation . présent",
+        "golf . présent",
+        "nautique . présent",
+        "hiver montagne . présent",
+        "autres sports . présent",
+        "sports énergivores . présent",
+        "individuel extérieur . présent",
+        "salle de sport . présent"
+      ]
+    },
+    "formule": "(empreinte SDES sport par français / proportion pratiquants) * ( 0.27 + 0.21 )",
+    "unité": "kgCO2e",
+    "note": "Here we take the share of Sports Facility Management (27%) and Other Sports-related Activities (21%) within Sports-related Activities (63%), multiplied by the proportion of registered sportsmen and women in France.\n<a href=\"https://nosgestesclimat.fr/documentation/empreinte-branche/R93-par-hab\">See details of this branch</a>)\n",
+    "titre": "distributed footprint",
+    "titre.auto": "distributed footprint"
   },
   "divers . loisirs . sports . proportion pratiquants": {
     "note": "According to <a href=\"https://www.calameo.com/books/0047558805b1d72793ccf?language=fr&page=1\">Les chiffres clef du sport 2020</a>, in 2018, 75% of individuals over the age of 15 said they had taken part in at least one utilitarian or recreational sporting activity during the year.",
@@ -4563,7 +4585,21 @@
   "divers . numérique . appareils": {
     "mosaique": {
       "type": "nombre",
-      "clé": "nombre",
+      "options": [
+        "téléphone . nombre",
+        "TV . nombre",
+        "ordinateur portable . nombre",
+        "ordinateur fixe . nombre",
+        "tablette . nombre",
+        "vidéoprojecteur . nombre",
+        "appareil photo . nombre",
+        "home cinéma . nombre",
+        "enceinte bluetooth . nombre",
+        "enceinte vocale . nombre",
+        "montre connectée . nombre",
+        "console de salon . nombre",
+        "console portable . nombre"
+      ],
       "suggestions": {
         "none": {
           "téléphone . nombre": 0,
@@ -4900,7 +4936,19 @@
   "divers . textile": {
     "mosaique": {
       "type": "nombre",
-      "clé": "nombre",
+      "options": [
+        "t-shirt . nombre",
+        "pantalon . nombre",
+        "short . nombre",
+        "sweat . nombre",
+        "robe . nombre",
+        "chemise . nombre",
+        "pull . nombre",
+        "chaussure . nombre",
+        "manteau . nombre",
+        "petit article . nombre",
+        "gros article . nombre"
+      ],
       "suggestions": {
         "none": {
           "t-shirt . nombre": 0,
@@ -5257,7 +5305,16 @@
     "titre": "Housing energy",
     "mosaique": {
       "type": "selection",
-      "clé": "présent",
+      "options": [
+        "PAC . présent",
+        "électricité . présent",
+        "gaz . présent",
+        "réseau de chaleur . présent",
+        "bouteille gaz . présent",
+        "citerne propane . présent",
+        "fioul . présent",
+        "bois . présent"
+      ],
       "suggestions": {
         "no heating": {
           "PAC . présent": "non",
@@ -5267,8 +5324,7 @@
           "bouteille gaz . présent": "non",
           "citerne propane . présent": "non",
           "fioul . présent": "non",
-          "bois . présent": "non",
-          "choix utilisateur": "oui"
+          "bois . présent": "non"
         }
       }
     },
@@ -5312,31 +5368,36 @@
     "optimized": true
   },
   "logement . chauffage . choix utilisateur": {
-    "description": "has the user made a choice of heating?",
+    "titre": "User choice for heating",
     "formule": {
-      "variations": [
+      "une de ces conditions": [
         {
-          "si": {
-            "une de ces conditions": [
-              "électricité . présent",
-              "PAC . présent",
-              "gaz . présent",
-              "réseau de chaleur . présent",
-              "bouteille gaz . présent",
-              "citerne propane . présent",
-              "fioul . présent",
-              "bois . présent"
-            ]
-          },
-          "alors": "oui"
+          "est défini": "électricité . présent"
         },
         {
-          "sinon": "non"
+          "est défini": "PAC . présent"
+        },
+        {
+          "est défini": "gaz . présent"
+        },
+        {
+          "est défini": "réseau de chaleur . présent"
+        },
+        {
+          "est défini": "bouteille gaz . présent"
+        },
+        {
+          "est défini": "citerne propane . présent"
+        },
+        {
+          "est défini": "fioul . présent"
+        },
+        {
+          "est défini": "bois . présent"
         }
       ]
     },
-    "titre": "user selection",
-    "titre.auto": "user choice"
+    "titre.auto": "User choice for heating"
   },
   "logement . chauffage . PAC": {
     "titre": "Heat pump",
@@ -5345,7 +5406,6 @@
   },
   "logement . chauffage . PAC . présent": {
     "question": "Is your home heated by a heat pump?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -5368,7 +5428,6 @@
   },
   "logement . chauffage . électricité . présent": {
     "question": "Is your home heated by electricity?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -5398,7 +5457,6 @@
   },
   "logement . chauffage . gaz . présent": {
     "question": "Is your home heated with gas?",
-    "par défaut": "non",
     "note": "Although the majority of heating in France is electric [source](https://fr.statista.com/statistiques/856283/types-chauffage-logement-principal-france), we set the default value here to yes to be closer to the average footprint of the dwelling.\n\nWe touch the current limits of this default situation.\n",
     "titre": "present",
     "titre.auto": "present"
@@ -5504,7 +5562,6 @@
   },
   "logement . chauffage . bouteille gaz . présent": {
     "question": "Do you use gas cylinders?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -5573,7 +5630,6 @@
   },
   "logement . chauffage . citerne propane . présent": {
     "question": "Is your home heated by a propane tank?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -5627,7 +5683,6 @@
   },
   "logement . chauffage . fioul . présent": {
     "question": "Is your home heated with oil?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -5701,7 +5756,6 @@
   },
   "logement . chauffage . bois . présent": {
     "question": "Is your home heated with wood?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -5814,7 +5868,6 @@
   },
   "logement . chauffage . réseau de chaleur . présent": {
     "question": "Is your home heated by a heating network?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -6010,15 +6063,25 @@
   },
   "logement . climatisation . empreinte climatiseurs": {
     "titre": "Air conditioner footprint",
-    "applicable si": "présent",
-    "formule": "nombre * empreinte unitaire",
+    "formule": {
+      "variations": [
+        {
+          "si": {
+            "est défini": "climatisation . présent"
+          },
+          "alors": "nombre * empreinte unitaire"
+        },
+        {
+          "sinon": "nombre par défaut * empreinte unitaire"
+        }
+      ]
+    },
     "unité": "kgCO2e",
     "titre.auto": "Air conditioner footprint"
   },
   "logement . climatisation . présent": {
     "question": "Do you use an air conditioning system to cool your home (electric air conditioner, heat pump)?",
     "description": "The air conditioner uses electricity, which you have to enter in kWh or € in the electricity question. The footprint of the electricity consumed by the air conditioner is therefore already calculated\n\nBut on top of that, an air conditioner emits other greenhouse gases: hence the need to ask this question.\n",
-    "par défaut": "oui",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -6030,24 +6093,8 @@
     "titre": "recall kWh",
     "titre.auto": "recall kWh"
   },
-  "logement . climatisation . empreinte unitaire": {
-    "unité": "kgCO2e/climatiseur",
-    "titre": "unit footprint",
-    "titre.auto": "unit footprint",
-    "valeur": "545.05008",
-    "optimized": true
-  },
-  "logement . climatisation . fuite fin de vie . quantité": {
-    "formule": "1.72 * 66.4%",
-    "unité": "kg/climatiseur",
-    "titre": "quantity",
-    "titre.auto": "quantity",
-    "optimized": true
-  },
-  "logement . climatisation . nombre": {
-    "applicable si": "présent",
-    "question": "How many electric air conditioners do you have?",
-    "par défaut": {
+  "logement . climatisation . nombre par défaut": {
+    "formule": {
       "variations": [
         {
           "si": {
@@ -6066,9 +6113,30 @@
       ]
     },
     "unité": "climatiseur",
-    "note": "Source for the default figure: [La climatisation de confort dans les bâtiments résidentiels et tertiaires, état des lieux 2020, June 2021](https://librairie.ademe.fr/air-et-bruit/4745-la-climatisation-de-confort-dans-les-batiments-residentiels-et-tertiaires.html), page 3.\n\n&gt; The survey carried out in the summer of 2020 by CODA Stratégies among 800 households as part of this study found an equipment rate of 25%, consistent with the data collected by EDF about a year earlier.\n\n&gt; This average rate of 25% covers strong disparities. For example, 31% of owners of single-family homes have air conditioning equipment, compared with only 20% of households living in collective housing.\n",
+    "note": "Source for the default figure: <a href=\"https://librairie.ademe.fr/air-et-bruit/4745-la-climatisation-de-confort-dans-les-batiments-residentiels-et-tertiaires.html\">La climatisation de confort dans les bâtiments résidentiels et tertiaires, état des lieux 2020, June 2021</a>, page 3.\n\n> The survey of 800 households carried out by CODA Stratégies in the summer of 2020 as part of this study found an equipment rate of 25%, consistent with the data collected by EDF a year earlier.\n\n> This average rate of 25% masks major disparities. For example, 31% of owners of detached houses have air conditioning, compared with just 20% of households living in collective housing.\n",
+    "titre": "default number",
+    "titre.auto": "default number"
+  },
+  "logement . climatisation . nombre": {
+    "applicable si": "présent",
+    "question": "How many electric air conditioners do you have?",
+    "par défaut": 1,
     "titre": "number",
     "titre.auto": "number"
+  },
+  "logement . climatisation . empreinte unitaire": {
+    "unité": "kgCO2e/climatiseur",
+    "titre": "unit footprint",
+    "titre.auto": "unit footprint",
+    "valeur": "545.05008",
+    "optimized": true
+  },
+  "logement . climatisation . fuite fin de vie . quantité": {
+    "formule": "1.72 * 66.4%",
+    "unité": "kg/climatiseur",
+    "titre": "quantity",
+    "titre.auto": "quantity",
+    "optimized": true
   },
   "logement . construction": {
     "icônes": "🧱",
@@ -6330,92 +6398,49 @@
     "optimized": true
   },
   "logement . piscine . volume": {
-    "formule": "profondeur * surface * 1000 l/m3",
+    "formule": "(1.5 * surface) * 1000l/m3",
     "unité": "l",
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "volume",
-    "titre.auto": "volume"
-  },
-  "logement . piscine . profondeur": {
-    "formule": 1.5,
-    "unité": "m",
-    "note": "We assume an average water depth of 1.50 m, for example, with a linear slope of 1 m to 2 m.",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "depth",
-    "titre.auto": "depth"
-  },
-  "logement . piscine . traitement chimique": {
-    "formule": "empreinte chlore * masse de chlore",
-    "unité": "kgCO2e",
-    "note": "On the basis of hypotheses sourced from the references for the \"chlorine mass\" variable, for the time being, in order to obtain a first order of magnitude, we assimilate all the chemical materials used in a swimming pool to chlorine.\n\nWe also ignore the transport of purchased chlorine, which in practice is often by car, implying a non-negligible consumption of gasoline, but of second order a priori.\n",
-    "références": {
-      "guide-piscine.fr": "https://www.guide-piscine.fr/entretien-general-piscine/cout-entretien-piscine-estimation-du-prix-des-tarifs-837_A"
-    },
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "chemical treatment",
-    "titre.auto": "chemical treatment"
-  },
-  "logement . piscine . empreinte chlore": {
-    "formule": 0.74,
-    "unité": "kgCO2e/kg",
-    "note": "We take the example of Cl2, liquefied chlorine gas, in the reference document below.",
-    "références": [
-      "https://www.oieau.org/eaudoc/system/files/documents/44/224151/224151_doc.pdf?page=31"
-    ],
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "chlorine footprint",
-    "titre.auto": "chlorine footprint"
-  },
-  "logement . piscine . masse de chlore": {
-    "formule": "(150 € + 20 € + 30 € + 30 €) / (35 € / 5 kg)",
-    "unité": "kg",
-    "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\n> If you opt for a chlorine treatment, you will need to count on an annual budget of approximately €150 for chlorine, €20 for flocculant, €30 for an anti-scale product and €30 for a product to rebalance the pH, which corresponds to an annual budget of approximately €230\n\nOn the basis of the hypotheses sourced in the references below, for the time being and in order to obtain an initial order of magnitude, we equate all the chemicals used in a swimming pool with chlorine.\n\nWe then use an order of magnitude for the price of chlorine: on April 20, 2021, prices of €35/5kg of pool chlorine. On the basis of €150 worth of chlorine per year, this gives ~4 kg, which is consistent with the 5 kg package size.\n\nWe also don't know how the chlorine purchased is transported, often by car.\n\nThe result calculated here has an order of magnitude consistent with that given in <a href=\"https://cote-piscine-mag.com/combien-coute-le-traitement-piscine/\">this article</a>, ~ 20 kg.\n",
-    "références": {
-      "guide-piscine.fr": "https://www.guide-piscine.fr/entretien-general-piscine/cout-entretien-piscine-estimation-du-prix-des-tarifs-837_A"
-    },
-    "titre": "chlorine mass",
-    "titre.auto": "chlorine mass"
+    "titre.auto": "volume",
+    "optimized": true
   },
   "logement . piscine . construction": {
-    "formule": "empreinte empirique / durée de vie",
+    "formule": "empreinte empirique / 30",
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "construction",
-    "titre.auto": "construction"
+    "titre.auto": "construction",
+    "optimized": true
   },
   "logement . piscine . construction . empreinte empirique": {
     "formule": {
       "somme": [
         "maçonnerie",
         "étanchéité",
-        "équipement nautique",
-        "lot technique",
-        "divers chantier",
-        "abri"
+        "45",
+        "337",
+        "357",
+        "0"
       ]
     },
     "note": "The figures in this namespace come mainly from the calculation <a href=\"https://user-images.githubusercontent.com/1177762/245216468-760f16f8-59f4-447f-a1e5-862fcdb08980.png\">presented on this A4 sheet</a>.\n",
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "empirical footprint",
-    "titre.auto": "empirical footprint"
-  },
-  "logement . piscine . construction . durée de vie": {
-    "formule": 30,
-    "note": "We initially took this estimate, which seems a little low for the concrete (which is estimated to last more like 40 years), but rather realistic for the rest of the equipment. It's a parameter that can be modified if necessary.\n",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "service life",
-    "titre.auto": "service life"
+    "titre.auto": "empirical footprint",
+    "optimized": true
   },
   "logement . piscine . construction . maçonnerie": {
     "formule": {
       "somme": [
         "béton",
-        "plage pierre",
-        "terrassement"
+        "3.584",
+        "315.06"
       ]
     },
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "masonry",
-    "titre.auto": "masonry"
+    "titre.auto": "masonry",
+    "optimized": true
   },
   "logement . piscine . construction . étanchéité": {
     "formule": {
@@ -6427,60 +6452,12 @@
     "titre": "sealing",
     "titre.auto": "sealing"
   },
-  "logement . piscine . construction . équipement nautique": {
-    "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nWe consider the skimmer, the lamp, the suction inlet, the \"technical\" box, the 10m hose for the brush.\n\nAll this is simplified to 20kg of HDPE PVC, i.e. 45kgCO2e\n",
-    "formule": 45,
-    "unité": "kgCO2e",
-    "titre": "nautical equipment",
-    "titre.auto": "nautical equipment"
-  },
-  "logement . piscine . construction . lot technique": {
-    "formule": {
-      "somme": [
-        "pompe",
-        "électricité",
-        "hydraulique"
-      ]
-    },
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "technical package",
-    "titre.auto": "technical package"
-  },
-  "logement . piscine . construction . divers chantier": {
-    "formule": {
-      "somme": [
-        "gasoil",
-        "consommable",
-        "livraison"
-      ]
-    },
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "various worksites",
-    "titre.auto": "various worksites"
-  },
-  "logement . piscine . construction . abri": {
-    "formule": 0,
-    "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nTo be implemented, you can ask a question if it's safe to do so, but you have to take into account the gains in heating and filtering.",
-    "titre": "shelter",
-    "titre.auto": "shelter"
-  },
   "logement . piscine . construction . béton": {
-    "formule": "masse * empreinte",
+    "formule": "masse * 0.155",
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "concrete",
-    "titre.auto": "concrete"
-  },
-  "logement . piscine . construction . plage pierre": {
-    "titre": "Stone beach",
-    "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nThe beach is the area around the pool where people walk barefoot and lounge in deckchairs.",
-    "formule": "surface plage * empreinte pierre",
-    "titre.auto": "Stone beach"
-  },
-  "logement . piscine . construction . terrassement": {
-    "formule": "conso diesel * empreinte diesel",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "landscaping",
-    "titre.auto": "landscaping"
+    "titre.auto": "concrete",
+    "optimized": true
   },
   "logement . piscine . construction . béton . masse": {
     "formule": "type . masse * correcteur surface type",
@@ -6489,132 +6466,42 @@
     "titre": "mass",
     "titre.auto": "mass"
   },
-  "logement . piscine . construction . béton . empreinte": {
-    "formule": 0.155,
-    "unité": "kgCO2e/kg",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "footprint",
-    "titre.auto": "footprint"
-  },
   "logement . piscine . construction . béton . type . masse": {
-    "formule": "volume * masse volumique",
+    "formule": "volume * 2300",
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "mass",
-    "titre.auto": "mass"
+    "titre.auto": "mass",
+    "optimized": true
   },
   "logement . piscine . correcteur surface type": {
-    "formule": "surface / type . surface",
+    "formule": "surface / 32",
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "surface corrector type",
-    "titre.auto": "surface corrector type"
+    "titre.auto": "surface corrector type",
+    "optimized": true
   },
   "logement . piscine . construction . béton . type . volume": {
-    "formule": "volume parallélépipède + volume plage",
+    "formule": "volume parallélépipède + 3.6",
     "unité": "m3",
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "volume",
-    "titre.auto": "volume"
-  },
-  "logement . piscine . construction . béton . masse volumique": {
-    "formule": 2300,
-    "unité": "kg/m3",
-    "références": [
-      "http://www.fao.org/3/v5270f/V5270F0b.htm",
-      "https://www.toutsurlebeton.fr/le-ba-ba-du-beton/masse-volumique-du-beton-et-de-ses-constituants/"
-    ],
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "density",
-    "titre.auto": "density"
+    "titre.auto": "volume",
+    "optimized": true
   },
   "logement . piscine . construction . béton . type . volume parallélépipède": {
-    "formule": "surface * épaisseur",
+    "formule": "surface * 0.22",
     "unité": "m3",
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "parallelepiped volume",
-    "titre.auto": "parallelepiped volume"
-  },
-  "logement . piscine . construction . béton . type . volume plage": {
-    "formule": 3.6,
-    "unité": "m3",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "volume range",
-    "titre.auto": "volume range"
-  },
-  "logement . piscine . construction . béton . type . épaisseur": {
-    "formule": 0.22,
-    "unité": "m",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "thickness",
-    "titre.auto": "thickness"
-  },
-  "logement . piscine . type . surface": {
-    "formule": 32,
-    "unité": "m2",
-    "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nThe area of the pool actually built is used as the basis for this model.",
-    "références": [
-      "https://twitter.com/ObjectifZero/status/1392179434900316165/photo/1"
-    ],
-    "titre": "surface",
-    "titre.auto": "surface"
-  },
-  "logement . piscine . construction . surface plage": {
-    "formule": 28,
-    "unité": "m2",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "beach surface",
-    "titre.auto": "beach surface"
-  },
-  "logement . piscine . construction . empreinte pierre": {
-    "formule": 0.128,
-    "unité": "kgCO2e/m2",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "stone imprint",
-    "titre.auto": "stone imprint"
-  },
-  "logement . piscine . construction . terrassement . conso diesel": {
-    "formule": {
-      "somme": [
-        "pelleteuse",
-        "chargeuse"
-      ]
-    },
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "diesel consumption",
-    "titre.auto": "diesel consumption"
-  },
-  "logement . piscine . construction . terrassement . empreinte diesel": {
-    "formule": 2.67,
-    "unité": "kgCO2e/l",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "diesel footprint",
-    "titre.auto": "diesel footprint"
-  },
-  "logement . piscine . construction . terrassement . conso diesel . pelleteuse": {
-    "formule": 84,
-    "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\n9t backhoe",
-    "unité": "l",
-    "titre": "excavator",
-    "titre.auto": "excavator"
-  },
-  "logement . piscine . construction . terrassement . conso diesel . chargeuse": {
-    "formule": 34,
-    "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\n3t loader",
-    "unité": "l",
-    "titre": "loader",
-    "titre.auto": "loader"
+    "titre.auto": "parallelepiped volume",
+    "optimized": true
   },
   "logement . piscine . construction . étanchéité . liner": {
-    "formule": "empreinte PVC * surface * quantité",
+    "formule": "(0.35 * surface) * 3",
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "liner",
-    "titre.auto": "liner"
-  },
-  "logement . piscine . construction . étanchéité . liner . empreinte PVC": {
-    "formule": 0.35,
-    "unité": "kgCO2e/m2",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "pVC footprint",
-    "titre.auto": "pVC footprint"
+    "titre.auto": "liner",
+    "optimized": true
   },
   "logement . piscine . construction . étanchéité . liner . surface": {
     "formule": "type . surface . parallélépipède * correcteur surface type",
@@ -6622,73 +6509,13 @@
     "titre": "surface",
     "titre.auto": "surface"
   },
-  "logement . piscine . construction . étanchéité . liner . quantité": {
-    "formule": "piscine . construction . durée de vie / durée de vie",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "quantity",
-    "titre.auto": "quantity"
-  },
   "logement . piscine . type . surface . parallélépipède": {
-    "formule": "surface + murs",
+    "formule": "32 + 36",
     "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nConsider a pool measuring 8m x 4m x an average depth of 1.5m (2 at one end and 1 at the other, linear descent).\n\nThe surface area of this typical pool is 32m² of bottom and 36m² of walls.\n",
     "unité": "m2",
     "titre": "parallelepiped",
-    "titre.auto": "parallelepiped"
-  },
-  "logement . piscine . type . surface . murs": {
-    "formule": "1.5 m * (8 m + 4 m + 8 m + 4 m)",
-    "unité": "m2",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "walls",
-    "titre.auto": "walls"
-  },
-  "logement . piscine . construction . étanchéité . liner . durée de vie": {
-    "titre": "Liner lifetime",
-    "formule": 10,
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre.auto": "Liner lifetime"
-  },
-  "logement . piscine . construction . lot technique . pompe": {
-    "formule": 270,
-    "unité": "kgCO2e",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "pump",
-    "titre.auto": "pump"
-  },
-  "logement . piscine . construction . lot technique . électricité": {
-    "formule": 35,
-    "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nThe terminal block, the pipes, the electric cable (20m), the sheath.",
-    "unité": "kgCO2e",
-    "titre": "electricity",
-    "titre.auto": "electricity"
-  },
-  "logement . piscine . construction . lot technique . hydraulique": {
-    "formule": 32,
-    "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nPipes from pool to pump, control equipment.",
-    "unité": "kgCO2e",
-    "titre": "hydraulics",
-    "titre.auto": "hydraulics"
-  },
-  "logement . piscine . construction . divers chantier . gasoil": {
-    "formule": 192,
-    "unité": "kgCO2e",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "diesel",
-    "titre.auto": "diesel"
-  },
-  "logement . piscine . construction . divers chantier . consommable": {
-    "formule": 15,
-    "unité": "kgCO2e",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "consumables",
-    "titre.auto": "consumables"
-  },
-  "logement . piscine . construction . divers chantier . livraison": {
-    "formule": 150,
-    "unité": "kgCO2e",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "delivery",
-    "titre.auto": "delivery"
+    "titre.auto": "parallelepiped",
+    "optimized": true
   },
   "logement . piscine . surface": {
     "question": "What is the size of your swimming pool ?",
@@ -6710,28 +6537,6 @@
   },
   "logement . piscine": {
     "icônes": "🏊‍♀️",
-    "applicable si": "présent",
-    "formule": "empreinte / habitants",
-    "unité": "kgCO2e",
-    "description": "The number of private pools **buried** in French gardens has accelerated in recent years. There are now over <a href=\"https://bonpote.com/impact-ecologique-dune-piscine-individuelle/\">3 million</a> of them.\nThis equipment is far from anecdotal, and contributes significantly to France's climate footprint. \n\nIt's the construction, maintenance, purchase of various equipment (safety, water management, sanitary chemicals) and heating that have the biggest impact on the climate.\n",
-    "titre": "pool",
-    "titre.auto": "pool"
-  },
-  "logement . piscine . empreinte": {
-    "formule": {
-      "somme": [
-        "piscine . empreinte eau froide",
-        "piscine . traitement chimique",
-        "piscine . construction"
-      ]
-    },
-    "unité": "kgCO2e",
-    "description": "This model for calculating the carbon footprint of a swimming pool comes from <a href=\"https://futur.eco/simulateur/piscine/empreinte\">Futur.eco</a>, taken from the <a href=\"https://github.com/laem/futureco-data/blob/master/data/piscine.yaml\">publicodes model</a> with its default values. \n\nIt's the only open model of an individual pool's carbon footprint published to date.\n\nIn this first version, we do not specifically take into account the use of the filter pump or heating, whose footprint is implicitly calculated as part of the home's energy consumption.\nAt a later stage, it might be useful to separate the 2 consumptions so as to propose more personalized actions.\n\nNote that the water consumption aspect is not covered here as a matter of principle (our calculations focus on carbon emissions), but it is obviously essential to pay attention to it.\n",
-    "note": "To better understand the calculation of the pool's footprint, here are a few points:\n  \n  - The water footprint depends on both supply and treatment      \n  - Water evaporation is not taken into account\n  - It is assumed that the pool is refilled every year: this is a strong assumption, but acceptable in the sense that people who keep their pool water in winter will consume more chemicals.\n  - Construction takes many factors into account: masonry, waterproofing, technical equipment, etc., for \"concrete\" pools\n  - Chemical treatment is a constant today. It could be made variable according to the size or number of months the pool is used.\n  - Pool shelters and accessories such as play equipment are not taken into account for the moment\n\nIt's important to note that this calculation model is constantly being improved (see https://github.com/laem/futureco-data/issues/97)\n",
-    "titre": "footprint",
-    "titre.auto": "footprint"
-  },
-  "logement . piscine . présent": {
     "non applicable si": {
       "toutes ces conditions": [
         {
@@ -6740,12 +6545,45 @@
         "appartement"
       ]
     },
+    "formule": {
+      "variations": [
+        {
+          "si": {
+            "est défini": "piscine . présent"
+          },
+          "alors": "empreinte / habitants"
+        },
+        {
+          "sinon": 0
+        }
+      ]
+    },
+    "unité": "kgCO2e",
+    "description": "The number of private pools **buried** in French gardens has accelerated in recent years. There are now over <a href=\"https://bonpote.com/impact-ecologique-dune-piscine-individuelle/\">3 million</a> of them.\nThis equipment is far from anecdotal, and contributes significantly to France's climate footprint. \n\nIt's the construction, maintenance, purchase of various equipment (safety, water management, sanitary chemicals) and heating that have the biggest impact on the climate.\n",
+    "titre": "pool",
+    "titre.auto": "pool"
+  },
+  "logement . piscine . présent": {
     "question": "Do you have a private in-ground swimming pool ?",
-    "par défaut": "non",
     "description": "We're talking here about private **in-ground** pools, not above-ground pools, which have a much smaller carbon footprint. However, this option will be available soon!\n",
     "note": "Today, we're asking this question of everyone who owns a house.\nIn order to limit the appearance of this question for users who don't own land, or who are absolutely not concerned by swimming pools, \nwe could filter the question according to the surface area of the house, for example.\n",
     "titre": "present",
     "titre.auto": "present"
+  },
+  "logement . piscine . empreinte": {
+    "formule": {
+      "somme": [
+        "piscine . empreinte eau froide",
+        "24.314285714285713",
+        "piscine . construction"
+      ]
+    },
+    "unité": "kgCO2e",
+    "description": "This model for calculating the carbon footprint of a swimming pool comes from <a href=\"https://futur.eco/simulateur/piscine/empreinte\">Futur.eco</a>, taken from the <a href=\"https://github.com/laem/futureco-data/blob/master/data/piscine.yaml\">publicodes model</a> with its default values. \n\nIt's the only open model of an individual pool's carbon footprint published to date.\n\nIn this first version, we do not specifically take into account the use of the filter pump or heating, whose footprint is implicitly calculated as part of the home's energy consumption.\nAt a later stage, it might be useful to separate the 2 consumptions so as to propose more personalized actions.\n\nNote that the water consumption aspect is not covered here as a matter of principle (our calculations focus on carbon emissions), but it is obviously essential to pay attention to it.\n",
+    "note": "To better understand the calculation of the pool's footprint, here are a few points:\n  \n  - The water footprint depends on both supply and treatment      \n  - Water evaporation is not taken into account\n  - It is assumed that the pool is refilled every year: this is a strong assumption, but acceptable in the sense that people who keep their pool water in winter will consume more chemicals.\n  - Construction takes many factors into account: masonry, waterproofing, technical equipment, etc., for \"concrete\" pools\n  - Chemical treatment is a constant today. It could be made variable according to the size or number of months the pool is used.\n  - Pool shelters and accessories such as play equipment are not taken into account for the moment\n\nIt's important to note that this calculation model is constantly being improved (see https://github.com/laem/futureco-data/issues/97)\n",
+    "titre": "footprint",
+    "titre.auto": "footprint",
+    "optimized": true
   },
   "logement . chauffage . bois . type . bûches . prix stère 2023": {
     "formule": "71 * (150.4 / 100)",
@@ -6867,7 +6705,14 @@
     "titre": "Weekend or vacation nights",
     "mosaique": {
       "type": "selection",
-      "clé": "présent",
+      "options": [
+        "hotel . présent",
+        "camping . présent",
+        "auberge de jeunesse . présent",
+        "locations . présent",
+        "famille ou amis . présent",
+        "échange . présent"
+      ],
       "suggestions": {
         "none": {
           "hotel . présent": "non",
@@ -6875,8 +6720,7 @@
           "auberge de jeunesse . présent": "non",
           "locations . présent": "non",
           "famille ou amis . présent": "non",
-          "échange . présent": "non",
-          "choix utilisateur": "oui"
+          "échange . présent": "non"
         }
       }
     },
@@ -6930,29 +6774,30 @@
     "optimized": true
   },
   "logement . vacances . choix utilisateur": {
-    "description": "has the user made a choice of overnight stays?",
+    "titre": "User choice for overnight stays",
     "formule": {
-      "variations": [
+      "une de ces conditions": [
         {
-          "si": {
-            "une de ces conditions": [
-              "hotel . présent",
-              "camping . présent",
-              "auberge de jeunesse . présent",
-              "locations . présent",
-              "famille ou amis . présent",
-              "échange . présent"
-            ]
-          },
-          "alors": "oui"
+          "est défini": "hotel . présent"
         },
         {
-          "sinon": "non"
+          "est défini": "camping . présent"
+        },
+        {
+          "est défini": "auberge de jeunesse . présent"
+        },
+        {
+          "est défini": "locations . présent"
+        },
+        {
+          "est défini": "famille ou amis . présent"
+        },
+        {
+          "est défini": "échange . présent"
         }
       ]
     },
-    "titre": "user selection",
-    "titre.auto": "user selection"
+    "titre.auto": "User choice for overnight stays"
   },
   "logement . vacances . empreinte hotel": {
     "titre": "Hotel or B&B footprint",
@@ -6982,7 +6827,6 @@
   },
   "logement . vacances . hotel . présent": {
     "question": "Do you stay in hotels or B&B?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -7027,7 +6871,6 @@
   },
   "logement . vacances . camping . présent": {
     "question": "Do you go camping?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -7072,7 +6915,6 @@
   },
   "logement . vacances . auberge de jeunesse . présent": {
     "question": "Do you stay in youth hostels?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -7117,7 +6959,6 @@
   },
   "logement . vacances . locations . présent": {
     "question": "Do you go rent furnished rentals (such as Airbnb) for your holidays?",
-    "par défaut": "non",
     "description": "💡 Declare here nights spent in furnished rentals of the Airbnb or Abritel type.\n",
     "titre": "present",
     "titre.auto": "present"
@@ -7163,7 +7004,6 @@
   },
   "logement . vacances . échange . présent": {
     "question": "Do you practice home exchange?",
-    "par défaut": "non",
     "description": "💡 Declare here nights spent in home exchange (HomeExchange, SwitchHome...).\n",
     "titre": "present",
     "titre.auto": "present"
@@ -7210,7 +7050,6 @@
   },
   "logement . vacances . famille ou amis . présent": {
     "question": "Do you stay with friends or family?",
-    "par défaut": "non",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -7231,7 +7070,6 @@
   },
   "logement . vacances . maison secondaire . présent": {
     "question": "Do you own a second home?",
-    "par défaut": "non",
     "inactif": "oui",
     "titre": "present",
     "titre.auto": "present"
@@ -7491,16 +7329,13 @@
     "formule": {
       "variations": [
         {
-          "si": "usager = 'affirmatif'",
+          "si": {
+            "est défini": "usager"
+          },
           "alors": "empreinte"
         },
         {
-          "si": "usager = 'négatif'",
-          "alors": 0
-        },
-        {
-          "si": "usager = 'moyenne'",
-          "alors": "empreinte moyenne"
+          "sinon": "empreinte moyenne"
         }
       ]
     },
@@ -7511,30 +7346,11 @@
   "transport . deux roues . usager": {
     "question": "Do you use a motorized two-wheeler?",
     "description": "Scooters and motorcycles are nowadays mostly petrol powered. Electric mopeds have made a real breakthrough and are added to the model.\n",
-    "avec": {
-      "moyenne": null,
-      "affirmatif": {
-        "titre": "Oui"
-      },
-      "négatif": {
-        "titre": "Non"
-      }
-    },
-    "par défaut": "'moyenne'",
-    "formule": {
-      "une possibilité": {
-        "choix obligatoire": "oui",
-        "possibilités": [
-          "affirmatif",
-          "négatif"
-        ]
-      }
-    },
     "titre": "user",
     "titre.auto": "user"
   },
   "transport . deux roues . empreinte": {
-    "applicable si": "usager = 'affirmatif'",
+    "applicable si": "usager",
     "icônes": "🛵",
     "formule": "(empreinte au km + entretien pondéré) * km",
     "unité": "kgCO2e",
@@ -7570,7 +7386,7 @@
     "optimized": true
   },
   "transport . deux roues . type": {
-    "applicable si": "usager = 'affirmatif'",
+    "applicable si": "usager",
     "question": "What type of two-wheelers do you use?",
     "par défaut": "'moto sup 250'",
     "formule": {
@@ -7703,17 +7519,23 @@
     "titre.auto": "speed factor"
   },
   "futureco-data . transport . ferry . correction temps de navigation": {
-    "formule": "17.818574514038875 / vitesse",
+    "formule": "vitesse moyenne / vitesse",
     "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nThe power required to propel a ship is the cube of its speed. The climate footprint per hour naturally follows this same function. But the ship is then going faster: it will emit more per hour for less time, so this factor corrects for.\n",
     "titre": "navigation time correction",
-    "titre.auto": "navigation time correction",
-    "optimized": true
+    "titre.auto": "navigation time correction"
   },
   "futureco-data . transport . ferry . rapport vitesse": {
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "speed ratio",
     "titre.auto": "speed ratio",
-    "formule": "vitesse / 17.818574514038875",
+    "formule": "vitesse / vitesse moyenne"
+  },
+  "futureco-data . transport . ferry . vitesse moyenne": {
+    "formule": "33 / 1.852 km/mn",
+    "unité": "noeud",
+    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
+    "titre": "average speed",
+    "titre.auto": "average speed",
     "optimized": true
   },
   "futureco-data . transport . ferry . vitesse en kmh": {
@@ -8101,16 +7923,13 @@
     "formule": {
       "variations": [
         {
-          "si": "usager = 'affirmatif'",
+          "si": {
+            "est défini": "usager"
+          },
           "alors": "empreinte"
         },
         {
-          "si": "usager = 'négatif'",
-          "alors": 0
-        },
-        {
-          "si": "usager = 'moyenne'",
-          "alors": "empreinte moyenne"
+          "sinon": "empreinte moyenne"
         }
       ]
     },
@@ -8118,34 +7937,15 @@
     "titre.auto": "Ferry"
   },
   "transport . ferry . empreinte": {
-    "applicable si": "usager = 'affirmatif'",
-    "formule": "heures * futureco-data . transport . ferry . vitesse moyenne . métrique * futureco-data . transport . ferry . empreinte par km volume",
+    "formule": "(heures * 33) * futureco-data . transport . ferry . empreinte par km volume",
     "description": "The ferry model comes from <a href=\"https://futur.eco/ferry\">Futur.eco</a>.\nThis model is explained in simplified form on the <a href=\"https://nosgestesclimat.fr/documentation/transport/ferry/empreinte-par-km-volume\">\"Footprint per km and passenger\"</a> page, and is based on an in-depth study <a href=\"https://hackmd.io/@laem/empreinte-ferry\">(see the complete methodological note</a>)\n\nIn order to simplify the assessment of the user's footprint, we propose an estimate based on travel time (in hours). We then set the other calculation parameters as such:\n  - Cabin travel\n  - One car on board\n  - 2 people share cabin, car\n  - Ferry model considered (layout, average speed): <a href=\"https://www.greenferries.org/ships/mega-express-four-9086590/\">Mega Express Four</a>\n",
     "titre": "footprint",
-    "titre.auto": "footprint"
+    "titre.auto": "footprint",
+    "optimized": true
   },
   "transport . ferry . usager": {
     "question": "Do you take the ferry?",
     "description": "Answer yes if you're taking the ferry to neighboring islands or continents (Corsica, UK, Maghreb...).\n\nIf you take cruises (long voyages where you live on the boat), also answer yes: initially, we count ferry and cruise times in the same way.\n\nIf you don't take the ferry every year, but intend to continue taking it, answer \"yes\" and roughly estimate the number of hours per year.\n\nFor example, for a 9h crossing (one night) every 3 years, answer `3`.\n",
-    "avec": {
-      "moyenne": null,
-      "affirmatif": {
-        "titre": "Oui"
-      },
-      "négatif": {
-        "titre": "Non"
-      }
-    },
-    "par défaut": "'moyenne'",
-    "formule": {
-      "une possibilité": {
-        "choix obligatoire": "oui",
-        "possibilités": [
-          "affirmatif",
-          "négatif"
-        ]
-      }
-    },
     "titre": "user",
     "titre.auto": "user"
   },
@@ -8154,7 +7954,7 @@
       "recalcul": {
         "règle": "ferry . empreinte",
         "avec": {
-          "usager": "'affirmatif'",
+          "usager": "oui",
           "heures": "durée moyenne par français"
         }
       }
@@ -8171,6 +7971,7 @@
     "optimized": true
   },
   "transport . ferry . heures": {
+    "applicable si": "usager",
     "titre": "Ferry hours in the year",
     "question": "How many hours a year do you travel by ferry or cruise?",
     "description": "For the moment, we do not take into account the options that can increase or decrease the footprint of a ferry crossing: \n  - car on board\n  - filling the cabin or reserving a seat\n  - use of services on board (restaurant, stores)\n  - and of course the speed of the boat (the faster a boat is, the more it consumes).\n\nThe calculation is made for a typical crossing.\n",
@@ -8225,7 +8026,12 @@
     "icônes": "🚲",
     "mosaique": {
       "type": "selection",
-      "clé": "présent",
+      "options": [
+        "marche . présent",
+        "vélo . présent",
+        "vae . présent",
+        "autres véhicules à moteur . présent"
+      ],
       "suggestions": {
         "none": {
           "marche . présent": "non",
@@ -8475,6 +8281,11 @@
     "mosaique": {
       "type": "selection",
       "clé": "propriétaire",
+      "options": [
+        "caravane . propriétaire",
+        "camping car . propriétaire",
+        "van . propriétaire"
+      ],
       "suggestions": {
         "none": {
           "caravane . propriétaire": "non",
