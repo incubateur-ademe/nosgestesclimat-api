@@ -60,7 +60,6 @@
     "formule": "par semaine * 52",
     "icônes": "🍖📉",
     "description": "> ... or in the evening\n\nIt is possible to significantly reduce the footprint of your diet\nwithout becoming strictly vegetarian.\n\nReplace half of your meat meals with vegetarian meals.\n",
-    "effort": "modéré",
     "titre.auto": "Eat meat only once a day"
   },
   "alimentation . réduire viande . par deux . par semaine": {
@@ -102,7 +101,6 @@
     "formule": "par semaine * 52",
     "icônes": "🍖📉",
     "description": "It is quite possible to significantly reduce the footprint of your diet\nwithout becoming strictly vegetarian.\n\nOn this gesture, we replace 3/4 of your meat meals by vegetarian meals,\nwhich is a good approximation of a meat consumption reserved for the\nweekends.\n",
-    "effort": "conséquent",
     "titre.auto": "Eat meat only on weekends"
   },
   "alimentation . réduire viande . par quatre . par semaine": {
@@ -150,7 +148,6 @@
     "formule": "différence par semaine * 52",
     "icônes": "🥗🧀",
     "description": "Adopt a vegetarian diet, i.e. without meat or fish (but with eggs, milk,\ncheese, yogurt).\n\nLess strong than the vegan diet, it already allows a very important\nreduction of the footprint on the climate.\n\n[Learn more about the vegetarian\ndiet](/actions/plus/alimentation/devenir-végétarien).\n",
-    "effort": "conséquent",
     "titre.auto": "Becoming a vegetarian"
   },
   "alimentation . devenir végétarien . différence par semaine": {
@@ -281,7 +278,6 @@
     "formule": "par semaine * 52",
     "icônes": "🥩🍗",
     "description": "The climate footprint of our food is directly correlated to our\nconsumption of meat, but it is important to know that not all meat is\nequal in this respect.\n\n> As a comparison, a steak per kilo emits 6 times more greenhouse gases\n> than a chicken fillet.\n\nTo learn more about the impacts of our meat consumption, please read\nthe[full\nexplanation](/actions/plus/alimentation/réduire-viande/par-deux).\n",
-    "effort": "faible",
     "titre.auto": "Favour poultry or pork"
   },
   "alimentation . viande faible empreinte . par semaine": {
@@ -314,7 +310,6 @@
     "non applicable si": "local . consommation = 'oui toujours'",
     "titre": "Eat mostly local products",
     "icônes": "🍅🇫🇷",
-    "effort": "faible",
     "formule": "alimentation . local . empreinte - recalcul",
     "description": "Local food allows us to reduce the transport distances of the products\nwe consume. However, even if it may seem counter-intuitive, local food\ncan, depending on the case, be unfavorable in terms of greenhouse gas\nemissions: the impact of the origin of our products cannot be summed up\nin a comparison between short and long distance. The effects of scale,\nthe centralization of products, the efficiency of the transport used (or\nconversely the lack of efficiency) make the matter more complex from a\ncarbon accounting point of view.\n\nNevertheless, local food has many other positive impacts, first of all\nby supporting the farmers of our regions!\n\nIt is important to keep in mind that this is a first approach that will\nbe refined later on. As an example, we can suppose that the impact of\nthis action will be more important for vegetalized diets, which is not\ntaken into account here.\n",
     "titre.auto": "Eat mostly local products"
@@ -348,7 +343,6 @@
     "non applicable si": "de saison . consommation = 'oui toujours'",
     "titre": "Eat according to the seasons",
     "icônes": "🍅🌞",
-    "effort": "faible",
     "formule": "alimentation . de saison . empreinte - recalcul",
     "description": "Contrary to what one might imagine, the impact of this action is\nrelatively low because the share of seasonal products is very low in the\naverage French person's diet.\n\nBut there are many other benefits to seasonal food such as the lower\nconsumption of water, the diversity of crops, or the lower dependence on\nhydrocarbons (gas and oil) that heat the greenhouses.\n\nIt is important to keep in mind that this is a first approach that will\nbe refined later on. As an example, we can suppose that the impact of\nthis action will be more important for vegetated systems, which is not\ntaken into account here.\n",
     "note": "To learn more about the calculation method, browse its formula, the variables will be explained.\n",
@@ -379,7 +373,6 @@
     "icônes": "🚯",
     "applicable si": "quantité jetée = 'base'",
     "non applicable si": "gestes . gaspillage alimentaire . présent",
-    "effort": "moyen",
     "formule": "gestes . empreinte gaspillage alimentaire",
     "description": "In France, the average food waste is estimated at 30 kg per person per\nyear, including 7 kg of food still wrapped!\n\nIf we take a step back and consider the entire value chain (i.e. from\nthe field to the plate) it is about 10 million tons of food that are\nwasted per year, or 150 kg per capita.\n\nReducing food waste is therefore essential in order to avoid producing\nto throw away!\n\nYou will find useful tips and practices\n[here](https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation/pourquoi-gaspillons-autant-nourriture)\n",
     "titre.auto": "Reduce food waste"
@@ -389,7 +382,6 @@
     "icônes": "🐛🌱",
     "applicable si": "quantité jetée = 'base'",
     "non applicable si": "gestes . compostage biodéchets . présent",
-    "effort": "faible",
     "formule": "gestes . bonus compostage biodéchets",
     "description": "Our bio-waste, i.e. the putrescible waste from our food (peelings,\nleftovers, etc.), represents a large part of the weight of our grey\ngarbage can, thus contributing to increase the carbon footprint\nassociated with waste management. This waste is very often little or\npoorly recycled despite the environmental benefit it can bring: compost,\na rich organic substance that is beneficial to the soil. Composting our\nbiowaste (individually or collectively) allows us to reduce the size of\nour garbage cans and to encourage the creation of compost that can\neventually be used as an alternative to chemical fertilizers.\n",
     "titre.auto": "Compost"
@@ -427,7 +419,6 @@
   "divers . partage NGC": {
     "titre": "Spreading Our Gestes Climat !",
     "icônes": "📢🌍",
-    "effort": "faible",
     "description": "In addition to the actions you can take, talking about this simulator to your friends, your colleagues, sharing it on social networks, etc. is also a strong way to contribute to the reduction of CO₂ emissions!\n\nIt's certainly a very small digital impact in addition (well less than 1kgCO₂e, well unless you're a big network star 🤩 !), but it's especially potentially a lot of impact in terms of change! 📉\nIf these people decide on the same actions as you, imagine the multiplier effect! 🙌\n",
     "titre.auto": "Spreading Our Gestes Climat !"
   },
@@ -446,7 +437,6 @@
         "alimentation . déchets . gestes . stop pub . présent"
       ]
     },
-    "effort": "faible",
     "formule": "alimentation . déchets . bonus stop pub",
     "description": "It is a sticker to be placed on your mailbox that informs the\nadvertising distributors that you refuse to receive catalogs,\npromotions, restaurant menus and advertisements of any kind.\n\nThis does not prevent all advertising, but it sends a strong signal and\ngenerally reduces considerably the amount of paper waste received.\n",
     "titre.auto": "Have a stop sign"
@@ -463,7 +453,6 @@
     "titre": "Make appliances last",
     "icônes": "💪🔌",
     "non applicable si": "préservation = 'maximum'",
-    "effort": "modéré",
     "formule": "(divers . électroménager . appareils - divers . électroménager . appareils préservation allongée) / logement . habitants",
     "description": "Increasing the lifespan of your household appliances (by taking care of them or repairing them when they break down) allows you to limit your impact\non the climate\n\nRenewing equipment prematurely, on the other hand, contributes to producing more equipment for the same service.\n\nIf you absolutely want to get rid of an object prematurely, think of the ressourceries or recycleries, for example, which are places dedicated to reuse! 😉\n",
     "titre.auto": "Make my appliances last"
@@ -488,7 +477,6 @@
     "titre": "Extend the life of my furniture",
     "icônes": "💪🪑",
     "non applicable si": "préservation = 'maximum'",
-    "effort": "modéré",
     "formule": "(divers . ameublement . meubles - divers . ameublement . meubles préservation allongée) / logement . habitants",
     "description": "Increasing the life span of your furniture (by taking care of it or repairing it) allows you to limit your impact on the climate\non the climate. \n\nRenewing equipment prematurely, on the other hand, contributes to producing more equipment for the same service.\n\nIf you absolutely want to get rid of an object prematurely, think of the ressourceries or recycleries, for example, which are places dedicated to reuse! 😉\n",
     "titre.auto": "Extend the life of my furniture"
@@ -536,7 +524,6 @@
   },
   "divers . numérique . internet . diminuer": {
     "titre": "Reduce streaming time",
-    "effort": "faible",
     "icônes": "💻📉",
     "applicable si": "internet . durée journalière >= 2",
     "formule": "numérique . internet - empreinte réduite",
@@ -559,7 +546,6 @@
     "titre": "Extend the life of my devices",
     "icônes": "💪💻️",
     "non applicable si": "préservation = 'maximum'",
-    "effort": "modéré",
     "formule": "divers . numérique . appareils - divers . numérique . appareils préservation allongée",
     "description": "Increasing the life span of your furniture (by taking care of it or repairing it) allows you to limit your impact on the climate\non the climate. \n\nRenewing your equipment prematurely, on the other hand, contributes to producing more equipment for the same service.\n\nIf you absolutely want to get rid of an object prematurely, think of the ressourceries or recycleries, for example, which are places dedicated to reuse! 😉\n",
     "titre.auto": "Extend the life of my devices"
@@ -577,7 +563,6 @@
   "logement . baisse température": {
     "titre": "Reduce heating by 1° or 2°",
     "icônes": "🏠🌡",
-    "effort": "modéré",
     "description": "Housing and in particular its heating (oil or gas) has a significant\nimpact on the climate.\n\nLowering the temperature by one or two degrees can be a way to reduce\nits footprint.\n\nSource : ADEME - [40 tips and tricks to save water and\nenergy](https://www.ademe.fr/40-trucs-astuces-economiser-leau-lenergie)\n",
     "applicable si": "température > 19",
     "formule": "(nombre degrés * gains 1 degré * empreinte chauffage air) / habitants",
@@ -646,7 +631,6 @@
   },
   "logement . éteindre appareils": {
     "formule": "153.738 / habitants",
-    "effort": "faible",
     "unité": "kgCO2e",
     "titre": "Turn off devices on standby",
     "icônes": "🏠📺",
@@ -668,7 +652,6 @@
         "chauffage . fioul . présent"
       ]
     },
-    "effort": "conséquent",
     "icônes": "🛢️🪵",
     "formule": "(chauffage . fioul - alternative) / habitants",
     "description": "Oil-fired boilers are the most polluting. Replacing them with less\ncarbon-intensive alternatives such as wood pellets is a great way to\nreduce your carbon footprint.\n",
@@ -684,7 +667,6 @@
   },
   "logement . éclairage . LED": {
     "titre": "Replace light bulbs with LEDs",
-    "effort": "faible",
     "icônes": "💡🔄",
     "formule": "(consommation de l'éclairage - avec LED) / habitants",
     "description": "Replacing conventional light bulbs with low-energy bulbs such as LEDs can reduce your electricity consumption by a factor of 6\n\nThese bulbs consume very little electricity and have a very long life (up to 40,000 hours for the A++ categories).\n",
@@ -718,7 +700,6 @@
         "chauffage . gaz . présent"
       ]
     },
-    "effort": "conséquent",
     "icônes": "🔥🔄",
     "formule": "(chauffage . gaz - pompe à chaleur) / habitants",
     "description": "Gas-fired boilers are among the most CO₂ emitting. Replacing them with\nlower-carbon alternatives like heat pumps is a strong move to reduce\nyour carbon footprint.\n\n> Heat pumps are often referred to as *PACs*.\n\n💡 Their principle is ingenious: it's a reverse fridge! Your fridge,\nthanks to a little electricity, cools its interior and rejects the heat\ninto the room. The heat pump cools the outside air to heat your home.\n\n> Bonus: if it's too hot in your home in the summer, some heat pumps can\n> reverse their operation and act as air conditioning in the summer.\n",
@@ -740,7 +721,6 @@
   "logement . séchage air libre": {
     "titre": "Choose the clothesline over the dryer",
     "applicable si": "divers . électroménager . appareils . sèche-linge . nombre > 0",
-    "effort": "faible",
     "icônes": "💨👗",
     "description": "Air-drying your clothes saves energy and preserves your clothes, making\nthem last longer.\n",
     "formule": "(400 kWh * électricité . intensité carbone) / habitants",
@@ -757,7 +737,6 @@
     "titre": "Renovate your home",
     "icônes": "🏚️✨",
     "formule": "(logement . empreinte chauffage air * gain rénovation) / habitants",
-    "effort": "conséquent",
     "applicable si": "propriétaire",
     "inactive": "non",
     "description": "Energy renovation, despite its cost, allows, in the long term, very strong energy savings and thus contributes to reducing the carbon footprint\nof your home\n\nThese savings will be even more important if you live in a poorly insulated home.\n\nTo find out which renovations are best suited to your home as well as the assistance available: <a href=\"https://www.faire.gouv.fr\">DOING</a>.\n",
@@ -786,7 +765,6 @@
     "titre": "Renovate your home to low-energy",
     "icônes": "🏠✨",
     "formule": "(logement . empreinte chauffage air * gain rénovation) / habitants",
-    "effort": "conséquent",
     "applicable si": "propriétaire",
     "description": "\nA renovation with the BBC label can reduce the energy consumption of your home by up to 70%\n\nThis type of renovation also leads, in the long term, to a significant reduction in the energy bill, especially if you live in a poorly insulated home or even an energy sieve.\n\n> We speak of thermal sieve for housing with an energy label F or G (there are more than 7 million in France). These homes <a href=\"https://www.ladepeche.fr/2021/03/15/les-passoires-thermiques-interdites-a-la-location-a-partir-de-2028-9428622.php\">will no longer be able to be rented in 2028</a>.\n\nTo find out which renovations are best suited to your home as well as the aid available: <a href=\"https://www.faire.gouv.fr\">DOING</a>.\n",
     "titre.auto": "Renovate my home to BBC"
@@ -801,7 +779,6 @@
   "logement . raccordement réseau de chaleur": {
     "titre": "Connecting to a heating network",
     "icônes": "👥🏭",
-    "effort": "modéré",
     "applicable si": {
       "toutes ces conditions": [
         "appartement",
@@ -863,7 +840,6 @@
   "services sociétaux . voter": {
     "icônes": "🗳️🏛️",
     "description": "Every year or so, we each have the opportunity to vote for representatives to represent our ideas.\n\nPresidential, legislative, departmental and regional elections are the opportunity to bring the subject of the climate, and therefore the footprint of public services, and all the efforts that are complicated to do alone.\n\nBut that's not all! If you're a student, maybe there are votes to guide the work of the school or associations? If you are an employee, can you influence the trips offered by the works council? If you are retired, can you give your voice in the board of directors of your insurances, of the banks which have your money?\n",
-    "effort": "faible",
     "titre": "vote",
     "titre.auto": "vote"
   },
@@ -871,7 +847,6 @@
     "titre": "Lobby locally",
     "icônes": "📍📢",
     "description": "The utility footprint is the footprint of many government-run activities that take place around you.\n\n\n> 🚸 Your children's school may be a heat sieve\n\n> 🛣️ Your city is still building many miles of roads\n\nThe first step is to investigate, then simply discuss this with friends and officials in a position to act.\n",
-    "effort": "modéré",
     "titre.auto": "Lobby locally"
   },
   "services sociétaux . changement banque": {
@@ -888,7 +863,6 @@
         "transport . prendre moins l'avion"
       ]
     },
-    "effort": "conséquent",
     "formule": "transport . avion",
     "description": "Airplanes have a significant climate footprint\n\nIt is not limited to just CO₂ emissions, which is just one greenhouse gas among many\n\nThe total footprint of the airplane is estimated to be about 2x that of CO₂\n\nSee the <a href=\"https://monimpacttransport.fr\">transportation calculator</a> to view this footprint and compare it to other modes of transportation.\n",
     "aller plus loin": "## Forçage radiatif total\n\nL'avion a un impact important sur le climat à la fois à cause de ses émissions de CO₂ et d'autres effets (dit forçage radiatif additionnel).\n\nDu fait que les avions volent en haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d’autres gaz à effet de serre que le CO₂ (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.).\n\nCe graphique montre la complexité des effects en jeu (et encore, tout n'y est pas).\n\n![](https://www.uecna.eu/wp-content/uploads/2017/12/ilusion-diagram1.jpg)\n\n## Avion vs voiture\n\nOn entend souvent que ramenée au passager, elle est du même ordre que celle d'une voiture. C'est vrai, mais ce n'est qu'une partie de l'histoire. \n\nPremièrement, l'empreinte de la voiture elle-même est élevée. Comparer l'avion à la voiture ne rend pas ce premier vertueux.\n\nDeuxièmement, on ne peut comparer la voiture et l'avion simplement parce qu'un trajet en avion est en général bien plus long. Quand il s'agit de choisir la destination des vacances par exemple, un trajet en voiture a donc toutes les chances d'être beaucoup moins polluant. Cela dit, notons aussi que nos kilométrages en voiture sont tels que le match est relancé quand on regarde l'empreinte à l'année.\n",
@@ -897,7 +871,6 @@
   },
   "transport . arrêter l'avion court": {
     "titre": "Favour the train over the plane",
-    "effort": "modéré",
     "icônes": "🛬🚆",
     "formule": "transport . avion . court courrier + compensation train",
     "description": "The airplane has changed our way of life and our way of traveling. We can now go further, faster, more frequently, but unfortunately this is not without a downside for the climate\n\nIndeed, there is a ratio of 100 between the emission factors (quantity of CO₂ emitted per km traveled) of a plane and a train\n\n> For example, a round trip from Paris to Marseille emits about 300 kgCO2eq by plane against only 2 kgCO2eq by train\n\nThis is why we need to adapt our weekends and vacations\nby turning to low-carbon mobility offers and/or by rethinking our way of traveling is essential if we want to\nreduce our impact on the climate, both individually and as a society\n\n<a href=\"https://monimpacttransport.fr\">Compare modes of transportation here</a>\n",
@@ -917,7 +890,6 @@
         "transport . arrêter l'avion court"
       ]
     },
-    "effort": "conséquent",
     "formule": "transport . avion / 2",
     "description": "> 💡 Try to make at least one of the trips to your destination by train!\n\nFlying has a significant climate footprint. \n\nIt is not limited to just CO₂ emissions, which is just one greenhouse gas among many. \n\nSee the <a href=\"https://monimpacttransport.fr\">transportation calculator</a> to view this footprint and compare it to other means of transportation.\n",
     "aller plus loin": "## Forçage radiatif total\n\nL'avion a un impact important sur le climat à la fois à cause de ses émissions de CO₂ et d'autres effets (dit forçage radiatif additionnel).\n\nDu fait que les avions volent en haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d’autres gaz à effet de serre que le CO₂ (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.).\n\nCe graphique montre la complexité des effects en jeu (et encore, tout n'y est pas).\n\n![](https://www.uecna.eu/wp-content/uploads/2017/12/ilusion-diagram1.jpg)\n\n## Avion vs voiture\n\nOn entend souvent que ramenée au passager, elle est du même ordre que celle d'une voiture. C'est vrai, mais ce n'est qu'une partie de l'histoire. \n\nPremièrement, l'empreinte de la voiture elle-même est élevée. Comparer l'avion à la voiture ne rend pas ce premier vertueux.\n\nDeuxièmement, on ne peut comparer la voiture et l'avion simplement parce qu'un trajet en avion est en général bien plus long. Quand il s'agit de choisir la destination des vacances par exemple, un trajet en voiture a donc toutes les chances d'être beaucoup moins polluant. Cela dit, notons aussi que nos kilométrages en voiture sont tels que le match est relancé quand on regarde l'empreinte à l'année.\n",
@@ -926,7 +898,6 @@
   "transport . éco-conduite": {
     "titre": "Adopt eco-driving",
     "applicable si": "voiture . utilisateur régulier",
-    "effort": "faible",
     "icônes": "🚗☮",
     "formule": "transport . voiture . empreinte calculée - transport . éco-conduite . recalcul",
     "description": "Eco-driving is a simple and effective action that is within everyone's reach.\n\nIt can save an average of 15% in fuel consumption,\nreduce vehicle maintenance costs, reduce the risk of accidents by an average of 10 to 15% and make substantial savings that can amount to several hundred\nsavings that can amount to several hundred euros\n\nThe application of eco-driving is all the more relevant in cities and urban areas where stops and restarts are frequent\nrestarting are frequent.\n",
@@ -955,7 +926,6 @@
   },
   "transport . covoiturage": {
     "titre": "Favour carpooling",
-    "effort": "modéré",
     "applicable si": "voiture . utilisateur régulier",
     "action": {
       "dépasse": [
@@ -975,7 +945,6 @@
   },
   "transport . boulot . covoiturage": {
     "titre": "Carpool to work",
-    "effort": "modéré",
     "applicable si": {
       "toutes ces conditions": [
         "voiture . utilisateur régulier",
@@ -1055,7 +1024,6 @@
       ]
     },
     "titre": "Go to work without a car",
-    "effort": "conséquent",
     "icônes": "🚌🚲",
     "description": "When possible, taking public transport or light vehicles (walking,\ncycling, personal moped, ...) to work reduces our climate footprint,\nbut also improves our quality of life.\n\n[70%](https://www.ecologie-solidaire.gouv.fr/covoiturage-en-france-avantages-et-reglementationen-vigueur)\nof home-work trips are made with individual vehicles, most of them alone\nin their cars. This is what we call auto-solism.\n\nIn addition to emitting a lot of greenhouse gases, this auto-soloing is\ndetrimental to the quality of the air in our cities and therefore to our\nhealth, and it clogs up urban roads.\n\n> As an example traffic jams represent in Ile-de-France per year and per\n> person [163 hours\n> lost](https://www.tomtom.com/en_gb/traffic-index/paris-traffic) or\n> about 6 days.\n\n> 💡 Did you know? The State and many regions or cities subsidize\n> mechanical, electric, cargo, folding bikes, etc. [Calculate your aid\n> 🚲️ in 3 clicks](https://mesaidesvelo.fr).\n",
     "applicable si": "voiture . km > seuil d'activation boulot",
@@ -1188,7 +1156,6 @@
   },
   "transport . boulot . télétravail": {
     "titre": "Telecommute",
-    "effort": "conséquent",
     "icônes": "🏠💻",
     "description": "Telecommuting is a way to avoid the daily commute to work.\n\nIt is obviously not possible for many employees, but the health crisis\nof 2020 has shown that many jobs are indeed telecommutable.\n\nIn this calculation, we only take into account the days teleworked that\navoid a trip by private car.\n",
     "applicable si": {
@@ -2562,7 +2529,6 @@
   },
   "bilan": {
     "titre": "Your personal climate report",
-    "exposé": "oui",
     "icônes": "👤",
     "description": "Here is an estimate of your climate footprint for the year. It evolves according to your answers.\n\nIt is your share of greenhouse gas emissions, and therefore of global warming.\n\nAll the footprints of companies are included. For example, if you drive a car 🚗 10 km, the emissions are not attributed to the country that extracted this oil from the ground, nor to the company that refined it and distributed it in gas stations, but to the final consumer in his car.\n\nIf we add up this footprint for each French person and each other 🌍 earthling, we get the total impact of human activities on the climate.\n\n*Please note: this simulator gives the order of magnitude of your footprint and that of the French: the estimate is not to be taken to the nearest tenth.*\n\nBut what does it mean, this ten tons of CO₂ equivalent? Why is it important? **We tell you all about the climate footprint** and how to locate this footprint (low, high?) <a href=\"https://datagir.ademe.fr/blog/budget-empreinte-carbone-c-est-quoi/\">➡ in this article</a>.\n\n<RavijenChart/>\n",
     "formule": {
@@ -4658,7 +4624,6 @@
   "divers . numérique . appareils . téléphone . empreinte": {
     "titre": "Fingerprint of a phone",
     "icônes": "📱✨",
-    "exposé": "oui",
     "note": "In the first version of Nos Gestes Climat we divided the possibilities of this question into three categories, according to the availability of data in the carbon base and manufacturers).\n\n- Basic phone (also called \"feature phone\", which today are a cross between the famous Nokia 3310 and the smartphone, with a small screen and low-end components)\n- Classic smartphone (mid-range, which accounts for the overwhelming majority of sales. Almost all smartphones sold in 2021 will have a screen larger than 5.5 inches)\n- Top-of-the-range smartphone (the GES balance sheet database does not include \"top-of-the-range phone\" or \"screen > 6 inches\" categories. Moreover, the footprint of an iPhone 11 estimated by Apple itself is 72kg of CO₂, 79% of which so ~57kg just for production. \n  Unless the scope of the studies is not the same, but a larger scope taken by the company than by the environmental authority is astonishing to say the least, we retain the manufacturer's value.\n\nNevertheless, the latest NegaOctet data (see Empreinte database), like the manufacturers, seem to give a higher value than the Carbon database figures.\n\nTo simplify the questionnaire, allow several phones to be counted (several purchases in recent years), \nand in view of the fact that smartphones are the phones most frequently used, we have made the (more conservative) assumption \nthat the footprint of a smartphone's construction is closer to that communicated by Apple in particular \n(see point above for the 57kg per unit figure).\n\nSee\n  - https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Smartphone\n  - https://www.bilans-ges.ademe.fr/fr/accueil/documentation-gene/index/page/produits_informatiques__electr\n  - https://www.apple.com/environment/pdf/products/iphone/iPhone_11_PER_sept2019.pdf\n",
     "unité": "kgCO2e",
     "titre.auto": "Fingerprint of a phone",

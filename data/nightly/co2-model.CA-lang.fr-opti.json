@@ -57,8 +57,7 @@
     "titre": "Manger de la viande une seule fois par jour",
     "formule": "par semaine * 52",
     "icônes": "🍖📉",
-    "description": "> ... ou le soir\n\nIl est tout à fait possible de réduire significativement l'empreinte de votre alimentation sans devenir strictement végétarien.\n\nRemplacez la moitié de vos repas avec de la viande par des repas végétariens.\n",
-    "effort": "modéré"
+    "description": "> ... ou le soir\n\nIl est tout à fait possible de réduire significativement l'empreinte de votre alimentation sans devenir strictement végétarien.\n\nRemplacez la moitié de vos repas avec de la viande par des repas végétariens.\n"
   },
   "alimentation . réduire viande . par deux . par semaine": {
     "formule": "plats - nouveau régime"
@@ -92,8 +91,7 @@
     "titre": "Manger de la viande uniquement le week-end",
     "formule": "par semaine * 52",
     "icônes": "🍖📉",
-    "description": "Il est tout à fait possible de réduire significativement l'empreinte de votre alimentation sans devenir strictement végétarien.\n\nSur ce geste, on remplace les 3/4 de vos repas carnés par des repas végétariens, ce qui est une bonne approximation d'une consommation de viande réservée aux week-ends.\n",
-    "effort": "conséquent"
+    "description": "Il est tout à fait possible de réduire significativement l'empreinte de votre alimentation sans devenir strictement végétarien.\n\nSur ce geste, on remplace les 3/4 de vos repas carnés par des repas végétariens, ce qui est une bonne approximation d'une consommation de viande réservée aux week-ends.\n"
   },
   "alimentation . réduire viande . par quatre . par semaine": {
     "formule": "plats - nouveau régime"
@@ -133,8 +131,7 @@
     },
     "formule": "différence par semaine * 52",
     "icônes": "🥗🧀",
-    "description": "Adopter un régime végétarien, donc sans viande ni poisson (mais avec des oeufs, du lait, du fromage, des yaourts).\n\nMoins fort que le régime végétalien, il permet déjà une réduction très importante de l'empreinte sur le climat.\n\n[En savoir plus sur le régime végétarien](/actions/plus/alimentation/devenir-végétarien).\n",
-    "effort": "conséquent"
+    "description": "Adopter un régime végétarien, donc sans viande ni poisson (mais avec des oeufs, du lait, du fromage, des yaourts).\n\nMoins fort que le régime végétalien, il permet déjà une réduction très importante de l'empreinte sur le climat.\n\n[En savoir plus sur le régime végétarien](/actions/plus/alimentation/devenir-végétarien).\n"
   },
   "alimentation . devenir végétarien . différence par semaine": {
     "titre": "Différence par semaine",
@@ -241,8 +238,7 @@
     "titre": "Privilégier la volaille ou le porc",
     "formule": "par semaine * 52",
     "icônes": "🥩🍗",
-    "description": "L’empreinte climat de notre alimentation est directement corrélée à notre consommation de viande, mais il faut savoir que toutes ne sont pas égales de ce point de vue.\n\n> À titre de comparaison, ramenée au kilo une entrecôte émet 6 fois plus de gaz à effet de serre que des filets de poulets.\n\nPour en savoir plus sur les impacts de notre consommation de viande, n'hésitez pas à consulter l'[explication complète](/actions/plus/alimentation/réduire-viande/par-deux).\n",
-    "effort": "faible"
+    "description": "L’empreinte climat de notre alimentation est directement corrélée à notre consommation de viande, mais il faut savoir que toutes ne sont pas égales de ce point de vue.\n\n> À titre de comparaison, ramenée au kilo une entrecôte émet 6 fois plus de gaz à effet de serre que des filets de poulets.\n\nPour en savoir plus sur les impacts de notre consommation de viande, n'hésitez pas à consulter l'[explication complète](/actions/plus/alimentation/réduire-viande/par-deux).\n"
   },
   "alimentation . viande faible empreinte . par semaine": {
     "formule": "plats - nouveau régime"
@@ -268,7 +264,6 @@
     "non applicable si": "local . consommation = 'oui toujours'",
     "titre": "Manger essentiellement des produits locaux",
     "icônes": "🍅🇫🇷",
-    "effort": "faible",
     "formule": "alimentation . local . empreinte - recalcul",
     "description": "L’alimentation locale permet en effet de réduire les distances de transports des produits que nous consommons. Cependant, même si cela peut sembler contre intuitif l'alimentation\nlocale peut, en fonction des cas considérés, être défavorable en terme d'émissions de gaz à effet de serre : l'impact de la provenance de nos produits ne peut être\nrésumé à une comparaison entre courte et longue distance. Les effets d’échelle, la centralisation des produits, l’efficacité des transports utilisés (ou à l'inverse la non\nefficacité) complexifient la chose d’un point de vue de la comptabilité carbone.\n\nNéanmoins, l'alimentation locale a bien d'autres impacts positifs avec en premier lieu le soutien aux agriculteurs de nos régions !\n\nIl faut garder en tête qu'il s'agit d'une première approche qui sera affinée par la suite. A titre d'exemple, on peut supposer que l'impact de cette action sera\nplus importante pour les régimes végétalisés, ce qui n'est pas pris en compte ici.\n"
   },
@@ -297,7 +292,6 @@
     "non applicable si": "de saison . consommation = 'oui toujours'",
     "titre": "Manger en respectant les saisons",
     "icônes": "🍅🌞",
-    "effort": "faible",
     "formule": "alimentation . de saison . empreinte - recalcul",
     "description": "Contrairement à ce qu'on pourrait imaginer, l'impact de cette action est relativement faible car la part de produits de saison est très faible dans l'alimentation moyenne d'un français.\n\nMais il existe de nombreux autres bénéfices à l'alimentation saisonnière comme la moindre consommation d'eau, la diversité des cultures, ou encore la moindre dépendance au hydrocarbures (gaz et pétrole) qui chauffent les serres.\n\nIl faut garder en tête qu'il s'agit d'une première approche qui sera affinée par la suite. A titre d'exemple, on peut supposer que l'impact de cette action sera\nplus importante pour les régimes végétalisés, ce qui n'est pas pris en compte ici.\n",
     "note": "Pour en savoir plus sur la méthode de calcul, parcourez sa formule, les variables seront expliquées.\n"
@@ -324,7 +318,6 @@
     "icônes": "🚯",
     "applicable si": "quantité jetée = 'base'",
     "non applicable si": "gestes . gaspillage alimentaire . présent",
-    "effort": "moyen",
     "formule": "gestes . empreinte gaspillage alimentaire",
     "description": "En France le gaspillage alimentaire moyen est évalué à 30 kg par personne et par an dont 7 kg d’aliments encore emballés !\n\nSi l’on prend du recule et que l'on considère l’ensemble de la chaîne de valeur (c'est-à-dire du champ à l’assiette) c’est environ 10 millions de tonnes d'aliments qui sont gaspillées par an, soit 150 kg par habitant.\n\nRéduire le gaspillage alimentaire est donc essentiel afin d'éviter de produire pour jeter !\n\nVous trouverez des conseils et des pratiques utiles [ici](https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation/pourquoi-gaspillons-autant-nourriture)\n"
   },
@@ -333,7 +326,6 @@
     "icônes": "🐛🌱",
     "applicable si": "quantité jetée = 'base'",
     "non applicable si": "gestes . compostage biodéchets . présent",
-    "effort": "faible",
     "formule": "gestes . bonus compostage biodéchets",
     "description": "Nos biodéchets, c’est à dire les déchets putrescibles issus de notre alimentation (épluchures, restes de repas, etc.),\nreprésentent une grande partie du poids de notre poubelle grise contribuant ainsi à majorer l’empreinte carbone associée\nà la gestion de nos déchets. Ces déchets sont très souvent peu ou mal valorisés malgré le bénéfice environnemental qu’ils peuvent apporter :\nun compost, substance organique riche et bénéfique pour les sols. Composter nos biodéchets (de manière individuelle ou collective) permet donc de réduire\nla taille de nos poubelles et de favoriser la création de ce compost pouvant à terme être utilisé comme alternative aux engrais chimiques.\n"
   },
@@ -365,7 +357,6 @@
   "divers . partage NGC": {
     "titre": "Diffuser Nos Gestes Climat !",
     "icônes": "📢🌍",
-    "effort": "faible",
     "description": "En plus des actions que vous pouvez prendre, parler de ce simulateur à vos proches, vos collègues, le partager sur les réseaux sociaux, etc. c'est aussi un moyen fort de contribuer à la réduction des émissions de CO₂ !\n\nC'est certes un tout petit impact numérique en plus (bien moins de 1kgCO₂e, enfin sauf si vous êtes une grande star des réseaux 🤩 !), mais c'est surtout potentiellement beaucoup d'impact en termes de changement ! 📉\nSi ces personnes décident des mêmes actions que vous, imaginez l'effet démultiplicateur ! 🙌\n"
   },
   "divers . aider les autres": {
@@ -382,7 +373,6 @@
         "alimentation . déchets . gestes . stop pub . présent"
       ]
     },
-    "effort": "faible",
     "formule": "alimentation . déchets . bonus stop pub",
     "description": "C'est un autocollant à placer sur votre boîte aux lettres qui informe les distributeurs de pub que vous refusez de recevoir des catalogues, des promotions, menus de restaurant et publicités en tout genre.\n\nCela n'empêche pas toute publicité, mais envoie un signal fort et réduit en général considérablement la quantité de déchets papiers reçus.\n"
   },
@@ -397,7 +387,6 @@
     "titre": "Faire durer mon électroménager",
     "icônes": "💪🔌",
     "non applicable si": "préservation = 'maximum'",
-    "effort": "modéré",
     "formule": "(divers . électroménager . appareils - divers . électroménager . appareils préservation allongée) / logement . habitants",
     "description": "Augmenter la durée de vie de ses équipements électroménager (en en prenant soin ou en les réparant lorsqu'ils tombent en panne) permet de limiter son impact\nsur le climat. \n\nRenouveler de manière prématurée ses équipements, à l'inverse, c'est contribuer à produire plus d'équipements pour un même service rendu.\n\nSi vous souhaitez absoluement vous séparer d'un objet prématurément, pensez aux ressourceries ou recycleries, par exemple, qui sont des lieux dédiés au réemploi ! 😉\n"
   },
@@ -418,7 +407,6 @@
     "titre": "Allonger la vie de mes meubles",
     "icônes": "💪🪑",
     "non applicable si": "préservation = 'maximum'",
-    "effort": "modéré",
     "formule": "(divers . ameublement . meubles - divers . ameublement . meubles préservation allongée) / logement . habitants",
     "description": "Augmenter la durée de vie de ses meubles (en en prenant soin ou en les réparant) permet de limiter son impact\nsur le climat. \n\nRenouveler de manière prématurée ses équipements, à l'inverse, c'est contribuer à produire plus d'équipements pour un même service rendu.\n\nSi vous souhaitez absoluement vous séparer d'un objet prématurément, pensez aux ressourceries ou recycleries, par exemple, qui sont des lieux dédiés au réemploi ! 😉\n"
   },
@@ -458,7 +446,6 @@
   },
   "divers . numérique . internet . diminuer": {
     "titre": "Réduire mon temps de streaming",
-    "effort": "faible",
     "icônes": "💻📉",
     "applicable si": "internet . durée journalière >= 2",
     "formule": "numérique . internet - empreinte réduite",
@@ -477,7 +464,6 @@
     "titre": "Allonger la vie de mes appareils",
     "icônes": "💪💻️",
     "non applicable si": "préservation = 'maximum'",
-    "effort": "modéré",
     "formule": "divers . numérique . appareils - divers . numérique . appareils préservation allongée",
     "description": "Augmenter la durée de vie de ses meubles (en en prenant soin ou en les réparant) permet de limiter son impact\nsur le climat. \n\nRenouveler de manière prématurée ses équipements, à l'inverse, c'est contribuer à produire plus d'équipements pour un même service rendu.\n\nSi vous souhaitez absoluement vous séparer d'un objet prématurément, pensez aux ressourceries ou recycleries, par exemple, qui sont des lieux dédiés au réemploi ! 😉\n"
   },
@@ -492,7 +478,6 @@
   "logement . baisse température": {
     "titre": "Réduire la température de mon chauffage de 1° ou 2°",
     "icônes": "🏠🌡",
-    "effort": "modéré",
     "description": "Le logement et en particulier son chauffage (au fioul ou au gaz) a un impact sur le climat important.\n\nBaisser la température d'un ou deux degrés peut être un moyen de réduire son empreinte.\n\nSource : ADEME - [40 trucs et astuces pour économiser l'eau et l'énergie](https://www.ademe.fr/40-trucs-astuces-economiser-leau-lenergie)\n",
     "applicable si": "température > 19",
     "formule": "(nombre degrés * gains 1 degré * empreinte chauffage air) / habitants"
@@ -550,7 +535,6 @@
   },
   "logement . éteindre appareils": {
     "formule": "6.132000000000001 / habitants",
-    "effort": "faible",
     "unité": "kgCO2e",
     "titre": "Eteindre mes appareils en veille",
     "icônes": "🏠📺",
@@ -570,7 +554,6 @@
         "chauffage . fioul . présent"
       ]
     },
-    "effort": "conséquent",
     "icônes": "🛢️🪵",
     "formule": "(chauffage . fioul - alternative) / habitants",
     "description": "Les chaudières au fuel sont les plus polluantes. Les remplacer par des alternatives moins carbonnées comme ici le bois en granulés est un geste fort pour réduire votre empreinte carbone.\n",
@@ -583,7 +566,6 @@
   },
   "logement . éclairage . LED": {
     "titre": "Remplacer mes ampoules par des LED",
-    "effort": "faible",
     "icônes": "💡🔄",
     "formule": "(consommation de l'éclairage - avec LED) / habitants",
     "description": "Remplacer les ampoules classiques par des ampoules basse consommation de type LED permet de diviser par 6 sa consommation électrique liée à l’éclairage. \n\nCes ampoules consomment très peu d’électricité et ont une très longue durée de vie (jusqu’à 40 000 heures pour les catégories A++).\n"
@@ -613,7 +595,6 @@
         "chauffage . gaz . présent"
       ]
     },
-    "effort": "conséquent",
     "icônes": "🔥🔄",
     "formule": "(chauffage . gaz - pompe à chaleur) / habitants",
     "description": "Les chaudières au gaz sont parmi les plus émissives de CO₂. Les remplacer par des alternatives moins carbonnées comme des pompes à chaleur est un geste fort pour réduire votre empreinte carbone.\n\n> Les pompes à chaleur sont souvent appelées *PAC*.\n\n💡 Leur principe est ingénieux : c'est un frigo inversé ! Votre frigo, grâce à un peu d'électricité, refroidit son intérieur et rejette la chaleur dans la pièce. La PAC refroidit l'air extérieur pour chauffer votre logement.\n\n> Bonus : s'il fait trop chaud chez vous l'été, certaines PAC peuvent inverser leur fonctionnement et faire office de climatisation l'été.\n",
@@ -631,7 +612,6 @@
   "logement . séchage air libre": {
     "titre": "Privilégier l'étendoir au sèche-linge",
     "applicable si": "divers . électroménager . appareils . sèche-linge . nombre > 0",
-    "effort": "faible",
     "icônes": "💨👗",
     "description": "Faire sécher son linge à l'air libre c'est de l'énergie économisée et des habits préservés qui durent ainsi plus longtemps.\n",
     "formule": "(400 kWh * électricité . intensité carbone) / habitants",
@@ -646,7 +626,6 @@
     "titre": "Rénover mon logement",
     "icônes": "🏚️✨",
     "formule": "(logement . empreinte chauffage air * gain rénovation) / habitants",
-    "effort": "conséquent",
     "applicable si": "propriétaire",
     "inactive": "non",
     "description": "La rénovation énergétique malgré son coût permet, sur le long terme, de très fortes économies d'énergies et participe ainsi à réduire l'empreinte carbone\nde son logement. \n\nCes économies seront d'autant plus importantes si vous vivez dans un logement mal isolé.\n\nPour connaitre les rénovations les plus adaptées à votre logement ainsi que les aides disponibles : [FAIRE](https://www.faire.gouv.fr).\n"
@@ -670,7 +649,6 @@
     "titre": "Rénover mon logement en BBC",
     "icônes": "🏠✨",
     "formule": "(logement . empreinte chauffage air * gain rénovation) / habitants",
-    "effort": "conséquent",
     "applicable si": "propriétaire",
     "description": "\nUne rénovation labellisée Batiment Basse Consommation (BBC) peut permettre de réduire jusqu’à 70 % de la consommation d’énergie de son logement. \n\nCe type de rénovation entraîne également, sur le long terme, de fortement réduire la facture énergétique, qui plus est si vous vivez dans un logement mal isolé voire une passoire énergétique.\n\n> On parle de passoire thermique pour des logements ayant une étiquette énergétique F ou G (on en trouve plus de 7 millions en France). Ces logements [ne pourront plus êtres loués en 2028](https://www.ladepeche.fr/2021/03/15/les-passoires-thermiques-interdites-a-la-location-a-partir-de-2028-9428622.php).\n\nPour connaitre les rénovations les plus adaptées à votre logement ainsi que les aides disponibles : [FAIRE](https://www.faire.gouv.fr).\n"
   },
@@ -682,7 +660,6 @@
   "logement . raccordement réseau de chaleur": {
     "titre": "Se raccorder à un réseau de chaleur",
     "icônes": "👥🏭",
-    "effort": "modéré",
     "applicable si": {
       "toutes ces conditions": [
         "appartement",
@@ -738,14 +715,12 @@
   },
   "services sociétaux . voter": {
     "icônes": "🗳️🏛️",
-    "description": "Chaque année ou presque, nous avons chacun et chacune l'occasion de voter pour l'[élection](https://fr.wikipedia.org/wiki/Scrutins_en_France_sous_la_Cinquième_République#2021[5]) de représentants qui défendront nos idées.\n\nPrésidentielles, législatives, départementales et régionales sont l'occasion de porter le sujet du climat, et donc l'empreinte des services publics, et tous les efforts qui sont compliqués à faire tout seul.\n\nMais ce n'est pas tout ! Si vous êtes étudiant, des votes existent peut-être pour orienter le travail de l'école ou des associations ? Si vous êtes employé, pouvez-vous influer sur les voyages proposés par le comité d'entreprise ? Si vous êtes retraité, pouvez-vous donner votre voix dans le conseil d'administration de vos assurances, des banques qui ont votre argent ?\n",
-    "effort": "faible"
+    "description": "Chaque année ou presque, nous avons chacun et chacune l'occasion de voter pour l'[élection](https://fr.wikipedia.org/wiki/Scrutins_en_France_sous_la_Cinquième_République#2021[5]) de représentants qui défendront nos idées.\n\nPrésidentielles, législatives, départementales et régionales sont l'occasion de porter le sujet du climat, et donc l'empreinte des services publics, et tous les efforts qui sont compliqués à faire tout seul.\n\nMais ce n'est pas tout ! Si vous êtes étudiant, des votes existent peut-être pour orienter le travail de l'école ou des associations ? Si vous êtes employé, pouvez-vous influer sur les voyages proposés par le comité d'entreprise ? Si vous êtes retraité, pouvez-vous donner votre voix dans le conseil d'administration de vos assurances, des banques qui ont votre argent ?\n"
   },
   "services sociétaux . pression locale": {
     "titre": "Faire pression localement",
     "icônes": "📍📢",
-    "description": "L'empreinte des services publics, c'est l'empreinte de plein d'activités gérées par l'État mais exercées autour de chez vous.\n\n\n> 🚸 L'école de vos enfants est peut-être une passoire thermique\n\n> 🛣️ Votre ville construit toujours de nombreux kilomètres de routes\n\nLa première étape est d'enquêter, puis simplement discuter de cela avec des amis et les reponsables en mesure d'agir.\n",
-    "effort": "modéré"
+    "description": "L'empreinte des services publics, c'est l'empreinte de plein d'activités gérées par l'État mais exercées autour de chez vous.\n\n\n> 🚸 L'école de vos enfants est peut-être une passoire thermique\n\n> 🛣️ Votre ville construit toujours de nombreux kilomètres de routes\n\nLa première étape est d'enquêter, puis simplement discuter de cela avec des amis et les reponsables en mesure d'agir.\n"
   },
   "services sociétaux . changement banque": {
     "titre": "Placer ses économies dans une banque responsable",
@@ -760,14 +735,12 @@
         "transport . prendre moins l'avion"
       ]
     },
-    "effort": "conséquent",
     "formule": "transport . avion",
     "description": "L'avion a une empreinte importante sur le climat. \n\nElle ne se limite pas aux seules émissions de CO₂, qui n'est qu'un gaz à effet de serre parmi d'autres. \n\nL'empreinte totale de l'avion est estimée à environ 2x celle du CO₂. \n\nVoir le [calculateur transport](https://monimpacttransport.fr) pour visualiser cette empreinte et la comparer aux autres moyens de transport.\n",
     "aller plus loin": "## Forçage radiatif total\n\nL'avion a un impact important sur le climat à la fois à cause de ses émissions de CO₂ et d'autres effets (dit forçage radiatif additionnel).\n\nDu fait que les avions volent en haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d’autres gaz à effet de serre que le CO₂ (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.).\n\nCe graphique montre la complexité des effects en jeu (et encore, tout n'y est pas).\n\n![](https://www.uecna.eu/wp-content/uploads/2017/12/ilusion-diagram1.jpg)\n\n## Avion vs voiture\n\nOn entend souvent que ramenée au passager, elle est du même ordre que celle d'une voiture. C'est vrai, mais ce n'est qu'une partie de l'histoire. \n\nPremièrement, l'empreinte de la voiture elle-même est élevée. Comparer l'avion à la voiture ne rend pas ce premier vertueux.\n\nDeuxièmement, on ne peut comparer la voiture et l'avion simplement parce qu'un trajet en avion est en général bien plus long. Quand il s'agit de choisir la destination des vacances par exemple, un trajet en voiture a donc toutes les chances d'être beaucoup moins polluant. Cela dit, notons aussi que nos kilométrages en voiture sont tels que le match est relancé quand on regarde l'empreinte à l'année.\n"
   },
   "transport . arrêter l'avion court": {
     "titre": "Privilégier le train au lieu de l'avion",
-    "effort": "modéré",
     "icônes": "🛬🚆",
     "formule": "transport . avion . court courrier + compensation train",
     "description": "L’avion a bouleversé nos modes de vies et nos façons de voyager. Nous pouvons maintenant aller plus loin, plus vite, plus fréquemment, mais ce n'est malheureusement pas sans contrepartie pour le climat. \n\nEn effet, il existe notamment un rapport de 100 entre les facteurs d’émissions (quantité de CO₂ émise par km parcouru) d’un avion et d’un train. \n\n> À titre d’exemple, un aller-retour Paris-Marseille émet environ 300 kgCO2eq en avion contre seulement 2 kgCO2eq en train. \n\nC’est pourquoi adapter nos week-ends et nos vacances \nen nous tournant vers des offres de mobilités bas carbone et/ou en repensant notre manière de voyager est essentiel si l’on souhaite tant à \nl’échelle individuelle qu’à l’échelle de la société réduire notre impact sur le climat\n\n[Comparez les modes de transport ici](https://monimpacttransport.fr)\n"
@@ -784,7 +757,6 @@
         "transport . arrêter l'avion court"
       ]
     },
-    "effort": "conséquent",
     "formule": "transport . avion / 2",
     "description": "> 💡 Essayez de faire au moins l'un des trajets vers votre destination en train !\n\nL'avion a une empreinte importante sur le climat. \n\nElle ne se limite pas aux seules émissions de CO₂, qui n'est qu'un gaz à effet de serre parmi d'autres. \n\nVoir le [calculateur transport](https://monimpacttransport.fr) pour visualiser cette empreinte et la comparer aux autres moyens de transport.\n",
     "aller plus loin": "## Forçage radiatif total\n\nL'avion a un impact important sur le climat à la fois à cause de ses émissions de CO₂ et d'autres effets (dit forçage radiatif additionnel).\n\nDu fait que les avions volent en haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d’autres gaz à effet de serre que le CO₂ (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.).\n\nCe graphique montre la complexité des effects en jeu (et encore, tout n'y est pas).\n\n![](https://www.uecna.eu/wp-content/uploads/2017/12/ilusion-diagram1.jpg)\n\n## Avion vs voiture\n\nOn entend souvent que ramenée au passager, elle est du même ordre que celle d'une voiture. C'est vrai, mais ce n'est qu'une partie de l'histoire. \n\nPremièrement, l'empreinte de la voiture elle-même est élevée. Comparer l'avion à la voiture ne rend pas ce premier vertueux.\n\nDeuxièmement, on ne peut comparer la voiture et l'avion simplement parce qu'un trajet en avion est en général bien plus long. Quand il s'agit de choisir la destination des vacances par exemple, un trajet en voiture a donc toutes les chances d'être beaucoup moins polluant. Cela dit, notons aussi que nos kilométrages en voiture sont tels que le match est relancé quand on regarde l'empreinte à l'année.\n"
@@ -792,7 +764,6 @@
   "transport . éco-conduite": {
     "titre": "Adopter une éco-conduite",
     "applicable si": "voiture . utilisateur régulier",
-    "effort": "faible",
     "icônes": "🚗☮",
     "formule": "transport . voiture . empreinte calculée - transport . éco-conduite . recalcul",
     "description": "L’éco-conduite est une action simple et efficace qui se tient à la portée de tous.  \n\nElle permet notamment d'économiser en moyenne 15 % de carburant, \nde réduire les coûts d’entretien du véhicule, de réduire le risque d’accident de 10 à 15 % en moyenne et de réaliser des économies substantielles pouvant \ns’élever à plusieurs centaines d’euros. \n\nL’application de l’éco-conduite est d’autant plus pertinente en ville et en zone urbaine ou les arrêts et \nle redémarrage sont fréquents.\n",
@@ -816,7 +787,6 @@
   },
   "transport . covoiturage": {
     "titre": "Privilégier le covoiturage",
-    "effort": "modéré",
     "applicable si": "voiture . utilisateur régulier",
     "action": {
       "dépasse": [
@@ -833,7 +803,6 @@
   },
   "transport . boulot . covoiturage": {
     "titre": "Aller au travail en covoiturage",
-    "effort": "modéré",
     "applicable si": {
       "toutes ces conditions": [
         "voiture . utilisateur régulier",
@@ -900,7 +869,6 @@
       ]
     },
     "titre": "Aller au travail autrement qu'en voiture",
-    "effort": "conséquent",
     "icônes": "🚌🚲",
     "description": "Quand c'est possible, prendre les transports en commun ou des véhicules légers (marche à pied, vélo, trottinette personnelle, ...) pour aller au travail réduit notre empreinte climat, mais améliore aussi notre qualité de vie.\n\n[70%](https://www.ecologie-solidaire.gouv.fr/covoiturage-en-france-avantages-et-reglementationen-vigueur) des déplacements domicile-travail sont réalisés avec des véhicules individuels, la plupart seul dans sa voiture. C'est ce qu'on appelle l'auto-solisme.\n\nEn plus d'émettre beaucoup de gaz à effet de serre cet auto-solisme déteriore la qualité de l'air de nos villes et donc notre santé, et encombre les voies urbaines.\n\n> A titre d'exemple les bouchons représentent en Île-de-France par an et par personne [163 heures perdues](https://www.tomtom.com/en_gb/traffic-index/paris-traffic) soit environ 6 jours.\n\n>💡 Le saviez-vous ? L'État et beaucoup de régions ou villes subventionnent les vélos mécaniques, électriques, cargo, pliants, etc. [Calculez votre aide 🚲️ en 3 clics](https://mesaidesvelo.fr).\n",
     "applicable si": "voiture . km > seuil d'activation boulot",
@@ -1020,7 +988,6 @@
   },
   "transport . boulot . télétravail": {
     "titre": "Faire du télétravail",
-    "effort": "conséquent",
     "icônes": "🏠💻",
     "description": "Le télétravail permet d'éviter des déplacements journaliers pour se rendre au boulot.\n\nIl n'est évidemment pas possible pour de nombreux salariés, mais la crise sanitaire de 2020 a montré que beaucoup de métiers sont effectivement télétravaillables.\n\nDans ce calcul, nous ne prenons en compte que les jours télétravaillés qui évitent un déplacement en voiture individuelle.\n",
     "applicable si": {
@@ -2187,7 +2154,6 @@
   },
   "bilan": {
     "titre": "Votre bilan climat personnel",
-    "exposé": "oui",
     "icônes": "👤",
     "description": "Voici une estimation de votre empreinte climat à l'année. Elle évolue en fonction de vos réponses.\n\nC'est votre part des émissions de gaz à effet de serre, donc du réchauffement climatique.\n\nToute l'empreinte des entreprises y est intégrée. Par exemple, si vous roulez en 🚗 voiture sur 10 km, les émissions ne sont pas attribuées au pays qui a extrait du sol ce pétrole, ni à l'entreprise qui l'a raffiné et distribué en station essence, mais au consommateur final dans sa voiture.\n\nSi l'on fait la somme de cette empreinte pour chaque français et chaque autre 🌍 terrien, on obtient l'impact total des activités humaines sur le climat.\n\n*À noter : ce simulateur donne l'ordre de grandeur de votre empreinte et de celle des français : l'estimation n'est pas à prendre au dixième près.*\n\nMais qu'est-ce qu'elle signifie, cette dizaine de tonnes d'équivalent CO₂ ? Pourquoi c'est important ? **On vous dit tout sur l'empreinte climat** et comment situer cette empreinte (faible, élevée ?) [➡ dans cet article](https://datagir.ademe.fr/blog/budget-empreinte-carbone-c-est-quoi/).\n<RavijenChart/>\n",
     "formule": {
@@ -3989,7 +3955,6 @@
   "divers . numérique . appareils . téléphone . empreinte": {
     "titre": "Empreinte d'un téléphone",
     "icônes": "📱✨",
-    "exposé": "oui",
     "note": "Dans la première version de Nos Gestes Climat nous segmentions les possibilités de cette question en trois catégorie, selon les disponibilités des données dans la base carbone et fabricants).\n\n- Téléphone basique (aussi appelé \"feature phone\", qui sont aujourd'hui au croisement entre le fameux Nokia 3310 et le smartphone, dont l'écran reste petit et les composants bas de gamme)\n- Smartphone classique (milieu de gamme, qui représente l'écrasante majorité des ventes. Tous les smartphones vendus en 2021 ou presque ont un écran supérieur à 5.5 pouces)\n- Smartphone haut de gamme (la base bilan-GES n'inclut pas de catégories \"téléphone haut de gamme\" ou \"écran > 6 pouces\". De plus, l'empreinte d'un iPhone 11 estimée par Apple elle-même est de 72kg de CO₂, dont 79% donc ~57kg juste pour la production. \n  À moins que le périmètre des études ne soit pas le même, mais un périmètre plus important pris par l'entreprise que par l'autorité environnementale est pour le moins étonnant, nous retenons la valeur du fabricant.\n\nNéanmoins, les dernières données NegaOctet (voir base Empreinte), à l'image des constructeurs semblent donner une valeur plus élevée que les chiffres de la base Carbone.\n\nAfin de simplifier le questionnaire, permettre de compter plusieurs téléphones (plusieurs achats sur les dernières années), \net au vu que les smartphones sont les téléphones majoritairement utilisés, nous avons fait l'hypothèse (plus conservatrice) \nque l'empreinte de la construction d'un smartphone est plus proche de celle communiquée par Apple notamment \n(voir point ci-dessus pour l'obtention du chiffre de 57kg par unité).\n\nVoir :\n  - https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Smartphone\n  - https://www.bilans-ges.ademe.fr/fr/accueil/documentation-gene/index/page/produits_informatiques__electr\n  - https://www.apple.com/environment/pdf/products/iphone/iPhone_11_PER_sept2019.pdf\n",
     "unité": "kgCO2e",
     "valeur": "57"
