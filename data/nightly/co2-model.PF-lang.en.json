@@ -363,7 +363,14 @@
     "titre.auto": "recalculation"
   },
   "alimentation . boisson . eau en bouteille . arrêter": {
-    "applicable si": "consommateur",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "consommateur"
+        },
+        "consommateur"
+      ]
+    },
     "titre": "Stop using bottled water",
     "formule": "consommation annuelle * empreinte",
     "icônes": "➡️🚰",
@@ -627,10 +634,10 @@
     "formule": {
       "somme": [
         "chauffage . électricité . présent * électricité * parc français . chauffage . part chauffage air électricité",
-        "(chauffage . gaz . présent * chauffage . gaz + chauffage . citerne propane . présent * chauffage . citerne propane) * parc français . chauffage . part chauffage air gaz",
-        "chauffage . bois . présent * chauffage . bois * parc français . chauffage . part chauffage air bois",
-        "chauffage . fioul . présent * chauffage . fioul * parc français . chauffage . part chauffage air fioul",
-        "chauffage . réseau de chaleur . présent * chauffage . réseau de chaleur * parc français . chauffage . part chauffage air réseau de chaleur"
+        "(chauffage . gaz . empreinte + chauffage . citerne propane . empreinte) * parc français . chauffage . part chauffage air gaz",
+        "chauffage . bois . empreinte * parc français . chauffage . part chauffage air bois",
+        "chauffage . fioul . empreinte * parc français . chauffage . part chauffage air fioul",
+        "chauffage . réseau de chaleur . empreinte * parc français . chauffage . part chauffage air réseau de chaleur"
       ]
     },
     "titre": "footprint heating user air",
@@ -687,11 +694,14 @@
     "applicable si": {
       "toutes ces conditions": [
         "propriétaire",
+        {
+          "est défini": "chauffage . fioul . présent"
+        },
         "chauffage . fioul . présent"
       ]
     },
     "icônes": "🛢️🪵",
-    "formule": "(chauffage . fioul - alternative) / habitants",
+    "formule": "(chauffage . fioul . empreinte - alternative) / habitants",
     "description": "Oil-fired boilers are the most polluting. Replacing them with less\ncarbon-intensive alternatives such as wood pellets is a great way to\nreduce your carbon footprint.\n",
     "inactive": "non",
     "note": "We consider for the moment that replacing the kWh of fuel oil by the same amount of kWh of wood is a good first order approximation. We will be able to adapt it later on according to the performance of the residential installations.\n",
@@ -741,11 +751,14 @@
     "applicable si": {
       "toutes ces conditions": [
         "propriétaire",
+        {
+          "est défini": "chauffage . gaz . présent"
+        },
         "chauffage . gaz . présent"
       ]
     },
     "icônes": "🔥🔄",
-    "formule": "(chauffage . gaz - pompe à chaleur) / habitants",
+    "formule": "(chauffage . gaz . empreinte - pompe à chaleur) / habitants",
     "description": "Gas-fired boilers are among the most CO₂ emitting. Replacing them with\nlower-carbon alternatives like heat pumps is a strong move to reduce\nyour carbon footprint.\n\n> Heat pumps are often referred to as *PACs*.\n\n💡 Their principle is ingenious: it's a reverse fridge! Your fridge,\nthanks to a little electricity, cools its interior and rejects the heat\ninto the room. The heat pump cools the outside air to heat your home.\n\n> Bonus: if it's too hot in your home in the summer, some heat pumps can\n> reverse their operation and act as air conditioning in the summer.\n",
     "note": "For the time being, we consider the replacement of gas kWh by the same amount of electricity kWh to be a good first-order approximation. We can then adapt it to the performance of residential installations.\n\nIf you also heat your water with gas, you'll need to choose a heat pump that can also heat water.\n\nSee <a href=\"https://www.ademe.fr/sites/default/files/assets/documents/guide-pratique-installer-une-pompe-a-chaleur.pdf\">ADEME PAC Guide</a>\n",
     "titre.auto": "Switch from gas boiler to heat pump"
@@ -829,8 +842,17 @@
     "icônes": "👥🏭",
     "applicable si": {
       "toutes ces conditions": [
+        {
+          "est défini": "appartement"
+        },
         "appartement",
-        "chauffage collectif",
+        "chauffage collectif = \"collectif\"",
+        {
+          "est défini": "chauffage . gaz . présent"
+        },
+        {
+          "est défini": "chauffage . fioul . présent"
+        },
         {
           "une de ces conditions": [
             "chauffage . gaz . présent",
@@ -840,7 +862,7 @@
       ]
     },
     "non applicable si": "chauffage . réseau de chaleur . présent",
-    "formule": "(logement . chauffage - recalcul) / habitants",
+    "formule": "(logement . chauffage - recalcul / habitants)",
     "note": "A heating network is a system of pipes that allow heat produced locally and mainly from renewable and recovered energy sources to be conveyed to a group of buildings \nlocally produced heat, mainly from renewable and recovered energy, to a group of buildings. \n\nIt is an ecological and economical alternative to replace gas or oil boilers, \nit is an ecological and economical alternative to replace gas or oil boilers, both for collective housing buildings (condominiums, social housing) and for tertiary buildings.\n\nNevertheless, being connected to a heating network is not as simple as subscribing to an electricity contract.\nIndeed, the feasibility of the connection depends on <a href=\"https://france-chaleur-urbaine.beta.gouv.fr/ressources/faisabilite#contenu\">several technical conditions</a>.\n\nFirst of all, the connection is made for a whole building: it is not possible to connect only your apartment.\nSecondly, it is necessary to check that there is a heating network near the building, and then to study\nthe heating infrastructure within the building (a building equipped with a collective heating system will allow a connection at lower cost)\n\nRegarding the impact on the climate, it is important to know that in general, a heating network is supplied by local renewable or recovered energy sources\n(62% on average on a national scale), i.e., via household waste incineration, biomass combustion, geothermal energy... (as shown in the figure below)\nwhich considerably reduces the CO2 impact of the kWh of energy consumed in front of gas or fuel oil. \n\nHowever, the energy mix is very variable from one network to another, some networks are still mainly powered by fossil fuels (coal, oil, gas).\nIt is therefore important to check the RE rate of the nearest network on the <a href=\"https://france-chaleur-urbaine.beta.gouv.fr/carte\">France Chaleur Urbaine map</a>, and to ask the network manager \non the future evolution of the energy mix, as many networks are in the process of becoming greener...].\n\n![](https://user-images.githubusercontent.com/55186402/223733624-d50b2271-6da6-4ec7-a324-cec41df10430.png)\n",
     "description": "On average, 62% of the energy used to power these networks comes from local renewable and recovered energy sources (heat from waste incineration, biomass, geothermal energy, etc.), \nheating networks (or district heating) are a low-carbon and competitively priced heating method. \nHowever, there is a great disparity between networks, both in terms of carbon impact and rates!\n\nConnection to district heating is done on the scale of an entire building. It requires the presence of a heating network near the building \nand is easier when the building is already equipped with a collective heating system.\n\n>The France Chaleur Urbaine website allows you to go further: check if a <a href=\"https://france-chaleur-urbaine.beta.gouv.fr/\">heating network</a> passes near your building!\n",
     "titre.auto": "Connecting to a heating network"
@@ -850,8 +872,8 @@
     "note": "it is assumed that the gas/oil consumption will be identical after a connection to the heating network.",
     "formule": {
       "somme": [
-        "chauffage . réseau de chaleur . intensité carbone * chauffage . gaz . consommation",
-        "chauffage . réseau de chaleur . intensité carbone * chauffage . fioul . consommation / chauffage . fioul kWh au litre"
+        "chauffage . gaz . présent * chauffage . réseau de chaleur . intensité carbone * chauffage . gaz . consommation",
+        "chauffage . fioul . présent * chauffage . réseau de chaleur . intensité carbone * chauffage . fioul . consommation / chauffage . fioul kWh au litre"
       ]
     },
     "titre.auto": "Recalculation of emissions through connection to a heating network"
@@ -1385,7 +1407,10 @@
     "icônes": "🔌🛵",
     "applicable si": {
       "toutes ces conditions": [
-        "transport . deux roues . usager = 'affirmatif'",
+        {
+          "est défini": "transport . deux roues . usager"
+        },
+        "transport . deux roues . usager",
         "transport . deux roues . type = 'scooter thermique'"
       ]
     },
@@ -6262,7 +6287,14 @@
   "divers . loisirs . culture . empreinte concerts et spectacles": {
     "titre": "Empreinte concerts and shows",
     "icônes": "🎟",
-    "applicable si": "concerts et spectacles . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "concerts et spectacles . présent"
+        },
+        "concerts et spectacles . présent"
+      ]
+    },
     "formule": "concerts et spectacles . moyenne macro pondérée",
     "unité": "kgCO2e",
     "note": "This category includes concerts, theaters, operas, ballets, street performances and cinemas.",
@@ -6313,7 +6345,14 @@
   "divers . loisirs . culture . empreinte musées et monuments": {
     "titre": "Museums and monuments footprint",
     "icônes": "🖼️",
-    "applicable si": "musées et monuments . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "musées et monuments . présent"
+        },
+        "musées et monuments . présent"
+      ]
+    },
     "formule": "musées et monuments . moyenne macro pondérée",
     "unité": "kgCO2e",
     "note": "This category includes visits to national museums and monuments, parks and zoos.",
@@ -6391,7 +6430,14 @@
   "divers . loisirs . culture . empreinte édition": {
     "titre": "Publishing footprint (books, press and software)",
     "icônes": "📚",
-    "applicable si": "édition . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "édition . présent"
+        },
+        "édition . présent"
+      ]
+    },
     "formule": "édition . moyenne macro pondérée",
     "unité": "kgCO2e",
     "note": "This involves accounting for the carbon footprint associated with the purchase of books, newspapers and magazines.",
@@ -6479,7 +6525,14 @@
   },
   "divers . loisirs . culture . empreinte pratique de la musique": {
     "titre": "Imprint of music practice",
-    "applicable si": "pratique de la musique . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "pratique de la musique . présent"
+        },
+        "pratique de la musique . présent"
+      ]
+    },
     "formule": "pratique de la musique . moyenne macro pondérée",
     "unité": "kgCO2e",
     "note": "This includes the practice of music, through the possession of one or more musical instruments.",
@@ -9747,12 +9800,12 @@
   "logement . chauffage . empreinte totale": {
     "formule": {
       "somme": [
-        "gaz",
-        "bouteille gaz",
-        "citerne propane",
-        "fioul",
-        "bois",
-        "réseau de chaleur"
+        "gaz . empreinte",
+        "bouteille gaz . empreinte",
+        "citerne propane . empreinte",
+        "fioul . empreinte",
+        "bois . empreinte",
+        "réseau de chaleur . empreinte"
       ]
     },
     "unité": "kgCO2e",
@@ -9811,9 +9864,19 @@
   "logement . chauffage . notif électrique": {
     "type": "notification",
     "formule": {
-      "une de ces conditions": [
-        "PAC . présent = oui",
-        "électricité . présent = oui"
+      "toutes ces conditions": [
+        {
+          "est défini": "PAC . présent"
+        },
+        {
+          "est défini": "électricité . présent"
+        },
+        {
+          "une de ces conditions": [
+            "PAC . présent = oui",
+            "électricité . présent = oui"
+          ]
+        }
       ]
     },
     "description": "You have entered a heat pump or an electric heater: their consumption is\ntaken into account via your overall electricity bill.\n",
@@ -9833,23 +9896,19 @@
   "logement . chauffage . gaz": {
     "titre": "Gas network",
     "icônes": "🔥",
-    "formule": {
-      "variations": [
-        {
-          "si": "gaz . présent",
-          "alors": "gaz . empreinte"
-        },
-        {
-          "sinon": 0
-        }
-      ]
-    },
     "unité": "kgCO2e",
     "titre.auto": "Gas network"
   },
   "logement . chauffage . gaz . empreinte": {
     "titre": "Gas consumption footprint",
-    "applicable si": "présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "gaz . présent"
+        },
+        "gaz . présent"
+      ]
+    },
     "formule": "consommation * gaz . intensité carbone gaz utilisateur",
     "unité": "kgCO2e",
     "titre.auto": "Gas consumption footprint"
@@ -9952,21 +10011,19 @@
   "logement . chauffage . bouteille gaz": {
     "icônes": "🛢️🔥",
     "titre": "Gas bottle",
-    "variations": [
-      {
-        "si": "bouteille gaz . présent",
-        "alors": "bouteille gaz . empreinte"
-      },
-      {
-        "sinon": 0
-      }
-    ],
     "unité": "kgCO2e",
     "titre.auto": "Gas bottle"
   },
   "logement . chauffage . bouteille gaz . empreinte": {
     "titre": "Footprint of gas cylinder consumption",
-    "applicable si": "présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "bouteille gaz . présent"
+        },
+        "bouteille gaz . présent"
+      ]
+    },
     "formule": "empreinte bouteille * consommation",
     "unité": "kgCO2e",
     "titre.auto": "Footprint of gas cylinder consumption"
@@ -10037,21 +10094,19 @@
   "logement . chauffage . citerne propane": {
     "icônes": "🛢️🔥",
     "titre": "Propane gas in tank",
-    "variations": [
-      {
-        "si": "citerne propane . présent",
-        "alors": "citerne propane . empreinte"
-      },
-      {
-        "sinon": 0
-      }
-    ],
     "unité": "kgCO2e",
     "titre.auto": "Propane gas in tank"
   },
   "logement . chauffage . citerne propane . empreinte": {
     "titre": "Footprint of propane gas consumption in tanks",
-    "applicable si": "présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "citerne propane . présent"
+        },
+        "citerne propane . présent"
+      ]
+    },
     "formule": "empreinte propane * consommation",
     "unité": "kgCO2e",
     "titre.auto": "Footprint of propane gas consumption in tanks"
@@ -10089,21 +10144,19 @@
   "logement . chauffage . fioul": {
     "icônes": "🛢",
     "titre": "Domestic fuel oil",
-    "variations": [
-      {
-        "si": "fioul . présent",
-        "alors": "fioul . empreinte"
-      },
-      {
-        "sinon": 0
-      }
-    ],
     "unité": "kgCO2e",
     "titre.auto": "Domestic fuel oil"
   },
   "logement . chauffage . fioul . empreinte": {
     "titre": "Footprint of heating oil consumption",
-    "applicable si": "présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "fioul . présent"
+        },
+        "fioul . présent"
+      ]
+    },
     "formule": "consommation * intensité carbone fioul litre",
     "unité": "kgCO2e",
     "titre.auto": "Footprint of heating oil consumption"
@@ -10147,23 +10200,19 @@
   "logement . chauffage . bois": {
     "titre": "Wood or pellets",
     "icônes": "🪵",
-    "formule": {
-      "variations": [
-        {
-          "si": "bois . présent",
-          "alors": "bois . empreinte"
-        },
-        {
-          "sinon": 0
-        }
-      ]
-    },
     "unité": "kgCO2e",
     "titre.auto": "Wood or pellets"
   },
   "logement . chauffage . bois . empreinte": {
     "titre": "Wood consumption footprint",
-    "applicable si": "présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "bois . présent"
+        },
+        "bois . présent"
+      ]
+    },
     "formule": {
       "variations": [
         {
@@ -10267,23 +10316,19 @@
   "logement . chauffage . réseau de chaleur": {
     "icônes": "🏭",
     "titre": "District heating",
-    "formule": {
-      "variations": [
-        {
-          "si": "réseau de chaleur . présent",
-          "alors": "réseau de chaleur . empreinte"
-        },
-        {
-          "sinon": 0
-        }
-      ]
-    },
     "unité": "kgCO2e",
     "titre.auto": "Heating network"
   },
   "logement . chauffage . réseau de chaleur . empreinte": {
     "titre": "Footprint of gas consumption via heating network",
-    "applicable si": "présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "réseau de chaleur . présent"
+        },
+        "réseau de chaleur . présent"
+      ]
+    },
     "formule": "consommation * intensité carbone",
     "unité": "kgCO2e",
     "titre.auto": "Footprint of gas consumption via heating network"
@@ -11069,6 +11114,12 @@
           "si": {
             "toutes ces conditions": [
               "logement . chauffage . choix utilisateur = oui",
+              {
+                "est défini": "logement . chauffage . électricité . présent"
+              },
+              {
+                "est défini": "logement . chauffage . PAC . présent"
+              },
               {
                 "une de ces conditions": [
                   "logement . chauffage . électricité . présent",
@@ -12081,7 +12132,14 @@
   },
   "logement . vacances . empreinte hotel": {
     "titre": "Hotel or B&B footprint",
-    "applicable si": "hotel . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "hotel . présent"
+        },
+        "hotel . présent"
+      ]
+    },
     "formule": {
       "variations": [
         {
@@ -12144,7 +12202,14 @@
   },
   "logement . vacances . empreinte camping": {
     "titre": "Campsite footprint",
-    "applicable si": "camping . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "camping . présent"
+        },
+        "camping . présent"
+      ]
+    },
     "formule": "camping . empreinte par nuit * camping . nombre de nuitées",
     "titre.auto": "Campsite footprint"
   },
@@ -12192,7 +12257,14 @@
   },
   "logement . vacances . empreinte auberge de jeunesse": {
     "titre": "Youth hostel footprint",
-    "applicable si": "auberge de jeunesse . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "auberge de jeunesse . présent"
+        },
+        "auberge de jeunesse . présent"
+      ]
+    },
     "formule": "auberge de jeunesse . empreinte par nuit * auberge de jeunesse . nombre de nuitées",
     "titre.auto": "Youth hostel footprint"
   },
@@ -12246,7 +12318,14 @@
   },
   "logement . vacances . empreinte locations": {
     "titre": "Footprint furnished rentals",
-    "applicable si": "locations . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "locations . présent"
+        },
+        "locations . présent"
+      ]
+    },
     "formule": "locations . empreinte par nuit * locations . nombre de nuitées",
     "titre.auto": "Footprint furnished rentals"
   },
@@ -12295,7 +12374,14 @@
   },
   "logement . vacances . empreinte échange": {
     "titre": "Home exchange footprint",
-    "applicable si": "échange . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "échange . présent"
+        },
+        "échange . présent"
+      ]
+    },
     "formule": "échange . empreinte par nuit * échange . nombre de nuitées",
     "titre.auto": "Home exchange footprint"
   },
@@ -12344,7 +12430,14 @@
   },
   "logement . vacances . empreinte famille ou amis": {
     "titre": "Family or friends footprint",
-    "applicable si": "famille ou amis . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "famille ou amis . présent"
+        },
+        "famille ou amis . présent"
+      ]
+    },
     "formule": 0,
     "note": "We believe that the night's footprint is now indirectly counted as part of the host's footprint.",
     "titre.auto": "Family or friends footprint"
@@ -12369,13 +12462,21 @@
   "logement . vacances . maison secondaire": {
     "titre": "Second home",
     "icônes": "🏡",
-    "applicable si": "présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "maison secondaire . présent"
+        },
+        "maison secondaire . présent"
+      ]
+    },
     "formule": 0,
     "note": "For the moment, we haven't implemented the second home model, but discussions are underway on our Github repository:\n  - https://github.com/datagir/nosgestesclimat/issues/1309\n  - https://github.com/datagir/nosgestesclimat/pull/1455\n",
     "titre.auto": "Second home"
   },
   "logement . vacances . maison secondaire . présent": {
     "question": "Do you own a second home?",
+    "par défaut": "non",
     "inactif": "oui",
     "titre": "present",
     "titre.auto": "present"

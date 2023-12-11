@@ -307,7 +307,14 @@
     }
   },
   "alimentation . boisson . eau en bouteille . arrêter": {
-    "applicable si": "consommateur",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "consommateur"
+        },
+        "consommateur"
+      ]
+    },
     "titre": "Arrêter l'eau en bouteille",
     "formule": "consommation annuelle * empreinte",
     "icônes": "➡️🚰",
@@ -525,10 +532,10 @@
     "formule": {
       "somme": [
         "(chauffage . électricité . présent * électricité) * 0.22912887197233497",
-        "((chauffage . gaz . présent * chauffage . gaz) + (chauffage . citerne propane . présent * chauffage . citerne propane)) * 0.8088414603624331",
-        "(chauffage . bois . présent * chauffage . bois) * 0.9946924667422263",
-        "(chauffage . fioul . présent * chauffage . fioul) * 0.8591958820502965",
-        "(chauffage . réseau de chaleur . présent * chauffage . réseau de chaleur) * 0.7545085125722558"
+        "(chauffage . gaz . empreinte + chauffage . citerne propane . empreinte) * 0.8088414603624331",
+        "chauffage . bois . empreinte * 0.9946924667422263",
+        "chauffage . fioul . empreinte * 0.8591958820502965",
+        "chauffage . réseau de chaleur . empreinte * 0.7545085125722558"
       ]
     },
     "optimized": true
@@ -551,11 +558,14 @@
     "applicable si": {
       "toutes ces conditions": [
         "propriétaire",
+        {
+          "est défini": "chauffage . fioul . présent"
+        },
         "chauffage . fioul . présent"
       ]
     },
     "icônes": "🛢️🪵",
-    "formule": "(chauffage . fioul - alternative) / habitants",
+    "formule": "(chauffage . fioul . empreinte - alternative) / habitants",
     "description": "Les chaudières au fuel sont les plus polluantes. Les remplacer par des alternatives moins carbonnées comme ici le bois en granulés est un geste fort pour réduire votre empreinte carbone.\n",
     "inactive": "non",
     "note": "Nous considérons pour l'instant que le remplacement des kWh de fioul par la même quantité de kWh de bois est une bonne approximation de premier ordre. Nous pourrons par la suite l'adapter en fonction du rendement des installations résidentielles.\n"
@@ -592,11 +602,14 @@
     "applicable si": {
       "toutes ces conditions": [
         "propriétaire",
+        {
+          "est défini": "chauffage . gaz . présent"
+        },
         "chauffage . gaz . présent"
       ]
     },
     "icônes": "🔥🔄",
-    "formule": "(chauffage . gaz - pompe à chaleur) / habitants",
+    "formule": "(chauffage . gaz . empreinte - pompe à chaleur) / habitants",
     "description": "Les chaudières au gaz sont parmi les plus émissives de CO₂. Les remplacer par des alternatives moins carbonnées comme des pompes à chaleur est un geste fort pour réduire votre empreinte carbone.\n\n> Les pompes à chaleur sont souvent appelées *PAC*.\n\n💡 Leur principe est ingénieux : c'est un frigo inversé ! Votre frigo, grâce à un peu d'électricité, refroidit son intérieur et rejette la chaleur dans la pièce. La PAC refroidit l'air extérieur pour chauffer votre logement.\n\n> Bonus : s'il fait trop chaud chez vous l'été, certaines PAC peuvent inverser leur fonctionnement et faire office de climatisation l'été.\n",
     "note": "Nous considérons pour l'instant que le remplacement des kWh de gaz par la même quantité de kWh électrique est une bonne approximation de premier ordre. Nous pourrons par la suite l'adapter en fonction du rendement des installations résidentielles.\n\nCette action chiffre le remplacement de la chaudière gaz, si vous chauffez aussi votre eau au gaz il faudra choisir une PAC qui peut aussi chauffer l'eau.\n\nVoir [Guide ADEME PAC](https://www.ademe.fr/sites/default/files/assets/documents/guide-pratique-installer-une-pompe-a-chaleur.pdf)\n"
   },
@@ -662,8 +675,17 @@
     "icônes": "👥🏭",
     "applicable si": {
       "toutes ces conditions": [
+        {
+          "est défini": "appartement"
+        },
         "appartement",
-        "chauffage collectif",
+        "chauffage collectif = \"collectif\"",
+        {
+          "est défini": "chauffage . gaz . présent"
+        },
+        {
+          "est défini": "chauffage . fioul . présent"
+        },
         {
           "une de ces conditions": [
             "chauffage . gaz . présent",
@@ -673,7 +695,7 @@
       ]
     },
     "non applicable si": "chauffage . réseau de chaleur . présent",
-    "formule": "(logement . chauffage - recalcul) / habitants",
+    "formule": "(logement . chauffage - recalcul / habitants)",
     "note": "Un réseau de chaleur est un système de canalisations qui permettent d’acheminer vers un ensemble de bâtiments de la \nchaleur produite localement et majoritairement à partir d’énergies renouvelables et de récupération. \n\nC'est une alternative écologique et économique pour remplacer des chaudières au gaz ou fioul, \naussi bien pour les bâtiments d'habitat collectif (copropriétés, habitat social) que pour les bâtiments tertiaires.\n\nNéanmoins, être raccordé à un réseau de chaleur n'est pas aussi simple que de souscrire un contrat d'électricité.\nEn effet, la faisabilité du raccordement dépend de [plusieurs conditions techniques](https://france-chaleur-urbaine.beta.gouv.fr/ressources/faisabilite#contenu).\n\nTout d'abord, le raccordement se fait pour tout un bâtiment : il n'est pas possible de raccorder seulement votre appartement.\nEnsuite, il est nécessaire de vérifier qu'il existe un réseau de chaleur à proximité du bâtiment, puis d'étudier\nles infrastructures de chauffage au sein du bâtiment (un bâtiment équipé d'un système de chauffage collectif permettra un raccordement à moindre coût)\n\nCôté impact climat, il faut savoir qu'en général, un réseau de chaleur est alimenté via des sources d'énergie renouvelables ou de récupération locales\n(62% en moyenne à l'échelle nationale), c'est à dire, via l'incinération d'ordures ménagères, la combustion de biomasse, la géothermie... (comme le montre la figure ci-dessous)\nce qui permet de réduire considérablement l'impact CO2 du kWh d'énergie consommée devant le gaz ou le fioul. \n\nCependant, le mix énergétique est très variable d’un réseau à l’autre, certains réseaux sont encore principalement alimentés via des énergies fossiles (charbon, fioul, gaz).\nIl est donc important de vérifier le taux ENR du réseau le plus proche sur la [cartographie France Chaleur Urbaine](https://france-chaleur-urbaine.beta.gouv.fr/carte), et de se renseigner auprès du gestionnaire du réseau \nsur les évolutions à venir du mix énergétique car bcp de réseaux sont en cours de verdissement...].\n\n![](https://user-images.githubusercontent.com/55186402/223733624-d50b2271-6da6-4ec7-a324-cec41df10430.png)\n",
     "description": "Alimentés en moyenne à 62% par des énergies renouvelables et de récupération locales (chaleur issue de l'incinération des déchets, biomasse, géothermie...), \nles réseaux de chaleur (ou chauffage urbain) constituent un mode de chauffage faiblement carboné et à prix compétitifs. \nAttention toutefois, il existe une grande disparité selon les réseaux, aussi bien en matière d'impact carbone que de tarifs !\n\nLe raccordement au chauffage urbain se fait à l'échelle d'un bâtiment entier. Il nécessite la présence d'un réseau de chaleur à proximité du bâtiment \net est facilité lorsque le bâtiment est déjà équipé d'un chauffage collectif.\n\n>💡 Le site France Chaleur Urbaine vous permet d'aller plus loin : vérifiez si un [réseau de chaleur](https://france-chaleur-urbaine.beta.gouv.fr/) passe près de votre immeuble !\n"
   },
@@ -682,8 +704,8 @@
     "note": "on considère que la consommation de gaz/fioul sera identique suite à un raccordement au réseau de chaleur.",
     "formule": {
       "somme": [
-        "0.125 * chauffage . gaz . consommation",
-        "(0.125 * chauffage . fioul . consommation) / 0.101436943"
+        "(chauffage . gaz . présent * 0.125) * chauffage . gaz . consommation",
+        "((chauffage . fioul . présent * 0.125) * chauffage . fioul . consommation) / 0.101436943"
       ]
     },
     "optimized": true
@@ -1114,7 +1136,10 @@
     "icônes": "🔌🛵",
     "applicable si": {
       "toutes ces conditions": [
-        "transport . deux roues . usager = 'affirmatif'",
+        {
+          "est défini": "transport . deux roues . usager"
+        },
+        "transport . deux roues . usager",
         "transport . deux roues . type = 'scooter thermique'"
       ]
     },
@@ -3307,7 +3332,14 @@
   "divers . loisirs . culture . empreinte concerts et spectacles": {
     "titre": "Empreinte concerts et spectacles",
     "icônes": "🎟",
-    "applicable si": "concerts et spectacles . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "concerts et spectacles . présent"
+        },
+        "concerts et spectacles . présent"
+      ]
+    },
     "formule": "concerts et spectacles . moyenne macro pondérée",
     "unité": "kgCO2e",
     "note": "Cette catégorie comprend les concerts, théâtres, opéras, ballets, spectacles de rue et cinémas."
@@ -3342,7 +3374,14 @@
   "divers . loisirs . culture . empreinte musées et monuments": {
     "titre": "Empreinte musées et monuments",
     "icônes": "🖼️",
-    "applicable si": "musées et monuments . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "musées et monuments . présent"
+        },
+        "musées et monuments . présent"
+      ]
+    },
     "formule": "musées et monuments . moyenne macro pondérée",
     "unité": "kgCO2e",
     "note": "Cette catégorie comprend les visites de musées et monuments nationaux, de parcs et zoos."
@@ -3396,7 +3435,14 @@
   "divers . loisirs . culture . empreinte édition": {
     "titre": "Empreinte édition (livres, presse et logiciels)",
     "icônes": "📚",
-    "applicable si": "édition . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "édition . présent"
+        },
+        "édition . présent"
+      ]
+    },
     "formule": "édition . moyenne macro pondérée",
     "unité": "kgCO2e",
     "note": "Il s'agit ici de comptabiliser l'empreinte carbone liée à l'achat de livres, de journaux et revues."
@@ -3464,7 +3510,14 @@
   },
   "divers . loisirs . culture . empreinte pratique de la musique": {
     "titre": "Empreinte de la pratique de la musique",
-    "applicable si": "pratique de la musique . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "pratique de la musique . présent"
+        },
+        "pratique de la musique . présent"
+      ]
+    },
     "formule": "pratique de la musique . moyenne macro pondérée",
     "unité": "kgCO2e",
     "note": "Nous comptons ici la pratique de la musique, au travers de la possession d'un ou plusieurs instruments de musique."
@@ -4538,12 +4591,12 @@
   "logement . chauffage . empreinte totale": {
     "formule": {
       "somme": [
-        "gaz",
-        "bouteille gaz",
-        "citerne propane",
-        "fioul",
-        "bois",
-        "réseau de chaleur"
+        "gaz . empreinte",
+        "bouteille gaz . empreinte",
+        "citerne propane . empreinte",
+        "fioul . empreinte",
+        "bois . empreinte",
+        "réseau de chaleur . empreinte"
       ]
     },
     "unité": "kgCO2e"
@@ -4595,9 +4648,19 @@
   "logement . chauffage . notif électrique": {
     "type": "notification",
     "formule": {
-      "une de ces conditions": [
-        "PAC . présent = oui",
-        "électricité . présent = oui"
+      "toutes ces conditions": [
+        {
+          "est défini": "PAC . présent"
+        },
+        {
+          "est défini": "électricité . présent"
+        },
+        {
+          "une de ces conditions": [
+            "PAC . présent = oui",
+            "électricité . présent = oui"
+          ]
+        }
       ]
     },
     "description": "Vous avez renseigné une pompe à chaleur ou un chauffage électrique : leur consommation est prise en compte via votre facture globale d'électricité.\n"
@@ -4611,22 +4674,18 @@
   "logement . chauffage . gaz": {
     "titre": "Réseau de gaz",
     "icônes": "🔥",
-    "formule": {
-      "variations": [
-        {
-          "si": "gaz . présent",
-          "alors": "gaz . empreinte"
-        },
-        {
-          "sinon": 0
-        }
-      ]
-    },
     "unité": "kgCO2e"
   },
   "logement . chauffage . gaz . empreinte": {
     "titre": "Empreinte de la consommation de gaz",
-    "applicable si": "présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "gaz . présent"
+        },
+        "gaz . présent"
+      ]
+    },
     "formule": "consommation * gaz . intensité carbone gaz utilisateur",
     "unité": "kgCO2e"
   },
@@ -4697,20 +4756,18 @@
   "logement . chauffage . bouteille gaz": {
     "icônes": "🛢️🔥",
     "titre": "Bouteille de gaz",
-    "variations": [
-      {
-        "si": "bouteille gaz . présent",
-        "alors": "bouteille gaz . empreinte"
-      },
-      {
-        "sinon": 0
-      }
-    ],
     "unité": "kgCO2e"
   },
   "logement . chauffage . bouteille gaz . empreinte": {
     "titre": "Empreinte de la consommation de bouteilles de gaz",
-    "applicable si": "présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "bouteille gaz . présent"
+        },
+        "bouteille gaz . présent"
+      ]
+    },
     "formule": "empreinte bouteille * consommation",
     "unité": "kgCO2e"
   },
@@ -4754,20 +4811,18 @@
   "logement . chauffage . citerne propane": {
     "icônes": "🛢️🔥",
     "titre": "Gaz propane en citerne",
-    "variations": [
-      {
-        "si": "citerne propane . présent",
-        "alors": "citerne propane . empreinte"
-      },
-      {
-        "sinon": 0
-      }
-    ],
     "unité": "kgCO2e"
   },
   "logement . chauffage . citerne propane . empreinte": {
     "titre": "Empreinte de la consommation de gaz propane en citerne",
-    "applicable si": "présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "citerne propane . présent"
+        },
+        "citerne propane . présent"
+      ]
+    },
     "formule": "empreinte propane * consommation",
     "unité": "kgCO2e"
   },
@@ -4797,20 +4852,18 @@
   "logement . chauffage . fioul": {
     "icônes": "🛢",
     "titre": "Fioul domestique",
-    "variations": [
-      {
-        "si": "fioul . présent",
-        "alors": "fioul . empreinte"
-      },
-      {
-        "sinon": 0
-      }
-    ],
     "unité": "kgCO2e"
   },
   "logement . chauffage . fioul . empreinte": {
     "titre": "Empreinte de la consommation de fioul domestique",
-    "applicable si": "présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "fioul . présent"
+        },
+        "fioul . présent"
+      ]
+    },
     "formule": "consommation * intensité carbone fioul litre",
     "unité": "kgCO2e"
   },
@@ -4845,22 +4898,18 @@
   "logement . chauffage . bois": {
     "titre": "Bois ou granulés",
     "icônes": "🪵",
-    "formule": {
-      "variations": [
-        {
-          "si": "bois . présent",
-          "alors": "bois . empreinte"
-        },
-        {
-          "sinon": 0
-        }
-      ]
-    },
     "unité": "kgCO2e"
   },
   "logement . chauffage . bois . empreinte": {
     "titre": "Empreinte de la consommation de bois",
-    "applicable si": "présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "bois . présent"
+        },
+        "bois . présent"
+      ]
+    },
     "formule": {
       "variations": [
         {
@@ -4949,22 +4998,18 @@
   "logement . chauffage . réseau de chaleur": {
     "icônes": "🏭",
     "titre": "Réseau de chaleur",
-    "formule": {
-      "variations": [
-        {
-          "si": "réseau de chaleur . présent",
-          "alors": "réseau de chaleur . empreinte"
-        },
-        {
-          "sinon": 0
-        }
-      ]
-    },
     "unité": "kgCO2e"
   },
   "logement . chauffage . réseau de chaleur . empreinte": {
     "titre": "Empreinte de la consommation de gaz via réseau de chaleur",
-    "applicable si": "présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "réseau de chaleur . présent"
+        },
+        "réseau de chaleur . présent"
+      ]
+    },
     "formule": "consommation * intensité carbone",
     "unité": "kgCO2e"
   },
@@ -5255,6 +5300,12 @@
           "si": {
             "toutes ces conditions": [
               "logement . chauffage . choix utilisateur = oui",
+              {
+                "est défini": "logement . chauffage . électricité . présent"
+              },
+              {
+                "est défini": "logement . chauffage . PAC . présent"
+              },
               {
                 "une de ces conditions": [
                   "logement . chauffage . électricité . présent",
@@ -5686,7 +5737,14 @@
   },
   "logement . vacances . empreinte hotel": {
     "titre": "Empreinte hôtel ou chambre d'hôtes",
-    "applicable si": "hotel . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "hotel . présent"
+        },
+        "hotel . présent"
+      ]
+    },
     "formule": {
       "variations": [
         {
@@ -5736,7 +5794,14 @@
   },
   "logement . vacances . empreinte camping": {
     "titre": "Empreinte emplacement en camping",
-    "applicable si": "camping . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "camping . présent"
+        },
+        "camping . présent"
+      ]
+    },
     "formule": "camping . empreinte par nuit * camping . nombre de nuitées"
   },
   "logement . vacances . camping": {
@@ -5771,7 +5836,14 @@
   },
   "logement . vacances . empreinte auberge de jeunesse": {
     "titre": "Empreinte auberge de jeunesse",
-    "applicable si": "auberge de jeunesse . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "auberge de jeunesse . présent"
+        },
+        "auberge de jeunesse . présent"
+      ]
+    },
     "formule": "auberge de jeunesse . empreinte par nuit * auberge de jeunesse . nombre de nuitées"
   },
   "logement . vacances . auberge de jeunesse": {
@@ -5806,7 +5878,14 @@
   },
   "logement . vacances . empreinte locations": {
     "titre": "Empreinte locations meublées",
-    "applicable si": "locations . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "locations . présent"
+        },
+        "locations . présent"
+      ]
+    },
     "formule": "locations . empreinte par nuit * locations . nombre de nuitées"
   },
   "logement . vacances . locations": {
@@ -5842,7 +5921,14 @@
   },
   "logement . vacances . empreinte échange": {
     "titre": "Empreinte échange de maison",
-    "applicable si": "échange . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "échange . présent"
+        },
+        "échange . présent"
+      ]
+    },
     "formule": "échange . empreinte par nuit * échange . nombre de nuitées"
   },
   "logement . vacances . échange": {
@@ -5878,7 +5964,14 @@
   },
   "logement . vacances . empreinte famille ou amis": {
     "titre": "Empreinte famille ou amis",
-    "applicable si": "famille ou amis . présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "famille ou amis . présent"
+        },
+        "famille ou amis . présent"
+      ]
+    },
     "formule": 0,
     "note": "Nous considérons que l'empreinte de la nuit est aujourd'hui indirectement comptée dans l'empreinte des accueillants."
   },
@@ -5897,12 +5990,20 @@
   "logement . vacances . maison secondaire": {
     "titre": "Maison secondaire",
     "icônes": "🏡",
-    "applicable si": "présent",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "maison secondaire . présent"
+        },
+        "maison secondaire . présent"
+      ]
+    },
     "formule": 0,
     "note": "Pour le moment, nous n'avons pas implémenté le modèle de la maison secondaire mais les discussions sont en cours sur notre dépôt Github :\n  - https://github.com/datagir/nosgestesclimat/issues/1309\n  - https://github.com/datagir/nosgestesclimat/pull/1455\n"
   },
   "logement . vacances . maison secondaire . présent": {
     "question": "Possédez-vous une maison secondaire ?",
+    "par défaut": "non",
     "inactif": "oui"
   },
   "services marchands": {
