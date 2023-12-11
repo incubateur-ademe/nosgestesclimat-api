@@ -11096,19 +11096,37 @@
     "node": "Intercités - 2022 ; 8.98 gCO2e/km/personne ; Base Carbone consultée le 19/11/2023 (Données SNCF)\n"
   },
   "transport . train . proportion TGV": {
-    "formule": "(54 + 7) / total passagers km",
+    "formule": "passagers km TGV / total passagers km",
     "note": "Chiffres issus de l'[autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf).\n"
   },
   "transport . train . proportion TER": {
-    "formule": "19 / total passagers km",
+    "formule": "passagers km TER / total passagers km",
     "note": "Chiffres issus de l'[autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf).\n"
   },
   "transport . train . proportion intercités": {
-    "formule": "(3 + 0.5) / total passagers km",
+    "formule": "passagers km intercités / total passagers km",
     "note": "Chiffres issus de l'[autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf).\n"
   },
   "transport . train . total passagers km": {
-    "formule": "54 + 7 + 19 + 3 + 0.5",
+    "formule": {
+      "somme": [
+        "passagers km TGV",
+        "passagers km TER",
+        "passagers km intercités"
+      ]
+    },
+    "note": "Chiffres issus de l'[autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf).\nOn omet ici les trajets en RER et transilien.\n"
+  },
+  "transport . train . passagers km TGV": {
+    "formule": "54 + 7",
+    "note": "Chiffres issus de l'[autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf).\nOn omet ici les trajets en RER et transilien.\n"
+  },
+  "transport . train . passagers km TER": {
+    "formule": 19,
+    "note": "Chiffres issus de l'[autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf).\nOn omet ici les trajets en RER et transilien.\n"
+  },
+  "transport . train . passagers km intercités": {
+    "formule": "3 + 0.5",
     "note": "Chiffres issus de l'[autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf).\nOn omet ici les trajets en RER et transilien.\n"
   },
   "transport . train . km": {
