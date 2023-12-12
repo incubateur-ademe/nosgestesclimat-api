@@ -785,7 +785,14 @@
   },
   "transport . éco-conduite": {
     "titre": "Adopter une éco-conduite",
-    "applicable si": "voiture . utilisateur régulier",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
     "icônes": "🚗☮",
     "formule": "transport . voiture . empreinte calculée - transport . éco-conduite . recalcul",
     "description": "L’éco-conduite est une action simple et efficace qui se tient à la portée de tous.  \n\nElle permet notamment d'économiser en moyenne 15 % de carburant, \nde réduire les coûts d’entretien du véhicule, de réduire le risque d’accident de 10 à 15 % en moyenne et de réaliser des économies substantielles pouvant \ns’élever à plusieurs centaines d’euros. \n\nL’application de l’éco-conduite est d’autant plus pertinente en ville et en zone urbaine ou les arrêts et \nle redémarrage sont fréquents.\n",
@@ -809,7 +816,14 @@
   },
   "transport . covoiturage": {
     "titre": "Privilégier le covoiturage",
-    "applicable si": "voiture . utilisateur régulier",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
     "action": {
       "dépasse": [
         "transport . boulot . covoiturage"
@@ -1049,7 +1063,14 @@
     "titre": "Se passer de voiture pour moins de 5 km",
     "icônes": "🚗🚲",
     "formule": "transport . voiture . empreinte calculée - transport . voiture 5km . recalcul",
-    "applicable si": "voiture . utilisateur régulier",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
     "non applicable si": "voiture . km < seuil d'activation 5km",
     "note": "On fait l'hypothèse qu'une personne qui n'est pas propriétaire de voiture se passe *déjà* d'une voiture pour de courts trajets.\n",
     "description": "En France, 4 trajets en voiture sur 10 font moins de 3 km et ce n’est pas moins de 177 millions de trajets de moins de 5km qui sont réalisés seuls en voiture chaque semaine (hors trajets domicile-travail). \n\nL’ensemble de ces trajets « courts » mis bout à bout présentent, à l’échelle de la France, près de 10% de la distance totale parcourue en voiture chaque année. \n\nAinsi, se tourner vers les mobilités actives (vélo, trottinette...) pour ces trajets « courts » permet de réduire de manière significative, nos émissions de GES\ntout en décongestionnant les voies urbaines et en améliorant la qualité de l’air de nos villes polluées.\n\n> 💡 Le saviez-vous ? L'État et beaucoup de régions ou villes subventionnent les vélos mécaniques, électriques, cargo, pliants, etc. [Calculez votre aide 🚲️ en 3 clics](https://mesaidesvelo.fr).\n"
@@ -1159,7 +1180,14 @@
   "transport . voiture électrique": {
     "titre": "Rouler en voiture électrique",
     "icônes": "🔌🚗",
-    "applicable si": "voiture . utilisateur régulier",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
     "non applicable si": "transport . voiture . motorisation = 'électrique'",
     "formule": "transport . voiture . empreinte calculée - transport . voiture électrique . recalcul",
     "description": "La voiture électrique n'est pas la solution miracle mais pour certains usages elle peut s'avérer (très) utile pour réduire notre empreinte.\n\nAttention toutefois à ne pas arriver à la conclusion simpliste qu'il suffirait de passer à un parc automobile électrique pour décarboner les déplacements des français. \n\nLa priorité doit être, quand c'est possible (55% de nos trajets [font moins de 5km](https://twitter.com/GlmMrt/status/1481986507179274248)), l'essor des mobilités actives (telles que le vélo) et des transports en commun.\n\nNéanmoins le chiffre que l'on vous présente correspond bien à la différence d'émissions de gaz à effet de serre qui aurait eu lieu si vous aviez parcouru vos km avec \nun véhicule électrique et non thermique.\n",
@@ -1178,16 +1206,22 @@
   "transport . voiture . limitation autoroute": {
     "titre": "Passer de 130 à 110km/h",
     "icônes": "🚗🛣️",
-    "applicable si": "voiture . utilisateur régulier",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
     "formule": "réduction * empreinte autoroute",
     "description": "La convention citoyenne pour le climat a proposé en 2020 une réduction de la limitation de vitesse sur les autoroutes de 130km/h à 110km/h. \nLa proposition est détaillée [ici](https://propositions.conventioncitoyennepourleclimat.fr/objectif/reduire-les-emissions-des-gaz-a-effet-de-serre-sur-les-autoroutes-et-les-voies-rapides/#elementor-tab-title-1681). \n\nSuite à l'invasion de l'Ukraine par la Russie, l'Agence Internationale de l'Énergie en a fait [sa 1ère recommandation](https://www.iea.org/reports/a-10-point-plan-to-cut-oil-use) pour réduire nos achats de pétrole russe.\n\nNous proposons ici une évalution de cette mesure basée sur votre situation précise.\n"
   },
   "transport . voiture . limitation autoroute . réduction": {
     "titre": "Gain de consommation 130 -> 110",
+    "formule": "25%",
     "description": "![](https://imgur.com/NB9CUUt.jpg)\nD'après ce graphique, par déduction graphique (nous n'avons pas encore remonté aux données [de l'étude](http://theses.univ-lyon2.fr/documents/getpart.php?id=1026&action=pdf), page 151 figure 26), on trouve les données ci-dessous.\n\nDiesel : 6.5 l/100 à 130km/h -> 4.75 à 110km/h \n\nEssence : 11.75 l/100 à 130km/h -> 8.65 à 110km/h\n\nDonc -27% en diesel et - 26% en essence en passant de 130 à 110. Nous retenons l'ordre de grandeur de 25%.\n",
-    "note": "Il faudrait affiner ce calcul.\nQuelques sources à investiguer pour le calcul.\n- un citoyen qui fait son test pour une clio. Il trouve une réduction entre -20% et -50% !\n   https://twitter.com/CptQwark_/status/1289499582871658499 \n   Un autre citoyen trouve plutôt -10% avec une plus grosse voiture. \n- [Rapport du CGDD](<https://www.ecologie.gouv.fr/sites/default/files/Théma - Réduction des vitesses sur les routes.pdf>), où nous n'avons pas trouvé pour l'instant l'explication du calcul de l'économie de CO₂\n- Aurélien Bigo qui critique le rapport du CGDD https://twitter.com/AurelienBigo/status/1276459283291439114, mais qui ne nous donne pas d'infos sur le calcul du CO₂ lui même.\n- une autre évaluation, qui elle nous donne le calcul :)  : https://twitter.com/Tomsawy22670318/status/1274257122373570565\n  Attention, pour être rigoureux, comme évoqué dans ce dernier fil, il faut prendre en compte la distribution de la vitesse et la catégorie de voiture (présence d'une 6ème vitesse par exemple). On ne roule évidement pas tout le temps à 130.\n",
-    "valeur": "25%",
-    "optimized": true
+    "note": "Il faudrait affiner ce calcul.\nQuelques sources à investiguer pour le calcul.\n- un citoyen qui fait son test pour une clio. Il trouve une réduction entre -20% et -50% !\n   https://twitter.com/CptQwark_/status/1289499582871658499 \n   Un autre citoyen trouve plutôt -10% avec une plus grosse voiture. \n- [Rapport du CGDD](<https://www.ecologie.gouv.fr/sites/default/files/Théma - Réduction des vitesses sur les routes.pdf>), où nous n'avons pas trouvé pour l'instant l'explication du calcul de l'économie de CO₂\n- Aurélien Bigo qui critique le rapport du CGDD https://twitter.com/AurelienBigo/status/1276459283291439114, mais qui ne nous donne pas d'infos sur le calcul du CO₂ lui même.\n- une autre évaluation, qui elle nous donne le calcul :)  : https://twitter.com/Tomsawy22670318/status/1274257122373570565\n  Attention, pour être rigoureux, comme évoqué dans ce dernier fil, il faut prendre en compte la distribution de la vitesse et la catégorie de voiture (présence d'une 6ème vitesse par exemple). On ne roule évidement pas tout le temps à 130.\n"
   },
   "transport . voiture . empreinte autoroute": {
     "formule": "par km personne * km autoroute",
@@ -7054,10 +7088,9 @@
     "unité": "kgCO2e"
   },
   "transport . vacances . caravane . construction": {
-    "formule": "7600 * (caravane . poids / 1500)",
+    "formule": "voiture . gabarit . berline . empreinte * (caravane . poids / voiture . gabarit . berline . poids)",
     "unité": "kgCO2e",
-    "note": "On extrapole l'impact de la fabrication d'une caravane car à partir d'un ratio sur le poids et en considérant les données de construction \"Berline\" (6300 kgCO2e et 1500 kg)\nSource Figure 6 et tableau 1 [FNH-Carbone4](https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf)\nOn considère un poids de 750 kg pour une caravane.\n",
-    "optimized": true
+    "note": "On extrapole l'impact de la fabrication d'une caravane car à partir d'un ratio sur le poids et en considérant les données de construction \"Berline\" (6300 kgCO2e et 1500 kg)\nSource Figure 6 et tableau 1 [FNH-Carbone4](https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf)\nOn considère un poids de 750 kg pour une caravane.\n"
   },
   "transport . vacances . caravane . poids": {
     "formule": 750,
@@ -7093,10 +7126,9 @@
     "unité": "kgCO2e"
   },
   "transport . vacances . camping car . construction": {
-    "formule": "7600 * (camping car . poids / 1500)",
+    "formule": "voiture . gabarit . berline . empreinte * (camping car . poids / voiture . gabarit . berline . poids)",
     "unité": "kgCO2e",
-    "note": "On extrapole l'impact de la fabrication d'une caravane car à partir d'un ratio sur le poids et en considérant les données de construction \"Berline\" (6300 kgCO2e et 1500 kg)\nSource Figure 6 et tableau 1 [FNH-Carbone4](https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf)\nOn considère un poids de 3t pour le camping car la limite roulante (avec permis B) est à 3,5t (ce qui laisse 500 kg pour l'aménagement intérieur).\n",
-    "optimized": true
+    "note": "On extrapole l'impact de la fabrication d'une caravane car à partir d'un ratio sur le poids et en considérant les données de construction \"Berline\" (6300 kgCO2e et 1500 kg)\nSource Figure 6 et tableau 1 [FNH-Carbone4](https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf)\nOn considère un poids de 3t pour le camping car la limite roulante (avec permis B) est à 3,5t (ce qui laisse 500 kg pour l'aménagement intérieur).\n"
   },
   "transport . vacances . camping car . poids": {
     "formule": 3000,
@@ -7193,10 +7225,9 @@
     "unité": "kgCO2e"
   },
   "transport . vacances . van . construction": {
-    "formule": "7600 * (van . poids / 1500)",
+    "formule": "voiture . gabarit . berline . empreinte * (van . poids / voiture . gabarit . berline . poids)",
     "unité": "kgCO2e",
-    "note": "On extrapole l'impact de la fabrication d'une caravane car à partir d'un ratio sur le poids et en considérant les données de construction \"Berline\" (6300 kgCO2e et 1500 kg)\nSource Figure 6 et tableau 1 [FNH-Carbone4](https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf)\nOn considère un poids de 3t pour le van la limite roulante (avec permis B) est à 3,5t (ce qui laisse 500 kg pour l'aménagement intérieur).\n",
-    "optimized": true
+    "note": "On extrapole l'impact de la fabrication d'une caravane car à partir d'un ratio sur le poids et en considérant les données de construction \"Berline\" (6300 kgCO2e et 1500 kg)\nSource Figure 6 et tableau 1 [FNH-Carbone4](https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf)\nOn considère un poids de 3t pour le van la limite roulante (avec permis B) est à 3,5t (ce qui laisse 500 kg pour l'aménagement intérieur).\n"
   },
   "transport . vacances . van . poids": {
     "formule": 3000,
@@ -7217,12 +7248,29 @@
           "alors": 0
         },
         {
-          "si": "utilisateur régulier",
+          "si": {
+            "toutes ces conditions": [
+              {
+                "est défini": "utilisateur régulier"
+              },
+              "utilisateur régulier"
+            ]
+          },
           "alors": "empreinte calculée"
         },
         {
-          "si": "utilisateur régulier = non",
+          "si": {
+            "toutes ces conditions": [
+              {
+                "est défini": "utilisateur régulier"
+              },
+              "utilisateur régulier = non"
+            ]
+          },
           "alors": "empreinte utilisateur irrégulier"
+        },
+        {
+          "sinon": "empreinte moyenne"
         }
       ]
     },
@@ -7251,13 +7299,15 @@
   },
   "transport . voiture . utilisateur régulier": {
     "question": "Utilisez-vous majoritairement la même voiture pour vous déplacer ?",
-    "description": "Par opposition à l'utilisation exclusive de voitures de location partagées par d'autres personnes le reste du temps, ou l'utilisation ponctuelle de la voiture d'un ami, de la famille.\n\nVous n'êtes pas propriétaire d'une voiture, mais vous faites quand même des kilomètres.\n\nRépondez oui si vous utilisez dans la plupart des cas le même véhicule, que ce soit en tant que passager ou que conducteur. \n\nCela peut-être le cas s'il s'agit d'un véhicule appartenant à quelqu'un de votre famille, ou à des amis proches. Ou si vous louez systématiquement le même type de véhicule, comme dans le cas d'un abonnement à un service d'autopartage.\n",
-    "par défaut": "oui"
+    "description": "Par opposition à l'utilisation exclusive de voitures de location partagées par d'autres personnes le reste du temps, ou l'utilisation ponctuelle de la voiture d'un ami, de la famille.\n\nVous n'êtes pas propriétaire d'une voiture, mais vous faites quand même des kilomètres.\n\nRépondez oui si vous utilisez dans la plupart des cas le même véhicule, que ce soit en tant que passager ou que conducteur. \n\nCela peut-être le cas s'il s'agit d'un véhicule appartenant à quelqu'un de votre famille, ou à des amis proches. Ou si vous louez systématiquement le même type de véhicule, comme dans le cas d'un abonnement à un service d'autopartage.\n"
   },
   "transport . voiture . notif utilsateur irrégulier": {
     "type": "notification",
     "formule": {
       "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
         "utilisateur régulier = non",
         "km > 0"
       ]
@@ -7274,9 +7324,10 @@
       "recalcul": {
         "règle": "voiture . construction",
         "avec": {
-          "voiture . utilisateur régulier": "'oui'",
-          "voiture . gabarit": "'moyenne'",
-          "voiture . motorisation": "'thermique'"
+          "voiture . utilisateur régulier": "oui",
+          "voiture . gabarit": "'berline'",
+          "voiture . motorisation": "'thermique'",
+          "voiture . véhicule récent": "oui"
         }
       }
     }
@@ -7286,11 +7337,27 @@
       "recalcul": {
         "règle": "voiture . usage",
         "avec": {
-          "voiture . utilisateur régulier": "'oui'",
-          "voiture . gabarit": "'moyenne'",
+          "voiture . utilisateur régulier": "oui",
+          "voiture . gabarit": "'berline'",
           "voiture . motorisation": "'thermique'",
           "voiture . thermique . carburant": "'essence E5 ou E10'",
-          "voiture . thermique . consommation aux 100": "voiture . consommation estimée"
+          "voiture . thermique . consommation aux 100": "voiture . consommation estimée",
+          "voiture . véhicule récent": "oui"
+        }
+      }
+    }
+  },
+  "transport . voiture . empreinte moyenne": {
+    "formule": {
+      "recalcul": {
+        "règle": "voiture . empreinte calculée",
+        "avec": {
+          "voiture . utilisateur régulier": "oui",
+          "voiture . gabarit": "'berline'",
+          "voiture . motorisation": "'thermique'",
+          "voiture . thermique . carburant": "'essence E5 ou E10'",
+          "voiture . thermique . consommation aux 100": "voiture . consommation estimée",
+          "voiture . véhicule récent": "oui"
         }
       }
     }
@@ -7357,6 +7424,9 @@
     "applicable si": {
       "toutes ces conditions": [
         "km > 0",
+        {
+          "est défini": "utilisateur régulier"
+        },
         "utilisateur régulier"
       ]
     },
@@ -7433,6 +7503,9 @@
     "applicable si": {
       "toutes ces conditions": [
         "km > 0",
+        {
+          "est défini": "utilisateur régulier"
+        },
         "utilisateur régulier"
       ]
     },
@@ -7489,6 +7562,9 @@
     "applicable si": {
       "toutes ces conditions": [
         "km > 0",
+        {
+          "est défini": "utilisateur régulier"
+        },
         "utilisateur régulier"
       ]
     },
@@ -7691,10 +7767,23 @@
     "unité": "kgCO2e",
     "note": "Ètonnamment, la berline a moins d'empreinte construction que la citadine... A voir si l'étude relève ce mystère."
   },
+  "transport . voiture . gabarit . berline . poids": {
+    "formule": 1500,
+    "unité": "kg",
+    "note": "Règle utilisée pour le calcul de l'empreinte de la caravane et camping, car."
+  },
+  "transport . voiture . gabarit . berline . empreinte": {
+    "formule": 7600,
+    "unité": "kgCO2e",
+    "note": "Règle utilisée pour le calcul de l'empreinte de la caravane et camping car."
+  },
   "transport . voiture . véhicule récent": {
     "applicable si": {
       "toutes ces conditions": [
         "km > 0",
+        {
+          "est défini": "utilisateur régulier"
+        },
         "utilisateur régulier"
       ]
     },

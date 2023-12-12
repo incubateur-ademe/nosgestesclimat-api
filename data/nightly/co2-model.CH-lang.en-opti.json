@@ -919,7 +919,14 @@
   },
   "transport . éco-conduite": {
     "titre": "Adopt eco-driving",
-    "applicable si": "voiture . utilisateur régulier",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
     "icônes": "🚗☮",
     "formule": "transport . voiture . empreinte calculée - transport . éco-conduite . recalcul",
     "description": "Eco-driving is a simple and effective action that is within everyone's reach.\n\nIt can save an average of 15% in fuel consumption,\nreduce vehicle maintenance costs, reduce the risk of accidents by an average of 10 to 15% and make substantial savings that can amount to several hundred\nsavings that can amount to several hundred euros\n\nThe application of eco-driving is all the more relevant in cities and urban areas where stops and restarts are frequent\nrestarting are frequent.\n",
@@ -948,7 +955,14 @@
   },
   "transport . covoiturage": {
     "titre": "Favour carpooling",
-    "applicable si": "voiture . utilisateur régulier",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
     "action": {
       "dépasse": [
         "transport . boulot . covoiturage"
@@ -1226,7 +1240,14 @@
     "titre": "Do without a car for less than 5 km",
     "icônes": "🚗🚲",
     "formule": "transport . voiture . empreinte calculée - transport . voiture 5km . recalcul",
-    "applicable si": "voiture . utilisateur régulier",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
     "non applicable si": "voiture . km < seuil d'activation 5km",
     "note": "It is assumed that a person who does not own a car *already* does without a car for short trips.\n",
     "description": "In France, 4 out of 10 car journeys are less than 3 km long and no less than 177 million journeys of less than 5 km are made alone by car each week (excluding home-to-work journeys)\n\nAll of these \"short\" trips taken together account for nearly 10% of the total distance traveled by car each year in France\n\nThus, turning to active mobility (bicycle, moped, etc.) for these \"short\" trips can significantly reduce our GHG emissions\nemissions while relieving congestion on urban roads and improving air quality in our polluted cities.\n\n> Did you know? The state and many regions or cities subsidize mechanical, electric, cargo, folding bikes, etc. <a href=\"https://mesaidesvelo.fr\">Calculate your subsidy 🚲️ in 3 clicks</a>.\n",
@@ -1358,7 +1379,14 @@
   "transport . voiture électrique": {
     "titre": "Driving an electric car",
     "icônes": "🔌🚗",
-    "applicable si": "voiture . utilisateur régulier",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
     "non applicable si": "transport . voiture . motorisation = 'électrique'",
     "formule": "transport . voiture . empreinte calculée - transport . voiture électrique . recalcul",
     "description": "The electric car is not a miracle solution but for certain uses it can be (very) useful to reduce our footprint.\n\nHowever, we must be careful not to come to the simplistic conclusion that all we need to do is switch to an electric car fleet to decarbonize French travel\n\nThe priority must be, when possible (55% of our trips <a href=\"https://twitter.com/GlmMrt/status/1481986507179274248\">are less than 5km</a>), the development of active mobility (such as cycling) and public transport.\n\nNevertheless, the figure presented to you corresponds to the difference in greenhouse gas emissions that would have occurred if you had driven your kilometers with\nan electric vehicle and not a thermal one.\n",
@@ -1380,18 +1408,24 @@
   "transport . voiture . limitation autoroute": {
     "titre": "Go from 130 to 110km/h",
     "icônes": "🚗🛣️",
-    "applicable si": "voiture . utilisateur régulier",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
     "formule": "réduction * empreinte autoroute",
     "description": "The Citizens' Climate Convention has proposed a reduction of the speed limit on highways from 130km/h to 110km/h in 2020\nThe proposal is detailed <a href=\"https://propositions.conventioncitoyennepourleclimat.fr/objectif/reduire-les-emissions-des-gaz-a-effet-de-serre-sur-les-autoroutes-et-les-voies-rapides/#elementor-tab-title-1681\">here</a>\n\nFollowing Russia's invasion of Ukraine, the International Energy Agency made this <a href=\"https://www.iea.org/reports/a-10-point-plan-to-cut-oil-use\">its 1st recommendation</a> to reduce our purchases of Russian oil.\n\nHere we offer an assessment of this measure based on your specific situation.\n",
     "titre.auto": "Go from 130 to 110km/h"
   },
   "transport . voiture . limitation autoroute . réduction": {
     "titre": "Consumption gain 130 -&gt; 110",
+    "formule": "25%",
     "description": "![](https://imgur.com/NB9CUUt.jpg)\nFrom this graph, by graphical deduction (we have not yet gone back to the <a href=\"http://theses.univ-lyon2.fr/documents/getpart.php?id=1026&action=pdf\">study</a> data, page 151 figure 26), we find the data below.\n\nDiesel: 6.5 l/100 at 130km/h -> 4.75 at 110km/h\n\nGasoline: 11.75 l/100 at 130km/h -> 8.65 at 110km/h\n\nSo -27% in diesel and -26% in petrol by going from 130 to 110. We keep the order of magnitude of 25%.\n",
     "note": "This calculation should be refined.\nSome sources to investigate for the calculation.\n- a citizen who makes his test for a clio. He finds a reduction between -20% and -50% !\n   https://twitter.com/CptQwark_/status/1289499582871658499\n   Another citizen finds rather -10% with a bigger car\n- <a href=\"<https://www.ecologie.gouv.fr/sites/default/files/Théma - Reduction of speeds on the roads.pdf>\">Report of the CGDD</a>, where we have not found for the moment the explanation of the calculation of CO₂ savings\n- Aurélien Bigo who criticizes the CGDD report https://twitter.com/AurelienBigo/status/1276459283291439114, but who does not give us any information about the calculation of the CO₂ itself.\n- another evaluation, which gives us the calculation :)  : https://twitter.com/Tomsawy22670318/status/1274257122373570565\n  Attention, to be rigorous, as mentioned in this last thread, it is necessary to take into account the distribution of the speed and the category of car (presence of a 6th gear for example). Obviously, we do not drive at 130 all the time.\n",
-    "titre.auto": "Consumption gain 130 -&gt; 110",
-    "valeur": "25%",
-    "optimized": true
+    "titre.auto": "Consumption gain 130 -&gt; 110"
   },
   "transport . voiture . empreinte autoroute": {
     "formule": "par km personne * km autoroute",
@@ -8391,12 +8425,11 @@
     "titre.auto": "Construction of the caravan"
   },
   "transport . vacances . caravane . construction": {
-    "formule": "7600 * (caravane . poids / 1500)",
+    "formule": "voiture . gabarit . berline . empreinte * (caravane . poids / voiture . gabarit . berline . poids)",
     "unité": "kgCO2e",
     "note": "We extrapolate the impact of manufacturing a caravan using a weight ratio and considering \"Saloon\" construction data (6300 kgCO2e and 1500 kg)\nSource Figure 6 and Table 1 <a href=\"https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf\">FNH-Carbone4</a>\nA caravan weight of 750 kg is assumed.\n",
     "titre": "construction",
-    "titre.auto": "construction",
-    "optimized": true
+    "titre.auto": "construction"
   },
   "transport . vacances . caravane . poids": {
     "formule": 750,
@@ -8441,12 +8474,11 @@
     "titre.auto": "Construction of the motor home"
   },
   "transport . vacances . camping car . construction": {
-    "formule": "7600 * (camping car . poids / 1500)",
+    "formule": "voiture . gabarit . berline . empreinte * (camping car . poids / voiture . gabarit . berline . poids)",
     "unité": "kgCO2e",
     "note": "We extrapolate the impact of manufacturing a caravan based on a weight ratio and considering \"Saloon\" construction data (6300 kgCO2e and 1500 kg)\nSource Figure 6 and Table 1 <a href=\"https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf\">FNH-Carbone4</a>\nWe assume a weight of 3t for camping cars, with a rolling limit (with a B driving license) of 3.5t (leaving 500 kg for interior fittings).\n",
     "titre": "construction",
-    "titre.auto": "construction",
-    "optimized": true
+    "titre.auto": "construction"
   },
   "transport . vacances . camping car . poids": {
     "formule": 3000,
@@ -8572,12 +8604,11 @@
     "titre.auto": "Building the van"
   },
   "transport . vacances . van . construction": {
-    "formule": "7600 * (van . poids / 1500)",
+    "formule": "voiture . gabarit . berline . empreinte * (van . poids / voiture . gabarit . berline . poids)",
     "unité": "kgCO2e",
     "note": "The impact of manufacturing a caravan is extrapolated from a ratio based on weight and considering \"Saloon\" construction data (6300 kgCO2e and 1500 kg)\nSource Figure 6 and Table 1 <a href=\"https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf\">FNH-Carbone4</a>\nAssuming a weight of 3t for the van, the rolling limit (with a B driving licence) is 3.5t (which leaves 500 kg for the interior fittings).\n",
     "titre": "construction",
-    "titre.auto": "construction",
-    "optimized": true
+    "titre.auto": "construction"
   },
   "transport . vacances . van . poids": {
     "formule": 3000,
@@ -8602,12 +8633,29 @@
           "alors": 0
         },
         {
-          "si": "utilisateur régulier",
+          "si": {
+            "toutes ces conditions": [
+              {
+                "est défini": "utilisateur régulier"
+              },
+              "utilisateur régulier"
+            ]
+          },
           "alors": "empreinte calculée"
         },
         {
-          "si": "utilisateur régulier = non",
+          "si": {
+            "toutes ces conditions": [
+              {
+                "est défini": "utilisateur régulier"
+              },
+              "utilisateur régulier = non"
+            ]
+          },
           "alors": "empreinte utilisateur irrégulier"
+        },
+        {
+          "sinon": "empreinte moyenne"
         }
       ]
     },
@@ -8633,7 +8681,6 @@
   "transport . voiture . utilisateur régulier": {
     "question": "Do you mostly use the same car to get around?",
     "description": "As opposed to the exclusive use of rental cars shared with other people the rest of the time, or the occasional use of a friend's or family car.\n\nYou don't own a car, but you still put in the miles.\n\nAnswer yes if you use the same vehicle most of the time, either as a passenger or as a driver. \n\nThis could be the case if the vehicle belongs to a family member or close friend. Or if you systematically rent the same type of vehicle, as in the case of a subscription to a car-sharing service.\n",
-    "par défaut": "oui",
     "titre": "regular user",
     "titre.auto": "regular user"
   },
@@ -8641,6 +8688,9 @@
     "type": "notification",
     "formule": {
       "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
         "utilisateur régulier = non",
         "km > 0"
       ]
@@ -8661,9 +8711,10 @@
       "recalcul": {
         "règle": "voiture . construction",
         "avec": {
-          "voiture . utilisateur régulier": "'oui'",
-          "voiture . gabarit": "'moyenne'",
-          "voiture . motorisation": "'thermique'"
+          "voiture . utilisateur régulier": "oui",
+          "voiture . gabarit": "'berline'",
+          "voiture . motorisation": "'thermique'",
+          "voiture . véhicule récent": "oui"
         }
       }
     },
@@ -8675,16 +8726,34 @@
       "recalcul": {
         "règle": "voiture . usage",
         "avec": {
-          "voiture . utilisateur régulier": "'oui'",
-          "voiture . gabarit": "'moyenne'",
+          "voiture . utilisateur régulier": "oui",
+          "voiture . gabarit": "'berline'",
           "voiture . motorisation": "'thermique'",
           "voiture . thermique . carburant": "'essence E5 ou E10'",
-          "voiture . thermique . consommation aux 100": "voiture . consommation estimée"
+          "voiture . thermique . consommation aux 100": "voiture . consommation estimée",
+          "voiture . véhicule récent": "oui"
         }
       }
     },
     "titre": "use",
     "titre.auto": "use"
+  },
+  "transport . voiture . empreinte moyenne": {
+    "formule": {
+      "recalcul": {
+        "règle": "voiture . empreinte calculée",
+        "avec": {
+          "voiture . utilisateur régulier": "oui",
+          "voiture . gabarit": "'berline'",
+          "voiture . motorisation": "'thermique'",
+          "voiture . thermique . carburant": "'essence E5 ou E10'",
+          "voiture . thermique . consommation aux 100": "voiture . consommation estimée",
+          "voiture . véhicule récent": "oui"
+        }
+      }
+    },
+    "titre": "average footprint",
+    "titre.auto": "average footprint"
   },
   "transport . voiture . empreinte calculée": {
     "formule": "(usage + construction amortie) / voyageurs",
@@ -8759,6 +8828,9 @@
     "applicable si": {
       "toutes ces conditions": [
         "km > 0",
+        {
+          "est défini": "utilisateur régulier"
+        },
         "utilisateur régulier"
       ]
     },
@@ -8850,6 +8922,9 @@
     "applicable si": {
       "toutes ces conditions": [
         "km > 0",
+        {
+          "est défini": "utilisateur régulier"
+        },
         "utilisateur régulier"
       ]
     },
@@ -8914,6 +8989,9 @@
     "applicable si": {
       "toutes ces conditions": [
         "km > 0",
+        {
+          "est défini": "utilisateur régulier"
+        },
         "utilisateur régulier"
       ]
     },
@@ -9140,10 +9218,27 @@
     "titre": "hybrid scale",
     "titre.auto": "hybrid scale"
   },
+  "transport . voiture . gabarit . berline . poids": {
+    "formule": 1500,
+    "unité": "kg",
+    "note": "Rule used to calculate the footprint of caravans and campers.",
+    "titre": "weight",
+    "titre.auto": "weight"
+  },
+  "transport . voiture . gabarit . berline . empreinte": {
+    "formule": 7600,
+    "unité": "kgCO2e",
+    "note": "Rule used to calculate the footprint of the caravan and motorhome.",
+    "titre": "footprint",
+    "titre.auto": "footprint"
+  },
   "transport . voiture . véhicule récent": {
     "applicable si": {
       "toutes ces conditions": [
         "km > 0",
+        {
+          "est défini": "utilisateur régulier"
+        },
         "utilisateur régulier"
       ]
     },

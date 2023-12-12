@@ -969,7 +969,14 @@
   },
   "transport . éco-conduite": {
     "titre": "Adopt eco-driving",
-    "applicable si": "voiture . utilisateur régulier",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
     "icônes": "🚗☮",
     "formule": "transport . voiture . empreinte calculée - transport . éco-conduite . recalcul",
     "description": "Eco-driving is a simple and effective action that is within everyone's reach.\n\nIt can save an average of 15% in fuel consumption,\nreduce vehicle maintenance costs, reduce the risk of accidents by an average of 10 to 15% and make substantial savings that can amount to several hundred\nsavings that can amount to several hundred euros\n\nThe application of eco-driving is all the more relevant in cities and urban areas where stops and restarts are frequent\nrestarting are frequent.\n",
@@ -998,7 +1005,14 @@
   },
   "transport . covoiturage": {
     "titre": "Favour carpooling",
-    "applicable si": "voiture . utilisateur régulier",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
     "action": {
       "dépasse": [
         "transport . boulot . covoiturage"
@@ -1290,7 +1304,14 @@
     "titre": "Do without a car for less than 5 km",
     "icônes": "🚗🚲",
     "formule": "transport . voiture . empreinte calculée - transport . voiture 5km . recalcul",
-    "applicable si": "voiture . utilisateur régulier",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
     "non applicable si": "voiture . km < seuil d'activation 5km",
     "note": "It is assumed that a person who does not own a car *already* does without a car for short trips.\n",
     "description": "In France, 4 out of 10 car journeys are less than 3 km long and no less than 177 million journeys of less than 5 km are made alone by car each week (excluding home-to-work journeys)\n\nAll of these \"short\" trips taken together account for nearly 10% of the total distance traveled by car each year in France\n\nThus, turning to active mobility (bicycle, moped, etc.) for these \"short\" trips can significantly reduce our GHG emissions\nemissions while relieving congestion on urban roads and improving air quality in our polluted cities.\n\n> Did you know? The state and many regions or cities subsidize mechanical, electric, cargo, folding bikes, etc. <a href=\"https://mesaidesvelo.fr\">Calculate your subsidy 🚲️ in 3 clicks</a>.\n",
@@ -1433,7 +1454,14 @@
   "transport . voiture électrique": {
     "titre": "Driving an electric car",
     "icônes": "🔌🚗",
-    "applicable si": "voiture . utilisateur régulier",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
     "non applicable si": "transport . voiture . motorisation = 'électrique'",
     "formule": "transport . voiture . empreinte calculée - transport . voiture électrique . recalcul",
     "description": "The electric car is not a miracle solution but for certain uses it can be (very) useful to reduce our footprint.\n\nHowever, we must be careful not to come to the simplistic conclusion that all we need to do is switch to an electric car fleet to decarbonize French travel\n\nThe priority must be, when possible (55% of our trips <a href=\"https://twitter.com/GlmMrt/status/1481986507179274248\">are less than 5km</a>), the development of active mobility (such as cycling) and public transport.\n\nNevertheless, the figure presented to you corresponds to the difference in greenhouse gas emissions that would have occurred if you had driven your kilometers with\nan electric vehicle and not a thermal one.\n",
@@ -1455,7 +1483,14 @@
   "transport . voiture . limitation autoroute": {
     "titre": "Go from 130 to 110km/h",
     "icônes": "🚗🛣️",
-    "applicable si": "voiture . utilisateur régulier",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
     "formule": "réduction * empreinte autoroute",
     "description": "The Citizens' Climate Convention has proposed a reduction of the speed limit on highways from 130km/h to 110km/h in 2020\nThe proposal is detailed <a href=\"https://propositions.conventioncitoyennepourleclimat.fr/objectif/reduire-les-emissions-des-gaz-a-effet-de-serre-sur-les-autoroutes-et-les-voies-rapides/#elementor-tab-title-1681\">here</a>\n\nFollowing Russia's invasion of Ukraine, the International Energy Agency made this <a href=\"https://www.iea.org/reports/a-10-point-plan-to-cut-oil-use\">its 1st recommendation</a> to reduce our purchases of Russian oil.\n\nHere we offer an assessment of this measure based on your specific situation.\n",
     "titre.auto": "Go from 130 to 110km/h"
@@ -14161,12 +14196,29 @@
           "alors": 0
         },
         {
-          "si": "utilisateur régulier",
+          "si": {
+            "toutes ces conditions": [
+              {
+                "est défini": "utilisateur régulier"
+              },
+              "utilisateur régulier"
+            ]
+          },
           "alors": "empreinte calculée"
         },
         {
-          "si": "utilisateur régulier = non",
+          "si": {
+            "toutes ces conditions": [
+              {
+                "est défini": "utilisateur régulier"
+              },
+              "utilisateur régulier = non"
+            ]
+          },
           "alors": "empreinte utilisateur irrégulier"
+        },
+        {
+          "sinon": "empreinte moyenne"
         }
       ]
     },
@@ -14199,7 +14251,6 @@
   "transport . voiture . utilisateur régulier": {
     "question": "Do you mostly use the same car to get around?",
     "description": "As opposed to the exclusive use of rental cars shared with other people the rest of the time, or the occasional use of a friend's or family car.\n\nYou don't own a car, but you still put in the miles.\n\nAnswer yes if you use the same vehicle most of the time, either as a passenger or as a driver. \n\nThis could be the case if the vehicle belongs to a family member or close friend. Or if you systematically rent the same type of vehicle, as in the case of a subscription to a car-sharing service.\n",
-    "par défaut": "oui",
     "titre": "regular user",
     "titre.auto": "regular user"
   },
@@ -14207,6 +14258,9 @@
     "type": "notification",
     "formule": {
       "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
         "utilisateur régulier = non",
         "km > 0"
       ]
@@ -14226,9 +14280,10 @@
       "recalcul": {
         "règle": "voiture . construction",
         "avec": {
-          "voiture . utilisateur régulier": "'oui'",
-          "voiture . gabarit": "'moyenne'",
-          "voiture . motorisation": "'thermique'"
+          "voiture . utilisateur régulier": "oui",
+          "voiture . gabarit": "'berline'",
+          "voiture . motorisation": "'thermique'",
+          "voiture . véhicule récent": "oui"
         }
       }
     },
@@ -14240,16 +14295,34 @@
       "recalcul": {
         "règle": "voiture . usage",
         "avec": {
-          "voiture . utilisateur régulier": "'oui'",
-          "voiture . gabarit": "'moyenne'",
+          "voiture . utilisateur régulier": "oui",
+          "voiture . gabarit": "'berline'",
           "voiture . motorisation": "'thermique'",
           "voiture . thermique . carburant": "'essence E5 ou E10'",
-          "voiture . thermique . consommation aux 100": "voiture . consommation estimée"
+          "voiture . thermique . consommation aux 100": "voiture . consommation estimée",
+          "voiture . véhicule récent": "oui"
         }
       }
     },
     "titre": "use",
     "titre.auto": "use"
+  },
+  "transport . voiture . empreinte moyenne": {
+    "formule": {
+      "recalcul": {
+        "règle": "voiture . empreinte calculée",
+        "avec": {
+          "voiture . utilisateur régulier": "oui",
+          "voiture . gabarit": "'berline'",
+          "voiture . motorisation": "'thermique'",
+          "voiture . thermique . carburant": "'essence E5 ou E10'",
+          "voiture . thermique . consommation aux 100": "voiture . consommation estimée",
+          "voiture . véhicule récent": "oui"
+        }
+      }
+    },
+    "titre": "average footprint",
+    "titre.auto": "average footprint"
   },
   "transport . voiture . empreinte calculée": {
     "formule": "(usage + construction amortie) / voyageurs",
@@ -14324,6 +14397,9 @@
     "applicable si": {
       "toutes ces conditions": [
         "km > 0",
+        {
+          "est défini": "utilisateur régulier"
+        },
         "utilisateur régulier"
       ]
     },
@@ -14415,6 +14491,9 @@
     "applicable si": {
       "toutes ces conditions": [
         "km > 0",
+        {
+          "est défini": "utilisateur régulier"
+        },
         "utilisateur régulier"
       ]
     },
@@ -14483,6 +14562,9 @@
     "applicable si": {
       "toutes ces conditions": [
         "km > 0",
+        {
+          "est défini": "utilisateur régulier"
+        },
         "utilisateur régulier"
       ]
     },
@@ -14745,6 +14827,9 @@
     "applicable si": {
       "toutes ces conditions": [
         "km > 0",
+        {
+          "est défini": "utilisateur régulier"
+        },
         "utilisateur régulier"
       ]
     },
