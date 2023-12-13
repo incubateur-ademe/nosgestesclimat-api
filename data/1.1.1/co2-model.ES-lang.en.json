@@ -4372,16 +4372,11 @@
     "titre.auto": "Your personal climate report"
   },
   "commun . intensité électricité": {
-    "titre": "Carbon intensity of the Polynesian electricity mix",
+    "titre": "Carbon intensity of the French electricity mix",
     "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/incubateur-ademe/publicodes-commun\">`@incubator-ademe/publicodes-commun`</a> model.\n\n\nAverage intensity, all types of consumption combined, year 2022.",
-    "formule": {
-      "moyenne": [
-        0.543,
-        1.09
-      ]
-    },
+    "formule": 0.052,
     "unité": "kgCO2e/kWh",
-    "note": "We use data from the footprint database (updated in December 2022).\nHere, we calculate the average of the EFs of the mix 'Outre-Mer | Polynésie Française - hors Tahiti' (1.09 kgCO2e/kWh) and 'Outre-Mer | Tahiti' (0.543 kgCO2e/kWh).\n",
+    "note": "Here, we're talking about the electricity consumption mix. \nThe figure comes from the Empreinte Base (Electricity/2022 - average mix/consumption), whose methodology is described in the <a href=\"https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/\">documentation</a>.\nMicMac v2.6 gave a value of 12.4gCO2e/kWh for \"green\" electricity suppliers, but this value seems to correspond to a theoretical calculation over the year, and not to an actual, minute-by-minute calculation.\n",
     "titre.auto": "Carbon intensity of the French electricity mix"
   },
   "commun . mois par an": {
@@ -12484,25 +12479,15 @@
   "services marchands": {
     "abréviation": "S. merchants",
     "couleur": "#3c0c61",
-    "description": "Market services are only part of the <a href=\"https://nosgestesclimat.fr/documentation/services-soci%C3%A9taux\">societal services</a> whose calculation is based on\n<a href=\"https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021\">the estimation of the French national footprint by the Ministry of Ecology</a>.",
-    "formule": {
-      "somme": [
-        "empreinte branche . C30 par hab . services marchands",
-        "empreinte branche . H52 par hab . services marchands",
-        "empreinte branche . H53 par hab . services marchands",
-        "empreinte branche . J61 par hab . services marchands",
-        "empreinte branche . K64 par hab . services marchands",
-        "empreinte branche . K65 par hab . services marchands",
-        "empreinte branche . M69 par hab . services marchands",
-        "empreinte branche . N80 par hab . services marchands",
-        "empreinte branche . S94 par hab . services marchands",
-        "empreinte branche . S96 par hab . services marchands"
-      ]
-    },
+    "description": "> The calculation of emissions from Spanish market services is based on the French estimate, adjusted for Spain's territorial emissions and population. \n> This is an initial macroscopic estimate that may be revised in the future.\n",
+    "formule": "poids des services marchands espagnols",
     "icônes": "✉️",
     "titre": "Market services",
     "unité": "kgCO2e",
-    "titre.auto": "Market services"
+    "titre.auto": "Market services",
+    "avec": {
+      "poids des services marchands espagnols": 195.06
+    }
   },
   "services publics": {
     "abréviation": "S. public",
@@ -12538,16 +12523,14 @@
     "couleur": "#0c2461",
     "abréviation": "S. societal",
     "icônes": "🏛️",
-    "description": "This item includes the footprint of French public services, and market services that can be considered essential to everyone's life, divided by the country's population.  \n\nThe first category \"public services\" includes for example the footprint of French hospitals, or justice. We consider that this footprint should be equally distributed for all citizens, because these are \"republican\" jobs that only democracy can make evolve, not directly by individual consumption choices \n\nThe second category \"market services\" includes the telecommunications network (fiber, telephone, etc.), but also insurance and the post office. These are relatively universal services for which we do not yet have the details that would allow us to distribute the footprint according to the consumption choices of citizens.\n\n<RavijenChartSocietaux/>\n",
-    "note": "\nThe model that allows us to calculate these two constants \"public services\" and \"market services\" is different from the rest of the Nos Gestes Climat model because it is called \"macroscopic\". It is a macroscopic reconstruction based on the volume of money exchanged in billions of € per sector.  \n\nThe inclusion of this macro model allows the UCS model to be hybridized. We can thus say that it is predominantly micro with a macro component. \n\nOur source for the two macro constants is the calculation of the French national footprint by the Ministry of Ecology. Here is the <a href=\"https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021\">most recent article</a>, which gives us an estimate of the national footprint of 8.9 tons in 2021. The figure is extrapolated with a lot of additional uncertainties compared to the figure of 9.2 tons in 2018.\n\nTo understand how this model works, see <a href=\"https://github.com/datagir/nosgestesclimat/issues/1583\">this explanation page</a>.\n",
-    "formule": {
-      "somme": [
-        "services publics",
-        "services marchands"
-      ]
-    },
+    "description": "> The calculation of emissions from Spanish public services is based on the French estimate, adjusted for Spanish public spending, of the carbon intensity of the Spanish economy and its population. \n> This is an initial macroscopic estimate that may be revised in the future.\n",
+    "note": "Source: <a href=\"https://docs.google.com/spreadsheets/d/1zJ-CkVQ8W_HdFVvNyaN4xlRsyoZPzRef4rpiCqyowG4/edit?usp=sharing\">Detailed estimate</a>\n",
+    "formule": "poids des services publics espagnols",
     "unité": "kgCO2e",
-    "titre.auto": "Societal services"
+    "titre.auto": "Societal services",
+    "avec": {
+      "poids des services publics espagnols": 1142.5
+    }
   },
   "services sociétaux . question rhétorique": {
     "titre": "Information question on common services",
@@ -12614,9 +12597,10 @@
     "description": "Count the hours you spent on a plane for trips of less than 2 hours (which corresponds to flights of less than about 1000km). If you have stopovers, simply add up the times of each flight.\n\n\nThe suggestions are based on the minimum round trip flight time found in search engines, doubled to consider a round trip.\n\n💡 Only count personal travel and commuting miles to your usual place of work.\nFor example, if you are on a work assignment in another country, this fits into your company's accounting.\n",
     "suggestions": {
       "🚫✈️": 0,
-      "Papeete ⇄ Moorea": 0.5,
-      "Papeete ⇄ Bora-Bora": 1.5,
-      "Papeete ⇄ Huahine": 1.5
+      "Madrid ⇄ Barcelona": 2.27,
+      "Madrid ⇄ Palma de Mallorca": 2.37,
+      "Barcelona ⇄ Palma de Mallorca": 1.5,
+      "Barcelona ⇄ Seville": 3
     },
     "unité": "h",
     "par défaut": "durée moyenne",
@@ -12675,10 +12659,10 @@
     "description": "Count the hours you spent in an airplane for trips between 2 hours and 6 hours (which corresponds to flights between 1000km and 3500km approximately). If you have stopovers, simply add up the times of each flight.\n\nThe suggestions are based on the minimum round trip flight time found in search engines, doubled to consider a round trip.\n\n💡 Only count personal travel and commuting miles to your usual place of work.\nFor example, if you are on a work assignment in another country, this fits into your company's accounting.\n",
     "suggestions": {
       "🚫✈️": 0,
-      "Papeete ⇄ Nuku Hiva": 6.5,
-      "Papeete ⇄ Auckland": 11,
-      "Papeete ⇄ Nouméa": 12,
-      "Papeete ⇄ Honolulu": 12
+      "Madrid ⇄ Gran Canaria": 6,
+      "Madrid ⇄ Paris": 3.7,
+      "Madrid ⇄ Amsterdam": 4.7,
+      "Barcelona ⇄ London": 4
     },
     "unité": "h",
     "par défaut": "durée moyenne",
@@ -12737,9 +12721,10 @@
     "description": "Count the hours you've spent in a plane for journeys of over 6 hours (corresponding to flights of over 3500km or so). If you have stopovers, simply add up the duration of each flight. \n\nNote that if you travelled to a distant destination in several \"short\" journeys, these should be taken into account in the previous questions.\n\nSuggestions are based on the minimum round-trip flight duration found in search engines, doubled to consider a round-trip.\n\n💡 Count only the km of personal travel and home-work travel to reach your usual place of work.\nFor example, if you're on a business assignment in another country, this will be included in your company's accounts.\n",
     "suggestions": {
       "🚫✈️": 0,
-      "Papeete ⇄ Los Angeles": 16,
-      "Papeete ⇄ Sydney": 30,
-      "Papeete ⇄ Paris": 42
+      "Madrid ⇄ New York": 15.4,
+      "Madrid ⇄ Mexico City": 22,
+      "Madrid ⇄ Tokyo": 28,
+      "Barcelona ⇄ Sydney": 44
     },
     "unité": "h",
     "par défaut": "durée moyenne",
@@ -13748,30 +13733,32 @@
     "titre.auto": "Train"
   },
   "transport . train . impact par km": {
-    "formule": {
-      "somme": [
-        "proportion TGV * TGV",
-        "proportion TER * TER",
-        "proportion intercités * intercités"
-      ]
-    },
+    "formule": "(TGV * proportion passagers km AVE) + (TER * (1 - proportion passagers km AVE))",
     "unité": "kgCO2e/km",
-    "note": "Different types of train have different carbon impacts per passenger per kilometre.\nWe calculate a weighted average in proportion to the total number of kilometres travelled on each type of train at national level.\nSource: <a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">Transport Regulation Authority</a>\n\n![Passenger.km distribution](https://github.com/incubateur-ademe/nosgestesclimat/assets/55186402/4bbdf823-8e9a-4570-90da-77ff8af05b14)\n",
+    "note": "We have chosen not to differentiate between high-speed and conventional trains for the time being (to avoid asking two questions).\nWe apply the AVE emissions factor to the 52.3% of journeys made at high speed (AVE, Euromed, Avant) and the Cercanías regional train emissions factor to the rest.\nSource: <a href=\"https://cdn.mitma.gob.es/portal-web-drupal/ferroviario/observatorio/ofe_2021_feb2023_v2.pdf\">Spanish Rail Observatory</a>, 2021\n",
     "titre": "impact per km",
-    "titre.auto": "impact per km"
+    "titre.auto": "impact per km",
+    "avec": {
+      "proportion passagers km AVE": 0.523
+    }
   },
   "transport . train . TGV": {
-    "formule": 0.00293,
+    "formule": "(intensité GHG TGV France / 1000 gCO2e/kgCO2e) * intensité mix électrique Espagne continentale / intensité mix électrique France métropolitaine",
     "unité": "kgCO2e/km",
-    "note": "TGV - 2022; 2.93 gCO2e/km/person; Base Carbone consulted on 19/11/2023 (SNCF data)\n",
-    "titre": "TGV",
-    "titre.auto": "TGV"
+    "note": "The impact of the Spanish high-speed train is calculated on the basis of the French TGV, by applying the carbon intensity of Spain's electricity mix.\nSource:\n- Carbon intensities of the two countries' electricity mixes: <a href=\"https://app.electricitymaps.com/map\">Electricity Map</a>, 2022\n- Impact TGV France: 2.36 gCO2e/km/person; Base Carbone consulted on 04/04/2022 (SNCF data)\n",
+    "titre": "AVE high-speed trains",
+    "titre.auto": "TGV",
+    "avec": {
+      "intensité mix électrique France métropolitaine": "90 gCO2e/kWh",
+      "intensité mix électrique Espagne continentale": "206 gCO2e/kWh",
+      "intensité GHG TGV France": "2.36 gCO2e/km"
+    }
   },
   "transport . train . TER": {
-    "formule": 0.0277,
+    "formule": 0.0328,
     "unité": "kgCO2e/km",
-    "note": "TER - 2022 - Average traction; 27.7 gCO2e/km/person; Carbon base consulted on 19/11/2023 (SNCF data)\n",
-    "titre": "TER",
+    "note": "Cercanías regional trains - 32.8 gCO2e/passenger-km; <a href=\"https://sede.idae.gob.es/lang/extras/tramites-servicios/2021/MOVES_Proyectos_Singulares_II/Factores_de_conversion_ahorros_y_emisiones_de_CO2.pdf\">IDAE data</a>, 2021\n",
+    "titre": "Cercanías regional trains",
     "titre.auto": "TER"
   },
   "transport . train . intercités": {
@@ -13833,11 +13820,11 @@
     "question": "How many kilometers do you travel by train per year?",
     "description": "Suggestions are based on the distance as the crow flies doubled to\nconsider a round trip.\n",
     "suggestions": {
-      "crossing of a region": 300,
-      "Paris ⇄ Lyon": 800,
-      "Brest ⇄ Nice": 2400,
-      "💳 great traveler": 10000,
-      "💳 great traveler plus ultra": 25000
+      "crossing a region": 300,
+      "Madrid ⇄ Barcelona": 1100,
+      "Barcelona ⇄ Paris": 2000,
+      "💳 Renfe Más Plata": 10000,
+      "💳 Renfe Más Oro": 20000
     },
     "unité": "km",
     "par défaut": 1000,
@@ -13857,6 +13844,7 @@
         "deux roues",
         "mobilité douce",
         "bus",
+        "train",
         "métro ou tram",
         "vacances",
         "ferry"

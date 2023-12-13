@@ -637,7 +637,7 @@
     "optimized": true
   },
   "logement . éteindre appareils": {
-    "formule": "80.154 / habitants",
+    "formule": "11.388 / habitants",
     "unité": "kgCO2e",
     "titre": "Turn off devices on standby",
     "icônes": "🏠📺",
@@ -720,7 +720,7 @@
     "titre.auto": "Switch from gas boiler to heat pump"
   },
   "logement . pompe à chaleur": {
-    "formule": "(chauffage . gaz . consommation / 2) * 0.366",
+    "formule": "(chauffage . gaz . consommation / 2) * 0.052",
     "titre": "heat pump",
     "titre.auto": "heat pump",
     "optimized": true
@@ -4523,7 +4523,7 @@
     "optimized": true
   },
   "divers . numérique . internet . empreinte horaire": {
-    "formule": "0.077 * 0.366",
+    "formule": "0.077 * 0.052",
     "unité": "kgCO2e/h",
     "titre": "hourly footprint",
     "titre.auto": "hourly footprint",
@@ -5264,6 +5264,17 @@
     "titre.auto": "Machinery and equipment n.e.c. per capita",
     "optimized": true
   },
+  "empreinte branche . C30 par hab": {
+    "avec": {
+      "ratio services marchands": "50%"
+    },
+    "description": "Other transport equipment per inhabitant\n\n> The description below shows the share of each subclass in the sector (as a % of turnover)\n\n- **Shipbuilding (4%)**\n\t- Building of ships and floating structures (100%)\n\t- Construction of pleasure boats (S)\n- manufacture of locomotives and other railway rolling stock (3%)** ** Manufacture of aircraft and spacecraft (100%)\n- **Aircraft and spacecraft construction (90%)**\n- manufacture of military combat vehicles (S)** **Manufacture of transport equipment (S)\n- **Manufacture of transport equipment n.e.c. (1%)**\n\t- Manufacture of motorbikes (43%)\n\t- Manufacture of bicycles and invalid carriages (47%)\n\t- Manufacture of other transport equipment n.e.c. (10%)",
+    "formule": "(4078 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "vehicle manufacturing (excluding automobiles) per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "vehicle manufacturing (excluding automobiles) per capita",
+    "optimized": true
+  },
   "empreinte branche . C32 par hab": {
     "avec": {
       "ratio autres produits manufacturés": "38%",
@@ -5308,6 +5319,94 @@
     "titre.auto": "Retail trade, except automobiles and motorcycles per capita",
     "optimized": true
   },
+  "empreinte branche . H52 par hab": {
+    "avec": {
+      "ratio services marchands": "87%"
+    },
+    "description": "Warehousing and auxiliary transport services per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- **Warehousing and storage (13%)**\n- **Services auxiliary to transport (87%)**\n\t- Services auxiliary to land transport (30%)\n\t- Services auxiliary to water transport (5%)\n\t- Services auxiliary to air transport (8%)\n\t- Material Handling (3%)\n\t- Other services auxiliary to transportation (54%)",
+    "formule": "(2065 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "support services to transportation activities per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "support services to transportation activities per capita",
+    "optimized": true
+  },
+  "empreinte branche . H53 par hab": {
+    "avec": {
+      "ratio services marchands": "100%"
+    },
+    "description": "Postal and courier services per inhabitant\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- postal activities as part of a universal service obligation (S)** **Other postal and courier activities (S)** **Other postal and courier activities (S)**\n- other postal and courier activities (S)** **Other postal and courier activities (S)",
+    "formule": "(168 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "postal services per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "postal services per capita",
+    "optimized": true
+  },
+  "empreinte branche . J61 par hab": {
+    "avec": {
+      "ratio services marchands": "100%"
+    },
+    "description": "Telecommunications services per capita\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- **Wireline telecommunications (45%)**\n- **Wireless telecommunications (39%)**\n- satellite telecoms (6%)** **Other telecoms (6%)** Other telecoms (6%)\n- **Other telecommunications activities (10%)**",
+    "formule": "(3158 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "telecommunications per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "telecommunications per capita",
+    "optimized": true
+  },
+  "empreinte branche . K64 par hab": {
+    "avec": {
+      "ratio services marchands": "25%"
+    },
+    "description": "Financial services, excluding insurance and pension funds per capita \n\n> The description below corresponds to the share of each subclass of the sector (in % of turnover) \n\n- **Holding company activities (100%)**",
+    "formule": "(760 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "financial services (excluding insurance and pension funds) per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "financial services (excluding insurance and pension funds) per capita",
+    "optimized": true
+  },
+  "empreinte branche . K65 par hab": {
+    "avec": {
+      "ratio services marchands": "100%"
+    },
+    "description": "Insurance, reinsurance and pension fund services, excluding compulsory per capita social security \n\n> The description below corresponds to the share of each subclass of the branch (in % of turnover)\n",
+    "formule": "(3331 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "insurance and pension fund per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "insurance and pension fund per capita",
+    "optimized": true
+  },
+  "empreinte branche . M69 par hab": {
+    "avec": {
+      "ratio services marchands": "100%"
+    },
+    "description": "Legal and accounting activities per inhabitant\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- **Legal activities (60%)**\n- **Accounting activities (40%)**",
+    "formule": "(902.58 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "legal and accounting activities per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "legal and accounting activities per capita",
+    "optimized": true
+  },
+  "empreinte branche . N80 par hab": {
+    "avec": {
+      "ratio services marchands": "24%"
+    },
+    "description": "Surveys and safety per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- **Private security activities (74%)**\n- **Security systems activities (25%)**\n- **Investigation activities (1%)**",
+    "formule": "(20.67 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "investigations and security per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "investigations and security per capita",
+    "optimized": true
+  },
+  "empreinte branche . S94 par hab": {
+    "avec": {
+      "ratio services marchands": "100%"
+    },
+    "description": "Services provided by voluntary organisations per inhabitant\n\n> The description below corresponds to the share of each subclass in the sector (in % of turnover)\n\n- **Activities of business, employers' and professional organisations (93%)**\n\t- Activities of employers' and consular organisations (49%)\n\t- Activities of professional organisations (51%)\n- **Activities of other voluntary organisations (7%)** Activities of political organisations (1%)\n\t- Activities of political organisations (1%)\n\t- Activities of membership organisations n.e.c. (99%)",
+    "formule": "(1213 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "associative activities per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "associative activities per capita",
+    "optimized": true
+  },
   "empreinte branche . S95 par hab": {
     "avec": {
       "ratio réparations": "100%"
@@ -5317,6 +5416,17 @@
     "titre": "other personal services per capita",
     "unité": "kgCO2e",
     "titre.auto": "other personal services per capita",
+    "optimized": true
+  },
+  "empreinte branche . S96 par hab": {
+    "avec": {
+      "ratio services marchands": "12%"
+    },
+    "description": "Other personal services per inhabitant\n\n> The description below corresponds to the share of each subclass in the sector (as a % of turnover)\n\n- **Other personal services (100%)**\n\t- Laundries and dry cleaning (13%)\n\t- Hairdressing and beauty treatments (54%)\n\t- Funeral services (13%)\n\t- Personal care (9%)\n\t- Other personal services n.e.c. (12%)",
+    "formule": "(1656 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "Other personal services per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "Other personal services per capita",
     "optimized": true
   },
   "logement . chauffage": {
@@ -5987,7 +6097,7 @@
     "optimized": true
   },
   "parc français . chauffage . empreinte électricité par m2": {
-    "formule": "consommation électricité par m2 * 0.366",
+    "formule": "consommation électricité par m2 * 0.052",
     "unité": "kgCO2e/m2",
     "titre": "electricity footprint per m2",
     "titre.auto": "electricity footprint per m2",
@@ -6216,7 +6326,7 @@
   },
   "logement . électricité": {
     "icônes": "⚡",
-    "formule": "(consommation * 0.366) / habitants",
+    "formule": "(consommation * 0.052) / habitants",
     "titre": "electricity",
     "titre.auto": "electricity",
     "optimized": true
@@ -6275,7 +6385,7 @@
     "description": "Here we use the average footprint of the mix in the simulation region.\n\nWe could do better, by separating the air heating part from the rest of\nthe housing consumption, because heating is mainly used in winter, when\ncoal and gas plants are running more and worsening the mix footprint.\nBut this would require electrically heated households to find and report\nboth values, which is not easy to do.\n\n> The intensity of residential heating is thus defined at 80gCO2e/kWh in\n> France by the RE2020,\n> [source](https://www.batiactu.com/edito/facteur-energie-primaire-contenu-carbone-electricite-58485.php).\n",
     "titre": "carbon intensity",
     "titre.auto": "carbon intensity",
-    "valeur": "0.366",
+    "valeur": "0.052",
     "optimized": true
   },
   "logement": {
@@ -7143,12 +7253,15 @@
   "services marchands": {
     "abréviation": "S. merchants",
     "couleur": "#3c0c61",
-    "description": "Market services are only part of the <a href=\"https://nosgestesclimat.fr/documentation/services-soci%C3%A9taux\">societal services</a> whose calculation is based on\n<a href=\"https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021\">the estimation of the French national footprint by the Ministry of Ecology</a>.",
+    "description": "> The calculation of emissions from Spanish market services is based on the French estimate, adjusted for Spain's territorial emissions and population. \n> This is an initial macroscopic estimate that may be revised in the future.\n",
     "icônes": "✉️",
     "titre": "Market services",
     "unité": "kgCO2e",
     "titre.auto": "Market services",
-    "valeur": "194.71226747966386",
+    "avec": {
+      "poids des services marchands espagnols": 195.06
+    },
+    "valeur": "195.06",
     "optimized": true
   },
   "services publics": {
@@ -7168,16 +7281,18 @@
     "couleur": "#0c2461",
     "abréviation": "S. societal",
     "icônes": "🏛️",
-    "description": "This item includes the footprint of French public services, and market services that can be considered essential to everyone's life, divided by the country's population.  \n\nThe first category \"public services\" includes for example the footprint of French hospitals, or justice. We consider that this footprint should be equally distributed for all citizens, because these are \"republican\" jobs that only democracy can make evolve, not directly by individual consumption choices \n\nThe second category \"market services\" includes the telecommunications network (fiber, telephone, etc.), but also insurance and the post office. These are relatively universal services for which we do not yet have the details that would allow us to distribute the footprint according to the consumption choices of citizens.\n\n<RavijenChartSocietaux/>\n",
-    "note": "\nThe model that allows us to calculate these two constants \"public services\" and \"market services\" is different from the rest of the Nos Gestes Climat model because it is called \"macroscopic\". It is a macroscopic reconstruction based on the volume of money exchanged in billions of € per sector.  \n\nThe inclusion of this macro model allows the UCS model to be hybridized. We can thus say that it is predominantly micro with a macro component. \n\nOur source for the two macro constants is the calculation of the French national footprint by the Ministry of Ecology. Here is the <a href=\"https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021\">most recent article</a>, which gives us an estimate of the national footprint of 8.9 tons in 2021. The figure is extrapolated with a lot of additional uncertainties compared to the figure of 9.2 tons in 2018.\n\nTo understand how this model works, see <a href=\"https://github.com/datagir/nosgestesclimat/issues/1583\">this explanation page</a>.\n",
-    "formule": {
-      "somme": [
-        "services publics",
-        "services marchands"
-      ]
-    },
+    "description": "> The calculation of emissions from Spanish public services is based on the French estimate, adjusted for Spanish public spending, of the carbon intensity of the Spanish economy and its population. \n> This is an initial macroscopic estimate that may be revised in the future.\n",
+    "note": "Source: <a href=\"https://docs.google.com/spreadsheets/d/1zJ-CkVQ8W_HdFVvNyaN4xlRsyoZPzRef4rpiCqyowG4/edit?usp=sharing\">Detailed estimate</a>\n",
+    "formule": "poids des services publics espagnols",
     "unité": "kgCO2e",
-    "titre.auto": "Societal services"
+    "titre.auto": "Societal services",
+    "avec": {
+      "poids des services publics espagnols": 1142.5
+    }
+  },
+  "poids des services publics espagnols": {
+    "valeur": 1142.5,
+    "optimized": true
   },
   "services sociétaux . question rhétorique": {
     "titre": "Information question on common services",
@@ -7231,10 +7346,10 @@
     "description": "Count the hours you spent on a plane for trips of less than 2 hours (which corresponds to flights of less than about 1000km). If you have stopovers, simply add up the times of each flight.\n\n\nThe suggestions are based on the minimum round trip flight time found in search engines, doubled to consider a round trip.\n\n💡 Only count personal travel and commuting miles to your usual place of work.\nFor example, if you are on a work assignment in another country, this fits into your company's accounting.\n",
     "suggestions": {
       "🚫✈️": 0,
-      "Luxembourg ⇄ Paris": 2,
-      "Luxembourg ⇄ Amsterdam": 2,
-      "Luxembourg ⇄ London": 3,
-      "Luxembourg ⇄ Rome": 4
+      "Madrid ⇄ Barcelona": 2.27,
+      "Madrid ⇄ Palma de Mallorca": 2.37,
+      "Barcelona ⇄ Palma de Mallorca": 1.5,
+      "Barcelona ⇄ Seville": 3
     },
     "unité": "h",
     "par défaut": "durée moyenne",
@@ -7268,10 +7383,10 @@
     "description": "Count the hours you spent in an airplane for trips between 2 hours and 6 hours (which corresponds to flights between 1000km and 3500km approximately). If you have stopovers, simply add up the times of each flight.\n\nThe suggestions are based on the minimum round trip flight time found in search engines, doubled to consider a round trip.\n\n💡 Only count personal travel and commuting miles to your usual place of work.\nFor example, if you are on a work assignment in another country, this fits into your company's accounting.\n",
     "suggestions": {
       "🚫✈️": 0,
-      "Luxembourg ⇄ Madrid": 5,
-      "Luxembourg ⇄ Berlin": 6,
-      "Luxembourg ⇄ Marrakech": 7,
-      "Luxembourg ⇄ Tenerife": 9
+      "Madrid ⇄ Gran Canaria": 6,
+      "Madrid ⇄ Paris": 3.7,
+      "Madrid ⇄ Amsterdam": 4.7,
+      "Barcelona ⇄ London": 4
     },
     "unité": "h",
     "par défaut": "durée moyenne",
@@ -7305,10 +7420,10 @@
     "description": "Count the hours you've spent in a plane for journeys of over 6 hours (corresponding to flights of over 3500km or so). If you have stopovers, simply add up the duration of each flight. \n\nNote that if you travelled to a distant destination in several \"short\" journeys, these should be taken into account in the previous questions.\n\nSuggestions are based on the minimum round-trip flight duration found in search engines, doubled to consider a round-trip.\n\n💡 Count only the km of personal travel and home-work travel to reach your usual place of work.\nFor example, if you're on a business assignment in another country, this will be included in your company's accounts.\n",
     "suggestions": {
       "🚫✈️": 0,
-      "Luxembourg ⇄ New York": 22,
-      "Luxembourg ⇄ Lima": 36,
-      "Luxembourg ⇄ Tokyo": 42,
-      "Luxembourg ⇄ Sydney": 60
+      "Madrid ⇄ New York": 15.4,
+      "Madrid ⇄ Mexico City": 22,
+      "Madrid ⇄ Tokyo": 28,
+      "Barcelona ⇄ Sydney": 44
     },
     "unité": "h",
     "par défaut": "durée moyenne",
@@ -8276,36 +8391,33 @@
     "titre.auto": "Train"
   },
   "transport . train . impact par km": {
-    "formule": {
-      "somme": [
-        "0.7305389221556886 * 0.00293",
-        "0.2275449101796407 * 0.0277",
-        "0.041916167664670656 * 0.00898"
-      ]
-    },
+    "formule": "(0.0054017777777778 * 0.523) + (0.0328 * (1 - 0.523))",
     "unité": "kgCO2e/km",
-    "note": "Different types of train have different carbon impacts per passenger per kilometre.\nWe calculate a weighted average in proportion to the total number of kilometres travelled on each type of train at national level.\nSource: <a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">Transport Regulation Authority</a>\n\n![Passenger.km distribution](https://github.com/incubateur-ademe/nosgestesclimat/assets/55186402/4bbdf823-8e9a-4570-90da-77ff8af05b14)\n",
+    "note": "We have chosen not to differentiate between high-speed and conventional trains for the time being (to avoid asking two questions).\nWe apply the AVE emissions factor to the 52.3% of journeys made at high speed (AVE, Euromed, Avant) and the Cercanías regional train emissions factor to the rest.\nSource: <a href=\"https://cdn.mitma.gob.es/portal-web-drupal/ferroviario/observatorio/ofe_2021_feb2023_v2.pdf\">Spanish Rail Observatory</a>, 2021\n",
     "titre": "impact per km",
     "titre.auto": "impact per km",
+    "avec": {
+      "proportion passagers km AVE": 0.523
+    },
     "optimized": true
   },
   "transport . train . TER": {
     "unité": "kgCO2e/km",
-    "note": "TER - 2022 - Average traction; 27.7 gCO2e/km/person; Carbon base consulted on 19/11/2023 (SNCF data)\n",
-    "titre": "TER",
+    "note": "Cercanías regional trains - 32.8 gCO2e/passenger-km; <a href=\"https://sede.idae.gob.es/lang/extras/tramites-servicios/2021/MOVES_Proyectos_Singulares_II/Factores_de_conversion_ahorros_y_emisiones_de_CO2.pdf\">IDAE data</a>, 2021\n",
+    "titre": "Cercanías regional trains",
     "titre.auto": "TER",
-    "valeur": "0.0277",
+    "valeur": "0.0328",
     "optimized": true
   },
   "transport . train . km": {
     "question": "How many kilometers do you travel by train per year?",
     "description": "Suggestions are based on the distance as the crow flies doubled to\nconsider a round trip.\n",
     "suggestions": {
-      "crossing of a region": 300,
-      "Luxembourg ⇄ Paris": 600,
-      "Luxembourg ⇄ Munich": 900,
-      "💳 great traveler": 10000,
-      "💳 great traveler plus ultra": 25000
+      "crossing a region": 300,
+      "Madrid ⇄ Barcelona": 1100,
+      "Barcelona ⇄ Paris": 2000,
+      "💳 Renfe Más Plata": 10000,
+      "💳 Renfe Más Oro": 20000
     },
     "unité": "km",
     "par défaut": 1000,

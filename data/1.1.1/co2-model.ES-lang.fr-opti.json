@@ -4495,6 +4495,16 @@
     "unité": "kgCO2e",
     "optimized": true
   },
+  "empreinte branche . C30 par hab": {
+    "avec": {
+      "ratio services marchands": "50%"
+    },
+    "description": "Autres matériels de transport par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Construction navale (4%)**\n\t- Construction de navires et de structures flottantes (100%)\n\t- Construction de bateaux de plaisance (S)\n- **Construction de locomotives et d'autre matériel ferroviaire roulant (3%)**\n- **Construction aéronautique et spatiale (90%)**\n- **Construction de véhicules militaires de combat (S)**\n- **Fabrication de matériels de transport n.c.a. (1%)**\n\t- Fabrication de motocycles (43%)\n\t- Fabrication de bicyclettes et de véhicules pour invalides (47%)\n\t- Fabrication d’autres équipements de transport n.c.a. (10%)",
+    "formule": "(4078 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "fabrication de véhicules (hors automobile) par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
   "empreinte branche . C32 par hab": {
     "avec": {
       "ratio autres produits manufacturés": "38%",
@@ -4536,6 +4546,86 @@
     "unité": "kgCO2e",
     "optimized": true
   },
+  "empreinte branche . H52 par hab": {
+    "avec": {
+      "ratio services marchands": "87%"
+    },
+    "description": "Entreposage et services auxiliaires des transports par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Entreposage et stockage (13%)**\n- **Services auxiliaires des transports (87%)**\n\t- Services auxiliaires des transports terrestres (30%)\n\t- Services auxiliaires des transports par eau (5%)\n\t- Services auxiliaires des transports aériens (8%)\n\t- Manutention (3%)\n\t- Autres services auxiliaires des transports (54%)",
+    "formule": "(2065 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "services support aux activités de transport par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . H53 par hab": {
+    "avec": {
+      "ratio services marchands": "100%"
+    },
+    "description": "Services de poste et de courrier par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Activités de poste dans le cadre d'une obligation de service universel (S)**\n- **Autres activités de poste et de courrier (S)**",
+    "formule": "(168 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "services Postaux par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . J61 par hab": {
+    "avec": {
+      "ratio services marchands": "100%"
+    },
+    "description": "Services de télécommunications par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Télécommunications filaires (45%)**\n- **Télécommunications sans fil (39%)**\n- **Télécommunications par satellite (6%)**\n- **Autres activités de télécommunication (10%)**",
+    "formule": "(3158 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "télécommunications par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . K64 par hab": {
+    "avec": {
+      "ratio services marchands": "25%"
+    },
+    "description": "Services financiers, hors assurances et caisses de retraite par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Activités des sociétés holding (100%)**",
+    "formule": "(760 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "services financiers (hors assurance et caisse de retraite) par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . K65 par hab": {
+    "avec": {
+      "ratio services marchands": "100%"
+    },
+    "description": "Services d'assurance, de réassurance et de caisses de retraite, à l'exclusion de la sécurité sociale obligatoire par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n",
+    "formule": "(3331 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "assurance et caisse de retraite par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . M69 par hab": {
+    "avec": {
+      "ratio services marchands": "100%"
+    },
+    "description": "Activités juridiques et comptables par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Activités juridiques (60%)**\n- **Activités comptables (40%)**",
+    "formule": "(902.58 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "activités juridiques et comptables par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . N80 par hab": {
+    "avec": {
+      "ratio services marchands": "24%"
+    },
+    "description": "Enquêtes et sécurité par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Activités de sécurité privée (74%)**\n- **Activités liées aux systèmes de sécurité (25%)**\n- **Activités d'enquête (1%)**",
+    "formule": "(20.67 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "enquêtes et sécurité par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . S94 par hab": {
+    "avec": {
+      "ratio services marchands": "100%"
+    },
+    "description": "Services fournis par des organisations associatives par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Activités des organisations économiques, patronales et professionnelles (93%)**\n\t- Activités des organisations patronales et consulaires (49%)\n\t- Activités des organisations professionnelles (51%)\n- **Activités des autres organisations associatives (7%)**\n\t- Activités des organisations politiques (1%)\n\t- Activités des organisations associatives n.c.a. (99%)",
+    "formule": "(1213 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "activités associatives par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
   "empreinte branche . S95 par hab": {
     "avec": {
       "ratio réparations": "100%"
@@ -4543,6 +4633,16 @@
     "description": "Services de réparation d'ordinateurs et de biens personnels et domestiques par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Réparation d'ordinateurs et d'équipements de communication (64%)**\n\t- Réparation d'ordinateurs et d'équipements périphériques (83%)\n\t- Réparation d'équipements de communication (17%)\n- **Réparation de biens personnels et domestiques (36%)**\n\t- Réparation de produits électroniques grand public (12%)\n\t- Réparation d'appareils électroménagers et d'équipements pour la maison et le jardin (27%)\n\t- Réparation de chaussures et d'articles en cuir (18%)\n\t- Réparation de meubles et d'équipements du foyer (8%)\n\t- Réparation d'articles d'horlogerie et de bijouterie (7%)\n\t- Réparation d'autres biens personnels et domestiques (29%)",
     "formule": "(1114 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "autres services personnels par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . S96 par hab": {
+    "avec": {
+      "ratio services marchands": "12%"
+    },
+    "description": "Autres services personnels par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Autres services personnels (100%)**\n\t- Blanchisserie-teinturerie (13%)\n\t- Coiffure et soins de beauté (54%)\n\t- Services funéraires (13%)\n\t- Entretien corporel (9%)\n\t- Autres services personnels n.c.a. (12%)",
+    "formule": "(1656 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "Autres services personnels par habitant",
     "unité": "kgCO2e",
     "optimized": true
   },
@@ -6009,11 +6109,14 @@
   "services marchands": {
     "abréviation": "S. marchands",
     "couleur": "#3c0c61",
-    "description": "Les services marchands ne sont qu'une partie des [services sociétaux](https://nosgestesclimat.fr/documentation/services-soci%C3%A9taux) dont le calcul est basé sur\n[l'estimation de l'empreinte nationale française par le Ministère de l'Écologie](https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021).",
+    "description": "> Le calcul des émissions des services marchands espagnols est basé sur l'estimation française, réajustée des émissions territoriales de l'Espagne et de sa population. \n> Il s'agit d'une première estimation macroscopique qui pourra être revue dans le futur.\n",
     "icônes": "✉️",
     "titre": "Services marchands",
     "unité": "kgCO2e",
-    "valeur": "194.71226747966386",
+    "avec": {
+      "poids des services marchands espagnols": 195.06
+    },
+    "valeur": "195.06",
     "optimized": true
   },
   "services publics": {
@@ -6032,15 +6135,17 @@
     "couleur": "#0c2461",
     "abréviation": "S. sociétaux",
     "icônes": "🏛️",
-    "description": "Ce poste inclus l'empreinte des services publics français, et des services marchands que l'on peut considérer comme étant essentiels à la vie de chacun, divisées par la population du pays.  \n\nLa première catégorie \"services publics\" comprend par exemple l'empreinte des hôpitaux français, ou de la justice. Nous considérons que cette empreinte doit être également répartie pour tous les citoyens, car ce sont des postes \"républicains\" que seule la démocratie peut faire évoluer, pas directement par les choix de consommation individuels. \n\nLa deuxième catégorie \"services marchands\" comprend notamment le réseau de télécommunications (fibre, téléphone, etc.), mais aussi les assurances ou encore la poste. Ce sont des services relativement universels pour lesquels nous n'avons pas encore le détail qui nous permettrait de répartir l'empreinte en fonction des choix de consommation des citoyens.\n\n<RavijenChartSocietaux/>\n",
-    "note": "\nLe modèle qui nous permet de calculer ces deux constantes \"services publics\" et \"services marchands\" se distingue du reste du modèle Nos Gestes Climat car il est dit \"macroscopique\". C'est une reconstition macroscopique qui est basée sur les volumes d'échanges d'argent en milliard d'€ par secteurs.  \n\nL'inclusion de ce modèle macro permet d'hybrider le modèle NGC. On peut ainsi dire qu'il est à dominante micro avec une composante macro. \n\nNotre source pour les deux constantes macro est le calcul de l'empreinte nationale française par le Ministère de l'Écologie. Voici [l'article le plus récent](https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021), qui nous donne d'ailleurs une estimation de l'empreinte nationale de 8,9 tonnes en 2021. Le chiffre est extrapolé avec son lot d'incertitudes supplémentaires par rapport au chiffre de 9,2 tonnes en 2018.\n\nPour comprendre comment ce modèle fonctionne, voir [cette page d'explication](https://github.com/datagir/nosgestesclimat/issues/1583).\n",
-    "formule": {
-      "somme": [
-        "services publics",
-        "services marchands"
-      ]
-    },
-    "unité": "kgCO2e"
+    "description": "> Le calcul des émissions des services publics espagnols est basé sur l'estimation française, réajustée des dépenses publiques espagnoles, de l'intensité carbone de l'économie espagnole et de sa population. \n> Il s'agit d'une première estimation macroscopique qui pourra être revue dans le futur.\n",
+    "note": "Source: [Détail de l'estimation](https://docs.google.com/spreadsheets/d/1zJ-CkVQ8W_HdFVvNyaN4xlRsyoZPzRef4rpiCqyowG4/edit?usp=sharing)\n",
+    "formule": "poids des services publics espagnols",
+    "unité": "kgCO2e",
+    "avec": {
+      "poids des services publics espagnols": 1142.5
+    }
+  },
+  "poids des services publics espagnols": {
+    "valeur": 1142.5,
+    "optimized": true
   },
   "services sociétaux . question rhétorique": {
     "titre": "Question d'information sur les services communs",
@@ -6086,10 +6191,10 @@
     "description": "Comptez les heures que vous avez passées dans un avion pour des trajets de moins de 2h (ce qui correspond à des vols d'une distance inférieure à 1000km environ). Si vous faites des escales, additionnez simplement les durées de chaque vol.\n\n\nLes suggestions sont basées sur la durée minimum arrondie de vol constatée dans les moteurs de recherche, doublée pour considérer un aller-retour.\n\n💡 Ne comptez que les km de déplacement personnel et de déplacement domicile travail pour rejoindre votre lieu de travail habituel.\nPar exemple, si vous êtes en mission professionnelle dans un autre pays, cela rentre dans la comptabilité de votre entreprise.\n",
     "suggestions": {
       "🚫✈️": 0,
-      "Paris ⇄ Lyon": 2,
-      "Paris ⇄ Toulouse": 2.6,
-      "Paris ⇄ Nice": 2.8,
-      "Paris ⇄ Ajaccio": 3.2
+      "Madrid ⇄ Barcelone": 2.27,
+      "Madrid ⇄ Palma de Mallorca": 2.37,
+      "Barcelone ⇄ Palma de Mallorca": 1.5,
+      "Barcelone ⇄ Séville": 3
     },
     "unité": "h",
     "par défaut": "durée moyenne",
@@ -6117,10 +6222,10 @@
     "description": "Comptez les heures que vous avez passées dans un avion pour des trajets entre 2h et 6h (ce qui correspond à des vols d'une distance comprise entre 1000km et 3500km environ). Si vous faites des escales, additionnez simplement les durées de chaque vol.\n\nLes suggestions sont basées sur la durée minimum arrondie de vol constatée dans les moteurs de recherche, doublée pour considérer un aller-retour.\n\n💡 Ne comptez que les km de déplacement personnel et de déplacement domicile travail pour rejoindre votre lieu de travail habituel.\nPar exemple, si vous êtes en mission professionnelle dans un autre pays, cela rentre dans la comptabilité de votre entreprise.\n",
     "suggestions": {
       "🚫✈️": 0,
-      "Paris ⇄ Copenhague": 4,
-      "Paris ⇄ Alger": 5,
-      "Paris ⇄ Athènes": 6,
-      "Paris ⇄ Liban": 8
+      "Madrid ⇄ Gran Canaria": 6,
+      "Madrid ⇄ Paris": 3.7,
+      "Madrid ⇄ Amsterdam": 4.7,
+      "Barcelone ⇄ Londres": 4
     },
     "unité": "h",
     "par défaut": "durée moyenne",
@@ -6148,11 +6253,10 @@
     "description": "Comptez les heures que vous avez passées dans un avion pour des trajets de plus de 6h (ce qui correspond à des vols d'une distance supérieure à 3500km environ). Si vous faites des escales, additionnez simplement les durées de chaque vol. \n\nA noter que si vous avez voyagé vers une destination lointaine en plusieurs trajets \"courts\", ils sont à prendre en compte dans les questions précédentes.\n\nLes suggestions sont basées sur la durée minimum arrondie de vol constatée dans les moteurs de recherche, doublée pour considérer un aller-retour.\n\n💡 Ne comptez que les km de déplacement personnel et de déplacement domicile travail pour rejoindre votre lieu de travail habituel.\nPar exemple, si vous êtes en mission professionnelle dans un autre pays, cela rentre dans la comptabilité de votre entreprise.\n",
     "suggestions": {
       "🚫✈️": 0,
-      "Paris ⇄ Kinshasa": 16,
-      "Paris ⇄ New York": 17,
-      "Paris ⇄ Tokyo": 24,
-      "Paris ⇄ Lima": 36,
-      "Paris ⇄ Sydney": 40
+      "Madrid ⇄ New York": 15.4,
+      "Madrid ⇄ Mexico City": 22,
+      "Madrid ⇄ Tokyo": 28,
+      "Barcelone ⇄ Sydney": 44
     },
     "unité": "h",
     "par défaut": "durée moyenne",
@@ -6937,21 +7041,18 @@
     "formule": "km * impact par km"
   },
   "transport . train . impact par km": {
-    "formule": {
-      "somme": [
-        "0.7305389221556886 * 0.00293",
-        "0.2275449101796407 * 0.0277",
-        "0.041916167664670656 * 0.00898"
-      ]
-    },
+    "formule": "(0.0067064444444444 * 0.523) + (0.0328 * (1 - 0.523))",
     "unité": "kgCO2e/km",
-    "note": "Les différents types de trains ont des impacts carbone par passager par kilomètres différents.\nNous calculons une moyenne pondérée en proportion du nombre total de kilomètres parcourus dans chaque type de train au niveau national.\nSource : [Autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf)\n\n![Répartition Passagers.km](https://github.com/incubateur-ademe/nosgestesclimat/assets/55186402/4bbdf823-8e9a-4570-90da-77ff8af05b14)\n",
+    "note": "Nous faisons le choix de ne pas différencier grande vitesse et train conventionnel pour le moment (pour éviter de poser deux questions).\nNous appliquons le facteur d'émissions de l'AVE aux 52,3% de trajets effectués en grande vitesse (AVE, Euromed, Avant) et le facteur d'émissions des trains régionaux Cercanías au reste.\nSource : [Observatoire espagnol des chemins de fer](https://cdn.mitma.gob.es/portal-web-drupal/ferroviario/observatorio/ofe_2021_feb2023_v2.pdf), 2021\n",
+    "avec": {
+      "proportion passagers km AVE": 0.523
+    },
     "optimized": true
   },
   "transport . train . TER": {
     "unité": "kgCO2e/km",
-    "note": "TER - 2022 - Traction moyenne ; 27.7 gCO2e/km/personne ; Base Carbone consultée le 19/11/2023 (Données SNCF)\n",
-    "valeur": "0.0277",
+    "note": "Trains régionaux Cercanías - 32,8 gCO2e/passager-km ; [Données IDAE](https://sede.idae.gob.es/lang/extras/tramites-servicios/2021/MOVES_Proyectos_Singulares_II/Factores_de_conversion_ahorros_y_emisiones_de_CO2.pdf), 2021\n",
+    "valeur": "0.0328",
     "optimized": true
   },
   "transport . train . km": {
@@ -6959,10 +7060,10 @@
     "description": "Les suggestions sont basées sur la distance à vol d'oiseau doublée pour considérer un aller-retour.",
     "suggestions": {
       "traversée d'une région": 300,
-      "Paris ⇄ Lyon": 800,
-      "Brest ⇄ Nice": 2400,
-      "💳 grand voyageur": 10000,
-      "💳 grand voyageur plus ultra": 25000
+      "Madrid ⇄ Barcelone": 1100,
+      "Barcelone ⇄ Paris": 2000,
+      "💳 Renfe Más Plata": 10000,
+      "💳 Renfe Más Oro": 20000
     },
     "unité": "km",
     "par défaut": 1000
