@@ -1476,33 +1476,39 @@
       "options": [
         "café . nombre",
         "thé . nombre",
-        "chocolat chaud . nombre"
+        "chocolat chaud . nombre",
+        "chicorée . nombre"
       ],
       "suggestions": {
         "no hot drinks": {
           "café . nombre": 0,
           "thé . nombre": 0,
-          "chocolat chaud . nombre": 0
+          "chocolat chaud . nombre": 0,
+          "chicorée . nombre": 0
         },
         "one coffee a day": {
           "café . nombre": 7,
           "thé . nombre": 0,
-          "chocolat chaud . nombre": 0
+          "chocolat chaud . nombre": 0,
+          "chicorée . nombre": 0
         },
         "lots of coffee": {
           "café . nombre": 28,
           "thé . nombre": 0,
-          "chocolat chaud . nombre": 0
+          "chocolat chaud . nombre": 0,
+          "chicorée . nombre": 0
         },
         "one coffee and one tea per day": {
           "café . nombre": 7,
           "thé . nombre": 7,
-          "chocolat chaud . nombre": 0
+          "chocolat chaud . nombre": 0,
+          "chicorée . nombre": 0
         },
         "a hot chocolate in the morning": {
           "café . nombre": 0,
           "thé . nombre": 0,
-          "chocolat chaud . nombre": 7
+          "chocolat chaud . nombre": 7,
+          "chicorée . nombre": 0
         }
       }
     },
@@ -1520,7 +1526,8 @@
       "somme": [
         "café",
         "thé",
-        "chocolat chaud"
+        "chocolat chaud",
+        "chicorée"
       ]
     },
     "unité": "kgCO2e/semaine",
@@ -1549,6 +1556,14 @@
     "unité": "kgCO2e/semaine",
     "titre.auto": "Hot Chocolate"
   },
+  "alimentation . boisson . chaude . chicorée": {
+    "titre": "Chicory",
+    "icônes": "🍵",
+    "formule": "0.00684 * nombre",
+    "unité": "kgCO2e/semaine",
+    "titre.auto": "Chicory",
+    "optimized": true
+  },
   "alimentation . boisson . chaude . café . nombre": {
     "question": "Number of coffees per week",
     "par défaut": 10,
@@ -1572,8 +1587,15 @@
     "titre": "number",
     "titre.auto": "number"
   },
+  "alimentation . boisson . chaude . chicorée . nombre": {
+    "question": "Number of cups of chicory per week",
+    "par défaut": 0,
+    "unité": "tasse/semaine",
+    "titre": "number",
+    "titre.auto": "number"
+  },
   "alimentation . boisson . tasse de chocolat chaud": {
-    "titre": "Hot chocolate cup print",
+    "titre": "Hot chocolate cup footprint",
     "formule": {
       "somme": [
         "27.06 * 0.02",
@@ -1581,7 +1603,7 @@
       ]
     },
     "unité": "kgCO2e/tasse",
-    "titre.auto": "Hot chocolate cup print",
+    "titre.auto": "Hot chocolate cup footprint",
     "optimized": true
   },
   "alimentation . boisson . tasse de chocolat chaud . empreinte lait": {

@@ -1267,33 +1267,39 @@
       "options": [
         "café . nombre",
         "thé . nombre",
-        "chocolat chaud . nombre"
+        "chocolat chaud . nombre",
+        "chicorée . nombre"
       ],
       "suggestions": {
         "pas de boisson chaude": {
           "café . nombre": 0,
           "thé . nombre": 0,
-          "chocolat chaud . nombre": 0
+          "chocolat chaud . nombre": 0,
+          "chicorée . nombre": 0
         },
         "un café par jour": {
           "café . nombre": 7,
           "thé . nombre": 0,
-          "chocolat chaud . nombre": 0
+          "chocolat chaud . nombre": 0,
+          "chicorée . nombre": 0
         },
         "beaucoup de café": {
           "café . nombre": 28,
           "thé . nombre": 0,
-          "chocolat chaud . nombre": 0
+          "chocolat chaud . nombre": 0,
+          "chicorée . nombre": 0
         },
         "un café et un thé par jour": {
           "café . nombre": 7,
           "thé . nombre": 7,
-          "chocolat chaud . nombre": 0
+          "chocolat chaud . nombre": 0,
+          "chicorée . nombre": 0
         },
         "un chocolat chaud le matin": {
           "café . nombre": 0,
           "thé . nombre": 0,
-          "chocolat chaud . nombre": 7
+          "chocolat chaud . nombre": 7,
+          "chicorée . nombre": 0
         }
       }
     },
@@ -1309,7 +1315,8 @@
       "somme": [
         "café",
         "thé",
-        "chocolat chaud"
+        "chocolat chaud",
+        "chicorée"
       ]
     },
     "unité": "kgCO2e/semaine"
@@ -1334,6 +1341,13 @@
     "formule": "tasse de chocolat chaud * nombre",
     "unité": "kgCO2e/semaine"
   },
+  "alimentation . boisson . chaude . chicorée": {
+    "titre": "Chicorée",
+    "icônes": "🍵",
+    "formule": "0.00684 * nombre",
+    "unité": "kgCO2e/semaine",
+    "optimized": true
+  },
   "alimentation . boisson . chaude . café . nombre": {
     "question": "Nombre de cafés par semaine",
     "par défaut": 10,
@@ -1348,6 +1362,11 @@
   },
   "alimentation . boisson . chaude . chocolat chaud . nombre": {
     "question": "Nombre de chocolats chauds par semaine",
+    "par défaut": 0,
+    "unité": "tasse/semaine"
+  },
+  "alimentation . boisson . chaude . chicorée . nombre": {
+    "question": "Nombre de tasses de chicorée par semaine",
     "par défaut": 0,
     "unité": "tasse/semaine"
   },

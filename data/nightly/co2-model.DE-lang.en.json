@@ -1555,33 +1555,39 @@
       "options": [
         "café . nombre",
         "thé . nombre",
-        "chocolat chaud . nombre"
+        "chocolat chaud . nombre",
+        "chicorée . nombre"
       ],
       "suggestions": {
         "no hot drinks": {
           "café . nombre": 0,
           "thé . nombre": 0,
-          "chocolat chaud . nombre": 0
+          "chocolat chaud . nombre": 0,
+          "chicorée . nombre": 0
         },
         "one coffee a day": {
           "café . nombre": 7,
           "thé . nombre": 0,
-          "chocolat chaud . nombre": 0
+          "chocolat chaud . nombre": 0,
+          "chicorée . nombre": 0
         },
         "lots of coffee": {
           "café . nombre": 28,
           "thé . nombre": 0,
-          "chocolat chaud . nombre": 0
+          "chocolat chaud . nombre": 0,
+          "chicorée . nombre": 0
         },
         "one coffee and one tea per day": {
           "café . nombre": 7,
           "thé . nombre": 7,
-          "chocolat chaud . nombre": 0
+          "chocolat chaud . nombre": 0,
+          "chicorée . nombre": 0
         },
         "a hot chocolate in the morning": {
           "café . nombre": 0,
           "thé . nombre": 0,
-          "chocolat chaud . nombre": 7
+          "chocolat chaud . nombre": 7,
+          "chicorée . nombre": 0
         }
       }
     },
@@ -1599,7 +1605,8 @@
       "somme": [
         "café",
         "thé",
-        "chocolat chaud"
+        "chocolat chaud",
+        "chicorée"
       ]
     },
     "unité": "kgCO2e/semaine",
@@ -1626,6 +1633,13 @@
     "unité": "kgCO2e/semaine",
     "titre.auto": "Hot Chocolate"
   },
+  "alimentation . boisson . chaude . chicorée": {
+    "titre": "Chicory",
+    "icônes": "🍵",
+    "formule": "tasse de chicorée * nombre",
+    "unité": "kgCO2e/semaine",
+    "titre.auto": "Chicory"
+  },
   "alimentation . boisson . chaude . café . nombre": {
     "question": "Number of coffees per week",
     "par défaut": 10,
@@ -1644,6 +1658,13 @@
   },
   "alimentation . boisson . chaude . chocolat chaud . nombre": {
     "question": "Number of hot chocolates per week",
+    "par défaut": 0,
+    "unité": "tasse/semaine",
+    "titre": "number",
+    "titre.auto": "number"
+  },
+  "alimentation . boisson . chaude . chicorée . nombre": {
+    "question": "Number of cups of chicory per week",
     "par défaut": 0,
     "unité": "tasse/semaine",
     "titre": "number",
@@ -1698,12 +1719,12 @@
   "alimentation . boisson . tasse de thé . quantité thé par tasse": {
     "formule": 0.25,
     "unité": "kg/tasse",
-    "note": "we assume that a cup of tea is on average 250 grams.",
+    "note": "A cup of tea is assumed to weigh an average of 250 grams.",
     "titre": "tea quantity per cup",
     "titre.auto": "tea quantity per cup"
   },
   "alimentation . boisson . tasse de chocolat chaud": {
-    "titre": "Hot chocolate cup print",
+    "titre": "Hot chocolate cup footprint",
     "formule": {
       "somme": [
         "empreinte cacao en poudre * quantité cacao par tasse",
@@ -1711,7 +1732,7 @@
       ]
     },
     "unité": "kgCO2e/tasse",
-    "titre.auto": "Hot chocolate cup print"
+    "titre.auto": "Hot chocolate cup footprint"
   },
   "alimentation . boisson . tasse de chocolat chaud . empreinte cacao en poudre": {
     "formule": 27.06,
@@ -1723,7 +1744,7 @@
   "alimentation . boisson . tasse de chocolat chaud . quantité cacao par tasse": {
     "formule": 0.02,
     "unité": "kg/tasse",
-    "note": "it is assumed that a cup of hot chocolate contains an average of 20 grams of cocoa powder.",
+    "note": "We assume that a cup of hot chocolate contains an average of 20 grams of cocoa powder.",
     "titre": "cocoa quantity per cup",
     "titre.auto": "cocoa quantity per cup"
   },
@@ -1747,6 +1768,26 @@
     "unité": "kgCO2e/kg",
     "titre": "milk footprint",
     "titre.auto": "milk footprint"
+  },
+  "alimentation . boisson . tasse de chicorée": {
+    "titre": "Footprint of a cup of chicory",
+    "formule": "empreinte chicorée instantanée * quantité chicorée par tasse",
+    "unité": "kgCO2e/tasse",
+    "titre.auto": "Footprint of a cup of chicory"
+  },
+  "alimentation . boisson . tasse de chicorée . empreinte chicorée instantanée": {
+    "formule": 2.28,
+    "unité": "kgCO2e/kg",
+    "note": "Emission factor derived from Agibalyse<a href=\"https://agribalyse.ademe.fr/app/aliments/18162#Chicor%C3%A9e_et_caf%C3%A9,_instantan%C3%A9,_non_sucr%C3%A9,_pr%C3%AAt_%C3%A0_boire_(reconstitu%C3%A9e_avec_de_l'eau\">, chicory and coffee, instant, unsweetened, ready-to-drink</a>).",
+    "titre": "instant chicory footprint",
+    "titre.auto": "instant chicory footprint"
+  },
+  "alimentation . boisson . tasse de chicorée . quantité chicorée par tasse": {
+    "formule": 0.003,
+    "unité": "kg/tasse",
+    "note": "It is assumed that one cup of chicory contains an average of 3 grams of instant chicory.",
+    "titre": "chicory per cup",
+    "titre.auto": "chicory per cup"
   },
   "alimentation . type de lait": {
     "applicable si": {
