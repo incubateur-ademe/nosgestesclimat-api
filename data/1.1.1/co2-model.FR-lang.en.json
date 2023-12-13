@@ -13747,85 +13747,29 @@
   },
   "transport . train . impact par km": {
     "formule": {
-      "somme": [
-        "proportion TGV * TGV",
-        "proportion TER * TER",
-        "proportion intercités * intercités"
+      "moyenne": [
+        "TER",
+        "TGV"
       ]
     },
     "unité": "kgCO2e/km",
-    "note": "Different types of train have different carbon impacts per passenger per kilometre.\nWe calculate a weighted average in proportion to the total number of kilometres travelled on each type of train at national level.\nSource: <a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">Transport Regulation Authority</a>\n\n![Passenger.km distribution](https://github.com/incubateur-ademe/nosgestesclimat/assets/55186402/4bbdf823-8e9a-4570-90da-77ff8af05b14)\n",
+    "note": "We choose not to differentiate TGV and TER for the moment (to avoid asking two questions)\nWe could add a slider to evaluate the weighting of the average and be more precise. Today we are at 50/50.\nWe therefore take the average emission factor between TER and TGV.\n",
     "titre": "impact per km",
     "titre.auto": "impact per km"
   },
-  "transport . train . TGV": {
-    "formule": 0.00293,
-    "unité": "kgCO2e/km",
-    "note": "TGV - 2022; 2.93 gCO2e/km/person; Base Carbone consulted on 19/11/2023 (SNCF data)\n",
-    "titre": "TGV",
-    "titre.auto": "TGV"
-  },
   "transport . train . TER": {
-    "formule": 0.0277,
+    "formule": 0.0296,
     "unité": "kgCO2e/km",
-    "note": "TER - 2022 - Average traction; 27.7 gCO2e/km/person; Carbon base consulted on 19/11/2023 (SNCF data)\n",
+    "note": "TER - 2019 - Average traction; 29.6 gCO2e/km/person; Carbon base consulted on 04/04/2022 (SNCF data)\n",
     "titre": "TER",
     "titre.auto": "TER"
   },
-  "transport . train . intercités": {
-    "formule": 0.00898,
+  "transport . train . TGV": {
+    "formule": 0.00236,
     "unité": "kgCO2e/km",
-    "node": "Intercités - 2022 ; 8.98 gCO2e/km/personne ; Base Carbone consultée le 19/11/2023 (Données SNCF)\n",
-    "titre": "intercités",
-    "titre.auto": "intercités"
-  },
-  "transport . train . proportion TGV": {
-    "formule": "passagers km TGV / total passagers km",
-    "note": "Figures from<a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">the Autorité de Régulation des Transports</a>.\n",
-    "titre": "tGV ratio",
-    "titre.auto": "tGV ratio"
-  },
-  "transport . train . proportion TER": {
-    "formule": "passagers km TER / total passagers km",
-    "note": "Figures from<a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">the Autorité de Régulation des Transports</a>.\n",
-    "titre": "proportion TER",
-    "titre.auto": "proportion TER"
-  },
-  "transport . train . proportion intercités": {
-    "formule": "passagers km intercités / total passagers km",
-    "note": "Figures from<a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">the Autorité de Régulation des Transports</a>.\n",
-    "titre": "proportion intercités",
-    "titre.auto": "proportion intercités"
-  },
-  "transport . train . total passagers km": {
-    "formule": {
-      "somme": [
-        "passagers km TGV",
-        "passagers km TER",
-        "passagers km intercités"
-      ]
-    },
-    "note": "Figures from the French<a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">Transport Regulation Authority</a>.\nRER and transilien journeys are not included.\n",
-    "titre": "total passengers km",
-    "titre.auto": "total passengers km"
-  },
-  "transport . train . passagers km TGV": {
-    "formule": "54 + 7",
-    "note": "Figures from<a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">the French Transport Regulation Authority</a>.\nRER and transilien journeys are not included.\n",
-    "titre": "passengers km TGV",
-    "titre.auto": "passengers km TGV"
-  },
-  "transport . train . passagers km TER": {
-    "formule": 19,
-    "note": "Figures from<a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">the French Transport Regulation Authority</a>.\nRER and transilien journeys are not included.\n",
-    "titre": "passengers km TER",
-    "titre.auto": "passengers km TER"
-  },
-  "transport . train . passagers km intercités": {
-    "formule": "3 + 0.5",
-    "note": "Figures from<a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">the French Transport Regulation Authority</a>.\nRER and transilien journeys are not included.\n",
-    "titre": "passengers km intercity",
-    "titre.auto": "passengers km intercity"
+    "note": "TGV - 2019; 2.36 gCO2e/km/person; Carbon base consulted on 04/04/2022 (SNCF data)\n",
+    "titre": "TGV",
+    "titre.auto": "TGV"
   },
   "transport . train . km": {
     "question": "How many kilometers do you travel by train per year?",
