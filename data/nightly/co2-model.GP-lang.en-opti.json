@@ -1337,16 +1337,11 @@
     "titre": "recalculation",
     "titre.auto": "recalculation"
   },
-  "transport . super ethanol . taux surconsommation": {
-    "formule": "125%",
-    "note": "The E85 superethanol is less energetic, so it increases the number of liters consumed [by 15 to 25%](https://www.ledauphine.com/magazine-lifestyle/2020/02/02/ce-que-vous-devez-savoir-sur-le-superethanol-e85-avant-de-vous-lancer).",
-    "titre": "overconsumption rate",
-    "titre.auto": "overconsumption rate"
-  },
   "transport . super ethanol . recalcul avec surconsommation": {
-    "formule": "recalcul * taux surconsommation",
+    "formule": "recalcul * 125%",
     "titre": "recalculation with overconsumption",
-    "titre.auto": "recalculation with overconsumption"
+    "titre.auto": "recalculation with overconsumption",
+    "optimized": true
   },
   "transport . scooter électrique": {
     "titre": "Switch to an electric moped",
@@ -1422,10 +1417,11 @@
   },
   "transport . voiture . limitation autoroute . réduction": {
     "titre": "Consumption gain 130 -&gt; 110",
-    "formule": "25%",
     "description": "![](https://imgur.com/NB9CUUt.jpg)\nFrom this graph, by graphical deduction (we have not yet gone back to the <a href=\"http://theses.univ-lyon2.fr/documents/getpart.php?id=1026&action=pdf\">study</a> data, page 151 figure 26), we find the data below.\n\nDiesel: 6.5 l/100 at 130km/h -> 4.75 at 110km/h\n\nGasoline: 11.75 l/100 at 130km/h -> 8.65 at 110km/h\n\nSo -27% in diesel and -26% in petrol by going from 130 to 110. We keep the order of magnitude of 25%.\n",
     "note": "This calculation should be refined.\nSome sources to investigate for the calculation.\n- a citizen who makes his test for a clio. He finds a reduction between -20% and -50% !\n   https://twitter.com/CptQwark_/status/1289499582871658499\n   Another citizen finds rather -10% with a bigger car\n- <a href=\"<https://www.ecologie.gouv.fr/sites/default/files/Théma - Reduction of speeds on the roads.pdf>\">Report of the CGDD</a>, where we have not found for the moment the explanation of the calculation of CO₂ savings\n- Aurélien Bigo who criticizes the CGDD report https://twitter.com/AurelienBigo/status/1276459283291439114, but who does not give us any information about the calculation of the CO₂ itself.\n- another evaluation, which gives us the calculation :)  : https://twitter.com/Tomsawy22670318/status/1274257122373570565\n  Attention, to be rigorous, as mentioned in this last thread, it is necessary to take into account the distribution of the speed and the category of car (presence of a 6th gear for example). Obviously, we do not drive at 130 all the time.\n",
-    "titre.auto": "Consumption gain 130 -&gt; 110"
+    "titre.auto": "Consumption gain 130 -&gt; 110",
+    "valeur": "25%",
+    "optimized": true
   },
   "transport . voiture . empreinte autoroute": {
     "formule": "par km personne * km autoroute",
@@ -1894,15 +1890,10 @@
     "titre.auto": "I compost"
   },
   "alimentation . déchets . gestes . bonus compostage biodéchets": {
-    "formule": {
-      "somme": [
-        "11.505999999999998",
-        "-1 * 0.4949999999999999"
-      ]
-    },
     "unité": "kgCO2e",
     "titre": "biowaste composting bonus",
     "titre.auto": "biowaste composting bonus",
+    "valeur": "11.011",
     "optimized": true
   },
   "alimentation . déchets . gestes . gaspillage alimentaire . présent": {
@@ -1922,11 +1913,12 @@
     "titre.auto": "I never waste food"
   },
   "alimentation . déchets . gestes . empreinte gaspillage alimentaire": {
-    "formule": 30,
     "unité": "kgCO2e",
     "note": "See table on page 111 of <a href=\"https://librairie.ademe.fr/dechets-economie-circulaire/2520-etude-d-evaluation-des-gisements-d-evitement-des-potentiels-de-reduction-de-dechets-et-des-impacts-environnementaux-evites.html\">the ADEME study</a>",
     "titre": "food waste footprint",
-    "titre.auto": "food waste footprint"
+    "titre.auto": "food waste footprint",
+    "valeur": "30",
+    "optimized": true
   },
   "alimentation . déchets . gestes . stop pub . présent": {
     "question": "Do you have a \"stop ads\" sign on your mailbox?",
@@ -1968,39 +1960,20 @@
     "titre.auto": "I buy in bulk"
   },
   "alimentation . déchets . gestes . bonus acheter en vrac": {
-    "formule": "gisement réduction * empreinte emballages évités",
+    "formule": "2.4 * empreinte emballages évités",
     "unité": "kgCO2e",
     "note": "A more recent and comprehensive study to be investigated to clarify this action: https://librairie.ademe.fr/consommer-autrement/5064-panorama-et-evaluation-environnementale-du-vrac-en-france.html.\n",
     "titre": "buy in bulk bonus",
-    "titre.auto": "buy in bulk bonus"
+    "titre.auto": "buy in bulk bonus",
+    "optimized": true
   },
   "alimentation . déchets . gestes . bonus acheter en vrac . empreinte emballages évités": {
     "titre": "No production of the packaging",
-    "formule": "22% * empreinte carton + 78% * empreinte plastique",
+    "formule": "(22% * 0.39) + (78% * 2.383)",
     "unité": "kg",
     "note": "Source: Page 47 of [the ADEME study](https://librairie.ademe.fr/dechets-economie-circulaire/2520-etude-d-evaluation-des-gisements-d-evitement-des-potentiels-de-reduction-de-dechets-et-des-impacts-environnementaux-evites.html)\nAccording to the table, 22% of packaging avoided is paper/cardboard, 78% is plastic.\n",
-    "titre.auto": "No production of the packaging"
-  },
-  "alimentation . déchets . gestes . bonus acheter en vrac . gisement réduction": {
-    "titre": "Average reduction per capita of the \"buy in bulk\" action",
-    "formule": 2.4,
-    "unité": "kg",
-    "note": "Source: Page 47 of <a href=\"https://librairie.ademe.fr/dechets-economie-circulaire/2520-etude-d-evaluation-des-gisements-d-evitement-des-potentiels-de-reduction-de-dechets-et-des-impacts-environnementaux-evites.html\">the ADEME study</a>\nBased on the 11 product categories detailed above, the packaging avoidance target of the bulk sales alternative can be estimated at 2.4 kg/inhabitant/year in 2012 at the national level. These results only concern a limited number of products, \nbut they are those that are often offered for sale in bulk. These data take into account the removal of product packaging by the bulk device, but do not take into account the containers offered to customers for this purchase, so the actual avoidance of the action is less.\n",
-    "titre.auto": "Average reduction per capita of the \"buy in bulk\" action"
-  },
-  "alimentation . déchets . gestes . bonus acheter en vrac . empreinte plastique": {
-    "formule": 2.383,
-    "unité": "kgCO2e/kg",
-    "note": "Emission factor from Base Carbone (Plastic - average - new)",
-    "titre": "plastic footprint",
-    "titre.auto": "plastic footprint"
-  },
-  "alimentation . déchets . gestes . bonus acheter en vrac . empreinte carton": {
-    "formule": 0.39,
-    "unité": "kgCO2e/kg",
-    "note": "Emission factor from Base Carbone (Cardboard - new)",
-    "titre": "cardboard footprint",
-    "titre.auto": "cardboard footprint"
+    "titre.auto": "No production of the packaging",
+    "optimized": true
   },
   "alimentation . repas": {
     "icônes": "🍽️",
@@ -8169,23 +8142,11 @@
     "titre.auto": "present"
   },
   "transport . mobilité douce . vélo . construction amortie": {
-    "formule": "construction / durée de vie",
+    "formule": "116 / 12",
     "unité": "kgCO2e",
     "titre": "depreciated construction",
-    "titre.auto": "depreciated construction"
-  },
-  "transport . mobilité douce . vélo . construction": {
-    "formule": 116,
-    "unité": "kgCO2e",
-    "note": "The footprint base does not offer a FE for conventional bicycles.\n\nNevertheless, in 2021, bicycle manufacturer Trek published <a href=\"https://view.publitas.com/trek-bicycle/trek-bicycle-2021-sustainability-report/page/6\">a study</a>\npresenting the carbon footprint of its bicycles' production. \n\nFor the most popular, the footprint is 116 kgCO2e.\n",
-    "titre": "construction",
-    "titre.auto": "construction"
-  },
-  "transport . mobilité douce . vélo . durée de vie": {
-    "formule": 12,
-    "note": "The lifespan of a conventional bicycle is assumed to be identical to that of an EAB (this is a strong assumption, as it seems that an EAB carries more components which may wear out more)\nAssumption taken from HBEFA (Manual of Emission Factors for Road Transport), based on documentation in the empreinte database.\nFigures taken from the 2019 ADEME study <a href=\"https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html\">\"Modélisation et évaluation environnementale de produits de consommation et biens d'équipement\"</a>\n",
-    "titre": "service life",
-    "titre.auto": "service life"
+    "titre.auto": "depreciated construction",
+    "optimized": true
   },
   "transport . mobilité douce . vae": {
     "titre": "Electric Bikes",
@@ -8203,11 +8164,12 @@
     "titre.auto": "present"
   },
   "transport . mobilité douce . vae . empreinte": {
-    "formule": 0.00223,
     "unité": "kgCO2e/km",
     "note": "FE from footprint database (Bicycle/electric-assist)",
     "titre": "footprint",
-    "titre.auto": "footprint"
+    "titre.auto": "footprint",
+    "valeur": "0.00223",
+    "optimized": true
   },
   "transport . mobilité douce . vae . km": {
     "question": "How many kilometers do you cover per year with your electric bike ?",
@@ -8225,22 +8187,10 @@
   },
   "transport . mobilité douce . vae . construction amortie": {
     "titre": "Depreciated construction",
-    "formule": "construction / durée de vie",
+    "formule": "262 / 12",
     "unité": "kgCO2e",
-    "titre.auto": "Depreciated construction"
-  },
-  "transport . mobilité douce . vae . construction": {
-    "formule": 262,
-    "unité": "kgCO2e",
-    "note": "FE from footprint database (Bicycle/electric-assist)",
-    "titre": "construction",
-    "titre.auto": "construction"
-  },
-  "transport . mobilité douce . vae . durée de vie": {
-    "formule": 12,
-    "note": "Assumption taken from HBEFA (Manual of Emission Factors for Road Transport), based on empreinte documentation.\nFigures taken from the 2019 ADEME study <a href=\"https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html\">\"Modélisation et évaluation environnementale de produits de consommation et biens d'équipement\"</a>\n",
-    "titre": "service life",
-    "titre.auto": "service life"
+    "titre.auto": "Depreciated construction",
+    "optimized": true
   },
   "transport . mobilité douce . autres véhicules à moteur": {
     "titre": "Small electric vehicle",
@@ -8259,11 +8209,12 @@
     "titre.auto": "present"
   },
   "transport . mobilité douce . autres véhicules à moteur . empreinte": {
-    "formule": 0.002,
     "unité": "kgCO2e/km",
     "note": "FE from footprint database (Trotinette)",
     "titre": "footprint",
-    "titre.auto": "footprint"
+    "titre.auto": "footprint",
+    "valeur": "0.002",
+    "optimized": true
   },
   "transport . mobilité douce . autres véhicules à moteur . km": {
     "question": "How many kilometers do you cover per year with your electric scooter, gyropod, electric unicycle, hoverboard...?",
@@ -8280,22 +8231,10 @@
   },
   "transport . mobilité douce . autres véhicules à moteur . construction amortie": {
     "titre": "Depreciated construction",
-    "formule": "construction / durée de vie",
+    "formule": "91.9 / 4",
     "unité": "kgCO2e",
-    "titre.auto": "Depreciated construction"
-  },
-  "transport . mobilité douce . autres véhicules à moteur . construction": {
-    "formule": 91.9,
-    "unité": "kgCO2e",
-    "note": "FE from footprint database (Trotinette)",
-    "titre": "construction",
-    "titre.auto": "construction"
-  },
-  "transport . mobilité douce . autres véhicules à moteur . durée de vie": {
-    "formule": 4,
-    "note": "Assumption taken from HBEFA (Manual of Emission Factors for Road Transport), based on empreinte documentation.\nFigures taken from the 2019 ADEME study <a href=\"https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html\">\"Modélisation et évaluation environnementale de produits de consommation et biens d'équipement\"</a>\n",
-    "titre": "service life",
-    "titre.auto": "service life"
+    "titre.auto": "Depreciated construction",
+    "optimized": true
   },
   "transport . train": {
     "titre": "Train",
@@ -8417,15 +8356,10 @@
     "titre.auto": "Caravan use"
   },
   "transport . vacances . caravane . surconsommation": {
-    "formule": "voiture . empreinte au kilomètre * ratio surconsommation",
+    "formule": "voiture . empreinte au kilomètre * 0.25",
     "titre": "overconsumption",
-    "titre.auto": "overconsumption"
-  },
-  "transport . vacances . caravane . ratio surconsommation": {
-    "formule": 0.25,
-    "note": "1.2 to 1.5 l/100 km [here](https://www.lemondedupleinair.com/comment-limiter-sa-consommation-de-carburant-en-tractant-une-caravane/) which can be estimated at an overconsumption of 10 to 20%\n40 to 50% [here](https://forum.lescaravaniers2.com/viewtopic.php?t=9973)\nAs a first approximation, we therefore consider a hypothesis of 25% overconsumption\n",
-    "titre": "overconsumption ratio",
-    "titre.auto": "overconsumption ratio"
+    "titre.auto": "overconsumption",
+    "optimized": true
   },
   "transport . vacances . caravane . distance": {
     "question": "How far do you travel per year in your caravan?",
@@ -8438,28 +8372,18 @@
   },
   "transport . vacances . caravane . construction amortie": {
     "titre": "Construction of the caravan",
-    "formule": "(construction / durée de vie) / logement . habitants",
+    "formule": "(construction / 25) / logement . habitants",
     "unité": "kgCO2e",
-    "titre.auto": "Construction of the caravan"
+    "titre.auto": "Construction of the caravan",
+    "optimized": true
   },
   "transport . vacances . caravane . construction": {
-    "formule": "voiture . gabarit . berline . empreinte * (caravane . poids / voiture . gabarit . berline . poids)",
+    "formule": "7600 * (750 / 1500)",
     "unité": "kgCO2e",
     "note": "We extrapolate the impact of manufacturing a caravan using a weight ratio and considering \"Saloon\" construction data (6300 kgCO2e and 1500 kg)\nSource Figure 6 and Table 1 <a href=\"https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf\">FNH-Carbone4</a>\nA caravan weight of 750 kg is assumed.\n",
     "titre": "construction",
-    "titre.auto": "construction"
-  },
-  "transport . vacances . caravane . poids": {
-    "formule": 750,
-    "unité": "kg",
-    "titre": "weight",
-    "titre.auto": "weight"
-  },
-  "transport . vacances . caravane . durée de vie": {
-    "formule": 25,
-    "note": "As for the motor home, a lifetime of [25 years] is considered (https://objectifpleinair.com/combien-de-temps-dure-un-camping-car/).\nThis assumption needs to be better sourced.\n",
-    "titre": "life span",
-    "titre.auto": "life span"
+    "titre.auto": "construction",
+    "optimized": true
   },
   "transport . vacances . camping car": {
     "titre": "Camping Car",
@@ -8487,28 +8411,18 @@
   },
   "transport . vacances . camping car . construction amortie": {
     "titre": "Construction of the motor home",
-    "formule": "(construction / durée de vie) / logement . habitants",
+    "formule": "(construction / 25) / logement . habitants",
     "unité": "kgCO2e",
-    "titre.auto": "Construction of the motor home"
+    "titre.auto": "Construction of the motor home",
+    "optimized": true
   },
   "transport . vacances . camping car . construction": {
-    "formule": "voiture . gabarit . berline . empreinte * (camping car . poids / voiture . gabarit . berline . poids)",
+    "formule": "7600 * (3000 / 1500)",
     "unité": "kgCO2e",
     "note": "We extrapolate the impact of manufacturing a caravan based on a weight ratio and considering \"Saloon\" construction data (6300 kgCO2e and 1500 kg)\nSource Figure 6 and Table 1 <a href=\"https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf\">FNH-Carbone4</a>\nWe assume a weight of 3t for camping cars, with a rolling limit (with a B driving license) of 3.5t (leaving 500 kg for interior fittings).\n",
     "titre": "construction",
-    "titre.auto": "construction"
-  },
-  "transport . vacances . camping car . poids": {
-    "formule": 3000,
-    "unité": "kg",
-    "titre": "weight",
-    "titre.auto": "weight"
-  },
-  "transport . vacances . camping car . durée de vie": {
-    "formule": 25,
-    "note": "A lifetime of [25 years](https://objectifpleinair.com/combien-de-temps-dure-un-camping-car/) is considered.\nThis assumption needs to be better sourced\n",
-    "titre": "life span",
-    "titre.auto": "life span"
+    "titre.auto": "construction",
+    "optimized": true
   },
   "transport . vacances . camping car . km": {
     "titre": "km by motorhome",
@@ -8534,18 +8448,12 @@
     "titre": "consumption per kilometer",
     "titre.auto": "consumption per kilometer"
   },
-  "transport . vacances . camping car . empreinte au litre": {
-    "formule": 2.7,
-    "unité": "kgCO2e/l",
-    "note": "Source: [Base Carbone](https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element/categorie/405)\n",
-    "titre": "footprint per liter",
-    "titre.auto": "footprint per liter"
-  },
   "transport . vacances . camping car . empreinte au kilomètre": {
     "titre": "footprint per km motorhome",
-    "formule": "consommation au kilomètre * empreinte au litre",
+    "formule": "consommation au kilomètre * 2.7",
     "unité": "kgCO2e/km",
-    "titre.auto": "footprint per km motorhome"
+    "titre.auto": "footprint per km motorhome",
+    "optimized": true
   },
   "transport . vacances . camping car . usage": {
     "formule": "camping car . km * empreinte au kilomètre",
@@ -8590,9 +8498,10 @@
   },
   "transport . vacances . van . empreinte au kilomètre": {
     "titre": "footprint per km motorhome",
-    "formule": "consommation au kilomètre * empreinte au litre",
+    "formule": "consommation au kilomètre * 2.7",
     "unité": "kgCO2e/km",
-    "titre.auto": "footprint per km motorhome"
+    "titre.auto": "footprint per km motorhome",
+    "optimized": true
   },
   "transport . vacances . van . consommation au kilomètre": {
     "formule": "consommation aux 100 / 100 km/centkm",
@@ -8608,38 +8517,20 @@
     "titre": "consumption per 100",
     "titre.auto": "consumption per 100"
   },
-  "transport . vacances . van . empreinte au litre": {
-    "formule": 2.7,
-    "unité": "kgCO2e/l",
-    "note": "Source: <a href=\"https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element/categorie/405\">Base Carbone</a>\n",
-    "titre": "footprint per litre",
-    "titre.auto": "footprint per litre"
-  },
   "transport . vacances . van . construction amortie": {
     "titre": "Building footprint of the van",
-    "formule": "(construction / durée de vie) / logement . habitants",
+    "formule": "(construction / 25) / logement . habitants",
     "unité": "kgCO2e",
-    "titre.auto": "Building the van"
+    "titre.auto": "Building the van",
+    "optimized": true
   },
   "transport . vacances . van . construction": {
-    "formule": "voiture . gabarit . berline . empreinte * (van . poids / voiture . gabarit . berline . poids)",
+    "formule": "7600 * (3000 / 1500)",
     "unité": "kgCO2e",
     "note": "The impact of manufacturing a caravan is extrapolated from a ratio based on weight and considering \"Saloon\" construction data (6300 kgCO2e and 1500 kg)\nSource Figure 6 and Table 1 <a href=\"https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf\">FNH-Carbone4</a>\nAssuming a weight of 3t for the van, the rolling limit (with a B driving licence) is 3.5t (which leaves 500 kg for the interior fittings).\n",
     "titre": "construction",
-    "titre.auto": "construction"
-  },
-  "transport . vacances . van . poids": {
-    "formule": 3000,
-    "unité": "kg",
-    "note": "The weight of a converted van varies between 2.6 and 3.5 tonnes (above 3.5 tonnes, the vehicle's maximum permissible weight changes to become a \"heavy goods vehicle\", requiring a different licence)",
-    "titre": "weight",
-    "titre.auto": "weight"
-  },
-  "transport . vacances . van . durée de vie": {
-    "formule": 25,
-    "note": "We consider the life of a converted van to be the same as that of a motorhome.",
-    "titre": "service life",
-    "titre.auto": "service life"
+    "titre.auto": "construction",
+    "optimized": true
   },
   "transport . voiture": {
     "titre": "car",
@@ -9243,20 +9134,6 @@
     "note": "Surprisingly, the sedan has a smaller footprint than the city car... We'll see if the study solves this mystery.",
     "titre": "hybrid scale",
     "titre.auto": "hybrid scale"
-  },
-  "transport . voiture . gabarit . berline . poids": {
-    "formule": 1500,
-    "unité": "kg",
-    "note": "Rule used to calculate the footprint of caravans and campers.",
-    "titre": "weight",
-    "titre.auto": "weight"
-  },
-  "transport . voiture . gabarit . berline . empreinte": {
-    "formule": 7600,
-    "unité": "kgCO2e",
-    "note": "Rule used to calculate the footprint of the caravan and motorhome.",
-    "titre": "footprint",
-    "titre.auto": "footprint"
   },
   "transport . voiture . véhicule récent": {
     "applicable si": {

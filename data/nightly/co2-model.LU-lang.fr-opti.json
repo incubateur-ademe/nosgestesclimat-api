@@ -1145,12 +1145,9 @@
       }
     }
   },
-  "transport . super ethanol . taux surconsommation": {
-    "formule": "125%",
-    "note": "Le superéthanol E85 est moins énergétique, donc fait grimper les litres consommés [de 15 à 25%](https://www.ledauphine.com/magazine-lifestyle/2020/02/02/ce-que-vous-devez-savoir-sur-le-superethanol-e85-avant-de-vous-lancer)."
-  },
   "transport . super ethanol . recalcul avec surconsommation": {
-    "formule": "recalcul * taux surconsommation"
+    "formule": "recalcul * 125%",
+    "optimized": true
   },
   "transport . scooter électrique": {
     "titre": "Changer pour un scooter électrique",
@@ -1219,9 +1216,10 @@
   },
   "transport . voiture . limitation autoroute . réduction": {
     "titre": "Gain de consommation 130 -> 110",
-    "formule": "25%",
     "description": "![](https://imgur.com/NB9CUUt.jpg)\nD'après ce graphique, par déduction graphique (nous n'avons pas encore remonté aux données [de l'étude](http://theses.univ-lyon2.fr/documents/getpart.php?id=1026&action=pdf), page 151 figure 26), on trouve les données ci-dessous.\n\nDiesel : 6.5 l/100 à 130km/h -> 4.75 à 110km/h \n\nEssence : 11.75 l/100 à 130km/h -> 8.65 à 110km/h\n\nDonc -27% en diesel et - 26% en essence en passant de 130 à 110. Nous retenons l'ordre de grandeur de 25%.\n",
-    "note": "Il faudrait affiner ce calcul.\nQuelques sources à investiguer pour le calcul.\n- un citoyen qui fait son test pour une clio. Il trouve une réduction entre -20% et -50% !\n   https://twitter.com/CptQwark_/status/1289499582871658499 \n   Un autre citoyen trouve plutôt -10% avec une plus grosse voiture. \n- [Rapport du CGDD](<https://www.ecologie.gouv.fr/sites/default/files/Théma - Réduction des vitesses sur les routes.pdf>), où nous n'avons pas trouvé pour l'instant l'explication du calcul de l'économie de CO₂\n- Aurélien Bigo qui critique le rapport du CGDD https://twitter.com/AurelienBigo/status/1276459283291439114, mais qui ne nous donne pas d'infos sur le calcul du CO₂ lui même.\n- une autre évaluation, qui elle nous donne le calcul :)  : https://twitter.com/Tomsawy22670318/status/1274257122373570565\n  Attention, pour être rigoureux, comme évoqué dans ce dernier fil, il faut prendre en compte la distribution de la vitesse et la catégorie de voiture (présence d'une 6ème vitesse par exemple). On ne roule évidement pas tout le temps à 130.\n"
+    "note": "Il faudrait affiner ce calcul.\nQuelques sources à investiguer pour le calcul.\n- un citoyen qui fait son test pour une clio. Il trouve une réduction entre -20% et -50% !\n   https://twitter.com/CptQwark_/status/1289499582871658499 \n   Un autre citoyen trouve plutôt -10% avec une plus grosse voiture. \n- [Rapport du CGDD](<https://www.ecologie.gouv.fr/sites/default/files/Théma - Réduction des vitesses sur les routes.pdf>), où nous n'avons pas trouvé pour l'instant l'explication du calcul de l'économie de CO₂\n- Aurélien Bigo qui critique le rapport du CGDD https://twitter.com/AurelienBigo/status/1276459283291439114, mais qui ne nous donne pas d'infos sur le calcul du CO₂ lui même.\n- une autre évaluation, qui elle nous donne le calcul :)  : https://twitter.com/Tomsawy22670318/status/1274257122373570565\n  Attention, pour être rigoureux, comme évoqué dans ce dernier fil, il faut prendre en compte la distribution de la vitesse et la catégorie de voiture (présence d'une 6ème vitesse par exemple). On ne roule évidement pas tout le temps à 130.\n",
+    "valeur": "25%",
+    "optimized": true
   },
   "transport . voiture . empreinte autoroute": {
     "formule": "par km personne * km autoroute",
@@ -1623,13 +1621,8 @@
     "unité": "kgCO2e"
   },
   "alimentation . déchets . gestes . bonus compostage biodéchets": {
-    "formule": {
-      "somme": [
-        "11.505999999999998",
-        "-1 * 0.4949999999999999"
-      ]
-    },
     "unité": "kgCO2e",
+    "valeur": "11.011",
     "optimized": true
   },
   "alimentation . déchets . gestes . gaspillage alimentaire . présent": {
@@ -1646,9 +1639,10 @@
     "note": "Il faut savoir qu'il existe un double comptage avec la fin de vie des pertes non-comestibles chez le consommateur déjà prise en compte dans les facteurs d'émission repas\nde la Base Carbone. Cependant, ce double comptage est peu significatif.\nPour aller plus loin dans cette discussion, notamment les questions de périmètre et de comparaison avec l'étude internationale de la FAO, voir nos commentaires [ici](https://github.com/datagir/nosgestesclimat/pull/1096#issuecomment-945158967).\n"
   },
   "alimentation . déchets . gestes . empreinte gaspillage alimentaire": {
-    "formule": 30,
     "unité": "kgCO2e",
-    "note": "Voir tableau page 111 de [l'étude ADEME](https://librairie.ademe.fr/dechets-economie-circulaire/2520-etude-d-evaluation-des-gisements-d-evitement-des-potentiels-de-reduction-de-dechets-et-des-impacts-environnementaux-evites.html)"
+    "note": "Voir tableau page 111 de [l'étude ADEME](https://librairie.ademe.fr/dechets-economie-circulaire/2520-etude-d-evaluation-des-gisements-d-evitement-des-potentiels-de-reduction-de-dechets-et-des-impacts-environnementaux-evites.html)",
+    "valeur": "30",
+    "optimized": true
   },
   "alimentation . déchets . gestes . stop pub . présent": {
     "question": "Avez-vous un stop pub sur votre boîte aux lettres ?",
@@ -1682,31 +1676,17 @@
     "unité": "kgCO2e"
   },
   "alimentation . déchets . gestes . bonus acheter en vrac": {
-    "formule": "gisement réduction * empreinte emballages évités",
+    "formule": "2.4 * empreinte emballages évités",
     "unité": "kgCO2e",
-    "note": "Une étude plus récente et plus complète à investiguer pour précisier cette action : https://librairie.ademe.fr/consommer-autrement/5064-panorama-et-evaluation-environnementale-du-vrac-en-france.html.\n"
+    "note": "Une étude plus récente et plus complète à investiguer pour précisier cette action : https://librairie.ademe.fr/consommer-autrement/5064-panorama-et-evaluation-environnementale-du-vrac-en-france.html.\n",
+    "optimized": true
   },
   "alimentation . déchets . gestes . bonus acheter en vrac . empreinte emballages évités": {
     "titre": "Non production des l'emballage",
-    "formule": "22% * empreinte carton + 78% * empreinte plastique",
+    "formule": "(22% * 0.39) + (78% * 2.383)",
     "unité": "kg",
-    "note": "Source : Page 47 de [l'étude ADEME](https://librairie.ademe.fr/dechets-economie-circulaire/2520-etude-d-evaluation-des-gisements-d-evitement-des-potentiels-de-reduction-de-dechets-et-des-impacts-environnementaux-evites.html)\nSelon le tableau 22% des emballages évités sont en papier/carton, 78% sont en plastique.\n"
-  },
-  "alimentation . déchets . gestes . bonus acheter en vrac . gisement réduction": {
-    "titre": "Réduction moyenne par habitant de l'action \"acheter en vrac\"",
-    "formule": 2.4,
-    "unité": "kg",
-    "note": "Source : Page 47 de [l'étude ADEME](https://librairie.ademe.fr/dechets-economie-circulaire/2520-etude-d-evaluation-des-gisements-d-evitement-des-potentiels-de-reduction-de-dechets-et-des-impacts-environnementaux-evites.html)\nBasé 11 catégories de produits détaillées ci-dessus, le gisement d’évitement d’emballages visé par l’alternative de la vente en vrac peut être estimé à 2.4 kg/hab./an en 2012 au niveau national. Ces résultats ne concernent qu’un nombre limité de produits, \nmais ce sont ceux qui sont souvent proposés à la vente en vrac. Ces données prennent en compte la suppression de l’emballage du produit par le dispositif de vrac, mais ne prennent pas en compte les contenants proposés aux clients pour cet achat, l’évitement réel de l’action est donc moindre.\n"
-  },
-  "alimentation . déchets . gestes . bonus acheter en vrac . empreinte plastique": {
-    "formule": 2.383,
-    "unité": "kgCO2e/kg",
-    "note": "Facteur d'émission issu de la Base Carbone (Plastique - moyenne - neuf)"
-  },
-  "alimentation . déchets . gestes . bonus acheter en vrac . empreinte carton": {
-    "formule": 0.39,
-    "unité": "kgCO2e/kg",
-    "note": "Facteur d'émission issu de la Base Carbone (Carton - neuf)"
+    "note": "Source : Page 47 de [l'étude ADEME](https://librairie.ademe.fr/dechets-economie-circulaire/2520-etude-d-evaluation-des-gisements-d-evitement-des-potentiels-de-reduction-de-dechets-et-des-impacts-environnementaux-evites.html)\nSelon le tableau 22% des emballages évités sont en papier/carton, 78% sont en plastique.\n",
+    "optimized": true
   },
   "alimentation . repas": {
     "icônes": "🍽️",
@@ -6865,17 +6845,9 @@
     "par défaut": "non"
   },
   "transport . mobilité douce . vélo . construction amortie": {
-    "formule": "construction / durée de vie",
-    "unité": "kgCO2e"
-  },
-  "transport . mobilité douce . vélo . construction": {
-    "formule": 116,
+    "formule": "116 / 12",
     "unité": "kgCO2e",
-    "note": "La base empreinte ne propose pas de FE pour le vélo conventionnel.\n\nNéanmoins, en 2021, le fabricant de vélo Trek a publié [une étude](https://view.publitas.com/trek-bicycle/trek-bicycle-2021-sustainability-report/page/6)\nprésentant l'empreinte carbone de la production de ses vélos. \n\nPour le plus populaire, l'empreinte affichée est de 116 kgCO2e.\n"
-  },
-  "transport . mobilité douce . vélo . durée de vie": {
-    "formule": 12,
-    "note": "On considère la durée de vie d'un vélo conventionnel identique à celle d'un VAE (hypothèse forte, car il semble qu'un VAE emporte davatange de composants qui peuvent s'user davantage)\nHypothèse issue du HBEFA (Manuel des facteurs d'émission pour le transport routier), d'après la documentation de la base empreinte.\nChiffres tirés de l'étude ADEME de 2019 [\"Modélisation et évaluation environnementale de produits de consommation et biens d'équipement\"](https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html)\n"
+    "optimized": true
   },
   "transport . mobilité douce . vae": {
     "titre": "Vélo à Assistance Électrique (VAE)",
@@ -6890,9 +6862,10 @@
     "par défaut": "non"
   },
   "transport . mobilité douce . vae . empreinte": {
-    "formule": 0.00223,
     "unité": "kgCO2e/km",
-    "note": "FE issu de la base empreinte (Vélo/à assistance électrique)"
+    "note": "FE issu de la base empreinte (Vélo/à assistance électrique)",
+    "valeur": "0.00223",
+    "optimized": true
   },
   "transport . mobilité douce . vae . km": {
     "question": "Combien de kilomètres faites-vous à l'année avec votre Vélo à Assistance Électrique (VAE) ?",
@@ -6908,17 +6881,9 @@
   },
   "transport . mobilité douce . vae . construction amortie": {
     "titre": "Construction amortie",
-    "formule": "construction / durée de vie",
-    "unité": "kgCO2e"
-  },
-  "transport . mobilité douce . vae . construction": {
-    "formule": 262,
+    "formule": "262 / 12",
     "unité": "kgCO2e",
-    "note": "FE issu de la base empreinte (Vélo/à assistance électrique)"
-  },
-  "transport . mobilité douce . vae . durée de vie": {
-    "formule": 12,
-    "note": "Hypothèse issue du HBEFA (Manuel des facteurs d'émission pour le transport routier), d'après la documentation de la base empreinte.\nChiffres tirés de l'étude ADEME de 2019 [\"Modélisation et évaluation environnementale de produits de consommation et biens d'équipement\"](https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html)\n"
+    "optimized": true
   },
   "transport . mobilité douce . autres véhicules à moteur": {
     "titre": "Petit véhicule électrique",
@@ -6934,9 +6899,10 @@
     "par défaut": "non"
   },
   "transport . mobilité douce . autres véhicules à moteur . empreinte": {
-    "formule": 0.002,
     "unité": "kgCO2e/km",
-    "note": "FE issu de la base empreinte (Trotinette)"
+    "note": "FE issu de la base empreinte (Trotinette)",
+    "valeur": "0.002",
+    "optimized": true
   },
   "transport . mobilité douce . autres véhicules à moteur . km": {
     "question": "Combien de kilomètres faites-vous à l'année avec votre trottinette électrique, gyropode, monocycle électrique, hoverboard...?",
@@ -6951,17 +6917,9 @@
   },
   "transport . mobilité douce . autres véhicules à moteur . construction amortie": {
     "titre": "Construction amortie",
-    "formule": "construction / durée de vie",
-    "unité": "kgCO2e"
-  },
-  "transport . mobilité douce . autres véhicules à moteur . construction": {
-    "formule": 91.9,
+    "formule": "91.9 / 4",
     "unité": "kgCO2e",
-    "note": "FE issu de la base empreinte (Trotinette)"
-  },
-  "transport . mobilité douce . autres véhicules à moteur . durée de vie": {
-    "formule": 4,
-    "note": "Hypothèse issue du HBEFA (Manuel des facteurs d'émission pour le transport routier), d'après la documentation de la base empreinte.\nChiffres tirés de l'étude ADEME de 2019 [\"Modélisation et évaluation environnementale de produits de consommation et biens d'équipement\"](https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html)\n"
+    "optimized": true
   },
   "transport . train": {
     "titre": "Train",
@@ -7070,11 +7028,8 @@
     "unité": "kgCO2e"
   },
   "transport . vacances . caravane . surconsommation": {
-    "formule": "voiture . empreinte au kilomètre * ratio surconsommation"
-  },
-  "transport . vacances . caravane . ratio surconsommation": {
-    "formule": 0.25,
-    "note": "1.2 à 1.5 l/100 km [ici](https://www.lemondedupleinair.com/comment-limiter-sa-consommation-de-carburant-en-tractant-une-caravane/) ce qui peut être estimé à une surconsommation de 10 à 20%\n40 à 50 % [ici](https://forum.lescaravaniers2.com/viewtopic.php?t=9973)\nEn première approximation, nous considérons donc une hypothèse de 25% de surconsommation\n"
+    "formule": "voiture . empreinte au kilomètre * 0.25",
+    "optimized": true
   },
   "transport . vacances . caravane . distance": {
     "question": "Quelle distance parcourez-vous à l'année en caravane ?",
@@ -7085,21 +7040,15 @@
   },
   "transport . vacances . caravane . construction amortie": {
     "titre": "Construction de la caravane",
-    "formule": "(construction / durée de vie) / logement . habitants",
-    "unité": "kgCO2e"
+    "formule": "(construction / 25) / logement . habitants",
+    "unité": "kgCO2e",
+    "optimized": true
   },
   "transport . vacances . caravane . construction": {
-    "formule": "voiture . gabarit . berline . empreinte * (caravane . poids / voiture . gabarit . berline . poids)",
+    "formule": "7600 * (750 / 1500)",
     "unité": "kgCO2e",
-    "note": "On extrapole l'impact de la fabrication d'une caravane car à partir d'un ratio sur le poids et en considérant les données de construction \"Berline\" (6300 kgCO2e et 1500 kg)\nSource Figure 6 et tableau 1 [FNH-Carbone4](https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf)\nOn considère un poids de 750 kg pour une caravane.\n"
-  },
-  "transport . vacances . caravane . poids": {
-    "formule": 750,
-    "unité": "kg"
-  },
-  "transport . vacances . caravane . durée de vie": {
-    "formule": 25,
-    "note": "Comme pour le camping car on considère une durée de vie de [25 ans](https://objectifpleinair.com/combien-de-temps-dure-un-camping-car/).\nCette hypothèse nécessite d'être mieux sourcée.\n"
+    "note": "On extrapole l'impact de la fabrication d'une caravane car à partir d'un ratio sur le poids et en considérant les données de construction \"Berline\" (6300 kgCO2e et 1500 kg)\nSource Figure 6 et tableau 1 [FNH-Carbone4](https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf)\nOn considère un poids de 750 kg pour une caravane.\n",
+    "optimized": true
   },
   "transport . vacances . camping car": {
     "titre": "Camping Car",
@@ -7123,21 +7072,15 @@
   },
   "transport . vacances . camping car . construction amortie": {
     "titre": "Construction du camping car",
-    "formule": "(construction / durée de vie) / logement . habitants",
-    "unité": "kgCO2e"
+    "formule": "(construction / 25) / logement . habitants",
+    "unité": "kgCO2e",
+    "optimized": true
   },
   "transport . vacances . camping car . construction": {
-    "formule": "voiture . gabarit . berline . empreinte * (camping car . poids / voiture . gabarit . berline . poids)",
+    "formule": "7600 * (3000 / 1500)",
     "unité": "kgCO2e",
-    "note": "On extrapole l'impact de la fabrication d'une caravane car à partir d'un ratio sur le poids et en considérant les données de construction \"Berline\" (6300 kgCO2e et 1500 kg)\nSource Figure 6 et tableau 1 [FNH-Carbone4](https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf)\nOn considère un poids de 3t pour le camping car la limite roulante (avec permis B) est à 3,5t (ce qui laisse 500 kg pour l'aménagement intérieur).\n"
-  },
-  "transport . vacances . camping car . poids": {
-    "formule": 3000,
-    "unité": "kg"
-  },
-  "transport . vacances . camping car . durée de vie": {
-    "formule": 25,
-    "note": "On considère une durée de vie de [25 ans](https://objectifpleinair.com/combien-de-temps-dure-un-camping-car/).\nCette hypothèse nécessite d'être mieux sourcée\n"
+    "note": "On extrapole l'impact de la fabrication d'une caravane car à partir d'un ratio sur le poids et en considérant les données de construction \"Berline\" (6300 kgCO2e et 1500 kg)\nSource Figure 6 et tableau 1 [FNH-Carbone4](https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf)\nOn considère un poids de 3t pour le camping car la limite roulante (avec permis B) est à 3,5t (ce qui laisse 500 kg pour l'aménagement intérieur).\n",
+    "optimized": true
   },
   "transport . vacances . camping car . km": {
     "titre": "km en camping car",
@@ -7158,15 +7101,11 @@
     "formule": "consommation aux 100 / 100 km/centkm",
     "unité": "l/km"
   },
-  "transport . vacances . camping car . empreinte au litre": {
-    "formule": 2.7,
-    "unité": "kgCO2e/l",
-    "note": "Source : [Base Carbone](https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element/categorie/405)\n"
-  },
   "transport . vacances . camping car . empreinte au kilomètre": {
     "titre": "empreinte au km camping-car",
-    "formule": "consommation au kilomètre * empreinte au litre",
-    "unité": "kgCO2e/km"
+    "formule": "consommation au kilomètre * 2.7",
+    "unité": "kgCO2e/km",
+    "optimized": true
   },
   "transport . vacances . camping car . usage": {
     "formule": "camping car . km * empreinte au kilomètre",
@@ -7202,8 +7141,9 @@
   },
   "transport . vacances . van . empreinte au kilomètre": {
     "titre": "empreinte au km camping-car",
-    "formule": "consommation au kilomètre * empreinte au litre",
-    "unité": "kgCO2e/km"
+    "formule": "consommation au kilomètre * 2.7",
+    "unité": "kgCO2e/km",
+    "optimized": true
   },
   "transport . vacances . van . consommation au kilomètre": {
     "formule": "consommation aux 100 / 100 km/centkm",
@@ -7215,29 +7155,17 @@
     "unité": "l/centkm",
     "note": "Par défaut on considère une consommation de [9 l au 100 km](https://www.wikicampers.fr/blog/van-vs-fourgon-lequel-choisir/)\n"
   },
-  "transport . vacances . van . empreinte au litre": {
-    "formule": 2.7,
-    "unité": "kgCO2e/l",
-    "note": "Source : [Base Carbone](https://bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element/categorie/405)\n"
-  },
   "transport . vacances . van . construction amortie": {
     "titre": "Construction du van",
-    "formule": "(construction / durée de vie) / logement . habitants",
-    "unité": "kgCO2e"
+    "formule": "(construction / 25) / logement . habitants",
+    "unité": "kgCO2e",
+    "optimized": true
   },
   "transport . vacances . van . construction": {
-    "formule": "voiture . gabarit . berline . empreinte * (van . poids / voiture . gabarit . berline . poids)",
+    "formule": "7600 * (3000 / 1500)",
     "unité": "kgCO2e",
-    "note": "On extrapole l'impact de la fabrication d'une caravane car à partir d'un ratio sur le poids et en considérant les données de construction \"Berline\" (6300 kgCO2e et 1500 kg)\nSource Figure 6 et tableau 1 [FNH-Carbone4](https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf)\nOn considère un poids de 3t pour le van la limite roulante (avec permis B) est à 3,5t (ce qui laisse 500 kg pour l'aménagement intérieur).\n"
-  },
-  "transport . vacances . van . poids": {
-    "formule": 3000,
-    "unité": "kg",
-    "note": "Le poids d'un van aménagé varie entre 2,6 et 3,5 tonnes (au-delà de 3,5 tonnes, le véhicule change de PTAC pour devenir un \"poids lourd\", impliquant l'utilisation d'un autre permis)"
-  },
-  "transport . vacances . van . durée de vie": {
-    "formule": 25,
-    "note": "Nous considérons pour un van aménagé la même durée de vie que pour un camping-car."
+    "note": "On extrapole l'impact de la fabrication d'une caravane car à partir d'un ratio sur le poids et en considérant les données de construction \"Berline\" (6300 kgCO2e et 1500 kg)\nSource Figure 6 et tableau 1 [FNH-Carbone4](https://europeanclimate.org/wp-content/uploads/2019/11/quelle-contribution-du-vehicule-electrique-a-la-transition-ecologique-en-france.pdf)\nOn considère un poids de 3t pour le van la limite roulante (avec permis B) est à 3,5t (ce qui laisse 500 kg pour l'aménagement intérieur).\n",
+    "optimized": true
   },
   "transport . voiture": {
     "titre": "voiture",
@@ -7767,16 +7695,6 @@
     },
     "unité": "kgCO2e",
     "note": "Ètonnamment, la berline a moins d'empreinte construction que la citadine... A voir si l'étude relève ce mystère."
-  },
-  "transport . voiture . gabarit . berline . poids": {
-    "formule": 1500,
-    "unité": "kg",
-    "note": "Règle utilisée pour le calcul de l'empreinte de la caravane et camping, car."
-  },
-  "transport . voiture . gabarit . berline . empreinte": {
-    "formule": 7600,
-    "unité": "kgCO2e",
-    "note": "Règle utilisée pour le calcul de l'empreinte de la caravane et camping car."
   },
   "transport . voiture . véhicule récent": {
     "applicable si": {
