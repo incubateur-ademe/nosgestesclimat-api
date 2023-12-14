@@ -5248,6 +5248,17 @@
     "titre.auto": "Chemicals per capita",
     "optimized": true
   },
+  "empreinte branche . C21 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Basic pharmaceutical products and pharmaceutical preparations per capita\n\n> The description below shows the share of each subclass in the sector (as a % of turnover)\n\n- **Manufacture of basic pharmaceutical products (8%)**\n- **Manufacture of pharmaceutical preparations (92%)**",
+    "formule": "(5024 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "pharmacy per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "pharmacy per capita",
+    "optimized": true
+  },
   "empreinte branche . C23 par hab": {
     "avec": {
       "ratio vaisselle": "8.9%"
@@ -5314,6 +5325,72 @@
     "titre": "Other manufacturing per capita",
     "unité": "kgCO2e",
     "titre.auto": "Other manufacturing per capita",
+    "optimized": true
+  },
+  "empreinte branche . E36 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Natural water; water treatment and distribution per capita \n\n> The description below corresponds to the share of each subclass of the industry (in % of turnover) \n\n- **Water collection, treatment and supply (100%)** (in % of turnover)",
+    "formule": "(668 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "water distribution system per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "water distribution system per capita",
+    "optimized": true
+  },
+  "empreinte branche . E37 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Wastewater collection and treatment per capita \n\n> The description below corresponds to the share of each subclass in the industry (in % of turnover) \n\n- **Wastewater collection and treatment (100%)",
+    "formule": "(1403.1 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "wastewater treatment per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "wastewater treatment per capita",
+    "optimized": true
+  },
+  "empreinte branche . E38 par hab": {
+    "avec": {
+      "ratio services publics": "12%"
+    },
+    "description": "Waste collection, treatment and disposal; recovery per capita\n\n> The description below corresponds to the share of each subclass in the sector (as a % of turnover)\n\n- **Waste collection (23%)**\n\t- Collection of non-hazardous waste (84%)\n\t- Collection of hazardous waste (16%)\n- **Waste treatment and disposal (24%)**\n\t- Treatment and disposal of non-hazardous waste (S)\n\t- Treatment and disposal of hazardous waste (S)\n- **Recovery (53%)**\n\t- Dismantling of wrecks (3%)\n\t- Recovery of sorted waste (97%)",
+    "formule": "(6002.15 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "waste management per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "waste management per capita",
+    "optimized": true
+  },
+  "empreinte branche . E39 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Pollution control and other waste management services per capita \n\n> The description below corresponds to the share of each sub-class of the sector (in % of turnover) \n\n- **Remediation and other waste management services (100%)",
+    "formule": "(389.75 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "cleaning of buildings and contaminated sites per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "cleaning of buildings and contaminated sites per capita",
+    "optimized": true
+  },
+  "empreinte branche . F42 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Civil engineering per inhabitant\n\n> The description below shows the share of each subclass in the sector (as a % of turnover)\n\n- construction of roads and railways (52%)** ** Construction of roads and motorways (71%)\n\t- Construction of roads and motorways (71%)\n\t- Construction of surface and underground railways (9%)\n\t- Construction of bridges and tunnels (20%)\n- **Construction of networks and lines (33%)**\n\t- Construction of fluid networks (49%)\n\t- Construction of electrical and telecommunications networks (51%)\n- **Construction of other civil engineering structures (15%)**\n\t- Construction of maritime and fluvial structures (25%)\n\t- Construction of other civil engineering works n.e.c. (75%)",
+    "formule": "(6982.04 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "civil engineering per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "civil engineering per capita",
+    "optimized": true
+  },
+  "empreinte branche . F43 par hab": {
+    "avec": {
+      "ratio services publics": "54%"
+    },
+    "description": "Specialist construction work per inhabitant\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- **Demolition and site preparation (8%)** Demolition work (10%)\n\t- Demolition work (10%)\n\t- Site preparation work (86%)\n\t- Drilling and boring (3%)\n- **Electrical, plumbing and other installation work (34%)**\n\t- Electrical installation (44%)\n\t- Plumbing, heating and air conditioning (43%)\n\t- Other installation work (13%)\n- **Finishing work (28%)**\n\t- Plastering work (11%)\n\t- Joinery work (53%)\n\t- Floor and wall covering (12%)\n\t- Painting and glazing (21%)\n\t- Other finishing work (3%)\n- **Other specialised construction work (30%)** Roofing work (19%)\n\t- Roofing work (19%)\n\t- Other specialised construction work n.e.c. (81%)",
+    "formule": "(32761.88 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "miscellaneous work (for public works and buildings) per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "miscellaneous work (for public works and buildings) per capita",
     "optimized": true
   },
   "empreinte branche . G46 par hab": {
@@ -5414,6 +5491,39 @@
     "titre.auto": "legal and accounting activities per capita",
     "optimized": true
   },
+  "empreinte branche . M71 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Architectural and engineering services; inspection services and technical analyses per inhabitant\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- **Architectural and engineering activities (86%)** Architectural activities (12%)\n\t- Architectural activities (12%)\n\t- Engineering activities (88%)\n- **Technical testing and analysis activities (14%)**",
+    "formule": "(2438 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "architecture and building control per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "architecture and building control per capita",
+    "optimized": true
+  },
+  "empreinte branche . M72 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Scientific research and development services per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- research and development in physical and natural sciences (99%)** ** Research and development in biotechnology (19%)\n\t- Research and development in biotechnology (19%)\n\t- Research and development in other physical and natural sciences (81%)\n- **Research and development in the humanities and social sciences (1%)**",
+    "formule": "(7811 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "Scientific R&D per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "Scientific R&D per capita",
+    "optimized": true
+  },
+  "empreinte branche . N78 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Employment services per inhabitant\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- activities of employment placement agencies (3%)** **Activities of temporary employment agencies (83%)**\n- activities of temporary employment agencies (83%)** **Other provision of services (83%)\n- **Other provision of human resources (14%)**",
+    "formule": "(12 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "employment-related activities per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "employment-related activities per capita",
+    "optimized": true
+  },
   "empreinte branche . N80 par hab": {
     "avec": {
       "ratio services marchands": "24%"
@@ -5423,6 +5533,61 @@
     "titre": "investigations and security per capita",
     "unité": "kgCO2e",
     "titre.auto": "investigations and security per capita",
+    "optimized": true
+  },
+  "empreinte branche . O84 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Public administration and defence services; compulsory social security services per capita\n\n> The description below corresponds to the share of each subclass in the industry (in % of turnover)\n\n- **General, economic and social administration (83%)** General public administration (73%)\n\t- General public administration (73%)\n\t- Public administration (supervision) of economic activities (27%)\n- **Public prerogative services (17%)**",
+    "formule": "(16319 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "public administration and defense per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "public administration and defense per capita",
+    "optimized": true
+  },
+  "empreinte branche . P85 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Education services per capita\n\n> The description below corresponds to the share of each subclass in the sector (as a % of turnover)\n\n- **Pre-primary education (0%)**\n- primary education (0%)** **Secondary education (2%)**\n- **Secondary education (2%)**\n\t- General secondary education (44%)\n\t- Technical or vocational secondary education (56%)\n- **Higher and post-secondary non-tertiary education (8%)**\n\t- Post-secondary non-tertiary (2%)\n\t- Higher education (98%)\n- **Other education activities (89%)**\n\t- Sports and leisure education (13%)\n\t- Cultural education (3%)\n\t- Driving lessons (13%)\n\t- Other teaching (72%)\n- **Support activities for teaching (1%)**",
+    "formule": "(8730 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "education per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "education per capita",
+    "optimized": true
+  },
+  "empreinte branche . Q86 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Human health services per capita\n\n> The description below shows the share of each subclass in the sector (as a % of turnover)\n\n- **Hospital activities (16%)**\n- activity of doctors and dentists (50%)** ** Activity of general practitioners (38%)\n\t- General practitioners (38%)\n\t- Specialist practice (32%)\n\t- Dental practice (29%)\n- **Other human health activities (33%)**",
+    "formule": "(11024 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "health per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "health per capita",
+    "optimized": true
+  },
+  "empreinte branche . Q87 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Medical and social accommodation per capita \n\n> The description below corresponds to the share of each subclass of the sector (in % of turnover) \n\n- **Residential care (72%)\n- social housing for mentally handicapped, mentally ill and drug addicts (0%)** **Social housing for the elderly (10%)\n- social housing for the elderly or physically handicapped (27%)** **Other housing activities\n- **Other social housing activities (1%)**",
+    "formule": "(3914.19 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "medico-social accommodation per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "medico-social accommodation per capita",
+    "optimized": true
+  },
+  "empreinte branche . Q88 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Social services without accommodation per inhabitant\n\n> The description below corresponds to the share of each subclass in the sector (as a % of turnover)\n\n- **Action sociale sans hébergement pour personnes âgées et pour personnes handicapées (60%)**\n- **Other social work without accommodation (40%)**\n\t- Social work without accommodation for young children (88%)\n\t- Other social work without accommodation n.e.c. (12%)",
+    "formule": "(2298.81 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "social actions per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "social actions per capita",
     "optimized": true
   },
   "empreinte branche . S94 par hab": {
@@ -7296,12 +7461,15 @@
   "services publics": {
     "abréviation": "S. public",
     "couleur": "#0c2461",
-    "description": "Utilities are only part of the <a href=\"https://nosgestesclimat.fr/documentation/services-soci%C3%A9taux\">societal services</a> whose calculation is based on\n<a href=\"https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021\">the estimate of the French national footprint by the Ministry of Ecology</a>.",
+    "description": "> The calculation of emissions from Spanish public services is based on the French estimate, adjusted for Spanish public spending, of the carbon intensity of the Spanish economy and its population. \n> This is an initial macroscopic estimate that may be revised in the future.\n",
     "icônes": "🏛",
     "titre": "Public Services",
     "unité": "kgCO2e",
     "titre.auto": "Public services",
-    "valeur": "1279.3145022075946",
+    "avec": {
+      "poids des services publics espagnols": 1142.5
+    },
+    "valeur": "1142.5",
     "optimized": true
   },
   "services sociétaux": {
@@ -7310,18 +7478,16 @@
     "couleur": "#0c2461",
     "abréviation": "S. societal",
     "icônes": "🏛️",
-    "description": "> The calculation of emissions from Spanish public services is based on the French estimate, adjusted for Spanish public spending, of the carbon intensity of the Spanish economy and its population. \n> This is an initial macroscopic estimate that may be revised in the future.\n",
-    "note": "Source: <a href=\"https://docs.google.com/spreadsheets/d/1zJ-CkVQ8W_HdFVvNyaN4xlRsyoZPzRef4rpiCqyowG4/edit?usp=sharing\">Detailed estimate</a>\n",
-    "formule": "poids des services publics espagnols",
+    "description": "This item includes the footprint of French public services, and market services that can be considered essential to everyone's life, divided by the country's population.  \n\nThe first category \"public services\" includes for example the footprint of French hospitals, or justice. We consider that this footprint should be equally distributed for all citizens, because these are \"republican\" jobs that only democracy can make evolve, not directly by individual consumption choices \n\nThe second category \"market services\" includes the telecommunications network (fiber, telephone, etc.), but also insurance and the post office. These are relatively universal services for which we do not yet have the details that would allow us to distribute the footprint according to the consumption choices of citizens.\n\n<RavijenChartSocietaux/>\n",
+    "note": "\nThe model that allows us to calculate these two constants \"public services\" and \"market services\" is different from the rest of the Nos Gestes Climat model because it is called \"macroscopic\". It is a macroscopic reconstruction based on the volume of money exchanged in billions of € per sector.  \n\nThe inclusion of this macro model allows the UCS model to be hybridized. We can thus say that it is predominantly micro with a macro component. \n\nOur source for the two macro constants is the calculation of the French national footprint by the Ministry of Ecology. Here is the <a href=\"https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021\">most recent article</a>, which gives us an estimate of the national footprint of 8.9 tons in 2021. The figure is extrapolated with a lot of additional uncertainties compared to the figure of 9.2 tons in 2018.\n\nTo understand how this model works, see <a href=\"https://github.com/datagir/nosgestesclimat/issues/1583\">this explanation page</a>.\n",
+    "formule": {
+      "somme": [
+        "services publics",
+        "services marchands"
+      ]
+    },
     "unité": "kgCO2e",
-    "titre.auto": "Societal services",
-    "avec": {
-      "poids des services publics espagnols": 1142.5
-    }
-  },
-  "poids des services publics espagnols": {
-    "valeur": 1142.5,
-    "optimized": true
+    "titre.auto": "Societal services"
   },
   "services sociétaux . question rhétorique": {
     "titre": "Information question on common services",

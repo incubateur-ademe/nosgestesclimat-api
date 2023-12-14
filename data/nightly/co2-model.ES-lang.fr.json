@@ -10127,29 +10127,14 @@
   "services publics": {
     "abréviation": "S. publics",
     "couleur": "#0c2461",
-    "description": "Les services publics ne sont qu'une partie des [services sociétaux](https://nosgestesclimat.fr/documentation/services-soci%C3%A9taux) dont le calcul est basé sur\n[l'estimation de l'empreinte nationale française par le Ministère de l'Écologie](https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021).",
-    "formule": {
-      "somme": [
-        "empreinte branche . C21 par hab . services publics",
-        "empreinte branche . E36 par hab . services publics",
-        "empreinte branche . E37 par hab . services publics",
-        "empreinte branche . E38 par hab . services publics",
-        "empreinte branche . E39 par hab . services publics",
-        "empreinte branche . F42 par hab . services publics",
-        "empreinte branche . F43 par hab . services publics",
-        "empreinte branche . M71 par hab . services publics",
-        "empreinte branche . M72 par hab . services publics",
-        "empreinte branche . N78 par hab . services publics",
-        "empreinte branche . O84 par hab . services publics",
-        "empreinte branche . P85 par hab . services publics",
-        "empreinte branche . Q86 par hab . services publics",
-        "empreinte branche . Q87 par hab . services publics",
-        "empreinte branche . Q88 par hab . services publics"
-      ]
-    },
+    "description": "> Le calcul des émissions des services publics espagnols est basé sur l'estimation française, réajustée des dépenses publiques espagnoles, de l'intensité carbone de l'économie espagnole et de sa population. \n> Il s'agit d'une première estimation macroscopique qui pourra être revue dans le futur.\n",
+    "formule": "poids des services publics espagnols",
     "icônes": "🏛",
     "titre": "Services publics",
-    "unité": "kgCO2e"
+    "unité": "kgCO2e",
+    "avec": {
+      "poids des services publics espagnols": 1142.5
+    }
   },
   "services sociétaux": {
     "titre": "Services sociétaux",
@@ -10157,13 +10142,15 @@
     "couleur": "#0c2461",
     "abréviation": "S. sociétaux",
     "icônes": "🏛️",
-    "description": "> Le calcul des émissions des services publics espagnols est basé sur l'estimation française, réajustée des dépenses publiques espagnoles, de l'intensité carbone de l'économie espagnole et de sa population. \n> Il s'agit d'une première estimation macroscopique qui pourra être revue dans le futur.\n",
-    "note": "Source: [Détail de l'estimation](https://docs.google.com/spreadsheets/d/1zJ-CkVQ8W_HdFVvNyaN4xlRsyoZPzRef4rpiCqyowG4/edit?usp=sharing)\n",
-    "formule": "poids des services publics espagnols",
-    "unité": "kgCO2e",
-    "avec": {
-      "poids des services publics espagnols": 1142.5
-    }
+    "description": "Ce poste inclus l'empreinte des services publics français, et des services marchands que l'on peut considérer comme étant essentiels à la vie de chacun, divisées par la population du pays.  \n\nLa première catégorie \"services publics\" comprend par exemple l'empreinte des hôpitaux français, ou de la justice. Nous considérons que cette empreinte doit être également répartie pour tous les citoyens, car ce sont des postes \"républicains\" que seule la démocratie peut faire évoluer, pas directement par les choix de consommation individuels. \n\nLa deuxième catégorie \"services marchands\" comprend notamment le réseau de télécommunications (fibre, téléphone, etc.), mais aussi les assurances ou encore la poste. Ce sont des services relativement universels pour lesquels nous n'avons pas encore le détail qui nous permettrait de répartir l'empreinte en fonction des choix de consommation des citoyens.\n\n<RavijenChartSocietaux/>\n",
+    "note": "\nLe modèle qui nous permet de calculer ces deux constantes \"services publics\" et \"services marchands\" se distingue du reste du modèle Nos Gestes Climat car il est dit \"macroscopique\". C'est une reconstition macroscopique qui est basée sur les volumes d'échanges d'argent en milliard d'€ par secteurs.  \n\nL'inclusion de ce modèle macro permet d'hybrider le modèle NGC. On peut ainsi dire qu'il est à dominante micro avec une composante macro. \n\nNotre source pour les deux constantes macro est le calcul de l'empreinte nationale française par le Ministère de l'Écologie. Voici [l'article le plus récent](https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021), qui nous donne d'ailleurs une estimation de l'empreinte nationale de 8,9 tonnes en 2021. Le chiffre est extrapolé avec son lot d'incertitudes supplémentaires par rapport au chiffre de 9,2 tonnes en 2018.\n\nPour comprendre comment ce modèle fonctionne, voir [cette page d'explication](https://github.com/datagir/nosgestesclimat/issues/1583).\n",
+    "formule": {
+      "somme": [
+        "services publics",
+        "services marchands"
+      ]
+    },
+    "unité": "kgCO2e"
   },
   "services sociétaux . question rhétorique": {
     "titre": "Question d'information sur les services communs",

@@ -4487,6 +4487,16 @@
     "unité": "kgCO2e",
     "optimized": true
   },
+  "empreinte branche . C21 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Produits pharmaceutiques de base et préparations pharmaceutiques par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de produits pharmaceutiques de base (8%)**\n- **Fabrication de préparations pharmaceutiques (92%)**",
+    "formule": "(5024 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "pharmacie par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
   "empreinte branche . C23 par hab": {
     "avec": {
       "ratio vaisselle": "8.9%"
@@ -4546,6 +4556,66 @@
     "description": "Autres industries manufacturières par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication d’articles de joaillerie, bijouterie et articles similaires (17%)**\n\t- Frappe de monnaie (S)\n\t- Fabrication d’articles de joaillerie et bijouterie (S)\n\t- Fabrication d’articles de bijouterie fantaisie et articles similaires (20%)\n- **Fabrication d'instruments de musique (2%)**\n- **Fabrication d'articles de sport (6%)**\n- **Fabrication de jeux et jouets (3%)**\n- **Fabrication d'instruments et de fournitures à usage médical et dentaire (59%)**\n- **Activités manufacturières n.c.a. (12%)**\n\t- Fabrication d’articles de brosserie (8%)\n\t- Autres activités manufacturières n.c.a. (92%)",
     "formule": "(4287.36 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Autres industries manufacturières par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . E36 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Eau naturelle; traitement et distribution d'eau par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Captage, traitement et distribution d'eau (100%)**",
+    "formule": "(668 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "réseau de distribution d'eau par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . E37 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Collecte et traitement des eaux usées par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Collecte et traitement des eaux usées (100%)**",
+    "formule": "(1403.1 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "traitement des eaux usées par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . E38 par hab": {
+    "avec": {
+      "ratio services publics": "12%"
+    },
+    "description": "Collecte, traitement et élimination des déchets ; récupération par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Collecte des déchets (23%)**\n\t- Collecte des déchets non dangereux (84%)\n\t- Collecte des déchets dangereux (16%)\n- **Traitement et élimination des déchets (24%)**\n\t- Traitement et élimination des déchets non dangereux (S)\n\t- Traitement et élimination des déchets dangereux (S)\n- **Récupération (53%)**\n\t- Démantèlement d'épaves (3%)\n\t- Récupération de déchets triés (97%)",
+    "formule": "(6002.15 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "gestion des déchets par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . E39 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Dépollution et autres services de gestion des déchets par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Dépollution et autres services de gestion des déchets (100%)**",
+    "formule": "(389.75 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "nettoyage bâtiments et sites contaminés par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . F42 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Génie civil par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Construction de routes et de voies ferrées (52%)**\n\t- Construction de routes et autoroutes (71%)\n\t- Construction de voies ferrées de surface et souterraines (9%)\n\t- Construction de ponts et tunnels (20%)\n- **Construction de réseaux et de lignes (33%)**\n\t- Construction de réseaux pour fluides (49%)\n\t- Construction de réseaux électriques et de télécommunications (51%)\n- **Construction d'autres ouvrages de génie civil (15%)**\n\t- Construction d'ouvrages maritimes et fluviaux (25%)\n\t- Construction d'autres ouvrages de génie civil n.c.a. (75%)",
+    "formule": "(6982.04 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "génie civil par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . F43 par hab": {
+    "avec": {
+      "ratio services publics": "54%"
+    },
+    "description": "Travaux de construction spécialisés par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Démolition et préparation des sites (8%)**\n\t- Travaux de démolition (10%)\n\t- Travaux de préparation des sites (86%)\n\t- Forages et sondages (3%)\n- **Travaux d'installation électrique, plomberie et autres travaux d'installation (34%)**\n\t- Installation électrique (44%)\n\t- Travaux de plomberie et installation de chauffage et de conditionnement d'air (43%)\n\t- Autres travaux d'installation (13%)\n- **Travaux de finition (28%)**\n\t- Travaux de plâtrerie (11%)\n\t- Travaux de menuiserie (53%)\n\t- Travaux de revêtement des sols et des murs (12%)\n\t- Travaux de peinture et vitrerie (21%)\n\t- Autres travaux de finition (3%)\n- **Autres travaux de construction spécialisés (30%)**\n\t- Travaux de couverture (19%)\n\t- Autres travaux de construction spécialisés n.c.a. (81%)",
+    "formule": "(32761.88 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "travaux divers (pour ouvrages et bâtiments publics) par habitant",
     "unité": "kgCO2e",
     "optimized": true
   },
@@ -4639,6 +4709,36 @@
     "unité": "kgCO2e",
     "optimized": true
   },
+  "empreinte branche . M71 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Services d'architecture et d'ingénierie; services de contrôle et analyses techniques par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Activités d'architecture et d'ingénierie (86%)**\n\t- Activités d'architecture (12%)\n\t- Activités d'ingénierie (88%)\n- **Activités de contrôle et analyses techniques (14%)**",
+    "formule": "(2438 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "architecture et contrôle du bâti par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . M72 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Services de recherche et développement scientifique par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Recherche-développement en sciences physiques et naturelles (99%)**\n\t- Recherche-développement en biotechnologie (19%)\n\t- Recherche-développement en autres sciences physiques et naturelles (81%)\n- **Recherche-développement en sciences humaines et sociales (1%)**",
+    "formule": "(7811 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "R&D scientifique par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . N78 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Services liés à l'emploi par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Activités des agences de placement de main-d'œuvre (3%)**\n- **Activités des agences de travail temporaire (83%)**\n- **Autre mise à disposition de ressources humaines (14%)**",
+    "formule": "(12 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "activités liées à l'emploi par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
   "empreinte branche . N80 par hab": {
     "avec": {
       "ratio services marchands": "24%"
@@ -4646,6 +4746,56 @@
     "description": "Enquêtes et sécurité par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Activités de sécurité privée (74%)**\n- **Activités liées aux systèmes de sécurité (25%)**\n- **Activités d'enquête (1%)**",
     "formule": "(20.67 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "enquêtes et sécurité par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . O84 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Services d'administration publique et de défense; services de sécurité sociale obligatoire par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Administration générale, économique et sociale (83%)**\n\t- Administration publique générale (73%)\n\t- Administration publique (tutelle) des activités économiques (27%)\n- **Services de prérogative publique (17%)**",
+    "formule": "(16319 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "administration publique et défense par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . P85 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Services de l'enseignement par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Enseignement pré-primaire (0%)**\n- **Enseignement primaire (0%)**\n- **Enseignement secondaire (2%)**\n\t- Enseignement secondaire général (44%)\n\t- Enseignement secondaire technique ou professionnel (56%)\n- **Enseignement supérieur et post-secondaire non supérieur (8%)**\n\t- Enseignement post-secondaire non supérieur (2%)\n\t- Enseignement supérieur (98%)\n- **Autres activités d'enseignement (89%)**\n\t- Enseignement de disciplines sportives et d'activités de loisirs (13%)\n\t- Enseignement culturel (3%)\n\t- Enseignement de la conduite (13%)\n\t- Enseignements divers (72%)\n- **Activités de soutien à l'enseignement (1%)**",
+    "formule": "(8730 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "enseignement par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . Q86 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Services de santé humaine par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Activités hospitalières (16%)**\n- **Activité des médecins et des dentistes (50%)**\n\t- Activité des médecins généralistes (38%)\n\t- Activité des médecins spécialistes (32%)\n\t- Pratique dentaire (29%)\n- **Autres activités pour la santé humaine (33%)**",
+    "formule": "(11024 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "santé par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . Q87 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Hébergement médico-social et social par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Hébergement médicalisé (72%)**\n- **Hébergement social pour personnes handicapées mentales, malades mentales et toxicomanes (0%)**\n- **Hébergement social pour personnes âgées ou handicapées physiques (27%)**\n- **Autres activités d’hébergement social (1%)**",
+    "formule": "(3914.19 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "hébergement médico-social par habitant",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "empreinte branche . Q88 par hab": {
+    "avec": {
+      "ratio services publics": "100%"
+    },
+    "description": "Action sociale sans hébergement par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Action sociale sans hébergement pour personnes âgées et pour personnes handicapées (60%)**\n- **Autre action sociale sans hébergement (40%)**\n\t- Action sociale sans hébergement pour jeunes enfants (88%)\n\t- Autre action sociale sans hébergement n.c.a. (12%)",
+    "formule": "(2298.81 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "actions sociales par habitant",
     "unité": "kgCO2e",
     "optimized": true
   },
@@ -6155,11 +6305,14 @@
   "services publics": {
     "abréviation": "S. publics",
     "couleur": "#0c2461",
-    "description": "Les services publics ne sont qu'une partie des [services sociétaux](https://nosgestesclimat.fr/documentation/services-soci%C3%A9taux) dont le calcul est basé sur\n[l'estimation de l'empreinte nationale française par le Ministère de l'Écologie](https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021).",
+    "description": "> Le calcul des émissions des services publics espagnols est basé sur l'estimation française, réajustée des dépenses publiques espagnoles, de l'intensité carbone de l'économie espagnole et de sa population. \n> Il s'agit d'une première estimation macroscopique qui pourra être revue dans le futur.\n",
     "icônes": "🏛",
     "titre": "Services publics",
     "unité": "kgCO2e",
-    "valeur": "1279.3145022075946",
+    "avec": {
+      "poids des services publics espagnols": 1142.5
+    },
+    "valeur": "1142.5",
     "optimized": true
   },
   "services sociétaux": {
@@ -6168,17 +6321,15 @@
     "couleur": "#0c2461",
     "abréviation": "S. sociétaux",
     "icônes": "🏛️",
-    "description": "> Le calcul des émissions des services publics espagnols est basé sur l'estimation française, réajustée des dépenses publiques espagnoles, de l'intensité carbone de l'économie espagnole et de sa population. \n> Il s'agit d'une première estimation macroscopique qui pourra être revue dans le futur.\n",
-    "note": "Source: [Détail de l'estimation](https://docs.google.com/spreadsheets/d/1zJ-CkVQ8W_HdFVvNyaN4xlRsyoZPzRef4rpiCqyowG4/edit?usp=sharing)\n",
-    "formule": "poids des services publics espagnols",
-    "unité": "kgCO2e",
-    "avec": {
-      "poids des services publics espagnols": 1142.5
-    }
-  },
-  "poids des services publics espagnols": {
-    "valeur": 1142.5,
-    "optimized": true
+    "description": "Ce poste inclus l'empreinte des services publics français, et des services marchands que l'on peut considérer comme étant essentiels à la vie de chacun, divisées par la population du pays.  \n\nLa première catégorie \"services publics\" comprend par exemple l'empreinte des hôpitaux français, ou de la justice. Nous considérons que cette empreinte doit être également répartie pour tous les citoyens, car ce sont des postes \"républicains\" que seule la démocratie peut faire évoluer, pas directement par les choix de consommation individuels. \n\nLa deuxième catégorie \"services marchands\" comprend notamment le réseau de télécommunications (fibre, téléphone, etc.), mais aussi les assurances ou encore la poste. Ce sont des services relativement universels pour lesquels nous n'avons pas encore le détail qui nous permettrait de répartir l'empreinte en fonction des choix de consommation des citoyens.\n\n<RavijenChartSocietaux/>\n",
+    "note": "\nLe modèle qui nous permet de calculer ces deux constantes \"services publics\" et \"services marchands\" se distingue du reste du modèle Nos Gestes Climat car il est dit \"macroscopique\". C'est une reconstition macroscopique qui est basée sur les volumes d'échanges d'argent en milliard d'€ par secteurs.  \n\nL'inclusion de ce modèle macro permet d'hybrider le modèle NGC. On peut ainsi dire qu'il est à dominante micro avec une composante macro. \n\nNotre source pour les deux constantes macro est le calcul de l'empreinte nationale française par le Ministère de l'Écologie. Voici [l'article le plus récent](https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021), qui nous donne d'ailleurs une estimation de l'empreinte nationale de 8,9 tonnes en 2021. Le chiffre est extrapolé avec son lot d'incertitudes supplémentaires par rapport au chiffre de 9,2 tonnes en 2018.\n\nPour comprendre comment ce modèle fonctionne, voir [cette page d'explication](https://github.com/datagir/nosgestesclimat/issues/1583).\n",
+    "formule": {
+      "somme": [
+        "services publics",
+        "services marchands"
+      ]
+    },
+    "unité": "kgCO2e"
   },
   "services sociétaux . question rhétorique": {
     "titre": "Question d'information sur les services communs",

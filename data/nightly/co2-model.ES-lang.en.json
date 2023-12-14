@@ -12568,30 +12568,15 @@
   "services publics": {
     "abréviation": "S. public",
     "couleur": "#0c2461",
-    "description": "Utilities are only part of the <a href=\"https://nosgestesclimat.fr/documentation/services-soci%C3%A9taux\">societal services</a> whose calculation is based on\n<a href=\"https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021\">the estimate of the French national footprint by the Ministry of Ecology</a>.",
-    "formule": {
-      "somme": [
-        "empreinte branche . C21 par hab . services publics",
-        "empreinte branche . E36 par hab . services publics",
-        "empreinte branche . E37 par hab . services publics",
-        "empreinte branche . E38 par hab . services publics",
-        "empreinte branche . E39 par hab . services publics",
-        "empreinte branche . F42 par hab . services publics",
-        "empreinte branche . F43 par hab . services publics",
-        "empreinte branche . M71 par hab . services publics",
-        "empreinte branche . M72 par hab . services publics",
-        "empreinte branche . N78 par hab . services publics",
-        "empreinte branche . O84 par hab . services publics",
-        "empreinte branche . P85 par hab . services publics",
-        "empreinte branche . Q86 par hab . services publics",
-        "empreinte branche . Q87 par hab . services publics",
-        "empreinte branche . Q88 par hab . services publics"
-      ]
-    },
+    "description": "> The calculation of emissions from Spanish public services is based on the French estimate, adjusted for Spanish public spending, of the carbon intensity of the Spanish economy and its population. \n> This is an initial macroscopic estimate that may be revised in the future.\n",
+    "formule": "poids des services publics espagnols",
     "icônes": "🏛",
     "titre": "Public Services",
     "unité": "kgCO2e",
-    "titre.auto": "Public services"
+    "titre.auto": "Public services",
+    "avec": {
+      "poids des services publics espagnols": 1142.5
+    }
   },
   "services sociétaux": {
     "titre": "Societal services",
@@ -12599,14 +12584,16 @@
     "couleur": "#0c2461",
     "abréviation": "S. societal",
     "icônes": "🏛️",
-    "description": "> The calculation of emissions from Spanish public services is based on the French estimate, adjusted for Spanish public spending, of the carbon intensity of the Spanish economy and its population. \n> This is an initial macroscopic estimate that may be revised in the future.\n",
-    "note": "Source: <a href=\"https://docs.google.com/spreadsheets/d/1zJ-CkVQ8W_HdFVvNyaN4xlRsyoZPzRef4rpiCqyowG4/edit?usp=sharing\">Detailed estimate</a>\n",
-    "formule": "poids des services publics espagnols",
+    "description": "This item includes the footprint of French public services, and market services that can be considered essential to everyone's life, divided by the country's population.  \n\nThe first category \"public services\" includes for example the footprint of French hospitals, or justice. We consider that this footprint should be equally distributed for all citizens, because these are \"republican\" jobs that only democracy can make evolve, not directly by individual consumption choices \n\nThe second category \"market services\" includes the telecommunications network (fiber, telephone, etc.), but also insurance and the post office. These are relatively universal services for which we do not yet have the details that would allow us to distribute the footprint according to the consumption choices of citizens.\n\n<RavijenChartSocietaux/>\n",
+    "note": "\nThe model that allows us to calculate these two constants \"public services\" and \"market services\" is different from the rest of the Nos Gestes Climat model because it is called \"macroscopic\". It is a macroscopic reconstruction based on the volume of money exchanged in billions of € per sector.  \n\nThe inclusion of this macro model allows the UCS model to be hybridized. We can thus say that it is predominantly micro with a macro component. \n\nOur source for the two macro constants is the calculation of the French national footprint by the Ministry of Ecology. Here is the <a href=\"https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021\">most recent article</a>, which gives us an estimate of the national footprint of 8.9 tons in 2021. The figure is extrapolated with a lot of additional uncertainties compared to the figure of 9.2 tons in 2018.\n\nTo understand how this model works, see <a href=\"https://github.com/datagir/nosgestesclimat/issues/1583\">this explanation page</a>.\n",
+    "formule": {
+      "somme": [
+        "services publics",
+        "services marchands"
+      ]
+    },
     "unité": "kgCO2e",
-    "titre.auto": "Societal services",
-    "avec": {
-      "poids des services publics espagnols": 1142.5
-    }
+    "titre.auto": "Societal services"
   },
   "services sociétaux . question rhétorique": {
     "titre": "Information question on common services",
