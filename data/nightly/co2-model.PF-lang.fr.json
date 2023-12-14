@@ -8144,7 +8144,7 @@
     },
     "icônes": "🌡️",
     "question": "Quel type d'énergie utilisez-vous pour le chauffage de votre logement, eau chaude, cuisson, etc. ?",
-    "description": "> Cette question couvre l'ensemble des sources d'énergie qui vous permet d'alimenter vos chauffages, votre chauffe-eau, vos plaques de cuisson, etc.\n\nCertains logements utilisent uniquement de l'électricité, d'autres sont entièrement chauffés au gaz, et plus rarement au bois ou au fioul.\nDans d'autres situations encore, un logement peut être chauffé principalement via des chauffages électriques ou une pompe à chaleur,\nmais avec un appoint bois, par exemple. Enfin, il est possible de prendre en compte également vos consommations de gaz pour votre van ou camping-car. \n\nSi vous vivez dans plusieurs logements (par exemple, si vous avez une résidence secondaire), essayez de \"ramener\" ces consommations dans celles du logement principal afin d'avoir l'estimation la plus juste possible.\n\nCochez tous les modes que vous utilisez.\n",
+    "description": "> Cette question couvre l'ensemble des sources d'énergie qui vous permet d'alimenter vos chauffages, votre chauffe-eau, vos plaques de cuisson, etc.\n\nCertains logements utilisent uniquement de l'électricité, d'autres sont entièrement chauffés au gaz, et plus rarement au bois ou au fioul.\nDans d'autres situations encore, un logement peut être chauffé principalement via des chauffages électriques ou une pompe à chaleur,\nmais avec un appoint bois, par exemple. Enfin, il est possible de prendre en compte également vos consommations de gaz pour votre van ou camping-car. \n\nCochez tous les modes que vous utilisez.\n",
     "formule": {
       "variations": [
         {
@@ -8761,7 +8761,8 @@
     }
   },
   "parc français . chauffage . empreinte électricité moyenne par m2": {
-    "formule": "surface . part électricité * empreinte électricité par m2"
+    "formule": "surface . part électricité * empreinte électricité par m2",
+    "unité": "kgCO2e/m2"
   },
   "parc français . chauffage . consommation électricité": {
     "formule": "chauffage + ecs + cuisson",
@@ -9234,20 +9235,32 @@
           "si": {
             "toutes ces conditions": [
               {
-                "est défini": "appartement"
+                "est défini": "logement . appartement"
               },
-              "appartement"
+              "logement . appartement"
             ]
           },
-          "alors": 525
+          "alors": "par surface . appartement"
         },
         {
-          "sinon": 425
+          "sinon": "par surface . maison"
         }
       ]
     },
     "unité": "kgCO2e/m2",
     "note": "L'entrée dans la base carbone ne donne pas plus d'informations sur cette catégorie de méthode de construction. Voir la [documentation de la base empreinte, onglet Achats de bien/ Bâtiments](https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/).\n\nLe facteur d'émission titre \"Maison éco-construite\", faute d'informations nous considérons qu'il est le même pour un appartement éco-construit.\n\nCependant, [cette étude de Carbone 4](https://www.carbone4.com/sauver-le-climat-avec-nos-forets-la-construction-touche-du-bois-2) affirme un réduction de 55% du béton au bois pour la maison, et de 60% pour l'appartement.\n\nNotons que pour le logement éco-construit, le CO₂ biogénique stocké n'est pas comptabilisé, seul le CO₂ fossile émis l'est.\n\nPour le logement éco-construit, nous retenons le facteur d'émission de la base carbone, mais il semble confirmé en ordre de grandeur dans l'étude Carbone 4.\n\n> Gains observés sur le CO₂ fossile du poste gros-œuvre (fondations et structure), en comparaison au béton. \n\nLe stockage de carbone dans le produit bois n’est pas pris en compte.\n\nGains liés à la substitution matériau: \n - MI bois CLT: 118 kgCO2e/m2 SHON, soit 473 kgCO2e/m3 de produit bois. \n - MI bois ossature : 83 kgCO2e/m2 SHON, soit 2495 kgCO2e/m3 de produit bois. \n - LC bois CLT : 231 kgCO2e/m2 SHON, soit 699 kgCO2e/m3 de produit bois.\n - LC bois ossature : 139 kgCO2e/m2 SHON, soit 3172 kgCO2e/m3 de produit bois.\n"
+  },
+  "logement . construction . par surface . appartement": {
+    "titre": "Empreinte appartement par m2",
+    "formule": 525,
+    "unité": "kgCO2e/m2",
+    "note": "Facteur d'émission issu de la Base Empreinte."
+  },
+  "logement . construction . par surface . maison": {
+    "titre": "Empreinte maison par m2",
+    "formule": 425,
+    "unité": "kgCO2e/m2",
+    "note": "Facteur d'émission issu de la Base Empreinte."
   },
   "logement . éco-construit": {
     "question": "Votre logement est-il fait en bois, paille, pierre ou terre (éco-construit) ?",
@@ -9883,7 +9896,8 @@
         "auberge de jeunesse . présent",
         "locations . présent",
         "famille ou amis . présent",
-        "échange . présent"
+        "échange . présent",
+        "résidence secondaire . présent"
       ],
       "suggestions": {
         "aucun": {
@@ -9892,14 +9906,15 @@
           "auberge de jeunesse . présent": "non",
           "locations . présent": "non",
           "famille ou amis . présent": "non",
-          "échange . présent": "non"
+          "échange . présent": "non",
+          "résidence secondaire . présent": "non"
         }
       }
     },
     "question": "Comment êtes-vous hébergé pour vos week-ends, vos vacances ?",
     "icônes": "🏖",
     "description": "Renseignez ici les différents types de logement que vous occupez pour vos voyages (**motif personnel**).\n\n> 💡 Si vous ne partez jamais en week-end ou en vacances, vous pouvez cliquer sur \"aucun\" juste en dessous de cette question, puis \"Suivant\".\n",
-    "note": "### Qu'entend-on par \"nuitées hors logement\" dans Nos Gestes Climat?\n\n  - Hôtel ou chambre d'hôtes\n  - Emplacement en camping\n  - Auberge de jeunesse\n  - Locations meublées\n  - Famille ou amis\n  - Échange de maison\n  - Maison secondaire\n\nSont donc exclues les nuits en hôtel pour **raisons professionnelles**.\n\n### Vers une première version\n\nDans un premier temps, l'idée est de restreindre le périmètre de la V1 au secteur du tourisme (maison secondaire exclue).\n\nPour l'empreinte d'une nuit au sein de sa famille ou chez des amis, l'empreinte est aujourd'hui indirectement comptée dans l'empreinte des accueillants.\n\nEn ce qui concerne les hôtels et les chambres privées / chambres d'hôtes, nous considérons un facteur d'émission commun pour le moment.\n\nDans cette première version, l'empreinte de l'hôtel sera divisée par le nombre d'habitants du logement. C'est une hypothèse forte car on peut facilement imaginer que le famille / foyer ne voyage pas toujours au complet !\nDe même, on fait l'hypothèse qu'une famille composée de plus de 4 personnes prendra 2 chambres. \n\nOn doit introduire ici, dans la formule, le nombre d'habitants du logement car une nuit une auberge de jeunesse est généralement caractérisée par un lit seul dans un dortoir.\n",
+    "note": "### Qu'entend-on par \"nuitées hors logement\" dans Nos Gestes Climat?\n\n  - Hôtel ou chambre d'hôtes\n  - Emplacement en camping\n  - Auberge de jeunesse\n  - Locations meublées\n  - Famille ou amis\n  - Échange de maison\n  - Résidence secondaire\n\nSont donc exclues les nuits en hôtel pour **raisons professionnelles**.\n\n### Vers une première version\n\nDans un premier temps, l'idée est de restreindre le périmètre de la V1 au secteur du tourisme (résidence secondaire exclue).\n\nPour l'empreinte d'une nuit au sein de sa famille ou chez des amis, l'empreinte est aujourd'hui indirectement comptée dans l'empreinte des accueillants.\n\nEn ce qui concerne les hôtels et les chambres privées / chambres d'hôtes, nous considérons un facteur d'émission commun pour le moment.\n\nDans cette première version, l'empreinte de l'hôtel sera divisée par le nombre d'habitants du logement. C'est une hypothèse forte car on peut facilement imaginer que le famille / foyer ne voyage pas toujours au complet !\nDe même, on fait l'hypothèse qu'une famille composée de plus de 4 personnes prendra 2 chambres. \n\nOn doit introduire ici, dans la formule, le nombre d'habitants du logement car une nuit une auberge de jeunesse est généralement caractérisée par un lit seul dans un dortoir.\n",
     "formule": {
       "variations": [
         {
@@ -9921,10 +9936,10 @@
         "empreinte locations",
         "empreinte échange",
         "empreinte famille ou amis",
-        "maison secondaire"
-      ],
-      "unité": "kgCO2e"
-    }
+        "empreinte résidence secondaire"
+      ]
+    },
+    "unité": "kgCO2e"
   },
   "logement . vacances . empreinte par défaut": {
     "description": "Un calcul statistique des nuitées pour les séjours hors logement pour un français moyen sur la base des données du modèle NGC.",
@@ -9934,7 +9949,8 @@
         "camping . nombre de nuitées . moyenne * camping . empreinte par nuit",
         "auberge de jeunesse . nombre de nuitées . moyenne * auberge de jeunesse . empreinte par nuit * logement . habitants",
         "locations . nombre de nuitées . moyenne * locations . empreinte par nuit",
-        "échange . nombre de nuitées . moyenne * échange . empreinte par nuit"
+        "échange . nombre de nuitées . moyenne * échange . empreinte par nuit",
+        "résidence secondaire . empreinte moyenne"
       ]
     },
     "unité": "kgCO2e"
@@ -9960,6 +9976,9 @@
         },
         {
           "est défini": "échange . présent"
+        },
+        {
+          "est défini": "résidence secondaire . présent"
         }
       ]
     }
@@ -10236,24 +10255,405 @@
     "formule": "famille ou amis . présent",
     "description": "Vous avez renseigné \"Famille ou amis\" : l'empreinte associée à ces nuits sera nulle, c'est compté dans l'empreinte des accueillants !\n"
   },
-  "logement . vacances . maison secondaire": {
-    "titre": "Maison secondaire",
-    "icônes": "🏡",
+  "logement . vacances . empreinte résidence secondaire": {
+    "titre": "Empreinte résidence secondaire",
     "applicable si": {
       "toutes ces conditions": [
         {
-          "est défini": "maison secondaire . présent"
+          "est défini": "résidence secondaire . présent"
         },
-        "maison secondaire . présent"
+        "résidence secondaire . présent"
       ]
     },
-    "formule": 0,
-    "note": "Pour le moment, nous n'avons pas implémenté le modèle de la maison secondaire mais les discussions sont en cours sur notre dépôt Github :\n  - https://github.com/datagir/nosgestesclimat/issues/1309\n  - https://github.com/datagir/nosgestesclimat/pull/1455\n"
+    "formule": {
+      "somme": [
+        "résidence secondaire . construction",
+        "résidence secondaire . énergie"
+      ]
+    },
+    "unité": "kgCO2e"
   },
-  "logement . vacances . maison secondaire . présent": {
-    "question": "Possédez-vous une maison secondaire ?",
-    "par défaut": "non",
-    "inactif": "oui"
+  "logement . vacances . résidence secondaire": {
+    "titre": "résidence secondaire",
+    "icônes": "🏡"
+  },
+  "logement . vacances . résidence secondaire . présent": {
+    "question": "Possédez-vous une résidence secondaire ?",
+    "note": "Pour le moment, nous n'attribuons l'empreinte de la maison secondaire qu'aux propriétaires,\net non \"une partie\" de l'empreinte à tous les français.\n"
+  },
+  "logement . vacances . résidence secondaire . empreinte moyenne": {
+    "formule": "empreinte moyenne construction + empreinte moyenne énergie"
+  },
+  "logement . vacances . résidence secondaire . empreinte moyenne construction": {
+    "formule": "parc français . surface moyenne * résidence secondaire . annuelle et par surface * pourcentage population propriétaire résidence secondaire"
+  },
+  "logement . vacances . résidence secondaire . pourcentage population propriétaire résidence secondaire": {
+    "formule": 0.13,
+    "note": "[Source](https://www.data.gouv.fr/fr/reuses/classement-des-25-communes-avec-le-plus-fort-taux-de-residences-secondaires/)\n"
+  },
+  "logement . vacances . résidence secondaire . empreinte moyenne énergie": {
+    "formule": {
+      "recalcul": {
+        "règle": "résidence secondaire . énergie",
+        "avec": {
+          "résidence secondaire . surface": "parc français . surface moyenne",
+          "résidence secondaire . durée": "résidence secondaire . nombre de nuitées . moyenne"
+        }
+      }
+    },
+    "unité": "kgCO2e"
+  },
+  "logement . vacances . résidence secondaire . construction": {
+    "formule": "surface * annuelle et par surface",
+    "unité": "kgCO2e"
+  },
+  "logement . vacances . résidence secondaire . surface": {
+    "titre": "Surface",
+    "question": "Quelle est la surface de votre résidence secondaire ?",
+    "par défaut": "parc français . surface moyenne",
+    "note": "Valeur par défaut obtenue dans [ce jeu de données du Ceren et SDES](https://www.statistiques.developpement-durable.gouv.fr/consommation-denergie-par-usage-du-residentiel).\n",
+    "suggestions": {
+      "studio": 25,
+      "3 pièces": 70,
+      "maison": 120,
+      "château 🏰": 1000
+    },
+    "unité": "m2"
+  },
+  "logement . vacances . résidence secondaire . annuelle et par surface": {
+    "formule": "par surface / logement . construction . durée d'amortissement",
+    "unité": "kgCO2e/m2"
+  },
+  "logement . vacances . résidence secondaire . par surface": {
+    "formule": {
+      "moyenne": [
+        "logement . construction . par surface . appartement",
+        "logement . construction . par surface . maison"
+      ]
+    },
+    "unité": "kgCO2e/m2"
+  },
+  "logement . vacances . résidence secondaire . localisation": {
+    "titre": "Localisation",
+    "question": "Où se situe votre résidence secondaire ?",
+    "note": "D'après [cette source](https://www.insee.fr/fr/statistiques/5416748#graphique-figure3), nous avons la répartition des résidences secondaires par type d'EPCI (établissements publics de coopération intercommunale, autrement souvent appelés \"communautés de communes\") :\n\n- EPCI sur le littoral nord-ouest : 25%\n- EPCI sur le littoral méditerranéen : 16%\n- EPCI à plus de 750 m d’altitude : 16%\n- EPCI densément peuplés, hors littoral et altitude : 12%\n- Autres EPCI : 32%\n",
+    "formule": {
+      "une possibilité": {
+        "choix obligatoire": "oui",
+        "possibilités": [
+          "littoral méditerranéen",
+          "littoral nord ouest",
+          "montagne",
+          "ville",
+          "campagne"
+        ]
+      }
+    },
+    "par défaut": "'littoral nord ouest'",
+    "description": "Si votre résidence secondaire se situe en ville, sur le littoral, privilégiez \"littoral\"."
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral méditerranéen": {
+    "titre": "Littoral méditerranéen",
+    "icônes": "🏖️",
+    "description": "Appartement ou maison situé sur le pourtour méditerranéen"
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral nord ouest": {
+    "titre": "Littoral nord-ouest",
+    "icônes": "🌊",
+    "description": "Appartement ou maison situé en Atlantique, Manche ou Mer du Nord"
+  },
+  "logement . vacances . résidence secondaire . localisation . montagne": {
+    "titre": "Montagne",
+    "icônes": "⛰️",
+    "description": "Appartement ou maison situé dans les Alpes, les Vosges, le Jura, le Massif Central ou les Pyrénées"
+  },
+  "logement . vacances . résidence secondaire . localisation . ville": {
+    "titre": "Ville",
+    "icônes": "🏙️",
+    "description": "Appartement ou maison situé en centre-ville"
+  },
+  "logement . vacances . résidence secondaire . localisation . campagne": {
+    "titre": "Campagne",
+    "icônes": "🚜",
+    "description": "Résidence située à distance de la mer, de la montagne, ou d'une grande ville"
+  },
+  "logement . vacances . résidence secondaire . énergie": {
+    "formule": {
+      "somme": [
+        "électricité",
+        "chauffage"
+      ]
+    }
+  },
+  "logement . vacances . résidence secondaire . électricité": {
+    "formule": "parc français . empreinte électricité autre par m2 * surface * pro-rata présence annuelle",
+    "unité": "kgCO2e"
+  },
+  "logement . vacances . résidence secondaire . pro-rata présence annuelle": {
+    "formule": "durée / commun . jours par an * 1 jour/nuit"
+  },
+  "logement . vacances . résidence secondaire . nombre de nuitées . moyenne": {
+    "titre": "Nombre de nuitées en moyenne par français",
+    "formule": "nombre de nuits hors logement * part mode d'hébergement résidence secondaire",
+    "unité": "nuit"
+  },
+  "logement . vacances . résidence secondaire . nombre de nuitées . moyenne . part mode d'hébergement résidence secondaire": {
+    "formule": 0.077,
+    "note": "Excel \"Caractéristiques des voyageurs personnels et professionnels - EMP 2019\" de [l'enquête mobilité des français de 2019](https://www.statistiques.developpement-durable.gouv.fr/resultats-detailles-de-lenquete-mobilite-des-personnes-de-2019?rubrique=60&dossier=1345).\n\nOn considère ici les hébergements \"résidence secondaire\".\n"
+  },
+  "logement . vacances . résidence secondaire . durée": {
+    "mosaique": {
+      "type": "nombre",
+      "options": [
+        "nuitées week end . nombre",
+        "nuitées semaine . nombre"
+      ],
+      "suggestions": {
+        "tout l'été": {
+          "nuitées week end . nombre": 0,
+          "nuitées semaine . nombre": 8
+        }
+      }
+    },
+    "question": "Combien de temps passez-vous dans votre résidence secondaire chaque année ?",
+    "description": "Ne renseignez bien que le temps que vous y passez vous. Si votre résidence secondaire est utilisée par d'autres (famille, amis), l'empreinte associée à cet usage leur est imputé.",
+    "formule": {
+      "somme": [
+        "nuitées week end",
+        "nuitées semaine"
+      ]
+    },
+    "unité": "nuit",
+    "note": "D'après [cette source](https://www.lesechos.fr/2012/06/tres-chere-residence-secondaire-359079), le temps moyen passé dans une résidence secondaire est de 42 nuitées par an.\nNous attribuons donc par défaut 3 week-ends et 5 semaines passées en résidence secondaire.\n"
+  },
+  "logement . vacances . résidence secondaire . durée . nuitées week end": {
+    "titre": "Week-end(s)",
+    "icônes": "📆",
+    "formule": "nombre * 2",
+    "note": "On considère qu'un week-end correspond à 2 nuitées."
+  },
+  "logement . vacances . résidence secondaire . durée . nuitées week end . nombre": {
+    "question": "Combien de week-ends passez-vous dans votre maison secondaire ?",
+    "par défaut": 3,
+    "unité": "nuit"
+  },
+  "logement . vacances . résidence secondaire . durée . nuitées semaine": {
+    "titre": "Semaine(s)",
+    "icônes": "🗓️",
+    "formule": "nombre * 7",
+    "note": "On considère qu'une semaine correspond à 7 nuitées."
+  },
+  "logement . vacances . résidence secondaire . durée . nuitées semaine . nombre": {
+    "question": "Combien de semaines passez-vous dans votre maison secondaire ?",
+    "par défaut": 5,
+    "unité": "nuit"
+  },
+  "logement . vacances . résidence secondaire . chauffage": {
+    "formule": "facteur saison * (parc français . chauffage . empreinte moyenne par m2 hors électricité + parc français . chauffage . empreinte électricité moyenne par m2) * surface * pro-rata présence annuelle",
+    "unité": "kgCO2e",
+    "description": "Pour calculer les facteurs saisons, dépendant à la fois de la localisation de la résidence secondaire et de la saison où il est fréquenté, nous nous sommes appuyés sur les données de degrés-heures disponibles par zones climatiques, \nque l'on peut retrouver dans [ce tableau](https://docs.google.com/spreadsheets/d/1sQp51C2zgBi3KiKrMCvXNtd26NJGHhE41z_UxsBKU94/edit#gid=0).\nCes degrés-heures sont trouvables en annexe de l'Arrêté du 8 octobre 2021 modifiant la méthode de calcul et les modalités d’établissement du diagnostic de performance énergétique, [disponible ici](https://www.socotec-certification-international.fr/s3fs-public/2022-10/arrete-8-octobre-2021_compressed.pdf).\n\nEn France, on distingue trois zones climatiques : H1, la zone la plus froide, la moitié Nord-Est de la France. H2, une zone tempérée à l'Ouest et au Sud-Ouest. H3, la zone la plus chaude, le Sud-Est de la France et les DOM-TOM.\n\n![Zones climatiques France](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/RT_2005_zone_climatique-2.svg/1176px-RT_2005_zone_climatique-2.svg.png)\n\nPour nos calculs, nous avons opté pour les hypothèses suivantes :\n\n  - Les logements situés sur le littoral nord-ouest, en campagne ou à la ville, correspondent à la moyenne des zones H1 et H2 < 800 mètres d'altitude\n  - Les logements situés sur le littoral méditerranéen correspondent à la zone H3 < 400 mètres d'altitude\n  - Les logements situés en montagne correspondent aux zones H1 et H2 > 800 mètres d'altitude\n\nNous avons rapporté cela à la moyenne par jour des degrés-heures à l'année, pour établir les facteurs multiplicateurs de la moyenne de degrés-heures de chauffage pour une journée quelle que soit la localisation.\n\n![Facteurs multiplicateurs par zone climatique et par période](https://github.com/incubateur-ademe/nosgestesclimat/assets/55186402/c328fa42-bae6-4391-becf-a31cbaf32201)\n"
+  },
+  "logement . vacances . résidence secondaire . chauffage . facteur saison": {
+    "formule": {
+      "variations": [
+        {
+          "si": "localisation = 'littoral méditerranéen'",
+          "alors": "localisation . littoral méditerranéen . facteur saison"
+        },
+        {
+          "si": "localisation = 'littoral nord ouest'",
+          "alors": "localisation . littoral nord ouest . facteur saison"
+        },
+        {
+          "si": "localisation = 'montagne'",
+          "alors": "localisation . montagne . facteur saison"
+        },
+        {
+          "si": "localisation = 'campagne'",
+          "alors": "localisation . campagne . facteur saison"
+        },
+        {
+          "si": "localisation = 'ville'",
+          "alors": "localisation . ville . facteur saison"
+        }
+      ]
+    }
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral méditerranéen . facteur saison": {
+    "avec": {
+      "facteur hiver": 1.62,
+      "facteur surtout hiver": 1.41,
+      "facteur été": 0,
+      "facteur surtout été": 0.13
+    },
+    "formule": {
+      "variations": [
+        {
+          "si": "saison = 'hiver'",
+          "alors": "facteur hiver"
+        },
+        {
+          "si": "saison = 'surtout hiver'",
+          "alors": "facteur surtout hiver"
+        },
+        {
+          "si": "saison = 'été'",
+          "alors": "facteur été"
+        },
+        {
+          "si": "saison = 'surtout été'",
+          "alors": "facteur surtout été"
+        }
+      ]
+    }
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral nord ouest . facteur saison": {
+    "avec": {
+      "facteur hiver": 2.26,
+      "facteur surtout hiver": 1.71,
+      "facteur été": 0.06,
+      "facteur surtout été": 0.46
+    },
+    "formule": {
+      "variations": [
+        {
+          "si": "saison = 'hiver'",
+          "alors": "facteur hiver"
+        },
+        {
+          "si": "saison = 'surtout hiver'",
+          "alors": "facteur surtout hiver"
+        },
+        {
+          "si": "saison = 'été'",
+          "alors": "facteur été"
+        },
+        {
+          "si": "saison = 'surtout été'",
+          "alors": "facteur surtout été"
+        }
+      ]
+    }
+  },
+  "logement . vacances . résidence secondaire . localisation . campagne . facteur saison": {
+    "avec": {
+      "facteur hiver": 2.26,
+      "facteur surtout hiver": 1.71,
+      "facteur été": 0.06,
+      "facteur surtout été": 0.46
+    },
+    "formule": {
+      "variations": [
+        {
+          "si": "saison = 'hiver'",
+          "alors": "facteur hiver"
+        },
+        {
+          "si": "saison = 'surtout hiver'",
+          "alors": "facteur surtout hiver"
+        },
+        {
+          "si": "saison = 'été'",
+          "alors": "facteur été"
+        },
+        {
+          "si": "saison = 'surtout été'",
+          "alors": "facteur surtout été"
+        }
+      ]
+    }
+  },
+  "logement . vacances . résidence secondaire . localisation . ville . facteur saison": {
+    "avec": {
+      "facteur hiver": 2.26,
+      "facteur surtout hiver": 1.71,
+      "facteur été": 0.06,
+      "facteur surtout été": 0.46
+    },
+    "formule": {
+      "variations": [
+        {
+          "si": "saison = 'hiver'",
+          "alors": "facteur hiver"
+        },
+        {
+          "si": "saison = 'surtout hiver'",
+          "alors": "facteur surtout hiver"
+        },
+        {
+          "si": "saison = 'été'",
+          "alors": "facteur été"
+        },
+        {
+          "si": "saison = 'surtout été'",
+          "alors": "facteur surtout été"
+        }
+      ]
+    }
+  },
+  "logement . vacances . résidence secondaire . localisation . montagne . facteur saison": {
+    "avec": {
+      "facteur hiver": 2.68,
+      "facteur surtout hiver": 2.15,
+      "facteur été": 0.06,
+      "facteur surtout été": 0.76
+    },
+    "formule": {
+      "variations": [
+        {
+          "si": "saison = 'hiver'",
+          "alors": "facteur hiver"
+        },
+        {
+          "si": "saison = 'surtout hiver'",
+          "alors": "facteur surtout hiver"
+        },
+        {
+          "si": "saison = 'été'",
+          "alors": "facteur été"
+        },
+        {
+          "si": "saison = 'surtout été'",
+          "alors": "facteur surtout été"
+        }
+      ]
+    }
+  },
+  "logement . vacances . résidence secondaire . saison": {
+    "question": "À quelle(s) saison(s) vous rendez-vous majoritairement dans votre résidence secondaire ?",
+    "formule": {
+      "une possibilité": {
+        "choix obligatoire": "oui",
+        "possibilités": [
+          "été",
+          "surtout été",
+          "surtout hiver",
+          "hiver"
+        ]
+      }
+    },
+    "par défaut": "'surtout été'",
+    "note": "Au vu de la répartition des vacances scolaires annuelle, et de la répartition des localisations de résidences secondaires (40% sur le littoral, moins de 20% à la montagne), nous choisissons de considérer qu'en moyenne les propriétaires de résidence secondaire les fréquentent surtout en période estivale.\n"
+  },
+  "logement . vacances . résidence secondaire . saison . été": {
+    "titre": "Seulement l'été",
+    "icônes": "☀️",
+    "description": "Vous ne vous rendez dans votre résidence secondaire qu'en été."
+  },
+  "logement . vacances . résidence secondaire . saison . surtout été": {
+    "titre": "Surtout l'été",
+    "icônes": "🌤️",
+    "description": "Vous vous rendez dans votre résidence secondaire majoritairement en été."
+  },
+  "logement . vacances . résidence secondaire . saison . surtout hiver": {
+    "titre": "Surtout l'hiver",
+    "icônes": "⛈️",
+    "description": "Vous vous rendez dans votre résidence secondaire majoritairement en hiver."
+  },
+  "logement . vacances . résidence secondaire . saison . hiver": {
+    "titre": "Seulement l'hiver",
+    "icônes": "❄️",
+    "description": "Vous ne vous rendez dans votre résidence secondaire qu'en hiver."
   },
   "services marchands": {
     "abréviation": "S. marchands",

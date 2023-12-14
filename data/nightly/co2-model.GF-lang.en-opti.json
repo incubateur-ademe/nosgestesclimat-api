@@ -5401,7 +5401,7 @@
     },
     "icônes": "🌡️",
     "question": "What type of energy do you use for heating, hot water, cooking, etc.?",
-    "description": "> This question covers all the energy sources you use to power your heaters, water heaters, hotplates and so on.\n\nSome homes use electricity only, others are heated entirely by gas, and more rarely by wood or oil.\nIn still other situations, a home may be heated mainly by electric heaters or a heat pump,\nbut with wood heating, for example. Finally, you can also take into account your gas consumption for your van or motorhome. \n\nIf you live in several dwellings (for example, if you have a second home), try to \"reduce\" these consumptions to those of the main dwelling, to get the most accurate estimate possible.\n\nTick all the modes you use.\n",
+    "description": "> This question covers all the energy sources you use to power your heaters, water heaters, hobs, etc.\n\nSome homes use electricity only, others are heated entirely by gas, and more rarely by wood or oil.\nIn still other situations, a home may be heated mainly by electric heaters or a heat pump,\nbut with wood as a back-up, for example. Finally, you can also take into account your gas consumption for your van or motor home. \n\nTick all the modes you use.\n",
     "formule": {
       "variations": [
         {
@@ -6052,6 +6052,13 @@
     "titre.auto": "other electricity consumption per m2",
     "optimized": true
   },
+  "parc français . empreinte électricité autre par m2": {
+    "formule": "consommation électricité autre par m2 * 0.957",
+    "unité": "kgCO2e/m2",
+    "titre": "other electricity footprint per m2",
+    "titre.auto": "other electricity footprint per m2",
+    "optimized": true
+  },
   "parc français . chauffage . empreinte moyenne chauffage air par m2": {
     "titre": "average air heating footprint per m2",
     "titre.auto": "average air heating footprint per m2",
@@ -6208,15 +6215,15 @@
           "si": {
             "toutes ces conditions": [
               {
-                "est défini": "appartement"
+                "est défini": "logement . appartement"
               },
-              "appartement"
+              "logement . appartement"
             ]
           },
-          "alors": 525
+          "alors": "par surface . appartement"
         },
         {
-          "sinon": 425
+          "sinon": "par surface . maison"
         }
       ]
     },
@@ -6224,6 +6231,22 @@
     "note": "The carbon base entry does not provide further information on this category of construction method. Please refer to the <a href=\"https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/\">documentation of the footprint database, tab Purchases of goods/Buildings</a>.\n\nThe emission factor is entitled \"Eco-built house\", but for lack of information we assume it is the same for an eco-built apartment.\n\nHowever, <a href=\"https://www.carbone4.com/sauver-le-climat-avec-nos-forets-la-construction-touche-du-bois-2\">this Carbone 4 study</a> claims a 55% reduction from concrete to wood for the house, and 60% for the apartment.\n\nNote that for eco-built housing, the biogenic CO₂ stored is not accounted for, only the fossil CO₂ emitted is.\n\nFor eco-built housing, we retain the emission factor from the carbon base, but it appears to be confirmed in order of magnitude in the Carbone 4 study.\n\n> Gains observed on the fossil CO₂ of the shell item (foundations and structure), compared with concrete. \n\nCarbon storage in the wood product is not taken into account.\n\nGains linked to material substitution: \n - MI wood CLT: 118 kgCO2e/m2 SHON, i.e. 473 kgCO2e/m3 of wood product. \n - MI wood frame: 83 kgCO2e/m2 SHON, i.e. 2495 kgCO2e/m3 of wood product. \n - LC wood CLT: 231 kgCO2e/m2 SHON, i.e. 699 kgCO2e/m3 wood product.\n - LC wood framing: 139 kgCO2e/m2 SHON, i.e. 3172 kgCO2e/m3 of wood product.\n",
     "titre": "per surface",
     "titre.auto": "per surface"
+  },
+  "logement . construction . par surface . appartement": {
+    "titre": "Flat footprint per m2",
+    "unité": "kgCO2e/m2",
+    "note": "Emission factor taken from the Empreinte database.",
+    "titre.auto": "Flat footprint per m2",
+    "valeur": "525",
+    "optimized": true
+  },
+  "logement . construction . par surface . maison": {
+    "titre": "House footprint per m2",
+    "unité": "kgCO2e/m2",
+    "note": "Emission factor taken from the Empreinte database.",
+    "titre.auto": "House footprint per m2",
+    "valeur": "425",
+    "optimized": true
   },
   "logement . éco-construit": {
     "question": "Is your home made of wood, straw, stone or earth (eco-built)?",
@@ -6779,7 +6802,8 @@
         "auberge de jeunesse . présent",
         "locations . présent",
         "famille ou amis . présent",
-        "échange . présent"
+        "échange . présent",
+        "résidence secondaire . présent"
       ],
       "suggestions": {
         "none": {
@@ -6788,14 +6812,15 @@
           "auberge de jeunesse . présent": "non",
           "locations . présent": "non",
           "famille ou amis . présent": "non",
-          "échange . présent": "non"
+          "échange . présent": "non",
+          "résidence secondaire . présent": "non"
         }
       }
     },
     "question": "How are you accommodated for your weekends and vacations?",
     "icônes": "🏖",
     "description": "Enter here the different types of accommodation you use for your travels (**personal reason**).\n\n> 💡 If you never go on weekends or holidays, you can click on \"none\" just below this question, then \"Next\".\n",
-    "note": "### What does Nos Gestes Climat mean by \"nights spent away from home\"?\n\n  - Hotel or bed and breakfast\n  - Camping\n  - Youth hostel\n  - Furnished rentals\n  - Family or friends\n  - Home exchange\n  - Secondary home\n\nExcludes nights spent in a hotel for **work-related reasons**.\n\n### To a first version\n\nInitially, the idea is to restrict the scope of V1 to the tourism sector (excluding secondary homes).\n\nToday, the footprint of a night spent with family or friends is indirectly counted in the host's footprint.\n\nFor hotels and private rooms / B&Bs, we are considering a common emission factor for the time being.\n\nIn this first version, the hotel's footprint will be divided by the number of inhabitants in the accommodation. This is a strong assumption, as it's easy to imagine that families / households don't always travel in their entirety!\nSimilarly, we assume that a family of more than 4 people will take 2 rooms. \n\nThe number of people living in the accommodation must be included in the formula, as a night in a youth hostel is generally characterized by a single bed in a dormitory.\n",
+    "note": "### What do we mean by \"nights away from home\" in Nos Gestes Climat?\n\n  - Hotel or bed and breakfast\n  - Camping pitch\n  - Youth hostel\n  - Furnished rental accommodation\n  - Family or friends\n  - Home exchange\n  - Second home\n\nThis excludes nights spent in a hotel for business reasons.\n\n### Towards a first version\n\nInitially, the idea is to restrict the scope of V1 to the tourism sector (excluding second homes).\n\nThe footprint of a night spent with family or friends is currently indirectly counted in the host's footprint.\n\nFor hotels and private rooms / B&Bs, we are considering a common emission factor for the time being.\n\nIn this first version, the hotel's footprint will be divided by the number of people living in the accommodation. This is a strong assumption, as it's easy to imagine that families/households don't always travel in their entirety!\nSimilarly, it is assumed that a family of more than 4 people will take 2 rooms. \n\nThe number of people living in the accommodation must be included in the formula, as a night in a youth hostel is generally characterised by a single bed in a dormitory.\n",
     "formule": {
       "variations": [
         {
@@ -6818,10 +6843,10 @@
         "empreinte locations",
         "empreinte échange",
         "empreinte famille ou amis",
-        "maison secondaire"
-      ],
-      "unité": "kgCO2e"
+        "empreinte résidence secondaire"
+      ]
     },
+    "unité": "kgCO2e",
     "titre": "total footprint",
     "titre.auto": "total footprint"
   },
@@ -6833,7 +6858,8 @@
         "1.749 * 1.4",
         "(0.7949999999999999 * auberge de jeunesse . empreinte par nuit) * logement . habitants",
         "2.4114999999999998 * 5.8",
-        "0.212 * 3.52"
+        "0.212 * 3.52",
+        "résidence secondaire . empreinte moyenne"
       ]
     },
     "unité": "kgCO2e",
@@ -6862,6 +6888,9 @@
         },
         {
           "est défini": "échange . présent"
+        },
+        {
+          "est défini": "résidence secondaire . présent"
         }
       ]
     },
@@ -7170,27 +7199,465 @@
     "titre": "notify",
     "titre.auto": "notify"
   },
-  "logement . vacances . maison secondaire": {
-    "titre": "Second home",
-    "icônes": "🏡",
+  "logement . vacances . empreinte résidence secondaire": {
+    "titre": "Footprint of second home",
     "applicable si": {
       "toutes ces conditions": [
         {
-          "est défini": "maison secondaire . présent"
+          "est défini": "résidence secondaire . présent"
         },
-        "maison secondaire . présent"
+        "résidence secondaire . présent"
       ]
     },
-    "formule": 0,
-    "note": "For the moment, we haven't implemented the second home model, but discussions are underway on our Github repository:\n  - https://github.com/datagir/nosgestesclimat/issues/1309\n  - https://github.com/datagir/nosgestesclimat/pull/1455\n",
-    "titre.auto": "Second home"
+    "formule": {
+      "somme": [
+        "résidence secondaire . construction",
+        "résidence secondaire . énergie"
+      ]
+    },
+    "unité": "kgCO2e",
+    "titre.auto": "Footprint of second home"
   },
-  "logement . vacances . maison secondaire . présent": {
+  "logement . vacances . résidence secondaire": {
+    "titre": "second home",
+    "icônes": "🏡",
+    "titre.auto": "second home"
+  },
+  "logement . vacances . résidence secondaire . présent": {
     "question": "Do you own a second home?",
-    "par défaut": "non",
-    "inactif": "oui",
+    "note": "For the moment, we only attribute the footprint of the second home to the owners,\nand not 'part' of the footprint to all French people.\n",
     "titre": "present",
     "titre.auto": "present"
+  },
+  "logement . vacances . résidence secondaire . empreinte moyenne": {
+    "formule": "empreinte moyenne construction + empreinte moyenne énergie",
+    "titre": "average footprint",
+    "titre.auto": "average footprint"
+  },
+  "logement . vacances . résidence secondaire . empreinte moyenne construction": {
+    "formule": "(90.70556095267925 * résidence secondaire . annuelle et par surface) * 0.13",
+    "titre": "average construction footprint",
+    "titre.auto": "average construction footprint",
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . empreinte moyenne énergie": {
+    "formule": {
+      "recalcul": {
+        "règle": "résidence secondaire . énergie",
+        "avec": {
+          "résidence secondaire . surface": "parc français . surface moyenne",
+          "résidence secondaire . durée": "résidence secondaire . nombre de nuitées . moyenne"
+        }
+      }
+    },
+    "unité": "kgCO2e",
+    "titre": "average energy footprint",
+    "titre.auto": "average energy footprint"
+  },
+  "logement . vacances . résidence secondaire . construction": {
+    "formule": "surface * annuelle et par surface",
+    "unité": "kgCO2e",
+    "titre": "construction",
+    "titre.auto": "construction"
+  },
+  "logement . vacances . résidence secondaire . surface": {
+    "titre": "Surface",
+    "question": "What is the surface area of your second home?",
+    "par défaut": "parc français . surface moyenne",
+    "note": "Default value obtained in <a href=\"https://www.statistiques.developpement-durable.gouv.fr/consommation-denergie-par-usage-du-residentiel\">this Ceren and SDES dataset</a>.\n",
+    "suggestions": {
+      "studio": 25,
+      "3 pieces": 70,
+      "home": 120,
+      "castle 🏰": 1000
+    },
+    "unité": "m2",
+    "titre.auto": "Surface"
+  },
+  "logement . vacances . résidence secondaire . annuelle et par surface": {
+    "formule": "475 / 50",
+    "unité": "kgCO2e/m2",
+    "titre": "per year and per surface",
+    "titre.auto": "per year and per surface",
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation": {
+    "titre": "Location",
+    "question": "Where is your second home located?",
+    "note": "From <a href=\"https://www.insee.fr/fr/statistiques/5416748#graphique-figure3\">this source</a>, we have the breakdown of second homes by type of EPCI (établissements publics de coopération intercommunale, otherwise often referred to as \"communautés de communes\"):\n\n- EPCIs on the north-western coast: 25%\n- EPCI on the Mediterranean coast: 16\n- EPCIs at altitudes of over 750 m: 16%\n- Densely populated EPCIs outside the coastline and at altitude: 12%\n- Other EPCIs: 32\n",
+    "formule": {
+      "une possibilité": {
+        "choix obligatoire": "oui",
+        "possibilités": [
+          "littoral méditerranéen",
+          "littoral nord ouest",
+          "montagne",
+          "ville",
+          "campagne"
+        ]
+      }
+    },
+    "par défaut": "'littoral nord ouest'",
+    "description": "If your second home is in a town on the coast, choose \"littoral\".",
+    "titre.auto": "Location"
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral méditerranéen": {
+    "titre": "Mediterranean coastline",
+    "icônes": "🏖️",
+    "description": "Flat or house in the Mediterranean region",
+    "titre.auto": "Mediterranean coastline"
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral nord ouest": {
+    "titre": "North-west coast",
+    "icônes": "🌊",
+    "description": "Flat or house in the Atlantic, English Channel or North Sea",
+    "titre.auto": "North-west coast"
+  },
+  "logement . vacances . résidence secondaire . localisation . montagne": {
+    "titre": "Mountain",
+    "icônes": "⛰️",
+    "description": "Flat or house in the Alps, Vosges, Jura, Massif Central or Pyrenees",
+    "titre.auto": "Mountain"
+  },
+  "logement . vacances . résidence secondaire . localisation . ville": {
+    "titre": "City",
+    "icônes": "🏙️",
+    "description": "Flat or house located in the city centre",
+    "titre.auto": "City"
+  },
+  "logement . vacances . résidence secondaire . localisation . campagne": {
+    "titre": "Campaign",
+    "icônes": "🚜",
+    "description": "Residence located at a distance from the sea, mountains or a large town",
+    "titre.auto": "Campaign"
+  },
+  "logement . vacances . résidence secondaire . énergie": {
+    "formule": {
+      "somme": [
+        "électricité",
+        "chauffage"
+      ]
+    },
+    "titre": "energy",
+    "titre.auto": "energy"
+  },
+  "logement . vacances . résidence secondaire . électricité": {
+    "formule": "parc français . empreinte électricité autre par m2 * surface * pro-rata présence annuelle",
+    "unité": "kgCO2e",
+    "titre": "electricity",
+    "titre.auto": "electricity"
+  },
+  "logement . vacances . résidence secondaire . pro-rata présence annuelle": {
+    "formule": "(durée / 365) * 1jour/nuit",
+    "titre": "pro-rata annual attendance",
+    "titre.auto": "pro-rata annual attendance",
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . nombre de nuitées . moyenne": {
+    "titre": "Average number of nights per French person",
+    "unité": "nuit",
+    "titre.auto": "Average number of nights per French person",
+    "valeur": "2.0404999999999998",
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . durée": {
+    "mosaique": {
+      "type": "nombre",
+      "options": [
+        "nuitées week end . nombre",
+        "nuitées semaine . nombre"
+      ],
+      "suggestions": {
+        "all summer long": {
+          "nuitées week end . nombre": 0,
+          "nuitées semaine . nombre": 8
+        }
+      }
+    },
+    "question": "How much time do you spend at your second home each year?",
+    "description": "Only enter the amount of time you spend there. If your second home is used by others (family, friends), the footprint associated with this use is charged to them.",
+    "formule": {
+      "somme": [
+        "nuitées week end",
+        "nuitées semaine"
+      ]
+    },
+    "unité": "nuit",
+    "note": "According to <a href=\"https://www.lesechos.fr/2012/06/tres-chere-residence-secondaire-359079\">this source</a>, the average time spent in a second home is 42 nights per year.\nBy default, we therefore attribute 3 weekends and 5 weeks spent in a second home.\n",
+    "titre": "duration",
+    "titre.auto": "duration"
+  },
+  "logement . vacances . résidence secondaire . durée . nuitées week end": {
+    "titre": "Weekend(s)",
+    "icônes": "📆",
+    "formule": "nombre * 2",
+    "note": "A weekend is considered to be 2 nights.",
+    "titre.auto": "Weekend(s)"
+  },
+  "logement . vacances . résidence secondaire . durée . nuitées week end . nombre": {
+    "question": "How many weekends do you spend at your second home?",
+    "par défaut": 3,
+    "unité": "nuit",
+    "titre": "number",
+    "titre.auto": "number"
+  },
+  "logement . vacances . résidence secondaire . durée . nuitées semaine": {
+    "titre": "Week(s)",
+    "icônes": "🗓️",
+    "formule": "nombre * 7",
+    "note": "One week is considered to be 7 nights.",
+    "titre.auto": "Week(s)"
+  },
+  "logement . vacances . résidence secondaire . durée . nuitées semaine . nombre": {
+    "question": "How many weeks do you spend at your second home?",
+    "par défaut": 5,
+    "unité": "nuit",
+    "titre": "number",
+    "titre.auto": "number"
+  },
+  "logement . vacances . résidence secondaire . chauffage": {
+    "formule": "((facteur saison * (19.64719233667352 + 31.86212308153166)) * surface) * pro-rata présence annuelle",
+    "unité": "kgCO2e",
+    "description": "To calculate the seasonal factors, which depend on both the location of the second home and the season in which it is visited, we have used the degree-hour data available for each climate zone, \nwhich can be found in <a href=\"https://docs.google.com/spreadsheets/d/1sQp51C2zgBi3KiKrMCvXNtd26NJGHhE41z_UxsBKU94/edit#gid=0\">this table</a>.\nThese degree hours can be found in the appendix to the Order of 8 October 2021 modifying the calculation method and the methods for establishing the energy performance diagnosis, <a href=\"https://www.socotec-certification-international.fr/s3fs-public/2022-10/arrete-8-octobre-2021_compressed.pdf\">available here</a>.\n\nIn France, there are three climate zones: H1, the coldest zone, the north-eastern half of France. H2, a temperate zone in the west and south-west. H3, the hottest zone, the south-east of France and French overseas departments and territories.\n\n![Climate zones France](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/RT_2005_zone_climatique-2.svg/1176px-RT_2005_zone_climatique-2.svg.png)\n\nFor our calculations, we have opted for the following assumptions:\n\n  - Homes located on the north-west coast, in the countryside or in towns, correspond to the average for zones H1 and H2 < 800 mètres d'altitude\n  - Les logements situés sur le littoral méditerranéen correspondent à la zone H3 < 400 mètres d'altitude\n  - Les logements situés en montagne correspondent aux zones H1 et H2 > 800 metres above sea level\n\nWe have related this to the average daily degree-hours over the year, to establish the multiplication factors for the average heating degree-hours for one day, whatever the location.\n\nmultiplication factors by climate zone and period](https://github.com/incubateur-ademe/nosgestesclimat/assets/55186402/c328fa42-bae6-4391-becf-a31cbaf32201)\n",
+    "titre": "heating",
+    "titre.auto": "heating",
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . chauffage . facteur saison": {
+    "formule": {
+      "variations": [
+        {
+          "si": "localisation = 'littoral méditerranéen'",
+          "alors": "localisation . littoral méditerranéen . facteur saison"
+        },
+        {
+          "si": "localisation = 'littoral nord ouest'",
+          "alors": "localisation . littoral nord ouest . facteur saison"
+        },
+        {
+          "si": "localisation = 'montagne'",
+          "alors": "localisation . montagne . facteur saison"
+        },
+        {
+          "si": "localisation = 'campagne'",
+          "alors": "localisation . campagne . facteur saison"
+        },
+        {
+          "si": "localisation = 'ville'",
+          "alors": "localisation . ville . facteur saison"
+        }
+      ]
+    },
+    "titre": "season factor",
+    "titre.auto": "season factor"
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral méditerranéen . facteur saison": {
+    "avec": {
+      "facteur hiver": 1.62,
+      "facteur surtout hiver": 1.41,
+      "facteur été": 0,
+      "facteur surtout été": 0.13
+    },
+    "formule": {
+      "variations": [
+        {
+          "si": "saison = 'hiver'",
+          "alors": "facteur hiver"
+        },
+        {
+          "si": "saison = 'surtout hiver'",
+          "alors": "facteur surtout hiver"
+        },
+        {
+          "si": "saison = 'été'",
+          "alors": "facteur été"
+        },
+        {
+          "si": "saison = 'surtout été'",
+          "alors": "facteur surtout été"
+        }
+      ]
+    },
+    "titre": "season factor",
+    "titre.auto": "season factor"
+  },
+  "facteur hiver": {
+    "valeur": 2.68,
+    "optimized": true
+  },
+  "facteur surtout hiver": {
+    "valeur": 2.15,
+    "optimized": true
+  },
+  "facteur été": {
+    "valeur": 0.06,
+    "optimized": true
+  },
+  "facteur surtout été": {
+    "valeur": 0.76,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral nord ouest . facteur saison": {
+    "avec": {
+      "facteur hiver": 2.26,
+      "facteur surtout hiver": 1.71,
+      "facteur été": 0.06,
+      "facteur surtout été": 0.46
+    },
+    "formule": {
+      "variations": [
+        {
+          "si": "saison = 'hiver'",
+          "alors": "facteur hiver"
+        },
+        {
+          "si": "saison = 'surtout hiver'",
+          "alors": "facteur surtout hiver"
+        },
+        {
+          "si": "saison = 'été'",
+          "alors": "facteur été"
+        },
+        {
+          "si": "saison = 'surtout été'",
+          "alors": "facteur surtout été"
+        }
+      ]
+    },
+    "titre": "season factor",
+    "titre.auto": "season factor"
+  },
+  "logement . vacances . résidence secondaire . localisation . campagne . facteur saison": {
+    "avec": {
+      "facteur hiver": 2.26,
+      "facteur surtout hiver": 1.71,
+      "facteur été": 0.06,
+      "facteur surtout été": 0.46
+    },
+    "formule": {
+      "variations": [
+        {
+          "si": "saison = 'hiver'",
+          "alors": "facteur hiver"
+        },
+        {
+          "si": "saison = 'surtout hiver'",
+          "alors": "facteur surtout hiver"
+        },
+        {
+          "si": "saison = 'été'",
+          "alors": "facteur été"
+        },
+        {
+          "si": "saison = 'surtout été'",
+          "alors": "facteur surtout été"
+        }
+      ]
+    },
+    "titre": "season factor",
+    "titre.auto": "season factor"
+  },
+  "logement . vacances . résidence secondaire . localisation . ville . facteur saison": {
+    "avec": {
+      "facteur hiver": 2.26,
+      "facteur surtout hiver": 1.71,
+      "facteur été": 0.06,
+      "facteur surtout été": 0.46
+    },
+    "formule": {
+      "variations": [
+        {
+          "si": "saison = 'hiver'",
+          "alors": "facteur hiver"
+        },
+        {
+          "si": "saison = 'surtout hiver'",
+          "alors": "facteur surtout hiver"
+        },
+        {
+          "si": "saison = 'été'",
+          "alors": "facteur été"
+        },
+        {
+          "si": "saison = 'surtout été'",
+          "alors": "facteur surtout été"
+        }
+      ]
+    },
+    "titre": "season factor",
+    "titre.auto": "season factor"
+  },
+  "logement . vacances . résidence secondaire . localisation . montagne . facteur saison": {
+    "avec": {
+      "facteur hiver": 2.68,
+      "facteur surtout hiver": 2.15,
+      "facteur été": 0.06,
+      "facteur surtout été": 0.76
+    },
+    "formule": {
+      "variations": [
+        {
+          "si": "saison = 'hiver'",
+          "alors": "facteur hiver"
+        },
+        {
+          "si": "saison = 'surtout hiver'",
+          "alors": "facteur surtout hiver"
+        },
+        {
+          "si": "saison = 'été'",
+          "alors": "facteur été"
+        },
+        {
+          "si": "saison = 'surtout été'",
+          "alors": "facteur surtout été"
+        }
+      ]
+    },
+    "titre": "season factor",
+    "titre.auto": "season factor"
+  },
+  "logement . vacances . résidence secondaire . saison": {
+    "question": "Which season(s) do you visit your second home most often?",
+    "formule": {
+      "une possibilité": {
+        "choix obligatoire": "oui",
+        "possibilités": [
+          "été",
+          "surtout été",
+          "surtout hiver",
+          "hiver"
+        ]
+      }
+    },
+    "par défaut": "'surtout été'",
+    "note": "In view of the distribution of school holidays each year, and the distribution of second home locations (40% on the coast, less than 20% in the mountains), we have chosen to consider that on average second home owners visit them mainly during the summer period.\n",
+    "titre": "season",
+    "titre.auto": "season"
+  },
+  "logement . vacances . résidence secondaire . saison . été": {
+    "titre": "Only in summer",
+    "icônes": "☀️",
+    "description": "You only visit your second home in the summer.",
+    "titre.auto": "Only in summer"
+  },
+  "logement . vacances . résidence secondaire . saison . surtout été": {
+    "titre": "Especially in summer",
+    "icônes": "🌤️",
+    "description": "You visit your second home mainly in the summer.",
+    "titre.auto": "Especially in summer"
+  },
+  "logement . vacances . résidence secondaire . saison . surtout hiver": {
+    "titre": "Especially in winter",
+    "icônes": "⛈️",
+    "description": "You visit your second home mainly in winter.",
+    "titre.auto": "Especially in winter"
+  },
+  "logement . vacances . résidence secondaire . saison . hiver": {
+    "titre": "Only in winter",
+    "icônes": "❄️",
+    "description": "You only visit your second home in winter.",
+    "titre.auto": "Only in winter"
   },
   "services marchands": {
     "abréviation": "S. merchants",
