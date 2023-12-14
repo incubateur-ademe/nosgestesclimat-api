@@ -924,6 +924,14 @@
   },
   "transport . arrêter l'avion": {
     "icônes": "🛬🧳",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "avion . usager"
+        },
+        "avion . usager"
+      ]
+    },
     "action": {
       "dépasse": [
         "transport . arrêter l'avion court",
@@ -939,6 +947,14 @@
   "transport . arrêter l'avion court": {
     "titre": "Favour the train over the plane",
     "icônes": "🛬🚆",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "avion . usager"
+        },
+        "avion . usager"
+      ]
+    },
     "formule": "transport . avion . court courrier + compensation train",
     "description": "The airplane has changed our way of life and our way of traveling. We can now go further, faster, more frequently, but unfortunately this is not without a downside for the climate\n\nIndeed, there is a ratio of 100 between the emission factors (quantity of CO₂ emitted per km traveled) of a plane and a train\n\n> For example, a round trip from Paris to Marseille emits about 300 kgCO2eq by plane against only 2 kgCO2eq by train\n\nThis is why we need to adapt our weekends and vacations\nby turning to low-carbon mobility offers and/or by rethinking our way of traveling is essential if we want to\nreduce our impact on the climate, both individually and as a society\n\n<a href=\"https://monimpacttransport.fr\">Compare modes of transportation here</a>\n",
     "titre.auto": "Favouring the train over the plane"
@@ -957,6 +973,14 @@
   "transport . prendre moins l'avion": {
     "titre": "Flying half as much",
     "icônes": "📉🛬",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "avion . usager"
+        },
+        "avion . usager"
+      ]
+    },
     "action": {
       "dépasse": [
         "transport . arrêter l'avion court"
@@ -12799,9 +12823,41 @@
   },
   "transport . avion": {
     "icônes": "✈️",
-    "applicable si": "usager",
     "description": "![](https://images.unsplash.com/photo-1525624286412-4099c83c1bc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80)\n\nThe footprint of the plane is substantial. It is not necessarily more polluting *per kilometer* than a car that only moves one person,\nbut the distance and especially the distance covered in one hour (commonly called speed), allows to change continent for a weekend.\n\nLet's also keep in mind that the average French person does not fly or does not fly much. Most of the aviation footprint is therefore concentrated on 10% or less of the French population.\n\n> For the definition of flight ranges, from short-haul to long-haul, we use <a href=\"https://bilans-ges.ademe.fr/forum/viewtopic.php?t=4192#p5530\">this discussion</a> from the Base Carbone forum.\n",
     "note": "We have chosen to ask for the total number of flight hours, rather than\nasking the user to fill in each of his flights via the departure and\narrival airports and the economy class. This is a possible evolution\nlater, see [this\nsimulator](https://futur.eco/simulateur/transport/avion/impact) where\npart of the work is already done.\n\nNote also that stopovers lead to additional takeoffs, which consume more\nfuel than a cruising speed. This is also a parameter to take into\naccount later.\n\nFor a more detailed model of the aircraft's footprint, we found two\nsources.\n\nThe complete algorithm of the North app, available\n[here](https://github.com/tmrowco/northapp-contrib/blob/master/co2eq/flights/index.js).\n\nThe pseudo-algorithm from myclimate.org, below.\n\n![](https://imgur.com/hIVvuIw.jpg).\n",
+    "formule": {
+      "variations": [
+        {
+          "si": {
+            "est défini": "usager"
+          },
+          "alors": "empreinte"
+        },
+        {
+          "sinon": "empreinte moyenne"
+        }
+      ]
+    },
+    "titre": "aircraft",
+    "titre.auto": "aircraft"
+  },
+  "transport . avion . empreinte moyenne": {
+    "formule": {
+      "recalcul": {
+        "règle": "transport . avion . empreinte",
+        "avec": {
+          "transport . avion . usager": "oui",
+          "transport . avion . court courrier . heures de vol": "transport . avion . court courrier . durée moyenne",
+          "transport . avion . moyen courrier . heures de vol": "transport . avion . moyen courrier . durée moyenne",
+          "transport . avion . long courrier . heures de vol": "transport . avion . long courrier . durée moyenne"
+        }
+      }
+    },
+    "titre": "average footprint",
+    "titre.auto": "average footprint"
+  },
+  "transport . avion . empreinte": {
+    "applicable si": "usager",
     "formule": {
       "somme": [
         "court courrier",
@@ -12809,13 +12865,12 @@
         "long courrier"
       ]
     },
-    "titre": "aircraft",
-    "titre.auto": "aircraft"
+    "titre": "footprint",
+    "titre.auto": "footprint"
   },
   "transport . avion . usager": {
     "question": "Have you flown at least once in the last 3 years?",
     "description": "We've chosen to offer you a way of counting the impact of your air travel over several years. The footprint on the climate is such that it's important to take this into account.\n\nSo, whether you fly every year or not, answer \"yes\" and you'll then have the option of entering your flight times over the last 3 years.\n\n> 💡 If you flew from Paris to New York in 2021 (approx. 17h return), your associated emissions (almost 2 tons) will be spread over the last 3 years.\n",
-    "par défaut": "oui",
     "titre": "user",
     "titre.auto": "user"
   },
@@ -12839,6 +12894,14 @@
     "titre.auto": "footprint per km"
   },
   "transport . avion . court courrier . heures de vol": {
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "usager"
+        },
+        "usager"
+      ]
+    },
     "question": "Over a year, how many hours do you travel on flights of less than 2 hours (short-haul)?",
     "description": "Count the hours you spent on a plane for trips of less than 2 hours (which corresponds to flights of less than about 1000km). If you have stopovers, simply add up the times of each flight.\n\n\nThe suggestions are based on the minimum round trip flight time found in search engines, doubled to consider a round trip.\n\n💡 Only count personal travel and commuting miles to your usual place of work.\nFor example, if you are on a work assignment in another country, this fits into your company's accounting.\n",
     "suggestions": {
@@ -12902,6 +12965,14 @@
     "titre.auto": "footprint per km"
   },
   "transport . avion . moyen courrier . heures de vol": {
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "usager"
+        },
+        "usager"
+      ]
+    },
     "question": "Over a year, how many hours do you travel on flights between 2 and 6 hours (medium-haul)?",
     "description": "Count the hours you spent in an airplane for trips between 2 hours and 6 hours (which corresponds to flights between 1000km and 3500km approximately). If you have stopovers, simply add up the times of each flight.\n\nThe suggestions are based on the minimum round trip flight time found in search engines, doubled to consider a round trip.\n\n💡 Only count personal travel and commuting miles to your usual place of work.\nFor example, if you are on a work assignment in another country, this fits into your company's accounting.\n",
     "suggestions": {
@@ -12964,6 +13035,14 @@
     "titre.auto": "footprint per km"
   },
   "transport . avion . long courrier . heures de vol": {
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "usager"
+        },
+        "usager"
+      ]
+    },
     "question": "Over a year, how many hours do you travel on flights of more than 6 hours (long-haul)?",
     "description": "Count the hours you've spent in a plane for journeys of over 6 hours (corresponding to flights of over 3500km or so). If you have stopovers, simply add up the duration of each flight. \n\nNote that if you travelled to a distant destination in several \"short\" journeys, these should be taken into account in the previous questions.\n\nSuggestions are based on the minimum round-trip flight duration found in search engines, doubled to consider a round-trip.\n\n💡 Count only the km of personal travel and home-work travel to reach your usual place of work.\nFor example, if you're on a business assignment in another country, this will be included in your company's accounts.\n",
     "suggestions": {

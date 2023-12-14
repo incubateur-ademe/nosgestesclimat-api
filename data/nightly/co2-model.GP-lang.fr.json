@@ -777,6 +777,14 @@
   },
   "transport . arrêter l'avion": {
     "icônes": "🛬🧳",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "avion . usager"
+        },
+        "avion . usager"
+      ]
+    },
     "action": {
       "dépasse": [
         "transport . arrêter l'avion court",
@@ -790,6 +798,14 @@
   "transport . arrêter l'avion court": {
     "titre": "Privilégier le train au lieu de l'avion",
     "icônes": "🛬🚆",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "avion . usager"
+        },
+        "avion . usager"
+      ]
+    },
     "formule": "transport . avion . court courrier + compensation train",
     "description": "L’avion a bouleversé nos modes de vies et nos façons de voyager. Nous pouvons maintenant aller plus loin, plus vite, plus fréquemment, mais ce n'est malheureusement pas sans contrepartie pour le climat. \n\nEn effet, il existe notamment un rapport de 100 entre les facteurs d’émissions (quantité de CO₂ émise par km parcouru) d’un avion et d’un train. \n\n> À titre d’exemple, un aller-retour Paris-Marseille émet environ 300 kgCO2eq en avion contre seulement 2 kgCO2eq en train. \n\nC’est pourquoi adapter nos week-ends et nos vacances \nen nous tournant vers des offres de mobilités bas carbone et/ou en repensant notre manière de voyager est essentiel si l’on souhaite tant à \nl’échelle individuelle qu’à l’échelle de la société réduire notre impact sur le climat\n\n[Comparez les modes de transport ici](https://monimpacttransport.fr)\n"
   },
@@ -803,6 +819,14 @@
   "transport . prendre moins l'avion": {
     "titre": "Prendre deux fois moins l'avion",
     "icônes": "📉🛬",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "avion . usager"
+        },
+        "avion . usager"
+      ]
+    },
     "action": {
       "dépasse": [
         "transport . arrêter l'avion court"
@@ -10310,9 +10334,37 @@
   },
   "transport . avion": {
     "icônes": "✈️",
-    "applicable si": "usager",
     "description": "![](https://images.unsplash.com/photo-1525624286412-4099c83c1bc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80)\n\nL'empreinte de l'avion est conséquente. Il n'est pas forcément plus polluant *au kilomètre* qu'une voiture qui ne déplace qu'une personne,\nmais la distance et surtout la distance parcourue en une heure (qu'on appelle couramment la vitesse), permet de changer de continent pour un week-end.\n\nGardons aussi en tête que le Français moyen ne prend pas ou peu l'avion. L'essentiel de l'empreinte de l'aviation est donc concentrée sur 10% ou moins des Français.\n\n> Pour la définition des gammes de vol, de court-courrier à long-courrier, nous utilisons [cette discussion](https://bilans-ges.ademe.fr/forum/viewtopic.php?t=4192#p5530) du forum Base Carbone.\n",
     "note": "Nous avons fait le choix de demander le total d'heures de vol, plutôt que de demander à l'utilisateur de renseigner chacun de ses vols\nvia l'aéroport de départ, d'arrivée et la classe économique. C'est une évolution possible par la suite,\nvoir [ce simulateur](https://futur.eco/simulateur/transport/avion/impact) où une partie du travail est déjà faite.\n\nA noter aussi que les escales entrainent des décollages supplémentaires, qui consomment plus de carburant qu'une vitesse de croisière.\nC'est aussi un paramètre à prendre en compte par la suite.\n\nPour un modèle plus détaillé de l'empreinte de l'avion, nous avons trouvé deux sources.\n\nL'algorithme complet de l'appli North, disponible [ici](https://github.com/tmrowco/northapp-contrib/blob/master/co2eq/flights/index.js).\n\nLe pseudo-algorithme de myclimate.org, ci-dessous.\n\n![](https://imgur.com/hIVvuIw.jpg).\n",
+    "formule": {
+      "variations": [
+        {
+          "si": {
+            "est défini": "usager"
+          },
+          "alors": "empreinte"
+        },
+        {
+          "sinon": "empreinte moyenne"
+        }
+      ]
+    }
+  },
+  "transport . avion . empreinte moyenne": {
+    "formule": {
+      "recalcul": {
+        "règle": "transport . avion . empreinte",
+        "avec": {
+          "transport . avion . usager": "oui",
+          "transport . avion . court courrier . heures de vol": "transport . avion . court courrier . durée moyenne",
+          "transport . avion . moyen courrier . heures de vol": "transport . avion . moyen courrier . durée moyenne",
+          "transport . avion . long courrier . heures de vol": "transport . avion . long courrier . durée moyenne"
+        }
+      }
+    }
+  },
+  "transport . avion . empreinte": {
+    "applicable si": "usager",
     "formule": {
       "somme": [
         "court courrier",
@@ -10323,8 +10375,7 @@
   },
   "transport . avion . usager": {
     "question": "Avez-vous pris l'avion au moins une fois ces 3 dernières années ?",
-    "description": "Nous faisons ici le choix de vous proposer de compter l'impact de vos déplacements en avion sur plusieurs années. L'empreinte sur le climat est telle qu'il est important de prendre cela en compte.\n\nAinsi, que vous preniez l'avion tous les ans ou non, répondez \"oui\" et vous aurez l'option par la suite de saisir vos temps de vol des 3 dernières années.\n\n> 💡 Si vous avez pris l'avion pour faire Paris-New-York en 2021 (environ 17h A/R), vos émissions associées (près de 2 tonnes) seront échelonnées sur les 3 dernières années.\n",
-    "par défaut": "oui"
+    "description": "Nous faisons ici le choix de vous proposer de compter l'impact de vos déplacements en avion sur plusieurs années. L'empreinte sur le climat est telle qu'il est important de prendre cela en compte.\n\nAinsi, que vous preniez l'avion tous les ans ou non, répondez \"oui\" et vous aurez l'option par la suite de saisir vos temps de vol des 3 dernières années.\n\n> 💡 Si vous avez pris l'avion pour faire Paris-New-York en 2021 (environ 17h A/R), vos émissions associées (près de 2 tonnes) seront échelonnées sur les 3 dernières années.\n"
   },
   "transport . avion . court courrier": {
     "formule": "heures de vol * vitesse moyenne * empreinte par km"
@@ -10340,6 +10391,14 @@
     "unité": "kgCO2e/km"
   },
   "transport . avion . court courrier . heures de vol": {
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "usager"
+        },
+        "usager"
+      ]
+    },
     "question": "Sur une année, combien d'heures voyagez-vous sur des vols de moins de 2h (court-courrier) ?",
     "description": "Comptez les heures que vous avez passées dans un avion pour des trajets de moins de 2h (ce qui correspond à des vols d'une distance inférieure à 1000km environ). Si vous faites des escales, additionnez simplement les durées de chaque vol.\n\n\nLes suggestions sont basées sur la durée minimum arrondie de vol constatée dans les moteurs de recherche, doublée pour considérer un aller-retour.\n\n💡 Ne comptez que les km de déplacement personnel et de déplacement domicile travail pour rejoindre votre lieu de travail habituel.\nPar exemple, si vous êtes en mission professionnelle dans un autre pays, cela rentre dans la comptabilité de votre entreprise.\n",
     "suggestions": {
@@ -10389,6 +10448,14 @@
     "unité": "kgCO2e/km"
   },
   "transport . avion . moyen courrier . heures de vol": {
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "usager"
+        },
+        "usager"
+      ]
+    },
     "question": "Sur une année, combien d'heures voyagez-vous sur des vols entre 2 et 6h (moyen-courrier) ?",
     "description": "Comptez les heures que vous avez passées dans un avion pour des trajets entre 2h et 6h (ce qui correspond à des vols d'une distance comprise entre 1000km et 3500km environ). Si vous faites des escales, additionnez simplement les durées de chaque vol.\n\nLes suggestions sont basées sur la durée minimum arrondie de vol constatée dans les moteurs de recherche, doublée pour considérer un aller-retour.\n\n💡 Ne comptez que les km de déplacement personnel et de déplacement domicile travail pour rejoindre votre lieu de travail habituel.\nPar exemple, si vous êtes en mission professionnelle dans un autre pays, cela rentre dans la comptabilité de votre entreprise.\n",
     "suggestions": {
@@ -10437,6 +10504,14 @@
     "unité": "kgCO2e/km"
   },
   "transport . avion . long courrier . heures de vol": {
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "usager"
+        },
+        "usager"
+      ]
+    },
     "question": "Sur une année, combien d'heures voyagez-vous sur des vols de plus de 6h (long-courrier) ?",
     "description": "Comptez les heures que vous avez passées dans un avion pour des trajets de plus de 6h (ce qui correspond à des vols d'une distance supérieure à 3500km environ). Si vous faites des escales, additionnez simplement les durées de chaque vol. \n\nA noter que si vous avez voyagé vers une destination lointaine en plusieurs trajets \"courts\", ils sont à prendre en compte dans les questions précédentes.\n\nLes suggestions sont basées sur la durée minimum arrondie de vol constatée dans les moteurs de recherche, doublée pour considérer un aller-retour.\n\n💡 Ne comptez que les km de déplacement personnel et de déplacement domicile travail pour rejoindre votre lieu de travail habituel.\nPar exemple, si vous êtes en mission professionnelle dans un autre pays, cela rentre dans la comptabilité de votre entreprise.\n",
     "suggestions": {
