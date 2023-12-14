@@ -531,11 +531,11 @@
   "logement . empreinte chauffage air utilisateur": {
     "formule": {
       "somme": [
-        "(chauffage . électricité . présent * électricité) * 0.22912887197233497",
-        "(chauffage . gaz . empreinte + chauffage . citerne propane . empreinte) * 0.8088414603624331",
-        "chauffage . bois . empreinte * 0.9946924667422263",
-        "chauffage . fioul . empreinte * 0.8591958820502965",
-        "chauffage . réseau de chaleur . empreinte * 0.7545085125722558"
+        "(chauffage . électricité . présent * électricité) * 0.32914760075367144",
+        "(chauffage . gaz . empreinte + chauffage . citerne propane . empreinte) * 0.8354483640350152",
+        "chauffage . bois . empreinte * 0.9940000000084475",
+        "chauffage . fioul . empreinte * 0.8738741708182033",
+        "chauffage . réseau de chaleur . empreinte * 0.7924000565737616"
       ]
     },
     "optimized": true
@@ -704,8 +704,8 @@
     "note": "on considère que la consommation de gaz/fioul sera identique suite à un raccordement au réseau de chaleur.",
     "formule": {
       "somme": [
-        "(chauffage . gaz . présent * 0.125) * chauffage . gaz . consommation",
-        "((chauffage . fioul . présent * 0.125) * chauffage . fioul . consommation) / 0.101436943"
+        "(chauffage . gaz . présent * 0.112) * chauffage . gaz . consommation",
+        "((chauffage . fioul . présent * 0.112) * chauffage . fioul . consommation) / 0.101436943"
       ]
     },
     "optimized": true
@@ -4636,7 +4636,7 @@
   },
   "logement . chauffage . empreinte par défaut": {
     "icônes": "🌡️",
-    "formule": "18.14619718355944 * logement . surface",
+    "formule": "19.64719233667352 * logement . surface",
     "unité": "kgCO2e",
     "optimized": true
   },
@@ -5024,7 +5024,7 @@
   "logement . chauffage . bois . facteur d'émission granulés": {
     "titre": "Empreinte bois granulés",
     "unité": "kgCO2e/kWh",
-    "note": "Facteur d'émission de la Base Carbone Granulés/Blancs français (issus de connexe de scierie)\nConnexe de scierie signifie que les granulés sont issus de chutes de bois et non de bois brut\n",
+    "note": "Facteur d'émission de la Base Carbone Granulés/Blancs français (issus de connexe de scierie)\nConnexe de scierie signifie que les granulés sont issus de chutes de bois et non de bois brut.\n",
     "valeur": "0.0113",
     "optimized": true
   },
@@ -5066,98 +5066,68 @@
   "logement . chauffage . réseau de chaleur . intensité carbone": {
     "titre": "Empreinte carbone réseau de chaleur",
     "unité": "kgCO2e/kWh",
-    "note": "Facteur d'émission issu de la moyenne de tous les réseaux de chaleur de la Base Carbone",
-    "valeur": "0.125",
+    "note": "Facteur d'émission issu de l'[enquête FEDEN sur les réseaux de chaleur en France 2023](https://www.fedene.fr/sncu/lenquete-2023-sur-les-reseaux-de-chaleur-froid-en-france/).\n",
+    "valeur": "0.112",
     "optimized": true
   },
   "parc français . surface moyenne": {
     "titre": "Surface moyenne par logement",
     "unité": "m2",
-    "valeur": "91.00439634764965",
+    "valeur": "90.70556095267925",
     "optimized": true
   },
   "parc français . surface moyenne maison": {
     "titre": "Surface moyenne par maison",
     "unité": "m2",
-    "valeur": "113.0823075066377",
+    "valeur": "113.04009267129683",
     "optimized": true
   },
   "parc français . surface moyenne appartement": {
     "titre": "Surface moyenne par appartement",
     "unité": "m2",
-    "valeur": "62.85582397291891",
+    "valeur": "62.32479081416104",
     "optimized": true
   },
   "parc français . surface . part électricité": {
-    "formule": "962771183 / 2670808363",
+    "formule": "980364088 / 2699046433",
     "optimized": true
   },
   "parc français . chauffage . consommation moyenne gaz cuisson": {
     "note": "Variable utilisée pour la valeur par défaut de la consommation de bouteilles de gaz",
-    "formule": "(9087203792 / 1068962604) * logement . surface",
+    "formule": "(8782069682 / 957251338) * logement . surface",
     "unité": "kWh",
     "optimized": true
   },
   "parc français . chauffage . consommation électricité par m2": {
-    "formule": "72263577623 / 962771183",
+    "formule": "89861389395 / 980364088",
     "note": "électricité + pompe à chaleur",
     "unité": "kWh/m2",
     "optimized": true
   },
   "parc français . chauffage . consommation gaz par m2": {
-    "formule": "135571397695 / 1068962604",
+    "formule": "152747731389 / 957251338",
     "unité": "kWh/m2",
     "note": "On retrouve à peu près la valeur donnée dans [cet article](https://selectra.info/energie/guides/conso/consommation-moyenne-gaz/tout-au-gaz) : \"On estime en effet qu'il faut en moyenne 100 kWh de gaz pour chauffer 1 mètre carré\".\n",
     "optimized": true
   },
   "parc français . chauffage . consommation fioul par m2": {
-    "formule": "38992628944 / 364967468",
+    "formule": "39378631294 / 296898719",
     "unité": "kWh/m2",
     "optimized": true
   },
   "parc français . chauffage . consommation bois par m2": {
-    "formule": "66909576964 / 146747327",
+    "formule": "78603249444 / 319546177",
     "unité": "kWh/m2",
     "optimized": true
   },
   "parc français . chauffage . consommation réseau de chaleur par m2": {
-    "formule": "13791912300 / 82129765",
+    "formule": "17049854444 / 97385759",
     "unité": "kWh/m2",
     "optimized": true
   },
   "parc français . chauffage . consommation GPL par m2": {
-    "formule": "8195500399 / 45230016",
+    "formule": "8644089795 / 47600352",
     "unité": "kWh/m2",
-    "optimized": true
-  },
-  "parc français . chauffage . empreinte électricité par m2": {
-    "formule": "consommation électricité par m2 * 0.84",
-    "unité": "kgCO2e/m2",
-    "optimized": true
-  },
-  "parc français . chauffage . empreinte gaz par m2": {
-    "formule": "consommation gaz par m2 * 0.221",
-    "unité": "kgCO2e/m2",
-    "optimized": true
-  },
-  "parc français . chauffage . empreinte buches par m2": {
-    "formule": "consommation bois par m2 * 0.046",
-    "unité": "kgCO2e/m2",
-    "optimized": true
-  },
-  "parc français . chauffage . empreinte granulés par m2": {
-    "formule": "consommation bois par m2 * 0.0113",
-    "unité": "kgCO2e/m2",
-    "optimized": true
-  },
-  "parc français . chauffage . empreinte réseau de chaleur par m2": {
-    "formule": "consommation réseau de chaleur par m2 * 0.125",
-    "unité": "kgCO2e/m2",
-    "optimized": true
-  },
-  "parc français . chauffage . empreinte GPL par m2": {
-    "formule": "consommation GPL par m2 * 0.272",
-    "unité": "kgCO2e/m2",
     "optimized": true
   },
   "parc français . chauffage . consommation gaz moyenne": {
@@ -5165,26 +5135,34 @@
     "unité": "kWh"
   },
   "parc français . consommation électricité autre par m2": {
-    "formule": "79384041653 / 2691000000",
+    "formule": "76810546534 / 2706837799",
     "unité": "kWh/m2",
     "optimized": true
   },
   "parc français . chauffage . empreinte moyenne chauffage air par m2": {
-    "formule": {
-      "somme": [
-        "empreinte électricité par m2 * 0.22912887197233497",
-        "empreinte gaz par m2 * 0.8088414603624331",
-        "34.6157202642949 * 0.8591958820502965",
-        "(empreinte buches par m2 * 0.9946924667422263) / 2",
-        "(empreinte granulés par m2 * 0.9946924667422263) / 2",
-        "empreinte réseau de chaleur par m2 * 0.7545085125722558",
-        "empreinte GPL par m2 * part chauffage air GPL"
-      ]
-    },
+    "valeur": "135.76191834618334",
     "optimized": true
   },
-  "parc français . chauffage . part chauffage air GPL": {
-    "formule": "2665257467 / 8195500399",
+  "parc français . chauffage . consommation électricité hors PAC . chauffage": {
+    "titre": "conso électrique via PAC liée au chauffage",
+    "formule": "54859667824 - 14077969585",
+    "unité": "kWh",
+    "note": "Cette consommation est compris dans `consommation électricité . chauffage`.",
+    "optimized": true
+  },
+  "parc français . chauffage . consommation électricité hors PAC par m2": {
+    "unité": "kWh/m2",
+    "valeur": "60.08133188401627",
+    "optimized": true
+  },
+  "parc français . chauffage . consommation électricité PAC par m2": {
+    "formule": "14077969585 / 301589218",
+    "unité": "kWh/m2",
+    "optimized": true
+  },
+  "parc français . chauffage . consommation électricité chauffage air PAC par m2": {
+    "formule": "14077969585 / 301589218",
+    "unité": "kWh/m2",
     "optimized": true
   },
   "logement . climatisation": {
@@ -5339,15 +5317,43 @@
               {
                 "est défini": "logement . chauffage . PAC . présent"
               },
-              {
-                "une de ces conditions": [
-                  "logement . chauffage . électricité . présent",
-                  "logement . chauffage . PAC . présent"
-                ]
-              }
+              "logement . chauffage . électricité . présent",
+              "logement . chauffage . PAC . présent"
             ]
           },
           "alors": "surface * (parc français . consommation électricité autre par m2 + parc français . chauffage . consommation électricité par m2)"
+        },
+        {
+          "si": {
+            "toutes ces conditions": [
+              "logement . chauffage . choix utilisateur = oui",
+              {
+                "est défini": "logement . chauffage . électricité . présent"
+              },
+              {
+                "est défini": "logement . chauffage . PAC . présent"
+              },
+              "logement . chauffage . électricité . présent",
+              "logement . chauffage . PAC . présent = non"
+            ]
+          },
+          "alors": "surface * (parc français . consommation électricité autre par m2 + parc français . chauffage . consommation électricité hors PAC par m2)"
+        },
+        {
+          "si": {
+            "toutes ces conditions": [
+              "logement . chauffage . choix utilisateur = oui",
+              {
+                "est défini": "logement . chauffage . électricité . présent"
+              },
+              {
+                "est défini": "logement . chauffage . PAC . présent"
+              },
+              "logement . chauffage . électricité . présent = non",
+              "logement . chauffage . PAC . présent"
+            ]
+          },
+          "alors": "surface * (parc français . consommation électricité autre par m2 + parc français . chauffage . consommation électricité PAC par m2)"
         },
         {
           "sinon": "surface * parc français . consommation électricité autre par m2"

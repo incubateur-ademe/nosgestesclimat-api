@@ -625,11 +625,11 @@
   "logement . empreinte chauffage air utilisateur": {
     "formule": {
       "somme": [
-        "(chauffage . électricité . présent * électricité) * 0.22912887197233497",
-        "(chauffage . gaz . empreinte + chauffage . citerne propane . empreinte) * 0.8088414603624331",
-        "chauffage . bois . empreinte * 0.9946924667422263",
-        "chauffage . fioul . empreinte * 0.8591958820502965",
-        "chauffage . réseau de chaleur . empreinte * 0.7545085125722558"
+        "(chauffage . électricité . présent * électricité) * 0.32914760075367144",
+        "(chauffage . gaz . empreinte + chauffage . citerne propane . empreinte) * 0.8354483640350152",
+        "chauffage . bois . empreinte * 0.9940000000084475",
+        "chauffage . fioul . empreinte * 0.8738741708182033",
+        "chauffage . réseau de chaleur . empreinte * 0.7924000565737616"
       ]
     },
     "titre": "footprint heating user air",
@@ -824,8 +824,8 @@
     "note": "it is assumed that the gas/oil consumption will be identical after a connection to the heating network.",
     "formule": {
       "somme": [
-        "(chauffage . gaz . présent * 0.125) * chauffage . gaz . consommation",
-        "((chauffage . fioul . présent * 0.125) * chauffage . fioul . consommation) / 0.101436943"
+        "(chauffage . gaz . présent * 0.112) * chauffage . gaz . consommation",
+        "((chauffage . fioul . présent * 0.112) * chauffage . fioul . consommation) / 0.101436943"
       ]
     },
     "titre.auto": "Recalculation of emissions through connection to a heating network",
@@ -5408,7 +5408,7 @@
   },
   "logement . chauffage . empreinte par défaut": {
     "icônes": "🌡️",
-    "formule": "18.14619718355944 * logement . surface",
+    "formule": "19.64719233667352 * logement . surface",
     "unité": "kgCO2e",
     "titre": "default footprint",
     "titre.auto": "default footprint",
@@ -5880,7 +5880,7 @@
   "logement . chauffage . bois . facteur d'émission granulés": {
     "titre": "Wood pellet footprint",
     "unité": "kgCO2e/kWh",
-    "note": "Base Carbone emission factor for French pellets/whites (from sawmill off-cuts)\nSawmill by-product means that the pellets are made from off-cuts and not from raw wood\n",
+    "note": "Base Carbone emission factor for French pellets (from sawmill waste)\nSawmill by-product means that the pellets come from wood off-cuts and not from raw wood.\n",
     "titre.auto": "Wood pellet footprint",
     "valeur": "0.0113",
     "optimized": true
@@ -5931,48 +5931,48 @@
   "logement . chauffage . réseau de chaleur . intensité carbone": {
     "titre": "Carbon footprint of heating network",
     "unité": "kgCO2e/kWh",
-    "note": "Emission factor derived from the average of all heating networks in the Base Carbone database",
+    "note": "Emission factor taken from<a href=\"https://www.fedene.fr/sncu/lenquete-2023-sur-les-reseaux-de-chaleur-froid-en-france/\">the FEDEN survey on heating networks in France 2023</a>.\n",
     "titre.auto": "Carbon footprint of heating network",
-    "valeur": "0.125",
+    "valeur": "0.112",
     "optimized": true
   },
   "parc français . surface moyenne": {
     "titre": "Average area per unit",
     "unité": "m2",
     "titre.auto": "Average area per unit",
-    "valeur": "91.00439634764965",
+    "valeur": "90.70556095267925",
     "optimized": true
   },
   "parc français . surface moyenne maison": {
     "titre": "Average area per house",
     "unité": "m2",
     "titre.auto": "Average area per house",
-    "valeur": "113.0823075066377",
+    "valeur": "113.04009267129683",
     "optimized": true
   },
   "parc français . surface moyenne appartement": {
     "titre": "Average area per apartment",
     "unité": "m2",
     "titre.auto": "Average area per apartment",
-    "valeur": "62.85582397291891",
+    "valeur": "62.32479081416104",
     "optimized": true
   },
   "parc français . surface . part électricité": {
-    "formule": "962771183 / 2670808363",
+    "formule": "980364088 / 2699046433",
     "titre": "electricity share",
     "titre.auto": "electricity share",
     "optimized": true
   },
   "parc français . chauffage . consommation moyenne gaz cuisson": {
     "note": "Variable used for the default value of gas cylinder consumption",
-    "formule": "(9087203792 / 1068962604) * logement . surface",
+    "formule": "(8782069682 / 957251338) * logement . surface",
     "unité": "kWh",
     "titre": "average cooking gas consumption",
     "titre.auto": "average cooking gas consumption",
     "optimized": true
   },
   "parc français . chauffage . consommation électricité par m2": {
-    "formule": "72263577623 / 962771183",
+    "formule": "89861389395 / 980364088",
     "note": "electricity + heat pump",
     "unité": "kWh/m2",
     "titre": "electricity consumption per m2",
@@ -5980,7 +5980,7 @@
     "optimized": true
   },
   "parc français . chauffage . consommation gaz par m2": {
-    "formule": "135571397695 / 1068962604",
+    "formule": "152747731389 / 957251338",
     "unité": "kWh/m2",
     "note": "We find more or less the value given in [this article] (https://selectra.info/energie/guides/conso/consommation-moyenne-gaz/tout-au-gaz): \"It is estimated that it takes on average 100 kWh of gas to heat 1 square meter\".\n",
     "titre": "gas consumption per m2",
@@ -5988,73 +5988,31 @@
     "optimized": true
   },
   "parc français . chauffage . consommation fioul par m2": {
-    "formule": "38992628944 / 364967468",
+    "formule": "39378631294 / 296898719",
     "unité": "kWh/m2",
     "titre": "oil consumption per m2",
     "titre.auto": "oil consumption per m2",
     "optimized": true
   },
   "parc français . chauffage . consommation bois par m2": {
-    "formule": "66909576964 / 146747327",
+    "formule": "78603249444 / 319546177",
     "unité": "kWh/m2",
     "titre": "wood consumption per m2",
     "titre.auto": "wood consumption per m2",
     "optimized": true
   },
   "parc français . chauffage . consommation réseau de chaleur par m2": {
-    "formule": "13791912300 / 82129765",
+    "formule": "17049854444 / 97385759",
     "unité": "kWh/m2",
     "titre": "heating network consumption per m2",
     "titre.auto": "heating network consumption per m2",
     "optimized": true
   },
   "parc français . chauffage . consommation GPL par m2": {
-    "formule": "8195500399 / 45230016",
+    "formule": "8644089795 / 47600352",
     "unité": "kWh/m2",
     "titre": "lPG consumption per m2",
     "titre.auto": "lPG consumption per m2",
-    "optimized": true
-  },
-  "parc français . chauffage . empreinte électricité par m2": {
-    "formule": "consommation électricité par m2 * 0.84",
-    "unité": "kgCO2e/m2",
-    "titre": "electricity footprint per m2",
-    "titre.auto": "electricity footprint per m2",
-    "optimized": true
-  },
-  "parc français . chauffage . empreinte gaz par m2": {
-    "formule": "consommation gaz par m2 * 0.221",
-    "unité": "kgCO2e/m2",
-    "titre": "gas footprint per m2",
-    "titre.auto": "gas footprint per m2",
-    "optimized": true
-  },
-  "parc français . chauffage . empreinte buches par m2": {
-    "formule": "consommation bois par m2 * 0.046",
-    "unité": "kgCO2e/m2",
-    "titre": "log footprint per m2",
-    "titre.auto": "log footprint per m2",
-    "optimized": true
-  },
-  "parc français . chauffage . empreinte granulés par m2": {
-    "formule": "consommation bois par m2 * 0.0113",
-    "unité": "kgCO2e/m2",
-    "titre": "granule footprint per m2",
-    "titre.auto": "granule footprint per m2",
-    "optimized": true
-  },
-  "parc français . chauffage . empreinte réseau de chaleur par m2": {
-    "formule": "consommation réseau de chaleur par m2 * 0.125",
-    "unité": "kgCO2e/m2",
-    "titre": "heating network footprint per m2",
-    "titre.auto": "heating network footprint per m2",
-    "optimized": true
-  },
-  "parc français . chauffage . empreinte GPL par m2": {
-    "formule": "consommation GPL par m2 * 0.272",
-    "unité": "kgCO2e/m2",
-    "titre": "lPG footprint per m2",
-    "titre.auto": "lPG footprint per m2",
     "optimized": true
   },
   "parc français . chauffage . consommation gaz moyenne": {
@@ -6064,32 +6022,45 @@
     "titre.auto": "average gas consumption"
   },
   "parc français . consommation électricité autre par m2": {
-    "formule": "79384041653 / 2691000000",
+    "formule": "76810546534 / 2706837799",
     "unité": "kWh/m2",
     "titre": "other electricity consumption per m2",
     "titre.auto": "other electricity consumption per m2",
     "optimized": true
   },
   "parc français . chauffage . empreinte moyenne chauffage air par m2": {
-    "formule": {
-      "somme": [
-        "empreinte électricité par m2 * 0.22912887197233497",
-        "empreinte gaz par m2 * 0.8088414603624331",
-        "34.6157202642949 * 0.8591958820502965",
-        "(empreinte buches par m2 * 0.9946924667422263) / 2",
-        "(empreinte granulés par m2 * 0.9946924667422263) / 2",
-        "empreinte réseau de chaleur par m2 * 0.7545085125722558",
-        "empreinte GPL par m2 * part chauffage air GPL"
-      ]
-    },
     "titre": "average air heating footprint per m2",
     "titre.auto": "average air heating footprint per m2",
+    "valeur": "135.76191834618334",
     "optimized": true
   },
-  "parc français . chauffage . part chauffage air GPL": {
-    "formule": "2665257467 / 8195500399",
-    "titre": "proportion of LPG air heating",
-    "titre.auto": "proportion of LPG air heating",
+  "parc français . chauffage . consommation électricité hors PAC . chauffage": {
+    "titre": "electricity consumption via heat pumps linked to heating",
+    "formule": "54859667824 - 14077969585",
+    "unité": "kWh",
+    "note": "This consumption is included in `electricity consumption . heating`.",
+    "titre.auto": "electricity consumption via heat pumps linked to heating",
+    "optimized": true
+  },
+  "parc français . chauffage . consommation électricité hors PAC par m2": {
+    "unité": "kWh/m2",
+    "titre": "electricity consumption (excluding heat pump) per m2",
+    "titre.auto": "electricity consumption (excluding heat pump) per m2",
+    "valeur": "60.08133188401627",
+    "optimized": true
+  },
+  "parc français . chauffage . consommation électricité PAC par m2": {
+    "formule": "14077969585 / 301589218",
+    "unité": "kWh/m2",
+    "titre": "pAC electricity consumption per m2",
+    "titre.auto": "pAC electricity consumption per m2",
+    "optimized": true
+  },
+  "parc français . chauffage . consommation électricité chauffage air PAC par m2": {
+    "formule": "14077969585 / 301589218",
+    "unité": "kWh/m2",
+    "titre": "electricity consumption per m2",
+    "titre.auto": "electricity consumption per m2",
     "optimized": true
   },
   "logement . climatisation": {
@@ -6270,15 +6241,43 @@
               {
                 "est défini": "logement . chauffage . PAC . présent"
               },
-              {
-                "une de ces conditions": [
-                  "logement . chauffage . électricité . présent",
-                  "logement . chauffage . PAC . présent"
-                ]
-              }
+              "logement . chauffage . électricité . présent",
+              "logement . chauffage . PAC . présent"
             ]
           },
           "alors": "surface * (parc français . consommation électricité autre par m2 + parc français . chauffage . consommation électricité par m2)"
+        },
+        {
+          "si": {
+            "toutes ces conditions": [
+              "logement . chauffage . choix utilisateur = oui",
+              {
+                "est défini": "logement . chauffage . électricité . présent"
+              },
+              {
+                "est défini": "logement . chauffage . PAC . présent"
+              },
+              "logement . chauffage . électricité . présent",
+              "logement . chauffage . PAC . présent = non"
+            ]
+          },
+          "alors": "surface * (parc français . consommation électricité autre par m2 + parc français . chauffage . consommation électricité hors PAC par m2)"
+        },
+        {
+          "si": {
+            "toutes ces conditions": [
+              "logement . chauffage . choix utilisateur = oui",
+              {
+                "est défini": "logement . chauffage . électricité . présent"
+              },
+              {
+                "est défini": "logement . chauffage . PAC . présent"
+              },
+              "logement . chauffage . électricité . présent = non",
+              "logement . chauffage . PAC . présent"
+            ]
+          },
+          "alors": "surface * (parc français . consommation électricité autre par m2 + parc français . chauffage . consommation électricité PAC par m2)"
         },
         {
           "sinon": "surface * parc français . consommation électricité autre par m2"
