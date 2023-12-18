@@ -8593,32 +8593,31 @@
     "titre.auto": "Ferry hours in the year"
   },
   "transport . métro ou tram": {
-    "titre": "Subway or tramway",
+    "titre": "Metro, tram, RER",
     "icônes": "🚊",
-    "description": "![](https://images.unsplash.com/photo-1581262208435-41726149a759?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)\n",
+    "description": "This covers all modes of urban rail transport.\n\n![](https://images.unsplash.com/photo-1581262208435-41726149a759?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)\n",
     "formule": "(heures par semaine * impact par heure) * 52",
-    "titre.auto": "Subway or tramway",
+    "titre.auto": "Metro, tram, RER",
     "optimized": true
   },
   "transport . métro ou tram . impact par heure": {
-    "formule": "0.00329 * 25",
+    "formule": "0.007405 * 25",
     "unité": "kgCO2e/h",
-    "note": "We have put in the same basket tramway and subway, while the MicMac v2.6 model only talks about subway.",
-    "description": "Based on 6.63 gCO2e/(passenger.km) and an average speed of 25 km/h.\n",
+    "description": "We are confusing all means of urban rail transport, i.e. metro, tramway and RER.",
     "titre": "impact per hour",
     "titre.auto": "impact per hour",
     "optimized": true
   },
   "transport . métro ou tram . impact par km": {
     "unité": "kgCO2e/km",
-    "note": "Metro, tramway, trolleybus - 2018 - Urban area &gt; 250 000 inhabitants; 3.29 gCO2e/km/person; Carbon base consulted on 04/04/2022",
+    "note": "We make the (strong) assumption of an unweighted average to calculate the impact per km.",
     "titre": "impact per km",
     "titre.auto": "impact per km",
-    "valeur": "0.00329",
+    "valeur": "0.007405",
     "optimized": true
   },
   "transport . métro ou tram . heures par semaine": {
-    "question": "How many hours a week do you spend on the metro or tram ?",
+    "question": "How many hours a week do you spend on the metro, tram or RER?",
     "suggestions": {
       "zero": 0,
       "1h / day": 7,
