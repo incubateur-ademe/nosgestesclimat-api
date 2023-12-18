@@ -130,7 +130,7 @@
     },
     "formule": "différence par semaine * 52",
     "icônes": "🥗🧀",
-    "description": "Adopter un régime végétarien, donc sans viande ni poisson (mais avec des oeufs, du lait, du fromage, des yaourts).\n\nMoins fort que le régime végétalien, il permet déjà une réduction très importante de l'empreinte sur le climat.\n\n[En savoir plus sur le régime végétarien](/actions/plus/alimentation/devenir-végétarien).\n"
+    "description": "Adopter un régime végétarien, donc sans viande ni poisson (mais avec des oeufs, du lait, du fromage, des yaourts).\n\nMoins fort que le régime végétalien, il permet déjà une réduction très importante de l'empreinte sur le climat.\n"
   },
   "alimentation . devenir végétarien . différence par semaine": {
     "titre": "Différence par semaine",
@@ -241,7 +241,7 @@
     "titre": "Privilégier la volaille ou le porc",
     "formule": "par semaine * 52",
     "icônes": "🥩🍗",
-    "description": "L’empreinte climat de notre alimentation est directement corrélée à notre consommation de viande, mais il faut savoir que toutes ne sont pas égales de ce point de vue.\n\n> À titre de comparaison, ramenée au kilo une entrecôte émet 6 fois plus de gaz à effet de serre que des filets de poulets.\n\nPour en savoir plus sur les impacts de notre consommation de viande, n'hésitez pas à consulter l'[explication complète](/actions/plus/alimentation/réduire-viande/par-deux).\n"
+    "description": "L’empreinte climat de notre alimentation est directement corrélée à notre consommation de viande, mais il faut savoir que toutes ne sont pas égales de ce point de vue.\n\n> À titre de comparaison, ramenée au kilo une entrecôte émet 6 fois plus de gaz à effet de serre que des filets de poulets.\n"
   },
   "alimentation . viande faible empreinte . par semaine": {
     "formule": "plats - nouveau régime"
@@ -320,7 +320,8 @@
     "titre": "Arrêter l'eau en bouteille",
     "formule": "consommation annuelle * empreinte",
     "icônes": "➡️🚰",
-    "description": "L'eau en bouteille a un impact environnemental 450 fois supérieur à l'eau du robinet. Elle coute entre 100 et 300 fois plus cher (80 % du prix est issu de\nla production de l'emballage) et participe fortement à la pollution plastique des océans.\n\n> En effet, il est fréquent que nos déchets plastiques soient\nvendus à d’autres pays. Ainsi en 2016, pas moins de 50 % des déchets plastiques triés européens ont été exportés vers la Chine.\n\nPlus d'informations sur la\ngestion des déchets plastiques dans les [explication complètes](https://nosgestesclimat.fr/actions/plus/alimentation/d%C3%A9chets/vrac)\n\nSources : [Écobilan de l’eau potable](http://esu-services.ch/fileadmin/download/jungbluth-2015-ecobilan-eau.pdf) et [Ministère de la Transition Ecologique p106](https://www.economie.gouv.fr/files/files/directions_services/cge/filieres-dechets-recyclage.pdf)\n"
+    "description": "L'eau en bouteille a un impact environnemental 450 fois supérieur à l'eau du robinet. Elle coute entre 100 et 300 fois plus cher (80 % du prix est issu de\nla production de l'emballage) et participe fortement à la pollution plastique des océans.\n\n> En effet, il est fréquent que nos déchets plastiques soient vendus à d’autres pays. Ainsi en 2016, pas moins de 50 % des déchets plastiques triés européens ont été exportés vers la Chine.\n",
+    "note": "Sources : [Écobilan de l’eau potable](http://esu-services.ch/fileadmin/download/jungbluth-2015-ecobilan-eau.pdf) et [Ministère de la Transition Ecologique p106](https://www.economie.gouv.fr/files/files/directions_services/cge/filieres-dechets-recyclage.pdf)\n"
   },
   "alimentation . déchets . réduire gaspillage": {
     "titre": "Réduire le gaspillage alimentaire",
@@ -562,8 +563,7 @@
   "logement . énergie de veille . puissance": {
     "formule": 0.05,
     "description": "> La puissance totale de ces veilles pour un ménage dépasse souvent 50 Watt\n",
-    "note": "Il est bien possible que l'on sous-estime le nombre de Watt en veille. Notamment, il apparait que les box internet et TV à elle-seules en consomme plus que 50. \n\n> La « box » est un équipement de plus en plus courant, qui reste souvent allumé 24 h sur 24 et qui génère une consommation pou-vant dépasser 200 kWh / an, soit autant que le lave-linge. Sa consommation totale sur un an se situe entre 150 et 300 kWh* : c'est autant qu'un grand réfrigérateur\n",
-    "unité": "kW"
+    "note": "Il est bien possible que l'on sous-estime le nombre de Watt en veille. Notamment, il apparait que les box internet et TV à elle-seules en consomme plus que 50. \n\n> La « box » est un équipement de plus en plus courant, qui reste souvent allumé 24 h sur 24 et qui génère une consommation pou-vant dépasser 200 kWh / an, soit autant que le lave-linge. Sa consommation totale sur un an se situe entre 150 et 300 kWh* : c'est autant qu'un grand réfrigérateur\n"
   },
   "logement . énergie de veille . temps d'absence": {
     "formule": "commun . jours par an * journalier",
@@ -3319,7 +3319,7 @@
   },
   "alimentation . petit déjeuner . type . continental": {
     "icônes": "🥐🥖",
-    "titre": "Viennoiserie et baguette",
+    "titre": "Viennoiserie et pain",
     "description": "Nous avons fait le choix de considérer un petit déjeuner standard français proche du petit déjeuner appelé [\"continental\"](https://fr.wikipedia.org/wiki/Déjeuner#Repas_de_type_continental).\nIl comprend pain, beurre, confiture, viennoiserie et un fruit.\n"
   },
   "alimentation . petit déjeuner . type . lait céréales": {
@@ -3362,7 +3362,7 @@
   },
   "alimentation . local . consommation": {
     "question": "Consommez-vous des produits locaux ?",
-    "description": "Cette question nous permet de corriger l'empreinte de votre régime alimentaire en fonction de votre habitude sur le caractère local de vos achats.\n\nNous considérons \"locaux\" les aliments qui sont issus de la région où vous vivez ou de régions proches. Si vous mangez \"français\", considérez votre alimentation comme locale.\n\nCe critère a un impact relativement faible, car la part du transport dans l'empreinte carbone des produits que nous consommons est faible devant les émissions liées à la production, la transformation ou l'emballage, surtout quand votre régime est carné.\n\nMais c'est toujours ça de gagné, et les avantages d'une consommation locale ne s'arrêtent pas à l'empreinte climat.\n\n> ⚠️ Attention, si vous faites vos courses en voiture à plusieurs km de chez vous chaque semaine, il est possible que l'empreinte du dernier km dépasse les gains d'une alimentation locale !\n",
+    "description": "Cette question nous permet de corriger l'empreinte de votre régime alimentaire en fonction de votre habitude sur le caractère local de vos achats.\n\nNous considérons \"locaux\" les aliments qui sont issus de la région où vous vivez ou de régions proches.\n\nCe critère a un impact relativement faible, car la part du transport dans l'empreinte carbone des produits que nous consommons est faible devant les émissions liées à la production, la transformation ou l'emballage, surtout quand votre régime est carné.\n\nMais c'est toujours ça de gagné, et les avantages d'une consommation locale ne s'arrêtent pas à l'empreinte climat.\n\n> ⚠️ Attention, si vous faites vos courses en voiture à plusieurs km de chez vous chaque semaine, il est possible que l'empreinte du dernier km dépasse les gains d'une alimentation locale !\n",
     "note": "Voir détail de l'approche de calcul [ici](http://nosgestesclimat/documentation/alimentation/local/part-locale)",
     "par défaut": "'jamais'",
     "formule": {
@@ -5031,7 +5031,7 @@
   },
   "divers . électroménager . préservation": {
     "question": "Quel effort faites-vous pour garder vos appareils électroménagers le plus longtemps possible ?",
-    "description": "Pour éviter de vous demander de renseigner l'âge précis de la dizaine d'appareils électroménagers que vous possédez, nous utilisons une grille d'âge moyen constaté pour chaque appareil.\n\nPar exemple, un frigo dure en moyenne 10 ans, un four 12 ans et une bouilloire 6 ans. Vous pouvez explorer la durée moyenne et l'empreinte de chaque appareil [ici](/documentation/divers/électroménager/appareils).\n\n> Il ne s'agit pas de l'âge de l'appareil quand il claque, mais de son âge quand son propriétaire décide de le remplacer par du neuf.\n\nA vous de vous placer par rapport à la moyenne.\n",
+    "description": "Pour éviter de vous demander de renseigner l'âge précis de la dizaine d'appareils électroménagers que vous possédez, nous utilisons une grille d'âge moyen constaté pour chaque appareil.\n\nPar exemple, un frigo dure en moyenne 10 ans, un four 12 ans et une bouilloire 6 ans.\n\n> Il ne s'agit pas de l'âge de l'appareil quand il claque, mais de son âge quand son propriétaire décide de le remplacer par du neuf.\n\nA vous de vous placer par rapport à la moyenne.\n",
     "par défaut": "'moyen'",
     "formule": {
       "une possibilité": {
@@ -5749,7 +5749,7 @@
   },
   "divers . numérique . préservation": {
     "question": "Quel effort faites-vous pour garder vos appareils électroniques le plus longtemps possible ?",
-    "description": "Pour éviter de vous demander de renseigner l'âge précis de tous les appareils électroniques que vous possédez, nous utilisons une grille d'âge moyen\nconstaté pour chaque appareil que l'on fait évoluer en fonction de vos efforts à les préserver ou non.\n\nVous pouvez explorer la durée moyenne et l'empreinte de chaque appareil [ici](/documentation/numérique).\n\nA vous donc de juger vos efforts pour les faire durer le plus longtemps possible\n\n> Répondre \"Aucun, je rachète souvent neuf\" est la réponse la plus impactante car elle signifie que vous remplacez vos appareils précocement avant même qu'ils soient hors d'usage.\n",
+    "description": "Pour éviter de vous demander de renseigner l'âge précis de tous les appareils électroniques que vous possédez, nous utilisons une grille d'âge moyen\nconstaté pour chaque appareil que l'on fait évoluer en fonction de vos efforts à les préserver ou non.\n\nA vous donc de juger vos efforts pour les faire durer le plus longtemps possible\n\n> Répondre \"Aucun, je rachète souvent neuf\" est la réponse la plus impactante car elle signifie que vous remplacez vos appareils précocement avant même qu'ils soient hors d'usage.\n",
     "par défaut": "'moyen'",
     "formule": {
       "une possibilité": {

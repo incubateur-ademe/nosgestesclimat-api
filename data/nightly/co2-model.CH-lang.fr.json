@@ -23,7 +23,6 @@
         "logement . baisse température",
         "logement . éclairage . LED",
         "logement . rénovation énergétique",
-        "logement . rénovation énergétique BBC",
         "logement . raccordement réseau de chaleur",
         "transport . boulot . covoiturage",
         "transport . boulot . commun",
@@ -130,7 +129,7 @@
     },
     "formule": "différence par semaine * 52",
     "icônes": "🥗🧀",
-    "description": "Adopter un régime végétarien, donc sans viande ni poisson (mais avec des oeufs, du lait, du fromage, des yaourts).\n\nMoins fort que le régime végétalien, il permet déjà une réduction très importante de l'empreinte sur le climat.\n\n[En savoir plus sur le régime végétarien](/actions/plus/alimentation/devenir-végétarien).\n"
+    "description": "Adopter un régime végétarien, donc sans viande ni poisson (mais avec des oeufs, du lait, du fromage, des yaourts).\n\nMoins fort que le régime végétalien, il permet déjà une réduction très importante de l'empreinte sur le climat.\n"
   },
   "alimentation . devenir végétarien . différence par semaine": {
     "titre": "Différence par semaine",
@@ -241,7 +240,7 @@
     "titre": "Privilégier la volaille ou le porc",
     "formule": "par semaine * 52",
     "icônes": "🥩🍗",
-    "description": "L’empreinte climat de notre alimentation est directement corrélée à notre consommation de viande, mais il faut savoir que toutes ne sont pas égales de ce point de vue.\n\n> À titre de comparaison, ramenée au kilo une entrecôte émet 6 fois plus de gaz à effet de serre que des filets de poulets.\n\nPour en savoir plus sur les impacts de notre consommation de viande, n'hésitez pas à consulter l'[explication complète](/actions/plus/alimentation/réduire-viande/par-deux).\n"
+    "description": "L’empreinte climat de notre alimentation est directement corrélée à notre consommation de viande, mais il faut savoir que toutes ne sont pas égales de ce point de vue.\n\n> À titre de comparaison, ramenée au kilo une entrecôte émet 6 fois plus de gaz à effet de serre que des filets de poulets.\n"
   },
   "alimentation . viande faible empreinte . par semaine": {
     "formule": "plats - nouveau régime"
@@ -267,7 +266,7 @@
     "titre": "Manger essentiellement des produits locaux",
     "icônes": "🍅🇫🇷",
     "formule": "alimentation . local . empreinte - recalcul",
-    "description": "L’alimentation locale permet en effet de réduire les distances de transports des produits que nous consommons. Cependant, même si cela peut sembler contre intuitif l'alimentation\nlocale peut, en fonction des cas considérés, être défavorable en terme d'émissions de gaz à effet de serre : l'impact de la provenance de nos produits ne peut être\nrésumé à une comparaison entre courte et longue distance. Les effets d’échelle, la centralisation des produits, l’efficacité des transports utilisés (ou à l'inverse la non\nefficacité) complexifient la chose d’un point de vue de la comptabilité carbone.\n\nNéanmoins, l'alimentation locale a bien d'autres impacts positifs avec en premier lieu le soutien aux agriculteurs de nos régions !\n\nIl faut garder en tête qu'il s'agit d'une première approche qui sera affinée par la suite. A titre d'exemple, on peut supposer que l'impact de cette action sera\nplus importante pour les régimes végétalisés, ce qui n'est pas pris en compte ici.\n"
+    "description": "L'alimentation locale permet de réduire les distances de transports des produits que nous consommons. Cependant, même si cela peut sembler contre intuitif, l'alimentation locale peut, en fonction des cas considérés, être défavorable en terme d'émissions de gaz à effet de serre : l'impact de la provenance de nos produits ne peut être résumé à une comparaison entre courte et longue distance. Les effets d'échelle, la centralisation des produits, l'efficacité des transports utilisés (ou à l'inverse la non efficacité) complexifient la chose d'un point de vue de la comptabilité carbone.\n\nNéanmoins, l'alimentation locale a bien d'autres impacts positifs comme, par exemple, le soutien aux agriculteurs-trices de nos régions ! \n\nA Genève, la marque « Genève Région Terre Avenir » (GRTA) permet d'identifier les produits issus de l'agriculture locale. Le site https://www.geneveterroir.ch/fr/marque-de-garantie-grta-info/2443 répertorie les producteurs GRTA du canton.\n\nRetrouvez plus d'informations sur : https://www.ge.ch/dossier/alimentation-durable-geneve/climat-dans-votre-assiette/proximite\n"
   },
   "alimentation . manger local . recalcul": {
     "formule": {
@@ -295,7 +294,7 @@
     "titre": "Manger en respectant les saisons",
     "icônes": "🍅🌞",
     "formule": "alimentation . de saison . empreinte - recalcul",
-    "description": "Contrairement à ce qu'on pourrait imaginer, l'impact de cette action est relativement faible car la part de produits de saison est très faible dans l'alimentation moyenne d'un français.\n\nMais il existe de nombreux autres bénéfices à l'alimentation saisonnière comme la moindre consommation d'eau, la diversité des cultures, ou encore la moindre dépendance au hydrocarbures (gaz et pétrole) qui chauffent les serres.\n\nIl faut garder en tête qu'il s'agit d'une première approche qui sera affinée par la suite. A titre d'exemple, on peut supposer que l'impact de cette action sera\nplus importante pour les régimes végétalisés, ce qui n'est pas pris en compte ici.\n",
+    "description": "Contrairement à ce qu'on pourrait imaginer, l'impact de cette action est relativement faible car la part de produits de saison est très faible dans l'alimentation moyenne d'un-e Suisse-sse.\n\nMais il existe de nombreux autres bénéfices à l'alimentation saisonnière comme la moindre consommation d'eau, la diversité des cultures, ou encore la moindre dépendance aux hydrocarbures (gaz et pétrole) qui chauffent les serres. De plus, le corps n'a pas besoin des mêmes nutriments toute l'année, ces besoins correspondent aux aliments de saison.\n\nRetrouvez plus d'informations sur : https://www.ge.ch/dossier/alimentation-durable-geneve/climat-dans-votre-assiette/proximite\n",
     "note": "Pour en savoir plus sur la méthode de calcul, parcourez sa formule, les variables seront expliquées.\n"
   },
   "alimentation . manger de saison . recalcul": {
@@ -320,7 +319,8 @@
     "titre": "Arrêter l'eau en bouteille",
     "formule": "consommation annuelle * empreinte",
     "icônes": "➡️🚰",
-    "description": "L'eau en bouteille a un impact environnemental 450 fois supérieur à l'eau du robinet. Elle coute entre 100 et 300 fois plus cher (80 % du prix est issu de\nla production de l'emballage) et participe fortement à la pollution plastique des océans.\n\n> En effet, il est fréquent que nos déchets plastiques soient\nvendus à d’autres pays. Ainsi en 2016, pas moins de 50 % des déchets plastiques triés européens ont été exportés vers la Chine.\n\nPlus d'informations sur la\ngestion des déchets plastiques dans les [explication complètes](https://nosgestesclimat.fr/actions/plus/alimentation/d%C3%A9chets/vrac)\n\nSources : [Écobilan de l’eau potable](http://esu-services.ch/fileadmin/download/jungbluth-2015-ecobilan-eau.pdf) et [Ministère de la Transition Ecologique p106](https://www.economie.gouv.fr/files/files/directions_services/cge/filieres-dechets-recyclage.pdf)\n"
+    "description": "L'eau en bouteille a un impact environnemental 450 fois supérieur à l'eau du robinet. Elle coute entre 100 et 300 fois plus cher (80 % du prix est issu de\nla production de l'emballage) et participe fortement à la pollution plastique des océans.\n\n> En effet, il est fréquent que nos déchets plastiques soient vendus à d’autres pays. Ainsi en 2016, pas moins de 50 % des déchets plastiques triés européens ont été exportés vers la Chine.\n",
+    "note": "Sources : [Écobilan de l’eau potable](http://esu-services.ch/fileadmin/download/jungbluth-2015-ecobilan-eau.pdf) et [Ministère de la Transition Ecologique p106](https://www.economie.gouv.fr/files/files/directions_services/cge/filieres-dechets-recyclage.pdf)\n"
   },
   "alimentation . déchets . réduire gaspillage": {
     "titre": "Réduire le gaspillage alimentaire",
@@ -328,7 +328,7 @@
     "applicable si": "quantité jetée = 'base'",
     "non applicable si": "gestes . gaspillage alimentaire . présent",
     "formule": "gestes . empreinte gaspillage alimentaire",
-    "description": "En France le gaspillage alimentaire moyen est évalué à 30 kg par personne et par an dont 7 kg d’aliments encore emballés !\n\nSi l’on prend du recule et que l'on considère l’ensemble de la chaîne de valeur (c'est-à-dire du champ à l’assiette) c’est environ 10 millions de tonnes d'aliments qui sont gaspillées par an, soit 150 kg par habitant.\n\nRéduire le gaspillage alimentaire est donc essentiel afin d'éviter de produire pour jeter !\n\nVous trouverez des conseils et des pratiques utiles [ici](https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation/pourquoi-gaspillons-autant-nourriture)\n"
+    "description": "En Suisse, le gaspillage alimentaire moyen est évalué à 90 kg d'aliments par personne et par an. \n\nSi l'on considère l'ensemble de la chaîne de valeur (c'est-à-dire du champ à l'assiette), c'est environ 2.8 millions de tonnes d'aliments qui sont gaspillées par an, soit 330 kg par habitant-e. De l'énergie, de l'eau, des ressources financières et humaines ont été nécessaires pour produire ces aliments, ces ressources sont donc elles aussi gaspillées. De plus, elles ont également un impact sur l'environnement. \n\nRéduire le gaspillage alimentaire est donc essentiel afin d'éviter de produire pour jeter, d'économiser nos ressources et réduire notre impact sur l'environnement !\n\nRetrouvez plus d'informations sur : https://www.ge.ch/dossier/alimentation-durable-geneve/climat-dans-votre-assiette/gaspillage-alimentaire\n"
   },
   "alimentation . déchets . composter": {
     "titre": "Composter",
@@ -336,7 +336,7 @@
     "applicable si": "quantité jetée = 'base'",
     "non applicable si": "gestes . compostage biodéchets . présent",
     "formule": "gestes . bonus compostage biodéchets",
-    "description": "Nos biodéchets, c’est à dire les déchets putrescibles issus de notre alimentation (épluchures, restes de repas, etc.),\nreprésentent une grande partie du poids de notre poubelle grise contribuant ainsi à majorer l’empreinte carbone associée\nà la gestion de nos déchets. Ces déchets sont très souvent peu ou mal valorisés malgré le bénéfice environnemental qu’ils peuvent apporter :\nun compost, substance organique riche et bénéfique pour les sols. Composter nos biodéchets (de manière individuelle ou collective) permet donc de réduire\nla taille de nos poubelles et de favoriser la création de ce compost pouvant à terme être utilisé comme alternative aux engrais chimiques.\n"
+    "description": "Nos biodéchets, c’est à dire les déchets putrescibles issus de notre alimentation (épluchures, restes de repas, etc.),\nreprésentent une grande partie du poids de notre poubelle grise contribuant ainsi à majorer l’empreinte carbone associée\nà la gestion de nos déchets. Ces déchets sont très souvent peu ou mal valorisés malgré le bénéfice environnemental qu’ils peuvent apporter :\nun compost, substance organique riche et bénéfique pour les sols. Composter nos biodéchets (de manière individuelle ou collective) permet donc de réduire\nla taille de nos poubelles et de favoriser la création de ce compost pouvant à terme être utilisé comme alternative aux engrais chimiques.\n\nRetrouvez toutes les astuces pour [faire un compost](https://www.ge.ch/teaser/p-tite-poubelle-verte)\n"
   },
   "alimentation . déchets . recyclage": {
     "titre": "Recycler mes déchets",
@@ -397,7 +397,7 @@
     "icônes": "💪🔌",
     "non applicable si": "préservation = 'maximum'",
     "formule": "(divers . électroménager . appareils - divers . électroménager . appareils préservation allongée) / logement . habitants",
-    "description": "Augmenter la durée de vie de ses équipements électroménager (en en prenant soin ou en les réparant lorsqu'ils tombent en panne) permet de limiter son impact\nsur le climat. \n\nRenouveler de manière prématurée ses équipements, à l'inverse, c'est contribuer à produire plus d'équipements pour un même service rendu.\n\nSi vous souhaitez absoluement vous séparer d'un objet prématurément, pensez aux ressourceries ou recycleries, par exemple, qui sont des lieux dédiés au réemploi ! 😉\n"
+    "description": "Augmenter la durée de vie de ses équipements électroménagers (en en prenant soin ou en les réparant lorsqu'ils tombent en panne) permet de limiter son impact sur le climat. \n\nRenouveler de manière prématurée ses équipements, à l'inverse, c'est contribuer à produire plus d'équipements pour un même service rendu.\n\nVous trouverez de nombreux conseils sur l'utilisation de vos appareils électroménagers sur le site https://www.energie-environnement.ch/appareils-electromenagers\n\nPour augmenter la durée de vie de vos équipements électroménagers, n'hésitez pas à les faire réparer. Le site https://www.ge-repare.ch propose une liste d'adresses de réparation.\n\nSi vous souhaitez absolument vous séparer d'un équipement électroménager, pensez aux ressourceries ou recycleries, qui sont des lieux dédiés au réemploi !\n"
   },
   "divers . électroménager . appareils préservation allongée": {
     "recalcul": {
@@ -417,7 +417,7 @@
     "icônes": "💪🪑",
     "non applicable si": "préservation = 'maximum'",
     "formule": "(divers . ameublement . meubles - divers . ameublement . meubles préservation allongée) / logement . habitants",
-    "description": "Augmenter la durée de vie de ses meubles (en en prenant soin ou en les réparant) permet de limiter son impact\nsur le climat. \n\nRenouveler de manière prématurée ses équipements, à l'inverse, c'est contribuer à produire plus d'équipements pour un même service rendu.\n\nSi vous souhaitez absoluement vous séparer d'un objet prématurément, pensez aux ressourceries ou recycleries, par exemple, qui sont des lieux dédiés au réemploi ! 😉\n"
+    "description": "Augmenter la durée de vie de ses meubles (en en prenant soin ou en les réparant) permet de limiter son impact sur le climat. \n\nRenouveler de manière prématurée ses meubles, à l'inverse, c'est contribuer à produire plus de meubles pour un même service rendu.\n\nPour augmenter la durée de vie de vos meubles, n'hésitez pas à les faire réparer. Le site https://www.ge-repare.ch propose une liste d'adresses de réparation.\n\nSi vous souhaitez absolument vous séparer d'un meuble, pensez aux ressourceries ou recycleries, qui sont des lieux dédiés au réemploi !\n"
   },
   "divers . ameublement . meubles préservation allongée": {
     "recalcul": {
@@ -479,7 +479,7 @@
     "icônes": "💪💻️",
     "non applicable si": "préservation = 'maximum'",
     "formule": "divers . numérique . appareils - divers . numérique . appareils préservation allongée",
-    "description": "Augmenter la durée de vie de ses meubles (en en prenant soin ou en les réparant) permet de limiter son impact\nsur le climat. \n\nRenouveler de manière prématurée ses équipements, à l'inverse, c'est contribuer à produire plus d'équipements pour un même service rendu.\n\nSi vous souhaitez absoluement vous séparer d'un objet prématurément, pensez aux ressourceries ou recycleries, par exemple, qui sont des lieux dédiés au réemploi ! 😉\n"
+    "description": "Augmenter la durée de vie de ses appareils ménagers ou électroniques (en en prenant soin ou en les réparant) permet de limiter son impact sur le climat.\n\nRenouveler de manière prématurée ses équipements, à l'inverse, c'est contribuer à produire plus d'équipements pour un même service rendu.\n\nPour augmenter la durée de vie de vos appareils, n'hésitez pas à les faire réparer. Le site http://www.ge-repare.ch propose une liste d'adresses de réparation.\n\nSi vous souhaitez absolument vous séparer d'un appareil, pensez aux ressourceries ou recycleries, qui sont des lieux dédiés au réemploi !\n"
   },
   "divers . numérique . appareils préservation allongée": {
     "recalcul": {
@@ -492,14 +492,14 @@
   "logement . baisse température": {
     "titre": "Réduire la température de mon chauffage de 1° ou 2°",
     "icônes": "🏠🌡",
-    "description": "Le logement et en particulier son chauffage (au fioul ou au gaz) a un impact sur le climat important.\n\nBaisser la température d'un ou deux degrés peut être un moyen de réduire son empreinte.\n\nSource : ADEME - [40 trucs et astuces pour économiser l'eau et l'énergie](https://www.ademe.fr/40-trucs-astuces-economiser-leau-lenergie)\n",
+    "description": "Le logement, et en particulier son chauffage (au mazout ou au gaz), a un impact très important sur le climat.\n\nBaisser la température d'un ou deux degrés peut être un moyen de réduire fortement son empreinte carbone.\n\nRetrouvez d'autres conseils pour économiser de l'énergie dans votre logement sur le site https://www.energie-environnement.ch/maison/renovation-et-chauffage\n\nSource : Des gestes pour économiser notre énergie https://www.ge.ch/document/30986/annexe/0\n",
     "applicable si": "température > 19",
     "formule": "(nombre degrés * gains 1 degré * empreinte chauffage air) / habitants"
   },
   "logement . baisse température . nombre degrés": {
     "question": "De combien de degrés seriez-vous prêt à diminuer la température de votre logement ?",
     "icônes": "↘️🌡",
-    "description": "Les ¾ de la consommation d’énergie d’un ménage sont consacrés au chauffage et à l’eau chaude.\n\nCette consommation d’énergie, en plus d’avoir un coût financier non négligeable, augmente l’empreinte carbone des ménages.\n\nElle peut toutefois facilement être limitée en diminuant la température des pièces occupées sans perdre de confort thermique ou bien ressentir une sensation de froid (à condition d’avoir des logements bien isolés).\n\nPar exemple, régler la température entre 19° et 21°C dans les pièces occupées la journée (et 17°C la nuit ou dans les pièces peu occupées).\n\nEn effet, baisser la température de chauffage d’1°C représente une économie d’énergie de 7%.\n",
+    "description": "Environ 85% de la consommation d'énergie finale d'un ménage est consacrée au chauffage et à l'eau chaude.\n\nCette consommation d'énergie, en plus d'avoir un coût financier non négligeable, augmente l'empreinte carbone des ménages.\n\nElle peut toutefois facilement être limitée en diminuant la température des pièces occupées sans perdre de confort thermique ni ressentir une sensation de froid.\n\nPar exemple, régler la température entre 19° et 21°C dans les pièces occupées la journée (et 17°C la nuit ou dans les pièces peu occupées).\n\nEn effet, baisser la température de chauffage d'1°C représente une [économie d'énergie de 7% à 10%](https://www.ge.ch/document/30986/annexe/0). Cela peut paraître peu à l'échelle individuelle mais si tout le monde fait cette action, c'est un levier très fort de réduction des émissions de CO2.\n\nLes fenêtres doivent bien entendu être maintenues fermées. Afin d'aérer votre logement, et si vous ne disposez pas d'une aération mécanique, ouvrez grand les fenêtres 1x par jour pendant 5 à 10 minutes par jour.\n\nUne bonne gestion des stores ou volets vous permettra de gagner en confort et de réduire encore les émissions de votre logement: leur ouverture pendant la journée vous permettra de profiter de l'énergie du soleil, leur fermeture la nuit augmentera votre confort et réduira les pertes de chaleur.\n",
     "par défaut": 1,
     "unité": "degrés",
     "suggestions": {
@@ -516,8 +516,8 @@
     "unité": "degrés"
   },
   "logement . baisse température . gains 1 degré": {
-    "formule": 0.07,
-    "description": "C'est la baisse estimée de dépense d'énergie quand on baisse la température de notre foyer chauffé de 1°C dans la gamme de température usuelle (autour de 20°).\n\nNous retenons l'estimation donnée dans le [guide ADEME](https://www.ademe.fr/40-trucs-astuces-economiser-leau-lenergie) \"40 trucs pour économiser l'eau et l'énergie\".\n",
+    "formule": 0.1,
+    "description": "C'est la baisse estimée de dépense d'énergie quand on baisse la température de notre foyer chauffé de 1°C dans la gamme de température usuelle (autour de 20°).\n\nNous retenons l'estimation donnée dans le [guide du Canton \"Des gestes pour économiser notre énergie\"](https://www.ge.ch/document/30986/annexe/0).\n",
     "note": "Où est la source pour ces 7% ? Peut-on décliner ce chiffre pour chaque type d'énergie (bois, gaz, etc.) ? Quelle est la sensibilité de ce chiffre au type de logement, son isolation, etc. ?\n"
   },
   "logement . empreinte chauffage air": {
@@ -550,7 +550,7 @@
     "unité": "kgCO2e",
     "titre": "Eteindre mes appareils en veille",
     "icônes": "🏠📺",
-    "description": "Nos appartements et nos maisons regorgent d'appareils numériques et électroménagers, qui souvent restents allumés ou en veille.\n\nL'usage de simples multiprises permet de les éteindre complètement en un clin d'oeil.\n\nLes veilles ont fait des progrès et consomment individuellement moins que par le passé : une directive européenne applicable depuis janvier 2017 limite leur puissance. Elle est de 0,5 W pour un certain nombre de catégories d’appareils, mais de 3 W pour les appareils qui restent connectés à Internet ou à des réseaux de données.\n\nSource : ADEME - [Réduire sa facture d'électricité](https://www.ademe.fr/sites/default/files/assets/documents/guide-pratique-reduire-facture-electricite.pdf), page 18.\n"
+    "description": "Nos appartements et nos maisons regorgent d'appareils électroniques et électroménagers, qui restent souvent allumés ou bien en veille.\n\nL'usage de simples multiprises permet de les éteindre complètement en un clin d'œil.\n\nRetrouvez de nombreux conseils pour économiser de l'énergie dans votre logement sur le site https://www.energie-environnement.ch/maison/renovation-et-chauffage.\n"
   },
   "logement . éteindre appareils . empreinte du foyer": {
     "formule": "énergie de veille * commun . intensité électricité"
@@ -562,8 +562,7 @@
   "logement . énergie de veille . puissance": {
     "formule": 0.05,
     "description": "> La puissance totale de ces veilles pour un ménage dépasse souvent 50 Watt\n",
-    "note": "Il est bien possible que l'on sous-estime le nombre de Watt en veille. Notamment, il apparait que les box internet et TV à elle-seules en consomme plus que 50. \n\n> La « box » est un équipement de plus en plus courant, qui reste souvent allumé 24 h sur 24 et qui génère une consommation pou-vant dépasser 200 kWh / an, soit autant que le lave-linge. Sa consommation totale sur un an se situe entre 150 et 300 kWh* : c'est autant qu'un grand réfrigérateur\n",
-    "unité": "kW"
+    "note": "Il est bien possible que l'on sous-estime le nombre de Watt en veille. Notamment, il apparait que les box internet et TV à elle-seules en consomme plus que 50. \n\n> La « box » est un équipement de plus en plus courant, qui reste souvent allumé 24 h sur 24 et qui génère une consommation pou-vant dépasser 200 kWh / an, soit autant que le lave-linge. Sa consommation totale sur un an se situe entre 150 et 300 kWh* : c'est autant qu'un grand réfrigérateur\n"
   },
   "logement . énergie de veille . temps d'absence": {
     "formule": "commun . jours par an * journalier",
@@ -580,7 +579,7 @@
     "inactive": "oui"
   },
   "logement . remplacer fioul par bois": {
-    "titre": "Remplacer ma chaudière fioul par du bois",
+    "titre": "Remplacer ma chaudière mazout par du bois",
     "applicable si": {
       "toutes ces conditions": [
         "propriétaire",
@@ -594,7 +593,7 @@
     "formule": "(chauffage . fioul . empreinte - alternative) / habitants",
     "description": "Les chaudières au fuel sont les plus polluantes. Les remplacer par des alternatives moins carbonnées comme ici le bois en granulés est un geste fort pour réduire votre empreinte carbone.\n",
     "inactive": "non",
-    "note": "Nous considérons pour l'instant que le remplacement des kWh de fioul par la même quantité de kWh de bois est une bonne approximation de premier ordre. Nous pourrons par la suite l'adapter en fonction du rendement des installations résidentielles.\n"
+    "note": "Nous considérons pour l'instant que le remplacement des kWh de mazout par la même quantité de kWh de bois est une bonne approximation de premier ordre. Nous pourrons par la suite l'adapter en fonction du rendement des installations résidentielles.\n\nDécouvrez [les subventions](https://ge-energie.ch/) pour passer aux renouvelables.\n"
   },
   "logement . remplacer fioul par bois . alternative": {
     "formule": "chauffage . fioul . consommation / chauffage . fioul kWh au litre * chauffage . bois . facteur d'émission granulés"
@@ -608,9 +607,9 @@
   },
   "logement . éclairage . consommation de l'éclairage": {
     "titre": "Éclairage dans la facture d'électricité",
-    "formule": "électricité * 5.6%",
+    "formule": "électricité * 10%",
     "description": "La part dans l'électricité consommée consacrée à l'éclairage.",
-    "note": "Chiffre issu du guide [Réduire sa facture d’électricité, Juin 2019, ADEME](https://librairie.ademe.fr/cadic/7232/guide-pratique-reduire-facture-electricite.pdf)\n"
+    "note": "Consommation électrique d'un ménage, Août 2021, suisseénergie"
   },
   "logement . éclairage . avec LED": {
     "formule": "consommation de l'éclairage / 6.43",
@@ -636,8 +635,8 @@
     },
     "icônes": "🔥🔄",
     "formule": "(chauffage . gaz . empreinte - pompe à chaleur) / habitants",
-    "description": "Les chaudières au gaz sont parmi les plus émissives de CO₂. Les remplacer par des alternatives moins carbonnées comme des pompes à chaleur est un geste fort pour réduire votre empreinte carbone.\n\n> Les pompes à chaleur sont souvent appelées *PAC*.\n\n💡 Leur principe est ingénieux : c'est un frigo inversé ! Votre frigo, grâce à un peu d'électricité, refroidit son intérieur et rejette la chaleur dans la pièce. La PAC refroidit l'air extérieur pour chauffer votre logement.\n\n> Bonus : s'il fait trop chaud chez vous l'été, certaines PAC peuvent inverser leur fonctionnement et faire office de climatisation l'été.\n",
-    "note": "Nous considérons pour l'instant que le remplacement des kWh de gaz par la même quantité de kWh électrique est une bonne approximation de premier ordre. Nous pourrons par la suite l'adapter en fonction du rendement des installations résidentielles.\n\nCette action chiffre le remplacement de la chaudière gaz, si vous chauffez aussi votre eau au gaz il faudra choisir une PAC qui peut aussi chauffer l'eau.\n\nVoir [Guide ADEME PAC](https://www.ademe.fr/sites/default/files/assets/documents/guide-pratique-installer-une-pompe-a-chaleur.pdf)\n"
+    "description": "Les chaudières au gaz sont parmi les plus émissives de CO₂. Les remplacer par des alternatives moins carbonées comme des pompes à chaleur est un geste fort pour réduire votre empreinte carbone.\n\n> Les pompes à chaleur sont souvent appelées *PAC*.\n\n💡 Leur principe est ingénieux : c'est un frigo inversé ! Votre frigo, grâce à un peu d'électricité, refroidit son intérieur et rejette la chaleur dans la pièce. La PAC refroidit l'air extérieur pour chauffer votre logement.\n\nDécouvrez [les subventions](https://ge-energie.ch/) pour passer aux renouvelables.\n",
+    "note": "Nous considérons pour l'instant que le remplacement des kWh de gaz par la même quantité de kWh électrique est une bonne approximation de premier ordre. Nous pourrons par la suite l'adapter en fonction du rendement des installations résidentielles.\n"
   },
   "logement . pompe à chaleur": {
     "formule": "(chauffage . gaz . consommation / coefficient COP) * électricité . intensité carbone"
@@ -672,16 +671,16 @@
     "formule": "(logement . empreinte chauffage air * gain rénovation) / habitants",
     "applicable si": "propriétaire",
     "inactive": "non",
-    "description": "La rénovation énergétique malgré son coût permet, sur le long terme, de très fortes économies d'énergies et participe ainsi à réduire l'empreinte carbone\nde son logement. \n\nCes économies seront d'autant plus importantes si vous vivez dans un logement mal isolé.\n\nPour connaitre les rénovations les plus adaptées à votre logement ainsi que les aides disponibles : [FAIRE](https://www.faire.gouv.fr).\n"
+    "description": "Une rénovation peut permettre de réduire de 20 à 150% de la consommation d'énergie de son logement. \n\nCe type de rénovation entraîne également, sur le long terme, de fortement réduire la facture énergétique.\n\nPour connaitre les rénovations les plus adaptées à votre logement ainsi que les aides disponibles : [ge-energie.ch](https://ge-energie.ch/).\n"
   },
   "logement . gain rénovation": {
-    "formule": "39%",
-    "note": "Gain énergétique moyen après rénovation sur un programme de l'ANAH de 13 000 logements ciblant les \"passoires thermiques\".\nPlus d'informations dans le programme [MaPrimeRénov’ Sérénité](https://france-renov.gouv.fr/aides/mpr/serenite) (ex Habiter Mieux de L’Anah).\n"
+    "formule": "20%",
+    "note": "Le gain énergétique moyen après rénovation est très variable, en fonction du type de rénovation, du réglage des installations etc. Entre un bâtiment peu isolé et un bâtiment bien isolé, la différence de consommation est de l'ordre de 1.2 à 2.5.\n"
   },
   "logement . propriétaire": {
     "question": "Etes-vous propriétaire de votre logement ?",
-    "description": "En tant que locataire, il est évidemment délicat de faire les investissements qui améliorent l'empreinte du logement : isolation, changement de source d'énergie sont impossibles sauf à tomber sur un propriétaire particulièrement conciliant. \n\nPourtant, la loi pourrait dès 2023 être un soutien de poids : les passoires thermiques [seront interdites à la location](https://www.gouvernement.fr/interdiction-a-la-location-des-logements-avec-une-forte-consommation-d-energie-des-2023), forçant les propriétaires à lancer des travaux substentiels.\n",
-    "par défaut": "oui"
+    "description": "En tant que locataire, il est évidemment délicat de faire les investissements qui améliorent l'empreinte du logement : isoler son logement ou changer de source d'énergie sont des actions que seuls les propriétaires peuvent réaliser. Cela n'empêche pas les locataires de les leur demander !\n",
+    "par défaut": "non"
   },
   "logement . rénovation énergétique BBC": {
     "action": {
@@ -725,8 +724,8 @@
     },
     "non applicable si": "chauffage . réseau de chaleur . présent",
     "formule": "(logement . chauffage - recalcul / habitants)",
-    "note": "Un réseau de chaleur est un système de canalisations qui permettent d’acheminer vers un ensemble de bâtiments de la \nchaleur produite localement et majoritairement à partir d’énergies renouvelables et de récupération. \n\nC'est une alternative écologique et économique pour remplacer des chaudières au gaz ou fioul, \naussi bien pour les bâtiments d'habitat collectif (copropriétés, habitat social) que pour les bâtiments tertiaires.\n\nNéanmoins, être raccordé à un réseau de chaleur n'est pas aussi simple que de souscrire un contrat d'électricité.\nEn effet, la faisabilité du raccordement dépend de [plusieurs conditions techniques](https://france-chaleur-urbaine.beta.gouv.fr/ressources/faisabilite#contenu).\n\nTout d'abord, le raccordement se fait pour tout un bâtiment : il n'est pas possible de raccorder seulement votre appartement.\nEnsuite, il est nécessaire de vérifier qu'il existe un réseau de chaleur à proximité du bâtiment, puis d'étudier\nles infrastructures de chauffage au sein du bâtiment (un bâtiment équipé d'un système de chauffage collectif permettra un raccordement à moindre coût)\n\nCôté impact climat, il faut savoir qu'en général, un réseau de chaleur est alimenté via des sources d'énergie renouvelables ou de récupération locales\n(62% en moyenne à l'échelle nationale), c'est à dire, via l'incinération d'ordures ménagères, la combustion de biomasse, la géothermie... (comme le montre la figure ci-dessous)\nce qui permet de réduire considérablement l'impact CO2 du kWh d'énergie consommée devant le gaz ou le fioul. \n\nCependant, le mix énergétique est très variable d’un réseau à l’autre, certains réseaux sont encore principalement alimentés via des énergies fossiles (charbon, fioul, gaz).\nIl est donc important de vérifier le taux ENR du réseau le plus proche sur la [cartographie France Chaleur Urbaine](https://france-chaleur-urbaine.beta.gouv.fr/carte), et de se renseigner auprès du gestionnaire du réseau \nsur les évolutions à venir du mix énergétique car bcp de réseaux sont en cours de verdissement...].\n\n![](https://user-images.githubusercontent.com/55186402/223733624-d50b2271-6da6-4ec7-a324-cec41df10430.png)\n",
-    "description": "Alimentés en moyenne à 62% par des énergies renouvelables et de récupération locales (chaleur issue de l'incinération des déchets, biomasse, géothermie...), \nles réseaux de chaleur (ou chauffage urbain) constituent un mode de chauffage faiblement carboné et à prix compétitifs. \nAttention toutefois, il existe une grande disparité selon les réseaux, aussi bien en matière d'impact carbone que de tarifs !\n\nLe raccordement au chauffage urbain se fait à l'échelle d'un bâtiment entier. Il nécessite la présence d'un réseau de chaleur à proximité du bâtiment \net est facilité lorsque le bâtiment est déjà équipé d'un chauffage collectif.\n\n>💡 Le site France Chaleur Urbaine vous permet d'aller plus loin : vérifiez si un [réseau de chaleur](https://france-chaleur-urbaine.beta.gouv.fr/) passe près de votre immeuble !\n"
+    "note": "Un réseau de chaleur est un système de canalisations qui permettent d'acheminer vers un ensemble de bâtiments de la chaleur produite localement et majoritairement à partir d'énergies renouvelables et de récupération. \n\nC'est une alternative écologique et économique pour remplacer des chaudières au gaz ou mazout, aussi bien pour les bâtiments d'habitat collectif que pour les bureaux.\n\nNéanmoins, être raccordé à un réseau de chaleur n'est pas aussi simple que de souscrire un contrat d'électricité. En effet, la faisabilité du raccordement dépend de [plusieurs conditions techniques]( https://www.ge.ch/installations-chauffage-batiment/se-raccorder-reseau-chauffage-distance).\n\nTout d'abord, le raccordement se fait pour tout un bâtiment : il n'est pas possible de raccorder seulement votre appartement. Ensuite, il est nécessaire de vérifier qu'il existe un réseau de chaleur à proximité du bâtiment, puis d'étudier les infrastructures de chauffage au sein du bâtiment (un bâtiment équipé d'un système de chauffage collectif permettra un raccordement à moindre coût)\n\nCôté impact climat, il faut savoir qu'en général, un réseau de chaleur est alimenté via des sources d'énergie renouvelables ou de récupération locales (50% à minima à l'échelle genevoise, avec 80% comme objectif d'ici à 2030), c'est à dire, via l'incinération d'ordures ménagères, la combustion de biomasse, la géothermie ce qui permet de réduire considérablement l'impact CO2 du kWh d'énergie consommée par rapport au gaz ou au mazout.\n",
+    "description": "Alimentés à minima à 50% par des énergies renouvelables et de récupération locales (chaleur issue de l'incinération des déchets, biomasse, géothermie...), les réseaux de chaleur (ou chauffage urbain) constituent un mode de chauffage faiblement carboné. \n\nLe raccordement au chauffage urbain se fait à l'échelle d'un bâtiment entier. Il nécessite la présence d'un réseau de chaleur à proximité du bâtiment et est facilité lorsque le bâtiment est déjà équipé d'un chauffage collectif.\n\n>💡 Le canton fournit une carte des réseaux structurants : vérifiez si un [réseau de chaleur]( https://www.ge.ch/document/22488/annexe/21 ) passe près de votre immeuble !\n"
   },
   "logement . raccordement réseau de chaleur . recalcul": {
     "titre": "Recalcul émissions via le raccordement à un réseau de chaleur",
@@ -763,12 +762,12 @@
   },
   "services sociétaux . voter": {
     "icônes": "🗳️🏛️",
-    "description": "Chaque année ou presque, nous avons chacun et chacune l'occasion de voter pour l'[élection](https://fr.wikipedia.org/wiki/Scrutins_en_France_sous_la_Cinquième_République#2021[5]) de représentants qui défendront nos idées.\n\nPrésidentielles, législatives, départementales et régionales sont l'occasion de porter le sujet du climat, et donc l'empreinte des services publics, et tous les efforts qui sont compliqués à faire tout seul.\n\nMais ce n'est pas tout ! Si vous êtes étudiant, des votes existent peut-être pour orienter le travail de l'école ou des associations ? Si vous êtes employé, pouvez-vous influer sur les voyages proposés par le comité d'entreprise ? Si vous êtes retraité, pouvez-vous donner votre voix dans le conseil d'administration de vos assurances, des banques qui ont votre argent ?\n"
+    "description": "Environ 4 fois par année, nous avons chacun suisse et suissesse la possibilité de voter sur différents sujets, au niveau fédéral, cantonal et communal.\n\nSelon les thèmes abordés, les votations peuvent être une occasion d'aborder le sujet du climat. C'est un moyen d'agir indirectement sur l'empreinte carbone des services publics, et sur les autres postes pour lesquels les efforts individuels ne sont pas suffisants.\n\nMais ce n'est pas tout ! Vous pouvez participer à des forums citoyens ou assemblées citoyennes ! Si vous êtes étudiant-e, des processus existent peut-être (assemblée, pétitions, votes ?) pour orienter votre université vers la durabilité ? Si vous êtes employé-e, pouvez-vous influer sur les choix de votre entreprise ? Si vous êtes retraité-e, pouvez-vous donner de votre temps au sein de coopératives ou d'associations ?\n"
   },
   "services sociétaux . pression locale": {
     "titre": "Faire pression localement",
     "icônes": "📍📢",
-    "description": "L'empreinte des services publics, c'est l'empreinte de plein d'activités gérées par l'État mais exercées autour de chez vous.\n\n\n> 🚸 L'école de vos enfants est peut-être une passoire thermique\n\n> 🛣️ Votre ville construit toujours de nombreux kilomètres de routes\n\nLa première étape est d'enquêter, puis simplement discuter de cela avec des amis et les reponsables en mesure d'agir.\n"
+    "description": "L'empreinte des services publics, c'est l'empreinte de pleins d'activités gérées par la confédération, le canton ou la commune, par exemple les écoles ou la police.\n\n\n> 🚸 L'école de vos enfants est peut-être mal isolée\n\n> 🛣️ Votre commune n'aménage pas assez de stationnements pour les vélos\n\nLa première étape est d'en discuter avec vos amis et vos connaissances, puis de prendre contact avec les responsables du canton ou de votre commune. Ainsi vous pourrez les alerter de la situation et voir quelles démarches ont déjà été entreprises à ce sujet.\n"
   },
   "services sociétaux . changement banque": {
     "titre": "Placer ses économies dans une banque responsable",
@@ -792,7 +791,7 @@
       ]
     },
     "formule": "transport . avion",
-    "description": "L'avion a une empreinte importante sur le climat. \n\nElle ne se limite pas aux seules émissions de CO₂, qui n'est qu'un gaz à effet de serre parmi d'autres. \n\nL'empreinte totale de l'avion est estimée à environ 2x celle du CO₂. \n\nVoir le [calculateur transport](https://monimpacttransport.fr) pour visualiser cette empreinte et la comparer aux autres moyens de transport.\n",
+    "description": "L'avion a une empreinte importante sur le climat. \n\nElle ne se limite pas aux seules émissions de CO₂. L'empreinte réelle de l'avion est estimée à au moins 2x celle du CO₂ émis par la combustion de kérosène, du fait d'un effet de forçage radiatif. Pour plus de détails, vous pouvez vous référer aux explications de myclimate.\n\nL'empreinte réelle de l'avion est estimée à au moins 2x celle du CO₂ émis par la combustion de kérosène, du fait d'un effet de forçage radiatif. \n\nLe calculateur transport de [myclimate](https://co2.myclimate.org/fr/calculate_emissions) permet de visualiser cette empreinte et la comparer aux autres moyens de transport.\n",
     "aller plus loin": "## Forçage radiatif total\n\nL'avion a un impact important sur le climat à la fois à cause de ses émissions de CO₂ et d'autres effets (dit forçage radiatif additionnel).\n\nDu fait que les avions volent en haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d’autres gaz à effet de serre que le CO₂ (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.).\n\nCe graphique montre la complexité des effects en jeu (et encore, tout n'y est pas).\n\n![](https://www.uecna.eu/wp-content/uploads/2017/12/ilusion-diagram1.jpg)\n\n## Avion vs voiture\n\nOn entend souvent que ramenée au passager, elle est du même ordre que celle d'une voiture. C'est vrai, mais ce n'est qu'une partie de l'histoire. \n\nPremièrement, l'empreinte de la voiture elle-même est élevée. Comparer l'avion à la voiture ne rend pas ce premier vertueux.\n\nDeuxièmement, on ne peut comparer la voiture et l'avion simplement parce qu'un trajet en avion est en général bien plus long. Quand il s'agit de choisir la destination des vacances par exemple, un trajet en voiture a donc toutes les chances d'être beaucoup moins polluant. Cela dit, notons aussi que nos kilométrages en voiture sont tels que le match est relancé quand on regarde l'empreinte à l'année.\n"
   },
   "transport . arrêter l'avion court": {
@@ -807,7 +806,7 @@
       ]
     },
     "formule": "transport . avion . court courrier + compensation train",
-    "description": "L’avion a bouleversé nos modes de vies et nos façons de voyager. Nous pouvons maintenant aller plus loin, plus vite, plus fréquemment, mais ce n'est malheureusement pas sans contrepartie pour le climat. \n\nEn effet, il existe notamment un rapport de 100 entre les facteurs d’émissions (quantité de CO₂ émise par km parcouru) d’un avion et d’un train. \n\n> À titre d’exemple, un aller-retour Paris-Marseille émet environ 300 kgCO2eq en avion contre seulement 2 kgCO2eq en train. \n\nC’est pourquoi adapter nos week-ends et nos vacances \nen nous tournant vers des offres de mobilités bas carbone et/ou en repensant notre manière de voyager est essentiel si l’on souhaite tant à \nl’échelle individuelle qu’à l’échelle de la société réduire notre impact sur le climat\n\n[Comparez les modes de transport ici](https://monimpacttransport.fr)\n"
+    "description": "L'avion a bouleversé nos modes de vies et nos façons de voyager. Nous pouvons maintenant aller plus loin, plus vite, plus fréquemment, mais ce n'est malheureusement pas sans contrepartie pour le climat. \n\nEn effet, il existe notamment un rapport de 100 entre les facteurs d'émissions (quantité de CO₂ émise par km parcouru) d'un avion et d'un train.\n\nC'est pourquoi adapter nos week-ends et nos vacances en nous tournant vers des offres de mobilités bas carbone et/ou en repensant notre manière de voyager est essentiel si l'on souhaite tant à l'échelle individuelle qu'à l'échelle de la société réduire notre impact sur le climat\n\nDécouvrez quelles destinations sont accessibles en train depuis chez vous : [Chronotrains](https://www.chronotrains.com/fr); [CFF (sbb.ch)](https://www.sbb.ch/fr/) ;  [Interrail](https://www.sbb.ch/fr/loisirs-et-vacances/trains-excursions/interrail.html)\n"
   },
   "transport . arrêter l'avion court . compensation train": {
     "formule": "avion . court courrier . heures de vol * avion . court courrier . vitesse moyenne * ratio distance supplémentaire train * transport . train . impact par km"
@@ -833,8 +832,8 @@
       ]
     },
     "formule": "transport . avion / 2",
-    "description": "> 💡 Essayez de faire au moins l'un des trajets vers votre destination en train !\n\nL'avion a une empreinte importante sur le climat. \n\nElle ne se limite pas aux seules émissions de CO₂, qui n'est qu'un gaz à effet de serre parmi d'autres. \n\nVoir le [calculateur transport](https://monimpacttransport.fr) pour visualiser cette empreinte et la comparer aux autres moyens de transport.\n",
-    "aller plus loin": "## Forçage radiatif total\n\nL'avion a un impact important sur le climat à la fois à cause de ses émissions de CO₂ et d'autres effets (dit forçage radiatif additionnel).\n\nDu fait que les avions volent en haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d’autres gaz à effet de serre que le CO₂ (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.).\n\nCe graphique montre la complexité des effects en jeu (et encore, tout n'y est pas).\n\n![](https://www.uecna.eu/wp-content/uploads/2017/12/ilusion-diagram1.jpg)\n\n## Avion vs voiture\n\nOn entend souvent que ramenée au passager, elle est du même ordre que celle d'une voiture. C'est vrai, mais ce n'est qu'une partie de l'histoire. \n\nPremièrement, l'empreinte de la voiture elle-même est élevée. Comparer l'avion à la voiture ne rend pas ce premier vertueux.\n\nDeuxièmement, on ne peut comparer la voiture et l'avion simplement parce qu'un trajet en avion est en général bien plus long. Quand il s'agit de choisir la destination des vacances par exemple, un trajet en voiture a donc toutes les chances d'être beaucoup moins polluant. Cela dit, notons aussi que nos kilométrages en voiture sont tels que le match est relancé quand on regarde l'empreinte à l'année.\n"
+    "description": "> 💡 Essayez de faire au moins l'un des trajets vers votre destination en train !\n\nDécouvrez quelles destinations sont accessibles  en train depuis chez vous : [Chronotrains](https://www.chronotrains.com/fr); [CFF (sbb.ch)](https://www.sbb.ch/fr/) ;  [Interrail](https://www.sbb.ch/fr/loisirs-et-vacances/trains-excursions/interrail.html) \n\nL'avion a une empreinte importante sur le climat. \n\nElle ne se limite pas aux seules émissions de CO₂. L'empreinte réelle de l'avion est estimée à au moins 2x celle du CO₂ émis par la combustion de kérosène, du fait d'un effet de forçage radiatif. Pour plus de détails, vous pouvez vous référer aux explications de myclimate.\n\nL'empreinte réelle de l'avion est estimée à au moins 2x celle du CO₂ émis par la combustion de kérosène, du fait d'un effet de forçage radiatif. \n\nLe [calculateur transport de myclimate](https://co2.myclimate.org/fr/calculate_emissions) permet de visualiser cette empreinte et la comparer aux autres moyens de transport.\n",
+    "aller plus loin": "## Forçage radiatif total\n\nL'avion a un impact important sur le climat à la fois à cause de ses émissions de CO₂ et d'autres effets (dit forçage radiatif additionnel).\n\nDu fait que les avions volent en haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d'autres gaz à effet de serre que le CO₂ (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.).\n\n## Avion vs voiture\n\nRamené au passager, l'impact carbone d'un trajet en avion est dans certains cas du même ordre que celui d'un trajet en voiture. Toutefois, l'empreinte de la voiture elle-même est élevée. Comparer l'avion à la voiture ne rend pas ce premier vertueux.\n\nDeuxièmement, un trajet en avion est en général bien plus long. Quand il s'agit de choisir la destination des vacances par exemple, un trajet en voiture a donc toutes les chances d'être beaucoup moins polluant. Cela dit, notons aussi que nos kilométrages en voiture sont tels que le match est relancé quand on regarde l'empreinte à l'année.\n"
   },
   "transport . éco-conduite": {
     "titre": "Adopter une éco-conduite",
@@ -848,8 +847,8 @@
     },
     "icônes": "🚗☮",
     "formule": "transport . voiture . empreinte calculée - transport . éco-conduite . recalcul",
-    "description": "L’éco-conduite est une action simple et efficace qui se tient à la portée de tous.  \n\nElle permet notamment d'économiser en moyenne 15 % de carburant, \nde réduire les coûts d’entretien du véhicule, de réduire le risque d’accident de 10 à 15 % en moyenne et de réaliser des économies substantielles pouvant \ns’élever à plusieurs centaines d’euros. \n\nL’application de l’éco-conduite est d’autant plus pertinente en ville et en zone urbaine ou les arrêts et \nle redémarrage sont fréquents.\n",
-    "note": "Voir le [Guide de formation à l'éco-conduite ADEME-LaPoste](https://expertises.ademe.fr/air-mobilites/mobilite-transports/passer-a-laction/solutions-technologiques/dossier/optimiser-lutilisation-lentretien-vehicule/lecoconduite-attitude-a-adopter)\n"
+    "description": "L'éco-conduite est une action simple et efficace qui se tient à la portée de tous.  Il s'agit d'un ensemble de recommandations à adopter tel que vérifier la pression des pneus ou optimiser les rapports de vitesse.\n\nMettre en place ces actions permet d'économiser jusqu'à 15 % de carburant, de réduire les coûts d'entretien du véhicule, de réduire le risque d'accident et de réaliser des économies substantielles pouvant s'élever à plusieurs centaines de francs suisses. \n\nAdopter une éco-conduite est d'autant plus pertinent en ville et en zone urbaine ou les arrêts et le redémarrage sont fréquents.\n\nPour en savoir plus: [EcoDrive – chaque litre compte](https://www.ecodrive.ch/fr/)\n",
+    "note": "EcoDrive – chaque litre compte: https://www.ecodrive.ch/fr/\n"
   },
   "transport . éco-conduite . recalcul": {
     "note": "Un recalcul est nécessaire ici, car l'utilisateur peut avoir utilisé l'outil d'aide à la saisie qui proratise alors la variable km au nombre de voyageurs. Sinon ce n'est pas le cas.",
@@ -884,7 +883,7 @@
     },
     "icônes": "🚗👥",
     "formule": "voiture . km * voiture . empreinte au kilomètre * réduction covoiturage",
-    "description": "Cette action concerne l'ensemble de ses trajets en voiture.\n\nSi le covoiturage longue distance est bien connu en France, celui des courtes distances est presque inexistant : aujourd’hui seuls 3 % des déplacements domicile-travail sont réalisés en covoiturage.\n\nDans tous les cas, pensez à adapter votre mode de transport à la distance et à privilégier les modes doux ou transports en commun (bus, métro, vélo, marche, etc.) le plus possible. Le calculateur [Mon Impact Transport](https://monimpacttransport.fr/) vous permet de visualiser et comparer l'impact des différents modes de déplacement.\n",
+    "description": "Cette action concerne l'ensemble de ses trajets en voiture.\n\nSi le covoiturage longue distance est bien connu en Suisse, celui des courtes distances est presque inexistant : aujourd'hui seuls 4% des déplacements domicile-travail sont réalisés en covoiturage.\n\nDe nombreux sites web proposent des plates-formes gratuites pour mettre en contact des personnes effectuant le même trajet, que ce soit régulièrement, par exemple pour aller au travail, ou ponctuellement, par exemple pour une sortie de ski.\n\n•\t[site web de e-covoiturage](http://www.e-covoiturage.ch/index.php/fr/) : plate-forme suisse de covoiturage;\n\n•\t[site web de covoiturage Léman](http://www.covoiturage-leman.org/) : plate-forme de covoiturage du bassin lémanique;\n\n•\t[site web de Clem'](http://clem.mobi/covoiturage) : covoiturage pour les trajets domicile-travail dans la région genevoise;\n\n•\t[site web de Klaxit](http://www.klaxit.com/) : covoiturage \"domicile-travail\" pour les entreprises\n\n•\t[site web de Caroster](https://caroster.io/): covoiturage pour gérer les transports au sein d'une association ou club de sport\n\nPour vos trajets à l'étranger, vous pouvez aussi consulter les sites suivants:\n\n•\t[site web de blablacar](https://www.blablacar.fr/) : plate-forme européenne de covoiturage;\n\n•\t[site web de carpooling](http://www.europe-carpooling.com/) : plate-forme de covoiturage en France;\n\n•\t[site web de compartir](http://compartir.org/) : plate-forme de covoiturage en Espagne et à l'international;\n\n•\t[site web de iDVROOM](https://www.tictactrip.eu/company/carpooling/idvroom) : plate-forme de covoiturage en France et à l'international;\n\n\nDans tous les cas, pensez à adapter votre mode de transport à la distance et à privilégier les modes doux ou transports en commun (bus, métro, vélo, marche, etc.) le plus possible.\n",
     "note": "Voir l'article The Conversation [À quelles conditions le covoiturage sera-t-il un mode de transport durable ?](https://theconversation.com/a-quelles-conditions-le-covoiturage-sera-t-il-un-mode-de-transport-durable-124122)\n"
   },
   "transport . boulot": {
@@ -905,7 +904,7 @@
   },
   "transport . réduction covoiturage": {
     "formule": "20%",
-    "description": "On pourrait naïvement penser que le covoiturage divise par 2 l'empreinte par personne. Mais en réalité, [une étude menée en Île-de-France](https://www.sciencedirect.com/science/article/pii/S1361920918303201) montre que les réductions sont plutôt de l'ordre de 20%... avant les effets rebonds, qui réduisent le gain final du covoiturage à seulement 6%.\n\n![](https://images.theconversation.com/files/297327/original/file-20191016-98644-c9y1zz.png?ixlib=rb-1.1.0&q=30&auto=format&w=754&h=588&fit=crop&dpr=2)\n",
+    "description": "D'après une étude menée en France, le covoiturage permet de réduire les émissions d'environ 20%.\n",
     "note": "Voir l'article The Conversation [À quelles conditions le covoiturage sera-t-il un mode de transport durable ?](https://theconversation.com/a-quelles-conditions-le-covoiturage-sera-t-il-un-mode-de-transport-durable-124122).\n"
   },
   "transport . boulot . distance": {
@@ -957,7 +956,7 @@
     },
     "titre": "Aller au travail autrement qu'en voiture",
     "icônes": "🚌🚲",
-    "description": "Quand c'est possible, prendre les transports en commun ou des véhicules légers (marche à pied, vélo, trottinette personnelle, ...) pour aller au travail réduit notre empreinte climat, mais améliore aussi notre qualité de vie.\n\n[70%](https://www.ecologie-solidaire.gouv.fr/covoiturage-en-france-avantages-et-reglementationen-vigueur) des déplacements domicile-travail sont réalisés avec des véhicules individuels, la plupart seul dans sa voiture. C'est ce qu'on appelle l'auto-solisme.\n\nEn plus d'émettre beaucoup de gaz à effet de serre cet auto-solisme déteriore la qualité de l'air de nos villes et donc notre santé, et encombre les voies urbaines.\n\n> A titre d'exemple les bouchons représentent en Île-de-France par an et par personne [163 heures perdues](https://www.tomtom.com/en_gb/traffic-index/paris-traffic) soit environ 6 jours.\n\n>💡 Le saviez-vous ? L'État et beaucoup de régions ou villes subventionnent les vélos mécaniques, électriques, cargo, pliants, etc. [Calculez votre aide 🚲️ en 3 clics](https://mesaidesvelo.fr).\n",
+    "description": "Quand c'est possible, prendre les transports en commun ou légers (marche à pied, vélo, trottinette ...) pour aller au travail réduit notre empreinte climatique, mais améliore aussi notre qualité de vie.\n\nA Genève, 45% des déplacements pour le motif \"travail\" sont effectués en voiture ou en deux-roues motorisés ([MRMT 2021](https://statistique.ge.ch/domaines/11/11_02/tableaux.asp)), la plupart du temps par des personnes seules dans leur voiture. C'est ce qu'on appelle l'auto-solisme.\n\nEn plus d'émettre beaucoup de gaz à effet de serre cet auto-solisme détériore la qualité de l'air de nos villes et donc notre santé, encombre les voies urbaines et crée de la pollution sonore.\n\n> A titre d'exemple les bouchons représentent, dans le canton de Genève, par an et par personne [133 heures perdues]([Geneva traffic report | TomTom Traffic Index](https://www.tomtom.com/traffic-index/geneva-traffic/)) soit environ 6 jours.\n\n>💡 Le saviez-vous ? Le canton et plusieurs communes subventionnent les vélos mécaniques, électriques, cargo, pliants, etc. Calculez votre aide 🚲️ en 3 clics ( [Subventions vélo | ge.ch](https://www.ge.ch/subventions-velo) ).\n",
     "applicable si": "voiture . km > seuil d'activation boulot",
     "formule": {
       "variations": [
@@ -1014,7 +1013,7 @@
       ]
     },
     "unité": "kgCO2e/km",
-    "note": "On considère qu'un déplacement domicile travail effectué en voiture peut-être remplacé par un train régional et non par un TGV.\n"
+    "note": "On considère qu'un déplacement domicile travail effectué en voiture peut être remplacé par un train régional et non par un Inter-City.\n"
   },
   "transport . boulot . commun . type": {
     "avec": {
@@ -1124,7 +1123,7 @@
     },
     "non applicable si": "voiture . km < seuil d'activation 5km",
     "note": "On fait l'hypothèse qu'une personne qui n'est pas propriétaire de voiture se passe *déjà* d'une voiture pour de courts trajets.\n",
-    "description": "En France, 4 trajets en voiture sur 10 font moins de 3 km et ce n’est pas moins de 177 millions de trajets de moins de 5km qui sont réalisés seuls en voiture chaque semaine (hors trajets domicile-travail). \n\nL’ensemble de ces trajets « courts » mis bout à bout présentent, à l’échelle de la France, près de 10% de la distance totale parcourue en voiture chaque année. \n\nAinsi, se tourner vers les mobilités actives (vélo, trottinette...) pour ces trajets « courts » permet de réduire de manière significative, nos émissions de GES\ntout en décongestionnant les voies urbaines et en améliorant la qualité de l’air de nos villes polluées.\n\n> 💡 Le saviez-vous ? L'État et beaucoup de régions ou villes subventionnent les vélos mécaniques, électriques, cargo, pliants, etc. [Calculez votre aide 🚲️ en 3 clics](https://mesaidesvelo.fr).\n"
+    "description": "Se tourner vers les mobilités actives (marche, rollers, vélo, trottinette...) pour les trajets « courts » de moins de 5 km permet de réduire de manière significative nos émissions de GES, de décongestionner les voies urbaines et de réduire les pollutions (air et bruit).\n\nDécouvrez comment se déplacer à vélo [à Genève](https://www.ge.ch/document/carte-velo), et [en Suisse](https://schweizmobil.ch/fr/ete).\n\n  >💡 Le saviez-vous ? Le canton et plusieurs communes subventionnent les vélos mécaniques, électriques, cargo, pliants, etc. [Calculez votre aide 🚲️ en 3 clics](https://www.ge.ch/subventions-velo).\n"
   },
   "transport . seuil d'activation 5km": {
     "titre": "Seuil d'activation actions liées aux courts trajets",
@@ -1223,7 +1222,7 @@
       ]
     },
     "formule": "transport . deux roues - transport . scooter électrique . recalcul",
-    "description": "Le scooter électrique n'est pas la solution miracle mais pour certains usages il peut s'avérer (très) utile pour réduire notre empreinte.\n\nAttention toutefois à ne pas arriver à la conclusion simpliste qu'il suffirait de passer à un parc de véhicules électriques pour décarboner les déplacements des français. \n\nLa priorité doit être, quand c'est possible (55% de nos trajets [font moins de 5km](https://twitter.com/GlmMrt/status/1481986507179274248)), l'essor des mobilités actives (telles que le vélo) et des transports en commun.\n\nNéanmoins le chiffre que l'on vous présente correspond bien à la différence d'émissions de gaz à effet de serre qui aurait eu lieu si vous aviez parcouru vos km avec \nun véhicule électrique et non thermique.\n\nIl faut également avoir en tête que l'idée ici n'est pas de pousser vers l'achat d'un scooter électrique neuf, il vaut mieux faire durer son matériel et privilégier l'occasion !\n"
+    "description": "Le scooter électrique n'est pas la solution miracle mais pour certains usages il peut s'avérer (très) utile pour réduire notre empreinte.\n\nAttention toutefois à ne pas arriver à la conclusion simpliste qu'il suffirait uniquement de passer à un parc de véhicules électriques pour décarboner les déplacements des Genevois-e-s. \n\nIl faudrait en priorité se déplacer à pied, à vélo ou en transports en communs lorsque c'est possible. \n\nNéanmoins le chiffre de réduction présenté pour cette action correspond bien à la différence d'émissions de gaz à effet de serre qui aurait eu lieu si vous aviez parcouru vos km avec un véhicule électrique et non thermique.\n\nAttention l'idée ici n'est pas de pousser vers l'achat d'un scooter électrique neuf, il vaut mieux faire durer son matériel et privilégier l'occasion !\n"
   },
   "transport . scooter électrique . recalcul": {
     "formule": {
@@ -1248,7 +1247,7 @@
     },
     "non applicable si": "transport . voiture . motorisation = 'électrique'",
     "formule": "transport . voiture . empreinte calculée - transport . voiture électrique . recalcul",
-    "description": "La voiture électrique n'est pas la solution miracle mais pour certains usages elle peut s'avérer (très) utile pour réduire notre empreinte.\n\nAttention toutefois à ne pas arriver à la conclusion simpliste qu'il suffirait de passer à un parc automobile électrique pour décarboner les déplacements des français. \n\nLa priorité doit être, quand c'est possible (55% de nos trajets [font moins de 5km](https://twitter.com/GlmMrt/status/1481986507179274248)), l'essor des mobilités actives (telles que le vélo) et des transports en commun.\n\nNéanmoins le chiffre que l'on vous présente correspond bien à la différence d'émissions de gaz à effet de serre qui aurait eu lieu si vous aviez parcouru vos km avec \nun véhicule électrique et non thermique.\n",
+    "description": "La voiture électrique n'est pas la solution miracle mais pour certains usages elle peut s'avérer (très) utile pour réduire notre empreinte carbone.\n\nAttention toutefois à ne pas arriver à la conclusion simpliste qu'il suffirait de passer à un parc automobile électrique pour décarboner les déplacements des Genevois-e-s. \n\nIl faudrait en priorité se déplacer à pied, en vélo ou en transports en communs lorsque c'est possible.\n\nNéanmoins le chiffre de réduction présenté pour cette action correspond bien à la différence d'émissions de gaz à effet de serre qui aurait eu lieu si vous aviez parcouru vos km avec un véhicule électrique et non thermique.\n",
     "note": "Envisager de ne proposer cette action que si elle > 0 voire > à plusieurs centaines de kgCO2eq\n"
   },
   "transport . voiture électrique . recalcul": {
@@ -1262,7 +1261,7 @@
     }
   },
   "transport . voiture . limitation autoroute": {
-    "titre": "Passer de 130 à 110km/h",
+    "titre": "Passer de 120 à 100km/h",
     "icônes": "🚗🛣️",
     "applicable si": {
       "toutes ces conditions": [
@@ -1276,10 +1275,10 @@
     "description": "La convention citoyenne pour le climat a proposé en 2020 une réduction de la limitation de vitesse sur les autoroutes de 130km/h à 110km/h. \nLa proposition est détaillée [ici](https://propositions.conventioncitoyennepourleclimat.fr/objectif/reduire-les-emissions-des-gaz-a-effet-de-serre-sur-les-autoroutes-et-les-voies-rapides/#elementor-tab-title-1681). \n\nSuite à l'invasion de l'Ukraine par la Russie, l'Agence Internationale de l'Énergie en a fait [sa 1ère recommandation](https://www.iea.org/reports/a-10-point-plan-to-cut-oil-use) pour réduire nos achats de pétrole russe.\n\nNous proposons ici une évalution de cette mesure basée sur votre situation précise.\n"
   },
   "transport . voiture . limitation autoroute . réduction": {
-    "titre": "Gain de consommation 130 -> 110",
+    "titre": "Gain de consommation 120 -> 100",
     "formule": "25%",
     "description": "![](https://imgur.com/NB9CUUt.jpg)\nD'après ce graphique, par déduction graphique (nous n'avons pas encore remonté aux données [de l'étude](http://theses.univ-lyon2.fr/documents/getpart.php?id=1026&action=pdf), page 151 figure 26), on trouve les données ci-dessous.\n\nDiesel : 6.5 l/100 à 130km/h -> 4.75 à 110km/h \n\nEssence : 11.75 l/100 à 130km/h -> 8.65 à 110km/h\n\nDonc -27% en diesel et - 26% en essence en passant de 130 à 110. Nous retenons l'ordre de grandeur de 25%.\n",
-    "note": "Il faudrait affiner ce calcul.\nQuelques sources à investiguer pour le calcul.\n- un citoyen qui fait son test pour une clio. Il trouve une réduction entre -20% et -50% !\n   https://twitter.com/CptQwark_/status/1289499582871658499 \n   Un autre citoyen trouve plutôt -10% avec une plus grosse voiture. \n- [Rapport du CGDD](<https://www.ecologie.gouv.fr/sites/default/files/Théma - Réduction des vitesses sur les routes.pdf>), où nous n'avons pas trouvé pour l'instant l'explication du calcul de l'économie de CO₂\n- Aurélien Bigo qui critique le rapport du CGDD https://twitter.com/AurelienBigo/status/1276459283291439114, mais qui ne nous donne pas d'infos sur le calcul du CO₂ lui même.\n- une autre évaluation, qui elle nous donne le calcul :)  : https://twitter.com/Tomsawy22670318/status/1274257122373570565\n  Attention, pour être rigoureux, comme évoqué dans ce dernier fil, il faut prendre en compte la distribution de la vitesse et la catégorie de voiture (présence d'une 6ème vitesse par exemple). On ne roule évidement pas tout le temps à 130.\n"
+    "note": "On considère que passer de 120 à 100km/h sur l'autoroute est équivalent au passage de 130 à 110 km/h en terme de réduction de consommation."
   },
   "transport . voiture . empreinte autoroute": {
     "formule": "par km personne * km autoroute",
@@ -3319,7 +3318,7 @@
   },
   "alimentation . petit déjeuner . type . continental": {
     "icônes": "🥐🥖",
-    "titre": "Viennoiserie et baguette",
+    "titre": "Viennoiserie et pain",
     "description": "Nous avons fait le choix de considérer un petit déjeuner standard français proche du petit déjeuner appelé [\"continental\"](https://fr.wikipedia.org/wiki/Déjeuner#Repas_de_type_continental).\nIl comprend pain, beurre, confiture, viennoiserie et un fruit.\n"
   },
   "alimentation . petit déjeuner . type . lait céréales": {
@@ -3362,7 +3361,7 @@
   },
   "alimentation . local . consommation": {
     "question": "Consommez-vous des produits locaux ?",
-    "description": "Cette question nous permet de corriger l'empreinte de votre régime alimentaire en fonction de votre habitude sur le caractère local de vos achats.\n\nNous considérons \"locaux\" les aliments qui sont issus de la région où vous vivez ou de régions proches. Si vous mangez \"français\", considérez votre alimentation comme locale.\n\nCe critère a un impact relativement faible, car la part du transport dans l'empreinte carbone des produits que nous consommons est faible devant les émissions liées à la production, la transformation ou l'emballage, surtout quand votre régime est carné.\n\nMais c'est toujours ça de gagné, et les avantages d'une consommation locale ne s'arrêtent pas à l'empreinte climat.\n\n> ⚠️ Attention, si vous faites vos courses en voiture à plusieurs km de chez vous chaque semaine, il est possible que l'empreinte du dernier km dépasse les gains d'une alimentation locale !\n",
+    "description": "Cette question nous permet de corriger l'empreinte de votre régime alimentaire en fonction de votre habitude sur le caractère local de vos achats.\n\nNous considérons \"locaux\" les aliments qui sont issus de la région où vous vivez ou de régions proches.\n\nCe critère a un impact relativement faible, car la part du transport dans l'empreinte carbone des produits que nous consommons est faible devant les émissions liées à la production, la transformation ou l'emballage, surtout quand votre régime est carné.\n\nMais c'est toujours ça de gagné, et les avantages d'une consommation locale ne s'arrêtent pas à l'empreinte climat.\n\n> ⚠️ Attention, si vous faites vos courses en voiture à plusieurs km de chez vous chaque semaine, il est possible que l'empreinte du dernier km dépasse les gains d'une alimentation locale !\n",
     "note": "Voir détail de l'approche de calcul [ici](http://nosgestesclimat/documentation/alimentation/local/part-locale)",
     "par défaut": "'jamais'",
     "formule": {
@@ -3534,9 +3533,9 @@
   "commun . intensité électricité": {
     "titre": "Intensité carbone du mix électrique suisse",
     "description": "\n> ℹ️ Cette règle provient du modèle [`@incubateur-ademe/publicodes-commun`](https://github.com/incubateur-ademe/publicodes-commun).\n\n\nIntensité moyenne, tous types de consommations confondues, année 2022.",
-    "formule": 0.153,
+    "formule": 0.091,
     "unité": "kgCO2e/kWh",
-    "note": "[Electricity Map](https://app.electricitymaps.com/map) vue 5 ans, 2022\n"
+    "note": "OCEN - SCDD pour l'électricité GE, moyenne 2017-2021 (5 ans).\n"
   },
   "commun . mois par an": {
     "titre": "Nombre de mois par an",
@@ -4097,7 +4096,7 @@
   },
   "divers . animaux domestiques . empreinte . chats . nombre": {
     "question": "Combien de chats possédez-vous dans votre foyer ?",
-    "par défaut": 0.49
+    "par défaut": 0
   },
   "divers . animaux domestiques . empreinte . chats . empreinte": {
     "titre": "Empreinte d'un chat de taille moyenne",
@@ -4498,8 +4497,8 @@
   },
   "divers . autres produits . niveau de dépenses": {
     "titre": "Niveau de dépenses pour des produits manufacturés neufs",
-    "question": "Le test ne capte encore toutes vos consommations, comment estimeriez-vous votre niveau de dépenses en produits neufs (décoration d'intérieur, bricolage, jeux, loisirs créatifs, outils, etc.) ?",
-    "description": "Pour garder l'interface simple, nous proposons une estimation, via vos dépenses, de l'empreinte des biens de consommation\nque vous possédez et que vous ne pensez pas avoir inclus dans les questions précédentes.\n\nElle concerne : **les jeux, la décoration, le matériel de cuisine, le linge de maison, les matériaux pour les loisirs créatifs ou bricolage, les plantes, etc.**\n\n> 💡 Les ordres de grandeur en € proposés ici sont basés sur les statistiques INSEE des dépenses des ménages. Un Français moyen dépense 80€/mois pour ces postes de dépenses.\n",
+    "question": "Le test ne capte pas encore toutes vos consommations, combien estimez-vous dépenser par an en produits neufs (décoration, bricolage, jeux, loisirs créatifs, outils, etc...) ?",
+    "description": "Pour garder l'interface simple, nous proposons une estimation, via vos dépenses, de l'empreinte des biens de consommation\nque vous possédez et que vous ne pensez pas avoir inclus dans les questions précédentes.\n\nElle concerne : **les jeux, la décoration, le matériel de cuisine, le linge de maison, les matériaux pour les loisirs créatifs ou bricolage, les plantes, etc.**\n",
     "note": "Les ordres de grandeur associés à chacune des possibilités sont issus du travail décrit dans la description de la règle `autres produits . facteur correctif`. On fait l'hypothèse ici que le niveau de dépense et niveau de revenus sont fortement corrélés.",
     "formule": {
       "une possibilité": {
@@ -4511,16 +4510,16 @@
         ]
       }
     },
-    "par défaut": "'moyen'"
+    "par défaut": "'important'"
   },
   "divers . autres produits . niveau de dépenses . faible": {
-    "titre": "Moins de 50€ / mois"
+    "titre": "Moins de 50CHF / mois"
   },
   "divers . autres produits . niveau de dépenses . moyen": {
-    "titre": "Environ 80€ / mois"
+    "titre": "Entre 50 et 120 CHF / mois"
   },
   "divers . autres produits . niveau de dépenses . important": {
-    "titre": "Plus de 120€ / mois"
+    "titre": "Plus de 120 CHF / mois"
   },
   "divers": {
     "titre": "Divers",
@@ -5026,7 +5025,7 @@
   },
   "divers . électroménager . préservation": {
     "question": "Quel effort faites-vous pour garder vos appareils électroménagers le plus longtemps possible ?",
-    "description": "Pour éviter de vous demander de renseigner l'âge précis de la dizaine d'appareils électroménagers que vous possédez, nous utilisons une grille d'âge moyen constaté pour chaque appareil.\n\nPar exemple, un frigo dure en moyenne 10 ans, un four 12 ans et une bouilloire 6 ans. Vous pouvez explorer la durée moyenne et l'empreinte de chaque appareil [ici](/documentation/divers/électroménager/appareils).\n\n> Il ne s'agit pas de l'âge de l'appareil quand il claque, mais de son âge quand son propriétaire décide de le remplacer par du neuf.\n\nA vous de vous placer par rapport à la moyenne.\n",
+    "description": "Pour éviter de vous demander de renseigner l'âge précis de la dizaine d'appareils électroménagers que vous possédez, nous utilisons une grille d'âge moyen constaté pour chaque appareil.\n\nPar exemple, un frigo dure en moyenne 10 ans, un four 12 ans et une bouilloire 6 ans.\n\n> Il ne s'agit pas de l'âge de l'appareil quand il claque, mais de son âge quand son propriétaire décide de le remplacer par du neuf.\n\nA vous de vous placer par rapport à la moyenne.\n",
     "par défaut": "'moyen'",
     "formule": {
       "une possibilité": {
@@ -5333,7 +5332,7 @@
   },
   "divers . loisirs . culture . édition . fréquence": {
     "question": "Combien dépensez-vous par mois pour vos journaux, revues ou livres ?",
-    "par défaut": "'normale'",
+    "par défaut": "'élevée'",
     "formule": {
       "une possibilité": {
         "choix obligatoire": "oui",
@@ -5348,16 +5347,16 @@
     "note": "En moyenne, [les ménages consacrent 1040€ par an aux achats de biens et services culturels](https://www.insee.fr/fr/statistiques/6535285?sommaire=6535307), dont 22% pour les livres et la presse, soit 228€, soit un peu moins de 20€ par mois.\nLa taille du foyer étant en moyenne de 2,2 personnes, nous pouvons estimer qu'un adulte dépense en moyenne un peu moins de 10€ par mois pour la presse, les livres et les logiciels.\n"
   },
   "divers . loisirs . culture . édition . fréquence . faible": {
-    "titre": "Moins de 5€ par mois"
+    "titre": "Moins de 5 CHF par mois"
   },
   "divers . loisirs . culture . édition . fréquence . normale": {
-    "titre": "De 5 à 15€ par mois"
+    "titre": "De 5 à 15 CHF par mois"
   },
   "divers . loisirs . culture . édition . fréquence . élevée": {
-    "titre": "De 15 à 30€ par mois"
+    "titre": "De 15 à 30 CHF par mois"
   },
   "divers . loisirs . culture . édition . fréquence . très élevée": {
-    "titre": "Plus de 30€ par mois"
+    "titre": "Plus de 30 CHF par mois"
   },
   "divers . loisirs . culture . empreinte pratique de la musique": {
     "titre": "Empreinte de la pratique de la musique",
@@ -5744,7 +5743,7 @@
   },
   "divers . numérique . préservation": {
     "question": "Quel effort faites-vous pour garder vos appareils électroniques le plus longtemps possible ?",
-    "description": "Pour éviter de vous demander de renseigner l'âge précis de tous les appareils électroniques que vous possédez, nous utilisons une grille d'âge moyen\nconstaté pour chaque appareil que l'on fait évoluer en fonction de vos efforts à les préserver ou non.\n\nVous pouvez explorer la durée moyenne et l'empreinte de chaque appareil [ici](/documentation/numérique).\n\nA vous donc de juger vos efforts pour les faire durer le plus longtemps possible\n\n> Répondre \"Aucun, je rachète souvent neuf\" est la réponse la plus impactante car elle signifie que vous remplacez vos appareils précocement avant même qu'ils soient hors d'usage.\n",
+    "description": "Pour éviter de vous demander de renseigner l'âge précis de tous les appareils électroniques que vous possédez, nous utilisons une grille d'âge moyen\nconstaté pour chaque appareil que l'on fait évoluer en fonction de vos efforts à les préserver ou non.\n\nA vous donc de juger vos efforts pour les faire durer le plus longtemps possible\n\n> Répondre \"Aucun, je rachète souvent neuf\" est la réponse la plus impactante car elle signifie que vous remplacez vos appareils précocement avant même qu'ils soient hors d'usage.\n",
     "par défaut": "'moyen'",
     "formule": {
       "une possibilité": {
@@ -8139,7 +8138,7 @@
     },
     "icônes": "🌡️",
     "question": "Quel type d'énergie utilisez-vous pour le chauffage de votre logement, eau chaude, cuisson, etc. ?",
-    "description": "> Cette question couvre l'ensemble des sources d'énergie qui vous permet d'alimenter vos chauffages, votre chauffe-eau, vos plaques de cuisson, etc.\n\nCertains logements utilisent uniquement de l'électricité, d'autres sont entièrement chauffés au gaz, et plus rarement au bois ou au fioul.\nDans d'autres situations encore, un logement peut être chauffé principalement via des chauffages électriques ou une pompe à chaleur,\nmais avec un appoint bois, par exemple. Enfin, il est possible de prendre en compte également vos consommations de gaz pour votre van ou camping-car. \n\nCochez tous les modes que vous utilisez.\n",
+    "description": "> Cette question couvre l'ensemble des sources d'énergie qui vous permet d'alimenter vos chauffages, votre chauffe-eau, vos plaques de cuisson, etc.\n\nCertains logements utilisent uniquement de l'électricité, d'autres sont entièrement chauffés au gaz, et plus rarement au bois ou au mazout.\nDans d'autres situations encore, un logement peut être chauffé principalement via des chauffages électriques ou une pompe à chaleur,\nmais avec un appoint bois, par exemple. Enfin, il est possible de prendre en compte également vos consommations de gaz pour votre van ou camping-car. \n\nCochez tous les modes que vous utilisez.\n",
     "formule": {
       "variations": [
         {
@@ -8258,9 +8257,9 @@
   },
   "logement . chauffage . gaz . estimation via le coût": {
     "question": "Pas de facture ? Entrez vos dépenses approximatives par mois",
-    "unité": "€/kWh",
-    "formule": "gaz . prix",
-    "note": "Cette formule nous permet de passer des €/mois aux kWh/an : le kWh coût x centimes par mois sur 12 mois.\n\nVoir l'onglet \"Calcul consommation Energie\" du [tableur MicMac](https://avenirclimatique.org/wp-content/uploads/2020/04/2020-04-12_MicMac_V2.6.xlsx)\nMis à jour via un petit algorithme de calcul en janvier 2022, suite aux hausses historiques du prix en 2021.\nLa valeur pour 2022 est approximativement de 0.104 €/kWh.\n"
+    "unité": "CHF/kWh",
+    "formule": 0.143,
+    "note": "OFS prix moyens de l'énergie su-f-05.02.91, moyenne 2022 - https://www.bfs.admin.ch/bfs/fr/home/statistiques/prix/indice-prix-consommation/resultats-detailles.assetdetail.25245904.html"
   },
   "logement . chauffage . gaz . consommation": {
     "icônes": "🔥",
@@ -8268,7 +8267,7 @@
     "par défaut": "parc français . chauffage . consommation gaz par m2 * surface",
     "unité": "kWh",
     "aide": "estimation via le coût",
-    "description": "Astuce : Vous trouverez vos consommations annuelles d'énergie sur vos factures de gaz et d'électricité ou sur votre compte en ligne sur le site de votre fournisseur.\n\n> Il se peut que votre copropriété ne vous communique pas la consommation en kWh de votre logement, quand la chaudière est centralisée. Cela dit, elle doit vous fournir le montant en €, que vous pourrez saisir ci-dessous pour estimer vos kWh.\n"
+    "description": "Astuce : Vous trouverez vos consommations annuelles d'énergie sur vos factures de gaz.\n\n> Pour le chauffage, il se peut que votre régie ne vous communique pas la consommation en kWh de votre logement, quand la chaudière est centralisée. Vous pouvez saisir le montant de votre facture en CHF pour estimer vos kWh. Si vous avez deux factures pour le gaz cuisson et le gaz chauffage (charges), additionnez les deux montants.\n"
   },
   "logement . chauffage . gaz . biogaz": {
     "question": "Avez-vous souscrit à un contrat gaz incluant du biogaz (ou biométhane) ?",
@@ -8282,24 +8281,14 @@
     "description": "Vous constaterez que le choix du biogaz réduit énormément l'empreinte climat du gaz que vous consommez, mais notez bien que la production actuelle est incapable de passer à l'échelle : la réduction globale de toute consommation de gaz reste essentielle, que l'on consomme du biogaz ou du gaz fossile.\n"
   },
   "logement . chauffage . gaz . intensité carbone gaz utilisateur": {
-    "formule": {
-      "variations": [
-        {
-          "si": "chauffage . gaz . biogaz",
-          "alors": "biogaz . facteur d'émission"
-        },
-        {
-          "sinon": "facteur d'émission base carbone"
-        }
-      ]
-    },
+    "formule": "gaz . facteur d'émission base carbone",
     "unité": "kgCO2e/kWh"
   },
   "logement . chauffage . gaz . facteur d'émission base carbone": {
     "titre": "Intensité carbone gaz naturel",
-    "valeur": 0.221,
+    "valeur": 0.23,
     "unité": "kgCO2e/kWh",
-    "note": "Il s'agit de kgCO2e/kWh *PCS*.\n\nOn raisonne en PCS (Pouvoir Calorifique Supérieur) et non en PCI (Pouvoir Calorifique Inférieur), car le PCS est utilisé en tant que coefficient de conversion dans les factures pour convertir le volume de gaz utilisé en kWh : \non fait l'hypothèse que la chaudière gaz récupère bien la chaleur latente de condensation.\n\nBase Carbone Gaz naturel - 2022/mix moyen/consommation\n"
+    "note": "KBOB"
   },
   "logement . chauffage . biogaz": {
     "note": "La base carbone retient le facteur d'émission biogaz suivant : `0.0444 kgCO2e/kWhPCI`. \n\nVoici davantage de documentation sur l'intégration de ce chiffres et ses limites.\n\n<details><summary>Leur justification est dans la documentation [déplier]</summary>\n\nPour des questions méthodologiques, cette approche n’est pas compatible avec la logique de construction des facteurs d’émissions de la Base Carbone® et ne peut être utilisée pour la réalisation d’un bilan d’émissions de GES. Ainsi, des travaux complémentaires ont été menés aboutissant à une mise à jour de l'Analyse de Cycle de Vie en 2020 [[144]](https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/references.htm) et à un facteur d’émissions de 44,1 gCO2e / kWh PCI. Cette dernière valeur traduit l’impact GES induit par la production d’un kWh de biométhane, contrairement à la valeur de 23,4 gCO2e / kWh PCI issue de la précédente étude, qui traduit l’impact global de la filière de méthanisation et injection, intégrant impacts induits et réductions d’émissions de GES apportés par cette filière. </details>\n<br/>\n\nIl nous faudra préciser ce qui dans NGC, nous empêche d'utiliser le facteur le plus faible dans le cadre de ce modèle de calcul consommation qui est un calcul global couvrant également l'agriculture via l'alimentation.\n\nAutre point crucial : le gaz se stocke, contrairement à l'électricité \"verte\", ce qui a motivé la non intégration de leur facteur d'émission pour l'instant dans NGC. \n\nAjoutons que les fuites des installations de biométhane, par nature bien plus petites et nombreuses que le gaz fossile et donc difficile à controler, pourraient être sous-estimées. Cette [étude de 2022](https://www.cell.com/one-earth/fulltext/S2590-3322(22)00267-6) est-elle prise en compte dans le facteur d'émission ci-dessus (2020) ? \n\n## Au sujet de l'utilisation des terres\n\nLe lien de la base carbone vers l'étude de GRDF n'est plus en ligne. [La voici en PDF](https://github.com/datagir/nosgestesclimat/files/9542516/evaluation-des-impacts-ges-biomethane-_synthese-quantis_2017.pdf). On peut y voir : \n\n![image](https://user-images.githubusercontent.com/1177762/189527416-4e8a3725-ef5a-448e-8557-0ad0007e0720.png)\n\nDont la part rouge est détaillée ici : \n\n![image](https://user-images.githubusercontent.com/1177762/189527431-3fdcc5b2-22c0-49e1-b5f0-68762f780d57.png)\n\nOn peut y voir que les cultures dédiées sont très faibles en proportion, ce qui est plutôt très rassurant. \n\nCela dit, et je ne sais pas trop comment le définir précisément, j'ai quand même une forte impression qu'une grande partie de ces composants pourraient être valorisés différemment : concrètement, on brûle et on valorise donc à un prix vendu très élevé (le gaz en prix de gros [coûte en septembre 2022](https://twitter.com/i/timeline) près de 2 fois le prix de production du biogaz (90€/MWh)) les restes de poulet de la cantine qu'on aurait pu juste ne pas produire (bleu); la pelouse domestique que le voisin tond toutes les semaines (bleu clair); le fumier de cultures qui auraient pu être dédiées à du végétal humain (mauve); etc. \n\nEn bref, si une partie de l'énergie présente dans les matières utilisées par le biométhane était juste perdue, une autre partie subit simplement un changement d'allocation, d'une chose utile au monde agricole vers la combustion du gaz pour chauffer des logemens notamment. Sans compter l'effet d'aubaine pour des activités qui émettent, substituables par d'autres qui émettent moins. L'étude pourtant semble très complète, donc c'est à creuser, peut-être qu'elle répond à tout ça et que je n'ai pas vu (c'est complexe). \n\nOn peut aussi citer [un article de Reporterre](https://reporterre.net/methanisation-un-digestat-bien-indigeste-pour-les-sols-et-les-eaux) qui s'inquiète des contaminations bactériennes dues à l'épendage du digestat ainsi qu'aux fuites de méthane et de protoxide d'azote N2O, qui seraient sous-estimées (car bien présentes donc évaluées dans l'étude citée par la base carbone). Mais attention, Reporterre n'est pas un organisme de recherche, mais un média d'opinion. \n\nUne investigation toute récente sur les méthaniseurs de Bretagne va dans le même sens, cataloguant les incidents ayant eu lieu dans la région : https://basta.media/des-methaniseurs-menacent-l-environnement-la-carte-inedite-des-accidents-en-Bretagne-Splann. \n\nCela ne remet pas en question le fait d'intégrer dans NGC le facteur à mon avis. La production de gaz fossile est tout à fait concernée par ce genre de problèmes également, à titre d'exemple. \n\nUne autre question dont la réponse y est peut-être est celle-ci : la filière peut-elle faire x10 en production sans introduire des externalités négatives pour l'instant maitrisées ? Ce serait intéressant d'y répondre pour l'utilisateur de NGC, lui montrer que son choix peut passer à l'échelle de la société. Carbone4 semble y répondre négativement : le remplacement du gaz fossile par le biométhane ne doit pas conduire à une non réduction de la consommation de gaz en général, et encore moins à un effet rebond ! \n\n![image](https://user-images.githubusercontent.com/1177762/189527887-931ee20a-8ad6-431f-bd4d-d705fa9eefca.png)\n\nUn **avertissement** est donc être intégré pendant la simulation pour évoquer cet impossible passage à l'échelle : \n\n> Le biométhane réduit **énormément** les émissions de CO₂ du gaz que vous consommez, mais la production actuelle est **incapable de passer à l'échelle** : la réduction globale de toute consommation de gaz reste **essentielle**, que l'on consomme du biogaz ou du gaz fossile.\n"
@@ -8425,7 +8414,7 @@
   },
   "logement . chauffage . citerne propane . estimation via le coût": {
     "question": "Pas de facture ? Entrez vos dépenses approximatives par mois",
-    "unité": "€/kg",
+    "unité": "CHF/kg",
     "formule": 1.8,
     "note": "Selon les informations agrégées par le site [HelloWatt](https://www.hellowatt.fr/gaz-propane-citerne/comparatif-prix), \nle prix du propane en citerne oscille autour de 1800€ par tonne (selon le fournisseur).\n\nCette aide à l'estimation est désignée pour recevoir une consommation mensuelle (cf InputEstimation.tsx côté site)\n"
   },
@@ -8436,7 +8425,7 @@
   },
   "logement . chauffage . fioul": {
     "icônes": "🛢",
-    "titre": "Fioul domestique",
+    "titre": "Mazout",
     "unité": "kgCO2e"
   },
   "logement . chauffage . fioul . empreinte": {
@@ -8456,15 +8445,15 @@
     "question": "Votre logement est-il chauffé au fioul ?"
   },
   "logement . chauffage . fioul . estimation via le prix": {
-    "question": "Pas de facture ? Entrez vos dépenses approximatives en fioul par mois",
-    "unité": "€/l",
-    "formule": 1.5199,
+    "question": "Pas de facture ? Entrez vos dépenses approximatives en mazout par mois",
+    "unité": "CHF/litre",
+    "formule": 1.397,
     "note": "Cette formule nous permet de passer des €/mois aux litres/an.\n\nSource : Fioul domestique 2000 à 4999 litres, 2ème semestre 2022.\nDonnée issue de l'excel [Prix HTT et TTC depuis janvier 2020.xlsx](https://github.com/datagir/nosgestesclimat/files/11029116/Prix.HTT.et.TTC.depuis.janvier.2020.xlsx)\ntéléchargeable sur la page [Prix des produits pétroliers](https://www.ecologie.gouv.fr/prix-des-produits-petroliers#scroll-nav__4) du ministère de la Transition Écologique.\n"
   },
   "logement . chauffage . fioul . consommation": {
-    "question": "Quelle est la consommation annuelle de fioul domestique de votre foyer ?",
+    "question": "Quelle est la consommation annuelle de mazout de votre foyer ?",
     "unité": "l",
-    "description": "Astuce : Vous trouverez vos consommations annuelles d'énergie sur votre facture de fioul ou sur votre compte en ligne sur le site de votre fournisseur.\n",
+    "description": "Astuce : Vous trouverez vos consommations annuelles d'énergie sur votre facture de mazout ou sur votre décompte de charges annuelles envoyé par votre régie.\n",
     "par défaut": "parc français . chauffage . consommation fioul par m2 * fioul kWh au litre * surface",
     "aide": "estimation via le prix"
   },
@@ -8541,7 +8530,7 @@
   },
   "logement . chauffage . bois . type . granulés . estimation via le coût": {
     "question": "Pas de facture ? Entrez vos dépenses approximatives par mois",
-    "unité": "€/kWh",
+    "unité": "CHF/kWh",
     "formule": "granulés . prix kWh",
     "note": "Cette formule nous permet de passer des €/mois aux kWh/an : le kWh coût x centimes par mois sur 12 mois.\n"
   },
@@ -8559,7 +8548,7 @@
   },
   "logement . chauffage . bois . type . bûches . estimation via le coût": {
     "question": "Pas de facture ? Entrez vos dépenses approximatives par mois",
-    "unité": "€/stère",
+    "unité": "CHF/stère",
     "formule": "prix stère 2023",
     "note": "Cette formule nous permet de passer des €/mois au nombre de stères par an.\n\nPrix calculé sur la base de l'indice prix bois énergie publié par l'INSEE.\n"
   },
@@ -8606,13 +8595,13 @@
     "icônes": "🔥",
     "question": "Quelle est votre consommation annuelle d'énergie via le réseau de chaleur raccordé à votre foyer ?",
     "par défaut": "parc français . chauffage . consommation réseau de chaleur par m2 * surface",
-    "aide": "estimation via le prix",
+    "aide": null,
     "unité": "kWh",
     "description": "Le contenu carbone du kWh de chaleur issu d'un réseau de chaleur dépend fortement du réseau auquel vous êtes raccordé. \n\nPour le moment, nous nous basons sur un facteur d'émission moyen : nous avons fait le choix de ne pas vous demander votre adresse.\n\nAstuce : Vous trouverez vos consommations annuelles d'énergie sur vos factures ou sur votre compte en ligne sur le site de votre fournisseur.\n\n> Il se peut que votre copropriété ne vous communique pas la consommation en kWh de votre logement, quand la chaudière est centralisée. Cela dit, elle doit vous fournir le montant en €, que vous pourrez saisir ci-dessous pour estimer vos kWh.\n"
   },
   "logement . chauffage . réseau de chaleur . intensité carbone": {
     "titre": "Empreinte carbone réseau de chaleur",
-    "formule": 0.112,
+    "formule": 0.067,
     "unité": "kgCO2e/kWh",
     "note": "Facteur d'émission issu de l'[enquête FEDEN sur les réseaux de chaleur en France 2023](https://www.fedene.fr/sncu/lenquete-2023-sur-les-reseaux-de-chaleur-froid-en-france/).\n"
   },
@@ -8622,7 +8611,7 @@
   },
   "parc français . surface moyenne": {
     "titre": "Surface moyenne par logement",
-    "formule": "surface totale / nombre logements",
+    "formule": 80,
     "unité": "m2"
   },
   "parc français . surface moyenne maison": {
@@ -8701,19 +8690,19 @@
     "unité": "m2"
   },
   "parc français . surface . part électricité": {
-    "formule": "électricité / surface"
+    "formule": "3.3%"
   },
   "parc français . surface . part gaz": {
-    "formule": "gaz / surface"
+    "formule": "60.80%"
   },
   "parc français . surface . part fioul": {
-    "formule": "fioul / surface"
+    "formule": "28.40%"
   },
   "parc français . surface . part bois": {
-    "formule": "bois / surface"
+    "formule": "2.3%"
   },
   "parc français . surface . part réseau de chaleur": {
-    "formule": "réseau de chaleur / surface"
+    "formule": "5.2%"
   },
   "parc français . surface . part GPL": {
     "formule": "GPL / surface"
@@ -8750,8 +8739,7 @@
         "surface . part fioul * empreinte fioul par m2",
         "surface . part bois * empreinte buches par m2 / 2",
         "surface . part bois * empreinte granulés par m2 / 2",
-        "surface . part réseau de chaleur * empreinte réseau de chaleur par m2",
-        "surface . part GPL * empreinte GPL par m2"
+        "surface . part réseau de chaleur * empreinte réseau de chaleur par m2"
       ]
     }
   },
@@ -8865,25 +8853,25 @@
     "unité": "kWh"
   },
   "parc français . chauffage . consommation électricité par m2": {
-    "formule": "consommation électricité / surface . électricité",
-    "note": "électricité + pompe à chaleur",
+    "formule": 125,
+    "note": "Source - KBOB, consommation pour le chauffage par défaut de 450 MJ/m2",
     "unité": "kWh/m2"
   },
   "parc français . chauffage . consommation gaz par m2": {
-    "formule": "consommation gaz / surface . gaz",
+    "formule": 125,
     "unité": "kWh/m2",
-    "note": "On retrouve à peu près la valeur donnée dans [cet article](https://selectra.info/energie/guides/conso/consommation-moyenne-gaz/tout-au-gaz) : \"On estime en effet qu'il faut en moyenne 100 kWh de gaz pour chauffer 1 mètre carré\".\n"
+    "note": "Source - KBOB, consommation pour le chauffage par défaut de 450 MJ/m2"
   },
   "parc français . chauffage . consommation fioul par m2": {
-    "formule": "consommation fioul / surface . fioul",
+    "formule": 125,
     "unité": "kWh/m2"
   },
   "parc français . chauffage . consommation bois par m2": {
-    "formule": "consommation bois / surface . bois",
+    "formule": 125,
     "unité": "kWh/m2"
   },
   "parc français . chauffage . consommation réseau de chaleur par m2": {
-    "formule": "consommation réseau de chaleur / surface . réseau de chaleur",
+    "formule": 125,
     "unité": "kWh/m2"
   },
   "parc français . chauffage . consommation GPL par m2": {
@@ -8953,7 +8941,7 @@
     "unité": "kWh"
   },
   "parc français . consommation électricité autre par m2": {
-    "formule": "consommation électricité autre / surface totale",
+    "formule": 31.5,
     "unité": "kWh/m2"
   },
   "parc français . empreinte électricité autre par m2": {
@@ -8963,13 +8951,12 @@
   "parc français . chauffage . empreinte moyenne chauffage air par m2": {
     "formule": {
       "somme": [
-        "empreinte électricité chauffage air par m2",
-        "empreinte gaz chauffage air par m2",
-        "empreinte fioul chauffage air par m2",
-        "empreinte buches chauffage air par m2",
-        "empreinte granulés chauffage air par m2",
-        "empreinte réseau de chaleur chauffage air par m2",
-        "empreinte GPL chauffage air par m2"
+        "empreinte électricité par m2 * part chauffage air électricité",
+        "empreinte gaz par m2 * part chauffage air gaz",
+        "empreinte fioul par m2 * part chauffage air fioul",
+        "empreinte buches par m2 * part chauffage air bois / 2",
+        "empreinte granulés par m2 * part chauffage air bois / 2",
+        "empreinte réseau de chaleur par m2 * part chauffage air réseau de chaleur"
       ]
     }
   },
@@ -9227,23 +9214,12 @@
           "alors": 144
         },
         {
-          "si": {
-            "toutes ces conditions": [
-              {
-                "est défini": "logement . appartement"
-              },
-              "logement . appartement"
-            ]
-          },
-          "alors": "par surface . appartement"
-        },
-        {
-          "sinon": "par surface . maison"
+          "sinon": 696
         }
       ]
     },
     "unité": "kgCO2e/m2",
-    "note": "L'entrée dans la base carbone ne donne pas plus d'informations sur cette catégorie de méthode de construction. Voir la [documentation de la base empreinte, onglet Achats de bien/ Bâtiments](https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/).\n\nLe facteur d'émission titre \"Maison éco-construite\", faute d'informations nous considérons qu'il est le même pour un appartement éco-construit.\n\nCependant, [cette étude de Carbone 4](https://www.carbone4.com/sauver-le-climat-avec-nos-forets-la-construction-touche-du-bois-2) affirme un réduction de 55% du béton au bois pour la maison, et de 60% pour l'appartement.\n\nNotons que pour le logement éco-construit, le CO₂ biogénique stocké n'est pas comptabilisé, seul le CO₂ fossile émis l'est.\n\nPour le logement éco-construit, nous retenons le facteur d'émission de la base carbone, mais il semble confirmé en ordre de grandeur dans l'étude Carbone 4.\n\n> Gains observés sur le CO₂ fossile du poste gros-œuvre (fondations et structure), en comparaison au béton. \n\nLe stockage de carbone dans le produit bois n’est pas pris en compte.\n\nGains liés à la substitution matériau: \n - MI bois CLT: 118 kgCO2e/m2 SHON, soit 473 kgCO2e/m3 de produit bois. \n - MI bois ossature : 83 kgCO2e/m2 SHON, soit 2495 kgCO2e/m3 de produit bois. \n - LC bois CLT : 231 kgCO2e/m2 SHON, soit 699 kgCO2e/m3 de produit bois.\n - LC bois ossature : 139 kgCO2e/m2 SHON, soit 3172 kgCO2e/m3 de produit bois.\n"
+    "note": "Rapport haute école fribourg 2021 (amortissement 60 ans)"
   },
   "logement . construction . par surface . appartement": {
     "titre": "Empreinte appartement par m2",
@@ -9262,8 +9238,8 @@
     "par défaut": "non"
   },
   "logement . construction . durée d'amortissement": {
-    "formule": 50,
-    "note": "La durée de vie d'un bâtiment est fixée à 50 ans (voir la [documentation de la base empreinte, onglet Achats de bien/ Bâtiments](https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/)).\n"
+    "formule": 60,
+    "note": "Hypothèse norme SIA"
   },
   "logement . électricité": {
     "icônes": "⚡",
@@ -9334,12 +9310,12 @@
     },
     "note": "on considère que seule la consommation d'électricité liée au chauffage est dépendante de la surface du logement",
     "aide": "estimation via le coût",
-    "description": "Astuce : vous trouverez la consommation annuelle d'électricité sur vos factures ou sur votre compte en ligne sur le site de votre fournisseur.\n\nPour rappel, si vous vivez dans plusieurs logements (par exemple, si vous avez une résidence secondaire), essayez de \"ramener\" ces consommations dans celles du logement principal afin d'avoir l'estimation la plus juste possible.\n"
+    "description": "Astuce : vous trouverez la consommation annuelle d'électricité sur vos factures ou sur votre compte en ligne sur le site des SIG.\n"
   },
   "logement . électricité . estimation via le coût": {
     "question": "Pas de facture ? Entrez vos dépenses approximatives par mois",
-    "unité": "€/kWh",
-    "formule": 0.2022,
+    "unité": "CHF/kWh",
+    "formule": 0.28,
     "note": "Cette formule nous permet de passer des €/mois aux kWh/an.\n\nLe chiffre inclut un coût de l'abonnement, et représente donc une moyenne. Ce n'est pas le prix du kWh marginal. Il inclut les taxes.\n\nChiffre issu de [Eurostat, household, second half 2021](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics).\n"
   },
   "logement . électricité . intensité carbone": {
@@ -9368,7 +9344,7 @@
   "logement . saisie habitants": {
     "question": "Combien de personnes vivent chez vous ?",
     "description": "Il s'agit de savoir combien de personnes partagent votre logement et toutes les consommations qu'il entraîne (construction, chauffage, etc).\n\n> Si vous vivez seul, répondez `1`.\n\n> Si vous vivez avec votre conjoint et un enfant, répondez `3`.\n\n> Si vous êtes séparé avec un enfant qui alterne entre votre logement et un autre, vous pouvez saisir `1,5`.\n",
-    "par défaut": 2.2,
+    "par défaut": 2.1,
     "note": "valeur par défaut d'après https://www.insee.fr/fr/statistiques/2381486.",
     "suggestions": {
       "j'habite seul": 1,
@@ -9438,14 +9414,14 @@
   "logement . appartement": {
     "titre": "Appartement",
     "question": "Votre logement est-il un appartement ?",
-    "description": "Par opposition à une maison individuelle.\n\nL'augmentation de l'habitat en appartements peut nous faire oublier que la maison reste le logement majoritaire des foyers français en 2018.\n\nCette information influence notamment l'empreinte de construction, mais aussi les possibilités de travaux d'isolation par exemple.\n\n> Si vous vivez dans un habitat original, par exemple un camping-car / un camion / une péniche, pas de problème : choisissez \"appartement\" et saisissez les m² de ce qui constitue quand même votre logement.\n",
+    "description": "Par opposition à une maison individuelle ou une villa.\n\nCette information influence notamment l'empreinte de construction, mais aussi les possibilités de travaux d'isolation par exemple.\n\n> Si vous vivez dans un habitat original, par exemple un camping car, pas de problème : choisissez \"appartement\" et saisissez les m² de ce qui constitue quand même votre logement.\n",
     "note": "En 2018, l’habitat individuel représente 56 % des logements ([Source INSEE](https://www.insee.fr/fr/statistiques/3676693?sommaire=3696937)) : il est majoritaire parmi les résidences principales comme parmi les résidences secondaires et logements occasionnels. Après avoir progressé entre 1999 et 2008 sa part recule légèrement, car le nombre de logements collectifs augmente plus vite que celui des logements individuels du fait des évolutions récentes de la construction neuve.\nNotons qu'il s'agit d'une proportion de logements ; or on peut s'attendre (à vérifier) à ce que les maisons contiennent davantage de gens en moyenne que les appartements, ce qui renforce le choix de la valeur par défaut.\n"
   },
   "logement . âge": {
     "question": "Quel est l'âge de votre logement ?",
     "par défaut": 45,
     "unité": "an",
-    "note": "En France, 24% du parc de logements date d'avant 1949 et 24% entre 1949 et 1974 selon l'[INSEE](https://www.insee.fr/fr/statistiques/fichier/2586377/LOGFRA17.pdf).\n\nPour Paris, [cette carte](https://www.comeetie.fr/galerie/BatiParis) interactive est fascinante si la question de l'âge de ses logements vous intéresse.\n",
+    "note": "Dans le canton de Genève, plus de la moitié des bâtiments à usage d'habitation et des maisons individuelles ont été construits avant 1980.",
     "suggestions": {
       "neuf": 0,
       "récent": 10,
@@ -9817,8 +9793,8 @@
     "note": "Chiffre issu de l'étude ADEME [Etude sur le chauffage domestique bois](https://www.ademe.fr/etude-chauffage-domestique-bois), fichier 3_presentation.pdf, page 34."
   },
   "logement . chauffage . bois . type . bûches . prix stère 2023": {
-    "formule": "prix stère 2017 * (indice prix bois / 100)",
-    "unité": "€/stère",
+    "formule": 180,
+    "unité": "CHF/stère",
     "description": "Il n'existe pas de prix récent pour la stère de bois. L'idée est de prendre en compte la hausse des tarifs via l'indice d'inflation."
   },
   "logement . chauffage . bois . indice prix bois": {
@@ -9830,14 +9806,14 @@
     "unité": "€/kWh"
   },
   "logement . chauffage . bois . type . granulés vrac . prix 100 kWh": {
-    "formule": 13.2522,
+    "formule": 11,
     "unité": "€",
-    "note": "Source [Dido](https://www.statistiques.developpement-durable.gouv.fr/catalogue?page=datafile&datafileRid=0bf930dc-bfac-4e6f-a063-ec1774c6d029) en date du 2023-01\n"
+    "note": "OFS prix moyens de l'énergie su-f-05.02.91, moyenne 2022 (4.8 kWh/kg)\thttps://www.bfs.admin.ch/bfs/fr/home/statistiques/prix/indice-prix-consommation/resultats-detailles.assetdetail.25245904.html"
   },
   "logement . chauffage . bois . type . granulés sac . prix 100 kWh": {
-    "formule": 13.8456,
+    "formule": 11,
     "unité": "€",
-    "note": "Source [Dido](https://www.statistiques.developpement-durable.gouv.fr/catalogue?page=datafile&datafileRid=0bf930dc-bfac-4e6f-a063-ec1774c6d029) en date du 2023-01\n"
+    "note": "OFS prix moyens de l'énergie su-f-05.02.91, moyenne 2022 (4.8 kWh/kg)\thttps://www.bfs.admin.ch/bfs/fr/home/statistiques/prix/indice-prix-consommation/resultats-detailles.assetdetail.25245904.html"
   },
   "gaz": {
     "titre": "Aide calcul consommation gaz",
@@ -10731,20 +10707,15 @@
     "couleur": "#0c2461",
     "abréviation": "S. sociétaux",
     "icônes": "🏛️",
-    "description": "Ce poste inclus l'empreinte des services publics français, et des services marchands que l'on peut considérer comme étant essentiels à la vie de chacun, divisées par la population du pays.  \n\nLa première catégorie \"services publics\" comprend par exemple l'empreinte des hôpitaux français, ou de la justice. Nous considérons que cette empreinte doit être également répartie pour tous les citoyens, car ce sont des postes \"républicains\" que seule la démocratie peut faire évoluer, pas directement par les choix de consommation individuels. \n\nLa deuxième catégorie \"services marchands\" comprend notamment le réseau de télécommunications (fibre, téléphone, etc.), mais aussi les assurances ou encore la poste. Ce sont des services relativement universels pour lesquels nous n'avons pas encore le détail qui nous permettrait de répartir l'empreinte en fonction des choix de consommation des citoyens.\n\n<RavijenChartSocietaux/>\n",
-    "note": "\nLe modèle qui nous permet de calculer ces deux constantes \"services publics\" et \"services marchands\" se distingue du reste du modèle Nos Gestes Climat car il est dit \"macroscopique\". C'est une reconstition macroscopique qui est basée sur les volumes d'échanges d'argent en milliard d'€ par secteurs.  \n\nL'inclusion de ce modèle macro permet d'hybrider le modèle NGC. On peut ainsi dire qu'il est à dominante micro avec une composante macro. \n\nNotre source pour les deux constantes macro est le calcul de l'empreinte nationale française par le Ministère de l'Écologie. Voici [l'article le plus récent](https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021), qui nous donne d'ailleurs une estimation de l'empreinte nationale de 8,9 tonnes en 2021. Le chiffre est extrapolé avec son lot d'incertitudes supplémentaires par rapport au chiffre de 9,2 tonnes en 2018.\n\nPour comprendre comment ce modèle fonctionne, voir [cette page d'explication](https://github.com/datagir/nosgestesclimat/issues/1583).\n",
-    "formule": {
-      "somme": [
-        "services publics",
-        "services marchands"
-      ]
-    },
+    "description": "Ce poste inclus l'empreinte des services publics suisses.\n",
+    "note": "calcul basé sur les bilans carbone territoriaux VdG et Canton (cf. fichier services sociétaux)",
+    "formule": 1583,
     "unité": "kgCO2e"
   },
   "services sociétaux . question rhétorique": {
     "titre": "Question d'information sur les services communs",
-    "question": "Nous attribuons l'empreinte des services publics (éducation, santé...) et marchands (télécom, assurance...) à chaque citoyen de façon égale.",
-    "description": "\nCette catégorie ne dépend pas de vos réponses. L'empreinte associée est calculée via une approche macro-économique à l'échelle nationale. [En savoir plus](/documentation/services-sociétaux).\n",
+    "question": "Nous attribuons l'empreinte des services publics (éducation, santé...) à chaque résident genevois de façon égale.",
+    "description": "Cette catégorie ne dépend pas de vos réponses. L'empreinte associée est calculée via une approche macro à partir notamment du bilan carbone territorial du canton de Genève.\nPour en savoir plus sur cette valeur, n'hésitez pas à consulter les explications détaillées dans notre FAQ.\n",
     "par défaut": "'ok'",
     "formule": {
       "une possibilité": {
@@ -10801,7 +10772,7 @@
   },
   "transport . avion . usager": {
     "question": "Avez-vous pris l'avion au moins une fois ces 3 dernières années ?",
-    "description": "Nous faisons ici le choix de vous proposer de compter l'impact de vos déplacements en avion sur plusieurs années. L'empreinte sur le climat est telle qu'il est important de prendre cela en compte.\n\nAinsi, que vous preniez l'avion tous les ans ou non, répondez \"oui\" et vous aurez l'option par la suite de saisir vos temps de vol des 3 dernières années.\n\n> 💡 Si vous avez pris l'avion pour faire Paris-New-York en 2021 (environ 17h A/R), vos émissions associées (près de 2 tonnes) seront échelonnées sur les 3 dernières années.\n"
+    "description": "Nous faisons ici le choix de vous proposer de compter l'impact de vos déplacements en avion sur plusieurs années. L'empreinte sur le climat est telle qu'il est important de prendre cela en compte.\n\nAinsi, que vous preniez l'avion tous les ans ou non, répondez \"oui\" et vous aurez l'option par la suite de saisir vos temps de vol des 3 dernières années.\n\n> 💡 Si vous avez pris l'avion ppour faire Zurich-New-York en 2022 (environ 19h A/R), vos émissions associées (près de 2 tonnes) seront échelonnées sur les 3 dernières années.\n"
   },
   "transport . avion . court courrier": {
     "formule": "heures de vol * vitesse moyenne * empreinte par km"
@@ -10812,8 +10783,8 @@
     "note": "Nous utilisons la vitesse moyenne de vol pour un Paris Toulouse.\n"
   },
   "transport . avion . court courrier . empreinte par km": {
-    "formule": 0.258,
-    "description": "Nous utilisons le facteur d'émission de la base carbone `Avion passagers - Court courrier, 2018 - AVEC trainées`.\n",
+    "formule": 0.305,
+    "description": "Nous utilisons le facteur d'émission provenant de la plateforme Mobitool - https://www.mobitool.ch/fr/outils/facteurs-mobitool-v2-1-25.html",
     "unité": "kgCO2e/km"
   },
   "transport . avion . court courrier . heures de vol": {
@@ -10829,16 +10800,17 @@
     "description": "Comptez les heures que vous avez passées dans un avion pour des trajets de moins de 2h (ce qui correspond à des vols d'une distance inférieure à 1000km environ). Si vous faites des escales, additionnez simplement les durées de chaque vol.\n\n\nLes suggestions sont basées sur la durée minimum arrondie de vol constatée dans les moteurs de recherche, doublée pour considérer un aller-retour.\n\n💡 Ne comptez que les km de déplacement personnel et de déplacement domicile travail pour rejoindre votre lieu de travail habituel.\nPar exemple, si vous êtes en mission professionnelle dans un autre pays, cela rentre dans la comptabilité de votre entreprise.\n",
     "suggestions": {
       "🚫✈️": 0,
-      "Zurich ⇄ Genève": 1.7,
-      "Zurich ⇄ Venise": 2,
-      "Zurich ⇄ Paris": 3
+      "Genève ⇄ Zurich": 1.5,
+      "Genève ⇄ Paris": 2.5,
+      "Genève ⇄ Bruxelles": 2.5,
+      "Genève ⇄ Barcelone": 3
     },
     "unité": "h",
     "par défaut": "durée moyenne",
     "note": "La caractérisation \"court courrier\" par le temps de trajet est donnée par la règle `court courrier . durée max` = 2.17h."
   },
   "transport . avion . court courrier . durée moyenne": {
-    "titre": "Durée moyenne passée par un Français dans les vols court-courriers",
+    "titre": "Durée moyenne passée par un Suisse dans les vols court-courrier",
     "formule": "passager km moyen / vitesse moyenne",
     "unité": "h"
   },
@@ -10869,8 +10841,8 @@
     "note": "Nous utilisons la vitesse moyenne de vol pour un Paris Alger.\n"
   },
   "transport . avion . moyen courrier . empreinte par km": {
-    "formule": 0.187,
-    "description": "Nous utilisons le facteur d'émission de la base carbone `Avion passagers - Moyen courrier, 2018 - AVEC trainées`.\n",
+    "formule": 0.257,
+    "description": "Nous utilisons le facteur d'émission provenant de la plateforme Mobitool - https://www.mobitool.ch/fr/outils/facteurs-mobitool-v2-1-25.html",
     "unité": "kgCO2e/km"
   },
   "transport . avion . moyen courrier . heures de vol": {
@@ -10886,17 +10858,17 @@
     "description": "Comptez les heures que vous avez passées dans un avion pour des trajets entre 2h et 6h (ce qui correspond à des vols d'une distance comprise entre 1000km et 3500km environ). Si vous faites des escales, additionnez simplement les durées de chaque vol.\n\nLes suggestions sont basées sur la durée minimum arrondie de vol constatée dans les moteurs de recherche, doublée pour considérer un aller-retour.\n\n💡 Ne comptez que les km de déplacement personnel et de déplacement domicile travail pour rejoindre votre lieu de travail habituel.\nPar exemple, si vous êtes en mission professionnelle dans un autre pays, cela rentre dans la comptabilité de votre entreprise.\n",
     "suggestions": {
       "🚫✈️": 0,
-      "Zurich ⇄ Madrid": 5,
-      "Zurich ⇄ Helsinki": 6,
-      "Zurich ⇄ Le Caire": 8,
-      "Zurich ⇄ Dubaï": 12
+      "Genève ⇄ Madrid": 4,
+      "Genève ⇄ Porto": 4,
+      "Genève ⇄ Lisbonne": 5,
+      "Genève ⇄ Istanbul": 6
     },
     "unité": "h",
     "par défaut": "durée moyenne",
     "note": "La caractérisation \"moyen courrier\" par le temps de trajet est donnée par la règle `court courrier . durée max`=2.17h et `moyen courrier . durée max` = 6.48h."
   },
   "transport . avion . moyen courrier . durée moyenne": {
-    "titre": "Durée moyenne passée par un Français dans les vols moyen-courriers",
+    "titre": "Durée moyenne passée par un Suisse dans les vols moyen-courrier",
     "formule": "passager km moyen / vitesse moyenne",
     "unité": "h"
   },
@@ -10927,8 +10899,8 @@
     "note": "Nous utilisons la vitesse moyenne de vol du modèle MicMac v2.6, déterminée selon [ces données](http://www.abm.fr/voyager-en-avion-le-guide-du-passager/en-complement/distances-et-durees-de-vol.html).\n"
   },
   "transport . avion . long courrier . empreinte par km": {
-    "formule": 0.152,
-    "description": "Nous utilisons le facteur d'émission de la base carbone `Avion passagers - Long courrier, 2018 - AVEC trainées`.\n",
+    "formule": 0.235,
+    "description": "Nous utilisons le facteur d'émission provenant de la plateforme Mobitool - https://www.mobitool.ch/fr/outils/facteurs-mobitool-v2-1-25.html",
     "unité": "kgCO2e/km"
   },
   "transport . avion . long courrier . heures de vol": {
@@ -10944,18 +10916,16 @@
     "description": "Comptez les heures que vous avez passées dans un avion pour des trajets de plus de 6h (ce qui correspond à des vols d'une distance supérieure à 3500km environ). Si vous faites des escales, additionnez simplement les durées de chaque vol. \n\nA noter que si vous avez voyagé vers une destination lointaine en plusieurs trajets \"courts\", ils sont à prendre en compte dans les questions précédentes.\n\nLes suggestions sont basées sur la durée minimum arrondie de vol constatée dans les moteurs de recherche, doublée pour considérer un aller-retour.\n\n💡 Ne comptez que les km de déplacement personnel et de déplacement domicile travail pour rejoindre votre lieu de travail habituel.\nPar exemple, si vous êtes en mission professionnelle dans un autre pays, cela rentre dans la comptabilité de votre entreprise.\n",
     "suggestions": {
       "🚫✈️": 0,
-      "Zurich ⇄ New York": 19,
-      "Zurich ⇄ Kinshasa": 22,
-      "Zurich ⇄ Tokyo": 26,
-      "Zurich ⇄ Lima": 36,
-      "Zurich ⇄ Sydney": 44
+      "Genève ⇄ Dubai": 12.5,
+      "Genève ⇄ New York": 17,
+      "Genève ⇄ Beijing": 20.25
     },
     "unité": "h",
     "par défaut": "durée moyenne",
     "note": "La caractérisation \"long courrier\" par le temps de trajet est donnée par la règle `moyen courrier . durée max` = 6.48h."
   },
   "transport . avion . long courrier . durée moyenne": {
-    "titre": "Durée moyenne passée par un Français dans les vols long-courriers",
+    "titre": "Durée moyenne passée par un Suisse dans les vols long-courrier",
     "formule": "passager km moyen / vitesse moyenne",
     "unité": "h"
   },
@@ -10989,14 +10959,14 @@
     "description": "Sur la base de 166 gCO2e/(passager.km) et de 12 km/h de vitesse moyenne\n"
   },
   "transport . bus . impact par km": {
-    "formule": 0.113,
+    "formule": 0.067,
     "unité": "kgCO2e/km",
-    "note": "Autobus - Gazole ; 113 gCO2e/km/personne ; Base Carbone consultée le 04/04/2022\nLa flotte étant majoritairement Diesel en France (https://www.statistiques.developpement-durable.gouv.fr/69-000-autocars-en-circulation-au-1er-janvier-2020), on fait le choix de prendre ce FE (plus fiable que la référence \"Autobus moyen\" selon la base carbone)\nLa prise compte des autres motorisations de cette catégorie de la base carbone fera diminuer ce FE (en pondérant selon les caractéristiques de la flotte française). (Ex: Autobus - électrique = 21.7 gCO2e/km/personne)\n"
+    "note": "Nous utilisons le facteur d'émission provenant de la plateforme Mobitool - Mobitool basé sur la flotte TPG (Rapport de gestion 2022 - 30% trolleybus, 70% autobus surtout articulés)"
   },
   "transport . bus . vitesse": {
-    "formule": 12,
+    "formule": 18,
     "unité": "km/h",
-    "note": "Hypothèse de 12 km/h de vitesse moyenne d'après [cet article](https://www.lemonde.fr/blog/transports/2013/03/11/les-petits-secrets-de-la-ratp-reveles-au-public/) sur la RATP)"
+    "note": "TPG (Rapport de gestion 2022 - estimation basée sur la vitesse commerciale bus)"
   },
   "transport . bus . heures par semaine": {
     "question": "Combien d'heures passez-vous dans un bus par semaine ?",
@@ -11032,7 +11002,26 @@
   "transport . deux roues . empreinte": {
     "applicable si": "usager",
     "icônes": "🛵",
-    "formule": "(empreinte au km + entretien pondéré) * km",
+    "formule": {
+      "variations": [
+        {
+          "si": "type = 'scooter thermique'",
+          "alors": 0.124
+        },
+        {
+          "si": "type = 'scooter électrique'",
+          "alors": 0.03
+        },
+        {
+          "si": "type = 'moto inf 250'",
+          "alors": 0.146
+        },
+        {
+          "si": "type = 'moto sup 250'",
+          "alors": 0.194
+        }
+      ]
+    },
     "unité": "kgCO2e"
   },
   "transport . deux roues . empreinte moyenne": {
@@ -11042,7 +11031,7 @@
         "avec": {
           "deux roues . usager": "oui",
           "deux roues . type": "'moto sup 250'",
-          "deux roues . km": "km annuels moyen * pourcentage motards"
+          "deux roues . km": 400
         }
       }
     }
@@ -11549,9 +11538,10 @@
     "par défaut": 8,
     "unité": "h",
     "suggestions": {
-      "Cherbourg ⇄ 🇬🇧 Poole": 8,
-      "Marseille ⇄ 🏝️ Ajaccio": 22,
-      "Marseille ⇄ 🇩🇿 Alger": 50
+      "Marseille ⇄ Ajaccio": 22,
+      "Toulon ⇄ Ajaccio": 16,
+      "Gênes ⇄ Bastia": 13,
+      "Gênes ⇄ Olbia": 24
     },
     "note": "Selon les chiffres du [SDES](https://www.statistiques.developpement-durable.gouv.fr/edition-numerique/chiffres-cles-transport-2021/17-transport-maritime-de-voyageurs),\nles trajets en ferry sont majoritairement effectués sur la Manche / mer du Nord, que l'on peut approximer à des voyages \"Cherbourg-Poole\" (8h aller-retour).\n"
   },
@@ -11567,14 +11557,9 @@
     "description": "Nous confondons l'ensemble des moyens de transport urbains sur rails, à savoir métro, tramway et RER."
   },
   "transport . métro ou tram . impact par km": {
-    "formule": {
-      "moyenne": [
-        "impact par km métro",
-        "impact par km RER"
-      ]
-    },
+    "formule": 0.021,
     "unité": "kgCO2e/km",
-    "note": "Nous faisons l'hypothèse (forte) d'une moyenne non pondérée pour le calcul de l'impact au km."
+    "note": "Nous utilisons le facteur d'émission provenant de la plateforme Mobitool - Mobitool tramway (hors infrastructure)"
   },
   "transport . métro ou tram . impact par km métro": {
     "formule": 0.00503,
@@ -11587,12 +11572,12 @@
     "note": "RER et transilien/2022/Ile de France ; Base Carbone consultée le 06/12/2023"
   },
   "transport . métro ou tram . vitesse": {
-    "formule": 25,
+    "formule": 15.4,
     "unité": "km/h",
-    "note": "Hypothèse de 25 km/h de vitesse moyenne, d'après l'article [Les petits secrets de la RATP révélés au public](http://transports.blog.lemonde.fr/2013/03/11/les-petits-secrets-de-la-ratp-reveles-au-public/)"
+    "note": "TPG (Rapport de gestion 2022 - moyenne vitesse commerciale tram)"
   },
   "transport . métro ou tram . heures par semaine": {
-    "question": "Combien d'heures passez-vous par semaine en métro, tram, RER ?",
+    "question": "Combien d'heures par semaine passez-vous en tram ?",
     "suggestions": {
       "zéro": 0,
       "1h / jour": 7,
@@ -11671,13 +11656,13 @@
     "unité": "kgCO2e"
   },
   "transport . mobilité douce . vélo . construction": {
-    "formule": 116,
+    "formule": 76,
     "unité": "kgCO2e",
-    "note": "La base empreinte ne propose pas de FE pour le vélo conventionnel.\n\nNéanmoins, en 2021, le fabricant de vélo Trek a publié [une étude](https://view.publitas.com/trek-bicycle/trek-bicycle-2021-sustainability-report/page/6)\nprésentant l'empreinte carbone de la production de ses vélos. \n\nPour le plus populaire, l'empreinte affichée est de 116 kgCO2e.\n"
+    "note": "Mobitool Conventionnel ((fabrication + maintenance + fin de vie) * km"
   },
   "transport . mobilité douce . vélo . durée de vie": {
-    "formule": 12,
-    "note": "On considère la durée de vie d'un vélo conventionnel identique à celle d'un VAE (hypothèse forte, car il semble qu'un VAE emporte davatange de composants qui peuvent s'user davantage)\nHypothèse issue du HBEFA (Manuel des facteurs d'émission pour le transport routier), d'après la documentation de la base empreinte.\nChiffres tirés de l'étude ADEME de 2019 [\"Modélisation et évaluation environnementale de produits de consommation et biens d'équipement\"](https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html)\n"
+    "formule": 15,
+    "note": "Mobitool Conventionnel"
   },
   "transport . mobilité douce . vae": {
     "titre": "Vélo à Assistance Électrique (VAE)",
@@ -11692,9 +11677,9 @@
     "par défaut": "non"
   },
   "transport . mobilité douce . vae . empreinte": {
-    "formule": 0.00223,
+    "formule": 0.001,
     "unité": "kgCO2e/km",
-    "note": "FE issu de la base empreinte (Vélo/à assistance électrique)"
+    "note": "Mobitool moyenne e-bike 25 km/h, 45 km/h et vélo cargo (approvisionnement en énergie)"
   },
   "transport . mobilité douce . vae . km": {
     "question": "Combien de kilomètres faites-vous à l'année avec votre Vélo à Assistance Électrique (VAE) ?",
@@ -11714,13 +11699,13 @@
     "unité": "kgCO2e"
   },
   "transport . mobilité douce . vae . construction": {
-    "formule": 262,
+    "formule": 198,
     "unité": "kgCO2e",
-    "note": "FE issu de la base empreinte (Vélo/à assistance électrique)"
+    "note": "Mobitool moyenne e-bike 25 km/h, 45 km/h et vélo cargo ((fabrication + maintenance + fin de vie) * km"
   },
   "transport . mobilité douce . vae . durée de vie": {
-    "formule": 12,
-    "note": "Hypothèse issue du HBEFA (Manuel des facteurs d'émission pour le transport routier), d'après la documentation de la base empreinte.\nChiffres tirés de l'étude ADEME de 2019 [\"Modélisation et évaluation environnementale de produits de consommation et biens d'équipement\"](https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html)\n"
+    "formule": 10,
+    "note": "Mobitool moyenne e-bike 25 km/h, 45 km/h et vélo cargo"
   },
   "transport . mobilité douce . autres véhicules à moteur": {
     "titre": "Petit véhicule électrique",
@@ -11736,9 +11721,9 @@
     "par défaut": "non"
   },
   "transport . mobilité douce . autres véhicules à moteur . empreinte": {
-    "formule": 0.002,
+    "formule": 0.003,
     "unité": "kgCO2e/km",
-    "note": "FE issu de la base empreinte (Trotinette)"
+    "note": "Mobitool Trottinette électrique"
   },
   "transport . mobilité douce . autres véhicules à moteur . km": {
     "question": "Combien de kilomètres faites-vous à l'année avec votre trottinette électrique, gyropode, monocycle électrique, hoverboard...?",
@@ -11757,13 +11742,13 @@
     "unité": "kgCO2e"
   },
   "transport . mobilité douce . autres véhicules à moteur . construction": {
-    "formule": 91.9,
+    "formule": 71,
     "unité": "kgCO2e",
-    "note": "FE issu de la base empreinte (Trotinette)"
+    "note": "Mobitool Trottinette électrique  ((fabrication + maintenance + fin de vie) * km"
   },
   "transport . mobilité douce . autres véhicules à moteur . durée de vie": {
-    "formule": 4,
-    "note": "Hypothèse issue du HBEFA (Manuel des facteurs d'émission pour le transport routier), d'après la documentation de la base empreinte.\nChiffres tirés de l'étude ADEME de 2019 [\"Modélisation et évaluation environnementale de produits de consommation et biens d'équipement\"](https://librairie.ademe.fr/dechets-economie-circulaire/127-modelisation-et-evaluation-environnementale-de-produits-de-consommation-et-biens-d-equipement.html)\n"
+    "formule": 2,
+    "note": "Mobitool Trottinette électrique"
   },
   "transport . train": {
     "titre": "Train",
@@ -11772,15 +11757,9 @@
     "formule": "km * impact par km"
   },
   "transport . train . impact par km": {
-    "formule": {
-      "somme": [
-        "proportion TGV * TGV",
-        "proportion TER * TER",
-        "proportion intercités * intercités"
-      ]
-    },
+    "formule": 0.002,
     "unité": "kgCO2e/km",
-    "note": "Les différents types de trains ont des impacts carbone par passager par kilomètres différents.\nNous calculons une moyenne pondérée en proportion du nombre total de kilomètres parcourus dans chaque type de train au niveau national.\nSource : [Autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf)\n\n![Répartition Passagers.km](https://github.com/incubateur-ademe/nosgestesclimat/assets/55186402/4bbdf823-8e9a-4570-90da-77ff8af05b14)\n"
+    "note": "Nous utilisons le facteur d'émission provenant de la plateforme Mobitool - Mobitool mix électrique CFF (hors infrastructure routière)"
   },
   "transport . train . TGV": {
     "formule": 0.00293,
@@ -11835,14 +11814,14 @@
     "question": "Combien de kilomètres parcourez-vous en train par an ?",
     "description": "Les suggestions sont basées sur la distance à vol d'oiseau doublée pour considérer un aller-retour.",
     "suggestions": {
-      "traversée d'une région": 300,
-      "Zurich ⇄ Genève": 450,
-      "Zurich ⇄ Paris": 1000,
-      "💳 grand voyageur": 10000,
-      "💳 grand voyageur plus ultra": 25000
+      "Genève ⇄ Nyon": 42,
+      "Genève ⇄ Lausanne": 100,
+      "Genève ⇄ Berne": 260,
+      "Genève ⇄ Zurich": 440,
+      "Genève ⇄ Paris": 820
     },
     "unité": "km",
-    "par défaut": 1000
+    "par défaut": 2700
   },
   "transport": {
     "titre": "Transport",
@@ -12138,7 +12117,7 @@
     "titre": "Km en voiture",
     "question": "Quelle distance parcourez-vous à l'année en voiture ?",
     "description": "Ne comptez que les kilomètres de déplacement personnel (courses, loisirs, famille, etc.) et de déplacement domicile travail pour rejoindre votre lieu de travail habituel.\n\nPar exemple, si vous êtes en mission professionnelle dans un autre département ou un autre pays, cela rentre dans la comptabilité de votre entreprise : ne le comptez pas ici.\n",
-    "par défaut": "13430 km/an",
+    "par défaut": "km annuels moyen",
     "unité": "km",
     "suggestions": {
       "zéro": 0,
@@ -12149,9 +12128,9 @@
     }
   },
   "transport . voiture . km annuels moyen": {
-    "formule": 12200,
+    "formule": 7000,
     "unité": "km",
-    "note": "Chiffre issu de [datalab ministère écologie 2019](https://www.statistiques.developpement-durable.gouv.fr/bilan-annuel-des-transports-en-2019-0), page 3 G1."
+    "note": "Source : [Office fédéral de la statistique](https://www.bfs.admin.ch/bfs/fr/home/statistiques/mobilite-transports/transport-personnes/comportements-transports/distance-duree-jour-deplacements.html).\n"
   },
   "transport . voiture . utilisateur régulier": {
     "question": "Utilisez-vous majoritairement la même voiture pour vous déplacer ?",
@@ -12362,7 +12341,7 @@
       ]
     },
     "question": "Quel type de carburant votre voiture consomme-t-elle ?",
-    "description": "Pour comprendre les différents types de carburants, [cet article pédagogique](https://www.francetvinfo.fr/economie/automobile/essence/les-carburants-changent-de-nom-a-la-pompe-voici-comment-vous-y-retrouver_2967013.html) est très utile.\n\n[Cet article](https://www.ecologie.gouv.fr/carburants-et-combustibles-autorises-en-france) du ministère de l'Écologie explique plus en détail les carburants légaux en France.\n\n> Attention, si le type de carburant fait varier de façon significative l'empreinte climat au litre, la consommation en litre par 100km elle aussi varie. Veillez à saisir une consommation au litre basée sur votre moyenne réelle.\n",
+    "description": "Pour comprendre les différents types de carburants, [cet article pédagogique](https://www.francetvinfo.fr/economie/automobile/essence/les-carburants-changent-de-nom-a-la-pompe-voici-comment-vous-y-retrouver_2967013.html) est très utile.\n\n> Attention, si le type de carburant fait varier de façon significative l'empreinte climat au litre, la consommation en litre par 100km elle aussi varie. Veillez à saisir une consommation au litre basée sur votre moyenne réelle.\n",
     "par défaut": "'essence E5 ou E10'",
     "formule": {
       "une possibilité": {
@@ -12377,13 +12356,13 @@
     "note": "La domination du couple gazole-essence est écrasante [source](https://www.leprogres.fr/magazine-automobile/2021/03/27/quels-sont-les-carburants-les-plus-utilises-dans-votre-commune).\n\nPar contre, parmi les véhicules neufs, l'essence domine aujourd'hui.\n\nLe facteur d'émission associé au biocarburant E85 n'est pas représentatif des conséquences environnementales liées à l'utilisation des biocarburants.\nEn effet, au vu des problématiques liées au changement d'affectation des sols et autres impacts environnementaux liés à la culture du maïs par exemple, les **biocarburants** ne sont pas pris en compte\n(le facteur d'émission de la base carbone étant particulièrement incertain). Voir nos discussions [ici](https://github.com/datagir/nosgestesclimat/pull/1324).\n"
   },
   "transport . voiture . thermique . carburant . gazole B7 ou B10": {
-    "titre": "Gazole (B7 ou B10)"
+    "titre": "Diesel"
   },
   "transport . voiture . thermique . carburant . essence E5 ou E10": {
-    "titre": "Essence (E5 ou E10)"
+    "titre": "Essence"
   },
   "transport . voiture . thermique . carburant . essence E85": {
-    "titre": "Essence E85 (biocarburants)"
+    "titre": "Essence E85"
   },
   "transport . voiture . notif carburant": {
     "type": "notification",
@@ -12400,18 +12379,18 @@
       "variations": [
         {
           "si": "gabarit = 'petite'",
-          "alors": 0.0159
+          "alors": 0.021
         },
         {
           "si": "gabarit = 'moyenne'",
-          "alors": 0.0198
+          "alors": 0.024
         },
         {
-          "sinon": 0.0273
+          "sinon": 0.028
         }
       ]
     },
-    "note": "Nous faisons la correspondance suivante entre notre gabarit et les données de la base bilan-GES (au regard des poids des véhicules):\n  - petite -> \"entrée de gamme - véhicule léger\"\n  - moyenne -> \"coeur de gamme - véhicule compact\"\n  - berline, SUV et VUL -> \"haut de gamme - berline\"\n"
+    "note": "Nous utilisons le facteur d'émission provenant de la plateforme Mobitool - https://www.mobitool.ch/fr/outils/facteurs-mobitool-v2-1-25.html"
   },
   "transport . voiture . gabarit": {
     "applicable si": {
@@ -12566,17 +12545,19 @@
               "gabarit = 'moyenne'"
             ]
           },
-          "alors": 6700
+          "alors": 7758
         },
         {
-          "si": {
-            "une de ces conditions": [
-              "gabarit = 'berline'",
-              "gabarit = 'SUV'",
-              "gabarit = 'VUL'"
-            ]
-          },
-          "alors": 7600
+          "si": "gabarit = 'VUL'",
+          "alors": 10340
+        },
+        {
+          "si": "gabarit = 'berline'",
+          "alors": 8958
+        },
+        {
+          "si": "gabarit = 'SUV'",
+          "alors": 11722
         }
       ]
     },
@@ -12592,17 +12573,19 @@
               "gabarit = 'moyenne'"
             ]
           },
-          "alors": 10200
+          "alors": 11013
         },
         {
-          "si": {
-            "une de ces conditions": [
-              "gabarit = 'berline'",
-              "gabarit = 'SUV'",
-              "gabarit = 'VUL'"
-            ]
-          },
-          "alors": 20200
+          "si": "gabarit = 'VUL'",
+          "alors": 16093
+        },
+        {
+          "si": "gabarit = 'berline'",
+          "alors": 13291
+        },
+        {
+          "si": "gabarit = 'SUV'",
+          "alors": 18895
         }
       ]
     },
@@ -12618,22 +12601,24 @@
               "gabarit = 'moyenne'"
             ]
           },
-          "alors": 9600
+          "alors": 8880
         },
         {
-          "si": {
-            "une de ces conditions": [
-              "gabarit = 'berline'",
-              "gabarit = 'SUV'",
-              "gabarit = 'VUL'"
-            ]
-          },
-          "alors": 6900
+          "si": "gabarit = 'VUL'",
+          "alors": 11957
+        },
+        {
+          "si": "gabarit = 'berline'",
+          "alors": 10298
+        },
+        {
+          "si": "gabarit = 'SUV'",
+          "alors": 13616
         }
       ]
     },
     "unité": "kgCO2e",
-    "note": "Ètonnamment, la berline a moins d'empreinte construction que la citadine... A voir si l'étude relève ce mystère."
+    "note": "Nous utilisons le facteur d'émission provenant de la plateforme Mobitool ((fabrication + maintenance + fin de vie) * km * nb de passagers) - https://www.mobitool.ch/fr/outils/facteurs-mobitool-v2-1-25.html"
   },
   "transport . voiture . gabarit . berline . poids": {
     "formule": 1500,
@@ -12678,7 +12663,7 @@
     }
   },
   "transport . voiture . durée de vie": {
-    "formule": 10,
+    "formule": 17,
     "description": "Nous considérons qu'une voiture de particulier, comme une voiture de location, est utilisée en moyenne 10 ans avant d'être mise à la casse.\n\nCette hypothèse est tirée de la [base Empreinte](https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/) et plus précisément,\nde l'étude menée conjointement par l'ADEME et E4T ([Bilan transversal de l'impact de l'électrification par segment](https://librairie.ademe.fr/mobilite-et-transport/1267-bilan-transversal-de-l-impact-de-l-electrification-par-segment.html)).\n\n![](https://github.com/incubateur-ademe/nosgestesclimat/assets/55186402/0b35e469-e42e-438f-8b34-9c127d606747)\n"
   },
   "transport . voiture . facteur location": {

@@ -147,7 +147,7 @@
     },
     "formule": "différence par semaine * 52",
     "icônes": "🥗🧀",
-    "description": "Adopt a vegetarian diet, i.e. without meat or fish (but with eggs, milk,\ncheese, yogurt).\n\nLess strong than the vegan diet, it already allows a very important\nreduction of the footprint on the climate.\n\n[Learn more about the vegetarian\ndiet](/actions/plus/alimentation/devenir-végétarien).\n",
+    "description": "Adopt a vegetarian diet, i.e. no meat or fish (but eggs, milk, cheese and yoghurt).\n\nAlthough not as strong as the vegan diet, it can already significantly reduce our impact on the climate.\n",
     "titre.auto": "Becoming a vegetarian"
   },
   "alimentation . devenir végétarien . différence par semaine": {
@@ -277,7 +277,7 @@
     "titre": "Favour poultry or pork",
     "formule": "par semaine * 52",
     "icônes": "🥩🍗",
-    "description": "The climate footprint of our food is directly correlated to our\nconsumption of meat, but it is important to know that not all meat is\nequal in this respect.\n\n> As a comparison, a steak per kilo emits 6 times more greenhouse gases\n> than a chicken fillet.\n\nTo learn more about the impacts of our meat consumption, please read\nthe[full\nexplanation](/actions/plus/alimentation/réduire-viande/par-deux).\n",
+    "description": "The climate footprint of our food is directly correlated to our meat consumption, but not all meat is created equal.\n\n> By way of comparison, per kilo, a rib steak emits 6 times more greenhouse gases than chicken fillets.\n",
     "titre.auto": "Favour poultry or pork"
   },
   "alimentation . viande faible empreinte . par semaine": {
@@ -372,7 +372,8 @@
     "titre": "Stop using bottled water",
     "formule": "consommation annuelle * empreinte",
     "icônes": "➡️🚰",
-    "description": "Bottled water has an environmental impact 450 times higher than tap\nwater. It costs between 100 and 300 times more (80% of the price comes\nfrom the production of the packaging) and contributes greatly to the\nplastic pollution of the oceans.\n\n> Indeed, it is common that our plastic waste is sold to other\n> countries. Thus in 2016, no less than 50% of sorted European plastic\n> waste was exported to China.\n\nMore information on plastic waste management in the [full\nexplanation](https://nosgestesclimat.fr/actions/plus/alimentation/d%C3%A9chets/vrac)\n\nSources: [Ecobalance of drinking\nwater](http://esu-services.ch/fileadmin/download/jungbluth-2015-ecobilan-eau.pdf)\nand [Ministry of Ecological Transition\np106](https://www.economie.gouv.fr/files/files/directions_services/cge/filieres-dechets-recyclage.pdf)\n",
+    "description": "Bottled water has an environmental impact 450 times greater than tap water. It costs between 100 and 300 times more (80% of the price comes from the\nproduction of the packaging) and is a major contributor to plastic pollution of the oceans.\n\n> Our plastic waste is often sold to other countries. In 2016, no less than 50% of sorted European plastic waste was exported to China.\n",
+    "note": "Sources: <a href=\"http://esu-services.ch/fileadmin/download/jungbluth-2015-ecobilan-eau.pdf\">Écobilan de l'eau potable</a> and <a href=\"https://www.economie.gouv.fr/files/files/directions_services/cge/filieres-dechets-recyclage.pdf\">Ministère de la Transition Ecologique p106</a>\n",
     "titre.auto": "Stop using bottled water"
   },
   "alimentation . déchets . réduire gaspillage": {
@@ -2368,9 +2369,9 @@
   },
   "alimentation . petit déjeuner . type . continental": {
     "icônes": "🥐🥖",
-    "titre": "Croissant and baguette",
+    "titre": "Croissant and bread",
     "description": "We have chosen to consider a standard French breakfast close to the\n[\"continental\"](https://fr.wikipedia.org/wiki/Déjeuner#Repas_de_type_continental)\nbreakfast. It includes bread, butter, jam, pastries and a fruit.\n",
-    "titre.auto": "Viennese pastry and baguette"
+    "titre.auto": "Viennese pastries and bread"
   },
   "alimentation . petit déjeuner . type . lait céréales": {
     "icônes": "🥣🎑",
@@ -2419,7 +2420,7 @@
   },
   "alimentation . local . consommation": {
     "question": "Do you consume local products?",
-    "description": "This question enables us to adjust the footprint of your diet according to your local shopping habits.\n\nWe consider \"local\" food to be that which comes from the region where you live, or from nearby regions. If you eat \"French\", consider your food to be local.\n\nThis criterion has a relatively low impact, as the share of transport in the carbon footprint of the products we consume is lower than the emissions linked to production, processing or packaging, especially when your diet is meat-based.\n\nBut it's still a win-win situation, and the benefits of eating locally don't stop at the climate footprint.\n\n> ⚠️ Beware, if you shop by car several km from home every week, it's possible that the last km's footprint will exceed the gains of eating locally!\n",
+    "description": "This question allows us to adjust the footprint of your diet according to your habits about the local nature of your purchases.\n\nWe consider \"local\" to be food that comes from the region where you live or from nearby regions.\n\nThis criterion has a relatively low impact, because the share of transport in the carbon footprint of the products we consume is lower than the emissions linked to production, processing or packaging, especially when your diet is meat-based.\n\nBut it's still a win-win situation, and the benefits of eating locally don't stop at the climate footprint.\n\n> ⚠️ Be careful, if you do your shopping by car several kilometres from home each week, it's possible that the last kilometre's footprint will exceed the gains from eating locally!\n",
     "note": "See details of the calculation approach [here](http://nosgestesclimat/documentation/alimentation/local/part-locale)",
     "par défaut": "'jamais'",
     "formule": {
@@ -3758,7 +3759,7 @@
   },
   "divers . électroménager . préservation": {
     "question": "What effort do you make to keep your appliances as long as possible?",
-    "description": "To avoid asking you to give the precise age of the probably long list of appliances\nyou own, we use a grid of the average age observed for each appliance.\n\nFor example, a fridge lasts on average 10 years, an oven 12 years and a\nkettle 6 years. You can explore the average life and footprint of each\nappliance [here](/documentation/divers/électroménager/appareils).\n\n> It's not about the age of the appliance when it breaks down, but the\n> age when the owner decides to replace it with a new one.\n\nIt's up to you to see how you stack up against the average.\n",
+    "description": "To avoid asking you to give the precise age of the ten or so appliances you own, we use a grid of the average age of each appliance.\n\nFor example, a fridge lasts an average of 10 years, an oven 12 years and a kettle 6 years.\n\n> This is not the age of the appliance when it breaks down, but its age when the owner decides to replace it with a new one.\n\nIt's up to you to see where you stand in relation to the average.\n",
     "par défaut": "'moyen'",
     "formule": {
       "une possibilité": {
@@ -4577,7 +4578,7 @@
   },
   "divers . numérique . préservation": {
     "question": "What effort do you make to keep your electronics as long as possible?",
-    "description": "To avoid asking you to fill in the exact age of all the electronic\ndevices you own, we use a grid of average age found for each device that\nis scaled according to your efforts to preserve them or not.\n\nYou can explore the average age and footprint of each device\n[here](/documentation/numérique).\n\nIt's up to you to judge your efforts to make them last as long as\npossible\n\n> Answering \"I often buy new\" is the most impactful answer because it\n> means that you replace your devices early before they are out of use.\n",
+    "description": "To avoid asking you to give the precise age of all the electronic devices you own, we use an average age grid for each device, which is adjusted according to your efforts to preserve it or not\nfor each device, which is adjusted according to your efforts to preserve it or not.\n\nIt's up to you to judge your efforts to make them last as long as possible\n\n> Answering \"None, I often buy new\" is the most impactful answer because it means that you are replacing your appliances early even before they are out of use.\n",
     "par défaut": "'moyen'",
     "formule": {
       "une possibilité": {

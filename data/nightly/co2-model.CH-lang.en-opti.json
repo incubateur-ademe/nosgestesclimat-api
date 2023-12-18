@@ -23,7 +23,6 @@
         "logement . baisse température",
         "logement . éclairage . LED",
         "logement . rénovation énergétique",
-        "logement . rénovation énergétique BBC",
         "logement . raccordement réseau de chaleur",
         "transport . boulot . covoiturage",
         "transport . boulot . commun",
@@ -147,7 +146,7 @@
     },
     "formule": "différence par semaine * 52",
     "icônes": "🥗🧀",
-    "description": "Adopt a vegetarian diet, i.e. without meat or fish (but with eggs, milk,\ncheese, yogurt).\n\nLess strong than the vegan diet, it already allows a very important\nreduction of the footprint on the climate.\n\n[Learn more about the vegetarian\ndiet](/actions/plus/alimentation/devenir-végétarien).\n",
+    "description": "Adopting a vegetarian diet, i.e. without meat or fish (but with eggs, milk, cheese and yoghurt) can significantly reduce your impact on \nclimate.\n",
     "titre.auto": "Becoming a vegetarian"
   },
   "alimentation . devenir végétarien . différence par semaine": {
@@ -195,7 +194,7 @@
     },
     "formule": "différence par semaine * 52",
     "icônes": "🥗🌾",
-    "description": "Adopt a vegan diet, without animal products.\n",
+    "description": "Adopting a vegan diet, i.e. one that does not include animal products (meat, fish, eggs, milk, cheese, honey, etc.), allows you to reduce your carbon footprint even further than a vegetarian diet. However, it is advisable to be well-informed about the food pyramid in order to meet your body's nutritional needs.\n",
     "titre": "go vegan",
     "titre.auto": "go vegan"
   },
@@ -277,7 +276,7 @@
     "titre": "Favour poultry or pork",
     "formule": "par semaine * 52",
     "icônes": "🥩🍗",
-    "description": "The climate footprint of our food is directly correlated to our\nconsumption of meat, but it is important to know that not all meat is\nequal in this respect.\n\n> As a comparison, a steak per kilo emits 6 times more greenhouse gases\n> than a chicken fillet.\n\nTo learn more about the impacts of our meat consumption, please read\nthe[full\nexplanation](/actions/plus/alimentation/réduire-viande/par-deux).\n",
+    "description": "The climate footprint of our food is directly correlated to our meat consumption, but it's important to remember that not all meats have the same impact. \nRed meat has the highest carbon footprint (beef, lamb). Poultry and pork have a much smaller carbon footprint. \n\n> By way of comparison, per kilo, the production of a rib steak emits 6 times more greenhouse gases than chicken fillets.\n",
     "titre.auto": "Favour poultry or pork"
   },
   "alimentation . viande faible empreinte . par semaine": {
@@ -311,7 +310,7 @@
     "titre": "Eat mostly local products",
     "icônes": "🍅🇫🇷",
     "formule": "alimentation . local . empreinte - recalcul",
-    "description": "Local food allows us to reduce the transport distances of the products\nwe consume. However, even if it may seem counter-intuitive, local food\ncan, depending on the case, be unfavorable in terms of greenhouse gas\nemissions: the impact of the origin of our products cannot be summed up\nin a comparison between short and long distance. The effects of scale,\nthe centralization of products, the efficiency of the transport used (or\nconversely the lack of efficiency) make the matter more complex from a\ncarbon accounting point of view.\n\nNevertheless, local food has many other positive impacts, first of all\nby supporting the farmers of our regions!\n\nIt is important to keep in mind that this is a first approach that will\nbe refined later on. As an example, we can suppose that the impact of\nthis action will be more important for vegetalized diets, which is not\ntaken into account here.\n",
+    "description": "Local food reduces the transport distances of the products we consume. However, even if this may seem counter-intuitive, local food can, depending on the case, be disadvantageous in terms of greenhouse gas emissions: the impact of the origin of our products cannot be summed up by a comparison between short and long distances. The effects of scale, the centralisation of products, the efficiency of the transport used (or conversely the lack of efficiency) make the matter more complex from a carbon accounting point of view.\n\nNevertheless, local food has many other positive impacts, such as supporting farmers in our regions! \n\nIn Geneva, the \"Genève Région Terre Avenir\" (GRTA) label identifies products from local agriculture. The https://www.geneveterroir.ch/fr/marque-de-garantie-grta-info/2443 website lists the canton's GRTA producers.\n\nFor more information: https://www.ge.ch/dossier/alimentation-durable-geneve/climat-dans-votre-assiette/proximite\n",
     "titre.auto": "Eat mostly local products"
   },
   "alimentation . manger local . recalcul": {
@@ -344,7 +343,7 @@
     "titre": "Eat according to the seasons",
     "icônes": "🍅🌞",
     "formule": "alimentation . de saison . empreinte - recalcul",
-    "description": "Contrary to what one might imagine, the impact of this action is\nrelatively low because the share of seasonal products is very low in the\naverage French person's diet.\n\nBut there are many other benefits to seasonal food such as the lower\nconsumption of water, the diversity of crops, or the lower dependence on\nhydrocarbons (gas and oil) that heat the greenhouses.\n\nIt is important to keep in mind that this is a first approach that will\nbe refined later on. As an example, we can suppose that the impact of\nthis action will be more important for vegetated systems, which is not\ntaken into account here.\n",
+    "description": "Contrary to what one might imagine, the impact of this action is relatively small, as the proportion of seasonal products in the average Swiss diet is very low.\n\nBut there are many other benefits to seasonal eating, such as lower water consumption, greater crop diversity, and less dependence on hydrocarbons (gas and oil) to heat greenhouses. What's more, the body doesn't need the same nutrients all year round, and these needs correspond to seasonal foods.\n\nFor more information: https://www.ge.ch/dossier/alimentation-durable-geneve/climat-dans-votre-assiette/proximite\n",
     "note": "To learn more about the calculation method, browse its formula, the variables will be explained.\n",
     "titre.auto": "Eat according to the seasons"
   },
@@ -372,7 +371,8 @@
     "titre": "Stop using bottled water",
     "formule": "consommation annuelle * empreinte",
     "icônes": "➡️🚰",
-    "description": "Bottled water has an environmental impact 450 times higher than tap\nwater. It costs between 100 and 300 times more (80% of the price comes\nfrom the production of the packaging) and contributes greatly to the\nplastic pollution of the oceans.\n\n> Indeed, it is common that our plastic waste is sold to other\n> countries. Thus in 2016, no less than 50% of sorted European plastic\n> waste was exported to China.\n\nMore information on plastic waste management in the [full\nexplanation](https://nosgestesclimat.fr/actions/plus/alimentation/d%C3%A9chets/vrac)\n\nSources: [Ecobalance of drinking\nwater](http://esu-services.ch/fileadmin/download/jungbluth-2015-ecobilan-eau.pdf)\nand [Ministry of Ecological Transition\np106](https://www.economie.gouv.fr/files/files/directions_services/cge/filieres-dechets-recyclage.pdf)\n",
+    "description": "Bottled water has an environmental impact 450 times greater than tap water. It costs between 100 and 300 times more (80% of the price comes from the production of the packaging) and is a major contributor to plastic pollution of the oceans.\n",
+    "note": "Sources: <a href=\"http://esu-services.ch/fileadmin/download/jungbluth-2015-ecobilan-eau.pdf\">Écobilan de l'eau potable</a> and <a href=\"https://www.economie.gouv.fr/files/files/directions_services/cge/filieres-dechets-recyclage.pdf\">Ministère de la Transition Ecologique p106</a>\n",
     "titre.auto": "Stop using bottled water"
   },
   "alimentation . déchets . réduire gaspillage": {
@@ -381,7 +381,7 @@
     "applicable si": "quantité jetée = 'base'",
     "non applicable si": "gestes . gaspillage alimentaire . présent",
     "formule": "gestes . empreinte gaspillage alimentaire",
-    "description": "In France, the average food waste is estimated at 30 kg per person per\nyear, including 7 kg of food still wrapped!\n\nIf we take a step back and consider the entire value chain (i.e. from\nthe field to the plate) it is about 10 million tons of food that are\nwasted per year, or 150 kg per capita.\n\nReducing food waste is therefore essential in order to avoid producing\nto throw away!\n\nYou will find useful tips and practices\n[here](https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation/pourquoi-gaspillons-autant-nourriture)\n",
+    "description": "In Switzerland, the average amount of food wasted is estimated at 90 kg per person per year. \n\nIf we consider the entire value chain (i.e. from field to plate), around 2.8 million tonnes of food are wasted every year, or 330 kg per inhabitant. Energy, water, financial and human resources were needed to produce this food, so these resources are also wasted. What's more, they also have an impact on the environment. \n\nReducing food waste is therefore essential if we are to avoid producing to throw away, save resources and reduce our impact on the environment!\n\nFor more information: https://www.ge.ch/dossier/alimentation-durable-geneve/climat-dans-votre-assiette/gaspillage-alimentaire\n",
     "titre.auto": "Reduce food waste"
   },
   "alimentation . déchets . composter": {
@@ -390,7 +390,7 @@
     "applicable si": "quantité jetée = 'base'",
     "non applicable si": "gestes . compostage biodéchets . présent",
     "formule": "gestes . bonus compostage biodéchets",
-    "description": "Our bio-waste, i.e. the putrescible waste from our food (peelings,\nleftovers, etc.), represents a large part of the weight of our grey\ngarbage can, thus contributing to increase the carbon footprint\nassociated with waste management. This waste is very often little or\npoorly recycled despite the environmental benefit it can bring: compost,\na rich organic substance that is beneficial to the soil. Composting our\nbiowaste (individually or collectively) allows us to reduce the size of\nour garbage cans and to encourage the creation of compost that can\neventually be used as an alternative to chemical fertilizers.\n",
+    "description": "Our bio-waste, i.e. the putrescible waste from our food (peelings, leftovers from meals, etc.), accounts for a large proportion of the weight of our rubbish bin, contributing to the carbon footprint associated with waste management. This waste is very often little or poorly recycled, despite the environmental benefits it can bring: compost, a rich organic substance that is beneficial to the soil. Composting our bio-waste (either individually or collectively) reduces the size of our bins and encourages the creation of compost that can eventually be used as an alternative to chemical fertilisers.\n\nFind out all the tips for <a href=\"https://www.ge.ch/teaser/p-tite-poubelle-verte\">making compost</a>\n",
     "titre.auto": "Compost"
   },
   "alimentation . déchets . recyclage": {
@@ -432,7 +432,7 @@
   "divers . aider les autres": {
     "titre": "Lower the footprint of others",
     "icônes": "🧑‍🏫",
-    "description": "There comes a time when gaining weight becomes very complicated\n\nIf your footprint falls below 4 tons, or if certain constraints make your progress impossible, you're probably better off helping others reduce their footprint than torturing yourself over yours\n\nHow can you do this? By distributing this simulator, by discussing these topics with your friends and family, by leading workshops in your company or association, or even by helping someone to change one of their polluting habits.\n",
+    "description": "There comes a time when reducing your carbon footprint becomes very complicated. \n\nIf your footprint falls below 4 tonnes, or if certain constraints make progress impossible, rather than focusing solely on your own impact, you are probably better off helping others to reduce their footprint. \n\nHow can you do this? By distributing this calculator, by discussing these issues with your friends and family, by running workshops in your company or association, or even by helping someone in a practical way to change one of their habits.\n",
     "titre.auto": "Lowering the footprint of others"
   },
   "divers . avoir un stop pub": {
@@ -445,13 +445,13 @@
       ]
     },
     "formule": "alimentation . déchets . bonus stop pub",
-    "description": "It is a sticker to be placed on your mailbox that informs the\nadvertising distributors that you refuse to receive catalogs,\npromotions, restaurant menus and advertisements of any kind.\n\nThis does not prevent all advertising, but it sends a strong signal and\ngenerally reduces considerably the amount of paper waste received.\n",
+    "description": "The stop pub is a sticker you place on your letterbox to inform advertising distributors and the post office that you refuse to receive catalogues, promotions and advertising of all kinds that encourage consumption.\n\nThis sticker does not prevent all advertising, but it sends out a strong signal and generally considerably reduces the amount of paper waste received.\n",
     "titre.auto": "Have a stop sign"
   },
   "divers . publicité": {
     "titre": "Ignore ads and sales",
     "icônes": "🏬🛒",
-    "description": "\nThrough the desires they create in us, advertising and marketing incite us to overconsumption and early renewal of our equipment. These promotions serve to maximize the renewal rate and the volume of goods sold, volumes that are often disproportionate to the real demand.\n\nNot renewing our appliances and equipment too early and making them last as long as possible is a strong gesture for the climate. \n\n> For example:\n> Not renewing your smartphone too early (after 2 years) saves 16 kgCO2eq\n> For a television (4 years) it is 170 kgCO2eq avoided\n\nIf urban advertising (bus stops, giant billboards, supermarkets) is complicated to ignore, note that it is easy to get rid of it **on the Web** with an extension to install in <a href=\"https://ublockorigin.com/fr\">1 click</a> in your browser.\n\n**On mobile**, it depends on your device: \n\n<details><summary>On iPhoneThe</summary>iOS ecosystem <a href=\"https://support.mozilla.org/fr/kb/modules-complementaires-pour-firefox-sous-ios\">is padlocked by Apple</a>, so there's not much you can do.</details>\n<details><summary>On AndroidYou</summary>can use Firefox and install the muBlock extension, or another browser from the app store that allows blocking (Chrome does not). For applications, it is more complicated, but it is possible to install alternative applications without ads (for example <a href=\"https://vancedapp.com\">Youtube Vanced</a> or <a href=\"https://newpipe.net\">New Pipe</a> as a replacement for the Youtube application) or to install a blocker for all applications (for example <a href=\"https://blokada.org/\">Blokada</a>).</details>\n",
+    "description": "Through the desires they create in us, advertising and marketing encourage us to over-consume and to renew our equipment prematurely. These promotions serve to maximise renewal rates and the volume of goods sold, volumes that are very often disproportionate to actual demand.\n\nNot renewing your appliances and equipment too soon and making them last as long as possible is a strong gesture for the climate.\n",
     "note": "ADEME: https://librairie.ademe.fr/dechets-economie-circulaire/325-biens-d-equipement-benefices-environnementaux-d-allonger-leur-duree-de-vie.html\n",
     "inactive": "oui",
     "titre.auto": "Ignore ads and sales"
@@ -461,7 +461,7 @@
     "icônes": "💪🔌",
     "non applicable si": "préservation = 'maximum'",
     "formule": "(divers . électroménager . appareils - divers . électroménager . appareils préservation allongée) / logement . habitants",
-    "description": "Increasing the lifespan of your household appliances (by taking care of them or repairing them when they break down) allows you to limit your impact\non the climate\n\nRenewing equipment prematurely, on the other hand, contributes to producing more equipment for the same service.\n\nIf you absolutely want to get rid of an object prematurely, think of the ressourceries or recycleries, for example, which are places dedicated to reuse! 😉\n",
+    "description": "Increasing the lifespan of your household appliances (by taking care of them or repairing them when they break down) helps to limit your impact on the climate. \n\nRenewing equipment prematurely, on the other hand, means producing more equipment for the same service.\n\nYou can find lots of advice on how to use your household appliances at https://www.energie-environnement.ch/appareils-electromenagers\n\nTo extend the life of your household appliances, don't hesitate to have them repaired. The https://www.ge-repare.ch website provides a list of repair addresses.\n\nIf you really want to get rid of a piece of household electrical equipment, think of the ressourceries or recycleries, which are places dedicated to re-use!\n",
     "titre.auto": "Make my appliances last"
   },
   "divers . électroménager . appareils préservation allongée": {
@@ -485,7 +485,7 @@
     "icônes": "💪🪑",
     "non applicable si": "préservation = 'maximum'",
     "formule": "(divers . ameublement . meubles - divers . ameublement . meubles préservation allongée) / logement . habitants",
-    "description": "Increasing the life span of your furniture (by taking care of it or repairing it) allows you to limit your impact on the climate\non the climate. \n\nRenewing equipment prematurely, on the other hand, contributes to producing more equipment for the same service.\n\nIf you absolutely want to get rid of an object prematurely, think of the ressourceries or recycleries, for example, which are places dedicated to reuse! 😉\n",
+    "description": "Increasing the lifespan of your furniture (by taking care of it or repairing it) helps to limit its impact on the climate. \n\nRenewing furniture prematurely, on the other hand, means producing more furniture for the same service.\n\nTo extend the life of your furniture, don't hesitate to have it repaired. The https://www.ge-repare.ch website provides a list of repair addresses.\n\nIf you absolutely have to get rid of a piece of furniture, think of the ressourceries or recycleries, which are places dedicated to re-use!\n",
     "titre.auto": "Extend the life of my furniture"
   },
   "divers . ameublement . meubles préservation allongée": {
@@ -534,11 +534,11 @@
     "icônes": "💻📉",
     "applicable si": "internet . durée journalière >= 2",
     "formule": "numérique . internet - empreinte réduite",
-    "description": "Video streaming contributes to GHG emissions (even more so when using mobile connection) because it actually requires a lot of infrastructure\n\nLimiting its consumption, in this case by one hour per day when you spend more than 2 hours on it, and favouring alternatives such as reading, allows you to reduce your digital carbon footprint.\n",
+    "description": "Video streaming contributes to GHG emissions (even more so when a mobile connection is used) because it requires a multitude of infrastructures, such as computer servers. \n\nLimiting its consumption, for example from two hours a day to one hour, and favouring alternatives such as reading, will help to reduce your digital carbon footprint.\n",
     "titre.auto": "Reduce my streaming time"
   },
   "divers . numérique . internet . empreinte réduite": {
-    "formule": "(empreinte horaire * 1) * 365",
+    "formule": "(0.02 * 1) * 365",
     "titre": "small footprint",
     "titre.auto": "small footprint",
     "optimized": true
@@ -554,7 +554,7 @@
     "icônes": "💪💻️",
     "non applicable si": "préservation = 'maximum'",
     "formule": "divers . numérique . appareils - divers . numérique . appareils préservation allongée",
-    "description": "Increasing the life span of your furniture (by taking care of it or repairing it) allows you to limit your impact on the climate\non the climate. \n\nRenewing your equipment prematurely, on the other hand, contributes to producing more equipment for the same service.\n\nIf you absolutely want to get rid of an object prematurely, think of the ressourceries or recycleries, for example, which are places dedicated to reuse! 😉\n",
+    "description": "Increasing the lifespan of your household or electronic appliances (by taking care of them or repairing them) helps to limit your impact on the climate.\n\nRenewing equipment prematurely, on the other hand, means producing more equipment for the same service.\n\nTo extend the life of your equipment, don't hesitate to have it repaired. The http://www.ge-repare.ch website provides a list of repair addresses.\n\nIf you absolutely have to get rid of an appliance, think of the ressourceries or recycleries, which are places dedicated to re-use!\n",
     "titre.auto": "Extend the life of my devices"
   },
   "divers . numérique . appareils préservation allongée": {
@@ -570,7 +570,7 @@
   "logement . baisse température": {
     "titre": "Reduce heating by 1° or 2°",
     "icônes": "🏠🌡",
-    "description": "Housing and in particular its heating (oil or gas) has a significant\nimpact on the climate.\n\nLowering the temperature by one or two degrees can be a way to reduce\nits footprint.\n\nSource : ADEME - [40 tips and tricks to save water and\nenergy](https://www.ademe.fr/40-trucs-astuces-economiser-leau-lenergie)\n",
+    "description": "Housing, and in particular heating (oil or gas), has a major impact on the climate.\n\nLowering the temperature by one or two degrees can be a way of significantly reducing your carbon footprint.\n\nFor more tips on how to save energy in your home, visit https://www.energie-environnement.ch/maison/renovation-et-chauffage\n\nSource: Ways to save energy https://www.ge.ch/document/30986/annexe/0\n",
     "applicable si": "température > 19",
     "formule": "(nombre degrés * gains 1 degré * empreinte chauffage air) / habitants",
     "titre.auto": "Reduce the temperature of my heating by 1° or 2°"
@@ -578,7 +578,7 @@
   "logement . baisse température . nombre degrés": {
     "question": "How many degrees would you be willing to lower the temperature in your home?",
     "icônes": "↘️🌡",
-    "description": "¾ of a household's energy consumption is spent on heating and hot water.\n\nThis energy consumption, in addition to having a significant financial\ncost, increases the carbon footprint of households.\n\nHowever, it can easily be limited by lowering the temperature of the\noccupied rooms without losing thermal comfort or feeling cold (provided\nthat the dwellings are well insulated).\n\nFor example, set the temperature between 19° and 21°C in occupied rooms\nduring the day (and 17°C at night or in rooms that are not very busy).\n\nIndeed, lowering the heating temperature by 1°C represents an energy\nsaving of 7%.\n",
+    "description": "Around 85% of a household's final energy consumption goes on heating and hot water.\n\nAs well as having a significant financial cost, this energy consumption increases the carbon footprint of households.\n\nHowever, it can easily be limited by lowering the temperature of occupied rooms without losing thermal comfort or feeling cold.\n\nFor example, set the temperature at between 19° and 21°C in rooms that are occupied during the day (and 17°C at night or in rooms that are not very busy).\n\nLowering the heating temperature by 1°C represents <a href=\"https://www.ge.ch/document/30986/annexe/0\">energy savings of 7% to 10%</a>. This may not seem much on an individual scale, but if everyone takes this action, it is a powerful lever for reducing CO2 emissions.\n\nWindows should of course be kept closed. To ventilate your home, and if you don't have mechanical ventilation, open the windows wide 1x a day for 5 to 10 minutes a day.\n\nGood management of blinds and shutters will increase your comfort and further reduce emissions from your home: opening them during the day will allow you to benefit from the sun's energy, while closing them at night will increase your comfort and reduce heat loss.\n",
     "par défaut": 1,
     "unité": "degrés",
     "suggestions": {
@@ -599,11 +599,11 @@
     "titre.auto": "temperature"
   },
   "logement . baisse température . gains 1 degré": {
-    "description": "This is the estimated decrease in energy expenditure when we lower the\ntemperature of our heated home by 1°C in the usual temperature range\n(around 20°).\n\nWe use the estimate given in the [ADEME\nguide](https://www.ademe.fr/40-trucs-astuces-economiser-leau-lenergie)\n\"40 tricks to save water and energy\".\n",
+    "description": "This is the estimated reduction in energy consumption when we lower the temperature of our heated home by 1°C within the usual temperature range (around 20°).\n\nWe use the estimate given in the <a href=\"https://www.ge.ch/document/30986/annexe/0\">Canton guide \"Des gestes pour économiser notre énergie\"</a>.\n",
     "note": "Where is the source for this 7%? Can this figure be broken down for each type of energy (wood, gas, etc.)? How sensitive is this figure to the type of housing, its insulation, etc.?\n",
     "titre": "gains 1 degree",
     "titre.auto": "gains 1 degree",
-    "valeur": "0.07",
+    "valeur": "0.1",
     "optimized": true
   },
   "logement . empreinte chauffage air": {
@@ -637,11 +637,11 @@
     "optimized": true
   },
   "logement . éteindre appareils": {
-    "formule": "33.507 / habitants",
+    "formule": "19.929 / habitants",
     "unité": "kgCO2e",
     "titre": "Turn off devices on standby",
     "icônes": "🏠📺",
-    "description": "Our apartments and homes are full of digital devices and appliances,\nwhich often remain on or on standby.\n\nThe use of simple power strips makes it possible to turn them off\ncompletely in the blink of an eye.\n\nThe standby have made progress and individually consume less than in the\npast: a European directive applicable since January 2017 limits their\npower. It is 0.5 W for a number of categories of devices, but 3 W for\ndevices that remain connected to the Internet or data networks.\n\nSource: ADEME - [Reducing your electricity\nbill](https://www.ademe.fr/sites/default/files/assets/documents/guide-pratique-reduire-facture-electricite.pdf),\npage 18.\n",
+    "description": "Our homes and flats are full of electronic devices and household appliances that are often left on or on standby.\n\nBy using simple power strips, you can switch them off completely in the blink of an eye.\n\nYou can find lots of tips on how to save energy in your home at https://www.energie-environnement.ch/maison/renovation-et-chauffage.\n",
     "titre.auto": "Turn off my devices on standby",
     "optimized": true
   },
@@ -652,7 +652,7 @@
     "titre.auto": "Share your home"
   },
   "logement . remplacer fioul par bois": {
-    "titre": "Replace my oil-fired boiler with wood",
+    "titre": "Replacing my oil-fired boiler with wood",
     "applicable si": {
       "toutes ces conditions": [
         "propriétaire",
@@ -666,7 +666,7 @@
     "formule": "(chauffage . fioul . empreinte - alternative) / habitants",
     "description": "Oil-fired boilers are the most polluting. Replacing them with less\ncarbon-intensive alternatives such as wood pellets is a great way to\nreduce your carbon footprint.\n",
     "inactive": "non",
-    "note": "We consider for the moment that replacing the kWh of fuel oil by the same amount of kWh of wood is a good first order approximation. We will be able to adapt it later on according to the performance of the residential installations.\n",
+    "note": "For the moment, we consider that replacing kWh of fuel oil with the same amount of kWh of wood is a good first-order approximation. This can then be adjusted to take account of the efficiency of residential installations.\n\nFind out about <a href=\"https://ge-energie.ch/\">subsidies</a> for switching to renewable energy.\n",
     "titre.auto": "Replace my oil-fired boiler with wood"
   },
   "logement . remplacer fioul par bois . alternative": {
@@ -684,9 +684,9 @@
   },
   "logement . éclairage . consommation de l'éclairage": {
     "titre": "Lighting in the electricity bill",
-    "formule": "électricité * 5.6%",
+    "formule": "électricité * 10%",
     "description": "The share of electricity consumed devoted to lighting.\n",
-    "note": "Figure taken from the guide <a href=\"https://librairie.ademe.fr/cadic/7232/guide-pratique-reduire-facture-electricite.pdf\">Réduire sa facture d'électricité, June 2019, ADEME</a>\n",
+    "note": "Household electricity consumption, August 2021, suisseénergie",
     "titre.auto": "Lighting in the electricity bill"
   },
   "logement . éclairage . avec LED": {
@@ -715,12 +715,12 @@
     },
     "icônes": "🔥🔄",
     "formule": "(chauffage . gaz . empreinte - pompe à chaleur) / habitants",
-    "description": "Gas-fired boilers are among the most CO₂ emitting. Replacing them with\nlower-carbon alternatives like heat pumps is a strong move to reduce\nyour carbon footprint.\n\n> Heat pumps are often referred to as *PACs*.\n\n💡 Their principle is ingenious: it's a reverse fridge! Your fridge,\nthanks to a little electricity, cools its interior and rejects the heat\ninto the room. The heat pump cools the outside air to heat your home.\n\n> Bonus: if it's too hot in your home in the summer, some heat pumps can\n> reverse their operation and act as air conditioning in the summer.\n",
-    "note": "For the time being, we consider the replacement of gas kWh by the same amount of electricity kWh to be a good first-order approximation. We can then adapt it to the performance of residential installations.\n\nIf you also heat your water with gas, you'll need to choose a heat pump that can also heat water.\n\nSee <a href=\"https://www.ademe.fr/sites/default/files/assets/documents/guide-pratique-installer-une-pompe-a-chaleur.pdf\">ADEME PAC Guide</a>\n",
+    "description": "Gas-fired boilers are among the biggest emitters of CO₂. Replacing them with less carbon-intensive alternatives such as heat pumps is a strong move towards reducing your carbon footprint.\n\n> Heat pumps are often referred to as *PAC*.\n\n💡 Their principle is ingenious: it's an inverted fridge! Using a little electricity, your fridge cools its interior and releases the heat into the room. The heat pump cools the outside air to heat your home.\n\nFind out <a href=\"https://ge-energie.ch/\">about grants</a> for switching to renewable energy.\n",
+    "note": "For the moment, we consider that replacing kWh of gas with the same amount of kWh of electricity is a good first-order approximation. We can then adapt this to the performance of residential installations.\n",
     "titre.auto": "Switch from gas boiler to heat pump"
   },
   "logement . pompe à chaleur": {
-    "formule": "(chauffage . gaz . consommation / 2) * 0.153",
+    "formule": "(chauffage . gaz . consommation / 2) * 0.091",
     "titre": "heat pump",
     "titre.auto": "heat pump",
     "optimized": true
@@ -752,20 +752,20 @@
     "formule": "(logement . empreinte chauffage air * gain rénovation) / habitants",
     "applicable si": "propriétaire",
     "inactive": "non",
-    "description": "Energy renovation, despite its cost, allows, in the long term, very strong energy savings and thus contributes to reducing the carbon footprint\nof your home\n\nThese savings will be even more important if you live in a poorly insulated home.\n\nTo find out which renovations are best suited to your home as well as the assistance available: <a href=\"https://www.faire.gouv.fr\">DOING</a>.\n",
+    "description": "Renovation can reduce your home's energy consumption by 20 to 150%. \n\nIn the long term, this type of renovation can also significantly reduce energy bills.\n\nTo find out which renovations are best suited to your home, and what grants are available, <a href=\"https://ge-energie.ch/\">visit ge-energie.ch</a>.\n",
     "titre.auto": "Renovate my home"
   },
   "logement . gain rénovation": {
-    "note": "Average energy gain after renovation on an ANAH program of 13,000 homes targeting \"thermal flats\".\nMore information on the <a href=\"https://france-renov.gouv.fr/aides/mpr/serenite\">MaPrimeRénov' Sérénité</a> program (ex Habiter Mieux de L'Anah).\n",
+    "note": "The average energy saving after renovation varies widely, depending on the type of renovation, how the installations are adjusted, etc. Between a poorly insulated building and a well insulated building, the difference in consumption is in the region of 1.2 to 2.5.\n",
     "titre": "renovation gain",
     "titre.auto": "renovation gain",
-    "valeur": "39%",
+    "valeur": "20%",
     "optimized": true
   },
   "logement . propriétaire": {
     "question": "Do you own your home?",
-    "description": "As a tenant, it is obviously difficult to make investments that improve the footprint of the dwelling: insulation, change of energy source are impossible unless you find a particularly accommodating landlord\n\nYet, the law could as early as 2023 be a strong support: thermal passoires <a href=\"https://www.gouvernement.fr/interdiction-a-la-location-des-logements-avec-une-forte-consommation-d-energie-des-2023\">will be banned from renting</a>, forcing landlords to launch substantive works.\n",
-    "par défaut": "oui",
+    "description": "As a tenant, it's obviously tricky to make investments that improve the property's footprint: insulating your home or changing your energy source are actions that only landlords can take. But that doesn't mean that tenants can't ask them to!\n",
+    "par défaut": "non",
     "titre": "owner",
     "titre.auto": "owner"
   },
@@ -815,8 +815,8 @@
     },
     "non applicable si": "chauffage . réseau de chaleur . présent",
     "formule": "(logement . chauffage - recalcul / habitants)",
-    "note": "A heating network is a system of pipes that allow heat produced locally and mainly from renewable and recovered energy sources to be conveyed to a group of buildings \nlocally produced heat, mainly from renewable and recovered energy, to a group of buildings. \n\nIt is an ecological and economical alternative to replace gas or oil boilers, \nit is an ecological and economical alternative to replace gas or oil boilers, both for collective housing buildings (condominiums, social housing) and for tertiary buildings.\n\nNevertheless, being connected to a heating network is not as simple as subscribing to an electricity contract.\nIndeed, the feasibility of the connection depends on <a href=\"https://france-chaleur-urbaine.beta.gouv.fr/ressources/faisabilite#contenu\">several technical conditions</a>.\n\nFirst of all, the connection is made for a whole building: it is not possible to connect only your apartment.\nSecondly, it is necessary to check that there is a heating network near the building, and then to study\nthe heating infrastructure within the building (a building equipped with a collective heating system will allow a connection at lower cost)\n\nRegarding the impact on the climate, it is important to know that in general, a heating network is supplied by local renewable or recovered energy sources\n(62% on average on a national scale), i.e., via household waste incineration, biomass combustion, geothermal energy... (as shown in the figure below)\nwhich considerably reduces the CO2 impact of the kWh of energy consumed in front of gas or fuel oil. \n\nHowever, the energy mix is very variable from one network to another, some networks are still mainly powered by fossil fuels (coal, oil, gas).\nIt is therefore important to check the RE rate of the nearest network on the <a href=\"https://france-chaleur-urbaine.beta.gouv.fr/carte\">France Chaleur Urbaine map</a>, and to ask the network manager \non the future evolution of the energy mix, as many networks are in the process of becoming greener...].\n\n![](https://user-images.githubusercontent.com/55186402/223733624-d50b2271-6da6-4ec7-a324-cec41df10430.png)\n",
-    "description": "On average, 62% of the energy used to power these networks comes from local renewable and recovered energy sources (heat from waste incineration, biomass, geothermal energy, etc.), \nheating networks (or district heating) are a low-carbon and competitively priced heating method. \nHowever, there is a great disparity between networks, both in terms of carbon impact and rates!\n\nConnection to district heating is done on the scale of an entire building. It requires the presence of a heating network near the building \nand is easier when the building is already equipped with a collective heating system.\n\n>The France Chaleur Urbaine website allows you to go further: check if a <a href=\"https://france-chaleur-urbaine.beta.gouv.fr/\">heating network</a> passes near your building!\n",
+    "note": "A district heating network is a system of pipes used to transport locally produced heat, mainly from renewable and recovered energy sources, to a number of buildings. \n\nIt is an ecological and economical alternative to gas or oil-fired boilers, for both apartment blocks and offices.\n\nHowever, being connected to a heating network is not as simple as taking out an electricity contract. The feasibility of connection depends on <a href=\" https://www.ge.ch/installations-chauffage-batiment/se-raccorder-reseau-chauffage-distance\">a number of technical conditions</a>.\n\nFirst of all, the connection is for an entire building: it is not possible to connect just your flat. Secondly, you need to check that there is a heating network close to the building, and then study the heating infrastructure within the building (a building with a collective heating system will allow you to connect at a lower cost)\n\nAs far as the impact on the climate is concerned, a heating network is generally supplied by local renewable or recovered energy sources (at least 50% in Geneva, with a target of 80% by 2030), i.e. by incinerating household waste, burning biomass or using geothermal energy, which considerably reduces the CO2 impact of the kWh of energy consumed compared with gas or oil.\n",
+    "description": "Fuelled at least 50% by local renewable and recovered energies (heat from waste incineration, biomass, geothermal energy, etc.), district heating networks are a low-carbon form of heating. \n\nDistrict heating is connected to an entire building. It requires the presence of a heating network close to the building, and is easier when the building is already equipped with a collective heating system.\n\n>The canton provides a map of structuring networks: check whether a <a href=\" https://www.ge.ch/document/22488/annexe/21 \">heating network</a> passes near your building!\n",
     "titre.auto": "Connecting to a heating network"
   },
   "logement . raccordement réseau de chaleur . recalcul": {
@@ -824,8 +824,8 @@
     "note": "it is assumed that the gas/oil consumption will be identical after a connection to the heating network.",
     "formule": {
       "somme": [
-        "(chauffage . gaz . présent * 0.112) * chauffage . gaz . consommation",
-        "((chauffage . fioul . présent * 0.112) * chauffage . fioul . consommation) / 0.101436943"
+        "(chauffage . gaz . présent * 0.067) * chauffage . gaz . consommation",
+        "((chauffage . fioul . présent * 0.067) * chauffage . fioul . consommation) / 0.101436943"
       ]
     },
     "titre.auto": "Recalculation of emissions through connection to a heating network",
@@ -834,7 +834,7 @@
   "logement . chauffage collectif": {
     "question": "Is your heating system collective or individual?",
     "par défaut": "'collectif'",
-    "note": "It is assumed that the action is only applicable to apartments heated by a collective gas or oil network.  \nIndeed, on the private side, it is preferable to work with the co-owners of a building because the individual housing is not a priority target for this type of solution, both for questions of economic profitability and also because\nnot a priority target for this type of solution, both for questions of economic profitability but also because the thermal density of the network would be too low in view of the\ndensity of the network would be too low in view of the consumption of an individual home.\n",
+    "note": "It is assumed that the action applies only to flats heated by a collective gas or oil network.  \n\nOn the private side, it is preferable to work with the co-owners of a building, as individual dwellings are not a priority target for this type of solution, both for reasons of economic profitability and because the thermal density of the network would be too low given the consumption of an individual dwelling.\n",
     "formule": {
       "une possibilité": {
         "choix obligatoire": "oui",
@@ -857,14 +857,14 @@
   },
   "services sociétaux . voter": {
     "icônes": "🗳️🏛️",
-    "description": "Every year or so, we each have the opportunity to vote for representatives to represent our ideas.\n\nPresidential, legislative, departmental and regional elections are the opportunity to bring the subject of the climate, and therefore the footprint of public services, and all the efforts that are complicated to do alone.\n\nBut that's not all! If you're a student, maybe there are votes to guide the work of the school or associations? If you are an employee, can you influence the trips offered by the works council? If you are retired, can you give your voice in the board of directors of your insurances, of the banks which have your money?\n",
-    "titre": "vote",
+    "description": "Around 4 times a year, every Swiss citizen has the opportunity to vote on various issues at federal, cantonal and municipal level.\n\nDepending on the subject, the votes can be an opportunity to raise the issue of climate change. It's a way of acting indirectly on the carbon footprint of public services, and on other issues where individual efforts are not enough.\n\nBut that's not all! You can take part in citizens' forums or assemblies! If you are a student, there may be processes in place (assemblies, petitions, votes, etc.) to steer your university towards sustainability If you're an employee, can you influence the choices your company makes? If you're retired, can you give some of your time to cooperatives or associations?\n",
+    "titre": "Acting in your spheres of influence",
     "titre.auto": "vote"
   },
   "services sociétaux . pression locale": {
     "titre": "Lobby locally",
     "icônes": "📍📢",
-    "description": "The utility footprint is the footprint of many government-run activities that take place around you.\n\n\n> 🚸 Your children's school may be a heat sieve\n\n> 🛣️ Your city is still building many miles of roads\n\nThe first step is to investigate, then simply discuss this with friends and officials in a position to act.\n",
+    "description": "The footprint of public services is the footprint of many activities managed by the confederation, canton or municipality, such as schools or the police.\n\n\n> 🚸 Your children's school may be badly insulated\n\n> 🛣️ Your local authority doesn't provide enough parking for bicycles\n\nThe first step is to discuss the situation with your friends and acquaintances, and then contact the people in charge at your local authority. That way, you can alert them to the situation and see what steps have already been taken.\n",
     "titre.auto": "Lobby locally"
   },
   "services sociétaux . changement banque": {
@@ -890,8 +890,8 @@
       ]
     },
     "formule": "transport . avion",
-    "description": "Airplanes have a significant climate footprint\n\nIt is not limited to just CO₂ emissions, which is just one greenhouse gas among many\n\nThe total footprint of the airplane is estimated to be about 2x that of CO₂\n\nSee the <a href=\"https://monimpacttransport.fr\">transportation calculator</a> to view this footprint and compare it to other modes of transportation.\n",
-    "aller plus loin": "## Forçage radiatif total\n\nL'avion a un impact important sur le climat à la fois à cause de ses émissions de CO₂ et d'autres effets (dit forçage radiatif additionnel).\n\nDu fait que les avions volent en haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d’autres gaz à effet de serre que le CO₂ (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.).\n\nCe graphique montre la complexité des effects en jeu (et encore, tout n'y est pas).\n\n![](https://www.uecna.eu/wp-content/uploads/2017/12/ilusion-diagram1.jpg)\n\n## Avion vs voiture\n\nOn entend souvent que ramenée au passager, elle est du même ordre que celle d'une voiture. C'est vrai, mais ce n'est qu'une partie de l'histoire. \n\nPremièrement, l'empreinte de la voiture elle-même est élevée. Comparer l'avion à la voiture ne rend pas ce premier vertueux.\n\nDeuxièmement, on ne peut comparer la voiture et l'avion simplement parce qu'un trajet en avion est en général bien plus long. Quand il s'agit de choisir la destination des vacances par exemple, un trajet en voiture a donc toutes les chances d'être beaucoup moins polluant. Cela dit, notons aussi que nos kilométrages en voiture sont tels que le match est relancé quand on regarde l'empreinte à l'année.\n",
+    "description": "Aircraft have a significant impact on the climate. \n\nIt is not limited to CO₂ emissions alone. The actual footprint of the aircraft is estimated to be at least 2x that of the CO₂ emitted by burning paraffin, due to a radiative forcing effect. For more details, you can refer to myclimate's explanations.\n\nThe actual footprint of the aircraft is estimated to be at least 2x that of the CO₂ emitted by burning paraffin, due to a radiative forcing effect. \n\nThe <a href=\"https://co2.myclimate.org/fr/calculate_emissions\">myclimate</a> transport calculator makes it possible to visualise this footprint and compare it with other means of transport.\n",
+    "aller plus loin": "## Forçage radiatif total\n\nL'avion a un impact important sur le climat à la fois à cause de ses émissions de CO₂ et d'autres effets (dit forçage radiatif additionnel).\n\nDu fait que les avions volent en haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d'autres gaz à effet de serre que le CO₂ (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.).\n\n## Avion vs voiture\n\nRamené au passager, l'impact carbone d'un trajet en avion est dans certains cas du même ordre que celui d'un trajet en voiture. Toutefois, l'empreinte de la voiture elle-même est élevée. Comparer l'avion à la voiture ne rend pas ce premier vertueux.\n\nDeuxièmement, un trajet en avion est en général bien plus long. Quand il s'agit de choisir la destination des vacances par exemple, un trajet en voiture a donc toutes les chances d'être beaucoup moins polluant. Cela dit, notons aussi que nos kilométrages en voiture sont tels que le match est relancé quand on regarde l'empreinte à l'année.\n",
     "titre": "stop flying",
     "titre.auto": "stop the plane"
   },
@@ -907,11 +907,11 @@
       ]
     },
     "formule": "transport . avion . court courrier + compensation train",
-    "description": "The airplane has changed our way of life and our way of traveling. We can now go further, faster, more frequently, but unfortunately this is not without a downside for the climate\n\nIndeed, there is a ratio of 100 between the emission factors (quantity of CO₂ emitted per km traveled) of a plane and a train\n\n> For example, a round trip from Paris to Marseille emits about 300 kgCO2eq by plane against only 2 kgCO2eq by train\n\nThis is why we need to adapt our weekends and vacations\nby turning to low-carbon mobility offers and/or by rethinking our way of traveling is essential if we want to\nreduce our impact on the climate, both individually and as a society\n\n<a href=\"https://monimpacttransport.fr\">Compare modes of transportation here</a>\n",
+    "description": "Flying has revolutionised the way we live and travel. We can now travel further, faster and more frequently, but unfortunately this has not come without a downside for the climate. \n\nIn fact, there is a ratio of 100 between the emission factors (quantity of CO₂ emitted per km travelled) of a plane and a train.\n\nThis is why adapting our weekends and holidays by turning to low-carbon mobility offers and/or rethinking the way we travel is essential if we want to reduce our impact on the climate, both individually and as a society\n\nFind out which destinations are accessible by train from your home: <a href=\"https://www.chronotrains.com/fr\">Chronotrains</a>; <a href=\"https://www.sbb.ch/fr/\">SBB (sbb.ch)</a>; <a href=\"https://www.sbb.ch/fr/loisirs-et-vacances/trains-excursions/interrail.html\">Interrail</a>  \n\nFinally, <a href=\"https://monimpacttransport.fr\">compare modes of transport here</a>\n\n## key figures\nA return journey from Geneva to Zurich emits around 224 kgCO2eq by plane, compared with just 3 kgCO2eq by train (source: Mobitool / myclimate)\nChoosing to travel from Geneva to Rome (by train) rather than Marrakech (by plane) will save 685 kg of CO2eq (source: Mobitool / myclimate)\n",
     "titre.auto": "Favouring the train over the plane"
   },
   "transport . arrêter l'avion court . compensation train": {
-    "formule": "((avion . court courrier . heures de vol * 461.53846153846155) * 1.2) * 0.0088198802395209",
+    "formule": "((avion . court courrier . heures de vol * 461.53846153846155) * 1.2) * 0.002",
     "titre": "train compensation",
     "titre.auto": "train compensation",
     "optimized": true
@@ -933,8 +933,8 @@
       ]
     },
     "formule": "transport . avion / 2",
-    "description": "> 💡 Try to make at least one of the trips to your destination by train!\n\nFlying has a significant climate footprint. \n\nIt is not limited to just CO₂ emissions, which is just one greenhouse gas among many. \n\nSee the <a href=\"https://monimpacttransport.fr\">transportation calculator</a> to view this footprint and compare it to other means of transportation.\n",
-    "aller plus loin": "## Forçage radiatif total\n\nL'avion a un impact important sur le climat à la fois à cause de ses émissions de CO₂ et d'autres effets (dit forçage radiatif additionnel).\n\nDu fait que les avions volent en haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d’autres gaz à effet de serre que le CO₂ (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.).\n\nCe graphique montre la complexité des effects en jeu (et encore, tout n'y est pas).\n\n![](https://www.uecna.eu/wp-content/uploads/2017/12/ilusion-diagram1.jpg)\n\n## Avion vs voiture\n\nOn entend souvent que ramenée au passager, elle est du même ordre que celle d'une voiture. C'est vrai, mais ce n'est qu'une partie de l'histoire. \n\nPremièrement, l'empreinte de la voiture elle-même est élevée. Comparer l'avion à la voiture ne rend pas ce premier vertueux.\n\nDeuxièmement, on ne peut comparer la voiture et l'avion simplement parce qu'un trajet en avion est en général bien plus long. Quand il s'agit de choisir la destination des vacances par exemple, un trajet en voiture a donc toutes les chances d'être beaucoup moins polluant. Cela dit, notons aussi que nos kilométrages en voiture sont tels que le match est relancé quand on regarde l'empreinte à l'année.\n",
+    "description": "> 💡 Try to make at least one of the journeys to your destination by train!\n\nFind out which destinations are accessible by train from your home: <a href=\"https://www.chronotrains.com/fr\">Chronotrains</a>; <a href=\"https://www.sbb.ch/fr/\">SBB (sbb.ch)</a>; <a href=\"https://www.sbb.ch/fr/loisirs-et-vacances/trains-excursions/interrail.html\">Interrail</a> \n\nFlying has a major impact on the climate. \n\nIt is not limited to CO₂ emissions alone. The aircraft's actual footprint is estimated to be at least 2x that of the CO₂ emitted by burning paraffin, due to a radiative forcing effect. For more details, you can refer to myclimate's explanations.\n\nThe actual footprint of the aircraft is estimated to be at least 2x that of the CO₂ emitted by burning paraffin, due to a radiative forcing effect. \n\nThe <a href=\"https://co2.myclimate.org/fr/calculate_emissions\">myclimate transport calculator</a> makes it possible to visualise this footprint and compare it with other means of transport.\n",
+    "aller plus loin": "## Forçage radiatif total\n\nL'avion a un impact important sur le climat à la fois à cause de ses émissions de CO₂ et d'autres effets (dit forçage radiatif additionnel).\n\nDu fait que les avions volent en haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d'autres gaz à effet de serre que le CO₂ (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.).\n\n## Avion vs voiture\n\nRamené au passager, l'impact carbone d'un trajet en avion est dans certains cas du même ordre que celui d'un trajet en voiture. Toutefois, l'empreinte de la voiture elle-même est élevée. Comparer l'avion à la voiture ne rend pas ce premier vertueux.\n\nDeuxièmement, un trajet en avion est en général bien plus long. Quand il s'agit de choisir la destination des vacances par exemple, un trajet en voiture a donc toutes les chances d'être beaucoup moins polluant. Cela dit, notons aussi que nos kilométrages en voiture sont tels que le match est relancé quand on regarde l'empreinte à l'année.\n",
     "titre.auto": "Flying half as much"
   },
   "transport . éco-conduite": {
@@ -949,7 +949,7 @@
     },
     "icônes": "🚗☮",
     "formule": "transport . voiture . empreinte calculée - transport . éco-conduite . recalcul",
-    "description": "Eco-driving is a simple and effective action that is within everyone's reach.\n\nIt can save an average of 15% in fuel consumption,\nreduce vehicle maintenance costs, reduce the risk of accidents by an average of 10 to 15% and make substantial savings that can amount to several hundred\nsavings that can amount to several hundred euros\n\nThe application of eco-driving is all the more relevant in cities and urban areas where stops and restarts are frequent\nrestarting are frequent.\n",
+    "description": "Eco-driving is a simple and effective action that everyone can take.  It involves a series of recommendations to adopt, such as checking tyre pressure or optimising gear ratios.\n\nBy taking these steps, you can save up to 15% on fuel, cut vehicle maintenance costs, reduce the risk of accidents and make substantial savings that can amount to several hundred Swiss francs. \n\nAdopting eco-driving techniques is all the more relevant in towns and urban areas where there are frequent stops and restarts.\n\nTo find out more: <a href=\"https://www.ecodrive.ch/fr/\">EcoDrive - every litre counts</a>\n",
     "note": "See the <a href=\"https://expertises.ademe.fr/air-mobilites/mobilite-transports/passer-a-laction/solutions-technologiques/dossier/optimiser-lutilisation-lentretien-vehicule/lecoconduite-attitude-a-adopter\">ADEME-LaPoste eco-driving training guide</a>\n",
     "titre.auto": "Adopt eco-driving"
   },
@@ -990,7 +990,7 @@
     },
     "icônes": "🚗👥",
     "formule": "voiture . km * voiture . empreinte au kilomètre * réduction covoiturage",
-    "description": "This action concerns all his car trips.\n\nWhile long-distance carpooling is well known in France, short-distance carpooling is almost non-existent: today only 3% of home-work trips are made by carpooling.\n\nIn any case, remember to adapt your mode of transportation to the distance and to favor soft modes or public transportation (bus, subway, bicycle, walking, etc.) as much as possible. The <a href=\"https://monimpacttransport.fr/\">My Transport Impact</a> calculator allows you to visualize and compare the impact of different modes of transport.\n",
+    "description": "This action concerns all car journeys.\n\nWhile long-distance car-sharing is well known in Switzerland, short-distance car-sharing is almost non-existent: today, only 4% of home-work journeys are made by car-sharing.\n\nNumerous websites offer free platforms for bringing together people making the same journey, whether on a regular basis, for example to go to work, or on a one-off basis, for example for a ski outing.\n\n-<a href=\"http://www.e-covoiturage.ch/index.php/fr/\">e-carpooling website</a>: Swiss carpooling platform;\n\n-<a href=\"http://www.covoiturage-leman.org/\">Léman carpooling website</a>: carpooling platform for the Lake Geneva region;\n\n-<a href=\"http://clem.mobi/covoiturage\">Clem' website</a>: carpooling for home-to-work journeys in the Geneva region;\n\n-<a href=\"http://www.klaxit.com/\">Klaxit website</a>: home-to-work car-sharing for companies\n\n-<a href=\"https://caroster.io/\">Caroster website</a>: carpooling to manage transport within an association or sports club\n\nFor your journeys abroad, you can also consult the following websites:\n\n-<a href=\"https://www.blablacar.fr/\">blablacar website</a>: European car-sharing platform;\n\n-<a href=\"http://www.europe-carpooling.com/\">carpooling website</a>: carpooling platform in France;\n\n-<a href=\"http://compartir.org/\">compartir website</a>: carpooling platform in Spain and internationally;\n\n-<a href=\"https://www.tictactrip.eu/company/carpooling/idvroom\">iDVROOM website</a>: carpooling platform in France and abroad;\n\n\nIn all cases, remember to adapt your mode of transport to the distance and to favour soft modes or public transport (bus, metro, bike, walking, etc.) as much as possible.\n",
     "note": "See The Conversation article <a href=\"https://theconversation.com/a-quelles-conditions-le-covoiturage-sera-t-il-un-mode-de-transport-durable-124122\">Under what conditions will car-sharing become a sustainable mode of transport?</a>\n",
     "titre.auto": "Favour carpooling"
   },
@@ -1014,7 +1014,7 @@
     "titre.auto": "Carpooling to work"
   },
   "transport . réduction covoiturage": {
-    "description": "One might naively think that carpooling divides the footprint per person by 2. But in reality, <a href=\"https://www.sciencedirect.com/science/article/pii/S1361920918303201\">a study carried out in the Île-de-France region</a> shows that reductions are more in the order of 20%... before rebound effects, which reduce the final gain from carpooling to just 6%.\n\n![](https://images.theconversation.com/files/297327/original/file-20191016-98644-c9y1zz.png?ixlib=rb-1.1.0&q=30&auto=format&w=754&h=588&fit=crop&dpr=2)\n",
+    "description": "According to a study carried out in France, car-sharing can reduce emissions by around 20%.\n",
     "note": "See The Conversation article <a href=\"https://theconversation.com/a-quelles-conditions-le-covoiturage-sera-t-il-un-mode-de-transport-durable-124122\">Under what conditions will car sharing be a sustainable mode of transport?</a>\n",
     "titre": "carpooling discount",
     "titre.auto": "carpooling discount",
@@ -1067,9 +1067,9 @@
     "titre": "One-way commuting distance",
     "question": "How far from home is your work?",
     "unité": "km/trajet",
-    "description": "We are talking about the distance *going*, with the mode of transportation you prefer.\n\n70% of the workers in France work less than 15km from their home.\n\n57% work within 10km and 78% within 20km\n\nSource: INSEE 2004 and 2013 studies, stable figures.\n",
+    "description": "We're talking here about the distance *to*, using your preferred mode of transport.\n",
     "note": "Link to the study and update with 2020 travel survey statistics if available.",
-    "par défaut": 10,
+    "par défaut": "7 km",
     "titre.auto": "One-way commuting distance"
   },
   "transport . boulot . commun": {
@@ -1081,7 +1081,7 @@
     },
     "titre": "Go to work without a car",
     "icônes": "🚌🚲",
-    "description": "When possible, taking public transport or light vehicles (walking,\ncycling, personal moped, ...) to work reduces our climate footprint,\nbut also improves our quality of life.\n\n[70%](https://www.ecologie-solidaire.gouv.fr/covoiturage-en-france-avantages-et-reglementationen-vigueur)\nof home-work trips are made with individual vehicles, most of them alone\nin their cars. This is what we call auto-solism.\n\nIn addition to emitting a lot of greenhouse gases, this auto-soloing is\ndetrimental to the quality of the air in our cities and therefore to our\nhealth, and it clogs up urban roads.\n\n> As an example traffic jams represent in Ile-de-France per year and per\n> person [163 hours\n> lost](https://www.tomtom.com/en_gb/traffic-index/paris-traffic) or\n> about 6 days.\n\n> 💡 Did you know? The State and many regions or cities subsidize\n> mechanical, electric, cargo, folding bikes, etc. [Calculate your aid\n> 🚲️ in 3 clicks](https://mesaidesvelo.fr).\n",
+    "description": "Whenever possible, taking public transport or light forms of transport (walking, cycling, scootering, etc.) to work not only reduces our carbon footprint, but also improves our quality of life.\n\nIn Geneva, 45% of work-related journeys are made by car or motorised two-wheeler ( <a href=\"https://statistique.ge.ch/domaines/11/11_02/tableaux.asp\">MRMT 2021</a>), mostly by people travelling alone in their cars. This is what is known as auto-solism.\n\nAs well as emitting a lot of greenhouse gases, this type of driving reduces the quality of the air in our towns and cities, and therefore our health, clogs up urban roads and creates noise pollution.\n\n> In the canton of Geneva, for example, traffic jams account for <a href=\"[Geneva traffic report | TomTom Traffic Index](https://www.tomtom.com/traffic-index/geneva-traffic/\">133 lost hours</a> per person per year, or around 6 days.\n\n>Did you know? The canton and several communes subsidise mechanical, electric, cargo and folding bicycles, etc. Calculate your subsidy 🚲️ in 3 clicks ( <a href=\"https://www.ge.ch/subventions-velo\">Subventions vélo | ge.</a> ch ).\n",
     "applicable si": "voiture . km > seuil d'activation boulot",
     "formule": {
       "variations": [
@@ -1113,7 +1113,7 @@
   },
   "transport . seuil d'activation boulot": {
     "titre": "Activation threshold for actions related to \"Work\" trips",
-    "description": "Minimum distance to trigger this action. \n\n> If someone tells us that he only drives 500km in a year, there is little chance that he will drive to work \n> If someone says he only drives 500km in a year, there is little chance that he will drive to work.\n\nWe define the threshold distance as 2km (one way trip), for 5 days a week.\n",
+    "description": "Minimum distance to trigger this action. \n> If someone tells us they only drive 500km in a year, they're unlikely to drive to work.\n",
     "formule": "transport . boulot . distance",
     "unité": "km",
     "titre.auto": "Activation threshold for actions related to \"Work\" trips"
@@ -1142,7 +1142,7 @@
       ]
     },
     "unité": "kgCO2e/km",
-    "note": "It is considered that a journey to work made by car can be replaced by a regional train and not by a TGV.\n",
+    "note": "We consider that a journey to work made by car can be replaced by a regional train and not by an Inter-City train.\n",
     "titre.auto": "Selected transit footprint"
   },
   "transport . boulot . commun . type": {
@@ -1153,7 +1153,6 @@
         "choix obligatoire": "oui",
         "possibilités": [
           "bus",
-          "métro ou tramway",
           "TER",
           "vélo classique",
           "vélo électrique",
@@ -1165,7 +1164,6 @@
     "titre.auto": "type"
   },
   "transport . boulot . commun . type . bus": null,
-  "transport . boulot . commun . type . métro ou tramway": null,
   "transport . boulot . commun . type . TER": null,
   "transport . boulot . commun . type . vélo classique": null,
   "transport . boulot . commun . type . vélo électrique": null,
@@ -1173,7 +1171,7 @@
   "transport . boulot . recalcul vélo": {
     "titre": "bike recalculation",
     "titre.auto": "bike recalculation",
-    "valeur": "9.666666666666666",
+    "valeur": "5.066666666666666",
     "optimized": true
   },
   "transport . boulot . recalcul vae": {
@@ -1262,7 +1260,7 @@
     },
     "non applicable si": "voiture . km < seuil d'activation 5km",
     "note": "It is assumed that a person who does not own a car *already* does without a car for short trips.\n",
-    "description": "In France, 4 out of 10 car journeys are less than 3 km long and no less than 177 million journeys of less than 5 km are made alone by car each week (excluding home-to-work journeys)\n\nAll of these \"short\" trips taken together account for nearly 10% of the total distance traveled by car each year in France\n\nThus, turning to active mobility (bicycle, moped, etc.) for these \"short\" trips can significantly reduce our GHG emissions\nemissions while relieving congestion on urban roads and improving air quality in our polluted cities.\n\n> Did you know? The state and many regions or cities subsidize mechanical, electric, cargo, folding bikes, etc. <a href=\"https://mesaidesvelo.fr\">Calculate your subsidy 🚲️ in 3 clicks</a>.\n",
+    "description": "Turning to active forms of transport (walking, rollerblading, cycling, scootering, etc.) for \"short\" journeys of less than 5 km can significantly reduce our greenhouse gas emissions, ease congestion on urban roads and reduce pollution (air and noise).\n\nFind out how to get around by bike <a href=\"https://www.ge.ch/document/carte-velo\">in Geneva</a> and <a href=\"https://schweizmobil.ch/fr/ete\">Switzerland</a>.\n\n  >Did you know? The canton and several communes subsidise mechanical, electric, cargo and folding bikes, etc. <a href=\"https://www.ge.ch/subventions-velo\">Calculate your subsidy 🚲️ in 3 clicks</a>.\n",
     "titre.auto": "Do without a car for less than 5 km"
   },
   "transport . seuil d'activation 5km": {
@@ -1314,7 +1312,7 @@
   },
   "transport . voiture 5km . fréquence": {
     "question": "How many times a week do you drive less than 5km?",
-    "description": "I go to get my bread 2km away by car, that's one trip. I go to work\nevery day from Monday to Friday at 4km, that's 5 trips.\n",
+    "description": "I drive 2km to get my bread, which is one round trip.\nI go to work every day from Monday to Friday, 4km away, that's 5 round trips.\n",
     "par défaut": 14,
     "unité": "trajet/semaine",
     "suggestions": {
@@ -1368,7 +1366,7 @@
       ]
     },
     "formule": "transport . deux roues - transport . scooter électrique . recalcul",
-    "description": "The e-moped isn't a miracle solution, but for certain uses it can prove (very) useful in reducing our footprint.\n\nHowever, we must be careful not to reach the simplistic conclusion that switching to an electric vehicle fleet would be enough to decarbonize our travels. \n\nWhenever possible (55% of our journeys in France <a href=\"https://twitter.com/GlmMrt/status/1481986507179274248\">are less than 5km</a>), the priority should be to promote active mobility (such as cycling) and public transport.\n\nNevertheless, the figure we've given does correspond to the difference in greenhouse gas emissions that would have occurred if you had travelled your km with \nwith an electric vehicle rather than a combustion engine.\n\nIt's also important to bear in mind that the idea here is not to encourage you to buy a new electric moped, but rather to make your equipment last, and give preference to second-hand vehicles!\n",
+    "description": "The electric scooter is not a miracle solution, but for certain uses it can be a (very) useful way of reducing our carbon footprint.\n\nHowever, we must be careful not to come to the simplistic conclusion that simply switching to a fleet of electric vehicles will be enough to reduce the carbon footprint of Geneva's commuters. \n\nPriority should be given to walking, cycling or using public transport wherever possible. \n\nNevertheless, the reduction figure presented for this action does correspond to the difference in greenhouse gas emissions that would have occurred if you had travelled your kilometres with an electric vehicle rather than a combustion engine.\n\nPlease note that the idea here is not to encourage the purchase of a new electric scooter. It's better to make your equipment last and buy second-hand!\n",
     "titre.auto": "Switch to an electric moped"
   },
   "transport . scooter électrique . recalcul": {
@@ -1396,7 +1394,7 @@
     },
     "non applicable si": "transport . voiture . motorisation = 'électrique'",
     "formule": "transport . voiture . empreinte calculée - transport . voiture électrique . recalcul",
-    "description": "The electric car is not a miracle solution but for certain uses it can be (very) useful to reduce our footprint.\n\nHowever, we must be careful not to come to the simplistic conclusion that all we need to do is switch to an electric car fleet to decarbonize French travel\n\nThe priority must be, when possible (55% of our trips <a href=\"https://twitter.com/GlmMrt/status/1481986507179274248\">are less than 5km</a>), the development of active mobility (such as cycling) and public transport.\n\nNevertheless, the figure presented to you corresponds to the difference in greenhouse gas emissions that would have occurred if you had driven your kilometers with\nan electric vehicle and not a thermal one.\n",
+    "description": "The electric car is not a miracle solution, but for certain uses it can prove (very) useful in reducing our carbon footprint.\n\nHowever, we must be careful not to come to the simplistic conclusion that all we need to do is switch to an electric car fleet to reduce the carbon footprint of Geneva's commuters. \n\nPriority should be given to walking, cycling or using public transport wherever possible.\n\nNevertheless, the reduction figure presented for this action does correspond to the difference in greenhouse gas emissions that would have occurred if you had travelled your kilometres with an electric vehicle rather than a combustion engine.\n",
     "note": "Consider proposing this action only if it &gt; 0 or &gt; several hundred kgCO2eq\n",
     "titre.auto": "Driving an electric car"
   },
@@ -1413,7 +1411,7 @@
     "titre.auto": "recalculation"
   },
   "transport . voiture . limitation autoroute": {
-    "titre": "Go from 130 to 110km/h",
+    "titre": "Reducing speed from 120 to 100km/h",
     "icônes": "🚗🛣️",
     "applicable si": {
       "toutes ces conditions": [
@@ -1428,9 +1426,9 @@
     "titre.auto": "Go from 130 to 110km/h"
   },
   "transport . voiture . limitation autoroute . réduction": {
-    "titre": "Consumption gain 130 -&gt; 110",
-    "description": "![](https://imgur.com/NB9CUUt.jpg)\nFrom this graph, by graphical deduction (we have not yet gone back to the <a href=\"http://theses.univ-lyon2.fr/documents/getpart.php?id=1026&action=pdf\">study</a> data, page 151 figure 26), we find the data below.\n\nDiesel: 6.5 l/100 at 130km/h -> 4.75 at 110km/h\n\nGasoline: 11.75 l/100 at 130km/h -> 8.65 at 110km/h\n\nSo -27% in diesel and -26% in petrol by going from 130 to 110. We keep the order of magnitude of 25%.\n",
-    "note": "This calculation should be refined.\nSome sources to investigate for the calculation.\n- a citizen who makes his test for a clio. He finds a reduction between -20% and -50% !\n   https://twitter.com/CptQwark_/status/1289499582871658499\n   Another citizen finds rather -10% with a bigger car\n- <a href=\"<https://www.ecologie.gouv.fr/sites/default/files/Théma - Reduction of speeds on the roads.pdf>\">Report of the CGDD</a>, where we have not found for the moment the explanation of the calculation of CO₂ savings\n- Aurélien Bigo who criticizes the CGDD report https://twitter.com/AurelienBigo/status/1276459283291439114, but who does not give us any information about the calculation of the CO₂ itself.\n- another evaluation, which gives us the calculation :)  : https://twitter.com/Tomsawy22670318/status/1274257122373570565\n  Attention, to be rigorous, as mentioned in this last thread, it is necessary to take into account the distribution of the speed and the category of car (presence of a 6th gear for example). Obviously, we do not drive at 130 all the time.\n",
+    "titre": "Consumption gain 120 -&gt; 100",
+    "description": "![](https://imgur.com/NB9CUUt.jpg)\nFrom this graph, by graphical deduction (we have not yet gone back to the data <a href=\"http://theses.univ-lyon2.fr/documents/getpart.php?id=1026&action=pdf\">in the study</a>, page 151 figure 26), we find the data below.\n\nDiesel: 6.5 l/100 at 130km/h -> 4.75 at 110km/h \n\nPetrol: 11.75 l/100 at 130km/h -> 8.65 at 110km/h\n\nSo -27% for diesel and -26% for petrol by going from 130 to 110. We will retain the order of magnitude of 25%.\n",
+    "note": "Going from 120 to 100 km/h on the motorway is equivalent to going from 130 to 110 km/h in terms of fuel consumption.",
     "titre.auto": "Consumption gain 130 -&gt; 110",
     "valeur": "25%",
     "optimized": true
@@ -1824,7 +1822,7 @@
   },
   "alimentation . déchets . quantité jetée": {
     "question": "How would you estimate the amount of waste you throw away?",
-    "description": "> Answer 'Zero Waste' only if you track every single waste.\n\nTo learn more about zero waste lifestyles, visit <a href=\"https://www.zerowastefrance.org/passer-a-laction/adopter-zero-dechet/\">Zero Waste France</a>.\n\n> Be aware that in case of a \"zero waste\" commitment, we still consider emissions (but largely reduced) because it is very difficult or even impossible to generate no waste, some being\nit is very difficult, if not impossible, to generate no waste, some of which is invisible and unavoidable.\n",
+    "description": "Answer 'Zero Waste' only if you're tracking every last bit of waste. To find out more about zero waste lifestyles, visit the Zero Waste Geneva website.\n\nPlease note that in the case of a 'zero waste' commitment, we are still considering greenhouse gas emissions (albeit greatly reduced), as it is very difficult, if not impossible, to generate no waste at all, some of which is invisible and unavoidable.\nYou have indicated a zero waste lifestyle. This level of commitment corresponds to someone who is 100% committed to reducing their waste. Buying in bulk is not enough to be zero waste.\n",
     "par défaut": "'base'",
     "formule": {
       "une possibilité": {
@@ -2368,9 +2366,9 @@
   },
   "alimentation . petit déjeuner . type . continental": {
     "icônes": "🥐🥖",
-    "titre": "Croissant and baguette",
+    "titre": "Viennese pastries and bread",
     "description": "We have chosen to consider a standard French breakfast close to the\n[\"continental\"](https://fr.wikipedia.org/wiki/Déjeuner#Repas_de_type_continental)\nbreakfast. It includes bread, butter, jam, pastries and a fruit.\n",
-    "titre.auto": "Viennese pastry and baguette"
+    "titre.auto": "Viennese pastries and bread"
   },
   "alimentation . petit déjeuner . type . lait céréales": {
     "icônes": "🥣🎑",
@@ -2419,7 +2417,7 @@
   },
   "alimentation . local . consommation": {
     "question": "Do you consume local products?",
-    "description": "This question enables us to adjust the footprint of your diet according to your local shopping habits.\n\nWe consider \"local\" food to be that which comes from the region where you live, or from nearby regions. If you eat \"French\", consider your food to be local.\n\nThis criterion has a relatively low impact, as the share of transport in the carbon footprint of the products we consume is lower than the emissions linked to production, processing or packaging, especially when your diet is meat-based.\n\nBut it's still a win-win situation, and the benefits of eating locally don't stop at the climate footprint.\n\n> ⚠️ Beware, if you shop by car several km from home every week, it's possible that the last km's footprint will exceed the gains of eating locally!\n",
+    "description": "This question allows us to adjust the footprint of your diet according to your habits about the local nature of your purchases.\nWe consider \"local\" to be food that comes from the region where you live or from nearby regions. If you eat \"Swiss\", consider your food to be local.\nThis criterion has a relatively small impact, as the share of transport in the carbon footprint of the products we consume is smaller than the emissions linked to production, processing or packaging, especially if you eat a meat-based diet.\nBut it's still a win-win situation, and the benefits of eating locally don't stop at the climate footprint.\n\n⚠️ Be careful, if you do your shopping by car several kilometres from home each week, it's possible that the footprint of the last kilometre will exceed the gains of eating locally!\n",
     "note": "See details of the calculation approach [here](http://nosgestesclimat/documentation/alimentation/local/part-locale)",
     "par défaut": "'jamais'",
     "formule": {
@@ -3012,7 +3010,7 @@
   },
   "divers . animaux domestiques . empreinte . chats . nombre": {
     "question": "How many cats do you have in your household?",
-    "par défaut": 0.49,
+    "par défaut": 0,
     "titre": "number",
     "titre.auto": "number"
   },
@@ -3312,8 +3310,8 @@
   },
   "divers . autres produits . niveau de dépenses": {
     "titre": "Spending on new manufactured goods",
-    "question": "The test doesn't yet capture all your consumption, so how would you estimate your level of spending on new products (home decoration, DIY, games, hobbies, tools, etc.)?",
-    "description": "To keep the interface simple, we propose an estimate, via your expenses, of the footprint of consumer goods\nthat you don't think you've included in the previous questions.\n\nIt concerns: **games, decoration, kitchen equipment, household linen, materials for hobbies and crafts, plants, etc.**\n\n> 💡 The orders of magnitude in € proposed here are based on INSEE household expenditure statistics. The average French person spends €80/month on these items.\n",
+    "question": "The test does not yet capture all your consumption. How much do you estimate you spend per year on new products (decoration, DIY, games, hobbies, tools, etc.)?",
+    "description": "To keep the interface simple, we propose an estimate, via your expenditure, of the footprint of the consumer goods you own and which you think you have not included in the previous questions\nthat you own and that you don't think you included in the previous questions.\n\nThis concerns: **games, decoration, kitchen equipment, household linen, materials for creative hobbies or DIY, plants, etc\n",
     "note": "The orders of magnitude associated with each of these possibilities are derived from the work described in the description of the \"other products . corrective factor\" rule. It is assumed here that expenditure and income levels are strongly correlated.",
     "formule": {
       "une possibilité": {
@@ -3325,19 +3323,19 @@
         ]
       }
     },
-    "par défaut": "'moyen'",
+    "par défaut": "'important'",
     "titre.auto": "Spending on new manufactured goods"
   },
   "divers . autres produits . niveau de dépenses . faible": {
-    "titre": "Less than €50 / month",
+    "titre": "Less than 50CHF / month",
     "titre.auto": "Less than €50 / month"
   },
   "divers . autres produits . niveau de dépenses . moyen": {
-    "titre": "Approx. €80 / month",
+    "titre": "Between CHF 50 and 120 / month",
     "titre.auto": "Approx. €80 / month"
   },
   "divers . autres produits . niveau de dépenses . important": {
-    "titre": "More than 120€ / month",
+    "titre": "More than CHF 120 / month",
     "titre.auto": "More than 120€ / month"
   },
   "divers": {
@@ -3758,7 +3756,7 @@
   },
   "divers . électroménager . préservation": {
     "question": "What effort do you make to keep your appliances as long as possible?",
-    "description": "To avoid asking you to give the precise age of the probably long list of appliances\nyou own, we use a grid of the average age observed for each appliance.\n\nFor example, a fridge lasts on average 10 years, an oven 12 years and a\nkettle 6 years. You can explore the average life and footprint of each\nappliance [here](/documentation/divers/électroménager/appareils).\n\n> It's not about the age of the appliance when it breaks down, but the\n> age when the owner decides to replace it with a new one.\n\nIt's up to you to see how you stack up against the average.\n",
+    "description": "To avoid asking you to give the precise age of the ten or so appliances you own, we use a grid of the average age of each appliance.\n\nFor example, a fridge lasts an average of 10 years, an oven 12 years and a kettle 6 years. \n\nThis is not the age of the appliance when it breaks down, but its age when the owner decides to replace it with a new one.\n\nIt's up to you to see where you stand in relation to the average.\n",
     "par défaut": "'moyen'",
     "formule": {
       "une possibilité": {
@@ -4088,7 +4086,7 @@
   },
   "divers . loisirs . culture . édition . fréquence": {
     "question": "How much do you spend in a month on newspapers, magazines and books?",
-    "par défaut": "'normale'",
+    "par défaut": "'élevée'",
     "formule": {
       "une possibilité": {
         "choix obligatoire": "oui",
@@ -4105,19 +4103,19 @@
     "titre.auto": "frequency"
   },
   "divers . loisirs . culture . édition . fréquence . faible": {
-    "titre": "Less than €5 per month",
+    "titre": "Less than CHF 5 per month",
     "titre.auto": "Less than €5 per month"
   },
   "divers . loisirs . culture . édition . fréquence . normale": {
-    "titre": "From €5 to €15 per month",
+    "titre": "From CHF 5 to CHF 15 per month",
     "titre.auto": "From €5 to €15 per month"
   },
   "divers . loisirs . culture . édition . fréquence . élevée": {
-    "titre": "From €15 to €30 per month",
+    "titre": "From CHF 15 to CHF 30 per month",
     "titre.auto": "From €15 to €30 per month"
   },
   "divers . loisirs . culture . édition . fréquence . très élevée": {
-    "titre": "More than €30 per month",
+    "titre": "More than CHF 30 per month",
     "titre.auto": "More than €30 per month"
   },
   "divers . loisirs . culture . empreinte pratique de la musique": {
@@ -4548,17 +4546,10 @@
   },
   "divers . numérique . internet": {
     "icônes": "🌐",
-    "formule": "(empreinte horaire * durée journalière) * 365",
+    "formule": "(0.02 * durée journalière) * 365",
     "unité": "kgCO2e",
     "titre": "internet",
     "titre.auto": "internet",
-    "optimized": true
-  },
-  "divers . numérique . internet . empreinte horaire": {
-    "formule": "0.077 * 0.153",
-    "unité": "kgCO2e/h",
-    "titre": "hourly footprint",
-    "titre.auto": "hourly footprint",
     "optimized": true
   },
   "divers . numérique . internet . durée journalière": {
@@ -4577,7 +4568,7 @@
   },
   "divers . numérique . préservation": {
     "question": "What effort do you make to keep your electronics as long as possible?",
-    "description": "To avoid asking you to fill in the exact age of all the electronic\ndevices you own, we use a grid of average age found for each device that\nis scaled according to your efforts to preserve them or not.\n\nYou can explore the average age and footprint of each device\n[here](/documentation/numérique).\n\nIt's up to you to judge your efforts to make them last as long as\npossible\n\n> Answering \"I often buy new\" is the most impactful answer because it\n> means that you replace your devices early before they are out of use.\n",
+    "description": "To avoid asking you to give the precise age of all the electronic devices you own, we use an average age scale for each device, which is adjusted according to your efforts to preserve it or not.\n\nIt's up to you to judge your efforts to make them last as long as possible\n\nAnswering \"None, I often buy new\" is the most impactful answer because it means that you replace your appliances early even before they are out of use.\n",
     "par défaut": "'moyen'",
     "formule": {
       "une possibilité": {
@@ -5235,6 +5226,14 @@
     "titre.auto": "Chemicals per capita",
     "optimized": true
   },
+  "empreinte branche . C21 par hab": {
+    "description": "Basic pharmaceutical products and pharmaceutical preparations per capita\n\n> The description below shows the share of each subclass in the sector (as a % of turnover)\n\n- **Manufacture of basic pharmaceutical products (8%)**\n- **Manufacture of pharmaceutical preparations (92%)**",
+    "formule": "(5024 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "pharmacy per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "pharmacy per capita",
+    "optimized": true
+  },
   "empreinte branche . C23 par hab": {
     "description": "Other non-metallic mineral products per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- **Manufacture of glass and glassware (27%)** Manufacture of flat glass (7%)\n\t- Manufacture of flat glass (7%)\n\t- Shaping and processing of flat glass (29%)\n\t- Manufacture of hollow glass (46%)\n\t- Manufacture of glass fibres (12%)\n\t- Manufacture and processing of other glass, including technical glass (6%)\n- manufacture of refractory products (2%)** ** Manufacture of building materials (2%)\n- **Manufacture of clay building materials (5%)** Manufacture of ceramic tiles (14%)\n\t- Manufacture of ceramic tiles (14%)\n\t- Manufacture of clay bricks, tiles and construction products (86%)\n- **Manufacture of other ceramic and porcelain products (2%)**\n\t- Manufacture of ceramic household and ornamental articles (41%)\n\t- Manufacture of ceramic sanitary ware (S)\n\t- Manufacture of ceramic insulators and insulating fittings (5%)\n\t- Manufacture of other technical ceramic products (28%)\n\t- Manufacture of other ceramic products (S)\n- **Manufacture of cement, lime and plaster (11%)** Manufacture of cement (S)\n\t- Manufacture of cement (S)\n\t- Manufacture of lime and plaster (S)\n- **Manufacture of concrete, cement and plaster products (40%)**\n\t- Manufacture of concrete components for construction (28%)\n\t- Manufacture of plaster components for construction (8%)\n\t- Manufacture of ready-mixed concrete (51%)\n\t- Manufacture of mortar and dry concrete (8%)\n\t- Manufacture of fibre cement products (1%)\n\t- Manufacture of other articles of concrete, cement or plaster (3%)\n- **Stone cutting, shaping and finishing (3%)\n- manufacture of abrasive products and non-metallic mineral products n.e.c. (10%)** **Manufacture of abrasive products (8%)\n\t- Manufacture of abrasive products (8%)\n\t- Manufacture of other non-metallic mineral products n.e.c. (92%)",
     "formule": "(3400 * 1000000kgCO2e/ktCO2e) / 66774482",
@@ -5267,12 +5266,68 @@
     "titre.auto": "Machinery and equipment n.e.c. per capita",
     "optimized": true
   },
+  "empreinte branche . C30 par hab": {
+    "description": "Other transport equipment per inhabitant\n\n> The description below shows the share of each subclass in the sector (as a % of turnover)\n\n- **Shipbuilding (4%)**\n\t- Building of ships and floating structures (100%)\n\t- Construction of pleasure boats (S)\n- manufacture of locomotives and other railway rolling stock (3%)** ** Manufacture of aircraft and spacecraft (100%)\n- **Aircraft and spacecraft construction (90%)**\n- manufacture of military combat vehicles (S)** **Manufacture of transport equipment (S)\n- **Manufacture of transport equipment n.e.c. (1%)**\n\t- Manufacture of motorbikes (43%)\n\t- Manufacture of bicycles and invalid carriages (47%)\n\t- Manufacture of other transport equipment n.e.c. (10%)",
+    "formule": "(4078 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "vehicle manufacturing (excluding automobiles) per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "vehicle manufacturing (excluding automobiles) per capita",
+    "optimized": true
+  },
   "empreinte branche . C32 par hab": {
     "description": "Other manufacturing per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- **Manufacture of jewellery and related articles (17%)** Coin minting (S)\n\t- Coin minting (S)\n\t- Manufacture of jewellery and related articles (S)\n\t- Manufacture of imitation jewellery and similar articles (20%)\n- manufacture of musical instruments (2%)** **Manufacture of musical instruments (2%)\n- manufacture of musical instruments (2%)** **Manufacture of sports goods (6%)**\n- **Manufacture of games and toys (3%)\n- manufacture of instruments and supplies for medical and dental use (59%)** **Manufacture of toys and games\n- **Manufacturing n.e.c. (12%)**\n\t- Manufacture of brushware (8%)\n\t- Other manufacturing n.e.c. (92%)",
     "formule": "(4287.36 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Other manufacturing per capita",
     "unité": "kgCO2e",
     "titre.auto": "Other manufacturing per capita",
+    "optimized": true
+  },
+  "empreinte branche . E36 par hab": {
+    "description": "Natural water; water treatment and distribution per capita \n\n> The description below corresponds to the share of each subclass of the industry (in % of turnover) \n\n- **Water collection, treatment and supply (100%)** (in % of turnover)",
+    "formule": "(668 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "water distribution system per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "water distribution system per capita",
+    "optimized": true
+  },
+  "empreinte branche . E37 par hab": {
+    "description": "Wastewater collection and treatment per capita \n\n> The description below corresponds to the share of each subclass in the industry (in % of turnover) \n\n- **Wastewater collection and treatment (100%)",
+    "formule": "(1403.1 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "wastewater treatment per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "wastewater treatment per capita",
+    "optimized": true
+  },
+  "empreinte branche . E38 par hab": {
+    "description": "Waste collection, treatment and disposal; recovery per capita\n\n> The description below corresponds to the share of each subclass in the sector (as a % of turnover)\n\n- **Waste collection (23%)**\n\t- Collection of non-hazardous waste (84%)\n\t- Collection of hazardous waste (16%)\n- **Waste treatment and disposal (24%)**\n\t- Treatment and disposal of non-hazardous waste (S)\n\t- Treatment and disposal of hazardous waste (S)\n- **Recovery (53%)**\n\t- Dismantling of wrecks (3%)\n\t- Recovery of sorted waste (97%)",
+    "formule": "(6002.15 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "waste management per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "waste management per capita",
+    "optimized": true
+  },
+  "empreinte branche . E39 par hab": {
+    "description": "Pollution control and other waste management services per capita \n\n> The description below corresponds to the share of each sub-class of the sector (in % of turnover) \n\n- **Remediation and other waste management services (100%)",
+    "formule": "(389.75 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "cleaning of buildings and contaminated sites per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "cleaning of buildings and contaminated sites per capita",
+    "optimized": true
+  },
+  "empreinte branche . F42 par hab": {
+    "description": "Civil engineering per inhabitant\n\n> The description below shows the share of each subclass in the sector (as a % of turnover)\n\n- construction of roads and railways (52%)** ** Construction of roads and motorways (71%)\n\t- Construction of roads and motorways (71%)\n\t- Construction of surface and underground railways (9%)\n\t- Construction of bridges and tunnels (20%)\n- **Construction of networks and lines (33%)**\n\t- Construction of fluid networks (49%)\n\t- Construction of electrical and telecommunications networks (51%)\n- **Construction of other civil engineering structures (15%)**\n\t- Construction of maritime and fluvial structures (25%)\n\t- Construction of other civil engineering works n.e.c. (75%)",
+    "formule": "(6982.04 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "civil engineering per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "civil engineering per capita",
+    "optimized": true
+  },
+  "empreinte branche . F43 par hab": {
+    "description": "Specialist construction work per inhabitant\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- **Demolition and site preparation (8%)** Demolition work (10%)\n\t- Demolition work (10%)\n\t- Site preparation work (86%)\n\t- Drilling and boring (3%)\n- **Electrical, plumbing and other installation work (34%)**\n\t- Electrical installation (44%)\n\t- Plumbing, heating and air conditioning (43%)\n\t- Other installation work (13%)\n- **Finishing work (28%)**\n\t- Plastering work (11%)\n\t- Joinery work (53%)\n\t- Floor and wall covering (12%)\n\t- Painting and glazing (21%)\n\t- Other finishing work (3%)\n- **Other specialised construction work (30%)** Roofing work (19%)\n\t- Roofing work (19%)\n\t- Other specialised construction work n.e.c. (81%)",
+    "formule": "(32761.88 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "miscellaneous work (for public works and buildings) per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "miscellaneous work (for public works and buildings) per capita",
     "optimized": true
   },
   "empreinte branche . G46 par hab": {
@@ -5291,12 +5346,148 @@
     "titre.auto": "Retail trade, except automobiles and motorcycles per capita",
     "optimized": true
   },
+  "empreinte branche . H52 par hab": {
+    "description": "Warehousing and auxiliary transport services per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- **Warehousing and storage (13%)**\n- **Services auxiliary to transport (87%)**\n\t- Services auxiliary to land transport (30%)\n\t- Services auxiliary to water transport (5%)\n\t- Services auxiliary to air transport (8%)\n\t- Material Handling (3%)\n\t- Other services auxiliary to transportation (54%)",
+    "formule": "(2065 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "support services to transportation activities per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "support services to transportation activities per capita",
+    "optimized": true
+  },
+  "empreinte branche . H53 par hab": {
+    "description": "Postal and courier services per inhabitant\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- postal activities as part of a universal service obligation (S)** **Other postal and courier activities (S)** **Other postal and courier activities (S)**\n- other postal and courier activities (S)** **Other postal and courier activities (S)",
+    "formule": "(168 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "postal services per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "postal services per capita",
+    "optimized": true
+  },
+  "empreinte branche . J61 par hab": {
+    "description": "Telecommunications services per capita\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- **Wireline telecommunications (45%)**\n- **Wireless telecommunications (39%)**\n- satellite telecoms (6%)** **Other telecoms (6%)** Other telecoms (6%)\n- **Other telecommunications activities (10%)**",
+    "formule": "(3158 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "telecommunications per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "telecommunications per capita",
+    "optimized": true
+  },
+  "empreinte branche . K64 par hab": {
+    "description": "Financial services, excluding insurance and pension funds per capita \n\n> The description below corresponds to the share of each subclass of the sector (in % of turnover) \n\n- **Holding company activities (100%)**",
+    "formule": "(760 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "financial services (excluding insurance and pension funds) per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "financial services (excluding insurance and pension funds) per capita",
+    "optimized": true
+  },
+  "empreinte branche . K65 par hab": {
+    "description": "Insurance, reinsurance and pension fund services, excluding compulsory per capita social security \n\n> The description below corresponds to the share of each subclass of the branch (in % of turnover)\n",
+    "formule": "(3331 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "insurance and pension fund per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "insurance and pension fund per capita",
+    "optimized": true
+  },
+  "empreinte branche . M69 par hab": {
+    "description": "Legal and accounting activities per inhabitant\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- **Legal activities (60%)**\n- **Accounting activities (40%)**",
+    "formule": "(902.58 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "legal and accounting activities per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "legal and accounting activities per capita",
+    "optimized": true
+  },
+  "empreinte branche . M71 par hab": {
+    "description": "Architectural and engineering services; inspection services and technical analyses per inhabitant\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- **Architectural and engineering activities (86%)** Architectural activities (12%)\n\t- Architectural activities (12%)\n\t- Engineering activities (88%)\n- **Technical testing and analysis activities (14%)**",
+    "formule": "(2438 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "architecture and building control per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "architecture and building control per capita",
+    "optimized": true
+  },
+  "empreinte branche . M72 par hab": {
+    "description": "Scientific research and development services per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- research and development in physical and natural sciences (99%)** ** Research and development in biotechnology (19%)\n\t- Research and development in biotechnology (19%)\n\t- Research and development in other physical and natural sciences (81%)\n- **Research and development in the humanities and social sciences (1%)**",
+    "formule": "(7811 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "Scientific R&D per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "Scientific R&D per capita",
+    "optimized": true
+  },
+  "empreinte branche . N78 par hab": {
+    "description": "Employment services per inhabitant\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- activities of employment placement agencies (3%)** **Activities of temporary employment agencies (83%)**\n- activities of temporary employment agencies (83%)** **Other provision of services (83%)\n- **Other provision of human resources (14%)**",
+    "formule": "(12 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "employment-related activities per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "employment-related activities per capita",
+    "optimized": true
+  },
+  "empreinte branche . N80 par hab": {
+    "description": "Surveys and safety per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- **Private security activities (74%)**\n- **Security systems activities (25%)**\n- **Investigation activities (1%)**",
+    "formule": "(20.67 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "investigations and security per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "investigations and security per capita",
+    "optimized": true
+  },
+  "empreinte branche . O84 par hab": {
+    "description": "Public administration and defence services; compulsory social security services per capita\n\n> The description below corresponds to the share of each subclass in the industry (in % of turnover)\n\n- **General, economic and social administration (83%)** General public administration (73%)\n\t- General public administration (73%)\n\t- Public administration (supervision) of economic activities (27%)\n- **Public prerogative services (17%)**",
+    "formule": "(16319 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "public administration and defense per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "public administration and defense per capita",
+    "optimized": true
+  },
+  "empreinte branche . P85 par hab": {
+    "description": "Education services per capita\n\n> The description below corresponds to the share of each subclass in the sector (as a % of turnover)\n\n- **Pre-primary education (0%)**\n- primary education (0%)** **Secondary education (2%)**\n- **Secondary education (2%)**\n\t- General secondary education (44%)\n\t- Technical or vocational secondary education (56%)\n- **Higher and post-secondary non-tertiary education (8%)**\n\t- Post-secondary non-tertiary (2%)\n\t- Higher education (98%)\n- **Other education activities (89%)**\n\t- Sports and leisure education (13%)\n\t- Cultural education (3%)\n\t- Driving lessons (13%)\n\t- Other teaching (72%)\n- **Support activities for teaching (1%)**",
+    "formule": "(8730 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "education per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "education per capita",
+    "optimized": true
+  },
+  "empreinte branche . Q86 par hab": {
+    "description": "Human health services per capita\n\n> The description below shows the share of each subclass in the sector (as a % of turnover)\n\n- **Hospital activities (16%)**\n- activity of doctors and dentists (50%)** ** Activity of general practitioners (38%)\n\t- General practitioners (38%)\n\t- Specialist practice (32%)\n\t- Dental practice (29%)\n- **Other human health activities (33%)**",
+    "formule": "(11024 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "health per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "health per capita",
+    "optimized": true
+  },
+  "empreinte branche . Q87 par hab": {
+    "description": "Medical and social accommodation per capita \n\n> The description below corresponds to the share of each subclass of the sector (in % of turnover) \n\n- **Residential care (72%)\n- social housing for mentally handicapped, mentally ill and drug addicts (0%)** **Social housing for the elderly (10%)\n- social housing for the elderly or physically handicapped (27%)** **Other housing activities\n- **Other social housing activities (1%)**",
+    "formule": "(3914.19 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "medico-social accommodation per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "medico-social accommodation per capita",
+    "optimized": true
+  },
+  "empreinte branche . Q88 par hab": {
+    "description": "Social services without accommodation per inhabitant\n\n> The description below corresponds to the share of each subclass in the sector (as a % of turnover)\n\n- **Action sociale sans hébergement pour personnes âgées et pour personnes handicapées (60%)**\n- **Other social work without accommodation (40%)**\n\t- Social work without accommodation for young children (88%)\n\t- Other social work without accommodation n.e.c. (12%)",
+    "formule": "(2298.81 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "social actions per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "social actions per capita",
+    "optimized": true
+  },
+  "empreinte branche . S94 par hab": {
+    "description": "Services provided by voluntary organisations per inhabitant\n\n> The description below corresponds to the share of each subclass in the sector (in % of turnover)\n\n- **Activities of business, employers' and professional organisations (93%)**\n\t- Activities of employers' and consular organisations (49%)\n\t- Activities of professional organisations (51%)\n- **Activities of other voluntary organisations (7%)** Activities of political organisations (1%)\n\t- Activities of political organisations (1%)\n\t- Activities of membership organisations n.e.c. (99%)",
+    "formule": "(1213 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "associative activities per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "associative activities per capita",
+    "optimized": true
+  },
   "empreinte branche . S95 par hab": {
     "description": "Repair services of computers and personal and household goods per inhabitant\n\n> The description below shows the share of each subclass in the industry (in % of turnover)\n\n- **Repair of computers and communications equipment (64%)\n\t- Repair of computers and peripheral equipment (83%)\n\t- Repair of communications equipment (17%)\n- **Repair of personal and household goods (36%)**\n\t- Repair of consumer electronics (12%)\n\t- Repair of household appliances and home and garden equipment (27%)\n\t- Repair of footwear and leather goods (18%)\n\t- Repair of furniture and household equipment (8%)\n\t- Repair of watches, clocks and jewellery (7%)\n\t- Repair of other personal and household goods (29%)",
     "formule": "(1114 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "other personal services per capita",
     "unité": "kgCO2e",
     "titre.auto": "other personal services per capita",
+    "optimized": true
+  },
+  "empreinte branche . S96 par hab": {
+    "description": "Other personal services per inhabitant\n\n> The description below corresponds to the share of each subclass in the sector (as a % of turnover)\n\n- **Other personal services (100%)**\n\t- Laundries and dry cleaning (13%)\n\t- Hairdressing and beauty treatments (54%)\n\t- Funeral services (13%)\n\t- Personal care (9%)\n\t- Other personal services n.e.c. (12%)",
+    "formule": "(1656 * 1000000kgCO2e/ktCO2e) / 66774482",
+    "titre": "Other personal services per capita",
+    "unité": "kgCO2e",
+    "titre.auto": "Other personal services per capita",
     "optimized": true
   },
   "logement . chauffage": {
@@ -5328,7 +5519,7 @@
     },
     "icônes": "🌡️",
     "question": "What type of energy do you use for heating, hot water, cooking, etc.?",
-    "description": "> This question covers all the energy sources you use to power your heaters, water heaters, hobs, etc.\n\nSome homes use electricity only, others are heated entirely by gas, and more rarely by wood or oil.\nIn still other situations, a home may be heated mainly by electric heaters or a heat pump,\nbut with wood as a back-up, for example. Finally, you can also take into account your gas consumption for your van or motor home. \n\nTick all the modes you use.\n",
+    "description": "> This question covers all the energy sources you use to power your heating systems, water heaters, hobs, etc.\n\nSome homes use electricity only, others are heated entirely by gas, and more rarely by wood or oil.\nIn still other situations, a home may be heated mainly by electric heaters or a heat pump,\nbut with additional wood heating, for example. Finally, you can also take into account your gas consumption for your van or motorhome. \n\nIf you live in several homes (for example, if you have a second home), try to \"reduce\" these consumption figures to those of your main home, to get the most accurate estimate possible.\n\nTick all the modes you use.\n",
     "formule": {
       "variations": [
         {
@@ -5359,7 +5550,7 @@
   },
   "logement . chauffage . empreinte par défaut": {
     "icônes": "🌡️",
-    "formule": "19.64719233667352 * logement . surface",
+    "formule": "29.49986875 * logement . surface",
     "unité": "kgCO2e",
     "titre": "default footprint",
     "titre.auto": "default footprint",
@@ -5467,9 +5658,9 @@
   },
   "logement . chauffage . gaz . estimation via le coût": {
     "question": "No invoice? Enter your approximate monthly expenses",
-    "unité": "€/kWh",
-    "formule": "gaz . prix",
-    "note": "This formula enables us to switch from €/month to kWh/year: kWh costs x cents per month over 12 months.\n\nSee the \"Energy consumption calculation\" tab in the <a href=\"https://avenirclimatique.org/wp-content/uploads/2020/04/2020-04-12_MicMac_V2.6.xlsx\">MicMac spreadsheet</a>\nUpdated via a small calculation algorithm in January 2022, following historic price rises in 2021.\nThe value for 2022 is approximately 0.104 €/kWh.\n",
+    "unité": "CHF/kWh",
+    "formule": 0.143,
+    "note": "FSO average energy prices su-f-05.02.91, average 2022 - https://www.bfs.admin.ch/bfs/fr/home/statistiques/prix/indice-prix-consommation/resultats-detailles.assetdetail.25245904.html",
     "titre": "estimation via cost",
     "titre.auto": "estimation via cost"
   },
@@ -5479,7 +5670,7 @@
     "par défaut": "parc français . chauffage . consommation gaz par m2 * surface",
     "unité": "kWh",
     "aide": "estimation via le coût",
-    "description": "Tip: You can find your annual energy consumption on your gas and electricity bills or in your online account on your supplier's website.\n\n> Your condominium may not provide you with the consumption in kWh of your home, when the boiler is centralized. However, it must provide you with the amount in €, which you can enter below to estimate your kWh.\n",
+    "description": "Tip: You can find your annual energy consumption on your gas bills.\n\n> For heating, your heating company may not give you the consumption in kWh for your home when the boiler is centralised. You can enter the amount of your bill in CHF to estimate your kWh. If you have two bills for cooking gas and heating gas (charges), add the two amounts together.\n",
     "titre": "consumption",
     "titre.auto": "consumption"
   },
@@ -5499,40 +5690,16 @@
     "titre.auto": "biogas warning"
   },
   "logement . chauffage . gaz . intensité carbone gaz utilisateur": {
-    "formule": {
-      "variations": [
-        {
-          "si": "chauffage . gaz . biogaz",
-          "alors": "biogaz . facteur d'émission"
-        },
-        {
-          "sinon": "facteur d'émission base carbone"
-        }
-      ]
-    },
     "unité": "kgCO2e/kWh",
     "titre": "carbon intensity user gas",
-    "titre.auto": "carbon intensity user gas"
-  },
-  "logement . chauffage . gaz . facteur d'émission base carbone": {
-    "titre": "Carbon intensity natural gas",
-    "valeur": 0.221,
-    "unité": "kgCO2e/kWh",
-    "note": "These are kgCO2e/kWh *PCS*.\n\nWe reason in HCV (Higher Calorific Value) and not in LCV (Lower Calorific Value), as HCV is used as a conversion coefficient in invoices to convert the volume of gas used into kWh: \nit is assumed that the gas boiler recovers the latent heat of condensation.\n\nBase Carbone Natural gas - 2022/average mix/consumption\n",
-    "titre.auto": "Carbon intensity natural gas",
+    "titre.auto": "carbon intensity user gas",
+    "valeur": "0.23",
     "optimized": true
   },
   "logement . chauffage . biogaz": {
     "note": "The carbon base uses the following biogas emission factor: `0.0444 kgCO2e/kWhPCI`. \n\nHere is more documentation on the integration of this figure and its limitations.\n\n<details><summary>Their justification is in the documentation [unfold]</summary>\n\nFor methodological reasons, this approach is not compatible with the Base Carbone® emissions factor construction logic, and cannot be used to produce a GHG emissions balance. Accordingly, further work was carried out, resulting in an updated LCA for 2020 <a href=\"https://bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/references.htm\">[144</a> ] and an emissions factor of 44.1 gCO2e / kWh ICP. This latter value reflects the GHG impact induced by the production of one kWh of biomethane, in contrast to the value of 23.4 gCO2e / kWh PCI from the previous study, which reflects the overall impact of the methanization and injection sector, integrating induced impacts and reductions in GHG emissions brought about by this sector. </details>\n<br/>\n\nWe'll need to clarify what in NGC prevents us from using the lowest factor in this consumption calculation model, which is a global calculation also covering agriculture via food.\n\nAnother crucial point is that gas can be stored, unlike \"green\" electricity, which is why their emission factor has not yet been included in NGC. \n\nIn addition, leaks from biomethane installations, which are by nature much smaller and more numerous than fossil gas and therefore difficult to control, could be underestimated. Is this <a href=\"https://www.cell.com/one-earth/fulltext/S2590-3322(22\">study (202200267-6</a>) taken into account in the above emissions factor (2020)? \n\n## About land use\n\nThe carbon base link to the GRDF study is no longer online. <a href=\"https://github.com/datagir/nosgestesclimat/files/9542516/evaluation-des-impacts-ges-biomethane-_synthese-quantis_2017.pdf\">Here it is in PDF</a>. It shows : \n\n![image](https://user-images.githubusercontent.com/1177762/189527416-4e8a3725-ef5a-448e-8557-0ad0007e0720.png)\n\nThe red part is detailed here: \n\n![image](https://user-images.githubusercontent.com/1177762/189527431-3fdcc5b2-22c0-49e1-b5f0-68762f780d57.png)\n\nIt shows that the proportion of dedicated crops is very low, which is very reassuring. \n\nHaving said that, and I'm not sure how to define it precisely, I still have a strong impression that a large proportion of these components could be valorized differently: in concrete terms, we burn and thus valorize at a very high price (gas at wholesale price <a href=\"https://twitter.com/i/timeline\">costs in September 2022</a> almost 2 times the biogas production price (90€/MWh)) chicken leftovers from the canteen that we could just not have produced (blue); the domestic lawn that the neighbor mows every week (light blue); manure from crops that could have been dedicated to human vegetation (mauve); and so on. \n\nIn short, if some of the energy present in the materials used by biomethane was just lost, another part simply undergoes a change of allocation, from something useful to the agricultural world to the combustion of gas to heat homes in particular. Not to mention the windfall effect for activities that emit, substitutable by others that emit less. The study seems to be very complete, so it's worth looking into. Maybe it answers all the questions I haven't seen (it's complex). \n\nThere's also an <a href=\"https://reporterre.net/methanisation-un-digestat-bien-indigeste-pour-les-sols-et-les-eaux\">article in Reporterre</a> that worries about bacterial contamination due to digestate spreading, as well as methane and nitrous oxide N2O leaks, which are underestimated (because they are present and therefore evaluated in the study cited by the carbon base). Please note, however, that Reporterre is not a research organization, but an opinion medium. \n\nA very recent investigation into methanizers in Brittany points in the same direction, cataloguing the incidents that have taken place in the region: https://basta.media/des-methaniseurs-menacent-l-environnement-la-carte-inedite-des-accidents-en-Bretagne-Splann. \n\nIn my opinion, this does not call into question the inclusion of this factor in UCS. Fossil gas production is also affected by this kind of problem, by way of example. \n\nAnother question that may be answered here is: can the sector achieve x10 production without introducing negative externalities that are currently under control? It would be interesting to answer this question for the UCS user, to show him that his choice can be passed on to society as a whole. Carbone4 seems to answer in the negative: replacing fossil gas with biomethane should not lead to a failure to reduce gas consumption in general, and even less to a rebound effect! \n\n![image](https://user-images.githubusercontent.com/1177762/189527887-931ee20a-8ad6-431f-bd4d-d705fa9eefca.png)\n\nA **warning** is therefore integrated into the simulation to evoke this impossible transition to scale: \n\n> Biomethane reduces **enormously** the CO₂ emissions of the gas you consume, but current production is **unable to scale up**: the overall reduction of all gas consumption remains **essential**, whether you consume biogas or fossil gas.\n",
     "titre": "biogas",
     "titre.auto": "biogas"
-  },
-  "logement . chauffage . biogaz . facteur d'émission": {
-    "formule": "(0.0395 * part) + (0.221 * (1 - part))",
-    "description": "Biogas: Biomethane - Injected into networks - Medium mix\n",
-    "titre": "emission factor",
-    "titre.auto": "emission factor",
-    "optimized": true
   },
   "logement . chauffage . biogaz . part": {
     "question": "How much biogas is guaranteed by your gas contract?",
@@ -5645,7 +5812,7 @@
   },
   "logement . chauffage . citerne propane . estimation via le coût": {
     "question": "No invoice? Enter your approximate monthly expenses",
-    "unité": "€/kg",
+    "unité": "CHF/kg",
     "formule": 1.8,
     "note": "According to information aggregated by <a href=\"https://www.hellowatt.fr/gaz-propane-citerne/comparatif-prix\">HelloWatt</a>, \nthe price of propane in a tank fluctuates around €1,800 per tonne (depending on the supplier).\n\nThis estimation aid is designed to receive a monthly consumption (see InputEstimation.tsx on the website)\n",
     "titre": "estimation via cost",
@@ -5661,7 +5828,7 @@
   },
   "logement . chauffage . fioul": {
     "icônes": "🛢",
-    "titre": "Domestic fuel oil",
+    "titre": "Fuel oil",
     "unité": "kgCO2e",
     "titre.auto": "Domestic fuel oil"
   },
@@ -5685,17 +5852,17 @@
     "titre.auto": "present"
   },
   "logement . chauffage . fioul . estimation via le prix": {
-    "question": "No bill? Enter your approximate monthly fuel costs",
-    "unité": "€/l",
-    "formule": 1.5199,
+    "question": "No bill? Enter your approximate monthly heating oil costs",
+    "unité": "CHF/litre",
+    "formule": 1.397,
     "note": "This formula allows us to switch from €/month to liters/year.\n\nSource: Heating oil 2000 to 4999 liters, 2nd semester 2022.\nData taken from excel <a href=\"https://github.com/datagir/nosgestesclimat/files/11029116/Prix.HTT.et.TTC.depuis.janvier.2020.xlsx\">Prices ex VAT and inc VAT since January 2020.xlsx</a>\ndownloadable from the French Ministry of Ecological Transition's <a href=\"https://www.ecologie.gouv.fr/prix-des-produits-petroliers#scroll-nav__4\">Petroleum Product Prices</a> page.\n",
     "titre": "estimation via price",
     "titre.auto": "estimation via price"
   },
   "logement . chauffage . fioul . consommation": {
-    "question": "What is the annual consumption of heating oil in your household?",
+    "question": "What is your household's annual oil consumption?",
     "unité": "l",
-    "description": "Tip: You can find your annual energy consumption on your oil bill or on your online account on your supplier's website.\n",
+    "description": "Tip: You can find your annual energy consumption on your heating oil bill or on your annual service charge statement sent by your property management company.\n",
     "par défaut": "parc français . chauffage . consommation fioul par m2 * fioul kWh au litre * surface",
     "aide": "estimation via le prix",
     "titre": "consumption",
@@ -5789,7 +5956,7 @@
   },
   "logement . chauffage . bois . type . granulés . estimation via le coût": {
     "question": "No invoice? Enter your approximate monthly expenses",
-    "unité": "€/kWh",
+    "unité": "CHF/kWh",
     "formule": "granulés . prix kWh",
     "note": "This formula enables us to switch from €/month to kWh/year: kWh costs x cents per month over 12 months.\n",
     "titre": "estimation via cost",
@@ -5814,7 +5981,7 @@
   },
   "logement . chauffage . bois . type . bûches . estimation via le coût": {
     "question": "No invoice? Enter your approximate monthly expenses",
-    "unité": "€/stère",
+    "unité": "CHF/stère",
     "formule": "prix stère 2023",
     "note": "This formula allows us to switch from €/month to number of steres per year.\n\nPrice calculated on the basis of the wood energy price index published by INSEE.\n",
     "titre": "estimation via cost",
@@ -5873,7 +6040,7 @@
     "icônes": "🔥",
     "question": "What is your annual energy consumption via the heating network connected to your home?",
     "par défaut": "parc français . chauffage . consommation réseau de chaleur par m2 * surface",
-    "aide": "estimation via le prix",
+    "aide": null,
     "unité": "kWh",
     "description": "The carbon content of the kWh of heat from a heating network depends strongly on the network to which you are connected. \n\nFor the time being, we are basing ourselves on an average emission factor: we have chosen not to ask you for your address.\n\nTip: You can find your annual energy consumption on your bills or in your online account on your supplier's website.\n\n> It is possible that your condominium does not provide you with the consumption in kWh of your dwelling, when the boiler is centralized. However, it must provide you with the amount in €, which you can enter below to estimate your kWh.\n",
     "titre": "consumption",
@@ -5884,14 +6051,14 @@
     "unité": "kgCO2e/kWh",
     "note": "Emission factor taken from<a href=\"https://www.fedene.fr/sncu/lenquete-2023-sur-les-reseaux-de-chaleur-froid-en-france/\">the FEDEN survey on heating networks in France 2023</a>.\n",
     "titre.auto": "Carbon footprint of heating network",
-    "valeur": "0.112",
+    "valeur": "0.067",
     "optimized": true
   },
   "parc français . surface moyenne": {
-    "titre": "Average area per unit",
+    "titre": "Average floor area per dwelling",
     "unité": "m2",
     "titre.auto": "Average area per unit",
-    "valeur": "90.70556095267925",
+    "valeur": "80",
     "optimized": true
   },
   "parc français . surface moyenne maison": {
@@ -5909,9 +6076,16 @@
     "optimized": true
   },
   "parc français . surface . part électricité": {
-    "formule": "980364088 / 2699046433",
     "titre": "electricity share",
     "titre.auto": "electricity share",
+    "valeur": "3.3%",
+    "optimized": true
+  },
+  "parc français . chauffage . empreinte électricité moyenne par m2": {
+    "formule": "3.3% * empreinte électricité par m2",
+    "unité": "kgCO2e/m2",
+    "titre": "average electricity footprint per m2",
+    "titre.auto": "average electricity footprint per m2",
     "optimized": true
   },
   "parc français . chauffage . consommation moyenne gaz cuisson": {
@@ -5923,40 +6097,40 @@
     "optimized": true
   },
   "parc français . chauffage . consommation électricité par m2": {
-    "formule": "89861389395 / 980364088",
-    "note": "electricity + heat pump",
+    "note": "Source - KBOB, default heating consumption of 450 MJ/m2",
     "unité": "kWh/m2",
     "titre": "electricity consumption per m2",
     "titre.auto": "electricity consumption per m2",
+    "valeur": "125",
     "optimized": true
   },
   "parc français . chauffage . consommation gaz par m2": {
-    "formule": "152747731389 / 957251338",
     "unité": "kWh/m2",
-    "note": "We find more or less the value given in [this article] (https://selectra.info/energie/guides/conso/consommation-moyenne-gaz/tout-au-gaz): \"It is estimated that it takes on average 100 kWh of gas to heat 1 square meter\".\n",
+    "note": "Source - KBOB, default heating consumption of 450 MJ/m2",
     "titre": "gas consumption per m2",
     "titre.auto": "gas consumption per m2",
+    "valeur": "125",
     "optimized": true
   },
   "parc français . chauffage . consommation fioul par m2": {
-    "formule": "39378631294 / 296898719",
     "unité": "kWh/m2",
     "titre": "oil consumption per m2",
     "titre.auto": "oil consumption per m2",
+    "valeur": "125",
     "optimized": true
   },
   "parc français . chauffage . consommation bois par m2": {
-    "formule": "78603249444 / 319546177",
     "unité": "kWh/m2",
     "titre": "wood consumption per m2",
     "titre.auto": "wood consumption per m2",
+    "valeur": "125",
     "optimized": true
   },
   "parc français . chauffage . consommation réseau de chaleur par m2": {
-    "formule": "17049854444 / 97385759",
     "unité": "kWh/m2",
     "titre": "heating network consumption per m2",
     "titre.auto": "heating network consumption per m2",
+    "valeur": "125",
     "optimized": true
   },
   "parc français . chauffage . consommation GPL par m2": {
@@ -5966,30 +6140,82 @@
     "titre.auto": "lPG consumption per m2",
     "optimized": true
   },
+  "parc français . chauffage . empreinte électricité par m2": {
+    "formule": "125 * 0.091",
+    "unité": "kgCO2e/m2",
+    "titre": "electricity footprint per m2",
+    "titre.auto": "electricity footprint per m2",
+    "optimized": true
+  },
+  "parc français . chauffage . empreinte gaz par m2": {
+    "formule": "125 * 0.23",
+    "unité": "kgCO2e/m2",
+    "titre": "gas footprint per m2",
+    "titre.auto": "gas footprint per m2",
+    "optimized": true
+  },
+  "parc français . chauffage . empreinte fioul par m2": {
+    "formule": "125 * 0.324",
+    "unité": "kgCO2e/m2",
+    "titre": "fuel footprint per m2",
+    "titre.auto": "fuel footprint per m2",
+    "optimized": true
+  },
+  "parc français . chauffage . empreinte buches par m2": {
+    "formule": "125 * 0.046",
+    "unité": "kgCO2e/m2",
+    "titre": "log footprint per m2",
+    "titre.auto": "log footprint per m2",
+    "optimized": true
+  },
+  "parc français . chauffage . empreinte granulés par m2": {
+    "formule": "125 * 0.0113",
+    "unité": "kgCO2e/m2",
+    "titre": "granule footprint per m2",
+    "titre.auto": "granule footprint per m2",
+    "optimized": true
+  },
+  "parc français . chauffage . empreinte réseau de chaleur par m2": {
+    "formule": "125 * 0.067",
+    "unité": "kgCO2e/m2",
+    "titre": "heating network footprint per m2",
+    "titre.auto": "heating network footprint per m2",
+    "optimized": true
+  },
   "parc français . chauffage . consommation gaz moyenne": {
-    "formule": "consommation gaz par m2 * logement . surface",
+    "formule": "125 * logement . surface",
     "unité": "kWh",
     "titre": "average gas consumption",
-    "titre.auto": "average gas consumption"
+    "titre.auto": "average gas consumption",
+    "optimized": true
   },
   "parc français . consommation électricité autre par m2": {
-    "formule": "76810546534 / 2706837799",
     "unité": "kWh/m2",
     "titre": "other electricity consumption per m2",
     "titre.auto": "other electricity consumption per m2",
+    "valeur": "31.5",
     "optimized": true
   },
   "parc français . empreinte électricité autre par m2": {
-    "formule": "consommation électricité autre par m2 * 0.153",
+    "formule": "31.5 * 0.091",
     "unité": "kgCO2e/m2",
     "titre": "other electricity footprint per m2",
     "titre.auto": "other electricity footprint per m2",
     "optimized": true
   },
   "parc français . chauffage . empreinte moyenne chauffage air par m2": {
+    "formule": {
+      "somme": [
+        "empreinte électricité par m2 * 0.32914760075367144",
+        "empreinte gaz par m2 * 0.8354483640350152",
+        "empreinte fioul par m2 * 0.8738741708182033",
+        "(empreinte buches par m2 * 0.9940000000084475) / 2",
+        "(empreinte granulés par m2 * 0.9940000000084475) / 2",
+        "empreinte réseau de chaleur par m2 * 0.7924000565737616"
+      ]
+    },
     "titre": "average air heating footprint per m2",
     "titre.auto": "average air heating footprint per m2",
-    "valeur": "115.03507495892114",
     "optimized": true
   },
   "parc français . chauffage . consommation électricité hors PAC . chauffage": {
@@ -6049,7 +6275,7 @@
   },
   "logement . climatisation . présent": {
     "question": "Do you use an air conditioning system to cool your home (electric air conditioner, heat pump)?",
-    "description": "The air conditioner uses electricity, which you have to enter in kWh or € in the electricity question. The footprint of the electricity consumed by the air conditioner is therefore already calculated\n\nBut on top of that, an air conditioner emits other greenhouse gases: hence the need to ask this question.\n",
+    "description": "Do you have air conditioning? Its electricity consumption will simply be included in the electricity bill, like all the electrical appliances in the home. Refrigerant gas leaks are taken into account here.\n",
     "titre": "present",
     "titre.auto": "present"
   },
@@ -6125,7 +6351,7 @@
     "titre.auto": "construction"
   },
   "logement . construction . annuelle et par surface": {
-    "formule": "par surface / 50",
+    "formule": "par surface / 60",
     "unité": "kgCO2e/m2",
     "titre": "per year and per area",
     "titre.auto": "per year and per area",
@@ -6136,44 +6362,17 @@
       "variations": [
         {
           "si": "éco-construit",
-          "alors": 144
+          "alors": "144 kgCO2e/m2"
         },
         {
-          "si": {
-            "toutes ces conditions": [
-              {
-                "est défini": "logement . appartement"
-              },
-              "logement . appartement"
-            ]
-          },
-          "alors": "par surface . appartement"
-        },
-        {
-          "sinon": "par surface . maison"
+          "sinon": "696 kgCO2e/m2"
         }
       ]
     },
     "unité": "kgCO2e/m2",
-    "note": "The carbon base entry does not provide further information on this category of construction method. Please refer to the <a href=\"https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/\">documentation of the footprint database, tab Purchases of goods/Buildings</a>.\n\nThe emission factor is entitled \"Eco-built house\", but for lack of information we assume it is the same for an eco-built apartment.\n\nHowever, <a href=\"https://www.carbone4.com/sauver-le-climat-avec-nos-forets-la-construction-touche-du-bois-2\">this Carbone 4 study</a> claims a 55% reduction from concrete to wood for the house, and 60% for the apartment.\n\nNote that for eco-built housing, the biogenic CO₂ stored is not accounted for, only the fossil CO₂ emitted is.\n\nFor eco-built housing, we retain the emission factor from the carbon base, but it appears to be confirmed in order of magnitude in the Carbone 4 study.\n\n> Gains observed on the fossil CO₂ of the shell item (foundations and structure), compared with concrete. \n\nCarbon storage in the wood product is not taken into account.\n\nGains linked to material substitution: \n - MI wood CLT: 118 kgCO2e/m2 SHON, i.e. 473 kgCO2e/m3 of wood product. \n - MI wood frame: 83 kgCO2e/m2 SHON, i.e. 2495 kgCO2e/m3 of wood product. \n - LC wood CLT: 231 kgCO2e/m2 SHON, i.e. 699 kgCO2e/m3 wood product.\n - LC wood framing: 139 kgCO2e/m2 SHON, i.e. 3172 kgCO2e/m3 of wood product.\n",
+    "note": "Haute école fribourg 2021 report (60-year amortisation)",
     "titre": "per surface",
     "titre.auto": "per surface"
-  },
-  "logement . construction . par surface . appartement": {
-    "titre": "Flat footprint per m2",
-    "unité": "kgCO2e/m2",
-    "note": "Emission factor taken from the Empreinte database.",
-    "titre.auto": "Flat footprint per m2",
-    "valeur": "525",
-    "optimized": true
-  },
-  "logement . construction . par surface . maison": {
-    "titre": "House footprint per m2",
-    "unité": "kgCO2e/m2",
-    "note": "Emission factor taken from the Empreinte database.",
-    "titre.auto": "House footprint per m2",
-    "valeur": "425",
-    "optimized": true
   },
   "logement . éco-construit": {
     "question": "Is your home made of wood, straw, stone or earth (eco-built)?",
@@ -6182,15 +6381,15 @@
     "titre.auto": "eco-built"
   },
   "logement . construction . durée d'amortissement": {
-    "note": "The lifespan of a building is set at 50 years (see <a href=\"https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/\">empreinte documentation, Asset Purchases/Buildings tab</a>).\n",
+    "note": "SIA standard assumption",
     "titre": "amortization period",
     "titre.auto": "amortization period",
-    "valeur": "50",
+    "valeur": "60",
     "optimized": true
   },
   "logement . électricité": {
     "icônes": "⚡",
-    "formule": "(consommation * 0.153) / habitants",
+    "formule": "(consommation * 0.091) / habitants",
     "titre": "electricity",
     "titre.auto": "electricity",
     "optimized": true
@@ -6260,14 +6459,14 @@
     },
     "note": "we consider that only the electricity consumption related to heating is dependent on the surface of the dwelling",
     "aide": "estimation via le coût",
-    "description": "Tip: You can find your annual electricity consumption on your bills or in your online account on your supplier's website.\n\nAs a reminder, if you live in several homes (for example, if you have a second home), try to \"bring\" these consumptions into those of the main home in order to have the most accurate estimate possible.\n",
+    "description": "Tip: you can find your annual electricity consumption on your bills or in your online account on the SIG website.\n\nIf you live in several homes (for example, if you have a second home), try to \"reduce\" your consumption to that of your main home to get the most accurate estimate possible.\n",
     "titre": "consumption",
     "titre.auto": "consumption"
   },
   "logement . électricité . estimation via le coût": {
     "question": "No invoice? Enter your approximate monthly expenses",
-    "unité": "€/kWh",
-    "formule": 0.2022,
+    "unité": "CHF/kWh",
+    "formule": 0.28,
     "note": "This formula enables us to switch from €/month to kWh/year.\n\nThe figure includes a subscription cost, and therefore represents an average. It is not the marginal price per kWh. It includes taxes.\n\nFigure taken from <a href=\"https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics\">Eurostat, household, second half 2021</a>.\n",
     "titre": "estimation via cost",
     "titre.auto": "estimation via cost"
@@ -6277,7 +6476,7 @@
     "description": "Here we use the average footprint of the mix in the simulation region.\n\nWe could do better, by separating the air heating part from the rest of\nthe housing consumption, because heating is mainly used in winter, when\ncoal and gas plants are running more and worsening the mix footprint.\nBut this would require electrically heated households to find and report\nboth values, which is not easy to do.\n\n> The intensity of residential heating is thus defined at 80gCO2e/kWh in\n> France by the RE2020,\n> [source](https://www.batiactu.com/edito/facteur-energie-primaire-contenu-carbone-electricite-58485.php).\n",
     "titre": "carbon intensity",
     "titre.auto": "carbon intensity",
-    "valeur": "0.153",
+    "valeur": "0.091",
     "optimized": true
   },
   "logement": {
@@ -6302,7 +6501,7 @@
   "logement . saisie habitants": {
     "question": "How many people live in your home?",
     "description": "We need to know how many people share your home and all the\nconsumption it entails (construction, heating, etc.).\n\n> If you live alone, answer `1`.\n\n> If you live with your spouse and a child, answer `3`.\n\n> If you are separated with a child who alternates between your home and\n> another, you can enter `1.5`.\n",
-    "par défaut": 2.2,
+    "par défaut": 2.1,
     "note": "default value according to https://www.insee.fr/fr/statistiques/2381486.",
     "suggestions": {
       "i live alone": 1,
@@ -6381,7 +6580,7 @@
   "logement . appartement": {
     "titre": "Flat",
     "question": "Is your home a flat?",
-    "description": "As opposed to a single-family home.\n\nThe increase in apartment housing can make us forget that the house remains the majority dwelling for French households in 2018.\n\nThis information influences not only the construction footprint, but also the possibilities for insulation work, for example.\n\n> If you live in an unusual type of dwelling, such as a camper van / truck / barge, no problem: choose \"apartment\" and enter the m² of what constitutes your dwelling.\n",
+    "description": "As opposed to a detached house or villa.\n\nThis information influences not only the construction footprint, but also the scope for insulation work, for example.\n\n> If you live in an unusual type of accommodation, such as a camper van, no problem: choose \"flat\" and enter the m² of what you actually live in.\n",
     "note": "In 2018, single-family homes accounted for 56% of all housing units ( <a href=\"https://www.insee.fr/fr/statistiques/3676693?sommaire=3696937\">Source: INSEE</a>): the majority of both primary residences and secondary and occasional homes. After increasing between 1999 and 2008, its share is declining slightly, as the number of multi-family dwellings is increasing faster than that of single-family dwellings due to recent trends in new construction.\nIt should be noted that this is a proportion of dwellings; however, it can be expected (to be verified) that houses contain more people on average than apartments, which reinforces the choice of the default value.\n",
     "titre.auto": "Apartment"
   },
@@ -6389,7 +6588,7 @@
     "question": "How old is your home?",
     "par défaut": 45,
     "unité": "an",
-    "note": "In France, 24% of the housing stock dates from before 1949 and 24% from between 1949 and 1974, according to <a href=\"https://www.insee.fr/fr/statistiques/fichier/2586377/LOGFRA17.pdf\">INSEE</a>.\n\nFor Paris, <a href=\"https://www.comeetie.fr/galerie/BatiParis\">this</a> interactive <a href=\"https://www.comeetie.fr/galerie/BatiParis\">map</a> is fascinating if you're interested in the age of its housing stock.\n",
+    "note": "In the canton of Geneva, more than half of all residential buildings and detached houses were built before 1980.",
     "suggestions": {
       "nine": 0,
       "recent": 10,
@@ -6402,7 +6601,7 @@
   },
   "logement . notif amortissement": {
     "type": "notification",
-    "formule": "âge > 50",
+    "formule": "âge > 60",
     "description": "If your home is less than **50 years old**, we give you one fiftieth of the footprint of its construction. **Otherwise, zero: the home has been depreciated**\nYou won't be asked any questions about the characteristics of your home, since the annual footprint of its construction is considered to be zero.\n",
     "titre": "notification of amortization",
     "titre.auto": "notification of amortization",
@@ -6604,18 +6803,18 @@
     "optimized": true
   },
   "logement . chauffage . bois . type . bûches . prix stère 2023": {
-    "formule": "71 * (150.4 / 100)",
-    "unité": "€/stère",
+    "unité": "CHF/stère",
     "description": "There is no recent price for a stere of wood. The idea is to take into account the increase in rates via the inflation index.",
     "titre": "price per unit 2023",
     "titre.auto": "price per unit 2023",
+    "valeur": "180",
     "optimized": true
   },
   "logement . chauffage . bois . type . granulés . prix kWh": {
     "unité": "€/kWh",
     "titre": "price kWh",
     "titre.auto": "price kWh",
-    "valeur": "0.135489",
+    "valeur": "0.11",
     "optimized": true
   },
   "gaz . abonnement avec TVA": {
@@ -6710,14 +6909,6 @@
     "unité": "€",
     "titre": "total price",
     "titre.auto": "total price"
-  },
-  "gaz . prix": {
-    "titre": "Cost per kWh of gas",
-    "unité": "€/kWh",
-    "formule": "prix total / consommation par défaut",
-    "description": "This is the factor that allows us to go from the price paid by the\nhousehold to the consumption in kWh.\n",
-    "note": "Note that the calculation formula is of the type p = c * a + b, where p=price, c=cost, a=marginal cost including VAT, b = fixed cost\n\nThus, we could have a much more reliable estimate of the consumption from the price by inverting this equation\n\nBut unfortunately our estimation form only works today with a multiplication factor.\n",
-    "titre.auto": "Cost per kWh of gas"
   },
   "logement . vacances": {
     "titre": "Weekend or vacation nights",
@@ -7162,7 +7353,7 @@
     "titre.auto": "average footprint"
   },
   "logement . vacances . résidence secondaire . empreinte moyenne construction": {
-    "formule": "(90.70556095267925 * résidence secondaire . annuelle et par surface) * 0.13",
+    "formule": "(80 * résidence secondaire . annuelle et par surface) * 0.13",
     "titre": "average construction footprint",
     "titre.auto": "average construction footprint",
     "optimized": true
@@ -7212,7 +7403,7 @@
     "titre.auto": "Surface"
   },
   "logement . vacances . résidence secondaire . annuelle et par surface": {
-    "formule": "475 / 50",
+    "formule": "475 / 60",
     "unité": "kgCO2e/m2",
     "titre": "per year and per surface",
     "titre.auto": "per year and per surface",
@@ -7361,7 +7552,7 @@
     "titre.auto": "number"
   },
   "logement . vacances . résidence secondaire . chauffage": {
-    "formule": "((facteur saison * (19.64719233667352 + 5.093944442501927)) * surface) * pro-rata présence annuelle",
+    "formule": "((facteur saison * (29.49986875 + parc français . chauffage . empreinte électricité moyenne par m2)) * surface) * pro-rata présence annuelle",
     "unité": "kgCO2e",
     "description": "To calculate the seasonal factors, which depend on both the location of the second home and the season in which it is visited, we have used the degree-hour data available for each climate zone, \nwhich can be found in <a href=\"https://docs.google.com/spreadsheets/d/1sQp51C2zgBi3KiKrMCvXNtd26NJGHhE41z_UxsBKU94/edit#gid=0\">this table</a>.\nThese degree hours can be found in the appendix to the Order of 8 October 2021 modifying the calculation method and the methods for establishing the energy performance diagnosis, <a href=\"https://www.socotec-certification-international.fr/s3fs-public/2022-10/arrete-8-octobre-2021_compressed.pdf\">available here</a>.\n\nIn France, there are three climate zones: H1, the coldest zone, the north-eastern half of France. H2, a temperate zone in the west and south-west. H3, the hottest zone, the south-east of France and French overseas departments and territories.\n\n![Climate zones France](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/RT_2005_zone_climatique-2.svg/1176px-RT_2005_zone_climatique-2.svg.png)\n\nFor our calculations, we have opted for the following assumptions:\n\n  - Homes located on the north-west coast, in the countryside or in towns, correspond to the average for zones H1 and H2 < 800 mètres d'altitude\n  - Les logements situés sur le littoral méditerranéen correspondent à la zone H3 < 400 mètres d'altitude\n  - Les logements situés en montagne correspondent aux zones H1 et H2 > 800 metres above sea level\n\nWe have related this to the average daily degree-hours over the year, to establish the multiplication factors for the average heating degree-hours for one day, whatever the location.\n\nmultiplication factors by climate zone and period](https://github.com/incubateur-ademe/nosgestesclimat/assets/55186402/c328fa42-bae6-4391-becf-a31cbaf32201)\n",
     "titre": "heating",
@@ -7654,7 +7845,7 @@
     "titre": "Market services",
     "unité": "kgCO2e",
     "titre.auto": "Market services",
-    "valeur": "194.71226747966386",
+    "valeur": "0",
     "optimized": true
   },
   "services publics": {
@@ -7665,7 +7856,7 @@
     "titre": "Public Services",
     "unité": "kgCO2e",
     "titre.auto": "Public services",
-    "valeur": "1279.3145022075946",
+    "valeur": "1583",
     "optimized": true
   },
   "services sociétaux": {
@@ -7674,21 +7865,16 @@
     "couleur": "#0c2461",
     "abréviation": "S. societal",
     "icônes": "🏛️",
-    "description": "This item includes the footprint of French public services, and market services that can be considered essential to everyone's life, divided by the country's population.  \n\nThe first category \"public services\" includes for example the footprint of French hospitals, or justice. We consider that this footprint should be equally distributed for all citizens, because these are \"republican\" jobs that only democracy can make evolve, not directly by individual consumption choices \n\nThe second category \"market services\" includes the telecommunications network (fiber, telephone, etc.), but also insurance and the post office. These are relatively universal services for which we do not yet have the details that would allow us to distribute the footprint according to the consumption choices of citizens.\n\n<RavijenChartSocietaux/>\n",
+    "description": "This item includes the footprint of Swiss public services.\n",
     "note": "\nThe model that allows us to calculate these two constants \"public services\" and \"market services\" is different from the rest of the Nos Gestes Climat model because it is called \"macroscopic\". It is a macroscopic reconstruction based on the volume of money exchanged in billions of € per sector.  \n\nThe inclusion of this macro model allows the UCS model to be hybridized. We can thus say that it is predominantly micro with a macro component. \n\nOur source for the two macro constants is the calculation of the French national footprint by the Ministry of Ecology. Here is the <a href=\"https://www.statistiques.developpement-durable.gouv.fr/lempreinte-carbone-de-la-france-de-1995-2021\">most recent article</a>, which gives us an estimate of the national footprint of 8.9 tons in 2021. The figure is extrapolated with a lot of additional uncertainties compared to the figure of 9.2 tons in 2018.\n\nTo understand how this model works, see <a href=\"https://github.com/datagir/nosgestesclimat/issues/1583\">this explanation page</a>.\n",
-    "formule": {
-      "somme": [
-        "services publics",
-        "services marchands"
-      ]
-    },
+    "formule": "services publics",
     "unité": "kgCO2e",
     "titre.auto": "Societal services"
   },
   "services sociétaux . question rhétorique": {
     "titre": "Information question on common services",
-    "question": "We allocate the footprint of public (education, health...) and commercial (telecom, insurance...) services to each citizen equally.",
-    "description": "\nThis category does not depend on your answers. The associated footprint is calculated via a macro-economic approach at the national level. <a href=\"/documentation/services-sociétaux\">Learn more</a> about this category.\n",
+    "question": "We allocate the footprint of public services (education, health, etc.) equally to each Geneva resident.",
+    "description": "This category does not depend on your answers. The associated footprint is calculated using a macro approach, based in particular on the territorial carbon footprint of the canton of Geneva.\nTo find out more about this value, please consult the detailed explanations in our FAQ.\n",
     "par défaut": "'ok'",
     "formule": {
       "une possibilité": {
@@ -7727,7 +7913,7 @@
   "transport . avion . empreinte moyenne": {
     "titre": "average footprint",
     "titre.auto": "average footprint",
-    "valeur": "1414.206",
+    "valeur": "2144.772",
     "optimized": true
   },
   "transport . avion . empreinte": {
@@ -7744,12 +7930,12 @@
   },
   "transport . avion . usager": {
     "question": "Have you flown at least once in the last 3 years?",
-    "description": "We've chosen to offer you a way of counting the impact of your air travel over several years. The footprint on the climate is such that it's important to take this into account.\n\nSo, whether you fly every year or not, answer \"yes\" and you'll then have the option of entering your flight times over the last 3 years.\n\n> 💡 If you flew from Paris to New York in 2021 (approx. 17h return), your associated emissions (almost 2 tons) will be spread over the last 3 years.\n",
+    "description": "We have chosen to offer you a way of counting the impact of your air travel over several years. \nThe impact on the climate is such that it's important to take this into account. \nSo, whether you fly every year or not, answer \"yes\" and you'll then have the option of entering your flight times \nfor the last 3 years.\n\n> If you flew from Zurich to New York in 2022 (approximately 19h return), your associated emissions (almost 2 tonnes) will be spread over the last 3 years.\n",
     "titre": "user",
     "titre.auto": "user"
   },
   "transport . avion . court courrier": {
-    "formule": "(heures de vol * 461.53846153846155) * 0.258",
+    "formule": "(heures de vol * 461.53846153846155) * 0.305",
     "titre": "short haul",
     "titre.auto": "short haul",
     "optimized": true
@@ -7767,9 +7953,10 @@
     "description": "Count the hours you spent on a plane for trips of less than 2 hours (which corresponds to flights of less than about 1000km). If you have stopovers, simply add up the times of each flight.\n\n\nThe suggestions are based on the minimum round trip flight time found in search engines, doubled to consider a round trip.\n\n💡 Only count personal travel and commuting miles to your usual place of work.\nFor example, if you are on a work assignment in another country, this fits into your company's accounting.\n",
     "suggestions": {
       "🚫✈️": 0,
-      "Zurich ⇄ Geneva": 1.7,
-      "Zurich ⇄ Venice": 2,
-      "Zurich ⇄ Paris": 3
+      "Geneva ⇄ Zurich": 1.5,
+      "Geneva ⇄ Paris": 2.5,
+      "Geneva ⇄ Brussels": 2.5,
+      "Geneva ⇄ Barcelona": 3
     },
     "unité": "h",
     "par défaut": "durée moyenne",
@@ -7778,14 +7965,14 @@
     "titre.auto": "flight hours"
   },
   "transport . avion . court courrier . durée moyenne": {
-    "titre": "Average time spent by French people on short-haul flights",
+    "titre": "Average time spent by a Swiss on short-haul flights",
     "formule": "216 / 461.53846153846155",
     "unité": "h",
     "titre.auto": "Average time spent by French people on short-haul flights",
     "optimized": true
   },
   "transport . avion . moyen courrier": {
-    "formule": "(heures de vol * 540) * 0.187",
+    "formule": "(heures de vol * 540) * 0.257",
     "titre": "medium-haul",
     "titre.auto": "medium-haul",
     "optimized": true
@@ -7803,10 +7990,10 @@
     "description": "Count the hours you spent in an airplane for trips between 2 hours and 6 hours (which corresponds to flights between 1000km and 3500km approximately). If you have stopovers, simply add up the times of each flight.\n\nThe suggestions are based on the minimum round trip flight time found in search engines, doubled to consider a round trip.\n\n💡 Only count personal travel and commuting miles to your usual place of work.\nFor example, if you are on a work assignment in another country, this fits into your company's accounting.\n",
     "suggestions": {
       "🚫✈️": 0,
-      "Zurich ⇄ Madrid": 5,
-      "Zurich ⇄ Helsinki": 6,
-      "Zurich ⇄ Cairo": 8,
-      "Zurich ⇄ Dubai": 12
+      "Geneva ⇄ Madrid": 4,
+      "Geneva ⇄ Porto": 4,
+      "Geneva ⇄ Lisbon": 5,
+      "Geneva ⇄ Istanbul": 6
     },
     "unité": "h",
     "par défaut": "durée moyenne",
@@ -7815,14 +8002,14 @@
     "titre.auto": "flight hours"
   },
   "transport . avion . moyen courrier . durée moyenne": {
-    "titre": "Average time spent by French people on medium-haul flights",
+    "titre": "Average time spent by Swiss passengers on medium-haul flights",
     "formule": "666 / 540",
     "unité": "h",
     "titre.auto": "Average time spent by French people on medium-haul flights",
     "optimized": true
   },
   "transport . avion . long courrier": {
-    "formule": "(heures de vol * 682.3529411764706) * 0.152",
+    "formule": "(heures de vol * 682.3529411764706) * 0.235",
     "titre": "long distance",
     "titre.auto": "long distance",
     "optimized": true
@@ -7840,11 +8027,9 @@
     "description": "Count the hours you've spent in a plane for journeys of over 6 hours (corresponding to flights of over 3500km or so). If you have stopovers, simply add up the duration of each flight. \n\nNote that if you travelled to a distant destination in several \"short\" journeys, these should be taken into account in the previous questions.\n\nSuggestions are based on the minimum round-trip flight duration found in search engines, doubled to consider a round-trip.\n\n💡 Count only the km of personal travel and home-work travel to reach your usual place of work.\nFor example, if you're on a business assignment in another country, this will be included in your company's accounts.\n",
     "suggestions": {
       "🚫✈️": 0,
-      "Zurich ⇄ New York": 19,
-      "Zurich ⇄ Kinshasa": 22,
-      "Zurich ⇄ Tokyo": 26,
-      "Zurich ⇄ Lima": 36,
-      "Zurich ⇄ Sydney": 44
+      "Geneva ⇄ Dubai": 12.5,
+      "Geneva ⇄ New York": 17,
+      "Geneva ⇄ Beijing": 20.25
     },
     "unité": "h",
     "par défaut": "durée moyenne",
@@ -7853,7 +8038,7 @@
     "titre.auto": "flight hours"
   },
   "transport . avion . long courrier . durée moyenne": {
-    "titre": "Average time spent by French people on long-haul flights",
+    "titre": "Average time spent on long-haul flights by Swiss citizens",
     "formule": "8118 / 682.3529411764706",
     "unité": "h",
     "titre.auto": "Average time spent by French people on long-haul flights",
@@ -7868,7 +8053,7 @@
     "optimized": true
   },
   "transport . bus . impact par heure": {
-    "formule": "0.113 * 12",
+    "formule": "0.067 * 18",
     "unité": "kgCO2e/h",
     "description": "Based on 166 gCO2e/(passenger.km) and an average speed of 12 km/h\n",
     "titre": "impact per hour",
@@ -7877,10 +8062,10 @@
   },
   "transport . bus . impact par km": {
     "unité": "kgCO2e/km",
-    "note": "Bus - Diesel; 113 gCO2e/km/person; Base Carbone consulted 04/04/2022\nAs the majority of the fleet in France is diesel (https://www.statistiques.developpement-durable.gouv.fr/69-000-autocars-en-circulation-au-1er-janvier-2020), we have chosen to use this EF (more reliable than the \"average bus\" reference according to the carbon base)\nTaking into account the other engines in this category of the carbon base will reduce this EF (by weighting according to the characteristics of the French fleet). (Ex: Bus - electric = 21.7 gCO2e/km/person)\n",
+    "note": "We use the emission factor from the Mobitool platform - Mobitool based on the TPG fleet (2022 Management Report - 30% trolleybuses, 70% buses, mainly articulated)",
     "titre": "impact per km",
     "titre.auto": "impact per km",
-    "valeur": "0.113",
+    "valeur": "0.067",
     "optimized": true
   },
   "transport . bus . heures par semaine": {
@@ -7923,7 +8108,26 @@
   "transport . deux roues . empreinte": {
     "applicable si": "usager",
     "icônes": "🛵",
-    "formule": "(empreinte au km + entretien pondéré) * km",
+    "formule": {
+      "variations": [
+        {
+          "si": "type = 'scooter thermique'",
+          "alors": 0.124
+        },
+        {
+          "si": "type = 'scooter électrique'",
+          "alors": 0.03
+        },
+        {
+          "si": "type = 'moto inf 250'",
+          "alors": 0.146
+        },
+        {
+          "si": "type = 'moto sup 250'",
+          "alors": 0.194
+        }
+      ]
+    },
     "unité": "kgCO2e",
     "titre": "footprint",
     "titre.auto": "footprint"
@@ -7931,7 +8135,7 @@
   "transport . deux roues . empreinte moyenne": {
     "titre": "average footprint",
     "titre.auto": "average footprint",
-    "valeur": "23.337765465556135",
+    "valeur": "0.194",
     "optimized": true
   },
   "transport . deux roues . km": {
@@ -7990,49 +8194,6 @@
   "transport . deux roues . type . moto sup 250": {
     "titre": "Motorcycle over 250 cm3",
     "titre.auto": "Motorcycle over 250 cm3"
-  },
-  "transport . deux roues . empreinte au km": {
-    "unité": "kgCO2e/km",
-    "formule": {
-      "variations": [
-        {
-          "si": "type = 'scooter thermique'",
-          "alors": "0.0763 kgCO2e/km"
-        },
-        {
-          "si": "type = 'scooter électrique'",
-          "alors": "0.030 kgCO2e/km"
-        },
-        {
-          "si": "type = 'moto inf 250'",
-          "alors": "0.0763 kgCO2e/km"
-        },
-        {
-          "si": "type = 'moto sup 250'",
-          "alors": "0.191 kgCO2e/km"
-        }
-      ]
-    },
-    "note": "Moped - Mixed - 2018 ; 76.3 gCO2e/km/person ; ADEME calculations based on HBEFA (2020)\n\nElectric scooter: 30 gCO2e/km/person; study \"Assessing the Environmental Performance of New Mobility\" by the International Transport Forum. <a href=\"https://www.itf-oecd.org/good-to-go-environmental-performance-new-mobility\">Excel available here</a>\n\nMotorcycle =&lt; 250 cm3 - Mixed - 2018; 76.3 gCO2e/km/person; ADEME calculations based on HBEFA (2020)\n\nMotorcycle > 250 cm3 - Mixed - 2018 ; 191 gCO2e/km/person ; ADEME calculations based on HBEFA (2020)\n\nThe above figures include vehicle manufacturing, unlike previous data (2021).\n",
-    "titre": "footprint per km",
-    "titre.auto": "footprint per km"
-  },
-  "transport . deux roues . entretien pondéré": {
-    "formule": {
-      "variations": [
-        {
-          "si": "type = 'scooter électrique'",
-          "alors": "entretien * 0.75"
-        },
-        {
-          "sinon": "entretien"
-        }
-      ]
-    },
-    "unité": "kgCO2e/km",
-    "note": "We have chosen to weight the maintenance of electric scooters by the same factor that reduces the maintenance of electric vehicles compared with combustion engines.",
-    "titre": "weighted interview",
-    "titre.auto": "weighted interview"
   },
   "transport . deux roues . entretien": {
     "formule": "(((((6036 * 1000000kgCO2e/ktCO2e) * 0.02) * 0.07) / (0.68 + 0.07)) / 2700000) / 3000",
@@ -8549,9 +8710,10 @@
     "par défaut": 8,
     "unité": "h",
     "suggestions": {
-      "Cherbourg ⇄ 🇬🇧 Poole": 8,
-      "Marseille ⇄ 🏝️ Ajaccio": 22,
-      "Marseille ⇄ 🇩🇿 Alger": 50
+      "Marseille ⇄ Ajaccio": 22,
+      "Toulon ⇄ Ajaccio": 16,
+      "Genoa ⇄ Bastia": 13,
+      "Genoa ⇄ Olbia": 24
     },
     "note": "According to <a href=\"https://www.statistiques.developpement-durable.gouv.fr/edition-numerique/chiffres-cles-transport-2021/17-transport-maritime-de-voyageurs\">SDES</a> figures,\nthe majority of ferry journeys are made on the Channel/North Sea, which can be approximated to \"Cherbourg-Poole\" journeys (8h return).\n",
     "titre.auto": "Ferry hours in the year"
@@ -8565,7 +8727,7 @@
     "optimized": true
   },
   "transport . métro ou tram . impact par heure": {
-    "formule": "0.007405 * 25",
+    "formule": "0.021 * 15.4",
     "unité": "kgCO2e/h",
     "description": "We are confusing all means of urban rail transport, i.e. metro, tramway and RER.",
     "titre": "impact per hour",
@@ -8574,14 +8736,14 @@
   },
   "transport . métro ou tram . impact par km": {
     "unité": "kgCO2e/km",
-    "note": "We make the (strong) assumption of an unweighted average to calculate the impact per km.",
+    "note": "We use the emission factor from the Mobitool platform - Mobitool tramway (excluding infrastructure)",
     "titre": "impact per km",
     "titre.auto": "impact per km",
-    "valeur": "0.007405",
+    "valeur": "0.021",
     "optimized": true
   },
   "transport . métro ou tram . heures par semaine": {
-    "question": "How many hours a week do you spend on the metro, tram or RER?",
+    "question": "How many hours a week do you spend on the tram?",
     "suggestions": {
       "zero": 0,
       "1h / day": 7,
@@ -8667,7 +8829,7 @@
     "titre.auto": "present"
   },
   "transport . mobilité douce . vélo . construction amortie": {
-    "formule": "116 / 12",
+    "formule": "76 / 15",
     "unité": "kgCO2e",
     "titre": "depreciated construction",
     "titre.auto": "depreciated construction",
@@ -8690,10 +8852,10 @@
   },
   "transport . mobilité douce . vae . empreinte": {
     "unité": "kgCO2e/km",
-    "note": "FE from footprint database (Bicycle/electric-assist)",
+    "note": "Mobitool medium e-bike 25 km/h, 45 km/h and cargo bike (energy supply)",
     "titre": "footprint",
     "titre.auto": "footprint",
-    "valeur": "0.00223",
+    "valeur": "0.001",
     "optimized": true
   },
   "transport . mobilité douce . vae . km": {
@@ -8712,7 +8874,7 @@
   },
   "transport . mobilité douce . vae . construction amortie": {
     "titre": "Depreciated construction",
-    "formule": "262 / 12",
+    "formule": "198 / 10",
     "unité": "kgCO2e",
     "titre.auto": "Depreciated construction",
     "optimized": true
@@ -8735,10 +8897,10 @@
   },
   "transport . mobilité douce . autres véhicules à moteur . empreinte": {
     "unité": "kgCO2e/km",
-    "note": "FE from footprint database (Trotinette)",
+    "note": "Mobitool Electric scooter",
     "titre": "footprint",
     "titre.auto": "footprint",
-    "valeur": "0.002",
+    "valeur": "0.003",
     "optimized": true
   },
   "transport . mobilité douce . autres véhicules à moteur . km": {
@@ -8756,7 +8918,7 @@
   },
   "transport . mobilité douce . autres véhicules à moteur . construction amortie": {
     "titre": "Depreciated construction",
-    "formule": "91.9 / 4",
+    "formule": "71 / 2",
     "unité": "kgCO2e",
     "titre.auto": "Depreciated construction",
     "optimized": true
@@ -8765,7 +8927,7 @@
     "titre": "Train",
     "icônes": "🚋",
     "description": "![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/TER_Vesoul.jpg/640px-TER_Vesoul.jpg)\n",
-    "formule": "km * 0.0088198802395209",
+    "formule": "km * 0.002",
     "titre.auto": "Train",
     "optimized": true
   },
@@ -8781,14 +8943,14 @@
     "question": "How many kilometers do you travel by train per year?",
     "description": "Suggestions are based on the distance as the crow flies doubled to\nconsider a round trip.\n",
     "suggestions": {
-      "crossing a region": 300,
-      "Zurich ⇄ Geneva": 450,
-      "Zurich ⇄ Paris": 1000,
-      "💳 frequent flyer": 10000,
-      "💳 grand voyageur plus ultra": 25000
+      "Geneva ⇄ Nyon": 42,
+      "Geneva ⇄ Lausanne": 100,
+      "Geneva ⇄ Bern": 260,
+      "Geneva ⇄ Zurich": 440,
+      "Geneva ⇄ Paris": 820
     },
     "unité": "km",
-    "par défaut": 1000,
+    "par défaut": "2700 km/an",
     "titre": "km",
     "titre.auto": "km"
   },
@@ -9088,8 +9250,8 @@
   "transport . voiture . km": {
     "titre": "Km by car",
     "question": "How far do you travel per year by car?",
-    "description": "Only count kilometers for personal travel (shopping, leisure, family, etc.) and for commuting to your usual place of work.\n\nFor example, if you're on a business assignment in another department or another country, this is included in your company's accounts: don't count it here.\n",
-    "par défaut": "13430 km/an",
+    "description": "Count only personal journeys (shopping, leisure, family etc.) and journeys to and from your usual place of work.\n\nFor example, if you are on a business assignment in another canton or another country, this is included in your company's accounts: do not count it here.\n",
+    "par défaut": "7000 km/an",
     "unité": "km",
     "suggestions": {
       "zero": 0,
@@ -9122,7 +9284,7 @@
     "titre.auto": "irregular user notification"
   },
   "transport . voiture . empreinte utilisateur irrégulier": {
-    "formule": "(((construction / 10) * facteur location) + usage) / voyageurs",
+    "formule": "(((construction / 17) * facteur location) + usage) / voyageurs",
     "unité": "kgCO2e",
     "titre": "irregular user footprint",
     "titre.auto": "irregular user footprint",
@@ -9351,7 +9513,7 @@
       ]
     },
     "question": "What type of fuel does your car use?",
-    "description": "To help you understand the different types of fuel, <a href=\"https://www.francetvinfo.fr/economie/automobile/essence/les-carburants-changent-de-nom-a-la-pompe-voici-comment-vous-y-retrouver_2967013.html\">this educational article</a> is very useful.\n\n<a href=\"https://www.ecologie.gouv.fr/carburants-et-combustibles-autorises-en-france\">This article</a> from the French Ministry of Ecology explains in greater detail the fuels legal in France.\n\n> Please note that while the type of fuel varies significantly in terms of climate footprint per liter, consumption in liters per 100km also varies. Be sure to enter a consumption per liter based on your actual average.\n",
+    "description": "> Please note that while the type of fuel varies significantly in terms of the climate footprint per litre, consumption in litres per 100km also varies. Be sure to enter a consumption per litre based on your actual average.\n",
     "par défaut": "'essence E5 ou E10'",
     "formule": {
       "une possibilité": {
@@ -9368,15 +9530,15 @@
     "titre.auto": "fuel"
   },
   "transport . voiture . thermique . carburant . gazole B7 ou B10": {
-    "titre": "Diesel (B7 or B10)",
+    "titre": "Diesel",
     "titre.auto": "Diesel (B7 or B10)"
   },
   "transport . voiture . thermique . carburant . essence E5 ou E10": {
-    "titre": "Gasoline (E5 or E10)",
+    "titre": "Petrol",
     "titre.auto": "Gasoline (E5 or E10)"
   },
   "transport . voiture . thermique . carburant . essence E85": {
-    "titre": "E85 gasoline (biofuels)",
+    "titre": "E85 petrol",
     "titre.auto": "E85 gasoline (biofuels)"
   },
   "transport . voiture . notif carburant": {
@@ -9393,18 +9555,18 @@
       "variations": [
         {
           "si": "gabarit = 'petite'",
-          "alors": 0.0159
+          "alors": 0.021
         },
         {
           "si": "gabarit = 'moyenne'",
-          "alors": 0.0198
+          "alors": 0.024
         },
         {
-          "sinon": 0.0273
+          "sinon": 0.028
         }
       ]
     },
-    "note": "We make the following correspondence between our size and the data of the GES-balance database (regarding the weight of the vehicles):\n  - small -> \"entry level - light vehicle\"\n  - medium -> \"mid-range - compact vehicle\"\n  - sedan, SUV and LCV -> \"top of the range - sedan\"\n",
+    "note": "We use the emission factor from the Mobitool platform - https://www.mobitool.ch/fr/outils/facteurs-mobitool-v2-1-25.html",
     "titre.auto": "footprint per electric km"
   },
   "transport . voiture . gabarit": {
@@ -9438,22 +9600,22 @@
   },
   "transport . voiture . gabarit . petite": {
     "titre": "Small",
-    "description": "City car type Zoé, Fiat 500",
+    "description": "Renault Zoé or Fiat 500 city car",
     "titre.auto": "Small"
   },
   "transport . voiture . gabarit . moyenne": {
     "titre": "Average",
-    "description": "Model above the small city car, type Megane, Golf",
+    "description": "Model above the small city car, such as Renault Mégane or VW Golf",
     "titre.auto": "Average"
   },
   "transport . voiture . gabarit . VUL": {
     "titre": "Utility vehicle",
-    "description": "Truck type Kangoo or Partner up to Trafic and Vito",
+    "description": "VW Multivan or Mercedes Vito van or minibus",
     "titre.auto": "Utility vehicle"
   },
   "transport . voiture . gabarit . berline": {
     "titre": "Sedan",
-    "description": "A long car, type 308, Tesla Model 3, Audi A3",
+    "description": "Long car such as Peugeot 508, Tesla Model 3, Audi A4 or A6",
     "titre.auto": "Sedan"
   },
   "transport . voiture . gabarit . SUV": {
@@ -9565,17 +9727,19 @@
               "gabarit = 'moyenne'"
             ]
           },
-          "alors": 6700
+          "alors": 7758
         },
         {
-          "si": {
-            "une de ces conditions": [
-              "gabarit = 'berline'",
-              "gabarit = 'SUV'",
-              "gabarit = 'VUL'"
-            ]
-          },
-          "alors": 7600
+          "si": "gabarit = 'VUL'",
+          "alors": 10340
+        },
+        {
+          "si": "gabarit = 'berline'",
+          "alors": 8958
+        },
+        {
+          "si": "gabarit = 'SUV'",
+          "alors": 11722
         }
       ]
     },
@@ -9593,17 +9757,19 @@
               "gabarit = 'moyenne'"
             ]
           },
-          "alors": 10200
+          "alors": 11013
         },
         {
-          "si": {
-            "une de ces conditions": [
-              "gabarit = 'berline'",
-              "gabarit = 'SUV'",
-              "gabarit = 'VUL'"
-            ]
-          },
-          "alors": 20200
+          "si": "gabarit = 'VUL'",
+          "alors": 16093
+        },
+        {
+          "si": "gabarit = 'berline'",
+          "alors": 13291
+        },
+        {
+          "si": "gabarit = 'SUV'",
+          "alors": 18895
         }
       ]
     },
@@ -9621,22 +9787,24 @@
               "gabarit = 'moyenne'"
             ]
           },
-          "alors": 9600
+          "alors": 8880
         },
         {
-          "si": {
-            "une de ces conditions": [
-              "gabarit = 'berline'",
-              "gabarit = 'SUV'",
-              "gabarit = 'VUL'"
-            ]
-          },
-          "alors": 6900
+          "si": "gabarit = 'VUL'",
+          "alors": 11957
+        },
+        {
+          "si": "gabarit = 'berline'",
+          "alors": 10298
+        },
+        {
+          "si": "gabarit = 'SUV'",
+          "alors": 13616
         }
       ]
     },
     "unité": "kgCO2e",
-    "note": "Surprisingly, the sedan has a smaller footprint than the city car... We'll see if the study solves this mystery.",
+    "note": "We use the emission factor from the Mobitool platform ((manufacture + maintenance + end of life) * km * number of passengers) - https://www.mobitool.ch/fr/outils/facteurs-mobitool-v2-1-25.html",
     "titre": "hybrid scale",
     "titre.auto": "hybrid scale"
   },
@@ -9682,7 +9850,7 @@
     "description": "We consider that a private car, like a rental car, is used for an average of 10 years before being scrapped.\n\nThis assumption is taken from the <a href=\"https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/\">Empreinte database</a>, and more specifically,\nthe study conducted jointly by ADEME and E4T ( <a href=\"https://librairie.ademe.fr/mobilite-et-transport/1267-bilan-transversal-de-l-impact-de-l-electrification-par-segment.html\">Bilan transversal de l'impact de l'électrification par segment</a>).\n\n![](https://github.com/incubateur-ademe/nosgestesclimat/assets/55186402/0b35e469-e42e-438f-8b34-9c127d606747)\n",
     "titre": "life span",
     "titre.auto": "life span",
-    "valeur": "10",
+    "valeur": "17",
     "optimized": true
   },
   "transport . voiture . facteur location": {
