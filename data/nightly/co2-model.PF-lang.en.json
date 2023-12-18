@@ -12788,7 +12788,9 @@
         "règle": "résidence secondaire . énergie",
         "avec": {
           "résidence secondaire . surface": "parc français . surface moyenne",
-          "résidence secondaire . durée": "résidence secondaire . nombre de nuitées . moyenne"
+          "résidence secondaire . durée": "résidence secondaire . nombre de nuitées . moyenne",
+          "résidence secondaire . localisation": "'littoral nord ouest'",
+          "résidence secondaire . saison": "'surtout été'"
         }
       }
     },
@@ -12804,6 +12806,14 @@
   },
   "logement . vacances . résidence secondaire . surface": {
     "titre": "Surface",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "résidence secondaire . présent"
+        },
+        "résidence secondaire . présent"
+      ]
+    },
     "question": "What is the surface area of your second home?",
     "par défaut": "parc français . surface moyenne",
     "note": "Default value obtained in <a href=\"https://www.statistiques.developpement-durable.gouv.fr/consommation-denergie-par-usage-du-residentiel\">this Ceren and SDES dataset</a>.\n",
@@ -12835,6 +12845,14 @@
   },
   "logement . vacances . résidence secondaire . localisation": {
     "titre": "Location",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "résidence secondaire . présent"
+        },
+        "résidence secondaire . présent"
+      ]
+    },
     "question": "Where is your second home located?",
     "note": "From <a href=\"https://www.insee.fr/fr/statistiques/5416748#graphique-figure3\">this source</a>, we have the breakdown of second homes by type of EPCI (établissements publics de coopération intercommunale, otherwise often referred to as \"communautés de communes\"):\n\n- EPCIs on the north-western coast: 25%\n- EPCI on the Mediterranean coast: 16\n- EPCIs at altitudes of over 750 m: 16%\n- Densely populated EPCIs outside the coastline and at altitude: 12%\n- Other EPCIs: 32\n",
     "formule": {
@@ -13158,6 +13176,14 @@
   },
   "logement . vacances . résidence secondaire . saison": {
     "question": "Which season(s) do you visit your second home most often?",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "résidence secondaire . présent"
+        },
+        "résidence secondaire . présent"
+      ]
+    },
     "formule": {
       "une possibilité": {
         "choix obligatoire": "oui",
