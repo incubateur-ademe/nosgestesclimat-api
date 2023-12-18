@@ -832,10 +832,6 @@
     "optimized": true
   },
   "logement . chauffage collectif": {
-    "avec": {
-      "collectif": null,
-      "individuel": null
-    },
     "question": "Is your heating system collective or individual?",
     "par défaut": "'collectif'",
     "note": "It is assumed that the action is only applicable to apartments heated by a collective gas or oil network.  \nIndeed, on the private side, it is preferable to work with the co-owners of a building because the individual housing is not a priority target for this type of solution, both for questions of economic profitability and also because\nnot a priority target for this type of solution, both for questions of economic profitability but also because the thermal density of the network would be too low in view of the\ndensity of the network would be too low in view of the consumption of an individual home.\n",
@@ -851,8 +847,8 @@
     "titre": "collective heating",
     "titre.auto": "collective heating"
   },
-  "collectif": {},
-  "individuel": {},
+  "logement . chauffage collectif . collectif": null,
+  "logement . chauffage collectif . individuel": null,
   "logement . électricité verte": {
     "titre": "Subscribe to a green electricity contract",
     "icônes": "☮️⚡",
@@ -1150,14 +1146,6 @@
     "titre.auto": "Selected transit footprint"
   },
   "transport . boulot . commun . type": {
-    "avec": {
-      "bus": null,
-      "métro ou tramway": null,
-      "TER": null,
-      "vélo classique": null,
-      "vélo électrique": null,
-      "trotinette électrique": null
-    },
     "question": "If you were to stop using your car to get to work, what other means of transportation could you use?",
     "par défaut": "'bus'",
     "formule": {
@@ -1176,12 +1164,12 @@
     "titre": "type",
     "titre.auto": "type"
   },
-  "bus": {},
-  "métro ou tramway": {},
-  "TER": {},
-  "vélo classique": {},
-  "vélo électrique": {},
-  "trotinette électrique": {},
+  "transport . boulot . commun . type . bus": null,
+  "transport . boulot . commun . type . métro ou tramway": null,
+  "transport . boulot . commun . type . TER": null,
+  "transport . boulot . commun . type . vélo classique": null,
+  "transport . boulot . commun . type . vélo électrique": null,
+  "transport . boulot . commun . type . trotinette électrique": null,
   "transport . boulot . recalcul vélo": {
     "titre": "bike recalculation",
     "titre.auto": "bike recalculation",
@@ -3083,10 +3071,6 @@
   },
   "divers . animaux domestiques . empreinte . chats . alimentation . besoins énergétiques journaliers . facteur énergie . activité": {
     "titre": "Activity level of the cat",
-    "avec": {
-      "actif": null,
-      "peu actif": null
-    },
     "par défaut": "'actif'",
     "titre.auto": "Activity level of the cat"
   },
@@ -3291,11 +3275,6 @@
   },
   "divers . animaux domestiques . empreinte . chiens . alimentation . besoins énergétiques journaliers . facteur énergie . activité": {
     "titre": "Activity level of the dog",
-    "avec": {
-      "très actif": null,
-      "actif": null,
-      "peu actif": null
-    },
     "par défaut": "'actif'",
     "titre.auto": "Activity level of the dog"
   },
@@ -5217,9 +5196,6 @@
     "optimized": true
   },
   "empreinte branche . A01 par hab": {
-    "avec": {
-      "ratio horticulture": "2%"
-    },
     "description": "Agricultural and hunting products and related services per inhabitant\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- **Non-permanent crops (58%)**\n\t- Growing of cereals (except rice), pulses and oil seeds (16%)\n\t- Growing of vegetables, melons, roots and tubers (2%)\n\t- Fibre crops (1%)\n\t- Other non-permanent crops (81%)\n- **Permanent crops (4%)**\n\t- Growing of vines (76%)\n\t- Growing of beverage crops (0%)\n\t- Growing of spices, aromatic, medicinal and pharmaceutical plants (24%)\n\t- Other permanent crops (0%)\n- plant production (0%)** ** Livestock production (34%)\n- **Animal production (34%)**\n\t- Dairy cows (0%)\n\t- Pig farming (1%)\n\t- Poultry farming (99%)\n\t- Other livestock (0%)\n- **Associated crop and livestock farming (0%)**\n- **Support activities for agriculture and primary crop processing (3%)**\n\t- Support activities for crop production (45%)\n\t- Support activities for animal production (32%)\n\t- Primary crop processing (22%)",
     "formule": "(34018 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Agricultural and hunting products and related services per capita",
@@ -5228,10 +5204,6 @@
     "optimized": true
   },
   "empreinte branche . C15 par hab": {
-    "avec": {
-      "ratio maroquinerie": "73%",
-      "ratio tapis": "6%"
-    },
     "description": "Leather and footwear industry per capita\n\n> The description below corresponds to the share of each subclass in the industry (in % of turnover)\n\n- **Finishing and tanning of leather; dressing and dyeing of fur; manufacture of luggage, handbags, saddlery and harness (87%)\n\t- Tanning and dressing of leather; dressing and dyeing of fur (8%)\n\t- Manufacture of travel goods, leather goods and saddlery (92%)\n- **Manufacture of footwear (13%)**",
     "formule": "(2153.4 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Leather and footwear industry per capita",
@@ -5240,9 +5212,6 @@
     "optimized": true
   },
   "empreinte branche . C16 par hab": {
-    "avec": {
-      "ratio produits petits travaux": "0.7%"
-    },
     "description": "Wood and articles of wood and cork, except furniture; basketware and wickerwork per capita\n\n> The description below corresponds to the share of each subclass in the industry (in % of turnover)\n\n- sawing and planing of wood (32%)** **Manufacture of articles of straw and plaiting materials (32%)\n- **Manufacture of articles of wood, cork, straw and plaiting materials (68%)**\n\t- Manufacture of veneer and wood panels (20%)\n\t- Manufacture of assembled parquet flooring (1%)\n\t- Manufacture of carpentry and other joinery (40%)\n\t- Manufacture of wooden packaging (29%)\n\t- Manufacture of miscellaneous wooden articles; manufacture of articles of cork, straw and plaiting materials (10%)",
     "formule": "(231 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Wood and articles of wood and cork, except furniture; basketware and wickerwork per capita",
@@ -5251,9 +5220,6 @@
     "optimized": true
   },
   "empreinte branche . C17 par hab": {
-    "avec": {
-      "ratio produits petits travaux": "0.2%"
-    },
     "description": "Paper and cardboard per capita\n\n> The description below corresponds to the share of each sub-class in the industry (as a % of turnover)\n\n- manufacture of pulp, paper and paperboard (32%)** ** Manufacture of paper pulp (10%)\n\t- Manufacture of paper pulp (10%)\n\t- Manufacture of paper and paperboard (90%)\n- **Manufacture of articles of paper and paperboard (68%)**\n\t- Manufacture of corrugated paper and board and paper and board packaging (60%)\n\t- Manufacture of sanitary and household paper products (18%)\n\t- Manufacture of stationery (6%)\n\t- Manufacture of wallpaper (0%)\n\t- Manufacture of other articles of paper and paperboard (15%)",
     "formule": "(1867 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Paper and cardboard per capita",
@@ -5262,9 +5228,6 @@
     "optimized": true
   },
   "empreinte branche . C20 par hab": {
-    "avec": {
-      "ratio produits petits travaux": "6.1%"
-    },
     "description": "Chemical products per capita\n\n> The description below corresponds to the share of each sub-class in the sector (as a % of turnover)\n\n- **Manufacture of basic chemicals, nitrogen products and fertilisers, basic plastics and synthetic rubber (48%)** Manufacture of industrial gases (S)\n\t- Manufacture of industrial gases (S)\n\t- Manufacture of dyes and pigments (2%)\n\t- Manufacture of other basic inorganic chemicals (17%)\n\t- Manufacture of other basic organic chemicals (39%)\n\t- Manufacture of Nitrogenous Products and Fertilisers (6%)\n\t- Manufacture of basic plastics (29%)\n\t- Manufacture of synthetic rubber (S)\n- manufacture of pesticides and other agrochemicals (4%)** ** Manufacture of paints, varnishes and similar coatings (4%)\n- manufacture of paints, varnishes, inks and mastics (6%)** **Manufacture of soaps, paints and coatings (6%)\n- manufacture of soaps, detergents, cleaning products and perfumes (28%)** **Manufacture of paints, varnishes, inks and mastics (6%)\n\t- Manufacture of soaps, detergents and cleaning products (9%)\n\t- Manufacture of perfumes and toiletries (91%)\n- **Manufacture of other chemical products (15%)**\n\t- Manufacture of explosives (7%)\n\t- Manufacture of glues (8%)\n\t- Manufacture of essential oils (18%)\n\t- Manufacture of other chemical products n.e.c. (67%)\n- **Manufacture of artificial or synthetic fibres (0%)**",
     "formule": "(6655 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Chemicals per capita",
@@ -5273,9 +5236,6 @@
     "optimized": true
   },
   "empreinte branche . C21 par hab": {
-    "avec": {
-      "ratio services publics": "100%"
-    },
     "description": "Basic pharmaceutical products and pharmaceutical preparations per capita\n\n> The description below shows the share of each subclass in the sector (as a % of turnover)\n\n- **Manufacture of basic pharmaceutical products (8%)**\n- **Manufacture of pharmaceutical preparations (92%)**",
     "formule": "(5024 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "pharmacy per capita",
@@ -5284,9 +5244,6 @@
     "optimized": true
   },
   "empreinte branche . C23 par hab": {
-    "avec": {
-      "ratio vaisselle": "8.9%"
-    },
     "description": "Other non-metallic mineral products per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- **Manufacture of glass and glassware (27%)** Manufacture of flat glass (7%)\n\t- Manufacture of flat glass (7%)\n\t- Shaping and processing of flat glass (29%)\n\t- Manufacture of hollow glass (46%)\n\t- Manufacture of glass fibres (12%)\n\t- Manufacture and processing of other glass, including technical glass (6%)\n- manufacture of refractory products (2%)** ** Manufacture of building materials (2%)\n- **Manufacture of clay building materials (5%)** Manufacture of ceramic tiles (14%)\n\t- Manufacture of ceramic tiles (14%)\n\t- Manufacture of clay bricks, tiles and construction products (86%)\n- **Manufacture of other ceramic and porcelain products (2%)**\n\t- Manufacture of ceramic household and ornamental articles (41%)\n\t- Manufacture of ceramic sanitary ware (S)\n\t- Manufacture of ceramic insulators and insulating fittings (5%)\n\t- Manufacture of other technical ceramic products (28%)\n\t- Manufacture of other ceramic products (S)\n- **Manufacture of cement, lime and plaster (11%)** Manufacture of cement (S)\n\t- Manufacture of cement (S)\n\t- Manufacture of lime and plaster (S)\n- **Manufacture of concrete, cement and plaster products (40%)**\n\t- Manufacture of concrete components for construction (28%)\n\t- Manufacture of plaster components for construction (8%)\n\t- Manufacture of ready-mixed concrete (51%)\n\t- Manufacture of mortar and dry concrete (8%)\n\t- Manufacture of fibre cement products (1%)\n\t- Manufacture of other articles of concrete, cement or plaster (3%)\n- **Stone cutting, shaping and finishing (3%)\n- manufacture of abrasive products and non-metallic mineral products n.e.c. (10%)** **Manufacture of abrasive products (8%)\n\t- Manufacture of abrasive products (8%)\n\t- Manufacture of other non-metallic mineral products n.e.c. (92%)",
     "formule": "(3400 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Other non-metallic mineral products per capita",
@@ -5295,10 +5252,6 @@
     "optimized": true
   },
   "empreinte branche . C25 par hab": {
-    "avec": {
-      "ratio outillage jardin": "4.6%",
-      "ratio vaisselle": "0.4%"
-    },
     "description": "Metal products, excluding machinery and equipment per capita\n\n> The description below corresponds to the share of each subclass in the industry (in % of turnover)\n\n- **Manufacture of structural metal products (16%)** Manufacture of metal structures and parts of structures (100%)\n\t- Manufacture of metal structures and parts of structures (100%)\n\t- Manufacture of metal doors and windows (S)\n- **Manufacture of metal tanks, reservoirs and containers (1%)**\n\t- Manufacture of central heating radiators and boilers (S)\n\t- Manufacture of other tanks, reservoirs and containers of metal (100%)\n- manufacture of steam generators, except central heating boilers (0%)** **Manufacture of weapons and ammunition (100%)\n- manufacture of weapons and ammunition (S)** **Forging, pressing and stamping (S)\n- forging, pressing, stamping; powder metallurgy (15%)** **Metal treatment and coating; powder metallurgy (15%)** **Powder metallurgy (15%)\n- **Metal treatment and coating; machining (27%)**\n\t- Metal treatment and coating (24%)\n\t- Machining (76%)\n- **Cutlery, Tools and Hardware Manufacturing (7%)** Cutlery Manufacturing (6%)\n\t- Manufacture of cutlery (6%)\n\t- Manufacture of locks and fittings (31%)\n\t- Manufacture of tools (63%)\n- **Manufacture of other fabricated metal products (17%)**\n\t- Manufacture of drums and similar metal packaging (2%)\n\t- Manufacture of light metal packaging (21%)\n\t- Manufacture of wire products, chain and springs (23%)\n\t- Manufacture of screws and bolts (14%)\n\t- Manufacture of other fabricated metal products n.e.c. (40%)",
     "formule": "(3598 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Metal products, excluding machinery and equipment per capita",
@@ -5307,9 +5260,6 @@
     "optimized": true
   },
   "empreinte branche . C26 par hab": {
-    "avec": {
-      "ratio autres produits manufacturés": "1%"
-    },
     "description": "Computer, electronic and optical products per capita\n\n> The description below shows the share of each subclass in the sector (as a % of turnover)\n\n- **Manufacture of electronic components and boards (33%)**\n\t- Manufacture of electronic components (63%)\n\t- Manufacture of assembled electronic boards (37%)\n- manufacture of computers and peripheral equipment (4%)** **Manufacture of computers and peripheral equipment (4%)**Manufacture of computers and peripheral equipment (4%)\n- **Communications equipment manufacturing (21%)**\n- **Consumer electronics manufacturing (1%)**\n- **Manufacture of measuring, testing and navigational instruments and appliances; watches and clocks (34%)\n\t- Manufacture of measuring, testing and navigating instruments and appliances (96%)\n\t- Watchmaking (4%)\n- manufacture of medical irradiation equipment, electromedical and electrotherapeutic equipment (4%)** ** Manufacture of optical and electronic equipment (4%)\n- manufacture of optical and photographic equipment (3%)** **Manufacture of magnetic media (3%)\n- **Manufacture of magnetic and optical media (0%)**",
     "formule": "(4987 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Computer, electronic and optical products per capita",
@@ -5318,9 +5268,6 @@
     "optimized": true
   },
   "empreinte branche . C28 par hab": {
-    "avec": {
-      "ratio outillage jardin": "0.4%"
-    },
     "description": "Machinery and equipment n.e.c. per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- **Manufacture of general-purpose machinery (29%)**\n\t- Manufacture of engines and turbines, except aircraft and vehicle engines (24%)\n\t- Manufacture of hydraulic and pneumatic equipment (13%)\n\t- Manufacture of other pumps and compressors (26%)\n\t- Manufacture of other valves and fittings (16%)\n\t- Manufacture of gears and mechanical transmission components (20%)\n- **Manufacture of other general-purpose machinery (38%)**\n\t- Manufacture of ovens and burners (5%)\n\t- Manufacture of lifting and handling equipment (37%)\n\t- Manufacture of office machinery and equipment (except computers and peripheral equipment) (2%)\n\t- Manufacture of portable power tools (1%)\n\t- Manufacture of industrial air-conditioning and refrigeration equipment (28%)\n\t- Manufacture of other general-purpose machinery (28%)\n- **Manufacture of agricultural and forestry machinery (11%)\n- **Manufacture of metal forming machinery and machine tools (3%)** Manufacture of other general-purpose machinery (28%)\n\t- Manufacture of metal forming machinery (81%)\n\t- Manufacture of other machine tools (19%)\n- **Manufacture of other special-purpose machinery (19%)**\n\t- Manufacture of machinery for metallurgy (2%)\n\t- Manufacture of machinery for mining, quarrying and construction (24%)\n\t- Manufacture of food processing machinery (22%)\n\t- Manufacture of machinery for the textile industry (10%)\n\t- Manufacture of machinery for paper and paperboard production (6%)\n\t- Manufacture of machinery for working rubber or plastics (9%)\n\t- Manufacture of other special-purpose machinery n.e.c. (27%)",
     "formule": "(4804 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Machinery and equipment n.e.c. per capita",
@@ -5329,9 +5276,6 @@
     "optimized": true
   },
   "empreinte branche . C30 par hab": {
-    "avec": {
-      "ratio services marchands": "50%"
-    },
     "description": "Other transport equipment per inhabitant\n\n> The description below shows the share of each subclass in the sector (as a % of turnover)\n\n- **Shipbuilding (4%)**\n\t- Building of ships and floating structures (100%)\n\t- Construction of pleasure boats (S)\n- manufacture of locomotives and other railway rolling stock (3%)** ** Manufacture of aircraft and spacecraft (100%)\n- **Aircraft and spacecraft construction (90%)**\n- manufacture of military combat vehicles (S)** **Manufacture of transport equipment (S)\n- **Manufacture of transport equipment n.e.c. (1%)**\n\t- Manufacture of motorbikes (43%)\n\t- Manufacture of bicycles and invalid carriages (47%)\n\t- Manufacture of other transport equipment n.e.c. (10%)",
     "formule": "(4078 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "vehicle manufacturing (excluding automobiles) per capita",
@@ -5340,10 +5284,6 @@
     "optimized": true
   },
   "empreinte branche . C32 par hab": {
-    "avec": {
-      "ratio autres produits manufacturés": "38%",
-      "ratio produits petits travaux": "1.2%"
-    },
     "description": "Other manufacturing per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- **Manufacture of jewellery and related articles (17%)** Coin minting (S)\n\t- Coin minting (S)\n\t- Manufacture of jewellery and related articles (S)\n\t- Manufacture of imitation jewellery and similar articles (20%)\n- manufacture of musical instruments (2%)** **Manufacture of musical instruments (2%)\n- manufacture of musical instruments (2%)** **Manufacture of sports goods (6%)**\n- **Manufacture of games and toys (3%)\n- manufacture of instruments and supplies for medical and dental use (59%)** **Manufacture of toys and games\n- **Manufacturing n.e.c. (12%)**\n\t- Manufacture of brushware (8%)\n\t- Other manufacturing n.e.c. (92%)",
     "formule": "(4287.36 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Other manufacturing per capita",
@@ -5352,9 +5292,6 @@
     "optimized": true
   },
   "empreinte branche . E36 par hab": {
-    "avec": {
-      "ratio services publics": "100%"
-    },
     "description": "Natural water; water treatment and distribution per capita \n\n> The description below corresponds to the share of each subclass of the industry (in % of turnover) \n\n- **Water collection, treatment and supply (100%)** (in % of turnover)",
     "formule": "(668 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "water distribution system per capita",
@@ -5363,9 +5300,6 @@
     "optimized": true
   },
   "empreinte branche . E37 par hab": {
-    "avec": {
-      "ratio services publics": "100%"
-    },
     "description": "Wastewater collection and treatment per capita \n\n> The description below corresponds to the share of each subclass in the industry (in % of turnover) \n\n- **Wastewater collection and treatment (100%)",
     "formule": "(1403.1 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "wastewater treatment per capita",
@@ -5374,9 +5308,6 @@
     "optimized": true
   },
   "empreinte branche . E38 par hab": {
-    "avec": {
-      "ratio services publics": "12%"
-    },
     "description": "Waste collection, treatment and disposal; recovery per capita\n\n> The description below corresponds to the share of each subclass in the sector (as a % of turnover)\n\n- **Waste collection (23%)**\n\t- Collection of non-hazardous waste (84%)\n\t- Collection of hazardous waste (16%)\n- **Waste treatment and disposal (24%)**\n\t- Treatment and disposal of non-hazardous waste (S)\n\t- Treatment and disposal of hazardous waste (S)\n- **Recovery (53%)**\n\t- Dismantling of wrecks (3%)\n\t- Recovery of sorted waste (97%)",
     "formule": "(6002.15 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "waste management per capita",
@@ -5385,9 +5316,6 @@
     "optimized": true
   },
   "empreinte branche . E39 par hab": {
-    "avec": {
-      "ratio services publics": "100%"
-    },
     "description": "Pollution control and other waste management services per capita \n\n> The description below corresponds to the share of each sub-class of the sector (in % of turnover) \n\n- **Remediation and other waste management services (100%)",
     "formule": "(389.75 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "cleaning of buildings and contaminated sites per capita",
@@ -5396,9 +5324,6 @@
     "optimized": true
   },
   "empreinte branche . F42 par hab": {
-    "avec": {
-      "ratio services publics": "100%"
-    },
     "description": "Civil engineering per inhabitant\n\n> The description below shows the share of each subclass in the sector (as a % of turnover)\n\n- construction of roads and railways (52%)** ** Construction of roads and motorways (71%)\n\t- Construction of roads and motorways (71%)\n\t- Construction of surface and underground railways (9%)\n\t- Construction of bridges and tunnels (20%)\n- **Construction of networks and lines (33%)**\n\t- Construction of fluid networks (49%)\n\t- Construction of electrical and telecommunications networks (51%)\n- **Construction of other civil engineering structures (15%)**\n\t- Construction of maritime and fluvial structures (25%)\n\t- Construction of other civil engineering works n.e.c. (75%)",
     "formule": "(6982.04 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "civil engineering per capita",
@@ -5407,9 +5332,6 @@
     "optimized": true
   },
   "empreinte branche . F43 par hab": {
-    "avec": {
-      "ratio services publics": "54%"
-    },
     "description": "Specialist construction work per inhabitant\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- **Demolition and site preparation (8%)** Demolition work (10%)\n\t- Demolition work (10%)\n\t- Site preparation work (86%)\n\t- Drilling and boring (3%)\n- **Electrical, plumbing and other installation work (34%)**\n\t- Electrical installation (44%)\n\t- Plumbing, heating and air conditioning (43%)\n\t- Other installation work (13%)\n- **Finishing work (28%)**\n\t- Plastering work (11%)\n\t- Joinery work (53%)\n\t- Floor and wall covering (12%)\n\t- Painting and glazing (21%)\n\t- Other finishing work (3%)\n- **Other specialised construction work (30%)** Roofing work (19%)\n\t- Roofing work (19%)\n\t- Other specialised construction work n.e.c. (81%)",
     "formule": "(32761.88 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "miscellaneous work (for public works and buildings) per capita",
@@ -5418,15 +5340,6 @@
     "optimized": true
   },
   "empreinte branche . G46 par hab": {
-    "avec": {
-      "ratio autres produits manufacturés": "0.2%",
-      "ratio horticulture": "0.2%",
-      "ratio maroquinerie": "0.1%",
-      "ratio outillage jardin": "0.3%",
-      "ratio produits petits travaux": "1.9%",
-      "ratio tapis": "0.4%",
-      "ratio vaisselle": "0.7%"
-    },
     "description": "Wholesale trade, except of motor vehicles and motorbikes per capita\n\n> The description below corresponds to the share of each subclass in the sector (in % of turnover)\n\n- **Intermediaries in wholesale trade (17%)**\n\t- Agents involved in the sale of agricultural raw materials, live animals, textile raw materials and semi-finished products (1%)\n\t- Agents involved in the sale of fuels, metals, minerals and chemical products (25%)\n\t- Agents involved in the sale of wood and construction materials (0%)\n\t- Agents involved in the sale of machinery, industrial equipment, ships and aircraft (2%)\n\t- Agents involved in the sale of furniture, household goods and hardware (1%)\n\t- Agents involved in the sale of textiles, clothing, furs, footwear and leather goods (0%)\n\t- Agents involved in the sale of food, beverages and tobacco (44%)\n\t- Agents specialising in the sale of other specific products (5%)\n\t- Agents specialising in the sale of miscellaneous products (21%)\n- **Wholesale of agricultural raw materials and live animals (6%)\n\t- Wholesale of cereals, unmanufactured tobacco, seeds and animal feed (68%)\n\t- Wholesale of flowers and plants (3%)\n\t- Wholesale of live animals (28%)\n\t- Wholesale of hides and skins (1%)\n- **Wholesale of food, beverages and tobacco (16%)\n\t- Wholesale of fruit and vegetables (15%)\n\t- Wholesale of meat and meat products (6%)\n\t- Wholesale of dairy products, eggs, edible oils and fats (9%)\n\t- Wholesale of beverages (18%)\n\t- Wholesale of tobacco products (2%)\n\t- Wholesale of sugar, chocolate and confectionery (7%)\n\t- Wholesale of coffee, tea, cocoa and spices (6%)\n\t- Wholesale of other food products, including fish, crustaceans and molluscs (14%)\n\t- Non-specialised wholesale of food, beverages and tobacco (23%)\n- **Wholesale of household goods (18%)** Wholesale of textiles (2%)\n\t- Wholesale of textiles (2%)\n\t- Wholesale of clothing and footwear (12%)\n\t- Wholesale of household appliances (9%)\n\t- Wholesale of crockery, glassware and cleaning products (3%)\n\t- Wholesale of perfume and beauty products (6%)\n\t- Wholesale of pharmaceutical products (46%)\n\t- Wholesale of furniture, carpets and lighting equipment (2%)\n\t- Wholesale of watches, clocks and jewellery (2%)\n\t- Wholesale of other household goods (18%)\n- **Wholesale of information and communication equipment (7%)\n\t- Wholesale of computers, computer peripheral equipment and software (60%)\n\t- Wholesale of electronic and telecommunications components and equipment (40%)\n- **Wholesale of other industrial equipment (14%)**\n\t- Wholesale of agricultural equipment (15%)\n\t- Wholesale of machine tools (2%)\n\t- Wholesale of mining, construction and civil engineering machinery (6%)\n\t- Wholesale of machinery for the textile and clothing industry (0%)\n\t- Wholesale of office furniture (1%)\n\t- Wholesale of other office machinery and equipment (3%)\n\t- Wholesale of other machinery and equipment (73%)\n- **Other specialised wholesale (19%)**\n\t- Wholesale of fuels and related products (36%)\n\t- Wholesale of ores and metals (8%)\n\t- Wholesale of wood, building materials and sanitary equipment (22%)\n\t- Wholesale of hardware, plumbing and heating supplies (9%)\n\t- Wholesale of chemical products (17%)\n\t- Wholesale of other intermediate products (7%)\n\t- Wholesale of waste and scrap (1%)\n- **Non-specialised wholesale (2%)**",
     "formule": "(7112 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Wholesale trade, excluding automobiles and motorcycles per capita",
@@ -5435,13 +5348,6 @@
     "optimized": true
   },
   "empreinte branche . G47 par hab": {
-    "avec": {
-      "ratio autres produits manufacturés": "3.5%",
-      "ratio horticulture": "1.5%",
-      "ratio maroquinerie": "0.5%",
-      "ratio produits petits travaux": "4.4%",
-      "ratio tapis": "0.2%"
-    },
     "description": "Retail trade, except of motor vehicles and motorbikes per inhabitant\n\n> The description below corresponds to the share of each subclass in the sector (in % of turnover)\n\n- retail sale in non-specialised shops (39%)** ** Retail sale in non-specialised stores (39%)\n\t- Retail sale in non-specialised shops with food predominating (91%)\n\t- Other retail sale in non-specialised shops (9%)\n- food retailing in specialised shops (5%)** ** Fruit and vegetable retailing in non-specialised stores (5%)\n\t- Retail sale of fruit and vegetables in specialised shops (15%)\n\t- Retail sale of meat and meat products in specialised shops (25%)\n\t- Retail sale of fish, crustaceans and molluscs in specialised shops (4%)\n\t- Retail sale of bread, cakes, pastries and confectionery in specialised shops (6%)\n\t- Retail sale of beverages in specialised shops (17%)\n\t- Retail sale of tobacco products in specialised shops (7%)\n\t- Other food retailing in specialised shops (27%)\n- fuel retailing in specialised shops (9%)** ** Other food retailing in specialised stores (27%)\n- retail sale of information and communication equipment in specialised shops (1%)** ** Retail sale of computers, personal computers and peripheral equipment in specialised stores (1%)\n\t- Retail sale of computers, peripheral units and software in specialised shops (42%)\n\t- Retail sale of telecommunications equipment in specialised shops (46%)\n\t- Retail sale of audio/video equipment in specialised shops (12%)\n- retail sale of other household equipment in specialised shops (9%)** ** Retail sale of textiles in specialised stores (9%)\n\t- Retail sale of textiles in specialised shops (3%)\n\t- Retail sale of hardware, paints and glass in specialised shops (49%)\n\t- Retail sale of carpets, wall and floor coverings in specialised shops (2%)\n\t- Retail sale of electrical household appliances in specialised shops (10%)\n\t- Retail sale of furniture, lighting equipment and other household articles in specialised shops (36%)\n- retail sale of cultural and leisure goods in specialised shops (4%)** ** Retail sale of books in specialised stores (4%)\n\t- Retail sale of books in specialised shops (27%)\n\t- Retail sale of newspapers and stationery in specialised shops (12%)\n\t- Retail sale of music and video recordings in specialised shops (1%)\n\t- Retail sale of sports goods in specialised shops (54%)\n\t- Retail sale of games and toys in specialised shops (7%)\n- **Other retail sale in specialised shops (24%)**\n\t- Retail sale of clothing in specialised shops (24%)\n\t- Retail sale of footwear and leather goods in specialised shops (6%)\n\t- Retail sale of pharmaceutical products in specialised shops (31%)\n\t- Retail sale of medical and orthopaedic goods in specialised shops (2%)\n\t- Retail sale of perfume and beauty products in specialised shops (5%)\n\t- Retail sale of flowers, plants, seeds, fertilisers, pets and pet food in specialised shops (5%)\n\t- Retail sale of watches, clocks and jewellery in specialised shops (3%)\n\t- Other retail sale of new goods in specialised shops (21%)\n\t- Retail sale of second-hand goods in specialised shops (2%)\n- retail sale of second-hand goods in stores (2%) **Retail sale of stalls and markets (1%)**\n\t- Retail sale of food, beverages and tobacco in stalls and markets (75%)\n\t- Retail sale of textiles, clothing and footwear in stalls and markets (5%)\n\t- Other retail sale via stalls and markets (20%)\n- **Retail trade not in shops, stalls or markets (7%)\n\t- Distance selling (89%)\n\t- Other non-store, stall or market retail (11%)",
     "formule": "(21574 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Retail trade, except automobiles and motorcycles per capita",
@@ -5450,9 +5356,6 @@
     "optimized": true
   },
   "empreinte branche . H52 par hab": {
-    "avec": {
-      "ratio services marchands": "87%"
-    },
     "description": "Warehousing and auxiliary transport services per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- **Warehousing and storage (13%)**\n- **Services auxiliary to transport (87%)**\n\t- Services auxiliary to land transport (30%)\n\t- Services auxiliary to water transport (5%)\n\t- Services auxiliary to air transport (8%)\n\t- Material Handling (3%)\n\t- Other services auxiliary to transportation (54%)",
     "formule": "(2065 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "support services to transportation activities per capita",
@@ -5461,9 +5364,6 @@
     "optimized": true
   },
   "empreinte branche . H53 par hab": {
-    "avec": {
-      "ratio services marchands": "100%"
-    },
     "description": "Postal and courier services per inhabitant\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- postal activities as part of a universal service obligation (S)** **Other postal and courier activities (S)** **Other postal and courier activities (S)**\n- other postal and courier activities (S)** **Other postal and courier activities (S)",
     "formule": "(168 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "postal services per capita",
@@ -5472,9 +5372,6 @@
     "optimized": true
   },
   "empreinte branche . J61 par hab": {
-    "avec": {
-      "ratio services marchands": "100%"
-    },
     "description": "Telecommunications services per capita\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- **Wireline telecommunications (45%)**\n- **Wireless telecommunications (39%)**\n- satellite telecoms (6%)** **Other telecoms (6%)** Other telecoms (6%)\n- **Other telecommunications activities (10%)**",
     "formule": "(3158 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "telecommunications per capita",
@@ -5483,9 +5380,6 @@
     "optimized": true
   },
   "empreinte branche . K64 par hab": {
-    "avec": {
-      "ratio services marchands": "25%"
-    },
     "description": "Financial services, excluding insurance and pension funds per capita \n\n> The description below corresponds to the share of each subclass of the sector (in % of turnover) \n\n- **Holding company activities (100%)**",
     "formule": "(760 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "financial services (excluding insurance and pension funds) per capita",
@@ -5494,9 +5388,6 @@
     "optimized": true
   },
   "empreinte branche . K65 par hab": {
-    "avec": {
-      "ratio services marchands": "100%"
-    },
     "description": "Insurance, reinsurance and pension fund services, excluding compulsory per capita social security \n\n> The description below corresponds to the share of each subclass of the branch (in % of turnover)\n",
     "formule": "(3331 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "insurance and pension fund per capita",
@@ -5505,9 +5396,6 @@
     "optimized": true
   },
   "empreinte branche . M69 par hab": {
-    "avec": {
-      "ratio services marchands": "100%"
-    },
     "description": "Legal and accounting activities per inhabitant\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- **Legal activities (60%)**\n- **Accounting activities (40%)**",
     "formule": "(902.58 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "legal and accounting activities per capita",
@@ -5516,9 +5404,6 @@
     "optimized": true
   },
   "empreinte branche . M71 par hab": {
-    "avec": {
-      "ratio services publics": "100%"
-    },
     "description": "Architectural and engineering services; inspection services and technical analyses per inhabitant\n\n> The description below shows the share of each subclass in the industry (as a % of turnover)\n\n- **Architectural and engineering activities (86%)** Architectural activities (12%)\n\t- Architectural activities (12%)\n\t- Engineering activities (88%)\n- **Technical testing and analysis activities (14%)**",
     "formule": "(2438 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "architecture and building control per capita",
@@ -5527,9 +5412,6 @@
     "optimized": true
   },
   "empreinte branche . M72 par hab": {
-    "avec": {
-      "ratio services publics": "100%"
-    },
     "description": "Scientific research and development services per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- research and development in physical and natural sciences (99%)** ** Research and development in biotechnology (19%)\n\t- Research and development in biotechnology (19%)\n\t- Research and development in other physical and natural sciences (81%)\n- **Research and development in the humanities and social sciences (1%)**",
     "formule": "(7811 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Scientific R&D per capita",
@@ -5538,9 +5420,6 @@
     "optimized": true
   },
   "empreinte branche . N78 par hab": {
-    "avec": {
-      "ratio services publics": "100%"
-    },
     "description": "Employment services per inhabitant\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- activities of employment placement agencies (3%)** **Activities of temporary employment agencies (83%)**\n- activities of temporary employment agencies (83%)** **Other provision of services (83%)\n- **Other provision of human resources (14%)**",
     "formule": "(12 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "employment-related activities per capita",
@@ -5549,9 +5428,6 @@
     "optimized": true
   },
   "empreinte branche . N80 par hab": {
-    "avec": {
-      "ratio services marchands": "24%"
-    },
     "description": "Surveys and safety per capita\n\n> The description below corresponds to the share of each subclass in the industry (as a % of turnover)\n\n- **Private security activities (74%)**\n- **Security systems activities (25%)**\n- **Investigation activities (1%)**",
     "formule": "(20.67 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "investigations and security per capita",
@@ -5560,9 +5436,6 @@
     "optimized": true
   },
   "empreinte branche . O84 par hab": {
-    "avec": {
-      "ratio services publics": "100%"
-    },
     "description": "Public administration and defence services; compulsory social security services per capita\n\n> The description below corresponds to the share of each subclass in the industry (in % of turnover)\n\n- **General, economic and social administration (83%)** General public administration (73%)\n\t- General public administration (73%)\n\t- Public administration (supervision) of economic activities (27%)\n- **Public prerogative services (17%)**",
     "formule": "(16319 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "public administration and defense per capita",
@@ -5571,9 +5444,6 @@
     "optimized": true
   },
   "empreinte branche . P85 par hab": {
-    "avec": {
-      "ratio services publics": "100%"
-    },
     "description": "Education services per capita\n\n> The description below corresponds to the share of each subclass in the sector (as a % of turnover)\n\n- **Pre-primary education (0%)**\n- primary education (0%)** **Secondary education (2%)**\n- **Secondary education (2%)**\n\t- General secondary education (44%)\n\t- Technical or vocational secondary education (56%)\n- **Higher and post-secondary non-tertiary education (8%)**\n\t- Post-secondary non-tertiary (2%)\n\t- Higher education (98%)\n- **Other education activities (89%)**\n\t- Sports and leisure education (13%)\n\t- Cultural education (3%)\n\t- Driving lessons (13%)\n\t- Other teaching (72%)\n- **Support activities for teaching (1%)**",
     "formule": "(8730 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "education per capita",
@@ -5582,9 +5452,6 @@
     "optimized": true
   },
   "empreinte branche . Q86 par hab": {
-    "avec": {
-      "ratio services publics": "100%"
-    },
     "description": "Human health services per capita\n\n> The description below shows the share of each subclass in the sector (as a % of turnover)\n\n- **Hospital activities (16%)**\n- activity of doctors and dentists (50%)** ** Activity of general practitioners (38%)\n\t- General practitioners (38%)\n\t- Specialist practice (32%)\n\t- Dental practice (29%)\n- **Other human health activities (33%)**",
     "formule": "(11024 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "health per capita",
@@ -5593,9 +5460,6 @@
     "optimized": true
   },
   "empreinte branche . Q87 par hab": {
-    "avec": {
-      "ratio services publics": "100%"
-    },
     "description": "Medical and social accommodation per capita \n\n> The description below corresponds to the share of each subclass of the sector (in % of turnover) \n\n- **Residential care (72%)\n- social housing for mentally handicapped, mentally ill and drug addicts (0%)** **Social housing for the elderly (10%)\n- social housing for the elderly or physically handicapped (27%)** **Other housing activities\n- **Other social housing activities (1%)**",
     "formule": "(3914.19 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "medico-social accommodation per capita",
@@ -5604,9 +5468,6 @@
     "optimized": true
   },
   "empreinte branche . Q88 par hab": {
-    "avec": {
-      "ratio services publics": "100%"
-    },
     "description": "Social services without accommodation per inhabitant\n\n> The description below corresponds to the share of each subclass in the sector (as a % of turnover)\n\n- **Action sociale sans hébergement pour personnes âgées et pour personnes handicapées (60%)**\n- **Other social work without accommodation (40%)**\n\t- Social work without accommodation for young children (88%)\n\t- Other social work without accommodation n.e.c. (12%)",
     "formule": "(2298.81 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "social actions per capita",
@@ -5615,9 +5476,6 @@
     "optimized": true
   },
   "empreinte branche . S94 par hab": {
-    "avec": {
-      "ratio services marchands": "100%"
-    },
     "description": "Services provided by voluntary organisations per inhabitant\n\n> The description below corresponds to the share of each subclass in the sector (in % of turnover)\n\n- **Activities of business, employers' and professional organisations (93%)**\n\t- Activities of employers' and consular organisations (49%)\n\t- Activities of professional organisations (51%)\n- **Activities of other voluntary organisations (7%)** Activities of political organisations (1%)\n\t- Activities of political organisations (1%)\n\t- Activities of membership organisations n.e.c. (99%)",
     "formule": "(1213 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "associative activities per capita",
@@ -5626,9 +5484,6 @@
     "optimized": true
   },
   "empreinte branche . S95 par hab": {
-    "avec": {
-      "ratio réparations": "100%"
-    },
     "description": "Repair services of computers and personal and household goods per inhabitant\n\n> The description below shows the share of each subclass in the industry (in % of turnover)\n\n- **Repair of computers and communications equipment (64%)\n\t- Repair of computers and peripheral equipment (83%)\n\t- Repair of communications equipment (17%)\n- **Repair of personal and household goods (36%)**\n\t- Repair of consumer electronics (12%)\n\t- Repair of household appliances and home and garden equipment (27%)\n\t- Repair of footwear and leather goods (18%)\n\t- Repair of furniture and household equipment (8%)\n\t- Repair of watches, clocks and jewellery (7%)\n\t- Repair of other personal and household goods (29%)",
     "formule": "(1114 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "other personal services per capita",
@@ -5637,9 +5492,6 @@
     "optimized": true
   },
   "empreinte branche . S96 par hab": {
-    "avec": {
-      "ratio services marchands": "12%"
-    },
     "description": "Other personal services per inhabitant\n\n> The description below corresponds to the share of each subclass in the sector (as a % of turnover)\n\n- **Other personal services (100%)**\n\t- Laundries and dry cleaning (13%)\n\t- Hairdressing and beauty treatments (54%)\n\t- Funeral services (13%)\n\t- Personal care (9%)\n\t- Other personal services n.e.c. (12%)",
     "formule": "(1656 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Other personal services per capita",
@@ -7745,12 +7597,6 @@
     "titre.auto": "season factor"
   },
   "logement . vacances . résidence secondaire . localisation . littoral méditerranéen . facteur saison": {
-    "avec": {
-      "facteur hiver": 1.62,
-      "facteur surtout hiver": 1.41,
-      "facteur été": 0,
-      "facteur surtout été": 0.13
-    },
     "formule": {
       "variations": [
         {
@@ -7774,29 +7620,23 @@
     "titre": "season factor",
     "titre.auto": "season factor"
   },
-  "facteur hiver": {
-    "valeur": 2.68,
+  "logement . vacances . résidence secondaire . localisation . littoral méditerranéen . facteur saison . facteur hiver": {
+    "valeur": 1.62,
     "optimized": true
   },
-  "facteur surtout hiver": {
-    "valeur": 2.15,
+  "logement . vacances . résidence secondaire . localisation . littoral méditerranéen . facteur saison . facteur surtout hiver": {
+    "valeur": 1.41,
     "optimized": true
   },
-  "facteur été": {
-    "valeur": 0.06,
+  "logement . vacances . résidence secondaire . localisation . littoral méditerranéen . facteur saison . facteur été": {
+    "valeur": 0,
     "optimized": true
   },
-  "facteur surtout été": {
-    "valeur": 0.76,
+  "logement . vacances . résidence secondaire . localisation . littoral méditerranéen . facteur saison . facteur surtout été": {
+    "valeur": 0.13,
     "optimized": true
   },
   "logement . vacances . résidence secondaire . localisation . littoral nord ouest . facteur saison": {
-    "avec": {
-      "facteur hiver": 2.26,
-      "facteur surtout hiver": 1.71,
-      "facteur été": 0.06,
-      "facteur surtout été": 0.46
-    },
     "formule": {
       "variations": [
         {
@@ -7819,14 +7659,24 @@
     },
     "titre": "season factor",
     "titre.auto": "season factor"
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral nord ouest . facteur saison . facteur hiver": {
+    "valeur": 2.26,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral nord ouest . facteur saison . facteur surtout hiver": {
+    "valeur": 1.71,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral nord ouest . facteur saison . facteur été": {
+    "valeur": 0.06,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral nord ouest . facteur saison . facteur surtout été": {
+    "valeur": 0.46,
+    "optimized": true
   },
   "logement . vacances . résidence secondaire . localisation . campagne . facteur saison": {
-    "avec": {
-      "facteur hiver": 2.26,
-      "facteur surtout hiver": 1.71,
-      "facteur été": 0.06,
-      "facteur surtout été": 0.46
-    },
     "formule": {
       "variations": [
         {
@@ -7849,14 +7699,24 @@
     },
     "titre": "season factor",
     "titre.auto": "season factor"
+  },
+  "logement . vacances . résidence secondaire . localisation . campagne . facteur saison . facteur hiver": {
+    "valeur": 2.26,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . campagne . facteur saison . facteur surtout hiver": {
+    "valeur": 1.71,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . campagne . facteur saison . facteur été": {
+    "valeur": 0.06,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . campagne . facteur saison . facteur surtout été": {
+    "valeur": 0.46,
+    "optimized": true
   },
   "logement . vacances . résidence secondaire . localisation . ville . facteur saison": {
-    "avec": {
-      "facteur hiver": 2.26,
-      "facteur surtout hiver": 1.71,
-      "facteur été": 0.06,
-      "facteur surtout été": 0.46
-    },
     "formule": {
       "variations": [
         {
@@ -7880,13 +7740,23 @@
     "titre": "season factor",
     "titre.auto": "season factor"
   },
+  "logement . vacances . résidence secondaire . localisation . ville . facteur saison . facteur hiver": {
+    "valeur": 2.26,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . ville . facteur saison . facteur surtout hiver": {
+    "valeur": 1.71,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . ville . facteur saison . facteur été": {
+    "valeur": 0.06,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . ville . facteur saison . facteur surtout été": {
+    "valeur": 0.46,
+    "optimized": true
+  },
   "logement . vacances . résidence secondaire . localisation . montagne . facteur saison": {
-    "avec": {
-      "facteur hiver": 2.68,
-      "facteur surtout hiver": 2.15,
-      "facteur été": 0.06,
-      "facteur surtout été": 0.76
-    },
     "formule": {
       "variations": [
         {
@@ -7909,6 +7779,22 @@
     },
     "titre": "season factor",
     "titre.auto": "season factor"
+  },
+  "logement . vacances . résidence secondaire . localisation . montagne . facteur saison . facteur hiver": {
+    "valeur": 2.68,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . montagne . facteur saison . facteur surtout hiver": {
+    "valeur": 2.15,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . montagne . facteur saison . facteur été": {
+    "valeur": 0.06,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . montagne . facteur saison . facteur surtout été": {
+    "valeur": 0.76,
+    "optimized": true
   },
   "logement . vacances . résidence secondaire . saison": {
     "question": "Which season(s) do you visit your second home most often?",
@@ -7968,9 +7854,6 @@
     "titre": "Market services",
     "unité": "kgCO2e",
     "titre.auto": "Market services",
-    "avec": {
-      "poids des services marchands espagnols": 195.06
-    },
     "valeur": "195.06",
     "optimized": true
   },
@@ -7982,9 +7865,6 @@
     "titre": "Public Services",
     "unité": "kgCO2e",
     "titre.auto": "Public services",
-    "avec": {
-      "poids des services publics espagnols": 1142.5
-    },
     "valeur": "1142.5",
     "optimized": true
   },

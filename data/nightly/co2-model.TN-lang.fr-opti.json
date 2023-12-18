@@ -711,10 +711,6 @@
     "optimized": true
   },
   "logement . chauffage collectif": {
-    "avec": {
-      "collectif": null,
-      "individuel": null
-    },
     "question": "Votre chauffage est-il collectif ou individuel ?",
     "par défaut": "'collectif'",
     "note": "On fait l'hypothèse que l'action est applicable seulement pour les appartements chauffés via un réseau de gaz ou fioul collectif.  \nEn effet, côté particulier, il est préférable de travailler avec les copropriétaires d'un immeuble car le logement individuel n'est\npas une cible prioritaire pour ce type de solution, à la fois pour des questions de rentabilité économique mais également car la densité\nthermique du réseau serait trop faible au vu de la consommation d'un logement individuel.\n",
@@ -728,8 +724,8 @@
       }
     }
   },
-  "collectif": {},
-  "individuel": {},
+  "logement . chauffage collectif . collectif": null,
+  "logement . chauffage collectif . individuel": null,
   "logement . électricité verte": {
     "titre": "Souscrire à un contrat d'électricité verte",
     "icônes": "☮️⚡",
@@ -990,14 +986,6 @@
     "note": "On considère qu'un déplacement domicile travail effectué en voiture peut-être remplacé par un train régional et non par un TGV.\n"
   },
   "transport . boulot . commun . type": {
-    "avec": {
-      "bus": null,
-      "métro ou tramway": null,
-      "TER": null,
-      "vélo classique": null,
-      "vélo électrique": null,
-      "trotinette électrique": null
-    },
     "question": "Si vous deviez ne plus prendre votre voiture pour vous rendre au travail quel autre moyen de transport pourriez-vous utiliser ?",
     "par défaut": "'bus'",
     "formule": {
@@ -1014,12 +1002,12 @@
       }
     }
   },
-  "bus": {},
-  "métro ou tramway": {},
-  "TER": {},
-  "vélo classique": {},
-  "vélo électrique": {},
-  "trotinette électrique": {},
+  "transport . boulot . commun . type . bus": null,
+  "transport . boulot . commun . type . métro ou tramway": null,
+  "transport . boulot . commun . type . TER": null,
+  "transport . boulot . commun . type . vélo classique": null,
+  "transport . boulot . commun . type . vélo électrique": null,
+  "transport . boulot . commun . type . trotinette électrique": null,
   "transport . boulot . recalcul vélo": {
     "valeur": "9.666666666666666",
     "optimized": true
@@ -2649,10 +2637,6 @@
   },
   "divers . animaux domestiques . empreinte . chats . alimentation . besoins énergétiques journaliers . facteur énergie . activité": {
     "titre": "Niveau d'activité du chat",
-    "avec": {
-      "actif": null,
-      "peu actif": null
-    },
     "par défaut": "'actif'"
   },
   "divers . animaux domestiques . empreinte . chiens": {
@@ -2824,11 +2808,6 @@
   },
   "divers . animaux domestiques . empreinte . chiens . alimentation . besoins énergétiques journaliers . facteur énergie . activité": {
     "titre": "Niveau d'activité du chien",
-    "avec": {
-      "très actif": null,
-      "actif": null,
-      "peu actif": null
-    },
     "par défaut": "'actif'"
   },
   "divers . autres produits": {
@@ -4461,9 +4440,6 @@
     "optimized": true
   },
   "empreinte branche . A01 par hab": {
-    "avec": {
-      "ratio horticulture": "2%"
-    },
     "description": "Produits de l'agriculture et de la chasse et services annexes par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Cultures non permanentes (58%)**\n\t- Culture de céréales (à l'exception du riz), de légumineuses et de graines oléagineuses (16%)\n\t- Culture de légumes, de melons, de racines et de tubercules (2%)\n\t- Culture de plantes à fibres (1%)\n\t- Autres cultures non permanentes (81%)\n- **Cultures permanentes (4%)**\n\t- Culture de la vigne (76%)\n\t- Culture de plantes à boissons (0%)\n\t- Culture de plantes à épices, aromatiques, médicinales et pharmaceutiques (24%)\n\t- Autres cultures permanentes (0%)\n- **Reproduction de plantes (0%)**\n- **Production animale (34%)**\n\t- Élevage de vaches laitières (0%)\n\t- Élevage de porcins (1%)\n\t- Élevage de volailles (99%)\n\t- Élevage d'autres animaux (0%)\n- **Culture et élevage associés (0%)**\n- **Activités de soutien à l'agriculture et traitement primaire des récoltes (3%)**\n\t- Activités de soutien aux cultures (45%)\n\t- Activités de soutien à la production animale (32%)\n\t- Traitement primaire des récoltes (22%)",
     "formule": "(34018 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Produits de l'agriculture et de la chasse et services annexes par habitant",
@@ -4471,10 +4447,6 @@
     "optimized": true
   },
   "empreinte branche . C15 par hab": {
-    "avec": {
-      "ratio maroquinerie": "73%",
-      "ratio tapis": "6%"
-    },
     "description": "Industrie du cuir et de la chaussure par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Apprêt et tannage des cuirs ; préparation et teinture des fourrures ; fabrication d'articles de voyage, de maroquinerie et de sellerie (87%)**\n\t- Apprêt et tannage des cuirs ; préparation et teinture des fourrures (8%)\n\t- Fabrication d'articles de voyage, de maroquinerie et de sellerie (92%)\n- **Fabrication de chaussures (13%)**",
     "formule": "(2153.4 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Industrie du cuir et de la chaussure par habitant",
@@ -4482,9 +4454,6 @@
     "optimized": true
   },
   "empreinte branche . C16 par hab": {
-    "avec": {
-      "ratio produits petits travaux": "0.7%"
-    },
     "description": "Bois, articles en bois et en liège, à l'exclusion des meubles; articles de vannerie et de sparterie par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Sciage et rabotage du bois (32%)**\n- **Fabrication d'articles en bois, liège, vannerie et sparterie (68%)**\n\t- Fabrication de placage et de panneaux de bois (20%)\n\t- Fabrication de parquets assemblés (1%)\n\t- Fabrication de charpentes et d'autres menuiseries (40%)\n\t- Fabrication d'emballages en bois (29%)\n\t- Fabrication d'objets divers en bois ; fabrication d'objets en liège, vannerie et sparterie (10%)",
     "formule": "(231 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Bois, articles en bois et en liège, à l'exclusion des meubles; articles de vannerie et de sparterie par habitant",
@@ -4492,9 +4461,6 @@
     "optimized": true
   },
   "empreinte branche . C17 par hab": {
-    "avec": {
-      "ratio produits petits travaux": "0.2%"
-    },
     "description": "Papier et carton par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de pâte à papier, de papier et de carton (32%)**\n\t- Fabrication de pâte à papier (10%)\n\t- Fabrication de papier et de carton (90%)\n- **Fabrication d'articles en papier ou en carton (68%)**\n\t- Fabrication de papier et carton ondulés et d'emballages en papier ou en carton (60%)\n\t- Fabrication d'articles en papier à usage sanitaire ou domestique (18%)\n\t- Fabrication d'articles de papeterie (6%)\n\t- Fabrication de papiers peints (0%)\n\t- Fabrication d'autres articles en papier ou en carton (15%)",
     "formule": "(1867 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Papier et carton par habitant",
@@ -4502,9 +4468,6 @@
     "optimized": true
   },
   "empreinte branche . C20 par hab": {
-    "avec": {
-      "ratio produits petits travaux": "6.1%"
-    },
     "description": "Produits chimiques par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de produits chimiques de base, de produits azotés et d'engrais, de matières plastiques de base et de caoutchouc synthétique (48%)**\n\t- Fabrication de gaz industriels (S)\n\t- Fabrication de colorants et de pigments (2%)\n\t- Fabrication d'autres produits chimiques inorganiques de base (17%)\n\t- Fabrication d'autres produits chimiques organiques de base (39%)\n\t- Fabrication de produits azotés et d'engrais (6%)\n\t- Fabrication de matières plastiques de base (29%)\n\t- Fabrication de caoutchouc synthétique (S)\n- **Fabrication de pesticides et d’autres produits agrochimiques (4%)**\n- **Fabrication de peintures, vernis, encres et mastics (6%)**\n- **Fabrication de savons, de produits d'entretien et de parfums (28%)**\n\t- Fabrication de savons, détergents et produits d'entretien (9%)\n\t- Fabrication de parfums et de produits pour la toilette (91%)\n- **Fabrication d'autres produits chimiques (15%)**\n\t- Fabrication de produits explosifs (7%)\n\t- Fabrication de colles (8%)\n\t- Fabrication d'huiles essentielles (18%)\n\t- Fabrication d'autres produits chimiques n.c.a. (67%)\n- **Fabrication de fibres artificielles ou synthétiques (0%)**",
     "formule": "(6655 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Produits chimiques par habitant",
@@ -4512,9 +4475,6 @@
     "optimized": true
   },
   "empreinte branche . C23 par hab": {
-    "avec": {
-      "ratio vaisselle": "8.9%"
-    },
     "description": "Autres produits minéraux non métalliques par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de verre et d'articles en verre (27%)**\n\t- Fabrication de verre plat (7%)\n\t- Façonnage et transformation du verre plat (29%)\n\t- Fabrication de verre creux (46%)\n\t- Fabrication de fibres de verre (12%)\n\t- Fabrication et façonnage d'autres articles en verre, y compris verre technique (6%)\n- **Fabrication de produits réfractaires (2%)**\n- **Fabrication de matériaux de construction en terre cuite (5%)**\n\t- Fabrication de carreaux en céramique (14%)\n\t- Fabrication de briques, tuiles et produits de construction, en terre cuite (86%)\n- **Fabrication d'autres produits en céramique et en porcelaine (2%)**\n\t- Fabrication d'articles céramiques à usage domestique ou ornemental (41%)\n\t- Fabrication d'appareils sanitaires en céramique (S)\n\t- Fabrication d'isolateurs et pièces isolantes en céramique (5%)\n\t- Fabrication d'autres produits céramiques à usage technique (28%)\n\t- Fabrication d'autres produits céramiques (S)\n- **Fabrication de ciment, chaux et plâtre (11%)**\n\t- Fabrication de ciment (S)\n\t- Fabrication de chaux et plâtre (S)\n- **Fabrication d'ouvrages en béton, en ciment ou en plâtre (40%)**\n\t- Fabrication d'éléments en béton pour la construction (28%)\n\t- Fabrication d'éléments en plâtre pour la construction (8%)\n\t- Fabrication de béton prêt à l'emploi (51%)\n\t- Fabrication de mortiers et bétons secs (8%)\n\t- Fabrication d'ouvrages en fibre-ciment (1%)\n\t- Fabrication d'autres ouvrages en béton, en ciment ou en plâtre (3%)\n- **Taille, façonnage et finissage de pierres (3%)**\n- **Fabrication de produits abrasifs et de produits minéraux non métalliques n.c.a. (10%)**\n\t- Fabrication de produits abrasifs (8%)\n\t- Fabrication d'autres produits minéraux non métalliques n.c.a. (92%)",
     "formule": "(3400 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Autres produits minéraux non métalliques par habitant",
@@ -4522,10 +4482,6 @@
     "optimized": true
   },
   "empreinte branche . C25 par hab": {
-    "avec": {
-      "ratio outillage jardin": "4.6%",
-      "ratio vaisselle": "0.4%"
-    },
     "description": "Produits métalliques, à l'exclusion des machines et équipements par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication d'éléments en métal pour la construction (16%)**\n\t- Fabrication de structures métalliques et de parties de structures (100%)\n\t- Fabrication de portes et fenêtres en métal (S)\n- **Fabrication de réservoirs, citernes et conteneurs métalliques (1%)**\n\t- Fabrication de radiateurs et de chaudières pour le chauffage central (S)\n\t- Fabrication d'autres réservoirs, citernes et conteneurs métalliques (100%)\n- **Fabrication de générateurs de vapeur, à l'exception des chaudières pour le chauffage central (0%)**\n- **Fabrication d'armes et de munitions (S)**\n- **Forge, emboutissage, estampage ; métallurgie des poudres (15%)**\n- **Traitement et revêtement des métaux ; usinage (27%)**\n\t- Traitement et revêtement des métaux (24%)\n\t- Usinage (76%)\n- **Fabrication de coutellerie, d'outillage et de quincaillerie (7%)**\n\t- Fabrication de coutellerie (6%)\n\t- Fabrication de serrures et de ferrures (31%)\n\t- Fabrication d'outillage (63%)\n- **Fabrication d'autres ouvrages en métaux (17%)**\n\t- Fabrication de fûts et emballages métalliques similaires (2%)\n\t- Fabrication d'emballages métalliques légers (21%)\n\t- Fabrication d'articles en fils métalliques, de chaînes et de ressorts (23%)\n\t- Fabrication de vis et de boulons (14%)\n\t- Fabrication d'autres produits métalliques n.c.a. (40%)",
     "formule": "(3598 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Produits métalliques, à l'exclusion des machines et équipements par habitant",
@@ -4533,9 +4489,6 @@
     "optimized": true
   },
   "empreinte branche . C26 par hab": {
-    "avec": {
-      "ratio autres produits manufacturés": "1%"
-    },
     "description": "Produits informatiques, électroniques et optiques par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de composants et cartes électroniques (33%)**\n\t- Fabrication de composants électroniques (63%)\n\t- Fabrication de cartes électroniques assemblées (37%)\n- **Fabrication d'ordinateurs et d'équipements périphériques (4%)**\n- **Fabrication d'équipements de communication (21%)**\n- **Fabrication de produits électroniques grand public (1%)**\n- **Fabrication d'instruments et d'appareils de mesure, d'essai et de navigation ; horlogerie (34%)**\n\t- Fabrication d'instruments et d'appareils de mesure, d'essai et de navigation (96%)\n\t- Horlogerie (4%)\n- **Fabrication d'équipements d'irradiation médicale, d'équipements électromédicaux et électrothérapeutiques (4%)**\n- **Fabrication de matériels optique et photographique (3%)**\n- **Fabrication de supports magnétiques et optiques (0%)**",
     "formule": "(4987 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Produits informatiques, électroniques et optiques par habitant",
@@ -4543,9 +4496,6 @@
     "optimized": true
   },
   "empreinte branche . C28 par hab": {
-    "avec": {
-      "ratio outillage jardin": "0.4%"
-    },
     "description": "Machines et équipements n.c.a. par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication de machines d'usage général (29%)**\n\t- Fabrication de moteurs et turbines, à l'exception des moteurs d’avions et de véhicules (24%)\n\t- Fabrication d'équipements hydrauliques et pneumatiques (13%)\n\t- Fabrication d'autres pompes et compresseurs (26%)\n\t- Fabrication d'autres articles de robinetterie (16%)\n\t- Fabrication d'engrenages et d'organes mécaniques de transmission (20%)\n- **Fabrication d'autres machines d'usage général (38%)**\n\t- Fabrication de fours et brûleurs (5%)\n\t- Fabrication de matériel de levage et de manutention (37%)\n\t- Fabrication de machines et d'équipements de bureau (à l'exception des ordinateurs et équipements périphériques) (2%)\n\t- Fabrication d'outillage portatif à moteur incorporé (1%)\n\t- Fabrication d'équipements aérauliques et frigorifiques industriels (28%)\n\t- Fabrication de machines diverses d'usage général (28%)\n- **Fabrication de machines agricoles et forestières (11%)**\n- **Fabrication de machines de formage des métaux et de machines-outils (3%)**\n\t- Fabrication de machines de formage des métaux (81%)\n\t- Fabrication d'autres machines-outils (19%)\n- **Fabrication d'autres machines d'usage spécifique (19%)**\n\t- Fabrication de machines pour la métallurgie (2%)\n\t- Fabrication de machines pour l'extraction ou la construction (24%)\n\t- Fabrication de machines pour l'industrie agro-alimentaire (22%)\n\t- Fabrication de machines pour les industries textiles (10%)\n\t- Fabrication de machines pour les industries du papier et du carton (6%)\n\t- Fabrication de machines pour le travail du caoutchouc ou des plastiques (9%)\n\t- Fabrication d'autres machines d'usage spécifique n.c.a. (27%)",
     "formule": "(4804 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Machines et équipements n.c.a. par habitant",
@@ -4553,10 +4503,6 @@
     "optimized": true
   },
   "empreinte branche . C32 par hab": {
-    "avec": {
-      "ratio autres produits manufacturés": "38%",
-      "ratio produits petits travaux": "1.2%"
-    },
     "description": "Autres industries manufacturières par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Fabrication d’articles de joaillerie, bijouterie et articles similaires (17%)**\n\t- Frappe de monnaie (S)\n\t- Fabrication d’articles de joaillerie et bijouterie (S)\n\t- Fabrication d’articles de bijouterie fantaisie et articles similaires (20%)\n- **Fabrication d'instruments de musique (2%)**\n- **Fabrication d'articles de sport (6%)**\n- **Fabrication de jeux et jouets (3%)**\n- **Fabrication d'instruments et de fournitures à usage médical et dentaire (59%)**\n- **Activités manufacturières n.c.a. (12%)**\n\t- Fabrication d’articles de brosserie (8%)\n\t- Autres activités manufacturières n.c.a. (92%)",
     "formule": "(4287.36 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Autres industries manufacturières par habitant",
@@ -4564,15 +4510,6 @@
     "optimized": true
   },
   "empreinte branche . G46 par hab": {
-    "avec": {
-      "ratio autres produits manufacturés": "0.2%",
-      "ratio horticulture": "0.2%",
-      "ratio maroquinerie": "0.1%",
-      "ratio outillage jardin": "0.3%",
-      "ratio produits petits travaux": "1.9%",
-      "ratio tapis": "0.4%",
-      "ratio vaisselle": "0.7%"
-    },
     "description": "Commerce de gros, à l'exclusion des automobiles et des motocycles par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Intermédiaires du commerce de gros (17%)**\n\t- Intermédiaires du commerce en matières premières agricoles, animaux vivants, matières premières textiles et produits semi-finis (1%)\n\t- Intermédiaires du commerce en combustibles, métaux, minéraux et produits chimiques (25%)\n\t- Intermédiaires du commerce en bois et matériaux de construction (0%)\n\t- Intermédiaires du commerce en machines, équipements industriels, navires et avions (2%)\n\t- Intermédiaires du commerce en meubles, articles de ménage et quincaillerie (1%)\n\t- Intermédiaires du commerce en textiles, habillement, fourrures, chaussures et articles en cuir (0%)\n\t- Intermédiaires du commerce en denrées, boissons et tabac (44%)\n\t- Intermédiaires spécialisés dans le commerce d'autres produits spécifiques (5%)\n\t- Intermédiaires du commerce en produits divers (21%)\n- **Commerce de gros de produits agricoles bruts et d'animaux vivants (6%)**\n\t- Commerce de gros de céréales, de tabac non manufacturé, de semences et d'aliments pour le bétail (68%)\n\t- Commerce de gros de fleurs et plantes (3%)\n\t- Commerce de gros d'animaux vivants (28%)\n\t- Commerce de gros de cuirs et peaux (1%)\n- **Commerce de gros de produits alimentaires, de boissons et de tabac (16%)**\n\t- Commerce de gros de fruits et légumes (15%)\n\t- Commerce de gros de viandes et de produits à base de viande (6%)\n\t- Commerce de gros de produits laitiers, œufs, huiles et matières grasses comestibles (9%)\n\t- Commerce de gros de boissons (18%)\n\t- Commerce de gros de produits à base de tabac (2%)\n\t- Commerce de gros de sucre, chocolat et confiserie (7%)\n\t- Commerce de gros de café, thé, cacao et épices (6%)\n\t- Commerce de gros d'autres produits alimentaires, y compris poissons, crustacés et mollusques (14%)\n\t- Commerce de gros non spécialisé de denrées, boissons et tabac (23%)\n- **Commerce de gros de biens domestiques (18%)**\n\t- Commerce de gros de textiles (2%)\n\t- Commerce de gros d'habillement et de chaussures (12%)\n\t- Commerce de gros d'appareils électroménagers (9%)\n\t- Commerce de gros de vaisselle, verrerie et produits d'entretien (3%)\n\t- Commerce de gros de parfumerie et de produits de beauté (6%)\n\t- Commerce de gros de produits pharmaceutiques (46%)\n\t- Commerce de gros de meubles, de tapis et d'appareils d'éclairage (2%)\n\t- Commerce de gros d'articles d'horlogerie et de bijouterie (2%)\n\t- Commerce de gros d'autres biens domestiques (18%)\n- **Commerce de gros d'équipements de l'information et de la communication (7%)**\n\t- Commerce de gros d'ordinateurs, d'équipements informatiques périphériques et de logiciels (60%)\n\t- Commerce de gros de composants et d'équipements électroniques et de télécommunication (40%)\n- **Commerce de gros d'autres équipements industriels (14%)**\n\t- Commerce de gros de matériel agricole (15%)\n\t- Commerce de gros de machines-outils (2%)\n\t- Commerce de gros de machines pour l'extraction, la construction et le génie civil (6%)\n\t- Commerce de gros de machines pour l'industrie textile et l'habillement (0%)\n\t- Commerce de gros de mobilier de bureau (1%)\n\t- Commerce de gros d'autres machines et équipements de bureau (3%)\n\t- Commerce de gros d'autres machines et équipements (73%)\n- **Autres commerces de gros spécialisés (19%)**\n\t- Commerce de gros de combustibles et de produits annexes (36%)\n\t- Commerce de gros de minerais et métaux (8%)\n\t- Commerce de gros de bois, de matériaux de construction et d'appareils sanitaires (22%)\n\t- Commerce de gros de quincaillerie et fournitures pour plomberie et chauffage (9%)\n\t- Commerce de gros de produits chimiques (17%)\n\t- Commerce de gros d'autres produits intermédiaires (7%)\n\t- Commerce de gros de déchets et débris (1%)\n- **Commerce de gros non spécialisé (2%)**",
     "formule": "(7112 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Commerce de gros, à l'exclusion des automobiles et des motocycles par habitant",
@@ -4580,13 +4517,6 @@
     "optimized": true
   },
   "empreinte branche . G47 par hab": {
-    "avec": {
-      "ratio autres produits manufacturés": "3.5%",
-      "ratio horticulture": "1.5%",
-      "ratio maroquinerie": "0.5%",
-      "ratio produits petits travaux": "4.4%",
-      "ratio tapis": "0.2%"
-    },
     "description": "Commerce de détail, à l'exclusion des automobiles et des motocycles par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Commerce de détail en magasin non spécialisé (39%)**\n\t- Commerce de détail en magasin non spécialisé à prédominance alimentaire (91%)\n\t- Autre commerce de détail en magasin non spécialisé (9%)\n- **Commerce de détail alimentaire en magasin spécialisé (5%)**\n\t- Commerce de détail de fruits et légumes en magasin spécialisé (15%)\n\t- Commerce de détail de viandes et de produits à base de viande en magasin spécialisé (25%)\n\t- Commerce de détail de poissons, crustacés et mollusques en magasin spécialisé (4%)\n\t- Commerce de détail de pain, pâtisserie et confiserie en magasin spécialisé (6%)\n\t- Commerce de détail de boissons en magasin spécialisé (17%)\n\t- Commerce de détail de produits à base de tabac en magasin spécialisé (7%)\n\t- Autres commerces de détail alimentaires en magasin spécialisé (27%)\n- **Commerce de détail de carburants en magasin spécialisé (9%)**\n- **Commerce de détail d'équipements de l'information et de la communication en magasin spécialisé (1%)**\n\t- Commerce de détail d'ordinateurs, d'unités périphériques et de logiciels en magasin spécialisé (42%)\n\t- Commerce de détail de matériels de télécommunication en magasin spécialisé (46%)\n\t- Commerce de détail de matériels audio/vidéo en magasin spécialisé (12%)\n- **Commerce de détail d'autres équipements du foyer en magasin spécialisé (9%)**\n\t- Commerce de détail de textiles en magasin spécialisé (3%)\n\t- Commerce de détail de quincaillerie, peintures et verres en magasin spécialisé (49%)\n\t- Commerce de détail de tapis, moquettes et revêtements de murs et de sols en magasin spécialisé (2%)\n\t- Commerce de détail d'appareils électroménagers en magasin spécialisé (10%)\n\t- Commerce de détail de meubles, appareils d'éclairage et autres articles de ménage en magasin spécialisé (36%)\n- **Commerce de détail de biens culturels et de loisirs en magasin spécialisé (4%)**\n\t- Commerce de détail de livres en magasin spécialisé (27%)\n\t- Commerce de détail de journaux et papeterie en magasin spécialisé (12%)\n\t- Commerce de détail d'enregistrements musicaux et vidéo en magasin spécialisé (1%)\n\t- Commerce de détail d'articles de sport en magasin spécialisé (54%)\n\t- Commerce de détail de jeux et jouets en magasin spécialisé (7%)\n- **Autres commerces de détail en magasin spécialisé (24%)**\n\t- Commerce de détail d'habillement en magasin spécialisé (24%)\n\t- Commerce de détail de chaussures et d'articles en cuir en magasin spécialisé (6%)\n\t- Commerce de détail de produits pharmaceutiques en magasin spécialisé (31%)\n\t- Commerce de détail d'articles médicaux et orthopédiques en magasin spécialisé (2%)\n\t- Commerce de détail de parfumerie et de produits de beauté en magasin spécialisé (5%)\n\t- Commerce de détail de fleurs, plantes, graines, engrais, animaux de compagnie et aliments pour ces animaux en magasin spécialisé (5%)\n\t- Commerce de détail d'articles d'horlogerie et de bijouterie en magasin spécialisé (3%)\n\t- Autre commerce de détail de biens neufs en magasin spécialisé (21%)\n\t- Commerce de détail de biens d'occasion en magasin (2%)\n- **Commerce de détail sur éventaires et marchés (1%)**\n\t- Commerce de détail alimentaire sur éventaires et marchés (75%)\n\t- Commerce de détail de textiles, d'habillement et de chaussures sur éventaires et marchés (5%)\n\t- Autres commerces de détail sur éventaires et marchés (20%)\n- **Commerce de détail hors magasin, éventaires ou marchés (7%)**\n\t- Vente à distance (89%)\n\t- Autres commerces de détail hors magasin, éventaires ou marchés (11%)",
     "formule": "(21574 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "Commerce de détail, à l'exclusion des automobiles et des motocycles par habitant",
@@ -4594,9 +4524,6 @@
     "optimized": true
   },
   "empreinte branche . S95 par hab": {
-    "avec": {
-      "ratio réparations": "100%"
-    },
     "description": "Services de réparation d'ordinateurs et de biens personnels et domestiques par habitant\n\n> La description ci-dessous correspond à la part de chaque sous-classe de la branche (en % de chiffre d'affaire)\n\n- **Réparation d'ordinateurs et d'équipements de communication (64%)**\n\t- Réparation d'ordinateurs et d'équipements périphériques (83%)\n\t- Réparation d'équipements de communication (17%)\n- **Réparation de biens personnels et domestiques (36%)**\n\t- Réparation de produits électroniques grand public (12%)\n\t- Réparation d'appareils électroménagers et d'équipements pour la maison et le jardin (27%)\n\t- Réparation de chaussures et d'articles en cuir (18%)\n\t- Réparation de meubles et d'équipements du foyer (8%)\n\t- Réparation d'articles d'horlogerie et de bijouterie (7%)\n\t- Réparation d'autres biens personnels et domestiques (29%)",
     "formule": "(1114 * 1000000kgCO2e/ktCO2e) / 66774482",
     "titre": "autres services personnels par habitant",
@@ -6306,12 +6233,6 @@
     }
   },
   "logement . vacances . résidence secondaire . localisation . littoral méditerranéen . facteur saison": {
-    "avec": {
-      "facteur hiver": 1.62,
-      "facteur surtout hiver": 1.41,
-      "facteur été": 0,
-      "facteur surtout été": 0.13
-    },
     "formule": {
       "variations": [
         {
@@ -6333,29 +6254,23 @@
       ]
     }
   },
-  "facteur hiver": {
-    "valeur": 2.68,
+  "logement . vacances . résidence secondaire . localisation . littoral méditerranéen . facteur saison . facteur hiver": {
+    "valeur": 1.62,
     "optimized": true
   },
-  "facteur surtout hiver": {
-    "valeur": 2.15,
+  "logement . vacances . résidence secondaire . localisation . littoral méditerranéen . facteur saison . facteur surtout hiver": {
+    "valeur": 1.41,
     "optimized": true
   },
-  "facteur été": {
-    "valeur": 0.06,
+  "logement . vacances . résidence secondaire . localisation . littoral méditerranéen . facteur saison . facteur été": {
+    "valeur": 0,
     "optimized": true
   },
-  "facteur surtout été": {
-    "valeur": 0.76,
+  "logement . vacances . résidence secondaire . localisation . littoral méditerranéen . facteur saison . facteur surtout été": {
+    "valeur": 0.13,
     "optimized": true
   },
   "logement . vacances . résidence secondaire . localisation . littoral nord ouest . facteur saison": {
-    "avec": {
-      "facteur hiver": 2.26,
-      "facteur surtout hiver": 1.71,
-      "facteur été": 0.06,
-      "facteur surtout été": 0.46
-    },
     "formule": {
       "variations": [
         {
@@ -6376,14 +6291,24 @@
         }
       ]
     }
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral nord ouest . facteur saison . facteur hiver": {
+    "valeur": 2.26,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral nord ouest . facteur saison . facteur surtout hiver": {
+    "valeur": 1.71,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral nord ouest . facteur saison . facteur été": {
+    "valeur": 0.06,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . littoral nord ouest . facteur saison . facteur surtout été": {
+    "valeur": 0.46,
+    "optimized": true
   },
   "logement . vacances . résidence secondaire . localisation . campagne . facteur saison": {
-    "avec": {
-      "facteur hiver": 2.26,
-      "facteur surtout hiver": 1.71,
-      "facteur été": 0.06,
-      "facteur surtout été": 0.46
-    },
     "formule": {
       "variations": [
         {
@@ -6404,14 +6329,24 @@
         }
       ]
     }
+  },
+  "logement . vacances . résidence secondaire . localisation . campagne . facteur saison . facteur hiver": {
+    "valeur": 2.26,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . campagne . facteur saison . facteur surtout hiver": {
+    "valeur": 1.71,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . campagne . facteur saison . facteur été": {
+    "valeur": 0.06,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . campagne . facteur saison . facteur surtout été": {
+    "valeur": 0.46,
+    "optimized": true
   },
   "logement . vacances . résidence secondaire . localisation . ville . facteur saison": {
-    "avec": {
-      "facteur hiver": 2.26,
-      "facteur surtout hiver": 1.71,
-      "facteur été": 0.06,
-      "facteur surtout été": 0.46
-    },
     "formule": {
       "variations": [
         {
@@ -6433,13 +6368,23 @@
       ]
     }
   },
+  "logement . vacances . résidence secondaire . localisation . ville . facteur saison . facteur hiver": {
+    "valeur": 2.26,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . ville . facteur saison . facteur surtout hiver": {
+    "valeur": 1.71,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . ville . facteur saison . facteur été": {
+    "valeur": 0.06,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . ville . facteur saison . facteur surtout été": {
+    "valeur": 0.46,
+    "optimized": true
+  },
   "logement . vacances . résidence secondaire . localisation . montagne . facteur saison": {
-    "avec": {
-      "facteur hiver": 2.68,
-      "facteur surtout hiver": 2.15,
-      "facteur été": 0.06,
-      "facteur surtout été": 0.76
-    },
     "formule": {
       "variations": [
         {
@@ -6460,6 +6405,22 @@
         }
       ]
     }
+  },
+  "logement . vacances . résidence secondaire . localisation . montagne . facteur saison . facteur hiver": {
+    "valeur": 2.68,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . montagne . facteur saison . facteur surtout hiver": {
+    "valeur": 2.15,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . montagne . facteur saison . facteur été": {
+    "valeur": 0.06,
+    "optimized": true
+  },
+  "logement . vacances . résidence secondaire . localisation . montagne . facteur saison . facteur surtout été": {
+    "valeur": 0.76,
+    "optimized": true
   },
   "logement . vacances . résidence secondaire . saison": {
     "question": "À quelle(s) saison(s) vous rendez-vous majoritairement dans votre résidence secondaire ?",
@@ -6534,32 +6495,25 @@
     "description": "> Le calcul de l'empreinte des services sociétaux pour la Tunisie **est basé sur celui des services sociétaux français**.\n> C'est donc une première estimation qui pourra être raffinée dans le futur.  \n\nCe poste inclus l'empreinte des services publics français, et des services marchands que l'on peut considérer comme étant essentiels à la vie de chacun, divisées par la population du pays.  \n\nLa première catégorie \"services publics\" comprend par exemple l'empreinte des hôpitaux français, ou de la justice. Nous considérons que cette empreinte doit être également répartie pour tous les citoyens, car ce sont des postes \"républicains\" que seule la démocratie peut faire évoluer, pas directement par les choix de consommation individuels. \n\nLa deuxième catégorie \"services marchands\" comprend notamment le réseau de télécommunications (fibre, téléphone, etc.), mais aussi les assurances ou encore la poste. Ce sont des services relativement universels pour lesquels nous n'avons pas encore le détail qui nous permettrait de répartir l'empreinte en fonction des choix de consommation des citoyens.\n",
     "note": "Sources:\n- [Budget 2020 de la Tunisie](http://www.finances.gov.tn/fr/les-indicateurs/depenses)\n- [Budget 2020 de la France](https://www.economie.gouv.fr/facileco/comptes-publics/budget-etat)\n- [Population tunisienne au 01/01/2021](http://www.ins.tn/statistiques/111)\n- [Population française au 01/01/2021](https://www.insee.fr/fr/statistiques/5012724)\n",
     "formule": "(services publics + services marchands) * (budget Tunisie 2020 * taux de change / population Tunisie) / (budget France 2020 / population française)",
-    "unité": "kgCO2e",
-    "avec": {
-      "budget Tunisie 2020": "37703 MDT",
-      "population Tunisie": "11.7 Mhab",
-      "taux de change": "0.3 M€/MDT",
-      "budget France 2020": "343700 M€",
-      "population française": "67.4 Mhab"
-    }
+    "unité": "kgCO2e"
   },
-  "budget Tunisie 2020": {
+  "services sociétaux . budget Tunisie 2020": {
     "valeur": "37703 MDT",
     "optimized": true
   },
-  "population Tunisie": {
+  "services sociétaux . population Tunisie": {
     "valeur": "11.7 Mhab",
     "optimized": true
   },
-  "taux de change": {
+  "services sociétaux . taux de change": {
     "valeur": "0.3 M€/MDT",
     "optimized": true
   },
-  "budget France 2020": {
+  "services sociétaux . budget France 2020": {
     "valeur": "343700 M€",
     "optimized": true
   },
-  "population française": {
+  "services sociétaux . population française": {
     "valeur": "67.4 Mhab",
     "optimized": true
   },
