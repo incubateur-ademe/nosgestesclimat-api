@@ -6351,34 +6351,11 @@
     "titre.auto": "construction"
   },
   "logement . construction . annuelle et par surface": {
-    "formule": "par surface / 60",
+    "formule": "696 / 60",
     "unité": "kgCO2e/m2",
     "titre": "per year and per area",
     "titre.auto": "per year and per area",
     "optimized": true
-  },
-  "logement . construction . par surface": {
-    "formule": {
-      "variations": [
-        {
-          "si": "éco-construit",
-          "alors": "144 kgCO2e/m2"
-        },
-        {
-          "sinon": "696 kgCO2e/m2"
-        }
-      ]
-    },
-    "unité": "kgCO2e/m2",
-    "note": "Haute école fribourg 2021 report (60-year amortisation)",
-    "titre": "per surface",
-    "titre.auto": "per surface"
-  },
-  "logement . éco-construit": {
-    "question": "Is your home made of wood, straw, stone or earth (eco-built)?",
-    "par défaut": "non",
-    "titre": "eco-built",
-    "titre.auto": "eco-built"
   },
   "logement . construction . durée d'amortissement": {
     "note": "SIA standard assumption",

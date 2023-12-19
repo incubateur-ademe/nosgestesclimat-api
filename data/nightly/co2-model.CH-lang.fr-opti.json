@@ -5233,28 +5233,9 @@
     "unité": "kgCO2e"
   },
   "logement . construction . annuelle et par surface": {
-    "formule": "par surface / 60",
+    "formule": "696 / 60",
     "unité": "kgCO2e/m2",
     "optimized": true
-  },
-  "logement . construction . par surface": {
-    "formule": {
-      "variations": [
-        {
-          "si": "éco-construit",
-          "alors": 144
-        },
-        {
-          "sinon": 696
-        }
-      ]
-    },
-    "unité": "kgCO2e/m2",
-    "note": "Rapport haute école fribourg 2021 (amortissement 60 ans)"
-  },
-  "logement . éco-construit": {
-    "question": "Votre logement est-il fait en bois, paille, pierre ou terre (éco-construit) ?",
-    "par défaut": "non"
   },
   "logement . construction . durée d'amortissement": {
     "note": "Hypothèse norme SIA",

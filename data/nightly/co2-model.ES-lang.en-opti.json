@@ -6336,10 +6336,6 @@
     "formule": {
       "variations": [
         {
-          "si": "éco-construit",
-          "alors": 144
-        },
-        {
           "si": {
             "toutes ces conditions": [
               {
@@ -6356,7 +6352,7 @@
       ]
     },
     "unité": "kgCO2e/m2",
-    "note": "The carbon base entry does not provide further information on this category of construction method. Please refer to the <a href=\"https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/\">documentation of the footprint database, tab Purchases of goods/Buildings</a>.\n\nThe emission factor is entitled \"Eco-built house\", but for lack of information we assume it is the same for an eco-built apartment.\n\nHowever, <a href=\"https://www.carbone4.com/sauver-le-climat-avec-nos-forets-la-construction-touche-du-bois-2\">this Carbone 4 study</a> claims a 55% reduction from concrete to wood for the house, and 60% for the apartment.\n\nNote that for eco-built housing, the biogenic CO₂ stored is not accounted for, only the fossil CO₂ emitted is.\n\nFor eco-built housing, we retain the emission factor from the carbon base, but it appears to be confirmed in order of magnitude in the Carbone 4 study.\n\n> Gains observed on the fossil CO₂ of the shell item (foundations and structure), compared with concrete. \n\nCarbon storage in the wood product is not taken into account.\n\nGains linked to material substitution: \n - MI wood CLT: 118 kgCO2e/m2 SHON, i.e. 473 kgCO2e/m3 of wood product. \n - MI wood frame: 83 kgCO2e/m2 SHON, i.e. 2495 kgCO2e/m3 of wood product. \n - LC wood CLT: 231 kgCO2e/m2 SHON, i.e. 699 kgCO2e/m3 wood product.\n - LC wood framing: 139 kgCO2e/m2 SHON, i.e. 3172 kgCO2e/m3 of wood product.\n",
+    "note": "We decided to delete the question relating to the eco-construction of housing, as the associated carbon footprint was open to debate. As soon as we find reliable data, we'll put it back online!\n",
     "titre": "per surface",
     "titre.auto": "per surface"
   },
@@ -6375,12 +6371,6 @@
     "titre.auto": "House footprint per m2",
     "valeur": "425",
     "optimized": true
-  },
-  "logement . éco-construit": {
-    "question": "Is your home made of wood, straw, stone or earth (eco-built)?",
-    "par défaut": "non",
-    "titre": "eco-built",
-    "titre.auto": "eco-built"
   },
   "logement . construction . durée d'amortissement": {
     "note": "The lifespan of a building is set at 50 years (see <a href=\"https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/\">empreinte documentation, Asset Purchases/Buildings tab</a>).\n",
