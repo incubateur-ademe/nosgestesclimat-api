@@ -14506,13 +14506,6 @@
       "proportion passagers km AVE": 0.523
     }
   },
-  "transport . train . TER": {
-    "formule": 0.0328,
-    "unité": "kgCO2e/km",
-    "note": "Cercanías regional trains - 32.8 gCO2e/passenger-km; <a href=\"https://sede.idae.gob.es/lang/extras/tramites-servicios/2021/MOVES_Proyectos_Singulares_II/Factores_de_conversion_ahorros_y_emisiones_de_CO2.pdf\">IDAE data</a>, 2021\n",
-    "titre": "Cercanías regional trains",
-    "titre.auto": "TER"
-  },
   "transport . train . TGV": {
     "formule": "(intensité GHG TGV France / 1000 gCO2e/kgCO2e) * intensité mix électrique Espagne continentale / intensité mix électrique France métropolitaine",
     "unité": "kgCO2e/km",
@@ -14524,6 +14517,68 @@
       "intensité mix électrique Espagne continentale": "206 gCO2e/kWh",
       "intensité GHG TGV France": "2.36 gCO2e/km"
     }
+  },
+  "transport . train . TER": {
+    "formule": 0.0328,
+    "unité": "kgCO2e/km",
+    "note": "Cercanías regional trains - 32.8 gCO2e/passenger-km; <a href=\"https://sede.idae.gob.es/lang/extras/tramites-servicios/2021/MOVES_Proyectos_Singulares_II/Factores_de_conversion_ahorros_y_emisiones_de_CO2.pdf\">IDAE data</a>, 2021\n",
+    "titre": "Cercanías regional trains",
+    "titre.auto": "TER"
+  },
+  "transport . train . intercités": {
+    "formule": 0.00898,
+    "unité": "kgCO2e/km",
+    "node": "Intercités - 2022 ; 8.98 gCO2e/km/personne ; Base Carbone consultée le 19/11/2023 (Données SNCF)\n",
+    "titre": "intercités",
+    "titre.auto": "intercités"
+  },
+  "transport . train . proportion TGV": {
+    "formule": "passagers km TGV / total passagers km",
+    "note": "Figures from<a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">the Autorité de Régulation des Transports</a>.\n",
+    "titre": "tGV ratio",
+    "titre.auto": "tGV ratio"
+  },
+  "transport . train . proportion TER": {
+    "formule": "passagers km TER / total passagers km",
+    "note": "Figures from<a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">the Autorité de Régulation des Transports</a>.\n",
+    "titre": "proportion TER",
+    "titre.auto": "proportion TER"
+  },
+  "transport . train . proportion intercités": {
+    "formule": "passagers km intercités / total passagers km",
+    "note": "Figures from<a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">the Autorité de Régulation des Transports</a>.\n",
+    "titre": "proportion intercités",
+    "titre.auto": "proportion intercités"
+  },
+  "transport . train . total passagers km": {
+    "formule": {
+      "somme": [
+        "passagers km TGV",
+        "passagers km TER",
+        "passagers km intercités"
+      ]
+    },
+    "note": "Figures from the French<a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">Transport Regulation Authority</a>.\nRER and transilien journeys are not included.\n",
+    "titre": "total passengers km",
+    "titre.auto": "total passengers km"
+  },
+  "transport . train . passagers km TGV": {
+    "formule": "54 + 7",
+    "note": "Figures from<a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">the French Transport Regulation Authority</a>.\nRER and transilien journeys are not included.\n",
+    "titre": "passengers km TGV",
+    "titre.auto": "passengers km TGV"
+  },
+  "transport . train . passagers km TER": {
+    "formule": 19,
+    "note": "Figures from<a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">the French Transport Regulation Authority</a>.\nRER and transilien journeys are not included.\n",
+    "titre": "passengers km TER",
+    "titre.auto": "passengers km TER"
+  },
+  "transport . train . passagers km intercités": {
+    "formule": "3 + 0.5",
+    "note": "Figures from<a href=\"https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf\">the French Transport Regulation Authority</a>.\nRER and transilien journeys are not included.\n",
+    "titre": "passengers km intercity",
+    "titre.auto": "passengers km intercity"
   },
   "transport . train . km": {
     "question": "How many kilometers do you travel by train per year?",

@@ -8792,10 +8792,10 @@
   },
   "transport . train . TER": {
     "unité": "kgCO2e/km",
-    "note": "TER - 2019 - Average traction; 29.6 gCO2e/km/person; Carbon base consulted on 04/04/2022 (SNCF data)\n",
+    "note": "TER - 2022 - Average traction; 27.7 gCO2e/km/person; Carbon base consulted on 19/11/2023 (SNCF data)\n",
     "titre": "TER",
     "titre.auto": "TER",
-    "valeur": "0.0296",
+    "valeur": "0.0277",
     "optimized": true
   },
   "transport . train . km": {

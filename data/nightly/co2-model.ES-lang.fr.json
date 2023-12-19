@@ -11717,11 +11717,6 @@
       "proportion passagers km AVE": 0.523
     }
   },
-  "transport . train . TER": {
-    "formule": 0.0328,
-    "unité": "kgCO2e/km",
-    "note": "Trains régionaux Cercanías - 32,8 gCO2e/passager-km ; [Données IDAE](https://sede.idae.gob.es/lang/extras/tramites-servicios/2021/MOVES_Proyectos_Singulares_II/Factores_de_conversion_ahorros_y_emisiones_de_CO2.pdf), 2021\n"
-  },
   "transport . train . TGV": {
     "formule": "(intensité GHG TGV France / 1000 gCO2e/kgCO2e) * intensité mix électrique Espagne continentale / intensité mix électrique France métropolitaine",
     "unité": "kgCO2e/km",
@@ -11731,6 +11726,50 @@
       "intensité mix électrique Espagne continentale": "206 gCO2e/kWh",
       "intensité GHG TGV France": "2.93 gCO2e/km"
     }
+  },
+  "transport . train . TER": {
+    "formule": 0.0328,
+    "unité": "kgCO2e/km",
+    "note": "Trains régionaux Cercanías - 32,8 gCO2e/passager-km ; [Données IDAE](https://sede.idae.gob.es/lang/extras/tramites-servicios/2021/MOVES_Proyectos_Singulares_II/Factores_de_conversion_ahorros_y_emisiones_de_CO2.pdf), 2021\n"
+  },
+  "transport . train . intercités": {
+    "formule": 0.00898,
+    "unité": "kgCO2e/km",
+    "node": "Intercités - 2022 ; 8.98 gCO2e/km/personne ; Base Carbone consultée le 19/11/2023 (Données SNCF)\n"
+  },
+  "transport . train . proportion TGV": {
+    "formule": "passagers km TGV / total passagers km",
+    "note": "Chiffres issus de l'[autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf).\n"
+  },
+  "transport . train . proportion TER": {
+    "formule": "passagers km TER / total passagers km",
+    "note": "Chiffres issus de l'[autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf).\n"
+  },
+  "transport . train . proportion intercités": {
+    "formule": "passagers km intercités / total passagers km",
+    "note": "Chiffres issus de l'[autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf).\n"
+  },
+  "transport . train . total passagers km": {
+    "formule": {
+      "somme": [
+        "passagers km TGV",
+        "passagers km TER",
+        "passagers km intercités"
+      ]
+    },
+    "note": "Chiffres issus de l'[autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf).\nOn omet ici les trajets en RER et transilien.\n"
+  },
+  "transport . train . passagers km TGV": {
+    "formule": "54 + 7",
+    "note": "Chiffres issus de l'[autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf).\nOn omet ici les trajets en RER et transilien.\n"
+  },
+  "transport . train . passagers km TER": {
+    "formule": 19,
+    "note": "Chiffres issus de l'[autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf).\nOn omet ici les trajets en RER et transilien.\n"
+  },
+  "transport . train . passagers km intercités": {
+    "formule": "3 + 0.5",
+    "note": "Chiffres issus de l'[autorité de régulation des transports](https://www.autorite-transports.fr/wp-content/uploads/2023/06/bilan-ferroviaire-2022-a-mi-2023.pdf).\nOn omet ici les trajets en RER et transilien.\n"
   },
   "transport . train . km": {
     "question": "Combien de kilomètres parcourez-vous en train par an ?",
