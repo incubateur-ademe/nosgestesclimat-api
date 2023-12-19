@@ -3388,24 +3388,9 @@
     "question": "Vous arrive-t-il d'assister à des concerts ou spectacles ?"
   },
   "divers . loisirs . culture . concerts et spectacles . moyenne macro pondérée": {
-    "formule": "29.166453136993262 * fréquence pondérée",
     "unité": "kgCO2e",
+    "valeur": "29.166453136993262",
     "optimized": true
-  },
-  "divers . loisirs . culture . concerts et spectacles . fréquence pondérée": {
-    "formule": "fréquence / 3 spectacles/an",
-    "note": "En 2022, les cinémas français ont enregistré [152 millions d'entrées](https://www.cnc.fr/professionnels/actualites/a-152-millions-dentrees-en-2022-fort-rebond-de-la-frequentation-dans-un-contexte-encore-atypique_1861985). \nCôté théâtre, [7,4 millions de billets ont été vendus en 2022](https://www.artcena.fr/sites/default/files/medias/ASTP-Etude%20Les%20Franc%CC%A7ais%20et%20le%20The%CC%81a%CC%82tre%202023-diffusion%20juin%202023.pdf). \nÀ cela nous pouvons ajouter [4,2 millions d'entrées pour les spectacles vivants](https://www.culture.gouv.fr/Thematiques/Etudes-et-statistiques/Statistiques-culturelles/Donnees-statistiques-par-domaine_Cultural-statistics-databases/Theatre-et-spectacles) (données de 2019).\nPour les spectacles de rue (même source), 37% ont assisté à un événement national, 25% à une fête locale et 12% à une animation dans un centre commercial. En sommant ces participations, nous pouvons estimer que la moitié de la population a assisté à un spectacle de rue.\nDu côté des festivals, ils ont enregistré [7,4 millions d'entrées en 2022](https://www.touslesfestivals.com/actualites/le-bilan-des-festivals-de-lannee-2022-lannee-de-reprise-110123).\nEnfin pour les concerts, en 2019 ils enregistraient [27,9 millions d'entrées](https://www.culture.gouv.fr/Thematiques/Etudes-et-statistiques/Statistiques-culturelles/Donnees-statistiques-par-domaine_Cultural-statistics-databases/Spectacles-musicaux).\n\nL'ensemble de ces chiffres rapportés à la taille de la population nous porte à penser qu'en moyenne, un Français assiste à 3 spectacles par an, tous types de spectacles confondus (ceci est sûrement sous-évalué, car il manque une partie des spectacles ne donnant pas lieu à la vente de billets comptabilisés)\nL'empreinte qu'on attribue à l'individu subit une règle de 3 par rapport à cette moyenne de fréquentation, qui correspond à l'empreinte moyenne du secteur divisée par la population.\n"
-  },
-  "divers . loisirs . culture . concerts et spectacles . fréquence": {
-    "question": "À quelle fréquence vous rendez-vous à des concerts / spectacles ou au cinéma chaque année ?",
-    "par défaut": 3,
-    "unité": "spectacles/an",
-    "suggestions": {
-      "une fois par semaine": 50,
-      "une fois par mois": 12,
-      "deux fois par an": 2,
-      "une fois par an": 1
-    }
   },
   "divers . loisirs . culture . empreinte musées et monuments": {
     "titre": "Empreinte musées et monuments",
@@ -3430,43 +3415,8 @@
     "question": "Vous arrive-t-il de visiter des musées, monuments et parcs nationaux ?"
   },
   "divers . loisirs . culture . musées et monuments . moyenne macro pondérée": {
-    "formule": "(1.5904279122674436 * fréquence approximée) / 0.69",
+    "valeur": "2.304967988793397",
     "optimized": true
-  },
-  "divers . loisirs . culture . musées et monuments . fréquence approximée": {
-    "formule": {
-      "variations": [
-        {
-          "si": "fréquence = 'occasionnel'",
-          "alors": 1
-        },
-        {
-          "si": "fréquence = 'amateur'",
-          "alors": 2
-        }
-      ]
-    },
-    "note": "Ces facteurs ont été fixés arbitrairement, via l'étude [\"La visite des musées, expositions et monuments en 2019\"](https://www.culture.gouv.fr/Media/Thematiques/Etudes-et-statistiques/Files/Publications/Culture-etudes/20212/Note-de-synthese-CREDOC), publiée par le ministère de la culture.\n\nD'après cette étude, nous avons pour les visites des musées et du patrimoine :\n\n- 30% de la population qui est \"amateur\" : plus de 3 visites annuelles\n- 37% de la population qui est visiteur \"occasionnel\" : 1 à 2 visites par an\n- Le reste non-visiteur\n\nCes chiffres concernent les personnes de plus de 18 ans. On a donc un léger biais ici.\n\nOn pourrait également raisonner par [visite](https://www.culture.gouv.fr/Thematiques/Etudes-et-statistiques/Publications/Collections-de-synthese/Patrimostat/Patrimostat-edition-2021) ?\n"
-  },
-  "divers . loisirs . culture . musées et monuments . fréquence": {
-    "question": "À quelle fréquence visitez-vous des musées, monuments et parcs nationaux chaque année ?",
-    "par défaut": "'occasionnel'",
-    "formule": {
-      "une possibilité": {
-        "choix obligatoire": "oui",
-        "possibilités": [
-          "occasionnel",
-          "amateur"
-        ]
-      }
-    },
-    "note": "Cette question permet de pondérer l'empreinte des visites en musées selon la table décrite dans la règle `musées et monuments . fréquence approximée`."
-  },
-  "divers . loisirs . culture . musées et monuments . fréquence . occasionnel": {
-    "titre": "Une à deux fois par an"
-  },
-  "divers . loisirs . culture . musées et monuments . fréquence . amateur": {
-    "titre": "Trois fois ou plus par an"
   },
   "divers . loisirs . culture . empreinte édition": {
     "titre": "Empreinte édition (livres, presse et logiciels)",
@@ -3491,58 +3441,8 @@
     "question": "Achetez-vous parfois des livres, revues ou journaux ?"
   },
   "divers . loisirs . culture . édition . moyenne macro pondérée": {
-    "formule": "50.22209532078437 * fréquence pondérée",
+    "valeur": "50.22209532078437",
     "optimized": true
-  },
-  "divers . loisirs . culture . édition . fréquence pondérée": {
-    "formule": {
-      "variations": [
-        {
-          "si": "fréquence = 'faible'",
-          "alors": 0.5
-        },
-        {
-          "si": "fréquence = 'normale'",
-          "alors": 1
-        },
-        {
-          "si": "fréquence = 'élevée'",
-          "alors": 2
-        },
-        {
-          "si": "fréquence = 'très élevée'",
-          "alors": 3
-        }
-      ]
-    }
-  },
-  "divers . loisirs . culture . édition . fréquence": {
-    "question": "Combien dépensez-vous par mois pour vos journaux, revues ou livres ?",
-    "par défaut": "'élevée'",
-    "formule": {
-      "une possibilité": {
-        "choix obligatoire": "oui",
-        "possibilités": [
-          "faible",
-          "normale",
-          "élevée",
-          "très élevée"
-        ]
-      }
-    },
-    "note": "En moyenne, [les ménages consacrent 1040€ par an aux achats de biens et services culturels](https://www.insee.fr/fr/statistiques/6535285?sommaire=6535307), dont 22% pour les livres et la presse, soit 228€, soit un peu moins de 20€ par mois.\nLa taille du foyer étant en moyenne de 2,2 personnes, nous pouvons estimer qu'un adulte dépense en moyenne un peu moins de 10€ par mois pour la presse, les livres et les logiciels.\n"
-  },
-  "divers . loisirs . culture . édition . fréquence . faible": {
-    "titre": "Moins de 5 CHF par mois"
-  },
-  "divers . loisirs . culture . édition . fréquence . normale": {
-    "titre": "De 5 à 15 CHF par mois"
-  },
-  "divers . loisirs . culture . édition . fréquence . élevée": {
-    "titre": "De 15 à 30 CHF par mois"
-  },
-  "divers . loisirs . culture . édition . fréquence . très élevée": {
-    "titre": "Plus de 30 CHF par mois"
   },
   "divers . loisirs . culture . empreinte pratique de la musique": {
     "titre": "Empreinte de la pratique de la musique",

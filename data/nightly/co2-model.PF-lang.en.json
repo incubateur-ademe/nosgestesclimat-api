@@ -6424,21 +6424,14 @@
     "titre.auto": "french macro average"
   },
   "divers . loisirs . culture . concerts et spectacles . fréquence pondérée": {
-    "formule": "fréquence / 3 spectacles/an",
+    "formule": "fréquence / 3 spectacle/an",
     "note": "In 2022, French cinemas recorded <a href=\"https://www.cnc.fr/professionnels/actualites/a-152-millions-dentrees-en-2022-fort-rebond-de-la-frequentation-dans-un-contexte-encore-atypique_1861985\">152 million admissions</a>. \nIn theater, <a href=\"https://www.artcena.fr/sites/default/files/medias/ASTP-Etude%20Les%20Franc%CC%A7ais%20et%20le%20The%CC%81a%CC%82tre%202023-diffusion%20juin%202023.pdf\">7.4 million tickets were sold in 2022</a>. \nTo this we can add <a href=\"https://www.culture.gouv.fr/Thematiques/Etudes-et-statistiques/Statistiques-culturelles/Donnees-statistiques-par-domaine_Cultural-statistics-databases/Theatre-et-spectacles\">4.2 million admissions for live</a> shows (2019 data).\nFor street performances (same source), 37% attended a national event, 25% a local festival and 12% a mall event. Summing up these participations, we can estimate that half the population attended a street performance.\nFestivals recorded <a href=\"https://www.touslesfestivals.com/actualites/le-bilan-des-festivals-de-lannee-2022-lannee-de-reprise-110123\">7.4 million admissions in 2022</a>.\nLastly, in 2019, concerts recorded <a href=\"https://www.culture.gouv.fr/Thematiques/Etudes-et-statistiques/Statistiques-culturelles/Donnees-statistiques-par-domaine_Cultural-statistics-databases/Spectacles-musicaux\">27.9 million admissions</a>.\n\nAll these figures in relation to the size of the population lead us to believe that, on average, a French person attends 3 shows a year, all types of shows included (this is surely an underestimate, as it misses some of the shows for which tickets are not sold)\nThe footprint attributed to the individual undergoes a rule of 3 in relation to this average attendance, which corresponds to the average footprint of the sector divided by the population.\n",
     "titre": "weighted frequency",
     "titre.auto": "weighted frequency"
   },
   "divers . loisirs . culture . concerts et spectacles . fréquence": {
-    "question": "How often do you go to concerts/shows or to the cinema in a year?",
-    "par défaut": 3,
-    "unité": "spectacles/an",
-    "suggestions": {
-      "once a week": 50,
-      "once a month": 12,
-      "twice a year": 2,
-      "once a year": 1
-    },
+    "formule": 3,
+    "unité": "spectacle/an",
     "titre": "frequency",
     "titre.auto": "frequency"
   },
@@ -6498,17 +6491,7 @@
     "titre.auto": "approximate frequency"
   },
   "divers . loisirs . culture . musées et monuments . fréquence": {
-    "question": "How often do you visit museums, monuments and national parks each year?",
-    "par défaut": "'occasionnel'",
-    "formule": {
-      "une possibilité": {
-        "choix obligatoire": "oui",
-        "possibilités": [
-          "occasionnel",
-          "amateur"
-        ]
-      }
-    },
+    "formule": "'occasionnel'",
     "note": "This question weights the footprint of museum visits according to the table described in the rule `museums and monuments . approximate frequency`.",
     "titre": "frequency",
     "titre.auto": "frequency"
@@ -6590,19 +6573,7 @@
     "titre.auto": "weighted frequency"
   },
   "divers . loisirs . culture . édition . fréquence": {
-    "question": "How much do you spend in a month on newspapers, magazines and books?",
-    "par défaut": "'normale'",
-    "formule": {
-      "une possibilité": {
-        "choix obligatoire": "oui",
-        "possibilités": [
-          "faible",
-          "normale",
-          "élevée",
-          "très élevée"
-        ]
-      }
-    },
+    "formule": "'normale'",
     "note": "On average, <a href=\"https://www.insee.fr/fr/statistiques/6535285?sommaire=6535307\">households spend €1040 a year on cultural goods and services</a>, of which 22% goes on books and the press, i.e. €228, or just under €20 a month.\nWith an average household size of 2.2 people, we can estimate that an adult spends an average of just under €10 a month on press, books and software.\n",
     "titre": "frequency",
     "titre.auto": "frequency"
