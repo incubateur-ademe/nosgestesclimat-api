@@ -4472,11 +4472,11 @@
     "titre.auto": "Your personal climate report"
   },
   "commun . intensité électricité": {
-    "titre": "Carbon intensity of the French electricity mix",
+    "titre": "Carbon intensity of the electricity mix in mainland Spain",
     "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/incubateur-ademe/publicodes-commun\">`@incubator-ademe/publicodes-commun`</a> model.\n\n\nAverage intensity, all types of consumption combined, year 2022.",
-    "formule": 0.052,
+    "formule": 0.206,
     "unité": "kgCO2e/kWh",
-    "note": "Here, we're talking about the electricity consumption mix. \nThe figure comes from the Empreinte Base (Electricity/2022 - average mix/consumption), whose methodology is described in the <a href=\"https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/\">documentation</a>.\nMicMac v2.6 gave a value of 12.4gCO2e/kWh for \"green\" electricity suppliers, but this value seems to correspond to a theoretical calculation over the year, and not to an actual, minute-by-minute calculation.\n",
+    "note": "Source: <a href=\"https://app.electricitymaps.com/map\">Electricity Map</a>, 2022\n",
     "titre.auto": "Carbon intensity of the French electricity mix"
   },
   "commun . mois par an": {

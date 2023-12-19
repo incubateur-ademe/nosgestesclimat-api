@@ -542,7 +542,7 @@
     "optimized": true
   },
   "logement . éteindre appareils": {
-    "formule": "11.388 / habitants",
+    "formule": "45.114 / habitants",
     "unité": "kgCO2e",
     "titre": "Eteindre mes appareils en veille",
     "icônes": "🏠📺",
@@ -615,7 +615,7 @@
     "note": "Nous considérons pour l'instant que le remplacement des kWh de gaz par la même quantité de kWh électrique est une bonne approximation de premier ordre. Nous pourrons par la suite l'adapter en fonction du rendement des installations résidentielles.\n\nCette action chiffre le remplacement de la chaudière gaz, si vous chauffez aussi votre eau au gaz il faudra choisir une PAC qui peut aussi chauffer l'eau.\n\nVoir [Guide ADEME PAC](https://www.ademe.fr/sites/default/files/assets/documents/guide-pratique-installer-une-pompe-a-chaleur.pdf)\n"
   },
   "logement . pompe à chaleur": {
-    "formule": "(chauffage . gaz . consommation / 2) * 0.052",
+    "formule": "(chauffage . gaz . consommation / 2) * 0.206",
     "optimized": true
   },
   "logement . chaudière remplacement": {
@@ -3808,7 +3808,7 @@
     "optimized": true
   },
   "divers . numérique . internet . empreinte horaire": {
-    "formule": "0.077 * 0.052",
+    "formule": "0.077 * 0.206",
     "unité": "kgCO2e/h",
     "optimized": true
   },
@@ -5167,12 +5167,12 @@
     "optimized": true
   },
   "parc français . empreinte électricité autre par m2": {
-    "formule": "consommation électricité autre par m2 * 0.052",
+    "formule": "consommation électricité autre par m2 * 0.206",
     "unité": "kgCO2e/m2",
     "optimized": true
   },
   "parc français . chauffage . empreinte moyenne chauffage air par m2": {
-    "valeur": "111.98789711013879",
+    "valeur": "116.63408907758912",
     "optimized": true
   },
   "parc français . chauffage . consommation électricité hors PAC . chauffage": {
@@ -5332,7 +5332,7 @@
   },
   "logement . électricité": {
     "icônes": "⚡",
-    "formule": "(consommation * 0.052) / habitants",
+    "formule": "(consommation * 0.206) / habitants",
     "optimized": true
   },
   "logement . électricité . consommation": {
@@ -5411,7 +5411,7 @@
   "logement . électricité . intensité carbone": {
     "unité": "kgCO2e/kWh",
     "description": "Nous utilisons ici l'empreinte moyenne du mix de la région de simulation.\n\nNous pourrions faire mieux, en séparant la partie chauffage de l'air et le reste de la consommation du logement, car le chauffage est utilisé principalement l'hiver, au moment où les centrales à charbon et gaz tournent davantage et empirent l'empreinte du mix. Mais cela demanderait pour les foyers chauffés à l'électricité de trouver ces deux valeurs et les renseigner, chose peu évidente.\n\n> L'intensité du chauffage résidentiel est ainsi définie à 80gCO2e/kWh en France par la RE2020, [source](https://www.batiactu.com/edito/facteur-energie-primaire-contenu-carbone-electricite-58485.php).\n",
-    "valeur": "0.052",
+    "valeur": "0.206",
     "optimized": true
   },
   "logement": {
@@ -6269,7 +6269,7 @@
     "unité": "nuit"
   },
   "logement . vacances . résidence secondaire . chauffage": {
-    "formule": "((facteur saison * (19.64719233667352 + 1.731275235360132)) * surface) * pro-rata présence annuelle",
+    "formule": "((facteur saison * (19.64719233667352 + 6.858513432388215)) * surface) * pro-rata présence annuelle",
     "unité": "kgCO2e",
     "description": "Pour calculer les facteurs saisons, dépendant à la fois de la localisation de la résidence secondaire et de la saison où il est fréquenté, nous nous sommes appuyés sur les données de degrés-heures disponibles par zones climatiques, \nque l'on peut retrouver dans [ce tableau](https://docs.google.com/spreadsheets/d/1sQp51C2zgBi3KiKrMCvXNtd26NJGHhE41z_UxsBKU94/edit#gid=0).\nCes degrés-heures sont trouvables en annexe de l'Arrêté du 8 octobre 2021 modifiant la méthode de calcul et les modalités d’établissement du diagnostic de performance énergétique, [disponible ici](https://www.socotec-certification-international.fr/s3fs-public/2022-10/arrete-8-octobre-2021_compressed.pdf).\n\nEn France, on distingue trois zones climatiques : H1, la zone la plus froide, la moitié Nord-Est de la France. H2, une zone tempérée à l'Ouest et au Sud-Ouest. H3, la zone la plus chaude, le Sud-Est de la France et les DOM-TOM.\n\n![Zones climatiques France](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/RT_2005_zone_climatique-2.svg/1176px-RT_2005_zone_climatique-2.svg.png)\n\nPour nos calculs, nous avons opté pour les hypothèses suivantes :\n\n  - Les logements situés sur le littoral nord-ouest, en campagne ou à la ville, correspondent à la moyenne des zones H1 et H2 < 800 mètres d'altitude\n  - Les logements situés sur le littoral méditerranéen correspondent à la zone H3 < 400 mètres d'altitude\n  - Les logements situés en montagne correspondent aux zones H1 et H2 > 800 mètres d'altitude\n\nNous avons rapporté cela à la moyenne par jour des degrés-heures à l'année, pour établir les facteurs multiplicateurs de la moyenne de degrés-heures de chauffage pour une journée quelle que soit la localisation.\n\n![Facteurs multiplicateurs par zone climatique et par période](https://github.com/incubateur-ademe/nosgestesclimat/assets/55186402/c328fa42-bae6-4391-becf-a31cbaf32201)\n",
     "optimized": true

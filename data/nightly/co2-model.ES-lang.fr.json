@@ -3532,11 +3532,11 @@
     }
   },
   "commun . intensité électricité": {
-    "titre": "Intensité carbone du mix électrique français",
+    "titre": "Intensité carbone du mix électrique de l'Espagne continentale",
     "description": "\n> ℹ️ Cette règle provient du modèle [`@incubateur-ademe/publicodes-commun`](https://github.com/incubateur-ademe/publicodes-commun).\n\n\nIntensité moyenne, tous types de consommations confondues, année 2022.",
-    "formule": 0.052,
+    "formule": 0.206,
     "unité": "kgCO2e/kWh",
-    "note": "Ici, on parle du mix électrique de consommation. \nLe chiffre est issu de la Base Empreinte (Electricité/2022 - mix moyen/consommation) dont la méthodologie est décrite dans la [documentation](https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/).\nLa v2.6 de MicMac donnait une valeur de 12.4gCO2e/kWh pour les fournisseurs d'électricité \"verte\", mais cette valeur semble correspondre à un calcul théorique sur l'année, et non pas à un calcul réel, minute par minute.\n"
+    "note": "Source: [Electricity Map](https://app.electricitymaps.com/map), 2022\n"
   },
   "commun . mois par an": {
     "titre": "Nombre de mois par an",
