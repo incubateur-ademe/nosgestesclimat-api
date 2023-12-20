@@ -539,9 +539,9 @@
     "titre.auto": "Reduce my streaming time"
   },
   "divers . numérique . internet . empreinte réduite": {
-    "formule": "(empreinte horaire * 1) * 365",
     "titre": "small footprint",
     "titre.auto": "small footprint",
+    "valeur": "11.045265",
     "optimized": true
   },
   "divers . numérique . usage responsable": {
@@ -1272,9 +1272,9 @@
   "transport . seuil d'activation 5km": {
     "titre": "Activation threshold for short trip actions",
     "description": "Minimum distance to trigger this action. \n\n> If someone tells us that they only drive 200km in a year, it's unlikely that they're talking about \n> that these are 5km trips.\n\nWe define this value as being equivalent to 2 5km return trips per week.\n",
-    "formule": "(52 * 2trajet/semaine) * 2.5",
     "unité": "km",
     "titre.auto": "Activation threshold for short trip actions",
+    "valeur": "260",
     "optimized": true
   },
   "transport . voiture 5km . recalcul": {
@@ -2244,10 +2244,9 @@
   },
   "alimentation . petit déjeuner . par semaine": {
     "titre": "Weekly breakfast footprint",
-    "formule": "par jour * 7",
+    "formule": "par jour * commun . jours par semaine",
     "unité": "kgCO2e/semaine",
-    "titre.auto": "Weekly breakfast footprint",
-    "optimized": true
+    "titre.auto": "Weekly breakfast footprint"
   },
   "alimentation . petit déjeuner . par jour": {
     "titre": "Weekly breakfast footprint",
@@ -2618,6 +2617,14 @@
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/incubateur-ademe/publicodes-commun\">`@incubator-ademe/publicodes-commun`</a> model.",
     "titre.auto": "Number of weeks per year",
     "valeur": "52",
+    "optimized": true
+  },
+  "commun . jours par semaine": {
+    "titre": "Number of days per week",
+    "unité": "jour/semaine",
+    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/incubateur-ademe/publicodes-commun\">`@incubator-ademe/publicodes-commun`</a> model.",
+    "titre.auto": "Number of days per week",
+    "valeur": "7",
     "optimized": true
   },
   "commun . jours par an": {
@@ -3201,10 +3208,17 @@
     "titre.auto": "power supply"
   },
   "divers . animaux domestiques . empreinte . chiens . alimentation": {
-    "formule": "(besoin journalier nourriture * 365) * 4.3",
+    "formule": "besoin journalier nourriture * commun . jours par an * empreinte nourriture",
     "unité": "kgCO2e",
     "titre": "power supply",
-    "titre.auto": "power supply",
+    "titre.auto": "power supply"
+  },
+  "divers . animaux domestiques . empreinte . chiens . alimentation . empreinte nourriture": {
+    "titre": "Dog Food Imprint",
+    "unité": "kgCO2e/kg",
+    "note": "For this emission factor, we used the paper: <a href=\"https://reader.elsevier.com/reader/sd/pii/S0959378020307366?token=375964333F28DED330C9C2CACCD5553CAAE486B7BD641A4F39738E9EC323613DCDABF4A0263131197CB5B47E1D304B99&originRegion=eu-west-1&originCreation=20230330100228\">The global environmental paw print of pet food, 2020</a>\n\nA few comments on the methodology used in this article:\n\nAnimal by-products (ABPs) are products of animal origin not consumed by humans, and are the main ingredients of food for... animals.\n\n![](https://www.researchgate.net/publication/317818426/figure/fig1/AS:614100279230464@1523424324126/General-descriptions-of-edible-and-inedible-by-products.png)\n\nWe might imagine that transforming these \"leftovers\" to feed our animals is the best option, but we mustn't forget that there are alternatives:\nfertilizer, biofuel.\n\nWhile 1kg of animal \"by-products\" certainly doesn't have the same environmental impact as a kilogram of steak, we can't consider the impact to be zero.\nNevertheless, as you might imagine, there are no EFs associated with these by-products. The idea of this article is to\nto approximate the footprint of these products by prorating them by product price.\n\nThe final result is 2.3 times higher using a conventional method based on : 1kg animal by-products = 1kg steak = 1 EF in kgco2e/kg.\n\nAs far as feed \"quality\" is concerned, two types of feed are considered: \n\n- Classic\" dog food (croquette type): 3 kgCO2e/kg, making up 2/3 of the average dog food.\n- Premium\" dog food (closer to paté, it seems): 7 kgCO2e/kg, making up 1/3 of the average dog's diet.\n\nThis gives an average value of 4.3 kgCO2e/kg of dog food.\n\nA priori, only the production part is accounted for. We'd have to go into more detail to find out whether distribution or packaging is taken into account.\n\nFinally, with regard to geographical scope, this study is based on data for the United States, which would seem, given the similarity of markets with Europe, to be legitimately applicable to France.\n\nFurthermore, the study <a href=\"https://www.nature.com/articles/s41598-022-22631-0#MOESM1\">Environmental impact of diets for dogs and cats, 20222</a> gives much higher results, particularly for \"wet food\". \n\n> If a 10 kg dog with an average caloric intake of 534 kcal per day15 is considered, we can estimate the yearly consumption of calories and, \ntherefore, can estimate the annual environmental impact. If we consider the results of the present study, the median of CO2eq of a dry diet \nper 1000 kcal is 4.25 kg and a wet diet of 33.56 kg. This average dog would be responsible for 828.37 kg of CO2eq per year if consuming dry \ndiets or 6,541 kg of CO2eq per year if consuming wet diets. \n\nIn view of the particularly high figures, and pending further investigation of this study, we have preferred to use the figures from the study mentioned above, which appears to adopt a consistent methodology.\n",
+    "titre.auto": "Dog Food Imprint",
+    "valeur": "4.3",
     "optimized": true
   },
   "divers . animaux domestiques . empreinte . chiens . alimentation . besoin journalier nourriture": {
@@ -7990,23 +8004,17 @@
     "titre.auto": "speed factor"
   },
   "futureco-data . transport . ferry . correction temps de navigation": {
-    "formule": "vitesse moyenne / vitesse",
+    "formule": "17.818574514038875 / vitesse",
     "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nThe power required to propel a ship is the cube of its speed. The climate footprint per hour naturally follows this same function. But the ship is then going faster: it will emit more per hour for less time, so this factor corrects for.\n",
     "titre": "navigation time correction",
-    "titre.auto": "navigation time correction"
+    "titre.auto": "navigation time correction",
+    "optimized": true
   },
   "futureco-data . transport . ferry . rapport vitesse": {
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "speed ratio",
     "titre.auto": "speed ratio",
-    "formule": "vitesse / vitesse moyenne"
-  },
-  "futureco-data . transport . ferry . vitesse moyenne": {
-    "formule": "33 / 1.852 km/mn",
-    "unité": "noeud",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "average speed",
-    "titre.auto": "average speed",
+    "formule": "vitesse / 17.818574514038875",
     "optimized": true
   },
   "futureco-data . transport . ferry . vitesse en kmh": {
@@ -8408,11 +8416,10 @@
     "titre.auto": "Ferry"
   },
   "transport . ferry . empreinte": {
-    "formule": "(heures * 33) * futureco-data . transport . ferry . empreinte par km volume",
+    "formule": "heures * futureco-data . transport . ferry . vitesse moyenne . métrique * futureco-data . transport . ferry . empreinte par km volume",
     "description": "The ferry model comes from <a href=\"https://futur.eco/ferry\">Futur.eco</a>.\nThis model is explained in simplified form on the <a href=\"https://nosgestesclimat.fr/documentation/transport/ferry/empreinte-par-km-volume\">\"Footprint per km and passenger\"</a> page, and is based on an in-depth study <a href=\"https://hackmd.io/@laem/empreinte-ferry\">(see the complete methodological note</a>)\n\nIn order to simplify the assessment of the user's footprint, we propose an estimate based on travel time (in hours). We then set the other calculation parameters as such:\n  - Cabin travel\n  - One car on board\n  - 2 people share cabin, car\n  - Ferry model considered (layout, average speed): <a href=\"https://www.greenferries.org/ships/mega-express-four-9086590/\">Mega Express Four</a>\n",
     "titre": "footprint",
-    "titre.auto": "footprint",
-    "optimized": true
+    "titre.auto": "footprint"
   },
   "transport . ferry . usager": {
     "question": "Do you take the ferry?",
@@ -9400,10 +9407,9 @@
   },
   "transport . voiture . base au kilomètre": {
     "titre": "Maintenance and air conditioning by the kilometer",
-    "formule": "entretien pondéré + 0.0025208261705055",
+    "formule": "entretien pondéré + climatisation",
     "unité": "kgCO2e/km",
-    "titre.auto": "Maintenance and air conditioning by the kilometer",
-    "optimized": true
+    "titre.auto": "Maintenance and air conditioning by the kilometer"
   },
   "transport . voiture . entretien pondéré": {
     "formule": {
@@ -9427,11 +9433,19 @@
     "titre.auto": "weighted interview"
   },
   "transport . voiture . entretien": {
+    "formule": "(((6036 * 1000000kgCO2e/ktCO2e) * 0.07) / 44677000) / 12200",
     "unité": "kgCO2e/km",
     "note": "In item G45, we take the share of vehicle maintenance and repair (7%).\nWe divide it by the number of vehicles in circulation, then by 12,200 km (the average number of km driven per vehicle) to obtain a footprint in kgCO2e / km.\n",
     "titre": "maintenance",
     "titre.auto": "maintenance",
-    "valeur": "0.0007751815673668",
+    "optimized": true
+  },
+  "transport . voiture . climatisation": {
+    "formule": "(1374000000 / 44677000) / 12200",
+    "unité": "kgCO2e/km",
+    "note": "The idea here is to take into account a proportion of emissions linked to fluorinated gases from vehicle air conditioning systems \nin France via the total emissions due to these gases in the transport sector (diesel, petrol, CNG, LPG and electric cars and LCVs).\n",
+    "titre": "air conditioning",
+    "titre.auto": "air conditioning",
     "optimized": true
   },
   "transport . voiture . par km personne": {

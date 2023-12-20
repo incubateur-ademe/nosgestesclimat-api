@@ -460,7 +460,7 @@
     "description": "Le streaming vidéo contribue aux émissions de GES (d'autant plus quand on utilise la connexion mobile) car il nécessite en réalité une multitude d'infrastructures. \n\nEn limiter sa consommation, ici d'une heure par jour quand on y passe plus de 2h, et privilégier des alternatives comme la lecture permet de réduire son empreinte carbone numérique.\n"
   },
   "divers . numérique . internet . empreinte réduite": {
-    "formule": "(empreinte horaire * 1) * 365",
+    "valeur": "21.9219",
     "optimized": true
   },
   "divers . numérique . usage responsable": {
@@ -1094,8 +1094,8 @@
   "transport . seuil d'activation 5km": {
     "titre": "Seuil d'activation actions liées aux courts trajets",
     "description": "Distance minimale pour déclencher cette action. \n\n> Si quelqu'un nous dit qu'il ne fait que 200km de voiture dans l'année, il y a peu de chances \n> qu'il s'agisse de trajets de 5km.\n\nOn définit cette valeur comme étant équivalente à 2 trajets de 5 km A/R par semaine.\n",
-    "formule": "(52 * 2trajet/semaine) * 2.5",
     "unité": "km",
+    "valeur": "260",
     "optimized": true
   },
   "transport . voiture 5km . recalcul": {
@@ -1921,9 +1921,8 @@
   },
   "alimentation . petit déjeuner . par semaine": {
     "titre": "Empreinte hebdo petit déjeuner",
-    "formule": "par jour * 7",
-    "unité": "kgCO2e/semaine",
-    "optimized": true
+    "formule": "par jour * commun . jours par semaine",
+    "unité": "kgCO2e/semaine"
   },
   "alimentation . petit déjeuner . par jour": {
     "titre": "Empreinte hebdo petit déjeuner",
@@ -2245,6 +2244,13 @@
     "unité": "semaine",
     "description": "> ℹ️ Cette règle provient du modèle [`@incubateur-ademe/publicodes-commun`](https://github.com/incubateur-ademe/publicodes-commun).",
     "valeur": "52",
+    "optimized": true
+  },
+  "commun . jours par semaine": {
+    "titre": "Nombre de jours par semaine",
+    "unité": "jour/semaine",
+    "description": "> ℹ️ Cette règle provient du modèle [`@incubateur-ademe/publicodes-commun`](https://github.com/incubateur-ademe/publicodes-commun).",
+    "valeur": "7",
     "optimized": true
   },
   "commun . jours par an": {
@@ -2746,8 +2752,14 @@
     }
   },
   "divers . animaux domestiques . empreinte . chiens . alimentation": {
-    "formule": "(besoin journalier nourriture * 365) * 4.3",
-    "unité": "kgCO2e",
+    "formule": "besoin journalier nourriture * commun . jours par an * empreinte nourriture",
+    "unité": "kgCO2e"
+  },
+  "divers . animaux domestiques . empreinte . chiens . alimentation . empreinte nourriture": {
+    "titre": "Empreinte nourriture pour chiens",
+    "unité": "kgCO2e/kg",
+    "note": "Pour ce facteur d'émission, nous avons utilisé le papier : [The global environmental paw print of pet food, 2020](https://reader.elsevier.com/reader/sd/pii/S0959378020307366?token=375964333F28DED330C9C2CACCD5553CAAE486B7BD641A4F39738E9EC323613DCDABF4A0263131197CB5B47E1D304B99&originRegion=eu-west-1&originCreation=20230330100228)\n\nQuelques commentaires au niveau de la méthodo mise en place dans cet article :\n\nLes sous-produits animaux (Animal by-products = ABPs) sont des produits d'origine animale non consommés par les Hommes et sont les ingrédients principaux de la nourriture pour ... animaux.\n\n![](https://www.researchgate.net/publication/317818426/figure/fig1/AS:614100279230464@1523424324126/General-descriptions-of-edible-and-inedible-by-products.png)\n\nOn pourrait imaginer que transformer ces \"restes\" pour nourrir nos animaux est la meilleure option, mais il ne faut pas oublier qu'il existe des alternatives:\nfertilisant, biocarburant.\n\nSi 1kg de \"sous-produit\" animal n'a surement pas le même impact environnemental qu'un kilogramme de steak, on ne peut cependant pas considérer que l'impact est nul.\nNéanmoins, comme on peut l'imaginer, il n'existe pas de FE associés à ces sous-produits. L'idée dans cet article est\nd'approcher l'empreinte de ces produits via un prorata par prix de produit.\n\nLe résultat final est 2.3 fois supérieur en adoptant une méthode classique sur la base de : 1kg de sous-produits animaux = 1 kg de steak = 1 FE en kgco2e/kg.\n\nEn ce qui concerne la \"qualité\" de la nourriture, deux types de nourriture sont considérés : \n\n- Nourriture Chien \"classique\" (type croquettes): 3 kgCO2e/kg, composant la nourriture moyenne des chiens à hauteur de 2/3.\n- Nourriture Chien \"Premium\" (plus proche des patées semble-t-il): 7 kgCO2e/kg, composant la nourriture moyenne des chiens à hauteur de 1/3.\n\nOn obtient une valeur moyenne de 4.3 kgCO2e/kg de nourriture pour chien.\n\nA priori, seule la partie production est comptabilisée. Il faudrait entrer davantage dans les sources de calcul pour savoir le distribution ou les emballages sont pris en compte.\n\nEnfin, concernant le périmètre géographique, cette étude s'appuie sur des données à l'échelle des États-Unis, qui semble-t-il, au vu de la similitude des marchés avec l'Europe sont légitimement applicable à la France.\n\nPar ailleurs, l'étude [Environmental impact of diets for dogs and cats, 20222](https://www.nature.com/articles/s41598-022-22631-0#MOESM1) donne des résultats bien plus élevés notamment pour la \"nourriture humide\". \n\n> If a 10 kg dog with an average caloric intake of 534 kcal per day15 is considered, we can estimate the yearly consumption of calories and, \ntherefore, can estimate the annual environmental impact. If we consider the results of the present study, the median of CO2eq of a dry diet \nper 1000 kcal is 4.25 kg and a wet diet of 33.56 kg. This average dog would be responsible for 828.37 kg of CO2eq per year if consuming dry \ndiets or 6,541 kg of CO2eq per year if consuming wet diets. \n\nAu vu des chiffres particulièrement élevés, et dans l'attente d'approfondir cette étude, nous avons préféré utiliser les chiffres de l'étude mentionnée plus haut qui semble adopter une méthodologie cohérente.\n",
+    "valeur": "4.3",
     "optimized": true
   },
   "divers . animaux domestiques . empreinte . chiens . alimentation . besoin journalier nourriture": {
@@ -6755,17 +6767,13 @@
     "description": "\n> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).\n\n\nOn prend l'hypothèse d'une évolution au cube de la puissance en fonction de la vitesse."
   },
   "futureco-data . transport . ferry . correction temps de navigation": {
-    "formule": "vitesse moyenne / vitesse",
-    "description": "\n> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).\n\n\nLa puissance nécessaire pour faire avancer le navire évolue au cube de la vitesse. L'empreinte climat par heure suite naturellement cette même fonction. Mais le navire va alors plus vite : il va émettre plus à l'heure pendant moins de temps, ce facteur corrige le tir pour.\n"
+    "formule": "17.818574514038875 / vitesse",
+    "description": "\n> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).\n\n\nLa puissance nécessaire pour faire avancer le navire évolue au cube de la vitesse. L'empreinte climat par heure suite naturellement cette même fonction. Mais le navire va alors plus vite : il va émettre plus à l'heure pendant moins de temps, ce facteur corrige le tir pour.\n",
+    "optimized": true
   },
   "futureco-data . transport . ferry . rapport vitesse": {
     "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).",
-    "formule": "vitesse / vitesse moyenne"
-  },
-  "futureco-data . transport . ferry . vitesse moyenne": {
-    "formule": "33 / 1.852 km/mn",
-    "unité": "noeud",
-    "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).",
+    "formule": "vitesse / 17.818574514038875",
     "optimized": true
   },
   "futureco-data . transport . ferry . vitesse en kmh": {
@@ -7092,9 +7100,8 @@
     "unité": "kgCO2e"
   },
   "transport . ferry . empreinte": {
-    "formule": "(heures * 33) * futureco-data . transport . ferry . empreinte par km volume",
-    "description": "Le modèle ferry provient de [Futur.eco](https://futur.eco/ferry).\nCe modèle est explicité de manière simplifiée sur la page [\"Empreinte par km et passager\"](https://nosgestesclimat.fr/documentation/transport/ferry/empreinte-par-km-volume), et basé sur une étude approfondie ([voir la note méthodo complète](https://hackmd.io/@laem/empreinte-ferry))\n\nAfin de simplifier pour l'utilisateur l'évaluation de son empreinte, nous proposons une estimation via la durée des voyages (en heure). Nous fixons ainsi les autres paramètres du calcul comme tels:\n  - Voyage en cabine\n  - Une voiture à bord\n  - 2 personnes partagent la cabine, la voiture\n  - Modèle de ferry considéré (plan, vitesse moyenne) : [Méga Express Four](https://www.greenferries.org/ships/mega-express-four-9086590/)\n",
-    "optimized": true
+    "formule": "heures * futureco-data . transport . ferry . vitesse moyenne . métrique * futureco-data . transport . ferry . empreinte par km volume",
+    "description": "Le modèle ferry provient de [Futur.eco](https://futur.eco/ferry).\nCe modèle est explicité de manière simplifiée sur la page [\"Empreinte par km et passager\"](https://nosgestesclimat.fr/documentation/transport/ferry/empreinte-par-km-volume), et basé sur une étude approfondie ([voir la note méthodo complète](https://hackmd.io/@laem/empreinte-ferry))\n\nAfin de simplifier pour l'utilisateur l'évaluation de son empreinte, nous proposons une estimation via la durée des voyages (en heure). Nous fixons ainsi les autres paramètres du calcul comme tels:\n  - Voyage en cabine\n  - Une voiture à bord\n  - 2 personnes partagent la cabine, la voiture\n  - Modèle de ferry considéré (plan, vitesse moyenne) : [Méga Express Four](https://www.greenferries.org/ships/mega-express-four-9086590/)\n"
   },
   "transport . ferry . usager": {
     "question": "Prenez-vous le ferry ?",
@@ -7932,9 +7939,8 @@
   },
   "transport . voiture . base au kilomètre": {
     "titre": "Entretien et climatisation au kilomètre",
-    "formule": "entretien pondéré + 0.0025208261705055",
-    "unité": "kgCO2e/km",
-    "optimized": true
+    "formule": "entretien pondéré + climatisation",
+    "unité": "kgCO2e/km"
   },
   "transport . voiture . entretien pondéré": {
     "formule": {
@@ -7956,9 +7962,15 @@
     "note": "Plusieurs sources s'accordent pour dire que l'entretien d'un véhicule électrique est inférieur à celui d'un véhicule thermique de 25%. Comme [celle-ci](https://izi-by-edf.fr/blog/voiture-hybride-entretien/).\n\nPour ce qui est d'un véhicule hybride, son entretien se situe entre celui d'un véhicule électrique et celui d'un véhicule thermique. Cela dépend de l'utilisation du moteur électrique ou thermique. \nNous choisissons de partir sur une hypothèse conservatrice de -10% de coût d'entretien par rapport aux véhicules thermiques.\n"
   },
   "transport . voiture . entretien": {
+    "formule": "(((6036 * 1000000kgCO2e/ktCO2e) * 0.07) / 44677000) / 12200",
     "unité": "kgCO2e/km",
     "note": "Dans le poste G45, nous prenons la part Entretien et réparation de véhicules automobiles (7%).\nNous le divisons par le nombre de véhicules en circulation, puis par 12200 km (la moyenne de km effectués par véhicule) pour obtenir une empreinte en kgCO2e / km.\n",
-    "valeur": "0.0007751815673668",
+    "optimized": true
+  },
+  "transport . voiture . climatisation": {
+    "formule": "(1374000000 / 44677000) / 12200",
+    "unité": "kgCO2e/km",
+    "note": "L'idée ici est de prendre en compte une part des émissions liées aux gaz fluorés issus des climatisations des véhicules \nen France via le total des émissions dues à ces gaz sur le secteur du transport (voitures et VUL diesel, essence, GNV, GPL, électrique).\n",
     "optimized": true
   },
   "transport . voiture . par km personne": {
