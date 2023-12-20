@@ -1057,6 +1057,9 @@
     "titre": "Carpool to work",
     "applicable si": {
       "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
         "voiture . utilisateur régulier",
         "voiture . km > seuil d'activation boulot"
       ]
