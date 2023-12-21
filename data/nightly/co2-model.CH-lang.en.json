@@ -10949,12 +10949,12 @@
     "titre.auto": "oil footprint air heating per m2"
   },
   "parc français . chauffage . empreinte buches chauffage air par m2": {
-    "formule": "empreinte buches par m2 * part chauffage air bois / 2",
+    "formule": "empreinte buches par m2 * part chauffage air bois",
     "titre": "footprint of air heating logs per m2",
     "titre.auto": "footprint of air heating logs per m2"
   },
   "parc français . chauffage . empreinte granulés chauffage air par m2": {
-    "formule": "empreinte granulés par m2 * part chauffage air bois / 2",
+    "formule": "empreinte granulés par m2 * part chauffage air bois",
     "titre": "pellet footprint heating air per m2",
     "titre.auto": "pellet footprint heating air per m2"
   },
@@ -10981,8 +10981,14 @@
     "titre": "electricity CAP",
     "titre.auto": "electricity CAP"
   },
+  "parc français . surface . part hors PAC électricité": {
+    "formule": "surface . électricité hors PAC / surface . électricité"
+  },
+  "parc français . surface . part PAC électricité": {
+    "formule": "surface . électricité PAC / surface . électricité"
+  },
   "parc français . chauffage . consommation électricité hors PAC": {
-    "formule": "consommation électricité hors PAC . chauffage + consommation électricité . ecs + consommation électricité . cuisson",
+    "formule": "consommation électricité hors PAC . chauffage + surface . part hors PAC électricité * (consommation électricité . ecs + consommation électricité . cuisson)",
     "unité": "kWh",
     "titre": "electricity consumption excluding heat pump",
     "titre.auto": "electricity consumption excluding heat pump"
@@ -10995,7 +11001,7 @@
     "titre.auto": "electricity consumption via heat pumps linked to heating"
   },
   "parc français . chauffage . consommation électricité PAC": {
-    "formule": "consommation électricité PAC . chauffage + consommation électricité . ecs + consommation électricité . cuisson",
+    "formule": "consommation électricité PAC . chauffage + surface . part PAC électricité * (consommation électricité . ecs + consommation électricité . cuisson)",
     "unité": "kWh",
     "titre": "electricity consumption PAC",
     "titre.auto": "electricity consumption PAC"
@@ -11008,13 +11014,13 @@
     "titre.auto": "electricity consumption via heat pumps linked to heating"
   },
   "parc français . chauffage . consommation électricité hors PAC par m2": {
-    "formule": "consommation électricité hors PAC . chauffage / surface . électricité hors PAC",
+    "formule": "consommation électricité hors PAC / surface . électricité hors PAC",
     "unité": "kWh/m2",
     "titre": "electricity consumption (excluding heat pump) per m2",
     "titre.auto": "electricity consumption (excluding heat pump) per m2"
   },
   "parc français . chauffage . consommation électricité PAC par m2": {
-    "formule": "consommation électricité PAC . chauffage / surface . électricité PAC",
+    "formule": "consommation électricité PAC / surface . électricité PAC",
     "unité": "kWh/m2",
     "titre": "pAC electricity consumption per m2",
     "titre.auto": "pAC electricity consumption per m2"

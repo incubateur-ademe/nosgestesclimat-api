@@ -5892,23 +5892,33 @@
     "valeur": "122.2758936094931",
     "optimized": true
   },
-  "parc français . chauffage . consommation électricité hors PAC . chauffage": {
-    "titre": "electricity consumption via heat pumps linked to heating",
-    "formule": "54859667824 - 14077969585",
+  "parc français . surface . électricité hors PAC": {
+    "formule": "980364088 - 301589218",
+    "unité": "m2",
+    "titre": "electricity excluding heat pump",
+    "titre.auto": "electricity excluding heat pump",
+    "optimized": true
+  },
+  "parc français . surface . part PAC électricité": {
+    "formule": "301589218 / 980364088",
+    "optimized": true
+  },
+  "parc français . chauffage . consommation électricité PAC": {
+    "formule": "14077969585 + (surface . part PAC électricité * (23584851016 + 11416870555))",
     "unité": "kWh",
-    "note": "This consumption is included in `electricity consumption . heating`.",
-    "titre.auto": "electricity consumption via heat pumps linked to heating",
+    "titre": "electricity consumption PAC",
+    "titre.auto": "electricity consumption PAC",
     "optimized": true
   },
   "parc français . chauffage . consommation électricité hors PAC par m2": {
     "unité": "kWh/m2",
     "titre": "electricity consumption (excluding heat pump) per m2",
     "titre.auto": "electricity consumption (excluding heat pump) per m2",
-    "valeur": "60.08133188401627",
+    "valeur": "95.78411006554428",
     "optimized": true
   },
   "parc français . chauffage . consommation électricité PAC par m2": {
-    "formule": "14077969585 / 301589218",
+    "formule": "consommation électricité PAC / 301589218",
     "unité": "kWh/m2",
     "titre": "pAC electricity consumption per m2",
     "titre.auto": "pAC electricity consumption per m2",

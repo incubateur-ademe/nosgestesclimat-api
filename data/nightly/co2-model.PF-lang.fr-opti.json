@@ -5015,20 +5015,27 @@
     "valeur": "135.0529215199815",
     "optimized": true
   },
-  "parc français . chauffage . consommation électricité hors PAC . chauffage": {
-    "titre": "conso électrique via PAC liée au chauffage",
-    "formule": "54859667824 - 14077969585",
+  "parc français . surface . électricité hors PAC": {
+    "formule": "980364088 - 301589218",
+    "unité": "m2",
+    "optimized": true
+  },
+  "parc français . surface . part PAC électricité": {
+    "formule": "301589218 / 980364088",
+    "optimized": true
+  },
+  "parc français . chauffage . consommation électricité PAC": {
+    "formule": "14077969585 + (surface . part PAC électricité * (23584851016 + 11416870555))",
     "unité": "kWh",
-    "note": "Cette consommation est compris dans `consommation électricité . chauffage`.",
     "optimized": true
   },
   "parc français . chauffage . consommation électricité hors PAC par m2": {
     "unité": "kWh/m2",
-    "valeur": "60.08133188401627",
+    "valeur": "95.78411006554428",
     "optimized": true
   },
   "parc français . chauffage . consommation électricité PAC par m2": {
-    "formule": "14077969585 / 301589218",
+    "formule": "consommation électricité PAC / 301589218",
     "unité": "kWh/m2",
     "optimized": true
   },
