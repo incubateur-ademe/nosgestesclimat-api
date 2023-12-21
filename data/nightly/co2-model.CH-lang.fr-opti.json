@@ -320,6 +320,28 @@
     "description": "L'eau en bouteille a un impact environnemental 450 fois supérieur à l'eau du robinet. Elle coute entre 100 et 300 fois plus cher (80 % du prix est issu de\nla production de l'emballage) et participe fortement à la pollution plastique des océans.\n\n> En effet, il est fréquent que nos déchets plastiques soient vendus à d’autres pays. Ainsi en 2016, pas moins de 50 % des déchets plastiques triés européens ont été exportés vers la Chine.\n",
     "note": "Sources : [Écobilan de l’eau potable](http://esu-services.ch/fileadmin/download/jungbluth-2015-ecobilan-eau.pdf) et [Ministère de la Transition Ecologique p106](https://www.economie.gouv.fr/files/files/directions_services/cge/filieres-dechets-recyclage.pdf)\n"
   },
+  "alimentation . boisson . sucrées . changer pour sirop": {
+    "applicable si": "boisson . sucrées . litres > 0",
+    "titre": "Consommer des sirops plutôt que des sodas ou jus",
+    "description": "Les sirops ont une empreinte très inférieure aux sodas et aux jus de fruits : autour de 100 gCO2e/litre contre plus de 500 pour les sodas, et 900 pour les jus de fruits.\n",
+    "formule": "boisson . sucrées - recalcul"
+  },
+  "alimentation . boisson . sucrées . changer pour sirop . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "boisson . sucrées",
+        "avec": {
+          "boisson . sucrées . facteur": "boisson . sucrées . facteur sirops"
+        }
+      }
+    }
+  },
+  "alimentation . boisson . sucrées . facteur sirops": {
+    "unité": "kgCO2e/l",
+    "note": "Facteur d'émission issu d'[Agribalyse, boisson préparée à partir de sirop](https://agribalyse.ademe.fr/app/aliments/18058#Boisson_pr%C3%A9par%C3%A9e_%C3%A0_partir_de_sirop_%C3%A0_diluer_type_menthe,_fraise,_etc,_sucr%C3%A9,_dilu%C3%A9_dans_l'eau), 0.10 kgCO2e/kg. On considère que la masse volumique est de 1kg/l.",
+    "valeur": "0.1",
+    "optimized": true
+  },
   "alimentation . déchets . réduire gaspillage": {
     "titre": "Réduire le gaspillage alimentaire",
     "icônes": "🚯",
@@ -1516,12 +1538,16 @@
   "alimentation . boisson . sucrées": {
     "description": "Notons que des alternatives au soda, très simples à préparer maison, sont possibles : c'est le cas du [kéfir](https://fr.wikipedia.org/wiki/K%C3%A9fir) ou [Kombucha](https://fr.wikipedia.org/wiki/Kombucha). Nous n'avons pas encore évalué les gains d'empreinte offerts par ces alternatives.\n",
     "unité": "kgCO2e",
-    "formule": "(litres * 52) * 0.5066666666666667",
+    "formule": "litres * commun . semaines par an * facteur"
+  },
+  "alimentation . boisson . sucrées . facteur": {
+    "note": "Cette valeur est bien sûr très approximative.",
+    "valeur": "0.71",
     "optimized": true
   },
   "alimentation . boisson . sucrées . litres": {
     "titre": "Consommation de boissons sucrées",
-    "question": "Quelle est votre consommation par semaine de sodas, jus de fruits, sirops, etc. ?",
+    "question": "Quelle est votre consommation par semaine de sodas, jus de fruits, etc. ?",
     "suggestions": {
       "nulle": 0,
       "modérée": 1,

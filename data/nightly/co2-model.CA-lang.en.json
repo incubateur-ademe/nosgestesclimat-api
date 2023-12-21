@@ -11,6 +11,7 @@
         "alimentation . devenir végétalien",
         "alimentation . viande faible empreinte",
         "alimentation . manger de saison",
+        "alimentation . boisson . sucrées . changer pour sirop",
         "alimentation . boisson . eau en bouteille . arrêter",
         "alimentation . manger local",
         "alimentation . déchets . réduire gaspillage",
@@ -377,6 +378,32 @@
     "description": "Bottled water has an environmental impact 450 times greater than tap water. It costs between 100 and 300 times more (80% of the price comes from the\nproduction of the packaging) and is a major contributor to plastic pollution of the oceans.\n\n> Our plastic waste is often sold to other countries. In 2016, no less than 50% of sorted European plastic waste was exported to China.\n",
     "note": "Sources: <a href=\"http://esu-services.ch/fileadmin/download/jungbluth-2015-ecobilan-eau.pdf\">Écobilan de l'eau potable</a> and <a href=\"https://www.economie.gouv.fr/files/files/directions_services/cge/filieres-dechets-recyclage.pdf\">Ministère de la Transition Ecologique p106</a>\n",
     "titre.auto": "Stop using bottled water"
+  },
+  "alimentation . boisson . sucrées . changer pour sirop": {
+    "applicable si": "boisson . sucrées . litres > 0",
+    "titre": "Drink syrups rather than soft drinks or juices",
+    "description": "Syrups have a much smaller footprint than soft drinks and fruit juices: around 100 gCO2e/litre compared with over 500 for soft drinks and 900 for fruit juices.\n",
+    "formule": "boisson . sucrées - recalcul",
+    "titre.auto": "Drink syrups rather than soft drinks or juices"
+  },
+  "alimentation . boisson . sucrées . changer pour sirop . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "boisson . sucrées",
+        "avec": {
+          "boisson . sucrées . facteur": "boisson . sucrées . facteur sirops"
+        }
+      }
+    },
+    "titre": "recalculation",
+    "titre.auto": "recalculation"
+  },
+  "alimentation . boisson . sucrées . facteur sirops": {
+    "formule": 0.1,
+    "unité": "kgCO2e/l",
+    "note": "Emission factor from Agribalysis<a href=\"https://agribalyse.ademe.fr/app/aliments/18058#Boisson_pr%C3%A9par%C3%A9e_%C3%A0_partir_de_sirop_%C3%A0_diluer_type_menthe,_fraise,_etc,_sucr%C3%A9,_dilu%C3%A9_dans_l'eau\">, drink prepared from syrup</a>, 0.10 kgCO2e/kg. The density is assumed to be 1kg/l.",
+    "titre": "syrup factor",
+    "titre.auto": "syrup factor"
   },
   "alimentation . déchets . réduire gaspillage": {
     "titre": "Reduce food waste",
@@ -1948,8 +1975,7 @@
     "formule": {
       "moyenne": [
         "facteur sodas",
-        "facteur jus de fruits",
-        "facteur sirops"
+        "facteur jus de fruits"
       ]
     },
     "note": "This value is of course very approximate.",
@@ -1970,16 +1996,9 @@
     "titre": "fruit juice factor",
     "titre.auto": "fruit juice factor"
   },
-  "alimentation . boisson . sucrées . facteur sirops": {
-    "formule": 0.1,
-    "unité": "kgCO2e/l",
-    "note": "Emission factor from Agribalysis<a href=\"https://agribalyse.ademe.fr/app/aliments/18058#Boisson_pr%C3%A9par%C3%A9e_%C3%A0_partir_de_sirop_%C3%A0_diluer_type_menthe,_fraise,_etc,_sucr%C3%A9,_dilu%C3%A9_dans_l'eau\">, drink prepared from syrup</a>, 0.10 kgCO2e/kg. Density assumed to be 1kg/l.",
-    "titre": "syrup factor",
-    "titre.auto": "syrup factor"
-  },
   "alimentation . boisson . sucrées . litres": {
     "titre": "Consumption of sweetened beverages",
-    "question": "What is your weekly consumption of soft drinks, fruit juices, syrups, etc.?",
+    "question": "What is your weekly consumption of soft drinks, fruit juices, etc.?",
     "suggestions": {
       "none": 0,
       "moderate": 1,

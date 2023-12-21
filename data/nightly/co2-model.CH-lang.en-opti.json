@@ -375,6 +375,33 @@
     "note": "Sources: <a href=\"http://esu-services.ch/fileadmin/download/jungbluth-2015-ecobilan-eau.pdf\">Écobilan de l'eau potable</a> and <a href=\"https://www.economie.gouv.fr/files/files/directions_services/cge/filieres-dechets-recyclage.pdf\">Ministère de la Transition Ecologique p106</a>\n",
     "titre.auto": "Stop using bottled water"
   },
+  "alimentation . boisson . sucrées . changer pour sirop": {
+    "applicable si": "boisson . sucrées . litres > 0",
+    "titre": "Drink syrups rather than soft drinks or juices",
+    "description": "Syrups have a much smaller footprint than soft drinks and fruit juices: around 100 gCO2e/litre compared with over 500 for soft drinks and 900 for fruit juices.\n",
+    "formule": "boisson . sucrées - recalcul",
+    "titre.auto": "Drink syrups rather than soft drinks or juices"
+  },
+  "alimentation . boisson . sucrées . changer pour sirop . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "boisson . sucrées",
+        "avec": {
+          "boisson . sucrées . facteur": "boisson . sucrées . facteur sirops"
+        }
+      }
+    },
+    "titre": "recalculation",
+    "titre.auto": "recalculation"
+  },
+  "alimentation . boisson . sucrées . facteur sirops": {
+    "unité": "kgCO2e/l",
+    "note": "Emission factor from Agribalysis<a href=\"https://agribalyse.ademe.fr/app/aliments/18058#Boisson_pr%C3%A9par%C3%A9e_%C3%A0_partir_de_sirop_%C3%A0_diluer_type_menthe,_fraise,_etc,_sucr%C3%A9,_dilu%C3%A9_dans_l'eau\">, drink prepared from syrup</a>, 0.10 kgCO2e/kg. The density is assumed to be 1kg/l.",
+    "titre": "syrup factor",
+    "titre.auto": "syrup factor",
+    "valeur": "0.1",
+    "optimized": true
+  },
   "alimentation . déchets . réduire gaspillage": {
     "titre": "Reduce food waste",
     "icônes": "🚯",
@@ -1762,14 +1789,20 @@
   "alimentation . boisson . sucrées": {
     "description": "Note that alternatives to soda, very simple to prepare at home, are\npossible: this is the case of\n[kefir](https://fr.wikipedia.org/wiki/K%C3%A9fir) or\n[Kombucha](https://fr.wikipedia.org/wiki/Kombucha). We have not yet\nevaluated the footprint gains offered by these alternatives.\n",
     "unité": "kgCO2e",
-    "formule": "(litres * 52) * 0.5066666666666667",
+    "formule": "litres * commun . semaines par an * facteur",
     "titre": "sweet",
-    "titre.auto": "sweet",
+    "titre.auto": "sweet"
+  },
+  "alimentation . boisson . sucrées . facteur": {
+    "note": "This value is of course very approximate.",
+    "titre": "factor",
+    "titre.auto": "factor",
+    "valeur": "0.71",
     "optimized": true
   },
   "alimentation . boisson . sucrées . litres": {
     "titre": "Consumption of sweetened beverages",
-    "question": "What is your weekly consumption of soft drinks, fruit juices, syrups, etc.?",
+    "question": "What is your weekly consumption of soft drinks, fruit juices, etc.?",
     "suggestions": {
       "none": 0,
       "moderate": 1,
