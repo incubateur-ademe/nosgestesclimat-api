@@ -6135,6 +6135,8 @@
   },
   "parc français . surface . part PAC électricité": {
     "formule": "301589218 / 980364088",
+    "titre": "pAC electricity share",
+    "titre.auto": "pAC electricity share",
     "optimized": true
   },
   "parc français . chauffage . consommation électricité PAC": {

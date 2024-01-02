@@ -11015,10 +11015,14 @@
     "titre.auto": "electricity CAP"
   },
   "parc français . surface . part hors PAC électricité": {
-    "formule": "surface . électricité hors PAC / surface . électricité"
+    "formule": "surface . électricité hors PAC / surface . électricité",
+    "titre": "share excluding PAC electricity",
+    "titre.auto": "share excluding PAC electricity"
   },
   "parc français . surface . part PAC électricité": {
-    "formule": "surface . électricité PAC / surface . électricité"
+    "formule": "surface . électricité PAC / surface . électricité",
+    "titre": "pAC electricity share",
+    "titre.auto": "pAC electricity share"
   },
   "parc français . chauffage . consommation électricité hors PAC": {
     "formule": "consommation électricité hors PAC . chauffage + surface . part hors PAC électricité * (consommation électricité . ecs + consommation électricité . cuisson)",
@@ -11027,11 +11031,11 @@
     "titre.auto": "electricity consumption excluding heat pump"
   },
   "parc français . chauffage . consommation électricité hors PAC . chauffage": {
-    "titre": "electricity consumption via heat pumps linked to heating",
+    "titre": "electricity consumption excluding heat pump linked to heating",
     "formule": "consommation électricité . chauffage - consommation électricité PAC . chauffage",
     "unité": "kWh",
     "note": "This consumption is included in `electricity consumption . heating`.",
-    "titre.auto": "electricity consumption via heat pumps linked to heating"
+    "titre.auto": "electricity consumption excluding heat pump linked to heating"
   },
   "parc français . chauffage . consommation électricité PAC": {
     "formule": "consommation électricité PAC . chauffage + surface . part PAC électricité * (consommation électricité . ecs + consommation électricité . cuisson)",
