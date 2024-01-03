@@ -692,6 +692,7 @@
   },
   "logement . énergie de veille . puissance": {
     "formule": 0.05,
+    "unité": "kW",
     "description": "> The total power of these lights for a household often exceeds 50 Watt\n",
     "note": "It is quite possible that we underestimate the number of Watt in standby. In particular, it appears that the internet and TV boxes alone consume more than 50\n\n> The \"box\" is an increasingly common piece of equipment, which often remains on 24 hours a day and generates a consumption that can exceed 200 kWh / year, or as much as the washing machine. Its total consumption over a year is between 150 and 300 kWh*: that is as much as a large refrigerator\n",
     "titre": "power",
@@ -12021,11 +12022,17 @@
     "titre.auto": "wood price index"
   },
   "logement . chauffage . bois . type . granulés . prix kWh": {
-    "formule": "((granulés vrac . prix 100 kWh + granulés sac . prix 100 kWh) / 2) / 100 kWh",
+    "formule": {
+      "moyenne": [
+        "granulés vrac . prix 100 kWh / 100 kWh",
+        "granulés sac . prix 100 kWh / 100 kWh"
+      ]
+    },
     "unité": "€/kWh",
     "titre": "price kWh",
     "titre.auto": "price kWh"
   },
+  "logement . chauffage . bois . type . granulés vrac": null,
   "logement . chauffage . bois . type . granulés vrac . prix 100 kWh": {
     "formule": 13.2522,
     "unité": "€",
@@ -12033,6 +12040,7 @@
     "titre": "price 100 kWh",
     "titre.auto": "price 100 kWh"
   },
+  "logement . chauffage . bois . type . granulés sac": null,
   "logement . chauffage . bois . type . granulés sac . prix 100 kWh": {
     "formule": 13.8456,
     "unité": "€",
@@ -12910,6 +12918,7 @@
     "titre": "pro-rata annual attendance",
     "titre.auto": "pro-rata annual attendance"
   },
+  "logement . vacances . résidence secondaire . nombre de nuitées": null,
   "logement . vacances . résidence secondaire . nombre de nuitées . moyenne": {
     "titre": "Average number of nights per French person",
     "formule": "nombre de nuits hors logement * part mode d'hébergement résidence secondaire",

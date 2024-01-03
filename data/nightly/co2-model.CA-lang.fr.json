@@ -584,6 +584,7 @@
   },
   "logement . énergie de veille . puissance": {
     "formule": 0.05,
+    "unité": "kW",
     "description": "> La puissance totale de ces veilles pour un ménage dépasse souvent 50 Watt\n",
     "note": "Il est bien possible que l'on sous-estime le nombre de Watt en veille. Notamment, il apparait que les box internet et TV à elle-seules en consomme plus que 50. \n\n> La « box » est un équipement de plus en plus courant, qui reste souvent allumé 24 h sur 24 et qui génère une consommation pou-vant dépasser 200 kWh / an, soit autant que le lave-linge. Sa consommation totale sur un an se situe entre 150 et 300 kWh* : c'est autant qu'un grand réfrigérateur\n"
   },
@@ -9814,14 +9815,21 @@
     "note": "Indice prix en date de février 2023 par rapport à 2015 (inflation sur le bois similaire à 2017, notre année de référence).\nChiffre issu de l'INSEE, [Indice de prix de production de l'industrie française pour le marché français − Bois d'énergie - Prix de marché − Base 2015](https://www.insee.fr/fr/statistiques/serie/010534112#Graphique)\n"
   },
   "logement . chauffage . bois . type . granulés . prix kWh": {
-    "formule": "((granulés vrac . prix 100 kWh + granulés sac . prix 100 kWh) / 2) / 100 kWh",
+    "formule": {
+      "moyenne": [
+        "granulés vrac . prix 100 kWh / 100 kWh",
+        "granulés sac . prix 100 kWh / 100 kWh"
+      ]
+    },
     "unité": "€/kWh"
   },
+  "logement . chauffage . bois . type . granulés vrac": null,
   "logement . chauffage . bois . type . granulés vrac . prix 100 kWh": {
     "formule": 13.2522,
     "unité": "€",
     "note": "Source [Dido](https://www.statistiques.developpement-durable.gouv.fr/catalogue?page=datafile&datafileRid=0bf930dc-bfac-4e6f-a063-ec1774c6d029) en date du 2023-01\n"
   },
+  "logement . chauffage . bois . type . granulés sac": null,
   "logement . chauffage . bois . type . granulés sac . prix 100 kWh": {
     "formule": 13.8456,
     "unité": "€",
@@ -10393,6 +10401,7 @@
   "logement . vacances . résidence secondaire . pro-rata présence annuelle": {
     "formule": "durée / commun . jours par an * 1 jour/nuit"
   },
+  "logement . vacances . résidence secondaire . nombre de nuitées": null,
   "logement . vacances . résidence secondaire . nombre de nuitées . moyenne": {
     "titre": "Nombre de nuitées en moyenne par français",
     "formule": "nombre de nuits hors logement * part mode d'hébergement résidence secondaire",
