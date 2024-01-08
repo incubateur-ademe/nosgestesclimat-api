@@ -1599,7 +1599,7 @@
   "alimentation . boisson . chaude . chicorée": {
     "titre": "Chicory",
     "icônes": "🍵",
-    "formule": "0.00684 * nombre",
+    "formule": "0.01629 * nombre",
     "unité": "kgCO2e/semaine",
     "titre.auto": "Chicory",
     "optimized": true
