@@ -702,7 +702,7 @@
     "titre.auto": "Replace my oil-fired boiler with wood"
   },
   "logement . remplacer fioul par bois . alternative": {
-    "formule": "(chauffage . fioul . consommation / 0.101436943) * 0.0113",
+    "formule": "(chauffage . fioul . consommation / 0.101436943) * 0.032",
     "titre": "alternative",
     "titre.auto": "alternative",
     "optimized": true
@@ -5272,7 +5272,7 @@
   },
   "logement . chauffage . empreinte par défaut": {
     "icônes": "🌡️",
-    "formule": "19.64719233667352 * logement . surface",
+    "formule": "19.94861124588478 * logement . surface",
     "unité": "kgCO2e",
     "titre": "default footprint",
     "titre.auto": "default footprint",
@@ -5736,7 +5736,7 @@
   "logement . chauffage . bois . facteur d'émission bûches": {
     "titre": "Wood log footprint",
     "unité": "kgCO2e/kWh",
-    "note": "In the absence of a \"generic validated\" emission factor for wood logs in the Base Carbone, we have opted for a \"specific validated\" emission factor (E+/C- initiative = Positive Energy and Carbon Reduction label) in order to ensure a degree of consistency for the user of the calculation model\nconsistency for the user browsing the calculation model. However, the E+/C- emissions factors follow rules that are sometimes different from the\ncalculation rules of the Base Carbone. It is therefore likely that this emission factor slightly underestimates the GHG impact of the consumption of one kWh of wood logs by not taking into account the emissions of unburnt methane \nunburnt methane emissions.\n",
+    "note": "Please note: in the absence of a \"generic validated\" emission factor for wood logs in the Base Carbone, we have opted for a \"specific validated\" emission factor (E+/C- initiative = Positive Energy and Carbon Reduction label) \n(E+/C- initiative = Positive Energy and Carbon Reduction label), in order to ensure a degree of consistency for the user browsing the calculation model.\nHowever, E+/C- emission factors are sometimes developed according to rules that differ from those used in the Base Carbone calculation.\nIt is therefore likely that this emission factor slightly underestimates the GHG impact of consuming one kWh of wood logs by not taking unburnt methane emissions into account.\n",
     "titre.auto": "Wood log footprint",
     "valeur": "0.046",
     "optimized": true
@@ -5744,9 +5744,9 @@
   "logement . chauffage . bois . facteur d'émission granulés": {
     "titre": "Wood pellet footprint",
     "unité": "kgCO2e/kWh",
-    "note": "Base Carbone emission factor for French pellets (from sawmill waste)\nSawmill by-product means that the pellets come from wood off-cuts and not from raw wood.\n",
+    "note": "Please note: in the absence of a \"generic validated\" emission factor for pellets in the Base Carbone (the generic validated EF available does not correspond to use in an individual stove but in a heating network), \nwe have opted for a \"specific validated\" emission factor (E+/C- initiative = Positive Energy and Carbon Reduction label), in order to ensure a degree of consistency for the user browsing the calculation model.\nHowever, E+/C- emission factors are sometimes developed according to rules that differ from those used in the Base Carbone calculation.\nIt is therefore likely that this emission factor slightly underestimates the GHG impact of consuming one kWh of wood logs by not taking unburnt methane emissions into account.\n",
     "titre.auto": "Wood pellet footprint",
-    "valeur": "0.0113",
+    "valeur": "0.032",
     "optimized": true
   },
   "logement . chauffage . réseau de chaleur": {
@@ -5902,7 +5902,7 @@
   "parc français . chauffage . empreinte moyenne chauffage air par m2": {
     "titre": "average air heating footprint per m2",
     "titre.auto": "average air heating footprint per m2",
-    "valeur": "135.15851679196902",
+    "valeur": "137.68917567061303",
     "optimized": true
   },
   "parc français . surface . électricité hors PAC": {
@@ -7597,7 +7597,7 @@
     "titre.auto": "number"
   },
   "logement . vacances . résidence secondaire . chauffage": {
-    "formule": "((facteur saison * (19.64719233667352 + 27.300878711448238)) * surface) * pro-rata présence annuelle",
+    "formule": "((facteur saison * (19.94861124588478 + 27.300878711448238)) * surface) * pro-rata présence annuelle",
     "unité": "kgCO2e",
     "description": "To calculate the seasonal factors, which depend on both the location of the second home and the season in which it is visited, we have used the degree-hour data available for each climate zone, \nwhich can be found in <a href=\"https://docs.google.com/spreadsheets/d/1sQp51C2zgBi3KiKrMCvXNtd26NJGHhE41z_UxsBKU94/edit#gid=0\">this table</a>.\nThese degree hours can be found in the appendix to the Order of 8 October 2021 modifying the calculation method and the methods for establishing the energy performance diagnosis, <a href=\"https://www.socotec-certification-international.fr/s3fs-public/2022-10/arrete-8-octobre-2021_compressed.pdf\">available here</a>.\n\nIn France, there are three climate zones: H1, the coldest zone, the north-eastern half of France. H2, a temperate zone in the west and south-west. H3, the hottest zone, the south-east of France and French overseas departments and territories.\n\n![Climate zones France](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/RT_2005_zone_climatique-2.svg/1176px-RT_2005_zone_climatique-2.svg.png)\n\nFor our calculations, we have opted for the following assumptions:\n\n  - Homes located on the north-west coast, in the countryside or in towns, correspond to the average for zones H1 and H2 < 800 mètres d'altitude\n  - Les logements situés sur le littoral méditerranéen correspondent à la zone H3 < 400 mètres d'altitude\n  - Les logements situés en montagne correspondent aux zones H1 et H2 > 800 metres above sea level\n\nWe have related this to the average daily degree-hours over the year, to establish the multiplication factors for the average heating degree-hours for one day, whatever the location.\n\nmultiplication factors by climate zone and period](https://github.com/incubateur-ademe/nosgestesclimat/assets/55186402/c328fa42-bae6-4391-becf-a31cbaf32201)\n",
     "titre": "heating",

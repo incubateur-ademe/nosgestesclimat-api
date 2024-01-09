@@ -598,7 +598,7 @@
     "note": "Nous considérons pour l'instant que le remplacement des kWh de fioul par la même quantité de kWh de bois est une bonne approximation de premier ordre. Nous pourrons par la suite l'adapter en fonction du rendement des installations résidentielles.\n"
   },
   "logement . remplacer fioul par bois . alternative": {
-    "formule": "(chauffage . fioul . consommation / 0.101436943) * 0.0113",
+    "formule": "(chauffage . fioul . consommation / 0.101436943) * 0.032",
     "optimized": true
   },
   "logement . éclairage . LED": {
@@ -4515,7 +4515,7 @@
   },
   "logement . chauffage . empreinte par défaut": {
     "icônes": "🌡️",
-    "formule": "19.64719233667352 * logement . surface",
+    "formule": "19.94861124588478 * logement . surface",
     "unité": "kgCO2e",
     "optimized": true
   },
@@ -4896,15 +4896,15 @@
   "logement . chauffage . bois . facteur d'émission bûches": {
     "titre": "Empreinte bois bûches",
     "unité": "kgCO2e/kWh",
-    "note": "Attention faute de facteur d'émission de statut \"validé générique\" pour le bois bûche dans la Base Carbone nous optons pour un facteur d'émission \"validé spécifique\" (initiative E+/C- = label Energie Positive et Réduction Carbone) afin d'assurer une\ncertaine cohérence pour l'utilisateur parcourant le modèle de calcul. Cependant, les facteurs d'émissions E+/C- suivent des règles d'élaboration parfois différentes des\nrègles de calcul de la Base Carbone. Il est donc probable que ce facteur d'émission sous-estime légèrement l'impact GES de la consommation d'un kWh de bois bûche en ne prenant pas en \ncompte les émissions de méthane imbrulé.\n",
+    "note": "Attention : faute de facteur d'émission de statut \"validé générique\" pour le bois bûche dans la Base Carbone, nous optons pour un facteur d'émission \"validé spécifique\" \n(initiative E+/C- = label Energie Positive et Réduction Carbone), afin d'assurer une certaine cohérence pour l'utilisateur parcourant le modèle de calcul.\nCependant, les facteurs d'émissions E+/C- suivent des règles d'élaboration parfois différentes des règles de calcul de la Base Carbone.\nIl est donc probable que ce facteur d'émission sous-estime légèrement l'impact GES de la consommation d'un kWh de bois bûche en ne prenant pas en compte les émissions de méthane imbrulé.\n",
     "valeur": "0.046",
     "optimized": true
   },
   "logement . chauffage . bois . facteur d'émission granulés": {
     "titre": "Empreinte bois granulés",
     "unité": "kgCO2e/kWh",
-    "note": "Facteur d'émission de la Base Carbone Granulés/Blancs français (issus de connexe de scierie)\nConnexe de scierie signifie que les granulés sont issus de chutes de bois et non de bois brut.\n",
-    "valeur": "0.0113",
+    "note": "Attention : faute de facteur d'émission de statut \"validé générique\" pour les granulés dans la Base Carbone (le FE valide générique disponible ne correspond pas à un usage dans un poêle individuel mais dans un réseau de chaleur), \nnous optons pour un facteur d'émission \"validé spécifique\" (initiative E+/C- = label Energie Positive et Réduction Carbone), afin d'assurer une certaine cohérence pour l'utilisateur parcourant le modèle de calcul.\nCependant, les facteurs d'émissions E+/C- suivent des règles d'élaboration parfois différentes des règles de calcul de la Base Carbone.\nIl est donc probable que ce facteur d'émission sous-estime légèrement l'impact GES de la consommation d'un kWh de bois bûche en ne prenant pas en compte les émissions de méthane imbrulé.\n",
+    "valeur": "0.032",
     "optimized": true
   },
   "logement . chauffage . réseau de chaleur": {
@@ -5024,7 +5024,7 @@
     "optimized": true
   },
   "parc français . chauffage . empreinte moyenne chauffage air par m2": {
-    "valeur": "135.0529215199815",
+    "valeur": "137.58358039862551",
     "optimized": true
   },
   "parc français . surface . électricité hors PAC": {
@@ -6397,7 +6397,7 @@
     "unité": "nuit"
   },
   "logement . vacances . résidence secondaire . chauffage": {
-    "formule": "((facteur saison * (19.64719233667352 + 27.18435057060669)) * surface) * pro-rata présence annuelle",
+    "formule": "((facteur saison * (19.94861124588478 + 27.18435057060669)) * surface) * pro-rata présence annuelle",
     "unité": "kgCO2e",
     "description": "Pour calculer les facteurs saisons, dépendant à la fois de la localisation de la résidence secondaire et de la saison où il est fréquenté, nous nous sommes appuyés sur les données de degrés-heures disponibles par zones climatiques, \nque l'on peut retrouver dans [ce tableau](https://docs.google.com/spreadsheets/d/1sQp51C2zgBi3KiKrMCvXNtd26NJGHhE41z_UxsBKU94/edit#gid=0).\nCes degrés-heures sont trouvables en annexe de l'Arrêté du 8 octobre 2021 modifiant la méthode de calcul et les modalités d’établissement du diagnostic de performance énergétique, [disponible ici](https://www.socotec-certification-international.fr/s3fs-public/2022-10/arrete-8-octobre-2021_compressed.pdf).\n\nEn France, on distingue trois zones climatiques : H1, la zone la plus froide, la moitié Nord-Est de la France. H2, une zone tempérée à l'Ouest et au Sud-Ouest. H3, la zone la plus chaude, le Sud-Est de la France et les DOM-TOM.\n\n![Zones climatiques France](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/RT_2005_zone_climatique-2.svg/1176px-RT_2005_zone_climatique-2.svg.png)\n\nPour nos calculs, nous avons opté pour les hypothèses suivantes :\n\n  - Les logements situés sur le littoral nord-ouest, en campagne ou à la ville, correspondent à la moyenne des zones H1 et H2 < 800 mètres d'altitude\n  - Les logements situés sur le littoral méditerranéen correspondent à la zone H3 < 400 mètres d'altitude\n  - Les logements situés en montagne correspondent aux zones H1 et H2 > 800 mètres d'altitude\n\nNous avons rapporté cela à la moyenne par jour des degrés-heures à l'année, pour établir les facteurs multiplicateurs de la moyenne de degrés-heures de chauffage pour une journée quelle que soit la localisation.\n\n![Facteurs multiplicateurs par zone climatique et par période](https://github.com/incubateur-ademe/nosgestesclimat/assets/55186402/c328fa42-bae6-4391-becf-a31cbaf32201)\n",
     "optimized": true

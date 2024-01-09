@@ -10317,14 +10317,14 @@
     "titre": "Wood log footprint",
     "formule": 0.046,
     "unité": "kgCO2e/kWh",
-    "note": "In the absence of a \"generic validated\" emission factor for wood logs in the Base Carbone, we have opted for a \"specific validated\" emission factor (E+/C- initiative = Positive Energy and Carbon Reduction label) in order to ensure a degree of consistency for the user of the calculation model\nconsistency for the user browsing the calculation model. However, the E+/C- emissions factors follow rules that are sometimes different from the\ncalculation rules of the Base Carbone. It is therefore likely that this emission factor slightly underestimates the GHG impact of the consumption of one kWh of wood logs by not taking into account the emissions of unburnt methane \nunburnt methane emissions.\n",
+    "note": "Please note: in the absence of a \"generic validated\" emission factor for wood logs in the Base Carbone, we have opted for a \"specific validated\" emission factor (E+/C- initiative = Positive Energy and Carbon Reduction label) \n(E+/C- initiative = Positive Energy and Carbon Reduction label), in order to ensure a degree of consistency for the user browsing the calculation model.\nHowever, E+/C- emission factors are sometimes developed according to rules that differ from those used in the Base Carbone calculation.\nIt is therefore likely that this emission factor slightly underestimates the GHG impact of consuming one kWh of wood logs by not taking unburnt methane emissions into account.\n",
     "titre.auto": "Wood log footprint"
   },
   "logement . chauffage . bois . facteur d'émission granulés": {
     "titre": "Wood pellet footprint",
-    "formule": 0.0113,
+    "formule": 0.032,
     "unité": "kgCO2e/kWh",
-    "note": "Base Carbone emission factor for French pellets (from sawmill waste)\nSawmill by-product means that the pellets come from wood off-cuts and not from raw wood.\n",
+    "note": "Please note: in the absence of a \"generic validated\" emission factor for pellets in the Base Carbone (the generic validated EF available does not correspond to use in an individual stove but in a heating network), \nwe have opted for a \"specific validated\" emission factor (E+/C- initiative = Positive Energy and Carbon Reduction label), in order to ensure a degree of consistency for the user browsing the calculation model.\nHowever, E+/C- emission factors are sometimes developed according to rules that differ from those used in the Base Carbone calculation.\nIt is therefore likely that this emission factor slightly underestimates the GHG impact of consuming one kWh of wood logs by not taking unburnt methane emissions into account.\n",
     "titre.auto": "Wood pellet footprint"
   },
   "logement . chauffage . réseau de chaleur": {
