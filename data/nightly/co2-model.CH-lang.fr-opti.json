@@ -5760,7 +5760,12 @@
       "variations": [
         {
           "si": {
-            "est défini": "piscine . présent"
+            "toutes ces conditions": [
+              {
+                "est défini": "piscine . présent"
+              },
+              "piscine . présent"
+            ]
           },
           "alors": "empreinte / habitants"
         },
