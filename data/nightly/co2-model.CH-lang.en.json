@@ -2064,7 +2064,7 @@
       "moyenne": [
         "facteur bière",
         "facteur vin",
-        "facteur coktail"
+        "facteur cocktail"
       ]
     },
     "note": "Wine doesn't have the same footprint as beer by the liter, that's a big simplification.",
@@ -2085,12 +2085,12 @@
     "titre": "wine factor",
     "titre.auto": "wine factor"
   },
-  "alimentation . boisson . alcool . facteur coktail": {
+  "alimentation . boisson . alcool . facteur cocktail": {
     "formule": 0.91,
     "unité": "kgCO2e/l",
-    "note": "Emission factor from Agribalyse<a href=\"https://agribalyse.ademe.fr/app/aliments/1012#Cocktail_%C3%A0_base_de_rhum\">, rum-based cocktail</a>, 0.91 kgCO2e/kg. The density of a coktail is assumed to be 1kg/l.",
-    "titre": "coktail factor",
-    "titre.auto": "coktail factor"
+    "note": "Emission factor from Agribalyse<a href=\"https://agribalyse.ademe.fr/app/aliments/1012#Cocktail_%C3%A0_base_de_rhum\">, rum-based cocktail</a>, 0.91 kgCO2e/kg. The density of a cocktail is assumed to be 1kg/l.",
+    "titre": "cocktail factor",
+    "titre.auto": "cocktail factor"
   },
   "alimentation . boisson . alcool . litres": {
     "titre": "Alcohol consumption",
