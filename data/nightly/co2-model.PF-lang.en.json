@@ -11348,7 +11348,7 @@
   },
   "logement . extérieur": {
     "icônes": "☘️",
-    "titre": "The footprint of your exterior (garden, terrace)",
+    "titre": "Outside (garden, terrace)",
     "non applicable si": {
       "toutes ces conditions": [
         {
@@ -11378,7 +11378,7 @@
         }
       }
     },
-    "question": "What do you have in your garden?",
+    "question": "What do you have outside (garden, balcony)?",
     "description": "Here we try to cover the main elements of a typical individual garden. There are still some elements missing, which will be added gradually.\n",
     "formule": {
       "variations": [
@@ -11391,7 +11391,7 @@
         }
       ]
     },
-    "titre.auto": "The footprint of your exterior (garden, terrace)"
+    "titre.auto": "Outside (garden, terrace)"
   },
   "logement . extérieur . choix utilisateur": {
     "titre": "User choice for the garden",
@@ -11422,12 +11422,12 @@
   "logement . extérieur . empreinte totale": {
     "formule": {
       "somme": [
-        "empreinte salon de jardin bois amortie",
-        "empreinte salon de jardin résine ou métal amortie",
-        "empreinte tondeuse électrique ou robot amortie",
-        "empreinte tondeuse thermique amortie",
-        "empreinte barbecue électrique ou gaz amortie",
-        "empreinte barbecue charbon"
+        "salon de jardin bois",
+        "salon de jardin résine ou métal",
+        "tondeuse électrique ou robot",
+        "tondeuse thermique",
+        "barbecue électrique ou gaz",
+        "barbecue charbon"
       ]
     },
     "unité": "kgCO2e",
@@ -11451,14 +11451,7 @@
   "logement . extérieur . salon de jardin bois": {
     "titre": "Wooden garden furniture",
     "icônes": "🏡🪵",
-    "applicable si": {
-      "toutes ces conditions": [
-        {
-          "est défini": "salon de jardin bois . présent"
-        },
-        "salon de jardin bois . présent"
-      ]
-    },
+    "applicable si": "salon de jardin bois . présent",
     "formule": "empreinte salon de jardin bois amortie",
     "titre.auto": "Wooden garden furniture"
   },
@@ -11495,14 +11488,7 @@
   "logement . extérieur . salon de jardin résine ou métal": {
     "titre": "Resin or metal garden furniture",
     "icônes": "🏡🪨",
-    "applicable si": {
-      "toutes ces conditions": [
-        {
-          "est défini": "salon de jardin résine ou métal . présent"
-        },
-        "salon de jardin résine ou métal . présent"
-      ]
-    },
+    "applicable si": "salon de jardin résine ou métal . présent",
     "formule": "empreinte salon de jardin résine ou métal amortie",
     "titre.auto": "Resin or metal garden furniture"
   },
@@ -11557,14 +11543,7 @@
   "logement . extérieur . tondeuse électrique ou robot": {
     "titre": "Electric mower or robot",
     "icônes": "🌿🔌",
-    "applicable si": {
-      "toutes ces conditions": [
-        {
-          "est défini": "tondeuse électrique ou robot . présent"
-        },
-        "tondeuse électrique ou robot . présent"
-      ]
-    },
+    "applicable si": "tondeuse électrique ou robot . présent",
     "formule": "empreinte tondeuse électrique ou robot amortie",
     "titre.auto": "Electric mower or robot"
   },
@@ -11619,14 +11598,7 @@
   "logement . extérieur . tondeuse thermique": {
     "titre": "Thermal mower",
     "icônes": "🌿⛽️",
-    "applicable si": {
-      "toutes ces conditions": [
-        {
-          "est défini": "tondeuse thermique . présent"
-        },
-        "tondeuse thermique . présent"
-      ]
-    },
+    "applicable si": "tondeuse thermique . présent",
     "formule": "empreinte tondeuse thermique amortie",
     "titre.auto": "Thermal mower"
   },
@@ -11695,14 +11667,7 @@
   "logement . extérieur . barbecue électrique ou gaz": {
     "titre": "Electric or gas barbecue",
     "icônes": "♨️🔌",
-    "applicable si": {
-      "toutes ces conditions": [
-        {
-          "est défini": "barbecue électrique ou gaz . présent"
-        },
-        "barbecue électrique ou gaz . présent"
-      ]
-    },
+    "applicable si": "barbecue électrique ou gaz . présent",
     "formule": "empreinte barbecue électrique ou gaz amortie",
     "titre.auto": "Electric or gas barbecue"
   },
@@ -11744,14 +11709,7 @@
   "logement . extérieur . barbecue charbon": {
     "titre": "Charcoal barbecue",
     "icônes": "♨️🔥",
-    "applicable si": {
-      "toutes ces conditions": [
-        {
-          "est défini": "barbecue charbon . présent"
-        },
-        "barbecue charbon . présent"
-      ]
-    },
+    "applicable si": "barbecue charbon . présent",
     "formule": "empreinte barbecue charbon",
     "titre.auto": "Charcoal barbecue"
   },
