@@ -930,6 +930,51 @@
     "inactive": "oui",
     "titre.auto": "Subscribe to a green electricity contract"
   },
+  "logement . extérieur . barbecue plus écologique": {
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "extérieur . barbecue charbon . présent"
+        },
+        "extérieur . barbecue charbon . présent"
+      ]
+    },
+    "titre": "Switching to an electric barbecue",
+    "note": "Each time you use a charcoal barbecue, you release a huge amount of CO2e into the atmosphere (around 5 kgCO₂e/barbecue). For environmentally-friendly grilling, switch to electric.\n",
+    "formule": "empreinte barbecue charbon - empreinte barbecue électrique ou gaz amortie",
+    "unité": "kgCO2e",
+    "titre.auto": "Switching to an electric barbecue"
+  },
+  "logement . extérieur . privilégier le bois pour le salon de jardin": {
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "extérieur . salon de jardin résine ou métal . présent"
+        },
+        "extérieur . salon de jardin résine ou métal . présent"
+      ]
+    },
+    "titre": "Choosing wooden garden furniture",
+    "note": "Wooden garden furniture has a footprint three times smaller than resin or metal furniture.\n\nWhat's more, it's easier to maintain, so it lasts longer (sanding, oiling or varnishing). Extending its lifespan means reducing its footprint even further!\n",
+    "formule": "empreinte salon de jardin résine ou métal amortie - empreinte salon de jardin bois amortie",
+    "unité": "kgCO2e",
+    "titre.auto": "Choosing wooden garden furniture"
+  },
+  "logement . extérieur . passer à la tondeuse électrique": {
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "extérieur . tondeuse thermique . présent"
+        },
+        "extérieur . tondeuse thermique . présent"
+      ]
+    },
+    "titre": "Choosing an electric lawnmower",
+    "note": "Thermal lawnmowers have a doubly negative carbon footprint: firstly, in terms of construction (the footprint is three times greater than that of electric lawnmowers), but also, of course, in terms of use (although this footprint is not, to date, counted).\n",
+    "formule": "empreinte tondeuse thermique amortie - empreinte tondeuse électrique ou robot amortie",
+    "unité": "kgCO2e",
+    "titre.auto": "Choosing an electric lawnmower"
+  },
   "services sociétaux . voter": {
     "icônes": "🗳️🏛️",
     "description": "Around 4 times a year, every Swiss citizen has the opportunity to vote on various issues at federal, cantonal and municipal level.\n\nDepending on the subject, the votes can be an opportunity to raise the issue of climate change. It's a way of acting indirectly on the carbon footprint of public services, and on other issues where individual efforts are not enough.\n\nBut that's not all! You can take part in citizens' forums or assemblies! If you are a student, there may be processes in place (assemblies, petitions, votes, etc.) to steer your university towards sustainability If you're an employee, can you influence the choices your company makes? If you're retired, can you give some of your time to cooperatives or associations?\n",
@@ -4547,9 +4592,7 @@
         "table . nombre",
         "chaise . nombre",
         "petit meuble . nombre",
-        "grand meuble . nombre",
-        "salon de jardin bois . nombre",
-        "salon de jardin résine ou métal . nombre"
+        "grand meuble . nombre"
       ],
       "suggestions": {
         "none": {
@@ -4560,9 +4603,7 @@
           "table . nombre": 0,
           "chaise . nombre": 0,
           "petit meuble . nombre": 0,
-          "grand meuble . nombre": 0,
-          "salon de jardin bois . nombre": 0,
-          "salon de jardin résine ou métal . nombre": 0
+          "grand meuble . nombre": 0
         }
       }
     },
@@ -4576,9 +4617,7 @@
         "table",
         "chaise",
         "petit meuble",
-        "grand meuble",
-        "salon de jardin bois",
-        "salon de jardin résine ou métal"
+        "grand meuble"
       ]
     },
     "unité": "kgCO2e",
@@ -5021,89 +5060,6 @@
     "formule": "empreinte amortie * nombre",
     "unité": "kgCO2e",
     "titre.auto": "Large piece of furniture"
-  },
-  "divers . ameublement . meubles . salon de jardin bois . empreinte amortie": {
-    "titre": "Dampened wooden garden furniture footprint",
-    "formule": "salon de jardin bois . empreinte / (durée * coefficient préservation)",
-    "unité": "kgCO2e",
-    "titre.auto": "Dampened wooden garden furniture footprint"
-  },
-  "divers . ameublement . meubles . salon de jardin bois . empreinte": {
-    "titre": "Wooden garden furniture footprint",
-    "formule": 69.2,
-    "unité": "kgCO2e",
-    "note": "Emission factor for garden furniture - wood from the Carbon Base",
-    "titre.auto": "Wooden garden furniture footprint"
-  },
-  "divers . ameublement . meubles . salon de jardin bois . durée": {
-    "titre": "Lifetime of wooden garden furniture",
-    "formule": 10,
-    "note": "In this <a href=\"https://librairie.ademe.fr/consommer-autrement/1190-modelisation-et-evaluation-du-poids-carbone-de-produits-de-consommation-et-biens-d-equipement.html\">study</a>\neven though the results in kgCO2e/year assume a life span of 10 years, it is written in the garden furniture sheet (page 185) that the life span \nfrom 5 to 20 years. We choose to consider a lifespan of 10 years.\n",
-    "titre.auto": "Lifetime of wooden garden furniture"
-  },
-  "divers . ameublement . meubles . salon de jardin bois . nombre": {
-    "titre": "Number of wooden garden furniture",
-    "question": "How many wooden garden furniture sets do you own?",
-    "par défaut": 0,
-    "titre.auto": "Number of wooden garden furniture"
-  },
-  "divers . ameublement . meubles . salon de jardin bois": {
-    "titre": "Wooden garden furniture",
-    "icônes": "🏡🪵",
-    "formule": "empreinte amortie * nombre",
-    "unité": "kgCO2e",
-    "titre.auto": "Wooden garden furniture"
-  },
-  "divers . ameublement . meubles . salon de jardin résine ou métal . empreinte amortie": {
-    "titre": "Footprint resin or metal cushioned garden furniture",
-    "formule": "salon de jardin résine ou métal . empreinte / (durée * coefficient préservation)",
-    "unité": "kgCO2e",
-    "titre.auto": "Footprint resin or metal cushioned garden furniture"
-  },
-  "divers . ameublement . meubles . salon de jardin résine ou métal . empreinte": {
-    "titre": "Resin or metal garden furniture footprint",
-    "formule": {
-      "moyenne": [
-        "empreinte salon de jardin métal",
-        "empreinte salon de jardin résine"
-      ]
-    },
-    "unité": "kgCO2e",
-    "note": "Average emission factors for metal garden furniture and woven resin garden furniture from the carbon base",
-    "titre.auto": "Resin or metal garden furniture footprint"
-  },
-  "divers . ameublement . meubles . salon de jardin résine ou métal . empreinte salon de jardin métal": {
-    "formule": 238,
-    "unité": "kgCO2e",
-    "note": "Emission factor for garden furniture - metal from the carbon base",
-    "titre": "print garden furniture metal",
-    "titre.auto": "print garden furniture metal"
-  },
-  "divers . ameublement . meubles . salon de jardin résine ou métal . empreinte salon de jardin résine": {
-    "formule": 260,
-    "unité": "kgCO2e",
-    "note": "Emission factor for garden furniture - woven resin from the Base Carbone",
-    "titre": "print garden furniture resin",
-    "titre.auto": "print garden furniture resin"
-  },
-  "divers . ameublement . meubles . salon de jardin résine ou métal . durée": {
-    "titre": "Life span of a resin or metal garden furniture",
-    "formule": 10,
-    "note": "In this <a href=\"https://librairie.ademe.fr/consommer-autrement/1190-modelisation-et-evaluation-du-poids-carbone-de-produits-de-consommation-et-biens-d-equipement.html\">study</a>\neven though the results in kgCO2e/year assume a life span of 10 years, it is written in the garden furniture sheet (page 185) that the life span \nfrom 5 to 20 years. We choose to consider a lifespan of 10 years.\n",
-    "titre.auto": "Life span of a resin or metal garden furniture"
-  },
-  "divers . ameublement . meubles . salon de jardin résine ou métal . nombre": {
-    "titre": "Number of resin or metal garden furniture",
-    "question": "How many resin or metal garden furniture sets do you own?",
-    "par défaut": 0,
-    "titre.auto": "Number of resin or metal garden furniture"
-  },
-  "divers . ameublement . meubles . salon de jardin résine ou métal": {
-    "titre": "Resin or metal garden furniture",
-    "icônes": "🏡🪨",
-    "formule": "empreinte amortie * nombre",
-    "unité": "kgCO2e",
-    "titre.auto": "Resin or metal garden furniture"
   },
   "divers . animaux domestiques": {
     "titre": "Pets",
@@ -5710,8 +5666,7 @@
         "bouilloire . nombre",
         "cafetière . nombre",
         "aspirateur . nombre",
-        "robot cuisine . nombre",
-        "tondeuse électrique . nombre"
+        "robot cuisine . nombre"
       ],
       "suggestions": {
         "none": {
@@ -5728,8 +5683,7 @@
           "bouilloire . nombre": 0,
           "cafetière . nombre": 0,
           "aspirateur . nombre": 0,
-          "robot cuisine . nombre": 0,
-          "tondeuse électrique . nombre": 0
+          "robot cuisine . nombre": 0
         }
       }
     },
@@ -5750,8 +5704,7 @@
         "bouilloire",
         "cafetière",
         "aspirateur",
-        "robot cuisine",
-        "tondeuse électrique"
+        "robot cuisine"
       ]
     },
     "titre": "devices",
@@ -6212,37 +6165,6 @@
     "formule": "empreinte amortie * nombre",
     "unité": "kgCO2e",
     "titre.auto": "Kitchen robot"
-  },
-  "divers . électroménager . appareils . tondeuse électrique . empreinte amortie": {
-    "titre": "Shock-absorbing electric mower footprint",
-    "formule": "tondeuse électrique . empreinte / (durée * coefficient préservation)",
-    "unité": "kgCO2e",
-    "titre.auto": "Shock-absorbing electric mower footprint"
-  },
-  "divers . électroménager . appareils . tondeuse électrique . empreinte": {
-    "titre": "Electric mower footprint",
-    "formule": 70.1,
-    "unité": "kgCO2e",
-    "note": "Emission factor for electric lawnmower from the Carbon Base (We consider an electric lawnmower without bag)",
-    "titre.auto": "Electric mower footprint"
-  },
-  "divers . électroménager . appareils . tondeuse électrique . durée": {
-    "titre": "Lifetime of electric mower",
-    "formule": 8,
-    "titre.auto": "Lifetime of electric mower"
-  },
-  "divers . électroménager . appareils . tondeuse électrique . nombre": {
-    "titre": "Number of electric mowers",
-    "question": "How many electric mowers do you own?",
-    "par défaut": 0,
-    "titre.auto": "Number of electric mowers"
-  },
-  "divers . électroménager . appareils . tondeuse électrique": {
-    "titre": "Electric mower",
-    "icônes": "🏡🛺",
-    "formule": "empreinte amortie * nombre",
-    "unité": "kgCO2e",
-    "titre.auto": "Electric mower"
   },
   "divers . électroménager . préservation": {
     "question": "What effort do you make to keep your appliances as long as possible?",
@@ -11384,6 +11306,466 @@
     "titre": "carbon intensity",
     "titre.auto": "carbon intensity"
   },
+  "logement . extérieur": {
+    "icônes": "☘️",
+    "titre": "The footprint of your exterior (garden, terrace)",
+    "non applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "logement . appartement"
+        },
+        "appartement"
+      ]
+    },
+    "mosaique": {
+      "type": "selection",
+      "options": [
+        "salon de jardin bois . présent",
+        "salon de jardin résine ou métal . présent",
+        "tondeuse électrique ou robot . présent",
+        "tondeuse thermique . présent",
+        "barbecue électrique ou gaz . présent",
+        "barbecue charbon . présent"
+      ],
+      "suggestions": {
+        "no": {
+          "salon de jardin bois . présent": "non",
+          "salon de jardin résine ou métal . présent": "non",
+          "tondeuse électrique ou robot . présent": "non",
+          "tondeuse thermique . présent": "non",
+          "barbecue électrique ou gaz": "non",
+          "barbecue charbon": "non"
+        }
+      }
+    },
+    "question": "What do you have in your garden?",
+    "description": "Here we try to cover the main elements of a typical individual garden. There are still some elements missing, which will be added gradually.\n",
+    "formule": {
+      "variations": [
+        {
+          "si": "choix utilisateur",
+          "alors": "empreinte totale / habitants"
+        },
+        {
+          "sinon": "empreinte par défaut / habitants"
+        }
+      ]
+    },
+    "titre.auto": "The footprint of your exterior (garden, terrace)"
+  },
+  "logement . extérieur . choix utilisateur": {
+    "titre": "User choice for the garden",
+    "formule": {
+      "une de ces conditions": [
+        {
+          "est défini": "salon de jardin bois . présent"
+        },
+        {
+          "est défini": "salon de jardin résine ou métal . présent"
+        },
+        {
+          "est défini": "tondeuse électrique ou robot . présent"
+        },
+        {
+          "est défini": "tondeuse thermique . présent"
+        },
+        {
+          "est défini": "barbecue électrique ou gaz . présent"
+        },
+        {
+          "est défini": "barbecue charbon . présent"
+        }
+      ]
+    },
+    "titre.auto": "User choice for the garden"
+  },
+  "logement . extérieur . empreinte totale": {
+    "formule": {
+      "somme": [
+        "empreinte salon de jardin bois amortie",
+        "empreinte salon de jardin résine ou métal amortie",
+        "empreinte tondeuse électrique ou robot amortie",
+        "empreinte tondeuse thermique amortie",
+        "empreinte barbecue électrique ou gaz amortie",
+        "empreinte barbecue charbon"
+      ]
+    },
+    "unité": "kgCO2e",
+    "titre": "total footprint",
+    "titre.auto": "total footprint"
+  },
+  "logement . extérieur . empreinte par défaut": {
+    "description": "statistical calculation to establish the \"average\" equipment of a French garden (and not \"à la française\", which would be very different...)",
+    "somme": [
+      "empreinte salon de jardin bois amortie * part propriétaires salon jardin bois",
+      "empreinte salon de jardin résine ou métal amortie * part propriétaires salon jardin résine ou métal",
+      "empreinte tondeuse électrique ou robot amortie * part propriétaires tondeuse électrique ou robot",
+      "empreinte tondeuse thermique amortie * part propriétaires tondeuse thermique",
+      "empreinte barbecue électrique ou gaz amortie * part propriétaires barbecue électrique ou gaz",
+      "empreinte barbecue charbon * part propriétaires barbecue charbon"
+    ],
+    "unité": "kgCO2e",
+    "titre": "default fingerprint",
+    "titre.auto": "default fingerprint"
+  },
+  "logement . extérieur . salon de jardin bois": {
+    "titre": "Wooden garden furniture",
+    "icônes": "🏡🪵",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "salon de jardin bois . présent"
+        },
+        "salon de jardin bois . présent"
+      ]
+    },
+    "formule": "empreinte salon de jardin bois amortie",
+    "titre.auto": "Wooden garden furniture"
+  },
+  "logement . extérieur . salon de jardin bois . présent": {
+    "question": "Do you have wooden garden furniture?",
+    "titre": "present",
+    "titre.auto": "present"
+  },
+  "logement . extérieur . empreinte salon de jardin bois amortie": {
+    "formule": "empreinte salon de jardin bois / durée de vie salon de jardin bois",
+    "unité": "kgCO2e",
+    "titre": "empreinte salon de jardin bois amortie",
+    "titre.auto": "empreinte salon de jardin bois amortie"
+  },
+  "logement . extérieur . empreinte salon de jardin bois": {
+    "formule": 69.2,
+    "note": "Emission factor from the Empreinte database (garden furniture/wood)",
+    "unité": "kgCO2e",
+    "titre": "imprint wooden garden furniture",
+    "titre.auto": "imprint wooden garden furniture"
+  },
+  "logement . extérieur . durée de vie salon de jardin bois": {
+    "formule": 10,
+    "note": "We assume that garden furniture is kept for 10 years.",
+    "titre": "life span of wooden garden furniture",
+    "titre.auto": "life span of wooden garden furniture"
+  },
+  "logement . extérieur . part propriétaires salon jardin bois": {
+    "formule": "0.5 * 0.25",
+    "note": "We assume that half of all French people own a set of garden furniture. Among these garden furniture owners, we assume that 50% are made of resin, 25% of wood and 25% of metal.",
+    "titre": "share owners wooden garden furniture",
+    "titre.auto": "share owners wooden garden furniture"
+  },
+  "logement . extérieur . salon de jardin résine ou métal": {
+    "titre": "Resin or metal garden furniture",
+    "icônes": "🏡🪨",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "salon de jardin résine ou métal . présent"
+        },
+        "salon de jardin résine ou métal . présent"
+      ]
+    },
+    "formule": "empreinte salon de jardin résine ou métal amortie",
+    "titre.auto": "Resin or metal garden furniture"
+  },
+  "logement . extérieur . salon de jardin résine ou métal . présent": {
+    "question": "Do you have resin or metal garden furniture?",
+    "titre": "present",
+    "titre.auto": "present"
+  },
+  "logement . extérieur . empreinte salon de jardin résine ou métal amortie": {
+    "formule": "empreinte salon de jardin résine ou métal / durée de vie salon de jardin résine ou métal",
+    "unité": "kgCO2e",
+    "titre": "impression salon de jardin resin ou métal amortie",
+    "titre.auto": "impression salon de jardin resin ou métal amortie"
+  },
+  "logement . extérieur . empreinte salon de jardin résine ou métal": {
+    "formule": {
+      "moyenne": [
+        "empreinte salon de jardin résine",
+        "empreinte salon de jardin métal"
+      ]
+    },
+    "unité": "kgCO2e",
+    "titre": "resin or metal garden furniture print",
+    "titre.auto": "resin or metal garden furniture print"
+  },
+  "logement . extérieur . empreinte salon de jardin résine": {
+    "formule": 260,
+    "unité": "kgCO2e",
+    "note": "Emission factor from the Empreinte database (Garden furniture/woven resin)",
+    "titre": "imprint resin garden furniture",
+    "titre.auto": "imprint resin garden furniture"
+  },
+  "logement . extérieur . empreinte salon de jardin métal": {
+    "formule": 238,
+    "unité": "kgCO2e",
+    "note": "Emission factor from the Empreinte database (Garden furniture/metal)",
+    "titre": "impression metal garden furniture",
+    "titre.auto": "impression metal garden furniture"
+  },
+  "logement . extérieur . durée de vie salon de jardin résine ou métal": {
+    "formule": 10,
+    "note": "We assume that resin or metal garden furniture will last for 10 years.",
+    "titre": "lifespan of resin or metal garden furniture",
+    "titre.auto": "lifespan of resin or metal garden furniture"
+  },
+  "logement . extérieur . part propriétaires salon jardin résine ou métal": {
+    "formule": "0.5 * 0.25",
+    "note": "We assume that half of French people living in their own homes own a set of garden furniture. Among these garden furniture owners, we assume that 50% are made of resin, 25% of wood and 25% of metal.",
+    "titre": "part propriétaires salon jardin résine ou métal",
+    "titre.auto": "part propriétaires salon jardin résine ou métal"
+  },
+  "logement . extérieur . tondeuse électrique ou robot": {
+    "titre": "Electric mower or robot",
+    "icônes": "🌿🔌",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "tondeuse électrique ou robot . présent"
+        },
+        "tondeuse électrique ou robot . présent"
+      ]
+    },
+    "formule": "empreinte tondeuse électrique ou robot amortie",
+    "titre.auto": "Electric mower or robot"
+  },
+  "logement . extérieur . tondeuse électrique ou robot . présent": {
+    "question": "Do you have an electric or robotic lawnmower?",
+    "titre": "present",
+    "titre.auto": "present"
+  },
+  "logement . extérieur . empreinte tondeuse électrique ou robot amortie": {
+    "formule": "empreinte tondeuse électrique ou robot / durée de vie tondeuse",
+    "unité": "kgCO2e",
+    "titre": "damped electric or robotic mower footprint",
+    "titre.auto": "damped electric or robotic mower footprint"
+  },
+  "logement . extérieur . empreinte tondeuse électrique ou robot": {
+    "formule": {
+      "moyenne": [
+        "empreinte tondeuse électrique",
+        "empreinte tondeuse robot"
+      ]
+    },
+    "unité": "kgCO2e",
+    "titre": "electric mower or robot footprint",
+    "titre.auto": "electric mower or robot footprint"
+  },
+  "logement . extérieur . empreinte tondeuse électrique": {
+    "formule": 70.1,
+    "unité": "kgCO2e",
+    "note": "Emission factor from the Empreinte database (Lawnmower/electric 1200 W)",
+    "titre": "electric mower footprint",
+    "titre.auto": "electric mower footprint"
+  },
+  "logement . extérieur . part propriétaires tondeuse électrique ou robot": {
+    "formule": "0.5 * 0.5",
+    "note": "700,000 lawnmowers are sold every year, half of them thermal. 66% of French people live in a house, \nthat's around 20 million households. We can therefore assume that 50% of households living in houses own a lawnmower, \nwith a lifespan of 10 years.\n",
+    "titre": "share owners electric mower or robot",
+    "titre.auto": "share owners electric mower or robot"
+  },
+  "logement . extérieur . empreinte tondeuse robot": {
+    "formule": 109,
+    "unité": "kgCO2e",
+    "note": "Emission factor from the Footprint Database (Robot mower (Lithium Ion 3.2 Ah))",
+    "titre": "robot mower footprint",
+    "titre.auto": "robot mower footprint"
+  },
+  "logement . extérieur . durée de vie tondeuse": {
+    "formule": 10,
+    "note": "We are using the ADEME's assumption that a lawnmower has a 10-year lifespan.",
+    "titre": "mower life",
+    "titre.auto": "mower life"
+  },
+  "logement . extérieur . tondeuse thermique": {
+    "titre": "Thermal mower",
+    "icônes": "🌿⛽️",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "tondeuse thermique . présent"
+        },
+        "tondeuse thermique . présent"
+      ]
+    },
+    "formule": "empreinte tondeuse thermique amortie",
+    "titre.auto": "Thermal mower"
+  },
+  "logement . extérieur . tondeuse thermique . présent": {
+    "question": "Do you own a petrol lawnmower?",
+    "titre": "present",
+    "titre.auto": "present"
+  },
+  "logement . extérieur . empreinte tondeuse thermique amortie": {
+    "formule": "(empreinte tondeuse thermique / durée de vie tondeuse) + tondeuse thermique . usage",
+    "unité": "kgCO2e",
+    "titre": "damped thermal mower footprint",
+    "titre.auto": "damped thermal mower footprint"
+  },
+  "logement . extérieur . tondeuse thermique . usage": {
+    "formule": "heures usage * consommation moyenne * empreinte au litre",
+    "titre": "use",
+    "titre.auto": "use"
+  },
+  "logement . extérieur . tondeuse thermique . heures usage": {
+    "formule": "heures moyennes par semaine * nombre semaines par an",
+    "unité": "heure",
+    "titre": "hours use",
+    "titre.auto": "hours use"
+  },
+  "logement . extérieur . tondeuse thermique . heures moyennes par semaine": {
+    "formule": 1,
+    "note": "On average, we can assume that French people with a garden spend 1 hour mowing their lawn ( <a href=\"https://www.rentables.fr/consommation-dune-tondeuse-thermique/\">source</a>)",
+    "unité": "heure/semaine",
+    "titre": "average hours per week",
+    "titre.auto": "average hours per week"
+  },
+  "logement . extérieur . tondeuse thermique . nombre semaines par an": {
+    "formule": 9,
+    "unité": "semaine",
+    "note": "We are basing ourselves on the ADEME's hypotheses, i.e. that the French mow their lawns every three weeks for around 6 months. That's around 9 times a year.",
+    "titre": "number of weeks per year",
+    "titre.auto": "number of weeks per year"
+  },
+  "logement . extérieur . tondeuse thermique . consommation moyenne": {
+    "formule": 1,
+    "unité": "litre/heure",
+    "titre": "average consumption",
+    "titre.auto": "average consumption"
+  },
+  "logement . extérieur . tondeuse thermique . empreinte au litre": {
+    "formule": 2.7,
+    "unité": "kgCO2e/litre",
+    "note": "The petrol used in a lawnmower is generally E5 or E10.\nWe use the emission factor from the Empreinte database. \nTo maintain independence between models, we do not call up the variable associated with the car here.\n",
+    "titre": "footprint per litre",
+    "titre.auto": "footprint per litre"
+  },
+  "logement . extérieur . empreinte tondeuse thermique": {
+    "formule": 209,
+    "unité": "kgCO2e",
+    "note": "Emission factor from the Empreinte database (190 cm³ Thermal Lawnmower)",
+    "titre": "thermal mower footprint",
+    "titre.auto": "thermal mower footprint"
+  },
+  "logement . extérieur . part propriétaires tondeuse thermique": {
+    "formule": "0.5 * 0.5",
+    "note": "700,000 lawnmowers are sold every year, half of them thermal. 66% of French people live in a house, i.e. around 20 million households. We can therefore assume that 50% of households living in houses own a lawnmower, which has a lifespan of 15 years.",
+    "titre": "share owners thermal mower",
+    "titre.auto": "share owners thermal mower"
+  },
+  "logement . extérieur . barbecue électrique ou gaz": {
+    "titre": "Electric or gas barbecue",
+    "icônes": "♨️🔌",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "barbecue électrique ou gaz . présent"
+        },
+        "barbecue électrique ou gaz . présent"
+      ]
+    },
+    "formule": "empreinte barbecue électrique ou gaz amortie",
+    "titre.auto": "Electric or gas barbecue"
+  },
+  "logement . extérieur . barbecue électrique ou gaz . présent": {
+    "question": "Do you have an electric or gas barbecue?",
+    "titre": "present",
+    "titre.auto": "present"
+  },
+  "logement . extérieur . empreinte barbecue électrique ou gaz amortie": {
+    "formule": "empreinte barbecue électrique ou gaz / durée de vie barbecue",
+    "unité": "kgCO2e",
+    "titre": "damped electric or gas barbecue footprint",
+    "titre.auto": "damped electric or gas barbecue footprint"
+  },
+  "logement . extérieur . empreinte barbecue électrique ou gaz": {
+    "formule": {
+      "moyenne": [
+        "65.3 kgCO2e",
+        "43.4 kgCO2e"
+      ]
+    },
+    "note": "In the absence of data on the construction footprint of a barbecue, we assume that it is equivalent to the footprint of hobs (electric and gas)\nEmission factors taken from the Empreinte database (9000W ceramic hobs, 9000W gas hobs)\n",
+    "unité": "kgCO2e",
+    "titre": "electric or gas barbecue footprint",
+    "titre.auto": "electric or gas barbecue footprint"
+  },
+  "logement . extérieur . durée de vie barbecue": {
+    "formule": 10,
+    "note": "We assume that a lawnmower has an average lifespan of 10 years.",
+    "titre": "barbecue lifespan",
+    "titre.auto": "barbecue lifespan"
+  },
+  "logement . extérieur . part propriétaires barbecue électrique ou gaz": {
+    "formule": "0.85 * (1 - 0.37)",
+    "note": "According to <a href=\"https://www.esprit-barbecue.fr/blog/des-chiffres-fous-pour-le-marche-du-barbecue/\">this source</a>, 85% of French people with a garden have a barbecue.\nIn addition, [this source[(http://www.bva-xsight.com/wp-content/uploads/2023/03/Weber_Les-Francais-et-le-barbecue_Infographie-2023.pdf)] gives us a breakdown of the types of barbecue owned. \nThis includes all barbecues except charcoal ones.\n",
+    "titre": "owners of electric or gas barbecues",
+    "titre.auto": "owners of electric or gas barbecues"
+  },
+  "logement . extérieur . barbecue charbon": {
+    "titre": "Charcoal barbecue",
+    "icônes": "♨️🔥",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "barbecue charbon . présent"
+        },
+        "barbecue charbon . présent"
+      ]
+    },
+    "formule": "empreinte barbecue charbon",
+    "titre.auto": "Charcoal barbecue"
+  },
+  "logement . extérieur . barbecue charbon . présent": {
+    "question": "Do you have a charcoal barbecue?",
+    "titre": "present",
+    "titre.auto": "present"
+  },
+  "logement . extérieur . empreinte barbecue charbon": {
+    "formule": "empreinte usage barbecue charbon * nombre moyen barbecues par an + empreinte construction barbecue charbon",
+    "note": "Unlike electric and gas barbecues, charcoal barbecues have a significant usage footprint: burning charcoal to cook food emits a significant amount of greenhouse gases. \nSo we're counting both the construction and usage footprints.\n",
+    "unité": "kgCO2e",
+    "titre": "charcoal barbecue footprint",
+    "titre.auto": "charcoal barbecue footprint"
+  },
+  "logement . extérieur . empreinte usage barbecue charbon": {
+    "formule": 4.85,
+    "unité": "kgCO2e",
+    "note": "This data is taken from the work of Boris Proulx, Sandrine Vieira, Cédric Gagnon and Antoine Noreau for Le Devoir <a href=\"https://www.ledevoir.com/documents/special/2022-07-13/bilan-carbone-barbecue/index.html\">source</a>)\n",
+    "titre": "charcoal barbecue footprint",
+    "titre.auto": "charcoal barbecue footprint"
+  },
+  "logement . extérieur . nombre moyen barbecues par an": {
+    "formule": 17,
+    "note": "According to this <a href=\"https://fr.statista.com/statistiques/693928/barbecue-frequence-annuelle-france/\">Statista</a> study, we can estimate that the average number of barbecues per year per French person is 17 (weighted average across population groups).\n",
+    "titre": "average number of barbecues per year",
+    "titre.auto": "average number of barbecues per year"
+  },
+  "logement . extérieur . empreinte construction barbecue charbon": {
+    "formule": "poids moyen barbecue charbon * facteur acier",
+    "unité": "kgCO2e",
+    "note": "It was not possible to find the construction footprint of a charcoal barbecue. We found that most of them were made of steel, so we've given them the footprint of their weight in steel.\nAs the weight varies widely, we decided to use the weight of a 'classic' Weber barbecue with a diameter of 57 cm, i.e. 12 kg.\n",
+    "titre": "construction footprint charcoal barbecue",
+    "titre.auto": "construction footprint charcoal barbecue"
+  },
+  "logement . extérieur . poids moyen barbecue charbon": {
+    "formule": 12,
+    "unité": "kg",
+    "titre": "average weight charcoal barbecue",
+    "titre.auto": "average weight charcoal barbecue"
+  },
+  "logement . extérieur . facteur acier": {
+    "formule": 2.21,
+    "unité": "kgCO2e/kg",
+    "note": "Emission factor from the Empreinte database (steel or tinplate/new)",
+    "titre": "steel factor",
+    "titre.auto": "steel factor"
+  },
+  "logement . extérieur . part propriétaires barbecue charbon": {
+    "formule": "0.85 * 0.37",
+    "note": "According to <a href=\"https://www.esprit-barbecue.fr/blog/des-chiffres-fous-pour-le-marche-du-barbecue/\">this source</a>, 85% of French people with a garden have a barbecue.\nIn addition, [this source[(http://www.bva-xsight.com/wp-content/uploads/2023/03/Weber_Les-Francais-et-le-barbecue_Infographie-2023.pdf)] gives us a breakdown of the types of barbecue owned. This includes charcoal barbecues.\n",
+    "titre": "share of charcoal barbecue owners",
+    "titre.auto": "share of charcoal barbecue owners"
+  },
   "logement": {
     "titre": "Housing",
     "abréviation": "hous.",
@@ -11393,10 +11775,11 @@
     "formule": {
       "somme": [
         "construction",
-        "piscine",
         "électricité",
         "chauffage",
         "climatisation",
+        "piscine",
+        "extérieur",
         "vacances"
       ]
     },

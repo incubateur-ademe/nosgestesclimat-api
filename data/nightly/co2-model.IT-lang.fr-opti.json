@@ -26,6 +26,9 @@
         "logement . rénovation énergétique",
         "logement . rénovation énergétique BBC",
         "logement . raccordement réseau de chaleur",
+        "logement . extérieur . barbecue plus écologique",
+        "logement . extérieur . privilégier le bois pour le salon de jardin",
+        "logement . extérieur . passer à la tondeuse électrique",
         "transport . boulot . covoiturage",
         "transport . boulot . commun",
         "transport . boulot . télétravail",
@@ -754,6 +757,48 @@
     "titre": "Souscrire à un contrat d'électricité verte",
     "icônes": "☮️⚡",
     "inactive": "oui"
+  },
+  "logement . extérieur . barbecue plus écologique": {
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "extérieur . barbecue charbon . présent"
+        },
+        "extérieur . barbecue charbon . présent"
+      ]
+    },
+    "titre": "Passer au barbecue électrique",
+    "note": "Le barbecue au charbon rejette à chaque utilisation une quantité très importante de CO2e dans l'atmosphère (autour de 5 kgCO₂e/barbecue). Pour faire des grillades écologiques, passez à l'électrique.\n",
+    "formule": "empreinte barbecue charbon - empreinte barbecue électrique ou gaz amortie",
+    "unité": "kgCO2e"
+  },
+  "logement . extérieur . privilégier le bois pour le salon de jardin": {
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "extérieur . salon de jardin résine ou métal . présent"
+        },
+        "extérieur . salon de jardin résine ou métal . présent"
+      ]
+    },
+    "titre": "Choisir un salon de jardin en bois",
+    "note": "Un salon de jardin en bois a une empreinte trois fois inférieure à celle d'un salon en résine ou en métal.\n\nEn plus, son entretien est plus accessible, pour le faire durer dans le temps (ponçage, huilage ou vernissage). Allonger sa durée de vie, c'est réduire encore plus son empreinte !\n",
+    "formule": "empreinte salon de jardin résine ou métal amortie - empreinte salon de jardin bois amortie",
+    "unité": "kgCO2e"
+  },
+  "logement . extérieur . passer à la tondeuse électrique": {
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "extérieur . tondeuse thermique . présent"
+        },
+        "extérieur . tondeuse thermique . présent"
+      ]
+    },
+    "titre": "Choisir une tondeuse électrique",
+    "note": "La tondeuse thermique a une empreinte carbone doublement négative : d'abord au niveau de la partie construction (l'empreinte est trois fois supérieure à la tondeuse électrique), mais aussi, bien sûr, au niveau de l'usage (bien que cette empreinte ne soit, à ce jour, pas comptée).\n",
+    "formule": "empreinte tondeuse thermique amortie - empreinte tondeuse électrique ou robot amortie",
+    "unité": "kgCO2e"
   },
   "services sociétaux . voter": {
     "icônes": "🗳️🏛️",
@@ -2305,9 +2350,7 @@
         "table . nombre",
         "chaise . nombre",
         "petit meuble . nombre",
-        "grand meuble . nombre",
-        "salon de jardin bois . nombre",
-        "salon de jardin résine ou métal . nombre"
+        "grand meuble . nombre"
       ],
       "suggestions": {
         "aucun": {
@@ -2318,9 +2361,7 @@
           "table . nombre": 0,
           "chaise . nombre": 0,
           "petit meuble . nombre": 0,
-          "grand meuble . nombre": 0,
-          "salon de jardin bois . nombre": 0,
-          "salon de jardin résine ou métal . nombre": 0
+          "grand meuble . nombre": 0
         }
       }
     },
@@ -2334,9 +2375,7 @@
         "table",
         "chaise",
         "petit meuble",
-        "grand meuble",
-        "salon de jardin bois",
-        "salon de jardin résine ou métal"
+        "grand meuble"
       ]
     },
     "unité": "kgCO2e",
@@ -2542,40 +2581,6 @@
     "titre": "Grand meuble",
     "description": "Meuble de cuisine, grand bureau",
     "icônes": "🛏️",
-    "formule": "empreinte amortie * nombre",
-    "unité": "kgCO2e"
-  },
-  "divers . ameublement . meubles . salon de jardin bois . empreinte amortie": {
-    "titre": "Empreinte salon de jardin en bois amortie",
-    "formule": "69.2 / (10 * coefficient préservation)",
-    "unité": "kgCO2e",
-    "optimized": true
-  },
-  "divers . ameublement . meubles . salon de jardin bois . nombre": {
-    "titre": "Nombre de salons de jardin en bois",
-    "question": "Combien de salons de jardin en bois possédez-vous ?",
-    "par défaut": 0
-  },
-  "divers . ameublement . meubles . salon de jardin bois": {
-    "titre": "Salon de jardin bois",
-    "icônes": "🏡🪵",
-    "formule": "empreinte amortie * nombre",
-    "unité": "kgCO2e"
-  },
-  "divers . ameublement . meubles . salon de jardin résine ou métal . empreinte amortie": {
-    "titre": "Empreinte salon de jardin résine ou métal amortie",
-    "formule": "249 / (10 * coefficient préservation)",
-    "unité": "kgCO2e",
-    "optimized": true
-  },
-  "divers . ameublement . meubles . salon de jardin résine ou métal . nombre": {
-    "titre": "Nombre de salons de jardin en résine ou métal",
-    "question": "Combien de salons de jardin en résine ou métal possédez-vous ?",
-    "par défaut": 0
-  },
-  "divers . ameublement . meubles . salon de jardin résine ou métal": {
-    "titre": "Salon de jardin résine ou métal",
-    "icônes": "🏡🪨",
     "formule": "empreinte amortie * nombre",
     "unité": "kgCO2e"
   },
@@ -2953,8 +2958,7 @@
         "bouilloire . nombre",
         "cafetière . nombre",
         "aspirateur . nombre",
-        "robot cuisine . nombre",
-        "tondeuse électrique . nombre"
+        "robot cuisine . nombre"
       ],
       "suggestions": {
         "aucun": {
@@ -2971,8 +2975,7 @@
           "bouilloire . nombre": 0,
           "cafetière . nombre": 0,
           "aspirateur . nombre": 0,
-          "robot cuisine . nombre": 0,
-          "tondeuse électrique . nombre": 0
+          "robot cuisine . nombre": 0
         }
       }
     },
@@ -2993,8 +2996,7 @@
         "bouilloire",
         "cafetière",
         "aspirateur",
-        "robot cuisine",
-        "tondeuse électrique"
+        "robot cuisine"
       ]
     }
   },
@@ -3254,23 +3256,6 @@
   "divers . électroménager . appareils . robot cuisine": {
     "titre": "Robot de cuisine",
     "icônes": "🤖🥣",
-    "formule": "empreinte amortie * nombre",
-    "unité": "kgCO2e"
-  },
-  "divers . électroménager . appareils . tondeuse électrique . empreinte amortie": {
-    "titre": "Empreinte tondeuse électrique amortie",
-    "formule": "70.1 / (8 * coefficient préservation)",
-    "unité": "kgCO2e",
-    "optimized": true
-  },
-  "divers . électroménager . appareils . tondeuse électrique . nombre": {
-    "titre": "Nombre de tondeuse électrique",
-    "question": "Combien de tondeuse électrique possédez-vous ?",
-    "par défaut": 0
-  },
-  "divers . électroménager . appareils . tondeuse électrique": {
-    "titre": "Tondeuse électrique",
-    "icônes": "🏡🛺",
     "formule": "empreinte amortie * nombre",
     "unité": "kgCO2e"
   },
@@ -5288,6 +5273,269 @@
     "valeur": "0.409",
     "optimized": true
   },
+  "logement . extérieur": {
+    "icônes": "☘️",
+    "titre": "L'empreinte de votre extérieur (jardin, terrasse)",
+    "non applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "logement . appartement"
+        },
+        "appartement"
+      ]
+    },
+    "mosaique": {
+      "type": "selection",
+      "options": [
+        "salon de jardin bois . présent",
+        "salon de jardin résine ou métal . présent",
+        "tondeuse électrique ou robot . présent",
+        "tondeuse thermique . présent",
+        "barbecue électrique ou gaz . présent",
+        "barbecue charbon . présent"
+      ],
+      "suggestions": {
+        "aucun": {
+          "salon de jardin bois . présent": "non",
+          "salon de jardin résine ou métal . présent": "non",
+          "tondeuse électrique ou robot . présent": "non",
+          "tondeuse thermique . présent": "non",
+          "barbecue électrique ou gaz": "non",
+          "barbecue charbon": "non"
+        }
+      }
+    },
+    "question": "Que possédez-vous dans votre jardin ?",
+    "description": "Nous essayons ici de couvrir les éléments principaux d'un jardin individuel type. Il manque encore des éléments, qui seront ajoutés progressivement.\n",
+    "formule": {
+      "variations": [
+        {
+          "si": "choix utilisateur",
+          "alors": "empreinte totale / habitants"
+        },
+        {
+          "sinon": "empreinte par défaut / habitants"
+        }
+      ]
+    }
+  },
+  "logement . extérieur . choix utilisateur": {
+    "titre": "Choix utilisateur pour le jardin",
+    "formule": {
+      "une de ces conditions": [
+        {
+          "est défini": "salon de jardin bois . présent"
+        },
+        {
+          "est défini": "salon de jardin résine ou métal . présent"
+        },
+        {
+          "est défini": "tondeuse électrique ou robot . présent"
+        },
+        {
+          "est défini": "tondeuse thermique . présent"
+        },
+        {
+          "est défini": "barbecue électrique ou gaz . présent"
+        },
+        {
+          "est défini": "barbecue charbon . présent"
+        }
+      ]
+    }
+  },
+  "logement . extérieur . empreinte totale": {
+    "formule": {
+      "somme": [
+        "6.92",
+        "24.9",
+        "8.955",
+        "empreinte tondeuse thermique amortie",
+        "5.435",
+        "108.96999999999998"
+      ]
+    },
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "logement . extérieur . empreinte par défaut": {
+    "description": "calcul statistique pour établir l'équipement \"moyen\" d'un jardin français (et non, \"à la française\", ce qui serait très différent...)",
+    "somme": [
+      "empreinte salon de jardin bois amortie * part propriétaires salon jardin bois",
+      "empreinte salon de jardin résine ou métal amortie * part propriétaires salon jardin résine ou métal",
+      "empreinte tondeuse électrique ou robot amortie * part propriétaires tondeuse électrique ou robot",
+      "empreinte tondeuse thermique amortie * part propriétaires tondeuse thermique",
+      "empreinte barbecue électrique ou gaz amortie * part propriétaires barbecue électrique ou gaz",
+      "empreinte barbecue charbon * part propriétaires barbecue charbon"
+    ],
+    "unité": "kgCO2e"
+  },
+  "logement . extérieur . salon de jardin bois": {
+    "titre": "Salon de jardin en bois",
+    "icônes": "🏡🪵",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "salon de jardin bois . présent"
+        },
+        "salon de jardin bois . présent"
+      ]
+    },
+    "formule": "empreinte salon de jardin bois amortie"
+  },
+  "logement . extérieur . salon de jardin bois . présent": {
+    "question": "Possédez-vous un salon de jardin en bois ?"
+  },
+  "logement . extérieur . empreinte salon de jardin bois amortie": {
+    "unité": "kgCO2e",
+    "valeur": "6.92",
+    "optimized": true
+  },
+  "logement . extérieur . part propriétaires salon jardin bois": {
+    "note": "Nous supposons que la moitié des français possède un salon de jardin. Parmi ces propriétaires de salon de jardin, nous supposons que 50% est en résine, 25% en bois, 25% en métal.",
+    "valeur": "0.125",
+    "optimized": true
+  },
+  "logement . extérieur . salon de jardin résine ou métal": {
+    "titre": "Salon de jardin en résine ou métal",
+    "icônes": "🏡🪨",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "salon de jardin résine ou métal . présent"
+        },
+        "salon de jardin résine ou métal . présent"
+      ]
+    },
+    "formule": "empreinte salon de jardin résine ou métal amortie"
+  },
+  "logement . extérieur . salon de jardin résine ou métal . présent": {
+    "question": "Possédez-vous un salon de jardin en résine ou métal ?"
+  },
+  "logement . extérieur . empreinte salon de jardin résine ou métal amortie": {
+    "unité": "kgCO2e",
+    "valeur": "24.9",
+    "optimized": true
+  },
+  "logement . extérieur . part propriétaires salon jardin résine ou métal": {
+    "note": "Nous supposons que la moitié des français habitant en maison possède un salon de jardin. Parmi ces propriétaires de salon de jardin, nous supposons que 50% est en résine, 25% en bois, 25% en métal.",
+    "valeur": "0.125",
+    "optimized": true
+  },
+  "logement . extérieur . tondeuse électrique ou robot": {
+    "titre": "Tondeuse électrique ou robot",
+    "icônes": "🌿🔌",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "tondeuse électrique ou robot . présent"
+        },
+        "tondeuse électrique ou robot . présent"
+      ]
+    },
+    "formule": "empreinte tondeuse électrique ou robot amortie"
+  },
+  "logement . extérieur . tondeuse électrique ou robot . présent": {
+    "question": "Possédez-vous une tondeuse électrique ou robot ?"
+  },
+  "logement . extérieur . empreinte tondeuse électrique ou robot amortie": {
+    "unité": "kgCO2e",
+    "valeur": "8.955",
+    "optimized": true
+  },
+  "logement . extérieur . part propriétaires tondeuse électrique ou robot": {
+    "note": "Il se vend 700 000 tondeuses chaque année, pour la moitié thermiques. 66% des français vivent en maison, \nsoit à peu près 20 millions de foyers. Nous pouvons donc supposer que 50% des foyers habitant en maison possède une tondeuse, \ndont la durée de vie est de 10 ans.\n",
+    "valeur": "0.25",
+    "optimized": true
+  },
+  "logement . extérieur . tondeuse thermique": {
+    "titre": "Tondeuse thermique",
+    "icônes": "🌿⛽️",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "tondeuse thermique . présent"
+        },
+        "tondeuse thermique . présent"
+      ]
+    },
+    "formule": "empreinte tondeuse thermique amortie"
+  },
+  "logement . extérieur . tondeuse thermique . présent": {
+    "question": "Possédez-vous une tondeuse thermique ?"
+  },
+  "logement . extérieur . empreinte tondeuse thermique amortie": {
+    "formule": "(209 / 10) + tondeuse thermique . usage",
+    "unité": "kgCO2e",
+    "optimized": true
+  },
+  "logement . extérieur . tondeuse thermique . usage": {
+    "formule": "(heures usage * 1) * 2.7",
+    "optimized": true
+  },
+  "logement . extérieur . tondeuse thermique . heures usage": {
+    "formule": "1 * 9",
+    "unité": "heure",
+    "optimized": true
+  },
+  "logement . extérieur . part propriétaires tondeuse thermique": {
+    "note": "Il se vend 700 000 tondeuses chaque année, pour la moitié thermiques. 66% des français vivent en maison, soit à peu près 20 millions de foyers. Nous pouvons donc supposer que 50% des foyers habitant en maison possède une tondeuse, dont la durée de vie est de 15 ans.",
+    "valeur": "0.25",
+    "optimized": true
+  },
+  "logement . extérieur . barbecue électrique ou gaz": {
+    "titre": "Barbecue électrique ou gaz",
+    "icônes": "♨️🔌",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "barbecue électrique ou gaz . présent"
+        },
+        "barbecue électrique ou gaz . présent"
+      ]
+    },
+    "formule": "empreinte barbecue électrique ou gaz amortie"
+  },
+  "logement . extérieur . barbecue électrique ou gaz . présent": {
+    "question": "Possédez-vous un barbecue électrique ou gaz ?"
+  },
+  "logement . extérieur . empreinte barbecue électrique ou gaz amortie": {
+    "unité": "kgCO2e",
+    "valeur": "5.435",
+    "optimized": true
+  },
+  "logement . extérieur . part propriétaires barbecue électrique ou gaz": {
+    "note": "D'après [cette source](https://www.esprit-barbecue.fr/blog/des-chiffres-fous-pour-le-marche-du-barbecue/), nous savons que 85% des français possédant un jardin ont un barbecue.\nPar ailleurs, [cette source[(http://www.bva-xsight.com/wp-content/uploads/2023/03/Weber_Les-Francais-et-le-barbecue_Infographie-2023.pdf)] nous donne la répartition des types de barbecue possédés. \nNous comptons ici tous les barbecues sauf ceux au charbon.\n",
+    "valeur": "0.5355",
+    "optimized": true
+  },
+  "logement . extérieur . barbecue charbon": {
+    "titre": "Barbecue au charbon",
+    "icônes": "♨️🔥",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "barbecue charbon . présent"
+        },
+        "barbecue charbon . présent"
+      ]
+    },
+    "formule": "empreinte barbecue charbon"
+  },
+  "logement . extérieur . barbecue charbon . présent": {
+    "question": "Possédez-vous un barbecue au charbon ?"
+  },
+  "logement . extérieur . empreinte barbecue charbon": {
+    "note": "À la différence des barbecues électrique et au gaz, le barbecue au charbon a une empreinte importante liée à l'usage : brûler du charbon pour cuire des aliments rejette une quantité importante de gaz à effet de serre. \nNous comptabilisons donc les deux empreintes, de constrution et d'usage.\n",
+    "unité": "kgCO2e",
+    "valeur": "108.96999999999998",
+    "optimized": true
+  },
+  "logement . extérieur . part propriétaires barbecue charbon": {
+    "note": "D'après [cette source](https://www.esprit-barbecue.fr/blog/des-chiffres-fous-pour-le-marche-du-barbecue/), nous savons que 85% des français possédant un jardin ont un barbecue.\nPar ailleurs, [cette source[(http://www.bva-xsight.com/wp-content/uploads/2023/03/Weber_Les-Francais-et-le-barbecue_Infographie-2023.pdf)] nous donne la répartition des types de barbecue possédés. Nous comptons ici les barbecues au charbon.\n",
+    "valeur": "0.3145",
+    "optimized": true
+  },
   "logement": {
     "titre": "Logement",
     "abréviation": "logmt.",
@@ -5297,10 +5545,11 @@
     "formule": {
       "somme": [
         "construction",
-        "piscine",
         "électricité",
         "chauffage",
         "climatisation",
+        "piscine",
+        "extérieur",
         "vacances"
       ]
     },
