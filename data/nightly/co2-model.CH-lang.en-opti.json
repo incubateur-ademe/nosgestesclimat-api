@@ -532,30 +532,6 @@
     "formule": "divers . tabac",
     "titre.auto": "Stop smoking"
   },
-  "divers . ameublement . seconde main": {
-    "titre": "Buy my furniture second hand",
-    "icônes": "🤝🛋️",
-    "inactive": "oui",
-    "titre.auto": "Buy my furniture second hand"
-  },
-  "divers . textile . seconde main": {
-    "titre": "Buy my clothes second hand",
-    "icônes": "🤝👚",
-    "inactive": "oui",
-    "titre.auto": "Buy my clothes second hand"
-  },
-  "divers . déchets . recyclage": {
-    "titre": "Recycle my goods",
-    "icônes": "🗑️♻️",
-    "inactive": "oui",
-    "titre.auto": "Recycle my goods"
-  },
-  "divers . consommation responsable": {
-    "titre": "Sustainable consumption",
-    "icônes": "♻️",
-    "inactive": "oui",
-    "titre.auto": "Sustainable consumption"
-  },
   "divers . numérique . internet . diminuer": {
     "titre": "Reduce streaming time",
     "icônes": "💻📉",
@@ -593,6 +569,76 @@
     },
     "titre": "extended preservation devices",
     "titre.auto": "extended preservation devices"
+  },
+  "divers . textile . réduire neuf . acheter d'occasion": {
+    "inactive": "oui",
+    "applicable si": "divers . textile . nombre de textiles achetés > 2",
+    "icônes": "👖🔁",
+    "formule": "divers . textile",
+    "unité": "kgCO2e",
+    "description": "Buying new clothes has a huge impact on our carbon footprint. Worldwide, it is estimated that the textile industry is responsible for 10% of global greenhouse gas emissions.\n\nIt's time to rethink our relationship with our wardrobe! Own less, choose quality clothes that can be repaired and buy second-hand.\n",
+    "titre": "buy second-hand",
+    "titre.auto": "buy second-hand"
+  },
+  "divers . textile . réduire neuf . diviser par deux achats": {
+    "applicable si": "divers . textile . nombre de textiles achetés > 10",
+    "titre": "Buy half as many clothes",
+    "icônes": "👖📉",
+    "formule": "divers . textile / 2",
+    "unité": "kgCO2e",
+    "description": "Did you know? A study has shown that, on average, the French don't touch 68% of their wardrobe each year. We own too many clothes! Let's buy less, and think about giving new life to what's lying around in our cupboards.\n",
+    "titre.auto": "Buy half as many clothes"
+  },
+  "divers . produits consommables . réduire": {
+    "non applicable si": "produits consommables . consommation = \"'faible'\"",
+    "titre": "Reduce your consumption of hygiene products",
+    "icônes": "🪥🧴",
+    "formule": "divers . produits consommables - recalcul",
+    "unité": "kgCO2e",
+    "description": "There are many eco-friendly alternatives to industrial hygiene products. As well as being less harmful to you and the environment, they also reduce the amount of resources used for personal and household hygiene.\n",
+    "titre.auto": "Reduce your consumption of hygiene products"
+  },
+  "divers . produits consommables . réduire . recalcul": {
+    "titre": "recalculation",
+    "titre.auto": "recalculation",
+    "valeur": "13.043000000000001",
+    "optimized": true
+  },
+  "divers . autres produits . réduire": {
+    "non applicable si": "autres produits . niveau de dépenses = \"'faible'\"",
+    "titre": "Buy second-hand rather than new",
+    "icônes": "📦️💶",
+    "formule": "divers . autres produits - recalcul",
+    "unité": "kgCO2e",
+    "description": "Favouring second-hand cars in all circumstances means avoiding a lot of CO2 emissions.\n",
+    "titre.auto": "Buy second-hand rather than new"
+  },
+  "divers . autres produits . réduire . recalcul": {
+    "titre": "recalculation",
+    "titre.auto": "recalculation",
+    "valeur": "83.6008511155504",
+    "optimized": true
+  },
+  "divers . arrêter sport motorisé": {
+    "inactive": "oui",
+    "applicable si": "divers . loisirs . sports . sports énergivores . présent",
+    "titre": "Stop practising a motor sport",
+    "formule": "divers . loisirs . sports - recalcul",
+    "icônes": "🏎️🪂",
+    "description": "To date, the footprint of motorised sports is based on very strong assumptions that do not reflect the regular practice of a motorised sport.\nBut it is obviously significant! The gain is therefore greater than what is shown here.\n",
+    "titre.auto": "Stop practising a motor sport"
+  },
+  "divers . arrêter sport motorisé . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "divers . loisirs . sports",
+        "avec": {
+          "divers . loisirs . sports . sports énergivores . présent": "non"
+        }
+      }
+    },
+    "titre": "recalculation",
+    "titre.auto": "recalculation"
   },
   "logement . baisse température": {
     "titre": "Reduce heating by 1° or 2°",
@@ -2686,6 +2732,14 @@
     },
     "titre.auto": "Your personal climate report"
   },
+  "commun . mois par an": {
+    "titre": "Number of months per year",
+    "unité": "mois",
+    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/incubateur-ademe/publicodes-commun\">`@incubator-ademe/publicodes-commun`</a> model.",
+    "titre.auto": "Number of months per year",
+    "valeur": "12",
+    "optimized": true
+  },
   "commun . semaines par an": {
     "titre": "Number of weeks per year",
     "unité": "semaine",
@@ -3325,15 +3379,22 @@
     "par défaut": "'actif'",
     "titre.auto": "Activity level of the dog"
   },
+  "divers . autres produits macro": {
+    "description": "This rule corresponds to the carbon footprint of new product purchases, not captured \"elsewhere\" in the test, for an average French person.",
+    "titre": "New products\" footprint via SDES approach",
+    "unité": "kgCO2e",
+    "titre.auto": "New products\" footprint via SDES approach",
+    "valeur": "128.61669402392369",
+    "optimized": true
+  },
   "divers . autres produits": {
     "titre": "New manufactured products",
     "abréviation": "other products",
     "icônes": "📦",
     "description": "This sub-item captures the footprint of new product purchases, linked to a person's expenditure and standard of living, via a macro-economic approach.\nAs with the method used for societal services, we use <a href=\"https://nosgestesclimat.fr/documentation/empreinte-SDES\">the results of the SDES work</a>\nto reconstitute the carbon footprint of purchases not captured \"elsewhere\" in the test for an average French person.\n\nDespite significant limitations (to be discussed shortly), this question is relevant for a number of reasons:\n  - To broaden the scope of consumption covered by Nos Gestes Climat: here, we take into account expenses that are not captured in the rest of the test, such as **decoration, plants, etc.**\n  such as **decoration, plants, gardening, kitchen equipment, household linen, materials for creative hobbies, DIY.** These purchases are often used over the long term and should therefore be amortized according to the type of product, but in this approach\n  we consider that the footprint of purchases is equivalent from year to year and that depreciation is not necessary.\n  - Enable us to group our purchases of new products into a single question and avoid focusing on \"small items\"\n  with too many questions: how many vases? How many books? How many bath mats?\n  How many cutlery sets? etc.\n  - Raising awareness of new product purchases. In Nos Gestes Climat, the footprint of second-hand products is attributed to the original purchaser of the item.\n  Thus, the footprint of a second-hand product is currently considered to be zero (which is clearly stated in the question).\n\nWe have therefore considered in this question a <a href=\"https://github.com/incubateur-ademe/nosgestesclimat/blob/master/scripts/services-societaux/input/r%C3%A9partition_autres_produits.yaml\">breakdown of</a> the following items whose carbon content has been assigned among all economic branches / sub-branches:\n  - Horticulture (plants, accessories, delivery)\n  - Glassware, tableware, kitchen utensils\n  - Leather goods, accessories (lighters, umbrellas, sunglasses, etc.), baby equipment\n  - Carpets and other coverings, installation and repair\n  - Home and garden tools\n  - Repair services for computers and personal and household goods\n  - Products for routine home maintenance and repairs\n  - Other manufactured products such as games, toys, sports equipment, musical instruments, jewelry and watches\n\n> For example, the \"Horticulture\" item comprises the \"Plant reproduction\" sub-branch, representing 2% of the \"Agriculture and horticulture products\" branch in terms of sales \n\"the \"Wholesale of flowers and plants\" sub-branch, which accounts for \n0.2% of the \"Wholesale trade, excluding automobiles and motorcycles per inhabitant\" branch, and finally the \"Retail trade of flowers, \nplants, seeds, fertilizers, pets and pet food in specialized stores\", representing 1.5% of the \"Retail trade, \nexcluding automobiles and motorcycles per capita\" branch\n\nHowever, **the footprint captured in this question should be taken with a grain of salt**.\n\nIndeed, the macro-economic approach has several limitations, as outlined in <a href=\"https://github.com/incubateur-ademe/nosgestesclimat/wiki/Guide-technique-services-sociétaux\">our technical guide on societal services</a>,\nin particular due to the precision of the initial data. The calculation is also based on a single figure, identical for all citizens. Nevertheless, this question proposes a modularization of the footprint\nvia a multi-stake nivy question:\nNevertheless, this method of calculation is preferred here to monetary ratios, which have an uncertainty of 80%. \nThe emission factors in the carbon base are not up to date with today's inflation levels, and those averaged for this question\nare very heterogeneous (we aggregate the factor associated with publishing (books), but also that associated with plastics\nor metals). To conclude on this subject, and this is undoubtedly the biggest obstacle to the use of monetary ratios, the carbon intensity\nof a euro spent on a purchase is not at all representative of the product's real footprint. For example, it's not at all obvious \nthat a more expensive book has a bigger footprint. Similarly, a set of linen sheets could very well have a footprint 5 times smaller than a set of cotton sheets \nlower than a set made from cotton (flax requires very few resources to grow), yet the latter is likely to cost up to 10 times as much.\n",
-    "formule": "facteur correctif * 128.61669402392369",
+    "formule": "facteur correctif * autres produits macro",
     "unité": "kgCO2e",
-    "titre.auto": "New manufactured products",
-    "optimized": true
+    "titre.auto": "New manufactured products"
   },
   "divers . autres produits . facteur correctif": {
     "formule": {
@@ -4786,11 +4847,10 @@
   },
   "divers . produits consommables": {
     "icônes": "🧴",
-    "formule": "empreinte par mois * 12",
+    "formule": "empreinte par mois * commun . mois par an",
     "description": "The aim here is to remove consumables, which are not amortized, from the \"expenses\" question,\nin the same way as \"long-term\" purchases such as a musical instrument. \nThe second challenge is to quantify the climate footprint of hygiene and cleaning products using a \"consumption\" approach\n\"emission factors already exist for these products.\nOn the other hand, the difficulty lies in the question put to the user: who is in a position to answer easily\nabout their consumption in terms of weight, volume or €? The aim here is to facilitate the answer by defining different levels of consumption\nbased on quantity consumed (EFs are defined in kgCO2e/kg of product).\n",
     "titre": "consumables",
-    "titre.auto": "consumables",
-    "optimized": true
+    "titre.auto": "consumables"
   },
   "divers . produits consommables . empreinte par mois": {
     "titre": "Footprint of consumables over a month",
@@ -4936,6 +4996,33 @@
     "note": "The data are all taken from Base Carbone except for the shorts, which come from Base Impact data (textiles, household linen, leather goods) \nand the two generic items, which are rough estimates based on visualization of the <a href=\"https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/\">ADEME documentation</a> data graph (Scope 3 / Textile / Cotton, synthetic, other). \n\nWe have not used Base Impact data (except in the case of shorts), because even if the data corresponds to the average of several products, many of them come from just one company.\n\nIt should be noted that the default values appear to be underestimated, given <a href=\"https://fr.fashionnetwork.com/news/Sur-dix-ans-le-nombre-de-vetements-achetes-dans-les-chaines-de-mode-a-bondi-de-33-,1406055.html\">these statistics</a> on French purchasing habits.\n",
     "titre": "textile",
     "titre.auto": "textile"
+  },
+  "divers . textile . notif débarras surplus": {
+    "type": "notification",
+    "formule": "nombre de textiles achetés > 0",
+    "description": "> Did you know? \n\n> According to a study commissioned by moving company Movinga in 2018, the French don't wear 68% (!) of their wardrobe. That's more than two-thirds of the contents of our wardrobes that never get out.\n\n> Before buying a new item: what if you did a bit of sorting?\n",
+    "note": "[Source](https://www.corsenetinfos.corsica/Halte-au-Gaspi-Les-Francais-ne-portent-pas-68-des-vetements-qu-ils-possedent-_a34819.html)\n",
+    "titre": "notice of surplus storage",
+    "titre.auto": "notice of surplus storage"
+  },
+  "divers . textile . nombre de textiles achetés": {
+    "formule": {
+      "somme": [
+        "t-shirt . nombre",
+        "pantalon . nombre",
+        "short . nombre",
+        "sweat . nombre",
+        "robe . nombre",
+        "chemise . nombre",
+        "pull . nombre",
+        "chaussure . nombre",
+        "manteau . nombre",
+        "petit article . nombre",
+        "gros article . nombre"
+      ]
+    },
+    "titre": "number of textiles purchased",
+    "titre.auto": "number of textiles purchased"
   },
   "divers . textile . t-shirt . nombre": {
     "question": "Number of t-shirts purchased in a year",

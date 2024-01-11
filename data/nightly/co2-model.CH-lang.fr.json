@@ -454,27 +454,6 @@
     "non applicable si": "divers . tabac . consommation = 0",
     "formule": "divers . tabac"
   },
-  "divers . ameublement . seconde main": {
-    "titre": "Acheter mes meubles d'occasion",
-    "icônes": "🤝🛋️",
-    "inactive": "oui"
-  },
-  "divers . textile . seconde main": {
-    "titre": "Acheter mes vêtements d'occasion",
-    "icônes": "🤝👚",
-    "inactive": "oui"
-  },
-  "divers . déchets": null,
-  "divers . déchets . recyclage": {
-    "titre": "Recycler mes biens",
-    "icônes": "🗑️♻️",
-    "inactive": "oui"
-  },
-  "divers . consommation responsable": {
-    "titre": "Consommer durable",
-    "icônes": "♻️",
-    "inactive": "oui"
-  },
   "divers . numérique . internet . diminuer": {
     "titre": "Réduire mon temps de streaming",
     "icônes": "💻📉",
@@ -507,6 +486,77 @@
       "règle": "divers . numérique . appareils",
       "avec": {
         "coefficient préservation": "4 / 3"
+      }
+    }
+  },
+  "divers . textile . réduire neuf": null,
+  "divers . textile . réduire neuf . acheter d'occasion": {
+    "inactive": "oui",
+    "applicable si": "divers . textile . nombre de textiles achetés > 2",
+    "icônes": "👖🔁",
+    "formule": "divers . textile",
+    "unité": "kgCO2e",
+    "description": "L'achat de vêtements neufs pèse très lourd dans notre empreinte carbone. Au niveau mondial, on estime que c'est 10% des émissions mondiales de gaz à effet de serre qui sont à attribuer à l'industrie textile.\n\nIl est temps de revoir notre rapport à notre garde-robe ! Posséder moins, choisir des vêtements de qualité que l'on peut réparer, se fournir en seconde-main.\n"
+  },
+  "divers . textile . réduire neuf . diviser par deux achats": {
+    "applicable si": "divers . textile . nombre de textiles achetés > 10",
+    "titre": "Acheter deux fois moins de vêtements",
+    "icônes": "👖📉",
+    "formule": "divers . textile / 2",
+    "unité": "kgCO2e",
+    "description": "Le saviez-vous ? Une étude a montré qu'en moyenne, les français ne touchaient pas, chaque année, à 68% de leur garde-robe. Nous possédons trop de vêtements ! Achetons moins, et pensons à donner une nouvelle vie à ce qui traîne dans nos placards.\n"
+  },
+  "divers . produits consommables . réduire": {
+    "non applicable si": "produits consommables . consommation = \"'faible'\"",
+    "titre": "Réduire sa consommation de produits d'hygiène",
+    "icônes": "🪥🧴",
+    "formule": "divers . produits consommables - recalcul",
+    "unité": "kgCO2e",
+    "description": "Il existe de nombreuses alternatives écologiques aux produits d'hygiène industriels. Outre d'être moins nocifs pour vous comme pour l'environnement, ils permettent également de réduire la quantité de ressources utilisée pour l'hygiène corporelle ou de la maison.\n"
+  },
+  "divers . produits consommables . réduire . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "produits consommables",
+        "avec": {
+          "produits consommables . consommation": "'faible'"
+        }
+      }
+    }
+  },
+  "divers . autres produits . réduire": {
+    "non applicable si": "autres produits . niveau de dépenses = \"'faible'\"",
+    "titre": "Privilégiez les achats d'occasion plutôt que du neuf",
+    "icônes": "📦️💶",
+    "formule": "divers . autres produits - recalcul",
+    "unité": "kgCO2e",
+    "description": "Favoriser l'occasion en toutes circonstances permet d'éviter l'émission de beaucoup de CO2.\n"
+  },
+  "divers . autres produits . réduire . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "autres produits",
+        "avec": {
+          "autres produits . niveau de dépenses": "'faible'"
+        }
+      }
+    }
+  },
+  "divers . arrêter sport motorisé": {
+    "inactive": "oui",
+    "applicable si": "divers . loisirs . sports . sports énergivores . présent",
+    "titre": "Arrêter la pratique d'un sport motorisé",
+    "formule": "divers . loisirs . sports - recalcul",
+    "icônes": "🏎️🪂",
+    "description": "À ce jour, l'empreinte des sports motorisés via des hypothèses très forte qui ne reflètent pas la pratique régulière d'un sport motirisé.\nMais bien évidemment, elle est importante ! Le gain est donc supérieur à ce qui est affiché ici.\n"
+  },
+  "divers . arrêter sport motorisé . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "divers . loisirs . sports",
+        "avec": {
+          "divers . loisirs . sports . sports énergivores . présent": "non"
+        }
       }
     }
   },
@@ -6256,6 +6306,29 @@
     "unité": "kgCO2e",
     "description": "À vous de nous dire ce que vous avez mis dans vos sacs de shopping cette année, ou dans une année représentative si vous faites rarement les magasins.\n\n> Si vous achetez un pull tous 2 ans, arrondissez à `1`. Si vous achetez un pull tous les 3 ans, arrondissez à `0`.\n\nNe renseignez que les produits neufs. Nous excluons du calcul l'achat en friperies, la récupération, l'occasion.\n",
     "note": "Les données sont toutes issues de la Base Carbone sauf le short qui vient des données de Base Impact (textile, linge de maison, maroquinerie) \net les deux articles génériques qui sont des estimations grossières basées sur la visualisation du graphe des données de la [documentation ADEME](https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/) (Scope 3 / Textile / Coton, synthétique, autre). \n\nNous n'avons pas utilisé les données de Base Impact (sauf dans le cas du short) car même si les données correspondent à la moyenne de plusieurs produits, beaucoup ne proviennent que d'une seule entreprise.\n\nA noter que les valeurs par défaut paraissent sous-évaluées, au regard de [ces statistiques](https://fr.fashionnetwork.com/news/Sur-dix-ans-le-nombre-de-vetements-achetes-dans-les-chaines-de-mode-a-bondi-de-33-,1406055.html) sur les habitudes d'achat des français.\n"
+  },
+  "divers . textile . notif débarras surplus": {
+    "type": "notification",
+    "formule": "nombre de textiles achetés > 0",
+    "description": "> Le saviez-vous ? \n\n> D'après une étude commandée par l'entreprise de déménagement Movinga en 2018, les français ne porteraient pas 68% (!) de leur garde-robe. C'est donc plus des deux-tiers du contenu de nos placards qui n'en sort jamais.\n\n> Avant d'acheter une nouvelle pièce : et si vous faisiez un peu de tri ?\n",
+    "note": "[Source](https://www.corsenetinfos.corsica/Halte-au-Gaspi-Les-Francais-ne-portent-pas-68-des-vetements-qu-ils-possedent-_a34819.html)\n"
+  },
+  "divers . textile . nombre de textiles achetés": {
+    "formule": {
+      "somme": [
+        "t-shirt . nombre",
+        "pantalon . nombre",
+        "short . nombre",
+        "sweat . nombre",
+        "robe . nombre",
+        "chemise . nombre",
+        "pull . nombre",
+        "chaussure . nombre",
+        "manteau . nombre",
+        "petit article . nombre",
+        "gros article . nombre"
+      ]
+    }
   },
   "divers . textile . t-shirt . empreinte": {
     "formule": 5.35,

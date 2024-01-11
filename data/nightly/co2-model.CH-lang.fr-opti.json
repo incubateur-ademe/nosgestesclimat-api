@@ -453,26 +453,6 @@
     "non applicable si": "divers . tabac . consommation = 0",
     "formule": "divers . tabac"
   },
-  "divers . ameublement . seconde main": {
-    "titre": "Acheter mes meubles d'occasion",
-    "icônes": "🤝🛋️",
-    "inactive": "oui"
-  },
-  "divers . textile . seconde main": {
-    "titre": "Acheter mes vêtements d'occasion",
-    "icônes": "🤝👚",
-    "inactive": "oui"
-  },
-  "divers . déchets . recyclage": {
-    "titre": "Recycler mes biens",
-    "icônes": "🗑️♻️",
-    "inactive": "oui"
-  },
-  "divers . consommation responsable": {
-    "titre": "Consommer durable",
-    "icônes": "♻️",
-    "inactive": "oui"
-  },
   "divers . numérique . internet . diminuer": {
     "titre": "Réduire mon temps de streaming",
     "icônes": "💻📉",
@@ -501,6 +481,64 @@
       "règle": "divers . numérique . appareils",
       "avec": {
         "coefficient préservation": "4 / 3"
+      }
+    }
+  },
+  "divers . textile . réduire neuf . acheter d'occasion": {
+    "inactive": "oui",
+    "applicable si": "divers . textile . nombre de textiles achetés > 2",
+    "icônes": "👖🔁",
+    "formule": "divers . textile",
+    "unité": "kgCO2e",
+    "description": "L'achat de vêtements neufs pèse très lourd dans notre empreinte carbone. Au niveau mondial, on estime que c'est 10% des émissions mondiales de gaz à effet de serre qui sont à attribuer à l'industrie textile.\n\nIl est temps de revoir notre rapport à notre garde-robe ! Posséder moins, choisir des vêtements de qualité que l'on peut réparer, se fournir en seconde-main.\n"
+  },
+  "divers . textile . réduire neuf . diviser par deux achats": {
+    "applicable si": "divers . textile . nombre de textiles achetés > 10",
+    "titre": "Acheter deux fois moins de vêtements",
+    "icônes": "👖📉",
+    "formule": "divers . textile / 2",
+    "unité": "kgCO2e",
+    "description": "Le saviez-vous ? Une étude a montré qu'en moyenne, les français ne touchaient pas, chaque année, à 68% de leur garde-robe. Nous possédons trop de vêtements ! Achetons moins, et pensons à donner une nouvelle vie à ce qui traîne dans nos placards.\n"
+  },
+  "divers . produits consommables . réduire": {
+    "non applicable si": "produits consommables . consommation = \"'faible'\"",
+    "titre": "Réduire sa consommation de produits d'hygiène",
+    "icônes": "🪥🧴",
+    "formule": "divers . produits consommables - recalcul",
+    "unité": "kgCO2e",
+    "description": "Il existe de nombreuses alternatives écologiques aux produits d'hygiène industriels. Outre d'être moins nocifs pour vous comme pour l'environnement, ils permettent également de réduire la quantité de ressources utilisée pour l'hygiène corporelle ou de la maison.\n"
+  },
+  "divers . produits consommables . réduire . recalcul": {
+    "valeur": "13.043000000000001",
+    "optimized": true
+  },
+  "divers . autres produits . réduire": {
+    "non applicable si": "autres produits . niveau de dépenses = \"'faible'\"",
+    "titre": "Privilégiez les achats d'occasion plutôt que du neuf",
+    "icônes": "📦️💶",
+    "formule": "divers . autres produits - recalcul",
+    "unité": "kgCO2e",
+    "description": "Favoriser l'occasion en toutes circonstances permet d'éviter l'émission de beaucoup de CO2.\n"
+  },
+  "divers . autres produits . réduire . recalcul": {
+    "valeur": "83.6008511155504",
+    "optimized": true
+  },
+  "divers . arrêter sport motorisé": {
+    "inactive": "oui",
+    "applicable si": "divers . loisirs . sports . sports énergivores . présent",
+    "titre": "Arrêter la pratique d'un sport motorisé",
+    "formule": "divers . loisirs . sports - recalcul",
+    "icônes": "🏎️🪂",
+    "description": "À ce jour, l'empreinte des sports motorisés via des hypothèses très forte qui ne reflètent pas la pratique régulière d'un sport motirisé.\nMais bien évidemment, elle est importante ! Le gain est donc supérieur à ce qui est affiché ici.\n"
+  },
+  "divers . arrêter sport motorisé . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "divers . loisirs . sports",
+        "avec": {
+          "divers . loisirs . sports . sports énergivores . présent": "non"
+        }
       }
     }
   },
@@ -2306,6 +2344,13 @@
       ]
     }
   },
+  "commun . mois par an": {
+    "titre": "Nombre de mois par an",
+    "unité": "mois",
+    "description": "> ℹ️ Cette règle provient du modèle [`@incubateur-ademe/publicodes-commun`](https://github.com/incubateur-ademe/publicodes-commun).",
+    "valeur": "12",
+    "optimized": true
+  },
   "commun . semaines par an": {
     "titre": "Nombre de semaines par an",
     "unité": "semaine",
@@ -2853,14 +2898,20 @@
     "titre": "Niveau d'activité du chien",
     "par défaut": "'actif'"
   },
+  "divers . autres produits macro": {
+    "description": "Cette règle correspond à l'empreinte carbone des achats de produits neufs, non captée \"ailleurs\" dans le test, pour un français moyen.",
+    "titre": "Empreinte des \"Produits neufs\" via approche SDES",
+    "unité": "kgCO2e",
+    "valeur": "128.61669402392369",
+    "optimized": true
+  },
   "divers . autres produits": {
     "titre": "Produits manufacturés neufs",
     "abréviation": "autres prod.",
     "icônes": "📦",
     "description": "Ce sous-poste permet de capter l'empreinte des achats de produits neufs, liée aux dépenses et niveau de vie d'une personne, via une approche macro-économique.\nÀ l'image de la méthode utilisée pour les services sociétaux, on utilise [les résultats du travail du SDES](https://nosgestesclimat.fr/documentation/empreinte-SDES)\nafin de reconstituer l'empreinte carbone des achats non captés \"ailleurs\" dans le test pour un français moyen.\n\nMalgré des limites importantes (on en parle juste après), cette question est présente pour plusieurs raisons:\n  - Élargir le scope de consommations couvert par Nos Gestes Climat : on prend en compte ici les dépenses qui ne sont pas captées dans le reste du test\n  tel que **la décoration, les plantes, le jardinage, le matériel de cuisine, le linge de maison, les matériaux pour les loisirs créatifs, le bricolage.** Ces achats étant souvent utilisés sur le long terme et devraient donc être amortis selon le type de produit, mais dans cette approche\n  nous considérons que l'empreinte des achats est équivalente d'année en année et que l'amortissement n'est pas nécessaire.\n  - Permettre de regrouper en une question nos achats de produits neufs et éviter de mettre l'accent sur \"des petites postes\"\n  avec un nombre de questions qui deviendrait trop important: combien de vases ? Combien de livres ? Combien de tapis de bain ?\n  Combien de couverts ? etc.\n  - Sensibiliser sur les achats de produits neufs. Dans Nos Gestes Climat l'empreinte des produits d'occasion est attribuée à l'acheteur initial de l'objet.\n  Ainsi, l'empreinte d'un produit d'occasion est considérée comme nulle à l'heure actuelle (ce qui est bien précisé dans la question).\n\nAinsi, nous avons considéré dans cette question une [répartition](https://github.com/incubateur-ademe/nosgestesclimat/blob/master/scripts/services-societaux/input/r%C3%A9partition_autres_produits.yaml) des postes suivants dont le contenu carbone a été attribué parmi l'ensemble des branches / sous branches économiques :\n  - Horticulture (plantes, accessoires, livraison)\n  - Verrerie, vaisselle, ustensiles de cuisine\n  - Maroquinerie, accessoires (briquet, parapluie, lunettes de soleil…), équipements pour bébés\n  - Tapis et autres revêtements, pose et réparation\n  - Outillage pour la maison et le jardin\n  - Services de réparation d'ordinateurs et de biens personnels et domestiques\n  - Produits destinés aux travaux courants d’entretien et de réparation du logement\n  - Autres produits manufacturés type jeux, jouets, article sport, instrument musique, joaillerie/horlogerie\n\n> Par exemple, le poste horticulture est constitué de la sous-branche \"Reproduction de plantes\" représentant, en chiffre d'affaires, 2% de la branche \n\"Produits de l'agriculture et de la chasse et services annexes par habitant\", de la sous-branche \"Commerce de gros de fleurs et plantes\" représentant \n0,2% de la branche \"Commerce de gros, à l'exclusion des automobiles et des motocycles par habitant\" et enfin de la sous-branche \"Commerce de détail de fleurs, \nplantes, graines, engrais, animaux de compagnie et aliments pour ces animaux en magasin spécialisé\" représentant 1,5% de la branche \"Commerce de détail, \nà l'exclusion des automobiles et des motocycles par habitant\"\n\nCependant, **l'empreinte captée dans cette question est à prendre avec des pincettes**.\n\nEn effet, l'approche macro-économique présente plusieurs limites exposées dans [notre guide technique sur les services sociétaux](https://github.com/incubateur-ademe/nosgestesclimat/wiki/Guide-technique-services-sociétaux),\nnotamment du fait de la précision des données de départ. On retire également de ce calcul un chiffre unique, identique pour l'ensemble des citoyens. On propose tout de même dans cette question une modularisation de l'empreinte\nvia une question sur le nivy a plusieurs enjeux :\nNéanmoins, cette méthode de calcul est privilégiée ici en lieu et place de ratios monétaires qui possèdent une incertitude de 80%. \nCes facteurs d'émission de la base carbone ne sont pas à jour avec le niveau d'inflation connu aujourd'hui et ceux moyennés pour cette question\nsont très hétérogènes (on agrège à la fois le facteur associé à l'édition (livres), mais également celui associé au plastique\nou aux métaux). Pour finir sur le sujet, et c'est sans doute le plus gros frein à l'utilisation de ratios monétaires, l'intensité carbone\nd'un euro dépensé pour un achat n'est pas du tout représentative de l'empreinte réelle du produit. Par exemple, il n'est pas du tout évident \nqu'un livre qui coûte plus cher ait une plus grosse empreinte. De même, un ensemble de draps en lin pourrait très bien avoir une empreinte 5 fois \nplus faible qu'un ensemble en coton (la culture du lin demande très peu de ressources), et pourtant ce dernier est susceptible de coûter jusqu'à 10 fois plus cher.\n",
-    "formule": "facteur correctif * 128.61669402392369",
-    "unité": "kgCO2e",
-    "optimized": true
+    "formule": "facteur correctif * autres produits macro",
+    "unité": "kgCO2e"
   },
   "divers . autres produits . facteur correctif": {
     "formule": {
@@ -4108,9 +4159,8 @@
   },
   "divers . produits consommables": {
     "icônes": "🧴",
-    "formule": "empreinte par mois * 12",
-    "description": "L'objectif ici est de sortir de la question \"dépenses\" les produits consommables, qui ne sont donc pas amortis,\nau même titre que les achats \"long terme\" comme un instrument de musique. \nLe deuxième enjeu est de permettre de quantifier l'empreinte climat des produits d'hygiène et d'entretien via une approche\n\"consommation\" : les facteurs d'émission existent pour ces produits.\nEn revanche, la difficulté de ce sujet réside dans la question posée à l'utilisateur : qui est en mesure de répondre facilement\nsur sa consommation en poids, volume ou € ? L'objectif ici est de faciliter la réponse en définissant différent niveaux de consommation\nbasé sur une quantité consommée (les FE étant définis en kgCO2e/kg de produit).\n",
-    "optimized": true
+    "formule": "empreinte par mois * commun . mois par an",
+    "description": "L'objectif ici est de sortir de la question \"dépenses\" les produits consommables, qui ne sont donc pas amortis,\nau même titre que les achats \"long terme\" comme un instrument de musique. \nLe deuxième enjeu est de permettre de quantifier l'empreinte climat des produits d'hygiène et d'entretien via une approche\n\"consommation\" : les facteurs d'émission existent pour ces produits.\nEn revanche, la difficulté de ce sujet réside dans la question posée à l'utilisateur : qui est en mesure de répondre facilement\nsur sa consommation en poids, volume ou € ? L'objectif ici est de faciliter la réponse en définissant différent niveaux de consommation\nbasé sur une quantité consommée (les FE étant définis en kgCO2e/kg de produit).\n"
   },
   "divers . produits consommables . empreinte par mois": {
     "titre": "Empreinte des produits consommables sur un mois",
@@ -4242,6 +4292,29 @@
     "unité": "kgCO2e",
     "description": "À vous de nous dire ce que vous avez mis dans vos sacs de shopping cette année, ou dans une année représentative si vous faites rarement les magasins.\n\n> Si vous achetez un pull tous 2 ans, arrondissez à `1`. Si vous achetez un pull tous les 3 ans, arrondissez à `0`.\n\nNe renseignez que les produits neufs. Nous excluons du calcul l'achat en friperies, la récupération, l'occasion.\n",
     "note": "Les données sont toutes issues de la Base Carbone sauf le short qui vient des données de Base Impact (textile, linge de maison, maroquinerie) \net les deux articles génériques qui sont des estimations grossières basées sur la visualisation du graphe des données de la [documentation ADEME](https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/) (Scope 3 / Textile / Coton, synthétique, autre). \n\nNous n'avons pas utilisé les données de Base Impact (sauf dans le cas du short) car même si les données correspondent à la moyenne de plusieurs produits, beaucoup ne proviennent que d'une seule entreprise.\n\nA noter que les valeurs par défaut paraissent sous-évaluées, au regard de [ces statistiques](https://fr.fashionnetwork.com/news/Sur-dix-ans-le-nombre-de-vetements-achetes-dans-les-chaines-de-mode-a-bondi-de-33-,1406055.html) sur les habitudes d'achat des français.\n"
+  },
+  "divers . textile . notif débarras surplus": {
+    "type": "notification",
+    "formule": "nombre de textiles achetés > 0",
+    "description": "> Le saviez-vous ? \n\n> D'après une étude commandée par l'entreprise de déménagement Movinga en 2018, les français ne porteraient pas 68% (!) de leur garde-robe. C'est donc plus des deux-tiers du contenu de nos placards qui n'en sort jamais.\n\n> Avant d'acheter une nouvelle pièce : et si vous faisiez un peu de tri ?\n",
+    "note": "[Source](https://www.corsenetinfos.corsica/Halte-au-Gaspi-Les-Francais-ne-portent-pas-68-des-vetements-qu-ils-possedent-_a34819.html)\n"
+  },
+  "divers . textile . nombre de textiles achetés": {
+    "formule": {
+      "somme": [
+        "t-shirt . nombre",
+        "pantalon . nombre",
+        "short . nombre",
+        "sweat . nombre",
+        "robe . nombre",
+        "chemise . nombre",
+        "pull . nombre",
+        "chaussure . nombre",
+        "manteau . nombre",
+        "petit article . nombre",
+        "gros article . nombre"
+      ]
+    }
   },
   "divers . textile . t-shirt . nombre": {
     "question": "Nombre de t-shirt achetés sur une année",

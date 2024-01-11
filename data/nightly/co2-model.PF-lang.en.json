@@ -37,17 +37,20 @@
         "transport . voiture électrique",
         "transport . voiture . limitation autoroute",
         "transport . scooter électrique",
-        "divers . numérique . internet . diminuer",
         "divers . partage NGC",
         "divers . aider les autres",
         "divers . électroménager . allongement",
         "divers . ameublement . allongement",
-        "services sociétaux . voter",
-        "services sociétaux . pression locale",
         "divers . publicité",
         "divers . avoir un stop pub",
         "divers . numérique . appareils . allongement",
-        "divers . tabac . arrêter"
+        "divers . numérique . internet . diminuer",
+        "divers . tabac . arrêter",
+        "divers . textile . réduire neuf . diviser par deux achats",
+        "divers . produits consommables . réduire",
+        "divers . autres produits . réduire",
+        "services sociétaux . voter",
+        "services sociétaux . pression locale"
       ]
     },
     "titre": "actions",
@@ -538,31 +541,6 @@
     "formule": "divers . tabac",
     "titre.auto": "Stop smoking"
   },
-  "divers . ameublement . seconde main": {
-    "titre": "Buy my furniture second hand",
-    "icônes": "🤝🛋️",
-    "inactive": "oui",
-    "titre.auto": "Buy my furniture second hand"
-  },
-  "divers . textile . seconde main": {
-    "titre": "Buy my clothes second hand",
-    "icônes": "🤝👚",
-    "inactive": "oui",
-    "titre.auto": "Buy my clothes second hand"
-  },
-  "divers . déchets": null,
-  "divers . déchets . recyclage": {
-    "titre": "Recycle my goods",
-    "icônes": "🗑️♻️",
-    "inactive": "oui",
-    "titre.auto": "Recycle my goods"
-  },
-  "divers . consommation responsable": {
-    "titre": "Sustainable consumption",
-    "icônes": "♻️",
-    "inactive": "oui",
-    "titre.auto": "Sustainable consumption"
-  },
   "divers . numérique . internet . diminuer": {
     "titre": "Reduce streaming time",
     "icônes": "💻📉",
@@ -606,6 +584,89 @@
     },
     "titre": "extended preservation devices",
     "titre.auto": "extended preservation devices"
+  },
+  "divers . textile . réduire neuf": null,
+  "divers . textile . réduire neuf . acheter d'occasion": {
+    "inactive": "oui",
+    "applicable si": "divers . textile . nombre de textiles achetés > 2",
+    "icônes": "👖🔁",
+    "formule": "divers . textile",
+    "unité": "kgCO2e",
+    "description": "Buying new clothes has a huge impact on our carbon footprint. Worldwide, it is estimated that the textile industry is responsible for 10% of global greenhouse gas emissions.\n\nIt's time to rethink our relationship with our wardrobe! Own less, choose quality clothes that can be repaired and buy second-hand.\n",
+    "titre": "buy second-hand",
+    "titre.auto": "buy second-hand"
+  },
+  "divers . textile . réduire neuf . diviser par deux achats": {
+    "applicable si": "divers . textile . nombre de textiles achetés > 10",
+    "titre": "Buy half as many clothes",
+    "icônes": "👖📉",
+    "formule": "divers . textile / 2",
+    "unité": "kgCO2e",
+    "description": "Did you know? A study has shown that, on average, the French don't touch 68% of their wardrobe each year. We own too many clothes! Let's buy less, and think about giving new life to what's lying around in our cupboards.\n",
+    "titre.auto": "Buy half as many clothes"
+  },
+  "divers . produits consommables . réduire": {
+    "non applicable si": "produits consommables . consommation = \"'faible'\"",
+    "titre": "Reduce your consumption of hygiene products",
+    "icônes": "🪥🧴",
+    "formule": "divers . produits consommables - recalcul",
+    "unité": "kgCO2e",
+    "description": "There are many eco-friendly alternatives to industrial hygiene products. As well as being less harmful to you and the environment, they also reduce the amount of resources used for personal and household hygiene.\n",
+    "titre.auto": "Reduce your consumption of hygiene products"
+  },
+  "divers . produits consommables . réduire . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "produits consommables",
+        "avec": {
+          "produits consommables . consommation": "'faible'"
+        }
+      }
+    },
+    "titre": "recalculation",
+    "titre.auto": "recalculation"
+  },
+  "divers . autres produits . réduire": {
+    "non applicable si": "autres produits . niveau de dépenses = \"'faible'\"",
+    "titre": "Buy second-hand rather than new",
+    "icônes": "📦️💶",
+    "formule": "divers . autres produits - recalcul",
+    "unité": "kgCO2e",
+    "description": "Favouring second-hand cars in all circumstances means avoiding a lot of CO2 emissions.\n",
+    "titre.auto": "Buy second-hand rather than new"
+  },
+  "divers . autres produits . réduire . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "autres produits",
+        "avec": {
+          "autres produits . niveau de dépenses": "'faible'"
+        }
+      }
+    },
+    "titre": "recalculation",
+    "titre.auto": "recalculation"
+  },
+  "divers . arrêter sport motorisé": {
+    "inactive": "oui",
+    "applicable si": "divers . loisirs . sports . sports énergivores . présent",
+    "titre": "Stop practising a motor sport",
+    "formule": "divers . loisirs . sports - recalcul",
+    "icônes": "🏎️🪂",
+    "description": "To date, the footprint of motorised sports is based on very strong assumptions that do not reflect the regular practice of a motorised sport.\nBut it is obviously significant! The gain is therefore greater than what is shown here.\n",
+    "titre.auto": "Stop practising a motor sport"
+  },
+  "divers . arrêter sport motorisé . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "divers . loisirs . sports",
+        "avec": {
+          "divers . loisirs . sports . sports énergivores . présent": "non"
+        }
+      }
+    },
+    "titre": "recalculation",
+    "titre.auto": "recalculation"
   },
   "logement . baisse température": {
     "titre": "Reduce heating by 1° or 2°",
@@ -7698,6 +7759,33 @@
     "note": "The data are all taken from Base Carbone except for the shorts, which come from Base Impact data (textiles, household linen, leather goods) \nand the two generic items, which are rough estimates based on visualization of the <a href=\"https://prod-basecarbonesolo.ademe-dri.fr/documentation/UPLOAD_DOC_FR/\">ADEME documentation</a> data graph (Scope 3 / Textile / Cotton, synthetic, other). \n\nWe have not used Base Impact data (except in the case of shorts), because even if the data corresponds to the average of several products, many of them come from just one company.\n\nIt should be noted that the default values appear to be underestimated, given <a href=\"https://fr.fashionnetwork.com/news/Sur-dix-ans-le-nombre-de-vetements-achetes-dans-les-chaines-de-mode-a-bondi-de-33-,1406055.html\">these statistics</a> on French purchasing habits.\n",
     "titre": "textile",
     "titre.auto": "textile"
+  },
+  "divers . textile . notif débarras surplus": {
+    "type": "notification",
+    "formule": "nombre de textiles achetés > 0",
+    "description": "> Did you know? \n\n> According to a study commissioned by moving company Movinga in 2018, the French don't wear 68% (!) of their wardrobe. That's more than two-thirds of the contents of our wardrobes that never get out.\n\n> Before buying a new item: what if you did a bit of sorting?\n",
+    "note": "[Source](https://www.corsenetinfos.corsica/Halte-au-Gaspi-Les-Francais-ne-portent-pas-68-des-vetements-qu-ils-possedent-_a34819.html)\n",
+    "titre": "notice of surplus storage",
+    "titre.auto": "notice of surplus storage"
+  },
+  "divers . textile . nombre de textiles achetés": {
+    "formule": {
+      "somme": [
+        "t-shirt . nombre",
+        "pantalon . nombre",
+        "short . nombre",
+        "sweat . nombre",
+        "robe . nombre",
+        "chemise . nombre",
+        "pull . nombre",
+        "chaussure . nombre",
+        "manteau . nombre",
+        "petit article . nombre",
+        "gros article . nombre"
+      ]
+    },
+    "titre": "number of textiles purchased",
+    "titre.auto": "number of textiles purchased"
   },
   "divers . textile . t-shirt . empreinte": {
     "formule": 5.35,
