@@ -5,16 +5,29 @@
         "transport . arrêter l'avion",
         "transport . arrêter l'avion court",
         "transport . prendre moins l'avion",
-        "alimentation . réduire viande . par deux",
-        "alimentation . réduire viande . par quatre",
+        "alimentation . réduire viande . max 1 par jour",
+        "alimentation . réduire viande . max 2 par semaine",
+        "alimentation . réduire poisson . max 2 par semaine",
+        "alimentation . poisson faible empreinte",
+        "alimentation . viande faible empreinte",
         "alimentation . devenir végétarien",
         "alimentation . devenir végétalien",
-        "alimentation . viande faible empreinte",
+        "alimentation . réduire café . max deux par jour",
+        "alimentation . réduire café . max un par jour",
+        "alimentation . réduire café . remplace un café par jour par thé",
+        "alimentation . réduire café . remplace par chicorée",
+        "alimentation . réduire café . remplace par thé",
+        "alimentation . réduire chocolat chaud . max un par jour",
+        "alimentation . réduire boissons sucrées . max un litres par semaine",
+        "alimentation . réduire boissons sucrées . changer pour sirop",
+        "alimentation . réduire alcool . max un litres par semaine",
         "alimentation . manger de saison",
         "alimentation . boisson . eau en bouteille . arrêter",
         "alimentation . manger local",
+        "alimentation . déchets . devenir zéro déchet",
         "alimentation . déchets . réduire gaspillage",
         "alimentation . déchets . composter",
+        "alimentation . déchets . avoir un stop pub",
         "logement . éteindre appareils",
         "logement . remplacer fioul par bois",
         "logement . remplacer gaz par PAC",
@@ -40,77 +53,185 @@
         "services sociétaux . voter",
         "services sociétaux . pression locale",
         "divers . publicité",
-        "divers . avoir un stop pub",
         "divers . numérique . appareils . allongement",
         "divers . tabac . arrêter"
       ]
     }
   },
-  "alimentation . réduire viande . par deux": {
+  "alimentation . nombre de plats viande": {
+    "formule": "plats . viande 1 . nombre + plats . viande 2 . nombre",
+    "unité": "repas/semaine"
+  },
+  "alimentation . nombre de plats poisson": {
+    "formule": "plats . poisson 1 . nombre + plats . poisson 2 . nombre",
+    "unité": "repas/semaine"
+  },
+  "alimentation . réduire viande . max 1 par jour": {
+    "applicable si": "nombre de plats viande > 7 repas/semaine",
+    "titre": "Ne pas manger de viande plus d'une fois par jour",
+    "formule": "par semaine * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "Et si vous commenciez par réduire votre consommation de viande en n'en mangeant qu'une seule fois par jour ?\n"
+  },
+  "alimentation . réduire viande . max 1 par jour . par semaine": {
+    "formule": "plats - nouveau régime",
+    "unité": "kgCO2e/semaine"
+  },
+  "alimentation . réduire viande . max 1 par jour . nouveau régime": {
+    "formule": {
+      "somme": [
+        "plats . viande 1 / nombre de plats viande * 7 repas/semaine",
+        "plats . viande 2 / nombre de plats viande * 7 repas/semaine",
+        "plats . végétalien",
+        "plats . végétarien",
+        "plats . poisson 1",
+        "plats . poisson 2",
+        "compensation végétarienne"
+      ]
+    },
+    "unité": "kgCO2e/semaine"
+  },
+  "alimentation . réduire viande . max 1 par jour . nouveau régime . compensation végétarienne": {
+    "formule": "1.115 * (nombre de plats viande - 7repas/semaine)",
+    "unité": "kgCO2e/semaine",
+    "optimized": true
+  },
+  "alimentation . réduire viande . max 2 par semaine": {
     "applicable si": "nombre de plats viande > 2",
     "action": {
       "dépasse": [
-        "alimentation . viande faible empreinte"
+        "alimentation . viande faible empreinte",
+        "alimentation . réduire viande . max 1 par jour"
       ]
     },
-    "titre": "Manger de la viande une seule fois par jour",
-    "formule": "par semaine * 52",
-    "icônes": "🍖📉",
-    "description": "> ... ou le soir\n\nIl est tout à fait possible de réduire significativement l'empreinte de votre alimentation sans devenir strictement végétarien.\n\nRemplacez la moitié de vos repas avec de la viande par des repas végétariens.\n"
+    "titre": "Ne pas manger de viande plus de deux fois par semaine",
+    "formule": "par semaine * commun . semaines par an",
+    "description": "Et si vous vous donniez l'objectif de ne pas dépasser deux repas de viande par semaine\n",
+    "unité": "kgCO2e"
   },
-  "alimentation . réduire viande . par deux . par semaine": {
-    "formule": "plats - nouveau régime"
+  "alimentation . réduire viande . max 2 par semaine . par semaine": {
+    "formule": "plats - nouveau régime",
+    "unité": "kgCO2e/semaine"
   },
-  "alimentation . réduire viande . par deux . par semaine . nouveau régime": {
+  "alimentation . réduire viande . max 2 par semaine . nouveau régime": {
     "formule": {
       "somme": [
-        "plats . viande 1 / 2",
-        "plats . viande 2 / 2",
+        "plats . viande 1 / nombre de plats viande * 2 repas/semaine",
+        "plats . viande 2 / nombre de plats viande * 2 repas/semaine",
         "plats . végétalien",
         "plats . végétarien",
         "plats . poisson 1",
         "plats . poisson 2",
         "compensation végétarienne"
       ]
-    }
+    },
+    "unité": "kgCO2e/semaine"
   },
-  "alimentation . réduire viande . par deux . par semaine . nouveau régime . compensation végétarienne": {
-    "formule": "1.115 * (nombre de plats viande / 2)",
-    "description": "On compense la division par 2 des plats de viande par des plats végétariens.",
+  "alimentation . réduire viande . max 2 par semaine . nouveau régime . compensation végétarienne": {
+    "formule": "1.115 * (nombre de plats viande - 2repas/semaine)",
+    "unité": "kgCO2e/semaine",
     "optimized": true
   },
-  "alimentation . réduire viande . par quatre": {
-    "applicable si": "nombre de plats viande > 4",
+  "alimentation . viande faible empreinte": {
+    "applicable si": "plats . viande 2 . nombre > 0",
     "action": {
       "dépasse": [
-        "alimentation . réduire viande . par deux",
-        "alimentation . viande faible empreinte"
+        "alimentation . réduire viande . max 1 par jour"
       ]
     },
-    "titre": "Manger de la viande uniquement le week-end",
-    "formule": "par semaine * 52",
-    "icônes": "🍖📉",
-    "description": "Il est tout à fait possible de réduire significativement l'empreinte de votre alimentation sans devenir strictement végétarien.\n\nSur ce geste, on remplace les 3/4 de vos repas carnés par des repas végétariens, ce qui est une bonne approximation d'une consommation de viande réservée aux week-ends.\n"
+    "titre": "Privilégier la volaille ou le porc",
+    "formule": "par semaine * commun . semaines par an",
+    "unité": "kgCO2e",
+    "icônes": "🥩🍗",
+    "description": "L’empreinte climat de notre alimentation est directement corrélée à notre consommation de viande, mais il faut savoir que toutes ne sont pas égales de ce point de vue.\n\n> À titre de comparaison, ramenée au kilo une entrecôte émet 6 fois plus de gaz à effet de serre que des filets de poulets.\n\nPour en savoir plus sur les impacts de notre consommation de viande, n'hésitez pas à consulter l'[explication complète](/actions/plus/alimentation/réduire-viande/par-deux).\n"
   },
-  "alimentation . réduire viande . par quatre . par semaine": {
-    "formule": "plats - nouveau régime"
+  "alimentation . viande faible empreinte . par semaine": {
+    "formule": "plats - nouveau régime",
+    "unité": "kgCO2e/semaine"
   },
-  "alimentation . réduire viande . par quatre . par semaine . nouveau régime": {
+  "alimentation . viande faible empreinte . par semaine . nouveau régime": {
     "formule": {
       "somme": [
-        "plats . viande 1 / 4",
-        "plats . viande 2 / 4",
+        "plats . viande 1",
+        "compensation viande 1",
         "plats . végétalien",
         "plats . végétarien",
         "plats . poisson 1",
-        "plats . poisson 2",
+        "plats . poisson 2"
+      ]
+    },
+    "unité": "kgCO2e/semaine"
+  },
+  "alimentation . viande faible empreinte . par semaine . nouveau régime . compensation viande 1": {
+    "formule": "2.098 * plats . viande 2 . nombre",
+    "unité": "kgCO2e/semaine",
+    "note": "On compense la suppression des plat viande 2 en plat viande 1.",
+    "optimized": true
+  },
+  "alimentation . réduire poisson . max 2 par semaine": {
+    "applicable si": "nombre de plats poisson > 2 repas/semaine",
+    "action": {
+      "dépasse": [
+        "alimentation . poisson faible empreinte"
+      ]
+    },
+    "titre": "Ne pas manger de poisson plus de deux fois par semaine",
+    "formule": "par semaine * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "Et si vous vous donniez l'objectif de ne pas dépasser deux repas de poisson par semaine ?\n"
+  },
+  "alimentation . réduire poisson . max 2 par semaine . par semaine": {
+    "formule": "plats - nouveau régime",
+    "unité": "kgCO2e/semaine"
+  },
+  "alimentation . réduire poisson . max 2 par semaine . nouveau régime": {
+    "formule": {
+      "somme": [
+        "plats . viande 1",
+        "plats . viande 2",
+        "plats . végétalien",
+        "plats . végétarien",
+        "plats . poisson 1 / nombre de plats poisson * 2 repas/semaine",
+        "plats . poisson 2 / nombre de plats poisson * 2 repas/semaine",
         "compensation végétarienne"
       ]
-    }
+    },
+    "unité": "kgCO2e/semaine"
   },
-  "alimentation . réduire viande . par quatre . par semaine . nouveau régime . compensation végétarienne": {
-    "formule": "1.115 * (nombre de plats viande * (3 / 4))",
-    "description": "On compense la division par 4 des plats de viande par des plats végétariens.",
+  "alimentation . réduire poisson . max 2 par semaine . nouveau régime . compensation végétarienne": {
+    "formule": "1.115 * (nombre de plats poisson - 2repas/semaine)",
+    "unité": "kgCO2e/semaine",
+    "optimized": true
+  },
+  "alimentation . poisson faible empreinte": {
+    "applicable si": "plats . poisson 2 . nombre > 0",
+    "titre": "Privilégier les poissons gras (thon, saumon, maquereau...)",
+    "formule": "par semaine * commun . semaines par an",
+    "unité": "kgCO2e",
+    "icônes": "🐟️",
+    "description": "Les empreintes de nos consommations de poisson sont loin d'être égales. \nEn moyenne, un repas avec poisson blanc a une empreinte 50% supérieure à un repas \navec un poisson comme le thon, le maquereau, le saumon ou les sardines.\n"
+  },
+  "alimentation . poisson faible empreinte . par semaine": {
+    "formule": "plats - nouveau régime",
+    "unité": "kgCO2e/semaine"
+  },
+  "alimentation . poisson faible empreinte . par semaine . nouveau régime": {
+    "formule": {
+      "somme": [
+        "plats . viande 1",
+        "plats . viande 2",
+        "plats . végétalien",
+        "plats . végétarien",
+        "plats . poisson 1",
+        "compensation poisson 1"
+      ]
+    },
+    "unité": "kgCO2e/semaine"
+  },
+  "alimentation . poisson faible empreinte . par semaine . nouveau régime . compensation poisson 1": {
+    "formule": "1.63 * plats . poisson 2 . nombre",
+    "unité": "kgCO2e/semaine",
+    "description": "On compense la suppression des plats poisson 2 en plat poisson 1.",
     "optimized": true
   },
   "alimentation . devenir végétarien": {
@@ -123,12 +244,15 @@
     },
     "action": {
       "dépasse": [
-        "alimentation . réduire viande . par deux",
-        "alimentation . réduire viande . par quatre",
-        "alimentation . viande faible empreinte"
+        "alimentation . réduire viande . max 1 par jour",
+        "alimentation . réduire viande . max 2 par semaine",
+        "alimentation . viande faible empreinte",
+        "alimentation . réduire poisson . max 2 par semaine",
+        "alimentation . poisson faible empreinte"
       ]
     },
-    "formule": "différence par semaine * 52",
+    "formule": "différence par semaine * commun . semaines par an",
+    "unité": "kgCO2e",
     "icônes": "🥗🧀",
     "description": "Adopter un régime végétarien, donc sans viande ni poisson (mais avec des oeufs, du lait, du fromage, des yaourts).\n\nMoins fort que le régime végétalien, il permet déjà une réduction très importante de l'empreinte sur le climat.\n"
   },
@@ -139,14 +263,17 @@
         "différence par semaine repas",
         "différence par semaine petits déjeuners"
       ]
-    }
+    },
+    "unité": "kgCO2e/semaine"
   },
   "alimentation . devenir végétarien . différence par semaine repas": {
-    "formule": "plats - une semaine plats végétarien"
+    "formule": "plats - une semaine plats végétarien",
+    "unité": "kgCO2e/semaine"
   },
   "alimentation . devenir végétarien . différence par semaine petits déjeuners": {
     "applicable si": "alimentation . petit déjeuner . type = 'britannique'",
-    "formule": "alimentation . petit déjeuner . par semaine - une semaine petit déjeuner végétalien"
+    "formule": "alimentation . petit déjeuner . par semaine - une semaine petit déjeuner végétalien",
+    "unité": "kgCO2e/semaine"
   },
   "alimentation . une semaine plats végétarien": {
     "formule": "14repas/semaine * 1.115",
@@ -162,15 +289,18 @@
     },
     "action": {
       "dépasse": [
-        "alimentation . réduire viande . par deux",
-        "alimentation . réduire viande . par quatre",
+        "alimentation . réduire viande . max 1 par jour",
+        "alimentation . réduire viande . max 2 par semaine",
         "alimentation . viande faible empreinte",
+        "alimentation . réduire poisson . max 2 par semaine",
+        "alimentation . poisson faible empreinte",
         "alimentation . devenir végétarien"
       ]
     },
-    "formule": "différence par semaine * 52",
+    "formule": "différence par semaine * commun . semaines par an",
+    "unité": "kgCO2e",
     "icônes": "🥗🌾",
-    "description": "Adopter un régime végétalien, donc sans produits animaux."
+    "description": "Adopter un régime végétalien, donc sans produits animaux.\n\n⚠️ Attention ! Le régime végétalien n'est pas adapté à tous les publics. Les risques de carences sont élevés, notamment chez les enfants et les femmes enceintes.\nSi vous réfléchissez à adopter cette alimentation, pensez à en parler à votre médecin, pour qu'il vérifie que cela ne se fait pas au détriment de votre santé.\n"
   },
   "alimentation . devenir végétalien . différence par semaine": {
     "titre": "Différence par semaine",
@@ -180,10 +310,12 @@
         "différence par semaine petits déjeuners",
         "différence par semaine chocolat chaud"
       ]
-    }
+    },
+    "unité": "kgCO2e/semaine"
   },
   "alimentation . devenir végétalien . différence par semaine repas": {
-    "formule": "plats - une semaine plats végétalien"
+    "formule": "plats - une semaine plats végétalien",
+    "unité": "kgCO2e/semaine"
   },
   "alimentation . devenir végétalien . différence par semaine petits déjeuners": {
     "applicable si": {
@@ -197,10 +329,12 @@
         }
       ]
     },
-    "formule": "alimentation . petit déjeuner . par semaine - une semaine petit déjeuner végétalien"
+    "formule": "alimentation . petit déjeuner . par semaine - une semaine petit déjeuner végétalien",
+    "unité": "kgCO2e/semaine"
   },
   "alimentation . une semaine plats végétalien": {
     "formule": "14repas/semaine * 0.785",
+    "unité": "kgCO2e/semaine",
     "optimized": true
   },
   "alimentation . devenir végétalien . différence par semaine chocolat chaud": {
@@ -210,7 +344,8 @@
         "alimentation . boisson . chaude . chocolat chaud . nombre > 0"
       ]
     },
-    "formule": "alimentation . boisson . chaude . chocolat chaud - une semaine chocolat chaud végétalien"
+    "formule": "alimentation . boisson . chaude . chocolat chaud - une semaine chocolat chaud végétalien",
+    "unité": "kgCO2e/semaine"
   },
   "alimentation . une semaine petit déjeuner végétalien": {
     "valeur": "2.933",
@@ -226,38 +361,102 @@
       }
     }
   },
-  "alimentation . viande faible empreinte": {
-    "applicable si": "plats . viande 2 . nombre > 0",
+  "alimentation . réduire café . max deux par jour": {
+    "applicable si": "boisson . chaude . café . nombre > 14 tasse/semaine",
+    "titre": "Se limiter à deux cafés par jour",
+    "icônes": "☕️2️⃣",
+    "formule": "(boisson . chaude . café . nombre - 14 tasse/semaine) * boisson . tasse de café * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "Au risque de taquiner un peu, la consommation de café peut avoir une empreinte carbone non négligeable dans votre bilan. En moyenne, chaque tasse de café ajoute 120 grammes de CO₂e à votre empreinte.\n\nEt si vous commenciez par n'en consommer \"plus que\" deux par jour ?\n"
+  },
+  "alimentation . réduire café . max un par jour": {
+    "applicable si": "boisson . chaude . café . nombre > 7 tasse/semaine",
     "action": {
       "dépasse": [
-        "alimentation . réduire viande . par quatre",
-        "alimentation . réduire viande . par deux"
+        "alimentation . réduire café . max deux par jour",
+        "alimentation . réduire café . remplace un café par jour par thé"
       ]
     },
-    "titre": "Privilégier la volaille ou le porc",
-    "formule": "par semaine * 52",
-    "icônes": "🥩🍗",
-    "description": "L’empreinte climat de notre alimentation est directement corrélée à notre consommation de viande, mais il faut savoir que toutes ne sont pas égales de ce point de vue.\n\n> À titre de comparaison, ramenée au kilo une entrecôte émet 6 fois plus de gaz à effet de serre que des filets de poulets.\n"
+    "titre": "Se limiter à un café par jour",
+    "icônes": "☕️1️⃣",
+    "formule": "(boisson . chaude . café . nombre - 7 tasse/semaine) * boisson . tasse de café * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "Au risque de taquiner un peu, la consommation de café peut avoir une empreinte carbone non négligeable dans votre bilan. En moyenne, chaque tasse de café ajoute 120 grammes de CO₂e à votre empreinte.\n\nEt si vous commenciez par n'en consommer \"plus qu'\" un par jour ?\n"
   },
-  "alimentation . viande faible empreinte . par semaine": {
-    "formule": "plats - nouveau régime"
+  "alimentation . réduire café . remplace un café par jour par thé": {
+    "applicable si": "boisson . chaude . café . nombre > 7 tasse/semaine",
+    "titre": "Remplacer un café quotidien par un thé",
+    "icônes": "☕️🫖",
+    "formule": "(boisson . tasse de café - boisson . tasse de thé) * 1 tasse/jour * commun . jours par an",
+    "unité": "kgCO2e",
+    "description": "Le café a une empreinte carbone largement supérieure au thé (près de 20 fois supérieure !). Et si vous troquiez une de vos tasses de café quotidiennes par un thé ?\n"
   },
-  "alimentation . viande faible empreinte . par semaine . nouveau régime": {
-    "formule": {
-      "somme": [
-        "plats . viande 1",
-        "compensation viande 1",
-        "plats . végétalien",
-        "plats . végétarien",
-        "plats . poisson 1",
-        "plats . poisson 2"
+  "alimentation . réduire café . remplace par thé": {
+    "applicable si": "boisson . chaude . café . nombre >= 7 tasse/semaine",
+    "action": {
+      "dépasse": [
+        "alimentation . réduire café . max un par jour",
+        "alimentation . réduire café . max deux par jour",
+        "alimentation . réduire café . remplace par chicorée",
+        "alimentation . réduire café . remplace un café par jour par thé"
       ]
-    }
+    },
+    "titre": "Remplacer le café par du thé",
+    "icônes": "☕️🫖",
+    "formule": "boisson . chaude . café . nombre * (boisson . tasse de café - boisson . tasse de thé) * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "Nous faisons le choix de ne proposer cette action qu'aux \"gros\" buveurs de café en considérant que c'est le cas à partir d'un café / jour.\n"
   },
-  "alimentation . viande faible empreinte . par semaine . nouveau régime . compensation viande 1": {
-    "formule": "2.098 * plats . viande 2 . nombre",
-    "description": "On compense la suppression des plat viande 2 en plat viande 1.",
+  "alimentation . réduire café . remplace par chicorée": {
+    "applicable si": "boisson . chaude . café . nombre >= 7 tasse/semaine",
+    "action": {
+      "dépasse": [
+        "alimentation . réduire café . max deux par jour",
+        "alimentation . réduire café . max un par jour"
+      ]
+    },
+    "titre": "Remplacer le café par de la chicorée",
+    "icônes": "☕️🌿",
+    "formule": "boisson . chaude . café . nombre * (boisson . tasse de café - boisson . tasse de chicorée) * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "Nous faisons le choix de ne proposer cette action qu'aux \"gros\" buveurs de café en considérant que c'est le cas à partir d'un café / jour.\n"
+  },
+  "alimentation . réduire chocolat chaud . max un par jour": {
+    "applicable si": "boisson . chaude . chocolat chaud . nombre > 7 tasse/semaine",
+    "titre": "Se limiter à un chocolat chaud par jour",
+    "icônes": "☕️1️⃣",
+    "formule": "(boisson . chaude . chocolat chaud . nombre - 7 tasse/semaine) * boisson . tasse de chocolat chaud * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "Le chocolat chaud a une empreinte non négligeable : près de 600 gCO2e / tasse !\n\nEt si vous commenciez par n'en consommer \"plus qu'un\" par jour ?\n"
+  },
+  "alimentation . réduire boissons sucrées . changer pour sirop": {
+    "applicable si": "boisson . sucrées . litres > 0",
+    "titre": "Consommer des sirops plutôt que des sodas ou jus",
+    "description": "Les sirops ont une empreinte très inférieure aux sodas et aux jus de fruits : autour de 100 gCO2e/litre contre plus de 500 pour les sodas, et 900 pour les jus de fruits.\n",
+    "formule": "boisson . sucrées -  boisson . sucrées . litres * boisson . sucrées . facteur sirops * commun . semaines par an",
+    "unité": "kgCO2e"
+  },
+  "alimentation . boisson . sucrées . facteur sirops": {
+    "unité": "kgCO2e/l",
+    "note": "Facteur d'émission issu d'[Agribalyse, boisson préparée à partir de sirop](https://agribalyse.ademe.fr/app/aliments/18058#Boisson_pr%C3%A9par%C3%A9e_%C3%A0_partir_de_sirop_%C3%A0_diluer_type_menthe,_fraise,_etc,_sucr%C3%A9,_dilu%C3%A9_dans_l'eau), 0.10 kgCO2e/kg. On considère que la masse volumique est de 1kg/l.",
+    "valeur": "0.1",
     "optimized": true
+  },
+  "alimentation . réduire boissons sucrées . max un litres par semaine": {
+    "applicable si": "alimentation . boisson . sucrées . litres > 1 l/semaine",
+    "titre": "Ne pas boire plus d'un litre de jus et sodas par semaine",
+    "icônes": "🥤",
+    "formule": "(boisson . sucrées . litres - 1 l/semaine) * boisson . sucrées . facteur * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "L'empreinte carbone des boissons sucrées est loin d'être négligeable. Un litre de soda a une empreinte de 500 gCO2e, et un litre de jus de fruit 900 g.\n\nSe limiter à 2 litres par semaine est donc, déjà, un bon début pour réduire son empreinte.\n"
+  },
+  "alimentation . réduire alcool . max un litres par semaine": {
+    "applicable si": "alimentation . boisson . alcool . litres > 1 l/semaine",
+    "titre": "Ne pas boire plus d'un litre d'alcool par semaine",
+    "icônes": "🍻",
+    "formule": "(boisson . alcool . litres - 1 l/semaine) * boisson . alcool . facteur * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "L'empreinte carbone de l'alcool est loin d'être négligeable. Un litre de bière a une empreinte de 1,12 kgCO2e, et un litre de vin 1,22 kg.\n\nSe limiter à 2 litres par semaine est donc, déjà, un bon début pour réduire son empreinte.\n"
   },
   "alimentation . manger local": {
     "non applicable si": "local . consommation = 'oui toujours'",
@@ -276,22 +475,12 @@
       }
     }
   },
-  "alimentation . gaspillage alimentaire": {
-    "inactive": "oui",
-    "icônes": "🍲🚯",
-    "titre": "Réduire mon gaspillage alimentaire",
-    "note": "Voir le rapport sur [l'estimation des impacts du gaspillage alimentaire des ménages](https://www.ademe.fr/operation-foyers-temoins-estimer-impacts-gaspillage-alimentaire-menages), \npage 7 pour l'empreinte du gaspillage et page 36 pour la réduction moyenne.\n"
-  },
-  "alimentation . déchets . action": {
-    "titre": "Passer au zéro déchet",
-    "icônes": "📦🚯",
-    "inactive": "oui"
-  },
   "alimentation . manger de saison": {
     "non applicable si": "de saison . consommation = 'oui toujours'",
     "titre": "Manger en respectant les saisons",
     "icônes": "🍅🌞",
     "formule": "alimentation . de saison . empreinte - recalcul",
+    "unité": "kgCO2e",
     "description": "Contrairement à ce qu'on pourrait imaginer, l'impact de cette action est relativement faible car la part de produits de saison est très faible dans l'alimentation moyenne d'un-e Suisse-sse.\n\nMais il existe de nombreux autres bénéfices à l'alimentation saisonnière comme la moindre consommation d'eau, la diversité des cultures, ou encore la moindre dépendance aux hydrocarbures (gaz et pétrole) qui chauffent les serres. De plus, le corps n'a pas besoin des mêmes nutriments toute l'année, ces besoins correspondent aux aliments de saison.\n\nRetrouvez plus d'informations sur : https://www.ge.ch/dossier/alimentation-durable-geneve/climat-dans-votre-assiette/proximite\n",
     "note": "Pour en savoir plus sur la méthode de calcul, parcourez sa formule, les variables seront expliquées.\n"
   },
@@ -316,30 +505,28 @@
     },
     "titre": "Arrêter l'eau en bouteille",
     "formule": "consommation annuelle * empreinte",
+    "unité": "kgCO2e",
     "icônes": "➡️🚰",
     "description": "L'eau en bouteille a un impact environnemental 450 fois supérieur à l'eau du robinet. Elle coute entre 100 et 300 fois plus cher (80 % du prix est issu de\nla production de l'emballage) et participe fortement à la pollution plastique des océans.\n\n> En effet, il est fréquent que nos déchets plastiques soient vendus à d’autres pays. Ainsi en 2016, pas moins de 50 % des déchets plastiques triés européens ont été exportés vers la Chine.\n",
     "note": "Sources : [Écobilan de l’eau potable](http://esu-services.ch/fileadmin/download/jungbluth-2015-ecobilan-eau.pdf) et [Ministère de la Transition Ecologique p106](https://www.economie.gouv.fr/files/files/directions_services/cge/filieres-dechets-recyclage.pdf)\n"
   },
-  "alimentation . boisson . sucrées . changer pour sirop": {
-    "applicable si": "boisson . sucrées . litres > 0",
-    "titre": "Consommer des sirops plutôt que des sodas ou jus",
-    "description": "Les sirops ont une empreinte très inférieure aux sodas et aux jus de fruits : autour de 100 gCO2e/litre contre plus de 500 pour les sodas, et 900 pour les jus de fruits.\n",
-    "formule": "boisson . sucrées - recalcul"
+  "alimentation . déchets . devenir zéro déchet": {
+    "titre": "Devenir \"zéro déchet\"",
+    "action": {
+      "dépasse": [
+        "alimentation . déchets . réduire gaspillage",
+        "alimentation . déchets . composter",
+        "alimentation . déchets . avoir un stop pub"
+      ]
+    },
+    "non applicable si": "quantité jetée = 'zéro déchet'",
+    "icônes": "📦🚯",
+    "formule": "déchets - recalcul",
+    "unité": "kgCO2e",
+    "description": "Devenir \"zéro déchet\" est particulièrement engageant : traquer le moindre emballage nécessite une attention permanente.\n\n> Sachez qu'en cas d'engagement \"zéro déchet\", nous considérons tout de même des émissions de gaz à effet (mais largement réduites) car il est très difficile\nvoire impossible de ne générer aucun déchet, certains étant invisibles et inévitables.\n\nPour en savoir plus sur les modes de vie zéro déchets, visitez le site [Zero Waste France](https://www.zerowastefrance.org/passer-a-laction/adopter-zero-dechet/)s\n"
   },
-  "alimentation . boisson . sucrées . changer pour sirop . recalcul": {
-    "formule": {
-      "recalcul": {
-        "règle": "boisson . sucrées",
-        "avec": {
-          "boisson . sucrées . facteur": "boisson . sucrées . facteur sirops"
-        }
-      }
-    }
-  },
-  "alimentation . boisson . sucrées . facteur sirops": {
-    "unité": "kgCO2e/l",
-    "note": "Facteur d'émission issu d'[Agribalyse, boisson préparée à partir de sirop](https://agribalyse.ademe.fr/app/aliments/18058#Boisson_pr%C3%A9par%C3%A9e_%C3%A0_partir_de_sirop_%C3%A0_diluer_type_menthe,_fraise,_etc,_sucr%C3%A9,_dilu%C3%A9_dans_l'eau), 0.10 kgCO2e/kg. On considère que la masse volumique est de 1kg/l.",
-    "valeur": "0.1",
+  "alimentation . déchets . devenir zéro déchet . recalcul": {
+    "valeur": "48.042057525",
     "optimized": true
   },
   "alimentation . déchets . réduire gaspillage": {
@@ -348,6 +535,7 @@
     "applicable si": "quantité jetée = 'base'",
     "non applicable si": "gestes . gaspillage alimentaire . présent",
     "formule": "gestes . empreinte gaspillage alimentaire",
+    "unité": "kgCO2e",
     "description": "En Suisse, le gaspillage alimentaire moyen est évalué à 90 kg d'aliments par personne et par an. \n\nSi l'on considère l'ensemble de la chaîne de valeur (c'est-à-dire du champ à l'assiette), c'est environ 2.8 millions de tonnes d'aliments qui sont gaspillées par an, soit 330 kg par habitant-e. De l'énergie, de l'eau, des ressources financières et humaines ont été nécessaires pour produire ces aliments, ces ressources sont donc elles aussi gaspillées. De plus, elles ont également un impact sur l'environnement. \n\nRéduire le gaspillage alimentaire est donc essentiel afin d'éviter de produire pour jeter, d'économiser nos ressources et réduire notre impact sur l'environnement !\n\nRetrouvez plus d'informations sur : https://www.ge.ch/dossier/alimentation-durable-geneve/climat-dans-votre-assiette/gaspillage-alimentaire\n"
   },
   "alimentation . déchets . composter": {
@@ -356,32 +544,21 @@
     "applicable si": "quantité jetée = 'base'",
     "non applicable si": "gestes . compostage biodéchets . présent",
     "formule": "gestes . bonus compostage biodéchets",
+    "unité": "kgCO2e",
     "description": "Nos biodéchets, c’est à dire les déchets putrescibles issus de notre alimentation (épluchures, restes de repas, etc.),\nreprésentent une grande partie du poids de notre poubelle grise contribuant ainsi à majorer l’empreinte carbone associée\nà la gestion de nos déchets. Ces déchets sont très souvent peu ou mal valorisés malgré le bénéfice environnemental qu’ils peuvent apporter :\nun compost, substance organique riche et bénéfique pour les sols. Composter nos biodéchets (de manière individuelle ou collective) permet donc de réduire\nla taille de nos poubelles et de favoriser la création de ce compost pouvant à terme être utilisé comme alternative aux engrais chimiques.\n\nRetrouvez toutes les astuces pour [faire un compost](https://www.ge.ch/teaser/p-tite-poubelle-verte)\n"
   },
-  "alimentation . déchets . recyclage": {
-    "titre": "Recycler mes déchets",
-    "icônes": "🗑️♻️",
-    "inactive": "oui"
-  },
-  "alimentation . déchets . vrac": {
-    "titre": "Acheter en vrac",
-    "icônes": "⚖️🌾",
-    "inactive": "oui"
-  },
-  "alimentation . bio": {
-    "titre": "Manger bio",
-    "icônes": "☮️🌾",
-    "inactive": "oui"
-  },
-  "alimentation . jardiner": {
-    "titre": "Créer son potager",
-    "icônes": "☮️🌾",
-    "inactive": "oui"
-  },
-  "alimentation . restaurant": {
-    "titre": "Choisir des plats respectueux du climat au restaurant",
-    "icônes": "☮️🌾",
-    "inactive": "oui"
+  "alimentation . déchets . avoir un stop pub": {
+    "titre": "Avoir un stop pub",
+    "icônes": "📬",
+    "non applicable si": {
+      "une de ces conditions": [
+        "alimentation . déchets . quantité jetée = 'zéro déchet'",
+        "alimentation . déchets . gestes . stop pub . présent"
+      ]
+    },
+    "formule": "alimentation . déchets . bonus stop pub",
+    "unité": "kgCO2e",
+    "description": "C'est un autocollant à placer sur votre boîte aux lettres qui informe les distributeurs de pub que vous refusez de recevoir des catalogues, des promotions, menus de restaurant et publicités en tout genre.\n\nCela n'empêche pas toute publicité, mais envoie un signal fort et réduit en général considérablement la quantité de déchets papiers reçus.\n"
   },
   "divers . partage NGC": {
     "titre": "Diffuser Nos Gestes Climat !",
@@ -392,18 +569,6 @@
     "titre": "Faire baisser l'empreinte des autres",
     "icônes": "🧑‍🏫",
     "description": "Il arrive un moment où gagner des kilos devient très compliqué. \n\nSi votre empreinte passe sous les 4 tonnes, ou si certaines contraintes rendent vos progrès impossibles, vous avez probablement plus intérêt à aider les autres à réduire leur empreinte qu'à vous torturer sur la votre. \n\nComment ? En diffusant ce simulateur, en discutant de ces sujets avec vos proches, en animant des ateliers en entreprise ou association, ou même en aidant de façon pratique quelqu'un à changer l'une de ses consommations polluantes.\n"
-  },
-  "divers . avoir un stop pub": {
-    "titre": "Avoir un stop pub",
-    "icônes": "📬",
-    "non applicable si": {
-      "une de ces conditions": [
-        "alimentation . déchets . quantité jetée = 'zéro déchet'",
-        "alimentation . déchets . gestes . stop pub . présent"
-      ]
-    },
-    "formule": "alimentation . déchets . bonus stop pub",
-    "description": "C'est un autocollant à placer sur votre boîte aux lettres qui informe les distributeurs de pub que vous refusez de recevoir des catalogues, des promotions, menus de restaurant et publicités en tout genre.\n\nCela n'empêche pas toute publicité, mais envoie un signal fort et réduit en général considérablement la quantité de déchets papiers reçus.\n"
   },
   "divers . publicité": {
     "titre": "Ignorer les pubs et soldes",
@@ -1482,6 +1647,18 @@
     "par défaut": 0,
     "unité": "tasse/semaine"
   },
+  "alimentation . boisson . tasse de café": {
+    "titre": "Empreinte d'une tasse de café",
+    "unité": "kgCO2e/tasse",
+    "valeur": "0.12108",
+    "optimized": true
+  },
+  "alimentation . boisson . tasse de thé": {
+    "titre": "Empreinte d'une tasse de thé",
+    "unité": "kgCO2e/tasse",
+    "valeur": "0.0075",
+    "optimized": true
+  },
   "alimentation . boisson . tasse de chocolat chaud": {
     "titre": "Empreinte d'une tasse de chocolat chaud",
     "formule": {
@@ -1511,6 +1688,12 @@
       ]
     },
     "unité": "kgCO2e/kg"
+  },
+  "alimentation . boisson . tasse de chicorée": {
+    "titre": "Empreinte d'une tasse de chicorée",
+    "unité": "kgCO2e/tasse",
+    "valeur": "0.01629",
+    "optimized": true
   },
   "alimentation . type de lait": {
     "applicable si": {
@@ -1613,7 +1796,8 @@
   "alimentation . boisson . sucrées": {
     "description": "Notons que des alternatives au soda, très simples à préparer maison, sont possibles : c'est le cas du [kéfir](https://fr.wikipedia.org/wiki/K%C3%A9fir) ou [Kombucha](https://fr.wikipedia.org/wiki/Kombucha). Nous n'avons pas encore évalué les gains d'empreinte offerts par ces alternatives.\n",
     "unité": "kgCO2e",
-    "formule": "litres * commun . semaines par an * facteur"
+    "formule": "(litres * 52) * 0.71",
+    "optimized": true
   },
   "alimentation . boisson . sucrées . facteur": {
     "note": "Cette valeur est bien sûr très approximative.",
@@ -1636,6 +1820,11 @@
     "unité": "kgCO2e",
     "description": "Étonnamment, notre consommation d'alcool prend un rôle important dans notre empreinte.\n\nLa bonne nouvelle, c'est que nous pouvons l'améliorer de façon très simple : plus que l'alimentation, une boisson est lourde, voyage beaucoup, et son emballage a une empreinte significative.\n\n> Prenons l'exemple d'une 🍺 bière de 25cl : brassée au bout du monde, elle a voyagé des milliers de kilomètres et son contenu (la boisson) est emballé dans un contenant qui fait presque le même poids (200g de verre).\n\n> En privilégiant une bière brassée localement, servie à la pression (le fût étant réutilisé des années), on peut réduire drastiquement l'empreinte sans changer la consommation.\n",
     "formule": "(litres * 52) * 1.0833333333333333",
+    "optimized": true
+  },
+  "alimentation . boisson . alcool . facteur": {
+    "note": "Le vin n'a pas la même empreinte que la bière au litre, c'est une grosse simplification.",
+    "valeur": "1.0833333333333333",
     "optimized": true
   },
   "alimentation . boisson . alcool . litres": {
@@ -1976,10 +2165,6 @@
     "par défaut": 2,
     "unité": "repas/semaine"
   },
-  "alimentation . nombre de plats viande": {
-    "formule": "plats . viande 1 . nombre + plats . viande 2 . nombre",
-    "unité": "repas/semaine"
-  },
   "alimentation . plats . poisson 1": {
     "formule": "1.63 * nombre",
     "icônes": "🍣🥧",
@@ -2003,10 +2188,6 @@
   "alimentation . plats . poisson 2 . nombre": {
     "question": "Nombre de plats poisson 2 par semaine",
     "par défaut": 0,
-    "unité": "repas/semaine"
-  },
-  "alimentation . nombre de plats poisson": {
-    "formule": "plats . poisson 1 . nombre + plats . poisson 2 . nombre",
     "unité": "repas/semaine"
   },
   "alimentation . planétaire": {

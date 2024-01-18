@@ -5,16 +5,29 @@
         "transport . arrêter l'avion",
         "transport . arrêter l'avion court",
         "transport . prendre moins l'avion",
-        "alimentation . réduire viande . par deux",
-        "alimentation . réduire viande . par quatre",
+        "alimentation . réduire viande . max 1 par jour",
+        "alimentation . réduire viande . max 2 par semaine",
+        "alimentation . réduire poisson . max 2 par semaine",
+        "alimentation . poisson faible empreinte",
+        "alimentation . viande faible empreinte",
         "alimentation . devenir végétarien",
         "alimentation . devenir végétalien",
-        "alimentation . viande faible empreinte",
+        "alimentation . réduire café . max deux par jour",
+        "alimentation . réduire café . max un par jour",
+        "alimentation . réduire café . remplace un café par jour par thé",
+        "alimentation . réduire café . remplace par chicorée",
+        "alimentation . réduire café . remplace par thé",
+        "alimentation . réduire chocolat chaud . max un par jour",
+        "alimentation . réduire boissons sucrées . max un litres par semaine",
+        "alimentation . réduire boissons sucrées . changer pour sirop",
+        "alimentation . réduire alcool . max un litres par semaine",
         "alimentation . manger de saison",
         "alimentation . boisson . eau en bouteille . arrêter",
         "alimentation . manger local",
+        "alimentation . déchets . devenir zéro déchet",
         "alimentation . déchets . réduire gaspillage",
         "alimentation . déchets . composter",
+        "alimentation . déchets . avoir un stop pub",
         "logement . éteindre appareils",
         "logement . remplacer fioul par bois",
         "logement . remplacer gaz par PAC",
@@ -40,7 +53,6 @@
         "services sociétaux . voter",
         "services sociétaux . pression locale",
         "divers . publicité",
-        "divers . avoir un stop pub",
         "divers . numérique . appareils . allongement",
         "divers . tabac . arrêter"
       ]
@@ -48,29 +60,38 @@
     "titre": "actions",
     "titre.auto": "actions"
   },
-  "alimentation . réduire viande . par deux": {
-    "applicable si": "nombre de plats viande > 2",
-    "action": {
-      "dépasse": [
-        "alimentation . viande faible empreinte"
-      ]
-    },
-    "titre": "Eat meat only once a day",
-    "formule": "par semaine * 52",
-    "icônes": "🍖📉",
-    "description": "> ... or in the evening\n\nIt is possible to significantly reduce the footprint of your diet\nwithout becoming strictly vegetarian.\n\nReplace half of your meat meals with vegetarian meals.\n",
-    "titre.auto": "Eat meat only once a day"
+  "alimentation . nombre de plats viande": {
+    "formule": "plats . viande 1 . nombre + plats . viande 2 . nombre",
+    "unité": "repas/semaine",
+    "titre": "number of meat dishes",
+    "titre.auto": "number of meat dishes"
   },
-  "alimentation . réduire viande . par deux . par semaine": {
+  "alimentation . nombre de plats poisson": {
+    "formule": "plats . poisson 1 . nombre + plats . poisson 2 . nombre",
+    "unité": "repas/semaine",
+    "titre": "number of fish dishes",
+    "titre.auto": "number of fish dishes"
+  },
+  "alimentation . réduire viande . max 1 par jour": {
+    "applicable si": "nombre de plats viande > 7 repas/semaine",
+    "titre": "Only eat meat once a day maximum",
+    "formule": "par semaine * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "Why not start by reducing your meat consumption by eating it just once a day?\n",
+    "titre.auto": "Don't eat meat more than once a day",
+    "titre.previous_review": "Only eat meat once a day maximum"
+  },
+  "alimentation . réduire viande . max 1 par jour . par semaine": {
     "formule": "plats - nouveau régime",
+    "unité": "kgCO2e/semaine",
     "titre": "per week",
     "titre.auto": "per week"
   },
-  "alimentation . réduire viande . par deux . par semaine . nouveau régime": {
+  "alimentation . réduire viande . max 1 par jour . nouveau régime": {
     "formule": {
       "somme": [
-        "plats . viande 1 / 2",
-        "plats . viande 2 / 2",
+        "plats . viande 1 / nombre de plats viande * 7 repas/semaine",
+        "plats . viande 2 / nombre de plats viande * 7 repas/semaine",
         "plats . végétalien",
         "plats . végétarien",
         "plats . poisson 1",
@@ -78,40 +99,43 @@
         "compensation végétarienne"
       ]
     },
+    "unité": "kgCO2e/semaine",
     "titre": "new regime",
     "titre.auto": "new regime"
   },
-  "alimentation . réduire viande . par deux . par semaine . nouveau régime . compensation végétarienne": {
-    "formule": "1.115 * (nombre de plats viande / 2)",
-    "description": "We compensate the division by 2 of the meat dishes by vegetarian dishes.\n",
+  "alimentation . réduire viande . max 1 par jour . nouveau régime . compensation végétarienne": {
+    "formule": "1.115 * (nombre de plats viande - 7repas/semaine)",
+    "unité": "kgCO2e/semaine",
     "titre": "vegetarian compensation",
     "titre.auto": "vegetarian compensation",
     "optimized": true
   },
-  "alimentation . réduire viande . par quatre": {
-    "applicable si": "nombre de plats viande > 4",
+  "alimentation . réduire viande . max 2 par semaine": {
+    "applicable si": "nombre de plats viande > 2",
     "action": {
       "dépasse": [
-        "alimentation . réduire viande . par deux",
-        "alimentation . viande faible empreinte"
+        "alimentation . viande faible empreinte",
+        "alimentation . réduire viande . max 1 par jour"
       ]
     },
-    "titre": "Eat meat only on weekends",
-    "formule": "par semaine * 52",
-    "icônes": "🍖📉",
-    "description": "It is quite possible to significantly reduce the footprint of your diet\nwithout becoming strictly vegetarian.\n\nOn this gesture, we replace 3/4 of your meat meals by vegetarian meals,\nwhich is a good approximation of a meat consumption reserved for the\nweekends.\n",
-    "titre.auto": "Eat meat only on weekends"
+    "titre": "Only eat meat twice a week maximum",
+    "formule": "par semaine * commun . semaines par an",
+    "description": "What if you set yourself the target of eating no more than two meat meals a week?\n",
+    "unité": "kgCO2e",
+    "titre.auto": "Don't eat meat more than twice a week",
+    "titre.previous_review": "Only eat meat twice a week maximum"
   },
-  "alimentation . réduire viande . par quatre . par semaine": {
+  "alimentation . réduire viande . max 2 par semaine . par semaine": {
     "formule": "plats - nouveau régime",
+    "unité": "kgCO2e/semaine",
     "titre": "per week",
     "titre.auto": "per week"
   },
-  "alimentation . réduire viande . par quatre . par semaine . nouveau régime": {
+  "alimentation . réduire viande . max 2 par semaine . nouveau régime": {
     "formule": {
       "somme": [
-        "plats . viande 1 / 4",
-        "plats . viande 2 / 4",
+        "plats . viande 1 / nombre de plats viande * 2 repas/semaine",
+        "plats . viande 2 / nombre de plats viande * 2 repas/semaine",
         "plats . végétalien",
         "plats . végétarien",
         "plats . poisson 1",
@@ -119,14 +143,139 @@
         "compensation végétarienne"
       ]
     },
+    "unité": "kgCO2e/semaine",
     "titre": "new regime",
     "titre.auto": "new regime"
   },
-  "alimentation . réduire viande . par quatre . par semaine . nouveau régime . compensation végétarienne": {
-    "formule": "1.115 * (nombre de plats viande * (3 / 4))",
-    "description": "We compensate the division by 4 of the meat dishes by vegetarian dishes.\n",
+  "alimentation . réduire viande . max 2 par semaine . nouveau régime . compensation végétarienne": {
+    "formule": "1.115 * (nombre de plats viande - 2repas/semaine)",
+    "unité": "kgCO2e/semaine",
     "titre": "vegetarian compensation",
     "titre.auto": "vegetarian compensation",
+    "optimized": true
+  },
+  "alimentation . viande faible empreinte": {
+    "applicable si": "plats . viande 2 . nombre > 0",
+    "action": {
+      "dépasse": [
+        "alimentation . réduire viande . max 1 par jour"
+      ]
+    },
+    "titre": "Favour poultry or pork",
+    "formule": "par semaine * commun . semaines par an",
+    "unité": "kgCO2e",
+    "icônes": "🥩🍗",
+    "description": "The climate footprint of our food is directly correlated to our meat consumption, but it's important to remember that not all meats have the same impact. \nRed meat has the highest carbon footprint (beef, lamb). Poultry and pork have a much smaller carbon footprint. \n\n> By way of comparison, per kilo, the production of a rib steak emits 6 times more greenhouse gases than chicken fillets.\n",
+    "titre.auto": "Favour poultry or pork"
+  },
+  "alimentation . viande faible empreinte . par semaine": {
+    "formule": "plats - nouveau régime",
+    "unité": "kgCO2e/semaine",
+    "titre": "per week",
+    "titre.auto": "per week"
+  },
+  "alimentation . viande faible empreinte . par semaine . nouveau régime": {
+    "formule": {
+      "somme": [
+        "plats . viande 1",
+        "compensation viande 1",
+        "plats . végétalien",
+        "plats . végétarien",
+        "plats . poisson 1",
+        "plats . poisson 2"
+      ]
+    },
+    "unité": "kgCO2e/semaine",
+    "titre": "new regime",
+    "titre.auto": "new regime"
+  },
+  "alimentation . viande faible empreinte . par semaine . nouveau régime . compensation viande 1": {
+    "formule": "2.098 * plats . viande 2 . nombre",
+    "unité": "kgCO2e/semaine",
+    "note": "The deletion of meat dish 2 is offset by meat dish 1.",
+    "titre": "meat compensation 1",
+    "titre.auto": "meat compensation 1",
+    "optimized": true
+  },
+  "alimentation . réduire poisson . max 2 par semaine": {
+    "applicable si": "nombre de plats poisson > 2 repas/semaine",
+    "action": {
+      "dépasse": [
+        "alimentation . poisson faible empreinte"
+      ]
+    },
+    "titre": "Only eat fish twice a week maximum",
+    "formule": "par semaine * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "What if you set yourself the target of eating no more than two fish meals a week?\n",
+    "titre.auto": "Don't eat fish more than twice a week",
+    "titre.previous_review": "Only eat fish twice a week maximum"
+  },
+  "alimentation . réduire poisson . max 2 par semaine . par semaine": {
+    "formule": "plats - nouveau régime",
+    "unité": "kgCO2e/semaine",
+    "titre": "per week",
+    "titre.auto": "per week"
+  },
+  "alimentation . réduire poisson . max 2 par semaine . nouveau régime": {
+    "formule": {
+      "somme": [
+        "plats . viande 1",
+        "plats . viande 2",
+        "plats . végétalien",
+        "plats . végétarien",
+        "plats . poisson 1 / nombre de plats poisson * 2 repas/semaine",
+        "plats . poisson 2 / nombre de plats poisson * 2 repas/semaine",
+        "compensation végétarienne"
+      ]
+    },
+    "unité": "kgCO2e/semaine",
+    "titre": "new regime",
+    "titre.auto": "new regime"
+  },
+  "alimentation . réduire poisson . max 2 par semaine . nouveau régime . compensation végétarienne": {
+    "formule": "1.115 * (nombre de plats poisson - 2repas/semaine)",
+    "unité": "kgCO2e/semaine",
+    "titre": "vegetarian compensation",
+    "titre.auto": "vegetarian compensation",
+    "optimized": true
+  },
+  "alimentation . poisson faible empreinte": {
+    "applicable si": "plats . poisson 2 . nombre > 0",
+    "titre": "Favour oily fish (tuna, salmon, mackerel...)",
+    "formule": "par semaine * commun . semaines par an",
+    "unité": "kgCO2e",
+    "icônes": "🐟️",
+    "description": "The footprints of our fish consumption are far from equal. \nOn average, a meal containing white fish has a 50% higher footprint than a meal containing fish such as tuna, mackerel, salmon or sardines \nwith fish such as tuna, mackerel, salmon or sardines.\n",
+    "titre.auto": "Favour oily fish (tuna, salmon, mackerel...)"
+  },
+  "alimentation . poisson faible empreinte . par semaine": {
+    "formule": "plats - nouveau régime",
+    "unité": "kgCO2e/semaine",
+    "titre": "per week",
+    "titre.auto": "per week"
+  },
+  "alimentation . poisson faible empreinte . par semaine . nouveau régime": {
+    "formule": {
+      "somme": [
+        "plats . viande 1",
+        "plats . viande 2",
+        "plats . végétalien",
+        "plats . végétarien",
+        "plats . poisson 1",
+        "compensation poisson 1"
+      ]
+    },
+    "unité": "kgCO2e/semaine",
+    "titre": "new regime",
+    "titre.auto": "new regime"
+  },
+  "alimentation . poisson faible empreinte . par semaine . nouveau régime . compensation poisson 1": {
+    "formule": "1.63 * plats . poisson 2 . nombre",
+    "unité": "kgCO2e/semaine",
+    "description": "The deletion of fish 2 dishes is offset by fish 1 dishes.",
+    "titre": "fish compensation 1",
+    "titre.auto": "fish compensation 1",
     "optimized": true
   },
   "alimentation . devenir végétarien": {
@@ -139,12 +288,15 @@
     },
     "action": {
       "dépasse": [
-        "alimentation . réduire viande . par deux",
-        "alimentation . réduire viande . par quatre",
-        "alimentation . viande faible empreinte"
+        "alimentation . réduire viande . max 1 par jour",
+        "alimentation . réduire viande . max 2 par semaine",
+        "alimentation . viande faible empreinte",
+        "alimentation . réduire poisson . max 2 par semaine",
+        "alimentation . poisson faible empreinte"
       ]
     },
-    "formule": "différence par semaine * 52",
+    "formule": "différence par semaine * commun . semaines par an",
+    "unité": "kgCO2e",
     "icônes": "🥗🧀",
     "description": "Adopting a vegetarian diet, i.e. without meat or fish (but with eggs, milk, cheese and yoghurt) can significantly reduce your impact on \nclimate.\n",
     "titre.auto": "Becoming a vegetarian"
@@ -157,16 +309,19 @@
         "différence par semaine petits déjeuners"
       ]
     },
+    "unité": "kgCO2e/semaine",
     "titre.auto": "Difference per week"
   },
   "alimentation . devenir végétarien . différence par semaine repas": {
     "formule": "plats - une semaine plats végétarien",
+    "unité": "kgCO2e/semaine",
     "titre": "difference per week meal",
     "titre.auto": "difference per week meal"
   },
   "alimentation . devenir végétarien . différence par semaine petits déjeuners": {
     "applicable si": "alimentation . petit déjeuner . type = 'britannique'",
     "formule": "alimentation . petit déjeuner . par semaine - une semaine petit déjeuner végétalien",
+    "unité": "kgCO2e/semaine",
     "titre": "difference per week breakfasts",
     "titre.auto": "difference per week breakfasts"
   },
@@ -186,13 +341,16 @@
     },
     "action": {
       "dépasse": [
-        "alimentation . réduire viande . par deux",
-        "alimentation . réduire viande . par quatre",
+        "alimentation . réduire viande . max 1 par jour",
+        "alimentation . réduire viande . max 2 par semaine",
         "alimentation . viande faible empreinte",
+        "alimentation . réduire poisson . max 2 par semaine",
+        "alimentation . poisson faible empreinte",
         "alimentation . devenir végétarien"
       ]
     },
-    "formule": "différence par semaine * 52",
+    "formule": "différence par semaine * commun . semaines par an",
+    "unité": "kgCO2e",
     "icônes": "🥗🌾",
     "description": "Adopting a vegan diet, i.e. one that does not include animal products (meat, fish, eggs, milk, cheese, honey, etc.), allows you to reduce your carbon footprint even further than a vegetarian diet. However, it is advisable to be well-informed about the food pyramid in order to meet your body's nutritional needs.\n",
     "titre": "go vegan",
@@ -207,10 +365,12 @@
         "différence par semaine chocolat chaud"
       ]
     },
+    "unité": "kgCO2e/semaine",
     "titre.auto": "Difference per week"
   },
   "alimentation . devenir végétalien . différence par semaine repas": {
     "formule": "plats - une semaine plats végétalien",
+    "unité": "kgCO2e/semaine",
     "titre": "difference per week meal",
     "titre.auto": "difference per week meal"
   },
@@ -227,11 +387,13 @@
       ]
     },
     "formule": "alimentation . petit déjeuner . par semaine - une semaine petit déjeuner végétalien",
+    "unité": "kgCO2e/semaine",
     "titre": "difference per week breakfasts",
     "titre.auto": "difference per week breakfasts"
   },
   "alimentation . une semaine plats végétalien": {
     "formule": "14repas/semaine * 0.785",
+    "unité": "kgCO2e/semaine",
     "titre": "one week vegan dishes",
     "titre.auto": "one week vegan dishes",
     "optimized": true
@@ -244,6 +406,7 @@
       ]
     },
     "formule": "alimentation . boisson . chaude . chocolat chaud - une semaine chocolat chaud végétalien",
+    "unité": "kgCO2e/semaine",
     "titre": "difference per week hot chocolate",
     "titre.auto": "difference per week hot chocolate"
   },
@@ -265,45 +428,113 @@
     "titre": "a week of vegan hot chocolate",
     "titre.auto": "a week of vegan hot chocolate"
   },
-  "alimentation . viande faible empreinte": {
-    "applicable si": "plats . viande 2 . nombre > 0",
+  "alimentation . réduire café . max deux par jour": {
+    "applicable si": "boisson . chaude . café . nombre > 14 tasse/semaine",
+    "titre": "Limit yourself to two coffees a day",
+    "icônes": "☕️2️⃣",
+    "formule": "(boisson . chaude . café . nombre - 14 tasse/semaine) * boisson . tasse de café * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "At the risk of teasing a little, drinking coffee can have a sizeable carbon footprint in your balance sheet. On average, each cup of coffee adds 120 grams of CO₂e to your footprint.\n\nWhat if you started by consuming \"just\" two a day?\n",
+    "titre.auto": "Limit yourself to two coffees a day"
+  },
+  "alimentation . réduire café . max un par jour": {
+    "applicable si": "boisson . chaude . café . nombre > 7 tasse/semaine",
     "action": {
       "dépasse": [
-        "alimentation . réduire viande . par quatre",
-        "alimentation . réduire viande . par deux"
+        "alimentation . réduire café . max deux par jour",
+        "alimentation . réduire café . remplace un café par jour par thé"
       ]
     },
-    "titre": "Favour poultry or pork",
-    "formule": "par semaine * 52",
-    "icônes": "🥩🍗",
-    "description": "The climate footprint of our food is directly correlated to our meat consumption, but it's important to remember that not all meats have the same impact. \nRed meat has the highest carbon footprint (beef, lamb). Poultry and pork have a much smaller carbon footprint. \n\n> By way of comparison, per kilo, the production of a rib steak emits 6 times more greenhouse gases than chicken fillets.\n",
-    "titre.auto": "Favour poultry or pork"
+    "titre": "Limit yourself to one coffee a day",
+    "icônes": "☕️1️⃣",
+    "formule": "(boisson . chaude . café . nombre - 7 tasse/semaine) * boisson . tasse de café * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "At the risk of teasing a little, drinking coffee can have a sizeable carbon footprint in your balance sheet. On average, each cup of coffee adds 120 grams of CO₂e to your footprint.\n\nWhat if you started by consuming \"just\" one a day?\n",
+    "titre.auto": "Limit yourself to one coffee a day"
   },
-  "alimentation . viande faible empreinte . par semaine": {
-    "formule": "plats - nouveau régime",
-    "titre": "per week",
-    "titre.auto": "per week"
+  "alimentation . réduire café . remplace un café par jour par thé": {
+    "applicable si": "boisson . chaude . café . nombre > 7 tasse/semaine",
+    "titre": "Replace a daily coffee with a cup of tea",
+    "icônes": "☕️🫖",
+    "formule": "(boisson . tasse de café - boisson . tasse de thé) * 1 tasse/jour * commun . jours par an",
+    "unité": "kgCO2e",
+    "description": "Coffee has a much bigger carbon footprint than tea (almost 20 times bigger!). So why not swap one of your daily cups of coffee for a cup of tea?\n",
+    "titre.auto": "Replace a daily coffee with a cup of tea"
   },
-  "alimentation . viande faible empreinte . par semaine . nouveau régime": {
-    "formule": {
-      "somme": [
-        "plats . viande 1",
-        "compensation viande 1",
-        "plats . végétalien",
-        "plats . végétarien",
-        "plats . poisson 1",
-        "plats . poisson 2"
+  "alimentation . réduire café . remplace par thé": {
+    "applicable si": "boisson . chaude . café . nombre >= 7 tasse/semaine",
+    "action": {
+      "dépasse": [
+        "alimentation . réduire café . max un par jour",
+        "alimentation . réduire café . max deux par jour",
+        "alimentation . réduire café . remplace par chicorée",
+        "alimentation . réduire café . remplace un café par jour par thé"
       ]
     },
-    "titre": "new regime",
-    "titre.auto": "new regime"
+    "titre": "Replace coffee with tea",
+    "icônes": "☕️🫖",
+    "formule": "boisson . chaude . café . nombre * (boisson . tasse de café - boisson . tasse de thé) * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "We have chosen to offer this action only to \"heavy\" coffee drinkers, considering that this is the case for at least one coffee a day.\n",
+    "titre.auto": "Replace coffee with tea"
   },
-  "alimentation . viande faible empreinte . par semaine . nouveau régime . compensation viande 1": {
-    "formule": "2.098 * plats . viande 2 . nombre",
-    "description": "We compensate for the deletion of the meat dish 2 in meat dish 1.\n",
-    "titre": "meat compensation 1",
-    "titre.auto": "meat compensation 1",
+  "alimentation . réduire café . remplace par chicorée": {
+    "applicable si": "boisson . chaude . café . nombre >= 7 tasse/semaine",
+    "action": {
+      "dépasse": [
+        "alimentation . réduire café . max deux par jour",
+        "alimentation . réduire café . max un par jour"
+      ]
+    },
+    "titre": "Replace coffee with chicory",
+    "icônes": "☕️🌿",
+    "formule": "boisson . chaude . café . nombre * (boisson . tasse de café - boisson . tasse de chicorée) * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "We have chosen to offer this action only to \"heavy\" coffee drinkers, considering that this is the case for at least one coffee a day.\n",
+    "titre.auto": "Replace coffee with chicory"
+  },
+  "alimentation . réduire chocolat chaud . max un par jour": {
+    "applicable si": "boisson . chaude . chocolat chaud . nombre > 7 tasse/semaine",
+    "titre": "Limit yourself to one hot chocolate a day",
+    "icônes": "☕️1️⃣",
+    "formule": "(boisson . chaude . chocolat chaud . nombre - 7 tasse/semaine) * boisson . tasse de chocolat chaud * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "Hot chocolate has a significant footprint: almost 600 gCO2e / cup!\n\nSo why not start by eating \"just one\" a day?\n",
+    "titre.auto": "Limit yourself to one hot chocolate a day"
+  },
+  "alimentation . réduire boissons sucrées . changer pour sirop": {
+    "applicable si": "boisson . sucrées . litres > 0",
+    "titre": "Drink syrups rather than soft drinks or juices",
+    "description": "Syrups have a much smaller footprint than soft drinks and fruit juices: around 100 gCO2e/litre compared with over 500 for soft drinks and 900 for fruit juices.\n",
+    "formule": "boisson . sucrées -  boisson . sucrées . litres * boisson . sucrées . facteur sirops * commun . semaines par an",
+    "unité": "kgCO2e",
+    "titre.auto": "Drink syrups rather than soft drinks or juices"
+  },
+  "alimentation . boisson . sucrées . facteur sirops": {
+    "unité": "kgCO2e/l",
+    "note": "Emission factor from Agribalysis<a href=\"https://agribalyse.ademe.fr/app/aliments/18058#Boisson_pr%C3%A9par%C3%A9e_%C3%A0_partir_de_sirop_%C3%A0_diluer_type_menthe,_fraise,_etc,_sucr%C3%A9,_dilu%C3%A9_dans_l'eau\">, drink prepared from syrup</a>, 0.10 kgCO2e/kg. The density is assumed to be 1kg/l.",
+    "titre": "syrup factor",
+    "titre.auto": "syrup factor",
+    "valeur": "0.1",
     "optimized": true
+  },
+  "alimentation . réduire boissons sucrées . max un litres par semaine": {
+    "applicable si": "alimentation . boisson . sucrées . litres > 1 l/semaine",
+    "titre": "Don't drink more than a litre of juice or soft drinks a week",
+    "icônes": "🥤",
+    "formule": "(boisson . sucrées . litres - 1 l/semaine) * boisson . sucrées . facteur * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "The carbon footprint of sugary drinks is far from negligible. A litre of soft drink has a footprint of 500gCO2e, and a litre of fruit juice 900g.\n\nLimiting yourself to 2 litres a week is therefore a good start to reducing your footprint.\n",
+    "titre.auto": "Don't drink more than a litre of juice or soft drinks a week"
+  },
+  "alimentation . réduire alcool . max un litres par semaine": {
+    "applicable si": "alimentation . boisson . alcool . litres > 1 l/semaine",
+    "titre": "Don't drink more than a litre of alcohol a week",
+    "icônes": "🍻",
+    "formule": "(boisson . alcool . litres - 1 l/semaine) * boisson . alcool . facteur * commun . semaines par an",
+    "unité": "kgCO2e",
+    "description": "The carbon footprint of alcohol is far from negligible. A litre of beer has a footprint of 1.12 kgCO2e, and a litre of wine 1.22 kg.\n\nLimiting yourself to 2 litres a week is therefore a good start to reducing your footprint.\n",
+    "titre.auto": "Don't drink more than a litre of alcohol a week"
   },
   "alimentation . manger local": {
     "non applicable si": "local . consommation = 'oui toujours'",
@@ -325,24 +556,12 @@
     "titre": "recalculation",
     "titre.auto": "recalculation"
   },
-  "alimentation . gaspillage alimentaire": {
-    "inactive": "oui",
-    "icônes": "🍲🚯",
-    "titre": "Reduce my food waste",
-    "note": "See the report on <a href=\"https://www.ademe.fr/operation-foyers-temoins-estimer-impacts-gaspillage-alimentaire-menages\">estimating the impact of household food waste</a>, \npage 7 for the waste footprint and page 36 for the average reduction.\n",
-    "titre.auto": "Reduce my food waste"
-  },
-  "alimentation . déchets . action": {
-    "titre": "Go zero waste",
-    "icônes": "📦🚯",
-    "inactive": "oui",
-    "titre.auto": "Going zero waste"
-  },
   "alimentation . manger de saison": {
     "non applicable si": "de saison . consommation = 'oui toujours'",
     "titre": "Eat according to the seasons",
     "icônes": "🍅🌞",
     "formule": "alimentation . de saison . empreinte - recalcul",
+    "unité": "kgCO2e",
     "description": "Contrary to what one might imagine, the impact of this action is relatively small, as the proportion of seasonal products in the average Swiss diet is very low.\n\nBut there are many other benefits to seasonal eating, such as lower water consumption, greater crop diversity, and less dependence on hydrocarbons (gas and oil) to heat greenhouses. What's more, the body doesn't need the same nutrients all year round, and these needs correspond to seasonal foods.\n\nFor more information: https://www.ge.ch/dossier/alimentation-durable-geneve/climat-dans-votre-assiette/proximite\n",
     "note": "To learn more about the calculation method, browse its formula, the variables will be explained.\n",
     "titre.auto": "Eat according to the seasons"
@@ -370,36 +589,32 @@
     },
     "titre": "Stop using bottled water",
     "formule": "consommation annuelle * empreinte",
+    "unité": "kgCO2e",
     "icônes": "➡️🚰",
     "description": "Bottled water has an environmental impact 450 times greater than tap water. It costs between 100 and 300 times more (80% of the price comes from the production of the packaging) and is a major contributor to plastic pollution of the oceans.\n",
     "note": "Sources: <a href=\"http://esu-services.ch/fileadmin/download/jungbluth-2015-ecobilan-eau.pdf\">Écobilan de l'eau potable</a> and <a href=\"https://www.economie.gouv.fr/files/files/directions_services/cge/filieres-dechets-recyclage.pdf\">Ministère de la Transition Ecologique p106</a>\n",
     "titre.auto": "Stop using bottled water"
   },
-  "alimentation . boisson . sucrées . changer pour sirop": {
-    "applicable si": "boisson . sucrées . litres > 0",
-    "titre": "Drink syrups rather than soft drinks or juices",
-    "description": "Syrups have a much smaller footprint than soft drinks and fruit juices: around 100 gCO2e/litre compared with over 500 for soft drinks and 900 for fruit juices.\n",
-    "formule": "boisson . sucrées - recalcul",
-    "titre.auto": "Drink syrups rather than soft drinks or juices"
-  },
-  "alimentation . boisson . sucrées . changer pour sirop . recalcul": {
-    "formule": {
-      "recalcul": {
-        "règle": "boisson . sucrées",
-        "avec": {
-          "boisson . sucrées . facteur": "boisson . sucrées . facteur sirops"
-        }
-      }
+  "alimentation . déchets . devenir zéro déchet": {
+    "titre": "Going \"zero waste\"",
+    "action": {
+      "dépasse": [
+        "alimentation . déchets . réduire gaspillage",
+        "alimentation . déchets . composter",
+        "alimentation . déchets . avoir un stop pub"
+      ]
     },
-    "titre": "recalculation",
-    "titre.auto": "recalculation"
+    "non applicable si": "quantité jetée = 'zéro déchet'",
+    "icônes": "📦🚯",
+    "formule": "déchets - recalcul",
+    "unité": "kgCO2e",
+    "description": "Becoming 'zero waste' is particularly challenging: tracking down the smallest item of packaging requires constant attention.\n\n> You should be aware that in the case of a 'zero waste' commitment, we are still considering emissions of greenhouse gases (albeit considerably reduced), as it is very difficult, if not impossible, to generate no waste at all, some of which is invisible and unavoidable\nit is very difficult, if not impossible, to generate zero waste, some of which is invisible and unavoidable.\n\nTo find out more about zero waste lifestyles, visit the <a href=\"https://www.zerowastefrance.org/passer-a-laction/adopter-zero-dechet/\">Zero Waste Frances</a>website\n",
+    "titre.auto": "Going \"zero waste\""
   },
-  "alimentation . boisson . sucrées . facteur sirops": {
-    "unité": "kgCO2e/l",
-    "note": "Emission factor from Agribalysis<a href=\"https://agribalyse.ademe.fr/app/aliments/18058#Boisson_pr%C3%A9par%C3%A9e_%C3%A0_partir_de_sirop_%C3%A0_diluer_type_menthe,_fraise,_etc,_sucr%C3%A9,_dilu%C3%A9_dans_l'eau\">, drink prepared from syrup</a>, 0.10 kgCO2e/kg. The density is assumed to be 1kg/l.",
-    "titre": "syrup factor",
-    "titre.auto": "syrup factor",
-    "valeur": "0.1",
+  "alimentation . déchets . devenir zéro déchet . recalcul": {
+    "titre": "recalculation",
+    "titre.auto": "recalculation",
+    "valeur": "48.042057525",
     "optimized": true
   },
   "alimentation . déchets . réduire gaspillage": {
@@ -408,6 +623,7 @@
     "applicable si": "quantité jetée = 'base'",
     "non applicable si": "gestes . gaspillage alimentaire . présent",
     "formule": "gestes . empreinte gaspillage alimentaire",
+    "unité": "kgCO2e",
     "description": "In Switzerland, the average amount of food wasted is estimated at 90 kg per person per year. \n\nIf we consider the entire value chain (i.e. from field to plate), around 2.8 million tonnes of food are wasted every year, or 330 kg per inhabitant. Energy, water, financial and human resources were needed to produce this food, so these resources are also wasted. What's more, they also have an impact on the environment. \n\nReducing food waste is therefore essential if we are to avoid producing to throw away, save resources and reduce our impact on the environment!\n\nFor more information: https://www.ge.ch/dossier/alimentation-durable-geneve/climat-dans-votre-assiette/gaspillage-alimentaire\n",
     "titre.auto": "Reduce food waste"
   },
@@ -417,38 +633,23 @@
     "applicable si": "quantité jetée = 'base'",
     "non applicable si": "gestes . compostage biodéchets . présent",
     "formule": "gestes . bonus compostage biodéchets",
+    "unité": "kgCO2e",
     "description": "Our bio-waste, i.e. the putrescible waste from our food (peelings, leftovers from meals, etc.), accounts for a large proportion of the weight of our rubbish bin, contributing to the carbon footprint associated with waste management. This waste is very often little or poorly recycled, despite the environmental benefits it can bring: compost, a rich organic substance that is beneficial to the soil. Composting our bio-waste (either individually or collectively) reduces the size of our bins and encourages the creation of compost that can eventually be used as an alternative to chemical fertilisers.\n\nFind out all the tips for <a href=\"https://www.ge.ch/teaser/p-tite-poubelle-verte\">making compost</a>\n",
     "titre.auto": "Compost"
   },
-  "alimentation . déchets . recyclage": {
-    "titre": "Recycle my waste",
-    "icônes": "🗑️♻️",
-    "inactive": "oui",
-    "titre.auto": "Recycle my waste"
-  },
-  "alimentation . déchets . vrac": {
-    "titre": "Buy in bulk",
-    "icônes": "⚖️🌾",
-    "inactive": "oui",
-    "titre.auto": "Buy in bulk"
-  },
-  "alimentation . bio": {
-    "titre": "Eating organic",
-    "icônes": "☮️🌾",
-    "inactive": "oui",
-    "titre.auto": "Eating organic"
-  },
-  "alimentation . jardiner": {
-    "titre": "Create your own vegetable garden",
-    "icônes": "☮️🌾",
-    "inactive": "oui",
-    "titre.auto": "Create your own vegetable garden"
-  },
-  "alimentation . restaurant": {
-    "titre": "Choosing climate-friendly dishes in restaurants",
-    "icônes": "☮️🌾",
-    "inactive": "oui",
-    "titre.auto": "Choosing climate-friendly dishes in restaurants"
+  "alimentation . déchets . avoir un stop pub": {
+    "titre": "Having \"no advertising\" sign",
+    "icônes": "📬",
+    "non applicable si": {
+      "une de ces conditions": [
+        "alimentation . déchets . quantité jetée = 'zéro déchet'",
+        "alimentation . déchets . gestes . stop pub . présent"
+      ]
+    },
+    "formule": "alimentation . déchets . bonus stop pub",
+    "unité": "kgCO2e",
+    "description": "This is a sticker you place on your letterbox to inform advertising distributors that you refuse to receive catalogues, promotions, restaurant menus and all kinds of advertising.\n\nThis does not prevent all advertising, but it sends out a strong signal and generally considerably reduces the amount of paper waste received.\n",
+    "titre.auto": "Having an advertising stop sign"
   },
   "divers . partage NGC": {
     "titre": "Spreading Our Gestes Climat !",
@@ -461,19 +662,6 @@
     "icônes": "🧑‍🏫",
     "description": "There comes a time when reducing your carbon footprint becomes very complicated. \n\nIf your footprint falls below 4 tonnes, or if certain constraints make progress impossible, rather than focusing solely on your own impact, you are probably better off helping others to reduce their footprint. \n\nHow can you do this? By distributing this calculator, by discussing these issues with your friends and family, by running workshops in your company or association, or even by helping someone in a practical way to change one of their habits.\n",
     "titre.auto": "Lowering the footprint of others"
-  },
-  "divers . avoir un stop pub": {
-    "titre": "Have a stop sign",
-    "icônes": "📬",
-    "non applicable si": {
-      "une de ces conditions": [
-        "alimentation . déchets . quantité jetée = 'zéro déchet'",
-        "alimentation . déchets . gestes . stop pub . présent"
-      ]
-    },
-    "formule": "alimentation . déchets . bonus stop pub",
-    "description": "The stop pub is a sticker you place on your letterbox to inform advertising distributors and the post office that you refuse to receive catalogues, promotions and advertising of all kinds that encourage consumption.\n\nThis sticker does not prevent all advertising, but it sends out a strong signal and generally considerably reduces the amount of paper waste received.\n",
-    "titre.auto": "Have a stop sign"
   },
   "divers . publicité": {
     "titre": "Ignore ads and sales",
@@ -1719,6 +1907,20 @@
     "titre": "number",
     "titre.auto": "number"
   },
+  "alimentation . boisson . tasse de café": {
+    "titre": "Print of a coffee cup",
+    "unité": "kgCO2e/tasse",
+    "titre.auto": "Print of a coffee cup",
+    "valeur": "0.12108",
+    "optimized": true
+  },
+  "alimentation . boisson . tasse de thé": {
+    "titre": "Print of a tea cup",
+    "unité": "kgCO2e/tasse",
+    "titre.auto": "Print of a tea cup",
+    "valeur": "0.0075",
+    "optimized": true
+  },
   "alimentation . boisson . tasse de chocolat chaud": {
     "titre": "Hot chocolate cup footprint",
     "formule": {
@@ -1751,6 +1953,13 @@
     "unité": "kgCO2e/kg",
     "titre": "milk footprint",
     "titre.auto": "milk footprint"
+  },
+  "alimentation . boisson . tasse de chicorée": {
+    "titre": "Footprint of a cup of chicory",
+    "unité": "kgCO2e/tasse",
+    "titre.auto": "Footprint of a cup of chicory",
+    "valeur": "0.01629",
+    "optimized": true
   },
   "alimentation . type de lait": {
     "applicable si": {
@@ -1874,9 +2083,10 @@
   "alimentation . boisson . sucrées": {
     "description": "Note that alternatives to soda, very simple to prepare at home, are\npossible: this is the case of\n[kefir](https://fr.wikipedia.org/wiki/K%C3%A9fir) or\n[Kombucha](https://fr.wikipedia.org/wiki/Kombucha). We have not yet\nevaluated the footprint gains offered by these alternatives.\n",
     "unité": "kgCO2e",
-    "formule": "litres * commun . semaines par an * facteur",
+    "formule": "(litres * 52) * 0.71",
     "titre": "sweet",
-    "titre.auto": "sweet"
+    "titre.auto": "sweet",
+    "optimized": true
   },
   "alimentation . boisson . sucrées . facteur": {
     "note": "This value is of course very approximate.",
@@ -1904,6 +2114,13 @@
     "formule": "(litres * 52) * 1.0833333333333333",
     "titre": "alcohol",
     "titre.auto": "alcohol",
+    "optimized": true
+  },
+  "alimentation . boisson . alcool . facteur": {
+    "note": "Wine doesn't have the same footprint as beer by the liter, that's a big simplification.",
+    "titre": "factor",
+    "titre.auto": "factor",
+    "valeur": "1.0833333333333333",
     "optimized": true
   },
   "alimentation . boisson . alcool . litres": {
@@ -2300,12 +2517,6 @@
     "titre": "number",
     "titre.auto": "number"
   },
-  "alimentation . nombre de plats viande": {
-    "formule": "plats . viande 1 . nombre + plats . viande 2 . nombre",
-    "unité": "repas/semaine",
-    "titre": "number of meat dishes",
-    "titre.auto": "number of meat dishes"
-  },
   "alimentation . plats . poisson 1": {
     "formule": "1.63 * nombre",
     "icônes": "🍣🥧",
@@ -2337,12 +2548,6 @@
     "unité": "repas/semaine",
     "titre": "number",
     "titre.auto": "number"
-  },
-  "alimentation . nombre de plats poisson": {
-    "formule": "plats . poisson 1 . nombre + plats . poisson 2 . nombre",
-    "unité": "repas/semaine",
-    "titre": "number of fish dishes",
-    "titre.auto": "number of fish dishes"
   },
   "alimentation . planétaire": {
     "icônes": "🥗",
