@@ -26,8 +26,9 @@
         "alimentation . déchets . composter",
         "alimentation . déchets . avoir un stop pub",
         "logement . éteindre appareils",
-        "logement . remplacer fioul par bois",
+        "logement . se chauffer au bois",
         "logement . remplacer gaz par PAC",
+        "logement . remplacer chauffage électrique par PAC",
         "logement . séchage air libre",
         "transport . éco-conduite",
         "logement . baisse température",
@@ -35,9 +36,13 @@
         "logement . rénovation énergétique",
         "logement . rénovation énergétique BBC",
         "logement . raccordement réseau de chaleur",
+        "logement . installer thermostat",
+        "logement . installer chauffe-eau solaire",
         "logement . extérieur . barbecue plus écologique",
         "logement . extérieur . privilégier le bois pour le salon de jardin",
         "logement . extérieur . passer à la tondeuse électrique",
+        "logement . climatisation . réduction",
+        "logement . mutualiser son logement",
         "transport . arrêter l'avion",
         "transport . arrêter l'avion court",
         "transport . prendre moins l'avion",
@@ -117,7 +122,7 @@
         "alimentation . réduire viande . max 1 par jour"
       ]
     },
-    "titre": "Only eat meat twice a week maximum",
+    "titre": "Only eat meat twice a week",
     "formule": "par semaine * commun . semaines par an",
     "description": "What if you set yourself the target of eating no more than two meat meals a week?\n",
     "unité": "kgCO2e"
@@ -194,7 +199,7 @@
         "alimentation . poisson faible empreinte"
       ]
     },
-    "titre": "Only eat fish twice a week maximum",
+    "titre": "Only eat fish twice a week",
     "formule": "par semaine * commun . semaines par an",
     "unité": "kgCO2e",
     "description": "What if you set yourself the target of eating no more than two fish meals a week?\n"
@@ -754,14 +759,15 @@
     "icônes": "🏠🌡",
     "description": "Housing and in particular its heating (oil or gas) has a significant\nimpact on the climate.\n\nLowering the temperature by one or two degrees can be a way to reduce\nits footprint.\n\nSource : ADEME - [40 tips and tricks to save water and\nenergy](https://www.ademe.fr/40-trucs-astuces-economiser-leau-lenergie)\n",
     "applicable si": "température > 19",
-    "formule": "(nombre degrés * gains 1 degré * empreinte chauffage air) / habitants"
+    "formule": "(nombre degrés * gains 1 degré * empreinte chauffage air) / habitants",
+    "unité": "kgCO2e"
   },
   "logement . baisse température . nombre degrés": {
     "question": "How many degrees would you be willing to lower the temperature in your home?",
     "icônes": "↘️🌡",
     "description": "¾ of a household's energy consumption is spent on heating and hot water.\n\nThis energy consumption, in addition to having a significant financial\ncost, increases the carbon footprint of households.\n\nHowever, it can easily be limited by lowering the temperature of the\noccupied rooms without losing thermal comfort or feeling cold (provided\nthat the dwellings are well insulated).\n\nFor example, set the temperature between 19° and 21°C in occupied rooms\nduring the day (and 17°C at night or in rooms that are not very busy).\n\nIndeed, lowering the heating temperature by 1°C represents an energy\nsaving of 7%.\n",
     "par défaut": 1,
-    "unité": "degrés",
+    "unité": "degré",
     "suggestions": {
       "1 degree": 1,
       "2 degrees": 2,
@@ -778,10 +784,11 @@
     "titre": "temperature"
   },
   "logement . baisse température . gains 1 degré": {
+    "unité": "%/degré",
     "description": "This is the estimated decrease in energy expenditure when we lower the\ntemperature of our heated home by 1°C in the usual temperature range\n(around 20°).\n\nWe use the estimate given in the [ADEME\nguide](https://www.ademe.fr/40-trucs-astuces-economiser-leau-lenergie)\n\"40 tricks to save water and energy\".\n",
     "note": "Where is the source for this 7%? Can this figure be broken down for each type of energy (wood, gas, etc.)? How sensitive is this figure to the type of housing, its insulation, etc.?\n",
     "titre": "gains 1 degree",
-    "valeur": "0.07",
+    "valeur": "7%",
     "optimized": true
   },
   "logement . empreinte chauffage air": {
@@ -812,6 +819,49 @@
     "titre": "footprint heating user air",
     "optimized": true
   },
+  "logement . installer thermostat": {
+    "titre": "Installing a thermostat",
+    "icônes": "🌡️🖥️",
+    "description": "Did you know? <a href=\"https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie-deau/reduire-facture-chauffage-thermostat-programmable\">According to ADEME</a>, \ninstalling a programmable thermostat can save you up to 15% on your heating bills.\n",
+    "note": "We have opted for a 12% reduction in heating energy.",
+    "formule": "empreinte chauffage air * 0.12 / habitants",
+    "unité": "kgCO2e"
+  },
+  "logement . installer chauffe-eau solaire": {
+    "titre": "Installing a solar water heater",
+    "icônes": "🌡️🛁☀️",
+    "description": "According to ADEME, the installation of a solar water heater can cover between 50% and 80% of domestic hot water (DHW) requirements.\nWe are therefore assuming an average of 65% of DHW needs covered by this installation.\n",
+    "formule": "empreinte eau chaude sanitaire * 0.65 / habitants"
+  },
+  "logement . empreinte eau chaude sanitaire": {
+    "formule": {
+      "variations": [
+        {
+          "si": "chauffage . choix utilisateur",
+          "alors": "empreinte eau chaude sanitaire utilisateur"
+        },
+        {
+          "sinon": "parc français . chauffage . empreinte moyenne ecs par m2 * logement . surface"
+        }
+      ]
+    },
+    "unité": "kgCO2e",
+    "description": "For each kWh of each type of energy, how much is used for domestic hot water (DHW) in a household?\n\n> We are using <a href=\"https://www.statistiques.developpement-durable.gouv.fr/consommation-denergie-par-usage-du-residentiel\">data from CEREN</a> \nvia the work carried out in the file <a href=\"https://github.com/datagir/nosgestesclimat/blob/master/data/logement/chiffres%20parc%20logements%20fran%C3%A7ais.publicodes\">chiffres parc logements français.publicodes</a>.\n",
+    "titre": "domestic hot water footprint"
+  },
+  "logement . empreinte eau chaude sanitaire utilisateur": {
+    "formule": {
+      "somme": [
+        "(chauffage . électricité . présent * électricité) * 0.14150463234582472",
+        "(chauffage . gaz . empreinte + chauffage . citerne propane . empreinte) * 0.10705769086910076",
+        "chauffage . bois . empreinte * 0.005999999991552512",
+        "chauffage . fioul . empreinte * 0.12612582918179674",
+        "chauffage . réseau de chaleur . empreinte * 0.20759994342623844"
+      ]
+    },
+    "titre": "user hot water footprint",
+    "optimized": true
+  },
   "logement . éteindre appareils": {
     "formule": "86.06700000000001 / habitants",
     "unité": "kgCO2e",
@@ -820,37 +870,77 @@
     "description": "Our apartments and homes are full of digital devices and appliances,\nwhich often remain on or on standby.\n\nThe use of simple power strips makes it possible to turn them off\ncompletely in the blink of an eye.\n\nThe standby have made progress and individually consume less than in the\npast: a European directive applicable since January 2017 limits their\npower. It is 0.5 W for a number of categories of devices, but 3 W for\ndevices that remain connected to the Internet or data networks.\n\nSource: ADEME - [Reducing your electricity\nbill](https://www.ademe.fr/sites/default/files/assets/documents/guide-pratique-reduire-facture-electricite.pdf),\npage 18.\n",
     "optimized": true
   },
-  "logement . mutualiser": {
-    "titre": "Share your home",
-    "icônes": "🏠👥",
-    "inactive": "oui"
-  },
-  "logement . remplacer fioul par bois": {
-    "titre": "Replace my oil-fired boiler with wood",
+  "logement . se chauffer au bois": {
+    "titre": "Heating with wood",
     "applicable si": {
       "toutes ces conditions": [
         "propriétaire",
         {
-          "est défini": "chauffage . fioul . présent"
-        },
-        "chauffage . fioul . présent"
+          "une de ces conditions": [
+            {
+              "toutes ces conditions": [
+                {
+                  "est défini": "chauffage . gaz . présent"
+                },
+                "chauffage . gaz . présent"
+              ]
+            },
+            {
+              "toutes ces conditions": [
+                {
+                  "est défini": "chauffage . fioul . présent"
+                },
+                "chauffage . fioul . présent"
+              ]
+            },
+            {
+              "toutes ces conditions": [
+                {
+                  "est défini": "chauffage . citerne propane . présent"
+                },
+                "chauffage . citerne propane . présent"
+              ]
+            }
+          ]
+        }
       ]
     },
-    "icônes": "🛢️🪵",
-    "formule": "(chauffage . fioul . empreinte - alternative) / habitants",
-    "description": "Oil-fired boilers are the most polluting. Replacing them with less\ncarbon-intensive alternatives such as wood pellets is a great way to\nreduce your carbon footprint.\n",
-    "inactive": "non",
-    "note": "We consider for the moment that replacing the kWh of fuel oil by the same amount of kWh of wood is a good first order approximation. We will be able to adapt it later on according to the performance of the residential installations.\n"
+    "icônes": "🔄🪵",
+    "formule": "(logement . chauffage - recalcul) / habitants",
+    "unité": "kgCO2e",
+    "description": "Oil, gas and propane boilers are the most polluting. Replacing them with less carbon-intensive alternatives, such as wood pellets in this case, is a major step towards reducing your carbon footprint.\n",
+    "note": "For the moment, we consider that replacing the kWh dedicated to heating with the same quantity of kWh of wood is a good first-order approximation. \nWe will be able to adapt this to the performance of residential installations at a later date.\n"
   },
-  "logement . remplacer fioul par bois . alternative": {
-    "formule": "(chauffage . fioul . consommation / 0.101436943) * 0.032",
-    "titre": "alternative",
+  "logement . se chauffer au bois . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "logement . chauffage . bois . empreinte",
+        "avec": {
+          "logement . chauffage . bois . présent": "oui",
+          "logement . chauffage . bois . type": "'granulés'",
+          "logement . chauffage . bois . type . granulés . consommation": "recalcul . consommation"
+        }
+      }
+    },
+    "note": "Pellet heating is considered.",
+    "titre": "recalculation"
+  },
+  "logement . se chauffer au bois . recalcul . consommation": {
+    "formule": {
+      "somme": [
+        "chauffage . gaz . présent * chauffage . gaz . consommation",
+        "(chauffage . fioul . présent * chauffage . fioul . consommation) / 0.101436943",
+        "(chauffage . citerne propane . présent * chauffage . citerne propane . consommation) * 14.196111111111112"
+      ]
+    },
+    "titre": "consumption",
     "optimized": true
   },
   "logement . éclairage . LED": {
     "titre": "Replace light bulbs with LEDs",
     "icônes": "💡🔄",
     "formule": "(consommation de l'éclairage - avec LED) / habitants",
+    "unité": "kgCO2e",
     "description": "Replacing conventional light bulbs with low-energy bulbs such as LEDs can reduce your electricity consumption by a factor of 6\n\nThese bulbs consume very little electricity and have a very long life (up to 40,000 hours for the A++ categories).\n"
   },
   "logement . éclairage . consommation de l'éclairage": {
@@ -866,7 +956,7 @@
     "titre": "with LED"
   },
   "logement . remplacer gaz par PAC": {
-    "titre": "Switch from gas boiler to heat pump",
+    "titre": "Switching from a gas boiler to a heat pump",
     "action": {
       "dépasse": [
         "logement . rénovation énergétique",
@@ -883,39 +973,85 @@
       ]
     },
     "icônes": "🔥🔄",
-    "formule": "(chauffage . gaz . empreinte - pompe à chaleur) / habitants",
+    "formule": "(chauffage . gaz . empreinte - PAC) / habitants",
+    "unité": "kgCO2e",
     "description": "Gas-fired boilers are among the most CO₂ emitting. Replacing them with\nlower-carbon alternatives like heat pumps is a strong move to reduce\nyour carbon footprint.\n\n> Heat pumps are often referred to as *PACs*.\n\n💡 Their principle is ingenious: it's a reverse fridge! Your fridge,\nthanks to a little electricity, cools its interior and rejects the heat\ninto the room. The heat pump cools the outside air to heat your home.\n\n> Bonus: if it's too hot in your home in the summer, some heat pumps can\n> reverse their operation and act as air conditioning in the summer.\n",
     "note": "For the time being, we consider the replacement of gas kWh by the same amount of electricity kWh to be a good first-order approximation. We can then adapt it to the performance of residential installations.\n\nIf you also heat your water with gas, you'll need to choose a heat pump that can also heat water.\n\nSee <a href=\"https://www.ademe.fr/sites/default/files/assets/documents/guide-pratique-installer-une-pompe-a-chaleur.pdf\">ADEME PAC Guide</a>\n"
   },
-  "logement . pompe à chaleur": {
+  "logement . remplacer gaz par PAC . PAC": {
     "formule": "(chauffage . gaz . consommation / 2) * 0.393",
-    "titre": "heat pump",
+    "titre": "PAC",
     "optimized": true
   },
-  "logement . chaudière remplacement": {
-    "titre": "Switch to a wood boiler or a heat pump",
+  "logement . remplacer chauffage électrique par PAC": {
+    "titre": "Switching from electric heating to a heat pump",
+    "action": {
+      "dépasse": [
+        "logement . rénovation énergétique",
+        "logement . rénovation énergétique BBC"
+      ]
+    },
+    "applicable si": {
+      "toutes ces conditions": [
+        "propriétaire",
+        {
+          "est défini": "chauffage . électricité . présent"
+        },
+        "chauffage . électricité . présent"
+      ]
+    },
     "icônes": "🔥🔄",
-    "inactive": "oui"
+    "formule": "(électricité . consommation * part consommation remplacable - consommation via PAC) * électricité . intensité carbone / habitants",
+    "unité": "kgCO2e",
+    "description": "Gas boilers are among the biggest emitters of CO₂. Replacing them with lower-carbon alternatives such as heat pumps is a strong move towards reducing your carbon footprint.\n\n> Heat pumps are often referred to as *PAC*.\n\n💡 Their principle is ingenious: it's a fridge in reverse! Using a little electricity, your fridge cools its interior and releases the heat into the room. The heat pump cools the outside air to heat your home.\n\n> Bonus: if it's too hot in your home in summer, some heat pumps can reverse their operation and act as air conditioning in summer.\n",
+    "note": "For the moment, we consider that replacing kWh of gas with the same amount of kWh of electricity is a good first-order approximation. We can then adapt this to the performance of residential installations.\n\nIf you also heat your water via a water heater, you will need to choose a heat pump that can also heat the water.\n\nSee the <a href=\"https://www.ademe.fr/sites/default/files/assets/documents/guide-pratique-installer-une-pompe-a-chaleur.pdf\">ADEME heat pump guide</a>\n"
+  },
+  "logement . remplacer chauffage électrique par PAC . part consommation remplacable": {
+    "formule": "0.32914760075367144 + 0.14150463234582472",
+    "titre": "replaceable consumption",
+    "optimized": true
+  },
+  "logement . remplacer chauffage électrique par PAC . consommation via PAC": {
+    "formule": "(électricité . consommation * part consommation remplacable) / 2",
+    "titre": "consumption via heat pump",
+    "optimized": true
   },
   "logement . séchage air libre": {
     "titre": "Choose the clothesline over the dryer",
     "applicable si": "divers . électroménager . appareils . sèche-linge . nombre > 0",
     "icônes": "💨👗",
     "description": "Air-drying your clothes saves energy and preserves your clothes, making\nthem last longer.\n",
-    "formule": "(400 kWh * électricité . intensité carbone) / habitants",
-    "note": "400 kWh is a value chosen on the basis of the annual kWh given by different manufacturers, the values ranging from 300 to 500+ kWh annum, 400 kWh has been retained.\n"
+    "formule": "(300 kWh * électricité . intensité carbone) / habitants",
+    "note": "According to the <a href=\"https://librairie.ademe.fr/changement-climatique-et-energie/4473-panel-usages-electrodomestiques.html\">ADEME Panel ElecDom 2020</a> study,\nthe <a href=\"https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie-deau/electricite-combien-consomment-appareils-maison\">average consumption</a> of a tumble dryer is <a href=\"https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie-deau/electricite-combien-consomment-appareils-maison\">300 kWh/year</a>.\n"
   },
   "logement . climatisation . réduction": {
-    "titre": "Limit my air conditioning",
+    "titre": "Getting rid of my air conditioning",
     "icônes": "❄️✋",
-    "inactive": "oui"
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "logement . climatisation . présent"
+        },
+        "logement . climatisation . présent",
+        "logement . climatisation . nombre > 0"
+      ]
+    },
+    "formule": "logement . climatisation + part électricité climatisation",
+    "unité": "kgCO2e",
+    "description": "Doing without air conditioning is not easy everywhere. But it is absolutely essential that recourse to this cooling system \nas a last resort, after more sustainable and less carbon-intensive solutions have been implemented.\n\nFirst of all, and the same applies to heating, the home must be well insulated. Heating or air-conditioning an uninsulated home \nis literally throwing energy (and money) down the drain.\n\nSecondly, you need to choose thermal comfort solutions that consume less energy and do not leak refrigerants, \nsuch as fans (including ceiling fans, which are widely used in hot countries), solar shading of light inlets (blinds, shutters, etc.), etc \n(blinds, shutters, sails), and very good ventilation at the coolest times of the day (well, night).\n"
+  },
+  "logement . climatisation . part électricité climatisation": {
+    "formule": "(logement . climatisation . nombre * 400kWh) * 0.393",
+    "note": "According to the <a href=\"https://librairie.ademe.fr/changement-climatique-et-energie/4473-panel-usages-electrodomestiques.html\">ADEME Panel ElecDom 2020</a> study, a fixed air conditioner <a href=\"https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie-deau/electricite-combien-consomment-appareils-maison\">consumes on average \"between 100 and 700 kWh/year\"</a>.\nWe are therefore assuming an average of 400 kWh/year per installed air conditioner.\n",
+    "titre": "share of electricity for air-conditioning",
+    "optimized": true
   },
   "logement . rénovation énergétique": {
     "titre": "Renovate your home",
     "icônes": "🏚️✨",
     "formule": "(logement . empreinte chauffage air * gain rénovation) / habitants",
+    "unité": "kgCO2e",
     "applicable si": "propriétaire",
-    "inactive": "non",
     "description": "Energy renovation, despite its cost, allows, in the long term, very strong energy savings and thus contributes to reducing the carbon footprint\nof your home\n\nThese savings will be even more important if you live in a poorly insulated home.\n\nTo find out which renovations are best suited to your home as well as the assistance available: <a href=\"https://www.faire.gouv.fr\">DOING</a>.\n"
   },
   "logement . gain rénovation": {
@@ -939,8 +1075,9 @@
     "titre": "Renovate your home to low-energy",
     "icônes": "🏠✨",
     "formule": "(logement . empreinte chauffage air * gain rénovation) / habitants",
+    "unité": "kgCO2e",
     "applicable si": "propriétaire",
-    "description": "\nA renovation with the BBC label can reduce the energy consumption of your home by up to 70%\n\nThis type of renovation also leads, in the long term, to a significant reduction in the energy bill, especially if you live in a poorly insulated home or even an energy sieve.\n\n> We speak of thermal sieve for housing with an energy label F or G (there are more than 7 million in France). These homes <a href=\"https://www.ladepeche.fr/2021/03/15/les-passoires-thermiques-interdites-a-la-location-a-partir-de-2028-9428622.php\">will no longer be able to be rented in 2028</a>.\n\nTo find out which renovations are best suited to your home as well as the aid available: <a href=\"https://www.faire.gouv.fr\">DOING</a>.\n"
+    "description": "Renovation to BBC (Bâtiment Batiment Basse Consommation) standards can reduce the energy consumption of your home by up to 70%. \n\nIn the long term, this type of renovation can also significantly reduce your energy bills, especially if you live in a poorly insulated home or one that is even an energy sink.\n\n> The term \"heat sink\" is used to describe homes with an energy label of F or G (of which there are more than 7 million in France). These homes will no <a href=\"https://www.ladepeche.fr/2021/03/15/les-passoires-thermiques-interdites-a-la-location-a-partir-de-2028-9428622.php\">longer be available for rent in 2028</a>.\n\nTo find out which renovations are best suited to your home, and what grants are available, go to: <a href=\"https://www.faire.gouv.fr\">FAIRE</a>.\n"
   },
   "logement . rénovation énergétique BBC . gain rénovation": {
     "note": "Maximum energy gain achieved after a low-energy renovation, source to be specified.",
@@ -974,6 +1111,7 @@
     },
     "non applicable si": "chauffage . réseau de chaleur . présent",
     "formule": "(logement . chauffage - recalcul / habitants)",
+    "unité": "kgCO2e",
     "note": "A heating network is a system of pipes that allow heat produced locally and mainly from renewable and recovered energy sources to be conveyed to a group of buildings \nlocally produced heat, mainly from renewable and recovered energy, to a group of buildings. \n\nIt is an ecological and economical alternative to replace gas or oil boilers, \nit is an ecological and economical alternative to replace gas or oil boilers, both for collective housing buildings (condominiums, social housing) and for tertiary buildings.\n\nNevertheless, being connected to a heating network is not as simple as subscribing to an electricity contract.\nIndeed, the feasibility of the connection depends on <a href=\"https://france-chaleur-urbaine.beta.gouv.fr/ressources/faisabilite#contenu\">several technical conditions</a>.\n\nFirst of all, the connection is made for a whole building: it is not possible to connect only your apartment.\nSecondly, it is necessary to check that there is a heating network near the building, and then to study\nthe heating infrastructure within the building (a building equipped with a collective heating system will allow a connection at lower cost)\n\nRegarding the impact on the climate, it is important to know that in general, a heating network is supplied by local renewable or recovered energy sources\n(62% on average on a national scale), i.e., via household waste incineration, biomass combustion, geothermal energy... (as shown in the figure below)\nwhich considerably reduces the CO2 impact of the kWh of energy consumed in front of gas or fuel oil. \n\nHowever, the energy mix is very variable from one network to another, some networks are still mainly powered by fossil fuels (coal, oil, gas).\nIt is therefore important to check the RE rate of the nearest network on the <a href=\"https://france-chaleur-urbaine.beta.gouv.fr/carte\">France Chaleur Urbaine map</a>, and to ask the network manager \non the future evolution of the energy mix, as many networks are in the process of becoming greener...].\n\n![](https://user-images.githubusercontent.com/55186402/223733624-d50b2271-6da6-4ec7-a324-cec41df10430.png)\n",
     "description": "On average, 62% of the energy used to power these networks comes from local renewable and recovered energy sources (heat from waste incineration, biomass, geothermal energy, etc.), \nheating networks (or district heating) are a low-carbon and competitively priced heating method. \nHowever, there is a great disparity between networks, both in terms of carbon impact and rates!\n\nConnection to district heating is done on the scale of an entire building. It requires the presence of a heating network near the building \nand is easier when the building is already equipped with a collective heating system.\n\n>The France Chaleur Urbaine website allows you to go further: check if a <a href=\"https://france-chaleur-urbaine.beta.gouv.fr/\">heating network</a> passes near your building!\n"
   },
@@ -1005,11 +1143,6 @@
   },
   "logement . chauffage collectif . collectif": null,
   "logement . chauffage collectif . individuel": null,
-  "logement . électricité verte": {
-    "titre": "Subscribe to a green electricity contract",
-    "icônes": "☮️⚡",
-    "inactive": "oui"
-  },
   "logement . extérieur . barbecue plus écologique": {
     "applicable si": {
       "toutes ces conditions": [
@@ -1051,6 +1184,77 @@
     "note": "Thermal lawnmowers have a doubly negative carbon footprint: firstly, in terms of construction (the footprint is three times greater than that of electric lawnmowers), but also, of course, in terms of use (although this footprint is not, to date, counted).\n",
     "formule": "empreinte tondeuse thermique amortie - empreinte tondeuse électrique ou robot amortie",
     "unité": "kgCO2e"
+  },
+  "logement . mutualiser son logement": {
+    "titre": "Sharing your home",
+    "icônes": "🏠👥",
+    "description": "Sharing a flat is not only good for your finances and social ties,\nit's also a way of reducing your impact on the climate by sharing space, consumption and equipment.\n\nOver the last few decades, the surface area of housing per inhabitant has only increased, rising from 30 m² in the 1980s to over 40 m² today! \nThis is a major contributor to land artificialisation and the emission of large quantities of greenhouse gases linked to the construction of new homes.\n\nSharing existing buildings more equitably is therefore an issue with significant potential for reducing the carbon footprint.\n",
+    "applicable si": "logement . surface / habitants > 50",
+    "formule": "nombre colocataires * empreinte partagée"
+  },
+  "logement . nombre colocataires": {
+    "question": "How many flatmates can you accommodate?",
+    "par défaut": 1,
+    "titre": "number of flatmates"
+  },
+  "logement . mutualiser son logement . empreinte partagée": {
+    "formule": {
+      "somme": [
+        "logement",
+        "divers . numérique",
+        "divers . électroménager",
+        "divers . ameublement"
+      ]
+    },
+    "titre": "shared footprint"
+  },
+  "logement . mutualiser son logement . empreinte partagée . logement": {
+    "formule": {
+      "recalcul": {
+        "règle": "logement",
+        "avec": {
+          "logement . saisie habitants": "logement . habitants + nombre colocataires",
+          "logement . vacances": 0
+        }
+      }
+    },
+    "note": "It is assumed that the holiday will not be shared with the new flatmate.",
+    "titre": "accommodation"
+  },
+  "logement . mutualiser son logement . empreinte partagée . divers . numérique": {
+    "formule": {
+      "recalcul": {
+        "règle": "divers . numérique . appareils",
+        "avec": {
+          "logement . saisie habitants": "logement . habitants + nombre colocataires"
+        }
+      }
+    },
+    "titre": "digital"
+  },
+  "logement . mutualiser son logement . empreinte partagée . divers . électroménager": {
+    "formule": {
+      "recalcul": {
+        "règle": "divers . électroménager . appareils",
+        "avec": {
+          "logement . saisie habitants": "logement . habitants + nombre colocataires"
+        }
+      }
+    },
+    "titre": "household appliances"
+  },
+  "logement . mutualiser son logement . empreinte partagée . divers . ameublement": {
+    "formule": {
+      "recalcul": {
+        "règle": "divers . ameublement",
+        "avec": {
+          "logement . saisie habitants": "logement . habitants + nombre colocataires",
+          "divers . ameublement . meubles . matelas": 0,
+          "divers . ameublement . meubles . lit": 0
+        }
+      }
+    },
+    "titre": "furnishings"
   },
   "services sociétaux . voter": {
     "icônes": "🗳️🏛️",
@@ -5601,6 +5805,11 @@
     "formule": "14077969585 / 301589218",
     "unité": "kWh/m2",
     "titre": "electricity consumption per m2",
+    "optimized": true
+  },
+  "parc français . chauffage . empreinte moyenne ecs par m2": {
+    "titre": "average water footprint per m2",
+    "valeur": "22.562646426950334",
     "optimized": true
   },
   "logement . climatisation": {

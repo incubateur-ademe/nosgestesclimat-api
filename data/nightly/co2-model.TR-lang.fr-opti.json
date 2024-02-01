@@ -26,8 +26,9 @@
         "alimentation . déchets . composter",
         "alimentation . déchets . avoir un stop pub",
         "logement . éteindre appareils",
-        "logement . remplacer fioul par bois",
+        "logement . se chauffer au bois",
         "logement . remplacer gaz par PAC",
+        "logement . remplacer chauffage électrique par PAC",
         "logement . séchage air libre",
         "transport . éco-conduite",
         "logement . baisse température",
@@ -35,9 +36,13 @@
         "logement . rénovation énergétique",
         "logement . rénovation énergétique BBC",
         "logement . raccordement réseau de chaleur",
+        "logement . installer thermostat",
+        "logement . installer chauffe-eau solaire",
         "logement . extérieur . barbecue plus écologique",
         "logement . extérieur . privilégier le bois pour le salon de jardin",
         "logement . extérieur . passer à la tondeuse électrique",
+        "logement . climatisation . réduction",
+        "logement . mutualiser son logement",
         "transport . arrêter l'avion",
         "transport . arrêter l'avion court",
         "transport . prendre moins l'avion",
@@ -714,14 +719,15 @@
     "icônes": "🏠🌡",
     "description": "Le logement et en particulier son chauffage (au fioul ou au gaz) a un impact sur le climat important.\n\nBaisser la température d'un ou deux degrés peut être un moyen de réduire son empreinte.\n\nSource : ADEME - [40 trucs et astuces pour économiser l'eau et l'énergie](https://www.ademe.fr/40-trucs-astuces-economiser-leau-lenergie)\n",
     "applicable si": "température > 19",
-    "formule": "(nombre degrés * gains 1 degré * empreinte chauffage air) / habitants"
+    "formule": "(nombre degrés * gains 1 degré * empreinte chauffage air) / habitants",
+    "unité": "kgCO2e"
   },
   "logement . baisse température . nombre degrés": {
     "question": "De combien de degrés seriez-vous prêt à diminuer la température de votre logement ?",
     "icônes": "↘️🌡",
     "description": "Les ¾ de la consommation d’énergie d’un ménage sont consacrés au chauffage et à l’eau chaude.\n\nCette consommation d’énergie, en plus d’avoir un coût financier non négligeable, augmente l’empreinte carbone des ménages.\n\nElle peut toutefois facilement être limitée en diminuant la température des pièces occupées sans perdre de confort thermique ou bien ressentir une sensation de froid (à condition d’avoir des logements bien isolés).\n\nPar exemple, régler la température entre 19° et 21°C dans les pièces occupées la journée (et 17°C la nuit ou dans les pièces peu occupées).\n\nEn effet, baisser la température de chauffage d’1°C représente une économie d’énergie de 7%.\n",
     "par défaut": 1,
-    "unité": "degrés",
+    "unité": "degré",
     "suggestions": {
       "1 degré": 1,
       "2 degrés": 2,
@@ -736,9 +742,10 @@
     "unité": "degrés"
   },
   "logement . baisse température . gains 1 degré": {
+    "unité": "%/degré",
     "description": "C'est la baisse estimée de dépense d'énergie quand on baisse la température de notre foyer chauffé de 1°C dans la gamme de température usuelle (autour de 20°).\n\nNous retenons l'estimation donnée dans le [guide ADEME](https://www.ademe.fr/40-trucs-astuces-economiser-leau-lenergie) \"40 trucs pour économiser l'eau et l'énergie\".\n",
     "note": "Où est la source pour ces 7% ? Peut-on décliner ce chiffre pour chaque type d'énergie (bois, gaz, etc.) ? Quelle est la sensibilité de ce chiffre au type de logement, son isolation, etc. ?\n",
-    "valeur": "0.07",
+    "valeur": "7%",
     "optimized": true
   },
   "logement . empreinte chauffage air": {
@@ -767,6 +774,47 @@
     },
     "optimized": true
   },
+  "logement . installer thermostat": {
+    "titre": "Installer un thermostat",
+    "icônes": "🌡️🖥️",
+    "description": "Le saviez-vous ? [D'après l'ADEME](https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie-deau/reduire-facture-chauffage-thermostat-programmable), \nl'installation d'un thermostat programmable permet de faire jusqu'à 15% d'économies de chauffage.\n",
+    "note": "Nous choisissons de partir sur une réduction de 12% de l'énergie liée au chauffage.",
+    "formule": "empreinte chauffage air * 0.12 / habitants",
+    "unité": "kgCO2e"
+  },
+  "logement . installer chauffe-eau solaire": {
+    "titre": "Installer un chauffe-eau solaire",
+    "icônes": "🌡️🛁☀️",
+    "description": "L'installation d'un chauffe-eau solaire permettrait, d'après l'ADEME, de couvrir de 50 à 80% des besoins en eau-chaude sanitaire (ECS).\nNous partons donc sur une moyenne de 65% des besoins en ECS couverts par cette installation.\n",
+    "formule": "empreinte eau chaude sanitaire * 0.65 / habitants"
+  },
+  "logement . empreinte eau chaude sanitaire": {
+    "formule": {
+      "variations": [
+        {
+          "si": "chauffage . choix utilisateur",
+          "alors": "empreinte eau chaude sanitaire utilisateur"
+        },
+        {
+          "sinon": "parc français . chauffage . empreinte moyenne ecs par m2 * logement . surface"
+        }
+      ]
+    },
+    "unité": "kgCO2e",
+    "description": "Pour chaque kWh de chaque type d'énergie, quelle est la part utilisée pour l'eau chaude sanitaire (ECS) d'un foyer ?\n\n> Nous utilions ici [les données du CEREN](https://www.statistiques.developpement-durable.gouv.fr/consommation-denergie-par-usage-du-residentiel) \nvia le travail réalisé dans le fichier [chiffres parc logements français.publicodes](https://github.com/datagir/nosgestesclimat/blob/master/data/logement/chiffres%20parc%20logements%20fran%C3%A7ais.publicodes).\n"
+  },
+  "logement . empreinte eau chaude sanitaire utilisateur": {
+    "formule": {
+      "somme": [
+        "(chauffage . électricité . présent * électricité) * 0.14150463234582472",
+        "(chauffage . gaz . empreinte + chauffage . citerne propane . empreinte) * 0.10705769086910076",
+        "chauffage . bois . empreinte * 0.005999999991552512",
+        "chauffage . fioul . empreinte * 0.12612582918179674",
+        "chauffage . réseau de chaleur . empreinte * 0.20759994342623844"
+      ]
+    },
+    "optimized": true
+  },
   "logement . éteindre appareils": {
     "formule": "86.06700000000001 / habitants",
     "unité": "kgCO2e",
@@ -775,36 +823,75 @@
     "description": "Nos appartements et nos maisons regorgent d'appareils numériques et électroménagers, qui souvent restents allumés ou en veille.\n\nL'usage de simples multiprises permet de les éteindre complètement en un clin d'oeil.\n\nLes veilles ont fait des progrès et consomment individuellement moins que par le passé : une directive européenne applicable depuis janvier 2017 limite leur puissance. Elle est de 0,5 W pour un certain nombre de catégories d’appareils, mais de 3 W pour les appareils qui restent connectés à Internet ou à des réseaux de données.\n\nSource : ADEME - [Réduire sa facture d'électricité](https://www.ademe.fr/sites/default/files/assets/documents/guide-pratique-reduire-facture-electricite.pdf), page 18.\n",
     "optimized": true
   },
-  "logement . mutualiser": {
-    "titre": "Mutualiser son logement",
-    "icônes": "🏠👥",
-    "inactive": "oui"
-  },
-  "logement . remplacer fioul par bois": {
-    "titre": "Remplacer ma chaudière fioul par du bois",
+  "logement . se chauffer au bois": {
+    "titre": "Se chauffer au bois",
     "applicable si": {
       "toutes ces conditions": [
         "propriétaire",
         {
-          "est défini": "chauffage . fioul . présent"
-        },
-        "chauffage . fioul . présent"
+          "une de ces conditions": [
+            {
+              "toutes ces conditions": [
+                {
+                  "est défini": "chauffage . gaz . présent"
+                },
+                "chauffage . gaz . présent"
+              ]
+            },
+            {
+              "toutes ces conditions": [
+                {
+                  "est défini": "chauffage . fioul . présent"
+                },
+                "chauffage . fioul . présent"
+              ]
+            },
+            {
+              "toutes ces conditions": [
+                {
+                  "est défini": "chauffage . citerne propane . présent"
+                },
+                "chauffage . citerne propane . présent"
+              ]
+            }
+          ]
+        }
       ]
     },
-    "icônes": "🛢️🪵",
-    "formule": "(chauffage . fioul . empreinte - alternative) / habitants",
-    "description": "Les chaudières au fuel sont les plus polluantes. Les remplacer par des alternatives moins carbonnées comme ici le bois en granulés est un geste fort pour réduire votre empreinte carbone.\n",
-    "inactive": "non",
-    "note": "Nous considérons pour l'instant que le remplacement des kWh de fioul par la même quantité de kWh de bois est une bonne approximation de premier ordre. Nous pourrons par la suite l'adapter en fonction du rendement des installations résidentielles.\n"
+    "icônes": "🔄🪵",
+    "formule": "(logement . chauffage - recalcul) / habitants",
+    "unité": "kgCO2e",
+    "description": "Les chaudières fioul, gaz ou propane sont les plus polluantes. Les remplacer par des alternatives moins carbonées comme ici le bois en granulés est un geste fort pour réduire votre empreinte carbone.\n",
+    "note": "Nous considérons pour l'instant que le remplacement des kWh dédiés au chauffage par la même quantité de kWh de bois est une bonne approximation de premier ordre. \nNous pourrons par la suite l'adapter en fonction du rendement des installations résidentielles.\n"
   },
-  "logement . remplacer fioul par bois . alternative": {
-    "formule": "(chauffage . fioul . consommation / 0.101436943) * 0.032",
+  "logement . se chauffer au bois . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "logement . chauffage . bois . empreinte",
+        "avec": {
+          "logement . chauffage . bois . présent": "oui",
+          "logement . chauffage . bois . type": "'granulés'",
+          "logement . chauffage . bois . type . granulés . consommation": "recalcul . consommation"
+        }
+      }
+    },
+    "note": "On considère un chauffage via granulés."
+  },
+  "logement . se chauffer au bois . recalcul . consommation": {
+    "formule": {
+      "somme": [
+        "chauffage . gaz . présent * chauffage . gaz . consommation",
+        "(chauffage . fioul . présent * chauffage . fioul . consommation) / 0.101436943",
+        "(chauffage . citerne propane . présent * chauffage . citerne propane . consommation) * 14.196111111111112"
+      ]
+    },
     "optimized": true
   },
   "logement . éclairage . LED": {
     "titre": "Remplacer mes ampoules par des LED",
     "icônes": "💡🔄",
     "formule": "(consommation de l'éclairage - avec LED) / habitants",
+    "unité": "kgCO2e",
     "description": "Remplacer les ampoules classiques par des ampoules basse consommation de type LED permet de diviser par 6 sa consommation électrique liée à l’éclairage. \n\nCes ampoules consomment très peu d’électricité et ont une très longue durée de vie (jusqu’à 40 000 heures pour les catégories A++).\n"
   },
   "logement . éclairage . consommation de l'éclairage": {
@@ -819,7 +906,7 @@
     "note": "6.43, c'est le rapport entre la conso annuelle de 10 ampoules 60W (450kWh) vs 10 LED équivalent 60 W (70kWh).\n\nChiffre issu du guide [Réduire sa facture d’électricité, Juin 2019, ADEME](https://librairie.ademe.fr/cadic/7232/guide-pratique-reduire-facture-electricite.pdf)\n"
   },
   "logement . remplacer gaz par PAC": {
-    "titre": "Passer de chaudière gaz à pompe à chaleur",
+    "titre": "Passer d'une chaudière gaz à une pompe à chaleur",
     "action": {
       "dépasse": [
         "logement . rénovation énergétique",
@@ -836,38 +923,81 @@
       ]
     },
     "icônes": "🔥🔄",
-    "formule": "(chauffage . gaz . empreinte - pompe à chaleur) / habitants",
+    "formule": "(chauffage . gaz . empreinte - PAC) / habitants",
+    "unité": "kgCO2e",
     "description": "Les chaudières au gaz sont parmi les plus émissives de CO₂. Les remplacer par des alternatives moins carbonnées comme des pompes à chaleur est un geste fort pour réduire votre empreinte carbone.\n\n> Les pompes à chaleur sont souvent appelées *PAC*.\n\n💡 Leur principe est ingénieux : c'est un frigo inversé ! Votre frigo, grâce à un peu d'électricité, refroidit son intérieur et rejette la chaleur dans la pièce. La PAC refroidit l'air extérieur pour chauffer votre logement.\n\n> Bonus : s'il fait trop chaud chez vous l'été, certaines PAC peuvent inverser leur fonctionnement et faire office de climatisation l'été.\n",
     "note": "Nous considérons pour l'instant que le remplacement des kWh de gaz par la même quantité de kWh électrique est une bonne approximation de premier ordre. Nous pourrons par la suite l'adapter en fonction du rendement des installations résidentielles.\n\nCette action chiffre le remplacement de la chaudière gaz, si vous chauffez aussi votre eau au gaz il faudra choisir une PAC qui peut aussi chauffer l'eau.\n\nVoir [Guide ADEME PAC](https://www.ademe.fr/sites/default/files/assets/documents/guide-pratique-installer-une-pompe-a-chaleur.pdf)\n"
   },
-  "logement . pompe à chaleur": {
+  "logement . remplacer gaz par PAC . PAC": {
     "formule": "(chauffage . gaz . consommation / 2) * 0.393",
     "optimized": true
   },
-  "logement . chaudière remplacement": {
-    "titre": "Passer à une chaudière bois ou à une pompe à chaleur",
+  "logement . remplacer chauffage électrique par PAC": {
+    "titre": "Passer du chauffage électrique à une pompe à chaleur",
+    "action": {
+      "dépasse": [
+        "logement . rénovation énergétique",
+        "logement . rénovation énergétique BBC"
+      ]
+    },
+    "applicable si": {
+      "toutes ces conditions": [
+        "propriétaire",
+        {
+          "est défini": "chauffage . électricité . présent"
+        },
+        "chauffage . électricité . présent"
+      ]
+    },
     "icônes": "🔥🔄",
-    "inactive": "oui"
+    "formule": "(électricité . consommation * part consommation remplacable - consommation via PAC) * électricité . intensité carbone / habitants",
+    "unité": "kgCO2e",
+    "description": "Les chaudières au gaz sont parmi les plus émissives de CO₂. Les remplacer par des alternatives moins carbonnées comme des pompes à chaleur est un geste fort pour réduire votre empreinte carbone.\n\n> Les pompes à chaleur sont souvent appelées *PAC*.\n\n💡 Leur principe est ingénieux : c'est un frigo inversé ! Votre frigo, grâce à un peu d'électricité, refroidit son intérieur et rejette la chaleur dans la pièce. La PAC refroidit l'air extérieur pour chauffer votre logement.\n\n> Bonus : s'il fait trop chaud chez vous l'été, certaines PAC peuvent inverser leur fonctionnement et faire office de climatisation l'été.\n",
+    "note": "Nous considérons pour l'instant que le remplacement des kWh de gaz par la même quantité de kWh électrique est une bonne approximation de premier ordre. Nous pourrons par la suite l'adapter en fonction du rendement des installations résidentielles.\n\nCette action chiffre le remplacement de la chaudière électrique, si vous chauffez aussi votre eau via un chauffe-eau il faudra choisir une PAC qui peut aussi chauffer l'eau.\n\nVoir [Guide ADEME PAC](https://www.ademe.fr/sites/default/files/assets/documents/guide-pratique-installer-une-pompe-a-chaleur.pdf)\n"
+  },
+  "logement . remplacer chauffage électrique par PAC . part consommation remplacable": {
+    "formule": "0.32914760075367144 + 0.14150463234582472",
+    "optimized": true
+  },
+  "logement . remplacer chauffage électrique par PAC . consommation via PAC": {
+    "formule": "(électricité . consommation * part consommation remplacable) / 2",
+    "optimized": true
   },
   "logement . séchage air libre": {
     "titre": "Privilégier l'étendoir au sèche-linge",
     "applicable si": "divers . électroménager . appareils . sèche-linge . nombre > 0",
     "icônes": "💨👗",
     "description": "Faire sécher son linge à l'air libre c'est de l'énergie économisée et des habits préservés qui durent ainsi plus longtemps.\n",
-    "formule": "(400 kWh * électricité . intensité carbone) / habitants",
-    "note": "400 kWh est une valeur choisie sur la base des kWh annuels donnés par différents constructeurs, les valeurs allant de 300 à 500+ kWh annum, 400 kWh a été retenu.\n"
+    "formule": "(300 kWh * électricité . intensité carbone) / habitants",
+    "note": "D'après l'étude [ADEME Panel ElecDom 2020](https://librairie.ademe.fr/changement-climatique-et-energie/4473-panel-usages-electrodomestiques.html),\nun sèche-linge a une [consommation moyenne de 300 kWh/an](https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie-deau/electricite-combien-consomment-appareils-maison).\n"
   },
   "logement . climatisation . réduction": {
-    "titre": "Limiter ma climatisation",
+    "titre": "Se séparer de ma climatisation",
     "icônes": "❄️✋",
-    "inactive": "oui"
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "logement . climatisation . présent"
+        },
+        "logement . climatisation . présent",
+        "logement . climatisation . nombre > 0"
+      ]
+    },
+    "formule": "logement . climatisation + part électricité climatisation",
+    "unité": "kgCO2e",
+    "description": "Se passer de la climatisation n'est pas partout chose aisée. Mais il faut absolument que le recours à ce système de refroidissement \nintervienne en dernier lieu, après que des solutions plus pérennes et moins carbonées aient été mises en œuvre.\n\nEn premier lieu, et c'est pareil pour le chauffage, le logement doit être bien isolé. Chauffer ou climatiser un logement non isolé, \nc'est littéralement jeter de l'énergie (et de l'argent) par les fenêtres.\n\nEn second lieu, il s'agit de privilégier des solutions de confort thermique moins énergivores et sans fuites de fluides frigorigènes, \ncomme le ventilateur (dont le ventilateur de plafond, très utilisé dans les pays chauds), les protections solaires des entrées \nlumineuses (stores, volets, voiles), et une très bonne aération aux moments les plus frais de la journée (enfin, de la nuit).\n"
+  },
+  "logement . climatisation . part électricité climatisation": {
+    "formule": "(logement . climatisation . nombre * 400kWh) * 0.393",
+    "note": "D'après l'étude [ADEME Panel ElecDom 2020](https://librairie.ademe.fr/changement-climatique-et-energie/4473-panel-usages-electrodomestiques.html), un climatiseur fixe a une [consommation moyenne \"de 100 à 700 kWh/an\"](https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie-deau/electricite-combien-consomment-appareils-maison).\nNous partons donc sur une moyenne de 400 kWh/an par climatiseur installé.\n",
+    "optimized": true
   },
   "logement . rénovation énergétique": {
     "titre": "Rénover mon logement",
     "icônes": "🏚️✨",
     "formule": "(logement . empreinte chauffage air * gain rénovation) / habitants",
+    "unité": "kgCO2e",
     "applicable si": "propriétaire",
-    "inactive": "non",
     "description": "La rénovation énergétique malgré son coût permet, sur le long terme, de très fortes économies d'énergies et participe ainsi à réduire l'empreinte carbone\nde son logement. \n\nCes économies seront d'autant plus importantes si vous vivez dans un logement mal isolé.\n\nPour connaitre les rénovations les plus adaptées à votre logement ainsi que les aides disponibles : [FAIRE](https://www.faire.gouv.fr).\n"
   },
   "logement . gain rénovation": {
@@ -889,8 +1019,9 @@
     "titre": "Rénover mon logement en BBC",
     "icônes": "🏠✨",
     "formule": "(logement . empreinte chauffage air * gain rénovation) / habitants",
+    "unité": "kgCO2e",
     "applicable si": "propriétaire",
-    "description": "\nUne rénovation labellisée Batiment Basse Consommation (BBC) peut permettre de réduire jusqu’à 70 % de la consommation d’énergie de son logement. \n\nCe type de rénovation entraîne également, sur le long terme, de fortement réduire la facture énergétique, qui plus est si vous vivez dans un logement mal isolé voire une passoire énergétique.\n\n> On parle de passoire thermique pour des logements ayant une étiquette énergétique F ou G (on en trouve plus de 7 millions en France). Ces logements [ne pourront plus êtres loués en 2028](https://www.ladepeche.fr/2021/03/15/les-passoires-thermiques-interdites-a-la-location-a-partir-de-2028-9428622.php).\n\nPour connaitre les rénovations les plus adaptées à votre logement ainsi que les aides disponibles : [FAIRE](https://www.faire.gouv.fr).\n"
+    "description": "Une rénovation labellisée Batiment Basse Consommation (BBC) peut permettre de réduire jusqu’à 70 % de la consommation d’énergie de son logement. \n\nCe type de rénovation entraîne également, sur le long terme, de fortement réduire la facture énergétique, qui plus est si vous vivez dans un logement mal isolé voire une passoire énergétique.\n\n> On parle de passoire thermique pour des logements ayant une étiquette énergétique F ou G (on en trouve plus de 7 millions en France). Ces logements [ne pourront plus êtres loués en 2028](https://www.ladepeche.fr/2021/03/15/les-passoires-thermiques-interdites-a-la-location-a-partir-de-2028-9428622.php).\n\nPour connaitre les rénovations les plus adaptées à votre logement ainsi que les aides disponibles : [FAIRE](https://www.faire.gouv.fr).\n"
   },
   "logement . rénovation énergétique BBC . gain rénovation": {
     "note": "Gain énergétique maximal atteint après une rénovation BBC, source à préciser.",
@@ -923,6 +1054,7 @@
     },
     "non applicable si": "chauffage . réseau de chaleur . présent",
     "formule": "(logement . chauffage - recalcul / habitants)",
+    "unité": "kgCO2e",
     "note": "Un réseau de chaleur est un système de canalisations qui permettent d’acheminer vers un ensemble de bâtiments de la \nchaleur produite localement et majoritairement à partir d’énergies renouvelables et de récupération. \n\nC'est une alternative écologique et économique pour remplacer des chaudières au gaz ou fioul, \naussi bien pour les bâtiments d'habitat collectif (copropriétés, habitat social) que pour les bâtiments tertiaires.\n\nNéanmoins, être raccordé à un réseau de chaleur n'est pas aussi simple que de souscrire un contrat d'électricité.\nEn effet, la faisabilité du raccordement dépend de [plusieurs conditions techniques](https://france-chaleur-urbaine.beta.gouv.fr/ressources/faisabilite#contenu).\n\nTout d'abord, le raccordement se fait pour tout un bâtiment : il n'est pas possible de raccorder seulement votre appartement.\nEnsuite, il est nécessaire de vérifier qu'il existe un réseau de chaleur à proximité du bâtiment, puis d'étudier\nles infrastructures de chauffage au sein du bâtiment (un bâtiment équipé d'un système de chauffage collectif permettra un raccordement à moindre coût)\n\nCôté impact climat, il faut savoir qu'en général, un réseau de chaleur est alimenté via des sources d'énergie renouvelables ou de récupération locales\n(62% en moyenne à l'échelle nationale), c'est à dire, via l'incinération d'ordures ménagères, la combustion de biomasse, la géothermie... (comme le montre la figure ci-dessous)\nce qui permet de réduire considérablement l'impact CO2 du kWh d'énergie consommée devant le gaz ou le fioul. \n\nCependant, le mix énergétique est très variable d’un réseau à l’autre, certains réseaux sont encore principalement alimentés via des énergies fossiles (charbon, fioul, gaz).\nIl est donc important de vérifier le taux ENR du réseau le plus proche sur la [cartographie France Chaleur Urbaine](https://france-chaleur-urbaine.beta.gouv.fr/carte), et de se renseigner auprès du gestionnaire du réseau \nsur les évolutions à venir du mix énergétique car bcp de réseaux sont en cours de verdissement...].\n\n![](https://user-images.githubusercontent.com/55186402/223733624-d50b2271-6da6-4ec7-a324-cec41df10430.png)\n",
     "description": "Alimentés en moyenne à 62% par des énergies renouvelables et de récupération locales (chaleur issue de l'incinération des déchets, biomasse, géothermie...), \nles réseaux de chaleur (ou chauffage urbain) constituent un mode de chauffage faiblement carboné et à prix compétitifs. \nAttention toutefois, il existe une grande disparité selon les réseaux, aussi bien en matière d'impact carbone que de tarifs !\n\nLe raccordement au chauffage urbain se fait à l'échelle d'un bâtiment entier. Il nécessite la présence d'un réseau de chaleur à proximité du bâtiment \net est facilité lorsque le bâtiment est déjà équipé d'un chauffage collectif.\n\n>💡 Le site France Chaleur Urbaine vous permet d'aller plus loin : vérifiez si un [réseau de chaleur](https://france-chaleur-urbaine.beta.gouv.fr/) passe près de votre immeuble !\n"
   },
@@ -953,11 +1085,6 @@
   },
   "logement . chauffage collectif . collectif": null,
   "logement . chauffage collectif . individuel": null,
-  "logement . électricité verte": {
-    "titre": "Souscrire à un contrat d'électricité verte",
-    "icônes": "☮️⚡",
-    "inactive": "oui"
-  },
   "logement . extérieur . barbecue plus écologique": {
     "applicable si": {
       "toutes ces conditions": [
@@ -999,6 +1126,71 @@
     "note": "La tondeuse thermique a une empreinte carbone doublement négative : d'abord au niveau de la partie construction (l'empreinte est trois fois supérieure à la tondeuse électrique), mais aussi, bien sûr, au niveau de l'usage (bien que cette empreinte ne soit, à ce jour, pas comptée).\n",
     "formule": "empreinte tondeuse thermique amortie - empreinte tondeuse électrique ou robot amortie",
     "unité": "kgCO2e"
+  },
+  "logement . mutualiser son logement": {
+    "titre": "Partager son logement",
+    "icônes": "🏠👥",
+    "description": "Vivre en colocation n'est pas seulement bon pour les finances ou les liens sociaux,\nc'est aussi un moyen de réduire son empreinte sur le climat en mutualisant les espaces, les consommations, les équipements.\n\nDepuis plusieurs dizaines d'années, la surface par habitant des logements n'a fait qu'augmenter, passant de 30 m² dans les années 80 à plus de 40 m² actuellement ! \nCela contribue fortement à l'artificialisation des sols et à l'émission d'une grande quantité de gaz à effet de serre liés à la construction de nouveaux logements.\n\nMieux partager le bâti actuel est donc un enjeu au potentiel important de réduction d'empreinte carbone.\n",
+    "applicable si": "logement . surface / habitants > 50",
+    "formule": "nombre colocataires * empreinte partagée"
+  },
+  "logement . nombre colocataires": {
+    "question": "Combien de colocataires pourriez-vous accueillir ?",
+    "par défaut": 1
+  },
+  "logement . mutualiser son logement . empreinte partagée": {
+    "formule": {
+      "somme": [
+        "logement",
+        "divers . numérique",
+        "divers . électroménager",
+        "divers . ameublement"
+      ]
+    }
+  },
+  "logement . mutualiser son logement . empreinte partagée . logement": {
+    "formule": {
+      "recalcul": {
+        "règle": "logement",
+        "avec": {
+          "logement . saisie habitants": "logement . habitants + nombre colocataires",
+          "logement . vacances": 0
+        }
+      }
+    },
+    "note": "On fait l'hypothèse que les vacances ne seront pas partagées avec le nouveau colocataire."
+  },
+  "logement . mutualiser son logement . empreinte partagée . divers . numérique": {
+    "formule": {
+      "recalcul": {
+        "règle": "divers . numérique . appareils",
+        "avec": {
+          "logement . saisie habitants": "logement . habitants + nombre colocataires"
+        }
+      }
+    }
+  },
+  "logement . mutualiser son logement . empreinte partagée . divers . électroménager": {
+    "formule": {
+      "recalcul": {
+        "règle": "divers . électroménager . appareils",
+        "avec": {
+          "logement . saisie habitants": "logement . habitants + nombre colocataires"
+        }
+      }
+    }
+  },
+  "logement . mutualiser son logement . empreinte partagée . divers . ameublement": {
+    "formule": {
+      "recalcul": {
+        "règle": "divers . ameublement",
+        "avec": {
+          "logement . saisie habitants": "logement . habitants + nombre colocataires",
+          "divers . ameublement . meubles . matelas": 0,
+          "divers . ameublement . meubles . lit": 0
+        }
+      }
+    }
   },
   "services sociétaux . voter": {
     "icônes": "🗳️🏛️",
@@ -5305,6 +5497,10 @@
   "parc français . chauffage . consommation électricité chauffage air PAC par m2": {
     "formule": "14077969585 / 301589218",
     "unité": "kWh/m2",
+    "optimized": true
+  },
+  "parc français . chauffage . empreinte moyenne ecs par m2": {
+    "valeur": "22.562646426950334",
     "optimized": true
   },
   "logement . climatisation": {
