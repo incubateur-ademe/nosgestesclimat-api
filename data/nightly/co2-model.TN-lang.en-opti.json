@@ -1,5 +1,6 @@
 {
   "actions": {
+    "unité": "kgCO2e",
     "formule": {
       "somme": [
         "alimentation . réduire viande . max 1 par jour",
@@ -30,7 +31,6 @@
         "logement . remplacer gaz par PAC",
         "logement . remplacer chauffage électrique par PAC",
         "logement . séchage air libre",
-        "transport . éco-conduite",
         "logement . baisse température",
         "logement . éclairage . LED",
         "logement . rénovation énergétique",
@@ -43,17 +43,23 @@
         "logement . extérieur . passer à la tondeuse électrique",
         "logement . climatisation . réduction",
         "logement . mutualiser son logement",
+        "transport . éco-conduite",
         "transport . arrêter l'avion",
         "transport . arrêter l'avion court",
         "transport . prendre moins l'avion",
-        "transport . boulot . covoiturage",
-        "transport . boulot . commun",
+        "transport . faire durer",
+        "transport . réduire taille",
+        "transport . autopartage",
+        "transport . boulot . faire du covoiturage",
+        "transport . boulot . sans voiture",
         "transport . boulot . télétravail",
         "transport . covoiturage",
         "transport . voiture 5km",
         "transport . voiture électrique",
-        "transport . voiture . limitation autoroute",
+        "transport . limitation autoroute",
         "transport . scooter électrique",
+        "transport . arrêter ferry",
+        "transport . réduire ferry",
         "divers . partage NGC",
         "divers . aider les autres",
         "divers . électroménager . allongement",
@@ -83,7 +89,7 @@
   },
   "alimentation . réduire viande . max 1 par jour": {
     "applicable si": "nombre de plats viande > 7 repas/semaine",
-    "titre": "Only eat meat once a day maximum",
+    "titre": "Only eat meat once a day",
     "formule": "par semaine * commun . semaines par an",
     "unité": "kgCO2e",
     "description": "Why not start by reducing your meat consumption by eating it just once a day?\n"
@@ -1288,6 +1294,7 @@
       ]
     },
     "formule": "transport . avion",
+    "unité": "kgCO2e",
     "description": "Airplanes have a significant climate footprint\n\nIt is not limited to just CO₂ emissions, which is just one greenhouse gas among many\n\nThe total footprint of the airplane is estimated to be about 2x that of CO₂\n\nSee the <a href=\"https://monimpacttransport.fr\">transportation calculator</a> to view this footprint and compare it to other modes of transportation.\n",
     "aller plus loin": "## Forçage radiatif total\n\nL'avion a un impact important sur le climat à la fois à cause de ses émissions de CO₂ et d'autres effets (dit forçage radiatif additionnel).\n\nDu fait que les avions volent en haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d’autres gaz à effet de serre que le CO₂ (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.).\n\nCe graphique montre la complexité des effects en jeu (et encore, tout n'y est pas).\n\n![](https://www.uecna.eu/wp-content/uploads/2017/12/ilusion-diagram1.jpg)\n\n## Avion vs voiture\n\nOn entend souvent que ramenée au passager, elle est du même ordre que celle d'une voiture. C'est vrai, mais ce n'est qu'une partie de l'histoire. \n\nPremièrement, l'empreinte de la voiture elle-même est élevée. Comparer l'avion à la voiture ne rend pas ce premier vertueux.\n\nDeuxièmement, on ne peut comparer la voiture et l'avion simplement parce qu'un trajet en avion est en général bien plus long. Quand il s'agit de choisir la destination des vacances par exemple, un trajet en voiture a donc toutes les chances d'être beaucoup moins polluant. Cela dit, notons aussi que nos kilométrages en voiture sont tels que le match est relancé quand on regarde l'empreinte à l'année.\n",
     "titre": "stop flying"
@@ -1303,11 +1310,13 @@
         "avion . usager"
       ]
     },
-    "formule": "transport . avion . court courrier + compensation train",
+    "formule": "transport . avion . court courrier - compensation train",
+    "unité": "kgCO2e",
     "description": "The airplane has changed our way of life and our way of traveling. We can now go further, faster, more frequently, but unfortunately this is not without a downside for the climate\n\nIndeed, there is a ratio of 100 between the emission factors (quantity of CO₂ emitted per km traveled) of a plane and a train\n\n> For example, a round trip from Paris to Marseille emits about 300 kgCO2eq by plane against only 2 kgCO2eq by train\n\nThis is why we need to adapt our weekends and vacations\nby turning to low-carbon mobility offers and/or by rethinking our way of traveling is essential if we want to\nreduce our impact on the climate, both individually and as a society\n\n<a href=\"https://monimpacttransport.fr\">Compare modes of transportation here</a>\n"
   },
   "transport . arrêter l'avion court . compensation train": {
     "formule": "((avion . court courrier . heures de vol * 461.53846153846155) * 1.2) * 0.0088198802395209",
+    "unité": "kgCO2e",
     "titre": "train compensation",
     "optimized": true
   },
@@ -1328,88 +1337,19 @@
       ]
     },
     "formule": "transport . avion / 2",
+    "unité": "kgCO2e",
     "description": "> 💡 Try to make at least one of the trips to your destination by train!\n\nFlying has a significant climate footprint. \n\nIt is not limited to just CO₂ emissions, which is just one greenhouse gas among many. \n\nSee the <a href=\"https://monimpacttransport.fr\">transportation calculator</a> to view this footprint and compare it to other means of transportation.\n",
     "aller plus loin": "## Forçage radiatif total\n\nL'avion a un impact important sur le climat à la fois à cause de ses émissions de CO₂ et d'autres effets (dit forçage radiatif additionnel).\n\nDu fait que les avions volent en haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d’autres gaz à effet de serre que le CO₂ (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.).\n\nCe graphique montre la complexité des effects en jeu (et encore, tout n'y est pas).\n\n![](https://www.uecna.eu/wp-content/uploads/2017/12/ilusion-diagram1.jpg)\n\n## Avion vs voiture\n\nOn entend souvent que ramenée au passager, elle est du même ordre que celle d'une voiture. C'est vrai, mais ce n'est qu'une partie de l'histoire. \n\nPremièrement, l'empreinte de la voiture elle-même est élevée. Comparer l'avion à la voiture ne rend pas ce premier vertueux.\n\nDeuxièmement, on ne peut comparer la voiture et l'avion simplement parce qu'un trajet en avion est en général bien plus long. Quand il s'agit de choisir la destination des vacances par exemple, un trajet en voiture a donc toutes les chances d'être beaucoup moins polluant. Cela dit, notons aussi que nos kilométrages en voiture sont tels que le match est relancé quand on regarde l'empreinte à l'année.\n"
-  },
-  "transport . éco-conduite": {
-    "titre": "Adopt eco-driving",
-    "applicable si": {
-      "toutes ces conditions": [
-        {
-          "est défini": "voiture . utilisateur régulier"
-        },
-        "voiture . utilisateur régulier"
-      ]
-    },
-    "icônes": "🚗☮",
-    "formule": "transport . voiture . empreinte calculée - transport . éco-conduite . recalcul",
-    "description": "Eco-driving is a simple and effective action that is within everyone's reach.\n\nIt can save an average of 15% in fuel consumption,\nreduce vehicle maintenance costs, reduce the risk of accidents by an average of 10 to 15% and make substantial savings that can amount to several hundred\nsavings that can amount to several hundred euros\n\nThe application of eco-driving is all the more relevant in cities and urban areas where stops and restarts are frequent\nrestarting are frequent.\n",
-    "note": "See the <a href=\"https://expertises.ademe.fr/air-mobilites/mobilite-transports/passer-a-laction/solutions-technologiques/dossier/optimiser-lutilisation-lentretien-vehicule/lecoconduite-attitude-a-adopter\">ADEME-LaPoste eco-driving training guide</a>\n"
-  },
-  "transport . éco-conduite . recalcul": {
-    "note": "A recalculation is necessary here, because the user may have used the input help tool which then prorates the km variable to the number of travelers. Otherwise it is not the case.",
-    "formule": {
-      "recalcul": {
-        "règle": "transport . voiture . empreinte calculée",
-        "avec": {
-          "transport . voiture . usage": "transport . éco-conduite . usage réduit"
-        }
-      }
-    },
-    "titre": "recalculation"
-  },
-  "transport . éco-conduite . usage réduit": {
-    "formule": "(transport . voiture . km * transport . voiture . empreinte au kilomètre) * 0.85",
-    "unité": "kgCO2e",
-    "note": "15% reduction (see eco-driving rule info)",
-    "titre": "reduced use"
-  },
-  "transport . covoiturage": {
-    "titre": "Favour carpooling",
-    "applicable si": {
-      "toutes ces conditions": [
-        {
-          "est défini": "voiture . utilisateur régulier"
-        },
-        "voiture . utilisateur régulier"
-      ]
-    },
-    "action": {
-      "dépasse": [
-        "transport . boulot . covoiturage"
-      ]
-    },
-    "icônes": "🚗👥",
-    "formule": "voiture . km * voiture . empreinte au kilomètre * réduction covoiturage",
-    "description": "This action concerns all his car trips.\n\nWhile long-distance carpooling is well known in France, short-distance carpooling is almost non-existent: today only 3% of home-work trips are made by carpooling.\n\nIn any case, remember to adapt your mode of transportation to the distance and to favor soft modes or public transportation (bus, subway, bicycle, walking, etc.) as much as possible. The <a href=\"https://monimpacttransport.fr/\">My Transport Impact</a> calculator allows you to visualize and compare the impact of different modes of transport.\n",
-    "note": "See The Conversation article <a href=\"https://theconversation.com/a-quelles-conditions-le-covoiturage-sera-t-il-un-mode-de-transport-durable-124122\">Under what conditions will car-sharing become a sustainable mode of transport?</a>\n"
   },
   "transport . boulot": {
     "icônes": "🏢",
     "titre": "job"
   },
-  "transport . boulot . covoiturage": {
-    "titre": "Carpool to work",
-    "applicable si": {
-      "toutes ces conditions": [
-        {
-          "est défini": "voiture . utilisateur régulier"
-        },
-        "voiture . utilisateur régulier",
-        "voiture . km > seuil d'activation boulot"
-      ]
-    },
-    "icônes": "🚗👥",
-    "formule": "distance * voiture . empreinte au kilomètre * réduction covoiturage",
-    "description": "While long-distance carpooling is well known in France, short-distance\ncarpooling is almost non-existent: today only 3% of home-to-work trips\nare made by carpooling.\n\nYou should know that since 2020, you can ask your employer for the\n[sustainable mobility\npackage](https://www.service-public.fr/particuliers/actualites/A14046),\nso that your carpooling is paid up to 400€/year, exempt from taxes and\nsocial contributions!\n\nIn all cases, remember to adapt your mode of transport to the distance\nand to favour soft modes or public transport (bus, metro, bike, walking,\netc.) as much as possible. The [My Transport\nImpact](https://monimpacttransport.fr/) calculator allows you to\nvisualize and compare the impact of different modes of travel.\n",
-    "note": "See The Conversation article <a href=\"https://theconversation.com/a-quelles-conditions-le-covoiturage-sera-t-il-un-mode-de-transport-durable-124122\">Under what conditions will car-sharing become a sustainable mode of transport?</a>\n"
-  },
-  "transport . réduction covoiturage": {
-    "description": "One might naively think that carpooling divides the footprint per person by 2. But in reality, <a href=\"https://www.sciencedirect.com/science/article/pii/S1361920918303201\">a study carried out in the Île-de-France region</a> shows that reductions are more in the order of 20%... before rebound effects, which reduce the final gain from carpooling to just 6%.\n\n![](https://images.theconversation.com/files/297327/original/file-20191016-98644-c9y1zz.png?ixlib=rb-1.1.0&q=30&auto=format&w=754&h=588&fit=crop&dpr=2)\n",
-    "note": "See The Conversation article <a href=\"https://theconversation.com/a-quelles-conditions-le-covoiturage-sera-t-il-un-mode-de-transport-durable-124122\">Under what conditions will car sharing be a sustainable mode of transport?</a>\n",
-    "titre": "carpooling discount",
-    "valeur": "20%",
-    "optimized": true
+  "transport . boulot . seuil activation": {
+    "titre": "Activation threshold for actions related to \"Work\" trips",
+    "description": "Minimum distance to trigger this action. \n\n> If someone tells us that he only drives 500km in a year, there is little chance that he will drive to work \n> If someone says he only drives 500km in a year, there is little chance that he will drive to work.\n\nWe define the threshold distance as 2km (one way trip), for 5 days a week.\n",
+    "formule": "transport . boulot . distance",
+    "unité": "km"
   },
   "transport . boulot . distance": {
     "formule": "47 * hebdomadaire",
@@ -1419,7 +1359,7 @@
   },
   "transport . boulot . semaines": {
     "unité": "semaine",
-    "description": "47 weeks, rather than 52 to take into account the 5 weeks of vacations.\n",
+    "description": "47 weeks, rather than 52 to take account of the 5 weeks' holiday. This is an important approach.",
     "titre": "weeks",
     "valeur": "47",
     "optimized": true
@@ -1456,7 +1396,21 @@
     "note": "Link to the study and update with 2020 travel survey statistics if available.",
     "par défaut": 10
   },
-  "transport . boulot . commun": {
+  "transport . boulot . covoiturage": {
+    "question": "Going to work alone?",
+    "par défaut": "oui",
+    "titre": "carpooling"
+  },
+  "transport . boulot . covoiturage . nombre de voyageurs": {
+    "formule": "1 + nombre de covoitureurs",
+    "titre": "number of passengers"
+  },
+  "transport . boulot . covoiturage . nombre de covoitureurs": {
+    "question": "How many people could carpool with you?",
+    "par défaut": 1,
+    "titre": "number of carpoolers"
+  },
+  "transport . boulot . sans voiture": {
     "action": {
       "dépasse": [
         "transport . boulot . covoiturage",
@@ -1466,7 +1420,8 @@
     "titre": "Go to work without a car",
     "icônes": "🚌🚲",
     "description": "When possible, taking public transport or light vehicles (walking,\ncycling, personal moped, ...) to work reduces our climate footprint,\nbut also improves our quality of life.\n\n[70%](https://www.ecologie-solidaire.gouv.fr/covoiturage-en-france-avantages-et-reglementationen-vigueur)\nof home-work trips are made with individual vehicles, most of them alone\nin their cars. This is what we call auto-solism.\n\nIn addition to emitting a lot of greenhouse gases, this auto-soloing is\ndetrimental to the quality of the air in our cities and therefore to our\nhealth, and it clogs up urban roads.\n\n> As an example traffic jams represent in Ile-de-France per year and per\n> person [163 hours\n> lost](https://www.tomtom.com/en_gb/traffic-index/paris-traffic) or\n> about 6 days.\n\n> 💡 Did you know? The State and many regions or cities subsidize\n> mechanical, electric, cargo, folding bikes, etc. [Calculate your aid\n> 🚲️ in 3 clicks](https://mesaidesvelo.fr).\n",
-    "applicable si": "voiture . km > seuil d'activation boulot",
+    "non applicable si": "seuil activation = 0",
+    "applicable si": "voiture . km > seuil activation",
     "formule": {
       "variations": [
         {
@@ -1492,19 +1447,14 @@
           "alors": "recalcul autres véhicules à moteur"
         }
       ]
-    }
+    },
+    "unité": "kgCO2e"
   },
-  "transport . seuil d'activation boulot": {
-    "titre": "Activation threshold for actions related to \"Work\" trips",
-    "description": "Minimum distance to trigger this action. \n\n> If someone tells us that he only drives 500km in a year, there is little chance that he will drive to work \n> If someone says he only drives 500km in a year, there is little chance that he will drive to work.\n\nWe define the threshold distance as 2km (one way trip), for 5 days a week.\n",
-    "formule": "transport . boulot . distance",
-    "unité": "km"
-  },
-  "transport . boulot . commun . gain empreinte au km": {
+  "transport . boulot . sans voiture . gain empreinte au km": {
     "formule": "voiture . empreinte au kilomètre - empreinte",
     "titre": "footprint gain per km"
   },
-  "transport . boulot . commun . empreinte": {
+  "transport . boulot . sans voiture . empreinte": {
     "titre": "Selected transit footprint",
     "formule": {
       "variations": [
@@ -1525,7 +1475,7 @@
     "unité": "kgCO2e/km",
     "note": "It is considered that a journey to work made by car can be replaced by a regional train and not by a TGV.\n"
   },
-  "transport . boulot . commun . type": {
+  "transport . boulot . sans voiture . type": {
     "question": "If you were to stop using your car to get to work, what other means of transportation could you use?",
     "par défaut": "'bus'",
     "formule": {
@@ -1543,12 +1493,12 @@
     },
     "titre": "type"
   },
-  "transport . boulot . commun . type . bus": null,
-  "transport . boulot . commun . type . métro ou tramway": null,
-  "transport . boulot . commun . type . TER": null,
-  "transport . boulot . commun . type . vélo classique": null,
-  "transport . boulot . commun . type . vélo électrique": null,
-  "transport . boulot . commun . type . trotinette électrique": null,
+  "transport . boulot . sans voiture . type . bus": null,
+  "transport . boulot . sans voiture . type . métro ou tramway": null,
+  "transport . boulot . sans voiture . type . TER": null,
+  "transport . boulot . sans voiture . type . vélo classique": null,
+  "transport . boulot . sans voiture . type . vélo électrique": null,
+  "transport . boulot . sans voiture . type . trotinette électrique": null,
   "transport . boulot . recalcul vélo": {
     "titre": "bike recalculation",
     "valeur": "9.666666666666666",
@@ -1581,29 +1531,31 @@
   "transport . boulot . télétravail": {
     "titre": "Telecommute",
     "icônes": "🏠💻",
-    "description": "Telecommuting is a way to avoid the daily commute to work.\n\nIt is obviously not possible for many employees, but the health crisis\nof 2020 has shown that many jobs are indeed telecommutable.\n\nIn this calculation, we only take into account the days teleworked that\navoid a trip by private car.\n",
+    "description": "Teleworking means you don't have to travel to work every day.\n\nIt is obviously not possible for many employees, but the health crisis of 2020 has shown that many professions can indeed be teleworked.\n\nIn this calculation, we only take into account teleworking days that avoid a journey by private car, not the rebound effects.\n",
+    "non applicable si": "seuil activation = 0",
     "applicable si": {
       "toutes ces conditions": [
         "compatible",
-        "voiture . km > seuil d'activation boulot",
+        "voiture . km > seuil activation",
         "jours travaillés en voiture > 0"
       ]
     },
     "formule": "empreinte jour voiture * jours gagnés * transport . boulot . semaines"
   },
-  "transport . boulot . jours gagnés": {
+  "transport . boulot . télétravail . jours gagnés": {
     "plafond": "jours travaillés en voiture",
     "titre": "days saved",
     "formule": "jours télétravaillés"
   },
-  "transport . boulot . empreinte jour voiture": {
+  "transport . boulot . télétravail . empreinte jour voiture": {
     "formule": "distance . km par jour * voiture . empreinte au kilomètre",
     "unité": "kgCO2e/jour",
     "titre": "day footprint car"
   },
-  "transport . boulot . jours télétravaillés": {
-    "question": "How many days per week could you telecommute?",
-    "par défaut": 1,
+  "transport . boulot . télétravail . jours télétravaillés": {
+    "question": "How many days a week could you telework?",
+    "applicable si": "compatible",
+    "par défaut": 4,
     "unité": "jour/semaine",
     "suggestions": {
       "1": 1,
@@ -1612,6 +1564,8 @@
       "4": 4,
       "5": 5
     },
+    "plancher": 1,
+    "plafond": 5,
     "titre": "days teleworked"
   },
   "transport . boulot . télétravail . compatible": {
@@ -1619,10 +1573,250 @@
     "par défaut": "oui",
     "titre": "compatible"
   },
+  "transport . boulot . faire du covoiturage": {
+    "titre": "Carpooling to work",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier",
+        "voiture . km > seuil activation",
+        "covoiturage"
+      ]
+    },
+    "icônes": "🚗👥",
+    "formule": "empreinte boulot seul - empreinte boulot covoiturage",
+    "unité": "kgCO2e",
+    "description": "While long-distance car-sharing is well known in France, short-distance car-sharing is almost non-existent: today, only 3% of home-to-work journeys are made by car-sharing.\n\nSince 2020, you can ask your employer for the <a href=\"https://www.service-public.fr/particuliers/actualites/A14046\">sustainable mobility package</a>, so that your carpooling is paid for up to €400/year, exempt from tax and social security contributions!\n\nIn all cases, remember to adapt your mode of transport to the distance and give preference to soft modes or public transport (bus, metro, bike, walking, etc.) as much as possible. Use the <a href=\"https://monimpacttransport.fr/\">My Transport Impact</a> calculator to see and compare the impact of different modes of transport.\n",
+    "note": "See The Conversation article <a href=\"https://theconversation.com/a-quelles-conditions-le-covoiturage-sera-t-il-un-mode-de-transport-durable-124122\">Under what conditions will car sharing be a sustainable mode of transport?</a>\n"
+  },
+  "transport . boulot . faire du covoiturage . empreinte boulot seul": {
+    "formule": {
+      "recalcul": {
+        "règle": "transport . voiture",
+        "avec": {
+          "transport . voiture . saisie voyageurs": 1,
+          "transport . voiture . km": "boulot . distance"
+        }
+      }
+    },
+    "titre": "empreinte boulot seul"
+  },
+  "transport . boulot . faire du covoiturage . empreinte boulot covoiturage": {
+    "formule": {
+      "recalcul": {
+        "règle": "transport . voiture",
+        "avec": {
+          "transport . voiture . saisie voyageurs": "boulot . covoiturage . nombre de voyageurs",
+          "transport . voiture . km": "boulot . distance"
+        }
+      }
+    },
+    "titre": "empreinte boulot carpooling"
+  },
+  "transport . scooter électrique": {
+    "titre": "Switch to an electric moped",
+    "icônes": "🔌🛵",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "transport . deux roues . usager"
+        },
+        "transport . deux roues . usager",
+        "transport . deux roues . type = 'scooter thermique'"
+      ]
+    },
+    "formule": "transport . deux roues - transport . scooter électrique . recalcul",
+    "description": "The e-moped isn't a miracle solution, but for certain uses it can prove (very) useful in reducing our footprint.\n\nHowever, we must be careful not to reach the simplistic conclusion that switching to an electric vehicle fleet would be enough to decarbonize our travels. \n\nWhenever possible (55% of our journeys in France <a href=\"https://twitter.com/GlmMrt/status/1481986507179274248\">are less than 5km</a>), the priority should be to promote active mobility (such as cycling) and public transport.\n\nNevertheless, the figure we've given does correspond to the difference in greenhouse gas emissions that would have occurred if you had travelled your km with \nwith an electric vehicle rather than a combustion engine.\n\nIt's also important to bear in mind that the idea here is not to encourage you to buy a new electric moped, but rather to make your equipment last, and give preference to second-hand vehicles!\n"
+  },
+  "transport . scooter électrique . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "transport . deux roues",
+        "avec": {
+          "transport . deux roues . type": "'scooter électrique'"
+        }
+      }
+    },
+    "titre": "recalculation"
+  },
+  "transport . arrêter ferry": {
+    "titre": "No longer taking the ferry",
+    "icônes": "⛴🧳",
+    "formule": "transport . ferry",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "ferry . usager"
+        },
+        "ferry . usager"
+      ]
+    },
+    "action": {
+      "dépasse": [
+        "transport . réduire ferry"
+      ]
+    },
+    "description": "The ferry's carbon footprint is smaller than that of the plane, but still significant. A good idea would be to use it only as an alternative to flying, for your sea crossings.\nIf you're used to going on cruises, perhaps you could think about replacing this mode of holiday with another that emits fewer greenhouse gases.\n",
+    "unité": "kgCO2e"
+  },
+  "transport . réduire ferry": {
+    "titre": "Taking half as many ferries",
+    "icônes": "📉⛴",
+    "formule": "transport . ferry / 2",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "ferry . usager"
+        },
+        "ferry . usager"
+      ]
+    },
+    "description": "The ferry's carbon footprint is smaller than that of the plane, but still significant. A good idea would be to use it only as an alternative to flying, for your sea crossings.\nIf you're used to going on cruises, perhaps you could think about replacing this mode of holiday with another that emits fewer greenhouse gases.\n",
+    "unité": "kgCO2e"
+  },
+  "transport . éco-conduite": {
+    "titre": "Adopt eco-driving",
+    "applicable si": "voiture . km > 0",
+    "icônes": "🚗☮",
+    "formule": "voiture . km * gain empreinte au km / voiture . voyageurs",
+    "unité": "kgCO2e",
+    "description": "Eco-driving is a simple and effective action that everyone can take.  \n\nIt saves an average of 15% on fuel, reduces vehicle maintenance costs, \nreduce the risk of accidents by an average of 10-15%, and make substantial savings that can amount to several hundred euros \nseveral hundred euros. \n\nThe application of eco-driving is all the more relevant in towns and urban areas where there are frequent stops and restarts \nrestarting are frequent.\n",
+    "note": "See the <a href=\"https://expertises.ademe.fr/air-mobilites/mobilite-transports/passer-a-laction/solutions-technologiques/dossier/optimiser-lutilisation-lentretien-vehicule/lecoconduite-attitude-a-adopter\">ADEME-LaPoste eco-driving training guide</a>\n"
+  },
+  "transport . éco-conduite . gain empreinte au km": {
+    "formule": "voiture . empreinte usage au kilomètre * 0.15",
+    "unité": "kgCO2e/km",
+    "note": "Assumption of 15% reduction <a href=\"https://expertises.ademe.fr/air-mobilites/mobilite-transports/passer-a-laction/solutions-technologiques/dossier/optimiser-lutilisation-lentretien-vehicule/lecoconduite-attitude-a-adopter\">ADEME-LaPoste eco-driving training guide</a>)",
+    "titre": "footprint gain per km"
+  },
+  "transport . limitation autoroute": {
+    "titre": "Go from 130 to 110km/h",
+    "icônes": "🚗🛣️",
+    "applicable si": "voiture . km > 0",
+    "formule": "empreinte autoroute - empreinte autoroute réduit",
+    "description": "The Citizens' Climate Convention has proposed a reduction of the speed limit on highways from 130km/h to 110km/h in 2020\nThe proposal is detailed <a href=\"https://propositions.conventioncitoyennepourleclimat.fr/objectif/reduire-les-emissions-des-gaz-a-effet-de-serre-sur-les-autoroutes-et-les-voies-rapides/#elementor-tab-title-1681\">here</a>\n\nFollowing Russia's invasion of Ukraine, the International Energy Agency made this <a href=\"https://www.iea.org/reports/a-10-point-plan-to-cut-oil-use\">its 1st recommendation</a> to reduce our purchases of Russian oil.\n\nHere we offer an assessment of this measure based on your specific situation.\n"
+  },
+  "transport . limitation autoroute . empreinte autoroute": {
+    "formule": {
+      "recalcul": {
+        "règle": "transport . voiture",
+        "avec": {
+          "transport . voiture . km": "voiture . km * ratio autoroute"
+        }
+      }
+    },
+    "unité": "kgCO2e",
+    "titre": "motorway footprint"
+  },
+  "transport . limitation autoroute . empreinte autoroute réduit": {
+    "formule": {
+      "recalcul": {
+        "règle": "transport . voiture",
+        "avec": {
+          "transport . voiture . km": "voiture . km * ratio autoroute",
+          "transport . voiture . usage": "transport . voiture . usage * (1 - réduction)"
+        }
+      }
+    },
+    "unité": "kgCO2e",
+    "titre": "reduced motorway footprint"
+  },
+  "transport . limitation autoroute . réduction": {
+    "titre": "Consumption gain 130 -&gt; 110",
+    "description": "![](https://imgur.com/NB9CUUt.jpg)\nFrom this graph, by graphical deduction (we have not yet gone back to the <a href=\"http://theses.univ-lyon2.fr/documents/getpart.php?id=1026&action=pdf\">study</a> data, page 151 figure 26), we find the data below.\n\nDiesel: 6.5 l/100 at 130km/h -> 4.75 at 110km/h\n\nGasoline: 11.75 l/100 at 130km/h -> 8.65 at 110km/h\n\nSo -27% in diesel and -26% in petrol by going from 130 to 110. We keep the order of magnitude of 25%.\n",
+    "note": "This calculation should be refined.\nSome sources to investigate for the calculation.\n- a citizen who makes his test for a clio. He finds a reduction between -20% and -50% !\n   https://twitter.com/CptQwark_/status/1289499582871658499\n   Another citizen finds rather -10% with a bigger car\n- <a href=\"<https://www.ecologie.gouv.fr/sites/default/files/Théma - Reduction of speeds on the roads.pdf>\">Report of the CGDD</a>, where we have not found for the moment the explanation of the calculation of CO₂ savings\n- Aurélien Bigo who criticizes the CGDD report https://twitter.com/AurelienBigo/status/1276459283291439114, but who does not give us any information about the calculation of the CO₂ itself.\n- another evaluation, which gives us the calculation :)  : https://twitter.com/Tomsawy22670318/status/1274257122373570565\n  Attention, to be rigorous, as mentioned in this last thread, it is necessary to take into account the distribution of the speed and the category of car (presence of a 6th gear for example). Obviously, we do not drive at 130 all the time.\n",
+    "valeur": "25%",
+    "optimized": true
+  },
+  "transport . limitation autoroute . km autoroute": {
+    "question": "Approximately how many motorway kilometres do you drive each year?",
+    "unité": "km",
+    "description": "We travel around 80 billion km / year on motorways (cars).\n",
+    "suggestions": {
+      "Paris ⇄ Athens": 6000,
+      "Brest ⇄ Nice": 3000,
+      "Paris ⇄ Marseille": 1600,
+      "Bordeaux ⇄ Lyon": 1100
+    },
+    "par défaut": 1200,
+    "note": "Interesting twitter feed on the subject: https://twitter.com/Tomsawy22670318/status/1274257124701462528.\n",
+    "titre": "km motorway"
+  },
+  "transport . limitation autoroute . ratio autoroute": {
+    "formule": "km autoroute / voiture . km",
+    "par défaut": 0.1,
+    "titre": "motorway ratio"
+  },
+  "transport . covoiturage": {
+    "titre": "Favour carpooling",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
+    "action": {
+      "dépasse": [
+        "transport . boulot . covoiturage"
+      ]
+    },
+    "icônes": "🚗👥",
+    "formule": "transport . voiture * réduction covoiturage",
+    "description": "This action concerns all his car trips.\n\nWhile long-distance carpooling is well known in France, short-distance carpooling is almost non-existent: today only 3% of home-work trips are made by carpooling.\n\nIn any case, remember to adapt your mode of transportation to the distance and to favor soft modes or public transportation (bus, subway, bicycle, walking, etc.) as much as possible. The <a href=\"https://monimpacttransport.fr/\">My Transport Impact</a> calculator allows you to visualize and compare the impact of different modes of transport.\n",
+    "note": "See The Conversation article <a href=\"https://theconversation.com/a-quelles-conditions-le-covoiturage-sera-t-il-un-mode-de-transport-durable-124122\">Under what conditions will car-sharing become a sustainable mode of transport?</a>\n"
+  },
+  "transport . réduction covoiturage": {
+    "description": "You might be naive to think that car-sharing divides the footprint per person by 2. But in reality, <a href=\"https://www.sciencedirect.com/science/article/pii/S1361920918303201\">a study carried out in the Île-de-France region</a> \nshows that the reductions are more in the region of 20%... before rebound effects, which reduce the final gain from carpooling to just 6%.\n\n![](https://images.theconversation.com/files/297327/original/file-20191016-98644-c9y1zz.png?ixlib=rb-1.1.0&q=30&auto=format&w=754&h=588&fit=crop&dpr=2)\n",
+    "note": "See The Conversation article <a href=\"https://theconversation.com/a-quelles-conditions-le-covoiturage-sera-t-il-un-mode-de-transport-durable-124122\">Under what conditions will car sharing be a sustainable mode of transport?</a>\n",
+    "titre": "carpooling discount",
+    "valeur": "20%",
+    "optimized": true
+  },
+  "transport . autopartage": {
+    "titre": "Getting into car-sharing",
+    "icônes": "🚗🤝",
+    "formule": "transport . voiture - recalcul",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier",
+        "voiture . km < plafond activation autopartage"
+      ]
+    },
+    "description": "We assume that a person who travels a lot of kilometres by car each year will find it difficult to get involved in a car-sharing scheme. It will be much more obvious for someone who does little driving.\n\nThe impact of car-sharing on reducing the use of private cars is well established. \nCar-sharing leads to a twofold reduction: a drop in the number of kilometres travelled (by an average of 41%), and a drop in the number of cars used by households. On average, it is estimated that one car-sharing vehicle can replace up to 9 private cars.\n",
+    "unité": "kgCO2e"
+  },
+  "transport . autopartage . plafond activation autopartage": {
+    "note": "We assume that beyond an average of 600 km per month, it is difficult to envisage car-sharing.",
+    "unité": "km",
+    "titre": "car-sharing activation ceiling",
+    "valeur": "7200",
+    "optimized": true
+  },
+  "transport . autopartage . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "transport . voiture",
+        "avec": {
+          "voiture . utilisateur régulier": "non",
+          "voiture . km": "voiture . km * (1 - 0.41)"
+        }
+      }
+    },
+    "unité": "kgCO2e",
+    "note": "Car-sharing reduces the number of kilometres travelled in a year (the car is used less systematically).\nOn average, according to <a href=\"https://presse.ademe.fr/wp-content/uploads/2013/03/ena_4pages_presse_130306.pdf\">this ADEME study</a>, there is a 41% reduction in the number of kilometres driven per year.\n",
+    "titre": "recalculation"
+  },
   "transport . voiture 5km": {
     "titre": "Do without a car for less than 5 km",
     "icônes": "🚗🚲",
-    "formule": "transport . voiture . empreinte calculée - transport . voiture 5km . recalcul",
+    "formule": "transport . voiture - recalcul",
     "applicable si": {
       "toutes ces conditions": [
         {
@@ -1645,7 +1839,7 @@
   "transport . voiture 5km . recalcul": {
     "formule": {
       "recalcul": {
-        "règle": "transport . voiture . empreinte calculée",
+        "règle": "transport . voiture",
         "avec": {
           "transport . voiture . usage": "transport . voiture 5km . usage réduit"
         }
@@ -1680,7 +1874,7 @@
   "transport . voiture 5km . fréquence": {
     "question": "How many times a week do you drive less than 5km?",
     "description": "I go to get my bread 2km away by car, that's one trip. I go to work\nevery day from Monday to Friday at 4km, that's 5 trips.\n",
-    "par défaut": 14,
+    "par défaut": 10,
     "unité": "trajet/semaine",
     "suggestions": {
       "never": 0,
@@ -1690,57 +1884,6 @@
       "two trips per day": 14
     },
     "titre": "frequency"
-  },
-  "transport . super ethanol": {
-    "inactive": "oui",
-    "titre": "Switching from unleaded to super ethanol",
-    "icônes": "⛽️🚗",
-    "applicable si": "transport . voiture . thermique . carburant = 'essence E5 et E10'",
-    "formule": "transport . voiture . empreinte calculée - transport . super ethanol . recalcul avec surconsommation",
-    "description": "Superethanol E85 is the unleaded gasoline fuel that can contain between 65% and 85% of bioethanol, the complement being unleaded gasoline 95\nIt is produced from sugar cane, cereals (wheat, corn) and sugar beet\n\nE85 is a competitive fuel: even taking into account the extra consumption it generates, it allows a saving of 30 to 40 cents per liter of SP95 replaced.\nTo use it, it is possible to modify your gasoline vehicle by installing an approved conversion box, for about 1000€, amortized after 20 000 to 25 000 kilometers.\n![](https://www.francetvinfo.fr/pictures/KlhzqieXAJSG5N_Reou0UdhPLKM/0x667:800x2147/fit-in/720x/filters:format(webp)/2018/10/12/php6RnMqG.png)\n",
-    "note": "This action is inactive.  In view of the issues related to land use change and other environmental impacts related to the cultivation of corn for example, biofuels** are not taken into account (the emission factor of the carbon base being particularly uncertain). See discussions [here](https://github.com/datagir/nosgestesclimat/pull/1324)"
-  },
-  "transport . super ethanol . recalcul": {
-    "formule": {
-      "recalcul": {
-        "règle": "transport . voiture . empreinte calculée",
-        "avec": {
-          "transport . voiture . thermique . carburant": "'essence E85'"
-        }
-      }
-    },
-    "titre": "recalculation"
-  },
-  "transport . super ethanol . recalcul avec surconsommation": {
-    "formule": "recalcul * 125%",
-    "titre": "recalculation with overconsumption",
-    "optimized": true
-  },
-  "transport . scooter électrique": {
-    "titre": "Switch to an electric moped",
-    "icônes": "🔌🛵",
-    "applicable si": {
-      "toutes ces conditions": [
-        {
-          "est défini": "transport . deux roues . usager"
-        },
-        "transport . deux roues . usager",
-        "transport . deux roues . type = 'scooter thermique'"
-      ]
-    },
-    "formule": "transport . deux roues - transport . scooter électrique . recalcul",
-    "description": "The e-moped isn't a miracle solution, but for certain uses it can prove (very) useful in reducing our footprint.\n\nHowever, we must be careful not to reach the simplistic conclusion that switching to an electric vehicle fleet would be enough to decarbonize our travels. \n\nWhenever possible (55% of our journeys in France <a href=\"https://twitter.com/GlmMrt/status/1481986507179274248\">are less than 5km</a>), the priority should be to promote active mobility (such as cycling) and public transport.\n\nNevertheless, the figure we've given does correspond to the difference in greenhouse gas emissions that would have occurred if you had travelled your km with \nwith an electric vehicle rather than a combustion engine.\n\nIt's also important to bear in mind that the idea here is not to encourage you to buy a new electric moped, but rather to make your equipment last, and give preference to second-hand vehicles!\n"
-  },
-  "transport . scooter électrique . recalcul": {
-    "formule": {
-      "recalcul": {
-        "règle": "transport . deux roues",
-        "avec": {
-          "transport . deux roues . type": "'scooter électrique'"
-        }
-      }
-    },
-    "titre": "recalculation"
   },
   "transport . voiture électrique": {
     "titre": "Driving an electric car",
@@ -1754,24 +1897,25 @@
       ]
     },
     "non applicable si": "transport . voiture . motorisation = 'électrique'",
-    "formule": "transport . voiture . empreinte calculée - transport . voiture électrique . recalcul",
-    "description": "The electric car is not a miracle solution but for certain uses it can be (very) useful to reduce our footprint.\n\nHowever, we must be careful not to come to the simplistic conclusion that all we need to do is switch to an electric car fleet to decarbonize French travel\n\nThe priority must be, when possible (55% of our trips <a href=\"https://twitter.com/GlmMrt/status/1481986507179274248\">are less than 5km</a>), the development of active mobility (such as cycling) and public transport.\n\nNevertheless, the figure presented to you corresponds to the difference in greenhouse gas emissions that would have occurred if you had driven your kilometers with\nan electric vehicle and not a thermal one.\n",
-    "note": "Consider proposing this action only if it &gt; 0 or &gt; several hundred kgCO2eq\n"
+    "formule": "transport . voiture - recalcul",
+    "description": "The electric car is not a miracle solution, but for certain uses it can prove (very) useful in reducing our carbon footprint.\n\nHowever, we must be careful not to come to the simplistic conclusion that all we need to do is switch to an electric car fleet to reduce the carbon footprint of French travel. \n\nWhenever possible (55% of our journeys <a href=\"https://twitter.com/GlmMrt/status/1481986507179274248\">are less than 5km</a>), the priority should be to encourage active mobility (such as cycling) and public transport.\n\nHowever, the figure we have given you does correspond to the difference in greenhouse gas emissions that would have occurred if you had travelled the same distance with \nwith an electric vehicle rather than a combustion engine.\n\nOf course, a second-hand electric car costs less. It also enables you to obtain <a href=\"https://www.service-public.fr/particuliers/vosdroits/F34014\">purchase aid</a>.\n\nThe battery range may have decreased slightly, but remember that the vast majority of our journeys <a href=\"https://twitter.com/GlmMrt/status/1481986507179274248\">are less than 50 km</a>!\n",
+    "note": "Consider proposing this action only if it > 0 or even > several hundred kgCO2eq. \nThe action may be negative if the initial vehicle is relatively old and the number of kilometres driven is low.\n"
   },
   "transport . voiture électrique . recalcul": {
     "formule": {
       "recalcul": {
-        "règle": "transport . voiture . empreinte calculée",
+        "règle": "transport . voiture",
         "avec": {
-          "transport . voiture . motorisation": "'électrique'"
+          "transport . voiture . motorisation": "'électrique'",
+          "transport . voiture . véhicule récent": "oui"
         }
       }
     },
     "titre": "recalculation"
   },
-  "transport . voiture . limitation autoroute": {
-    "titre": "Go from 130 to 110km/h",
-    "icônes": "🚗🛣️",
+  "transport . réduire taille": {
+    "titre": "Choosing a small car",
+    "description": "The size of the car has a major influence on the carbon footprint of your journeys: bigger cars not only have a larger construction footprint, they also consume more energy to get around.\nAll too often these days, we choose our vehicle based on what we 'could' do with it.\nA good ecological calculation would be to choose a car that's suitable for everyday use, and if necessary hire a bigger vehicle when the need arises (moving heavy objects, going on holiday together...).\n",
     "applicable si": {
       "toutes ces conditions": [
         {
@@ -1780,34 +1924,44 @@
         "voiture . utilisateur régulier"
       ]
     },
-    "formule": "réduction * empreinte autoroute",
-    "description": "The Citizens' Climate Convention has proposed a reduction of the speed limit on highways from 130km/h to 110km/h in 2020\nThe proposal is detailed <a href=\"https://propositions.conventioncitoyennepourleclimat.fr/objectif/reduire-les-emissions-des-gaz-a-effet-de-serre-sur-les-autoroutes-et-les-voies-rapides/#elementor-tab-title-1681\">here</a>\n\nFollowing Russia's invasion of Ukraine, the International Energy Agency made this <a href=\"https://www.iea.org/reports/a-10-point-plan-to-cut-oil-use\">its 1st recommendation</a> to reduce our purchases of Russian oil.\n\nHere we offer an assessment of this measure based on your specific situation.\n"
+    "non applicable si": "transport . voiture . gabarit = \"'petite'\"",
+    "formule": "transport . voiture - recalcul"
   },
-  "transport . voiture . limitation autoroute . réduction": {
-    "titre": "Consumption gain 130 -&gt; 110",
-    "description": "![](https://imgur.com/NB9CUUt.jpg)\nFrom this graph, by graphical deduction (we have not yet gone back to the <a href=\"http://theses.univ-lyon2.fr/documents/getpart.php?id=1026&action=pdf\">study</a> data, page 151 figure 26), we find the data below.\n\nDiesel: 6.5 l/100 at 130km/h -> 4.75 at 110km/h\n\nGasoline: 11.75 l/100 at 130km/h -> 8.65 at 110km/h\n\nSo -27% in diesel and -26% in petrol by going from 130 to 110. We keep the order of magnitude of 25%.\n",
-    "note": "This calculation should be refined.\nSome sources to investigate for the calculation.\n- a citizen who makes his test for a clio. He finds a reduction between -20% and -50% !\n   https://twitter.com/CptQwark_/status/1289499582871658499\n   Another citizen finds rather -10% with a bigger car\n- <a href=\"<https://www.ecologie.gouv.fr/sites/default/files/Théma - Reduction of speeds on the roads.pdf>\">Report of the CGDD</a>, where we have not found for the moment the explanation of the calculation of CO₂ savings\n- Aurélien Bigo who criticizes the CGDD report https://twitter.com/AurelienBigo/status/1276459283291439114, but who does not give us any information about the calculation of the CO₂ itself.\n- another evaluation, which gives us the calculation :)  : https://twitter.com/Tomsawy22670318/status/1274257122373570565\n  Attention, to be rigorous, as mentioned in this last thread, it is necessary to take into account the distribution of the speed and the category of car (presence of a 6th gear for example). Obviously, we do not drive at 130 all the time.\n",
-    "valeur": "25%",
-    "optimized": true
-  },
-  "transport . voiture . empreinte autoroute": {
-    "formule": "par km personne * km autoroute",
-    "unité": "kgCO2e",
-    "titre": "highway footprint"
-  },
-  "transport . km autoroute": {
-    "question": "How many kilometers per year do you drive on the highway (approximately)?",
-    "unité": "km",
-    "description": "We travel about 80 billion km / year on the highway (car).\n",
-    "suggestions": {
-      "Paris ⇄ Athens": 6000,
-      "Brest ⇄ Nice": 3000,
-      "Paris ⇄ Marseille": 1600,
-      "Bordeaux ⇄ Lyon": 1100
+  "transport . réduire taille . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "transport . voiture",
+        "avec": {
+          "transport . voiture . gabarit": "'petite'"
+        }
+      }
     },
-    "par défaut": 1200,
-    "note": "Interesting twitter feed on the subject: https://twitter.com/Tomsawy22670318/status/1274257124701462528.\n",
-    "titre": "km highway"
+    "titre": "recalculation"
+  },
+  "transport . faire durer": {
+    "titre": "Making your vehicle last",
+    "applicable si": {
+      "toutes ces conditions": [
+        {
+          "est défini": "voiture . utilisateur régulier"
+        },
+        "voiture . utilisateur régulier"
+      ]
+    },
+    "non applicable si": "transport . voiture . véhicule récent = non",
+    "description": "It's very difficult to put a figure on a vehicle's lifespan, either in terms of kilometres driven or in years. \nThe fact is that it depends on many parameters: vehicle maintenance, accidents, driving style, engine type, dependence on electronics, etc.\nSome vehicles are ready for the scrap heap after 150,000 km, while others are still going strong after 400,000 km. \n\nYet a large part of a vehicle's footprint lies in its construction. Making it last is therefore essential and has a major impact on the carbon footprint.\n\nWe have calculated that a well-maintained vehicle can increase its lifespan by 30%.\n",
+    "formule": "transport . voiture . empreinte calculée - recalcul"
+  },
+  "transport . faire durer . recalcul": {
+    "formule": {
+      "recalcul": {
+        "règle": "transport . voiture . empreinte calculée",
+        "avec": {
+          "transport . voiture . durée de vie": 13
+        }
+      }
+    },
+    "titre": "recalculation"
   },
   "alimentation": {
     "titre": "Food",
@@ -8925,9 +9079,14 @@
     "titre": "minimum passenger notification"
   },
   "transport . voiture . usage": {
-    "formule": "km * (empreinte au kilomètre + base au kilomètre)",
+    "formule": "km * empreinte usage au kilomètre",
     "unité": "kgCO2e",
     "titre": "use"
+  },
+  "transport . voiture . empreinte usage au kilomètre": {
+    "formule": "empreinte au kilomètre + base au kilomètre",
+    "unité": "kgCO2e/km",
+    "titre": "usage footprint per kilometre"
   },
   "transport . voiture . empreinte au kilomètre": {
     "formule": {
@@ -8984,11 +9143,7 @@
   "transport . voiture . motorisation . hybride": {
     "titre": "Hybrid"
   },
-  "transport . voiture . thermique": {
-    "valeur": "oui",
-    "titre": "thermal",
-    "optimized": true
-  },
+  "transport . voiture . thermique": null,
   "transport . voiture . thermique . empreinte au kilomètre": {
     "titre": "footprint per thermal km",
     "formule": "consommation au kilomètre * empreinte au litre",
@@ -9173,8 +9328,9 @@
   },
   "transport . voiture . base au kilomètre": {
     "titre": "Maintenance and air conditioning by the kilometer",
-    "formule": "entretien pondéré + climatisation",
-    "unité": "kgCO2e/km"
+    "formule": "entretien pondéré + 0.0025208261705055",
+    "unité": "kgCO2e/km",
+    "optimized": true
   },
   "transport . voiture . entretien pondéré": {
     "formule": {
@@ -9197,23 +9353,11 @@
     "titre": "weighted interview"
   },
   "transport . voiture . entretien": {
-    "formule": "(((6036 * 1000000kgCO2e/ktCO2e) * 0.07) / 44677000) / 12200",
     "unité": "kgCO2e/km",
     "note": "In item G45, we take the share of vehicle maintenance and repair (7%).\nWe divide it by the number of vehicles in circulation, then by 12,200 km (the average number of km driven per vehicle) to obtain a footprint in kgCO2e / km.\n",
     "titre": "maintenance",
+    "valeur": "0.0007751815673668",
     "optimized": true
-  },
-  "transport . voiture . climatisation": {
-    "formule": "(1374000000 / 44677000) / 12200",
-    "unité": "kgCO2e/km",
-    "note": "The idea here is to take into account a proportion of emissions linked to fluorinated gases from vehicle air conditioning systems \nin France via the total emissions due to these gases in the transport sector (diesel, petrol, CNG, LPG and electric cars and LCVs).\n",
-    "titre": "air conditioning",
-    "optimized": true
-  },
-  "transport . voiture . par km personne": {
-    "formule": "empreinte au kilomètre / voyageurs",
-    "unité": "kgCO2e/km",
-    "titre": "per km person"
   },
   "transport . voiture . construction": {
     "formule": {
