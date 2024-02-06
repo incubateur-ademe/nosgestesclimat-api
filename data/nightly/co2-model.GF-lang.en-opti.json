@@ -8083,11 +8083,12 @@
         "loisirs",
         "siège",
         "voiture",
-        "communs"
+        "6.597"
       ]
     },
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "passenger volume"
+    "titre": "passenger volume",
+    "optimized": true
   },
   "futureco-data . transport . ferry . volume utile": {
     "question": "What is the useful volume of the boat?",
@@ -8132,12 +8133,6 @@
     "unité": "m3",
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "car"
-  },
-  "futureco-data . transport . ferry . volume passager . communs": {
-    "formule": "volume communs / 600",
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "common",
-    "optimized": true
   },
   "futureco-data . transport . ferry . cabines nécessaires": {
     "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nFor the moment, we assume that there are only 4-seater cabins.",
@@ -8199,28 +8194,22 @@
     "optimized": true
   },
   "futureco-data . transport . ferry . surface . siège": {
-    "formule": "sièges / siège . nombre",
     "unité": "m2",
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "headquarters"
-  },
-  "futureco-data . transport . ferry . siège . nombre": {
-    "injecté": "oui",
-    "question": "What is the total number of passenger seats?",
-    "par défaut": 281,
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "number"
+    "titre": "headquarters",
+    "valeur": "3.8967971530249113",
+    "optimized": true
   },
   "futureco-data . transport . ferry . volume passager . voiture . majoré": {
     "titre": "Car garage volume",
-    "formule": "(2.7 * 6) * hauteur moyenne garage",
     "unité": "m3",
     "note": "We assume that some cars park in a garage with a high deck height, so let's apply the area-weighted average.",
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
+    "valeur": "80.29820893422442",
     "optimized": true
   },
   "futureco-data . transport . ferry . hauteur moyenne garage": {
-    "formule": "((surface . garage . bas * 2.7) + (surface . garage . haut * hauteur pont haut)) / surface . garage",
+    "formule": "((surface . garage . bas * 2.7) + (surface . garage . haut * hauteur pont haut)) / 14215",
     "unité": "m",
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "average garage height",
@@ -8233,11 +8222,6 @@
     "titre": "height of high bridge",
     "optimized": true
   },
-  "futureco-data . transport . ferry . surface . garage": {
-    "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
-    "titre": "garage",
-    "formule": "bas + haut"
-  },
   "futureco-data . transport . ferry . volume communs": {
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "common volumes",
@@ -8247,7 +8231,8 @@
   "futureco-data . transport . ferry . volume garage": {
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "garage volume",
-    "formule": "hauteur moyenne garage * surface . garage"
+    "formule": "hauteur moyenne garage * 14215",
+    "optimized": true
   },
   "futureco-data . transport . ferry . vitesse moyenne . métrique": {
     "titre": "Average ferry speed",
@@ -8308,9 +8293,9 @@
     "titre": "orthodromic"
   },
   "futureco-data . transport . ferry . cabine . nombre": {
-    "injecté": "oui",
+    "question technique": "Quel est le nombre total de cabines passager ?",
+    "valeur": 255,
     "question": null,
-    "par défaut": 255,
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "number"
   },
@@ -8329,51 +8314,51 @@
     "titre": "car"
   },
   "futureco-data . transport . ferry . surface . garage . bas": {
-    "injecté": "oui",
-    "question": null,
-    "par défaut": 2334,
+    "question technique": "Quelle est la surface de garage bas du bateau ?",
+    "valeur": 2334,
     "unité": "m2",
+    "question": null,
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "bottom"
   },
   "futureco-data . transport . ferry . surface . garage . haut": {
-    "injecté": "oui",
-    "question": null,
-    "par défaut": 11881,
+    "question technique": "Quelle est la surface de garage haut du bateau ?",
+    "valeur": 11881,
     "unité": "m2",
+    "question": null,
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "top"
   },
   "futureco-data . transport . ferry . surface . cabines": {
-    "injecté": "oui",
-    "question": null,
-    "par défaut": 7356,
+    "question technique": "Quelle est la surface totale des cabines ?",
+    "valeur": 7356,
     "unité": "m2",
+    "question": null,
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "cabins"
   },
   "futureco-data . transport . ferry . surface . sièges": {
-    "injecté": "oui",
-    "question": null,
-    "par défaut": 1095,
+    "question technique": "Quelle est la surface totale des sièges ?",
+    "valeur": 1095,
     "unité": "m2",
+    "question": null,
     "description": "> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.",
     "titre": "seats"
   },
   "futureco-data . transport . ferry . surface . loisirs": {
-    "injecté": "oui",
-    "question": null,
+    "question technique": "Quelle est la surface dédiée aux loisirs ?",
     "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nRestaurants, bars, lounges, games, shops, swimming pools, etc.",
-    "par défaut": 4762,
+    "valeur": 4762,
     "unité": "m2",
+    "question": null,
     "titre": "leisure"
   },
   "futureco-data . transport . ferry . surface . communs": {
-    "injecté": "oui",
-    "question": null,
+    "question technique": "Quelle est la surface des zones communes à tous les passagers ?",
     "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nThis includes staircases, seating in lounges other than bars or restaurants, and interior corridors. By convention, uncovered outdoor surfaces are not included, except for the obvious leisure areas: swimming pools and outdoor bars.\n",
-    "par défaut": 1466,
+    "valeur": 1466,
     "unité": "m2",
+    "question": null,
     "titre": "common"
   },
   "futureco-data . transport . ferry . vitesse": {

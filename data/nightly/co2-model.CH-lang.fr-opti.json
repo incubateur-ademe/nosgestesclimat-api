@@ -7496,7 +7496,7 @@
   "futureco-data . transport . ferry . empreinte par km volume": {
     "titre": "Empreinte par km et passager",
     "formule": "empreinte du bateau * part du volume",
-    "description": "\n> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).\n\n\nVoici notre objectif : estimer l'empreinte d'un passager sur les ferries de voyage comme ceux qui relient la métropole à la Corse et à l'Angleterre.\n\nLe ferry est souvent proposé comme alternative sérieuse à l’avion du point de vue de l'empreinte carbone, mais il n’existait pourtant aucune estimation de son empreinte climat au kilomètre (ni ADEME en France, ni à l’international, ni dans la littérature scientifique) qui prenne en compte non pas un passager moyen, mais la diversité des options d'un billet : \n\n- passager en voiture ou non\n- passager en cabine, en siège, ou au sol\n- équipement loisir du bateau : restaurant, bar, piscine, grand couloirs, etc.\n- le fret embarqué dans les camions\n- % de remplissage du bateau\n- vitesse\n- etc\n\nNous savons combien un ferry donné émet de gaz à effet de serre (GES) : il suffit en somme de multipler sa consommation de fioul par le ou les facteurs d'émission CO2e du fioul et autres carburants utilisés. Mais la difficulté est ensuite d'attribuer une part de ces GES au passager à pied, au passager seul dans sa voiture qui profite d'un lounge VIP, et au transport de marchandises, etc. \n\nLe principe de calcul adopté ici est simple : nous attribuons une empreinte selon le volume que le billet acheté par le voyageur et les choix de consommation faits à bord occupent sur le bateau. \n\nVoici la [note de méthode](https://hackmd.io/@laem/empreinte-ferry) (~20 pages) qui explique le problème qu'on veut résoudre et les possibilités pour faire le calcul, mais qui reste théorique.\n\nEnsuite, concrètement, vous pouvez parcourir ci-dessous de façon intéractive et complète le calcul du facteur d'émission dynamique juste ci-dessous ⬇️.\n\nFinalement, n'hésitez pas à faire des propositions de modification du modèle, soit via une pull request sur [github](https://github.com/laem/futureco/blob/master/source/sites/publicodes/ferry/index.yaml) soit via un simple commentaire sur [ce ticket](https://github.com/laem/futureco/issues/123).\n\nEn pratique, nous le faisons sur le bateau type Mega Express Four tout simplement car nous en disposons des plans assez détaillés. Le travail devrait être fait pour d'autres navires par la suite.\n\n![Le Mega Express Four en navigation sur la Mediterranée](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/02_Corsica_Ferries_Mega_Express_Four_\\(cropped\\).jpg/640px-02_Corsica_Ferries_Mega_Express_Four_\\(cropped\\).jpg)\n*[Plus d'infos sur le Mega Express Four](https://fr.wikipedia.org/wiki/Mega_Express_Four)*\n\nLe calcul des différentes surfaces est issu d'[un dessin SVG](https://futur.eco/ferry/surface-mega-express-four) sur un plan des ponts du navire, qui nous permet ensuite d'en déduire les volumes, et qui est donc une des clefs du calcul. \n\n### Limites du calcul\n\nUn biais à noter serait la non exactitude de ce plan du ferry et des mesures qui y sont faites. Il parait cependant assez fiable pour un ordre de grandeur, ce qui est notre but ici.\n\nUn autre biais est évidemment le choix de ce qui est comptabilisé comme surface utile ou non. Nous avons par exemple exclu les ponts à l'air libre, sauf la piscine et les bars extérieurs.\nÉvidemment, le calcul n'est donc applicable strictement qu'à ce bateau, mais nous faisons le choix de l'extrapoler comme un bateau type faute d'avoir les ressources pour modéliser chaque bateau commercial.\n\nVoir également ce [ticket](https://github.com/laem/futureco/issues/123) pour lire et contribuer aux limites du calcul.\n",
+    "description": "\n> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).\n\n\nVoici notre objectif : estimer l'empreinte d'un passager sur les ferries de voyage comme ceux qui relient la métropole à la Corse et à l'Angleterre.\n\nLe ferry est souvent proposé comme alternative sérieuse à l’avion du point de vue de l'empreinte carbone, mais il n’existait pourtant aucune estimation de son empreinte climat au kilomètre (ni ADEME en France, ni à l’international, ni dans la littérature scientifique) qui prenne en compte non pas un passager moyen, mais la diversité des options d'un billet : \n\n- passager en voiture ou non\n- passager en cabine, en siège, ou au sol\n- équipement loisir du bateau : restaurant, bar, piscine, grand couloirs, etc.\n- le fret embarqué dans les camions\n- % de remplissage du bateau\n- vitesse\n- etc\n\nNous savons combien un ferry donné émet de gaz à effet de serre (GES) : il suffit en somme de multipler sa consommation de fioul par le ou les facteurs d'émission CO2e du fioul et autres carburants utilisés. Mais la difficulté est ensuite d'attribuer une part de ces GES au passager à pied, au passager seul dans sa voiture qui profite d'un lounge VIP, et au transport de marchandises, etc. \n\nLe principe de calcul adopté ici est simple : nous attribuons une empreinte selon le volume que le billet acheté par le voyageur et les choix de consommation faits à bord occupent sur le bateau. \n\nVoici la [note de méthode](https://hackmd.io/@laem/empreinte-ferry) (~20 pages) qui explique le problème qu'on veut résoudre et les possibilités pour faire le calcul, mais qui reste théorique.\n\nEnsuite, concrètement, vous pouvez parcourir ci-dessous de façon intéractive et complète le calcul du facteur d'émission dynamique juste ci-dessous ⬇️.\n\nFinalement, n'hésitez pas à faire des propositions de modification du modèle, soit via une pull request sur [github](https://github.com/laem/futureco/blob/master/source/sites/publicodes/ferry/index.yaml) soit via un simple commentaire sur [ce ticket](https://github.com/laem/futureco/issues/123).\n\nEn pratique, nous le faisons sur le bateau type Mega Express Four tout simplement car nous en disposons des plans assez détaillés. Le travail devrait être fait pour d'autres navires par la suite.\n\n![Le Mega Express Four en navigation sur la Mediterranée](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/02_Corsica_Ferries_Mega_Express_Four_\\(cropped\\).jpg/640px-02_Corsica_Ferries_Mega_Express_Four_\\(cropped\\).jpg)\n*[Plus d'infos sur le Mega Express Four](https://fr.wikipedia.org/wiki/Mega_Express_Four)*\n\nLe calcul des différentes surfaces est issu d'[un dessin SVG](https://futur.eco/ferry-surface-mega-express-four) sur un plan des ponts du navire, qui nous permet ensuite d'en déduire les volumes, et qui est donc une des clefs du calcul. \n\n### Limites du calcul\n\nUn biais à noter serait la non exactitude de ce plan du ferry et des mesures qui y sont faites. Il parait cependant assez fiable pour un ordre de grandeur, ce qui est notre but ici.\n\nUn autre biais est évidemment le choix de ce qui est comptabilisé comme surface utile ou non. Nous avons par exemple exclu les ponts à l'air libre, sauf la piscine et les bars extérieurs.\nÉvidemment, le calcul n'est donc applicable strictement qu'à ce bateau, mais nous faisons le choix de l'extrapoler comme un bateau type faute d'avoir les ressources pour modéliser chaque bateau commercial.\n\nVoir également ce [ticket](https://github.com/laem/futureco/issues/123) pour lire et contribuer aux limites du calcul.\n",
     "unité": "kgCO2e/km"
   },
   "futureco-data . transport . ferry . empreinte du bateau": {
@@ -7570,14 +7570,15 @@
         "loisirs",
         "siège",
         "voiture",
-        "communs"
+        "6.597"
       ]
     },
-    "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data)."
+    "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).",
+    "optimized": true
   },
   "futureco-data . transport . ferry . volume utile": {
     "question": "Quel est le volume utile du bateau ?",
-    "description": "\n> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).\n\n\nOn appelle ici volume utile la somme de toutes les surfaces qui ne sont pas l'infrastructure elle-même du bateau, sa sécurité, son équipage, etc.\n\n> Le calcul des différentes surfaces est isssu d'[un dessin SVG](https://futur.eco/ferry/surface-mega-express-four) sur un plan des ponts du navire, qui nous permet ensuite d'en déduire les volumes\n",
+    "description": "\n> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).\n\n\nOn appelle ici volume utile la somme de toutes les surfaces qui ne sont pas l'infrastructure elle-même du bateau, sa sécurité, son équipage, etc.\n\n> Le calcul des différentes surfaces est isssu d'[un dessin SVG](https://futur.eco/ferry-surface-mega-express-four) sur un plan des ponts du navire, qui nous permet ensuite d'en déduire les volumes\n",
     "unité": "m3",
     "formule": {
       "somme": [
@@ -7614,11 +7615,6 @@
     "note": "Ici nous décidons de ne pas voir la capacité en voiture et diviser la surface voiture par ce nombre, car les différentes zones de garage peuvent accomoder aussi bien des voitures que des camions.\n",
     "unité": "m3",
     "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data)."
-  },
-  "futureco-data . transport . ferry . volume passager . communs": {
-    "formule": "volume communs / 600",
-    "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).",
-    "optimized": true
   },
   "futureco-data . transport . ferry . cabines nécessaires": {
     "description": "\n> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).\n\n\nOn part pour l'instant du principe qu'il n'y a que des cabines 4 places.",
@@ -7675,26 +7671,21 @@
     "optimized": true
   },
   "futureco-data . transport . ferry . surface . siège": {
-    "formule": "sièges / siège . nombre",
     "unité": "m2",
-    "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data)."
-  },
-  "futureco-data . transport . ferry . siège . nombre": {
-    "injecté": "oui",
-    "question": "Quel est le nombre total de sièges passager ?",
-    "par défaut": 281,
-    "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data)."
+    "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).",
+    "valeur": "3.8967971530249113",
+    "optimized": true
   },
   "futureco-data . transport . ferry . volume passager . voiture . majoré": {
     "titre": "Volume garage voiture",
-    "formule": "(2.7 * 6) * hauteur moyenne garage",
     "unité": "m3",
     "note": "Nous partons du principe que certaines voitures se garent dans un garage dont la hauteur du pont haut, donc appliquons la moyenne pondérée par la surface.",
     "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).",
+    "valeur": "80.29820893422442",
     "optimized": true
   },
   "futureco-data . transport . ferry . hauteur moyenne garage": {
-    "formule": "((surface . garage . bas * 2.7) + (surface . garage . haut * hauteur pont haut)) / surface . garage",
+    "formule": "((surface . garage . bas * 2.7) + (surface . garage . haut * hauteur pont haut)) / 14215",
     "unité": "m",
     "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).",
     "optimized": true
@@ -7705,10 +7696,6 @@
     "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).",
     "optimized": true
   },
-  "futureco-data . transport . ferry . surface . garage": {
-    "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).",
-    "formule": "bas + haut"
-  },
   "futureco-data . transport . ferry . volume communs": {
     "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).",
     "formule": "2.7 * surface . communs",
@@ -7716,7 +7703,8 @@
   },
   "futureco-data . transport . ferry . volume garage": {
     "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).",
-    "formule": "hauteur moyenne garage * surface . garage"
+    "formule": "hauteur moyenne garage * 14215",
+    "optimized": true
   },
   "futureco-data . transport . ferry . vitesse moyenne . métrique": {
     "titre": "Vitesse moyenne ferry",
@@ -7773,9 +7761,9 @@
     }
   },
   "futureco-data . transport . ferry . cabine . nombre": {
-    "injecté": "oui",
+    "question technique": "Quel est le nombre total de cabines passager ?",
+    "valeur": 255,
     "question": null,
-    "par défaut": 255,
     "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data)."
   },
   "futureco-data . transport . ferry . consommation de services": {
@@ -7791,46 +7779,46 @@
     "par défaut": "oui"
   },
   "futureco-data . transport . ferry . surface . garage . bas": {
-    "injecté": "oui",
-    "question": null,
-    "par défaut": 2334,
+    "question technique": "Quelle est la surface de garage bas du bateau ?",
+    "valeur": 2334,
     "unité": "m2",
+    "question": null,
     "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data)."
   },
   "futureco-data . transport . ferry . surface . garage . haut": {
-    "injecté": "oui",
-    "question": null,
-    "par défaut": 11881,
+    "question technique": "Quelle est la surface de garage haut du bateau ?",
+    "valeur": 11881,
     "unité": "m2",
+    "question": null,
     "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data)."
   },
   "futureco-data . transport . ferry . surface . cabines": {
-    "injecté": "oui",
-    "question": null,
-    "par défaut": 7356,
+    "question technique": "Quelle est la surface totale des cabines ?",
+    "valeur": 7356,
     "unité": "m2",
+    "question": null,
     "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data)."
   },
   "futureco-data . transport . ferry . surface . sièges": {
-    "injecté": "oui",
-    "question": null,
-    "par défaut": 1095,
+    "question technique": "Quelle est la surface totale des sièges ?",
+    "valeur": 1095,
     "unité": "m2",
+    "question": null,
     "description": "> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data)."
   },
   "futureco-data . transport . ferry . surface . loisirs": {
-    "injecté": "oui",
-    "question": null,
+    "question technique": "Quelle est la surface dédiée aux loisirs ?",
     "description": "\n> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).\n\n\nRestaurants, bars, salons, jeux, commerces, piscines, etc.",
-    "par défaut": 4762,
-    "unité": "m2"
+    "valeur": 4762,
+    "unité": "m2",
+    "question": null
   },
   "futureco-data . transport . ferry . surface . communs": {
-    "injecté": "oui",
-    "question": null,
+    "question technique": "Quelle est la surface des zones communes à tous les passagers ?",
     "description": "\n> ℹ️ Cette règle provient du modèle [`futureco-data`](https://github.com/laem/futureco-data).\n\n\nCela inclut les escaliers, des places assises en salon hors bar ou restaurant, les couloirs intérieurs. Par convention, on n'inclut pas les surfaces extérieures non couvertes, sauf les espaces de loisir évidents : la piscine et les bars extérieurs.\n",
-    "par défaut": 1466,
-    "unité": "m2"
+    "valeur": 1466,
+    "unité": "m2",
+    "question": null
   },
   "futureco-data . transport . ferry . vitesse": {
     "icônes": "⌚",
