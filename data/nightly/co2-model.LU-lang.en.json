@@ -14692,6 +14692,39 @@
     "unité": "km",
     "note": "Page 80 of the<a href=\"https://librairie.ademe.fr/cadic/7353/enquete-autopartage-2022-rapport.pdf\">National Carsharing 2022</a> Survey:\n\n> \"The data communicated by the operators allow us to retain the hypothesis of an average of 15,130 kilometers traveled per year per car-sharing car.\"\n"
   },
+  "ui . organisations": null,
+  "ui . organisations . roule en vélo": {
+    "titre": "Ride your bike",
+    "formule": {
+      "une de ces conditions": [
+        "transport . mobilité douce . vélo . présent",
+        "transport . mobilité douce . vae . présent"
+      ]
+    }
+  },
+  "ui . organisations . roule en voiture": {
+    "titre": "Drive your car",
+    "formule": {
+      "toutes ces conditions": [
+        "transport . voiture . km > 0"
+      ]
+    }
+  },
+  "ui . organisations . est végétarien": {
+    "titre": "Is vegetarian",
+    "formule": {
+      "toutes ces conditions": [
+        "alimentation . plats . viande 1 . nombre = 0",
+        "alimentation . plats . viande 2 . nombre = 0",
+        "alimentation . plats . poisson 1 . nombre = 0",
+        "alimentation . plats . poisson 2 . nombre = 0"
+      ]
+    }
+  },
+  "ui": {
+    "description": "These rules are used for display on the <a href=\"https://github.com/incubateur-ademe/nosgestesclimat-site-nextjs\">site</a> and in the <a href=\"https://github.com/incubateur-ademe/nosgestesclimat-server\">backend</a>.",
+    "titre": "ui"
+  },
   "commun": null,
   "logement . eau": null,
   "logement . piscine . construction . béton . type": null,
