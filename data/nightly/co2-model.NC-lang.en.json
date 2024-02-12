@@ -4067,7 +4067,7 @@
         "poisson 2 . nombre"
       ],
       "suggestions": {
-        "i am vegan": {
+        "I am vegan": {
           "végétalien . nombre": 14,
           "végétarien . nombre": 0,
           "viande 1 . nombre": 0,
@@ -4075,7 +4075,7 @@
           "poisson 1 . nombre": 0,
           "poisson 2 . nombre": 0
         },
-        "i am vegetarian": {
+        "I am vegetarian": {
           "végétalien . nombre": 3,
           "végétarien . nombre": 11,
           "viande 1 . nombre": 0,
@@ -4083,7 +4083,7 @@
           "poisson 1 . nombre": 0,
           "poisson 2 . nombre": 0
         },
-        "i eat little meat": {
+        "I eat little meat": {
           "végétalien . nombre": 1,
           "végétarien . nombre": 7,
           "viande 1 . nombre": 4,
@@ -4091,7 +4091,7 @@
           "poisson 1 . nombre": 1,
           "poisson 2 . nombre": 1
         },
-        "i eat meat regularly": {
+        "I eat meat regularly": {
           "végétarien . nombre": 4,
           "végétalien . nombre": 0,
           "viande 1 . nombre": 6,
@@ -4099,7 +4099,7 @@
           "poisson 1 . nombre": 1,
           "poisson 2 . nombre": 1
         },
-        "i eat a lot of meat": {
+        "I eat a lot of meat": {
           "végétalien . nombre": 0,
           "végétarien . nombre": 0,
           "viande 1 . nombre": 6,
@@ -4111,7 +4111,7 @@
     },
     "question": "Choose your lunch and dinner dishes for a typical week",
     "titre": "Footprint of 14 meals",
-    "description": "Choose 14 dishes that represent your typical week: 7 lunches and 7\ndinners.\n\n> Today we are working to ensure that the menus associated with your\n> meals are as representative as possible of your habits. Feel free to\n> go further by browsing [the\n> documentation](https://nosgestesclimat.fr/documentation/alimentation/plats).\n",
+    "description": "Choose the dishes that represent your typical week. \n\nA priori, you'll have 14: 7 lunches and 7 dinners. But you can also eat less, or more - it's perfectly possible!\n\n> We're currently working to ensure that the menus associated with your meals are as representative as possible of your habits, so don't hesitate to go further by browsing <a href=\"https://nosgestesclimat.fr/documentation/alimentation/plats\">the documentation</a>.\n",
     "formule": {
       "somme": [
         "végétalien",
@@ -12999,7 +12999,7 @@
   "futureco-data . transport . ferry . empreinte par km volume": {
     "titre": "Footprint per km and passenger",
     "formule": "empreinte du bateau * part du volume",
-    "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nHere's our goal: to estimate the footprint of a passenger on passenger ferries such as those linking mainland France to Corsica and England.\n\nThe ferry is often proposed as a serious alternative to air travel in terms of its carbon footprint, but there has never been any estimate of its climate footprint per kilometer (not by ADEME in France, nor internationally, nor in the scientific literature) that takes into account not the average passenger, but the diversity of ticket options: \n\n- passenger in car or not\n- passengers in cabins, seats or on the ground\n- the boat's leisure facilities: restaurant, bar, swimming pool, large corridors, etc.\n- freight loaded in trucks\n- boat fill rate\n- speed\n- etc\n\nWe know how much greenhouse gas (GHG) a given ferry emits: all we have to do is multiply its fuel consumption by the CO2e emission factor(s) of the fuel used. But the difficulty then lies in attributing a share of these GHGs to the passenger on foot, to the passenger alone in his or her car enjoying a VIP lounge, and to the transport of goods, and so on. \n\nThe calculation principle adopted here is simple: we attribute a footprint according to the volume that the ticket purchased by the passenger and the consumption choices made on board occupy on the ship. \n\nHere's the <a href=\"https://hackmd.io/@laem/empreinte-ferry\">method note</a> (~20 pages) which explains the problem we want to solve and the possibilities for making the calculation, but which remains theoretical.\n\nThen, in concrete terms, you can take an interactive and complete look at the calculation of the dynamic emission factor just below ⬇️.\n\nFinally, don't hesitate to make suggestions for modifying the model, either via a pull request on <a href=\"https://github.com/laem/futureco/blob/master/source/sites/publicodes/ferry/index.yaml\">github</a> or via a simple comment on <a href=\"https://github.com/laem/futureco/issues/123\">this ticket</a>.\n\nIn practice, we're doing this on the Mega Express Four type boat simply because we have fairly detailed plans of it. We expect to do the same for other ships in the future.\n\nthe Mega Express Four sailing on the Mediterranean](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/02_Corsica_Ferries_Mega_Express_Four_(cropped\\).jpg/640px-02_Corsica_Ferries_Mega_Express_Four_\\(cropped\\).jpg)\n<a href=\"https://fr.wikipedia.org/wiki/Mega_Express_Four\">More information on Mega Express Four*</a>\n\nThe calculation of the various surfaces is based on an<a href=\"https://futur.eco/ferry/surface-mega-express-four\">SVG drawing</a> of the ship's decks, which is then used to deduce the volumes, and is therefore one of the keys to the calculation. \n\n### Calculation limits\n\nA bias to note would be the non-accuracy of this ferry plan and the measurements made on it. However, it seems fairly reliable for an order of magnitude, which is our aim here.\n\nAnother bias is obviously the choice of what is counted as useful surface area and what is not. For example, we have excluded open-air decks, except for the swimming pool and outdoor bars.\nObviously, the calculation is only strictly applicable to this boat, but we've chosen to extrapolate it as a typical boat, as we don't have the resources to model every commercial boat.\n\nSee also this <a href=\"https://github.com/laem/futureco/issues/123\">ticket</a> to read and contribute to the limits of the calculation.\n",
+    "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nOur objective is to estimate the footprint of a passenger on passenger ferries such as those linking mainland France to Corsica and England.\n\nThe ferry is often proposed as a serious alternative to the plane in terms of carbon footprint, but there was no estimate of its climate footprint per kilometre (neither ADEME in France, nor internationally, nor in the scientific literature) that takes into account not an average passenger, but the diversity of options for a ticket: \n\n- passenger in car or not\n- passengers in cabins, seats or on the ground\n- the ship's leisure facilities: restaurant, bar, swimming pool, large corridors, etc.\n- freight loaded in trucks\n- % full on the boat\n- speed\n- etc\n\nWe know how much greenhouse gas (GHG) a given ferry emits: all we have to do is multiply its fuel consumption by the CO2e emission factor(s) of the fuel used. But the difficulty then lies in attributing a share of these GHGs to the passenger on foot, to the passenger alone in his or her car enjoying a VIP lounge, to the transport of goods, and so on. \n\nThe calculation principle adopted here is simple: we allocate a footprint according to the volume that the ticket purchased by the passenger and the consumption choices made on board occupy on the boat. \n\nHere is the <a href=\"https://hackmd.io/@laem/empreinte-ferry\">method note</a> (~20 pages) which explains the problem we want to solve and the possibilities for making the calculation, but which remains theoretical.\n\nThen, in concrete terms, you can take an interactive and complete look at the calculation of the dynamic emission factor just below ⬇️.\n\nFinally, don't hesitate to make suggestions for modifying the model, either via a pull request on <a href=\"https://github.com/laem/futureco/blob/master/source/sites/publicodes/ferry/index.yaml\">github</a> or via a simple comment on <a href=\"https://github.com/laem/futureco/issues/123\">this ticket</a>.\n\nIn practice, we're doing this on the Mega Express Four type boat simply because we have fairly detailed plans of it. The work should be done for other ships in the future.\n\nthe Mega Express Four sailing on the Mediterranean](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/02_Corsica_Ferries_Mega_Express_Four_(cropped\\).jpg/640px-02_Corsica_Ferries_Mega_Express_Four_\\(cropped\\).jpg)\n<a href=\"https://fr.wikipedia.org/wiki/Mega_Express_Four\">More information on the Mega Express Four*</a>\n\nThe calculation of the various surfaces is based on an<a href=\"https://futur.eco/ferry-surface-mega-express-four\">SVG drawing</a> on a plan of the ship's decks, which then allows us to deduce the volumes, and is therefore one of the keys to the calculation. \n\n### Limits of the calculation\n\nA bias to be noted would be the inaccuracy of this plan of the ferry and the measurements made on it. However, it seems fairly reliable for an order of magnitude, which is our aim here.\n\nAnother bias is obviously the choice of what is counted as useful surface area and what is not. For example, we have excluded the open-air decks, except for the swimming pool and outdoor bars.\nObviously, the calculation is only strictly applicable to this boat, but we have chosen to extrapolate it as a typical boat because we don't have the resources to model every commercial boat.\n\nSee also this <a href=\"https://github.com/laem/futureco/issues/123\">ticket</a> to read and contribute to the limits of the calculation.\n",
     "unité": "kgCO2e/km"
   },
   "futureco-data . transport . ferry . empreinte du bateau": {
@@ -13097,7 +13097,7 @@
   },
   "futureco-data . transport . ferry . volume utile": {
     "question": "What is the useful volume of the boat?",
-    "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nHere, \"useful volume\" means the sum of all surfaces other than the boat's own infrastructure, safety, crew, etc.\n\n> The calculation of the various surfaces is based on an<a href=\"https://futur.eco/ferry/surface-mega-express-four\">SVG drawing</a> of the ship's decks, which we then use to deduce the volumes\n",
+    "description": "\n> ℹ️ This rule comes from the <a href=\"https://github.com/laem/futureco-data\">`futureco-data`</a> model.\n\n\nHere we call the useful volume the sum of all the surfaces that are not the boat's infrastructure itself, its safety, its crew, etc.\n\n> The calculation of the various surfaces is based on an<a href=\"https://futur.eco/ferry-surface-mega-express-four\">SVG drawing</a> of the ship's decks, which we can then use to deduce the volumes\n",
     "unité": "m3",
     "formule": {
       "somme": [
