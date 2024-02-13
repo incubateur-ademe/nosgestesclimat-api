@@ -3739,7 +3739,7 @@
       "type": "nombre",
       "options": [
         "réfrigérateur . nombre",
-        "mini réfrigérateur . nombre",
+        "petit réfrigérateur . nombre",
         "congélateur . nombre",
         "lave-linge . nombre",
         "sèche-linge . nombre",
@@ -3756,7 +3756,7 @@
       "suggestions": {
         "none": {
           "réfrigérateur . nombre": 0,
-          "mini réfrigérateur . nombre": 0,
+          "petit réfrigérateur . nombre": 0,
           "congélateur . nombre": 0,
           "lave-linge . nombre": 0,
           "sèche-linge . nombre": 0,
@@ -3777,7 +3777,7 @@
     "formule": {
       "somme": [
         "réfrigérateur",
-        "mini réfrigérateur",
+        "petit réfrigérateur",
         "congélateur",
         "lave-linge",
         "sèche-linge",
@@ -3808,25 +3808,32 @@
   },
   "divers . électroménager . appareils . réfrigérateur": {
     "titre": "Combined refrigerator",
-    "note": "A refrigerator with a built-in freezer. Often simply called a large fridge or sometimes American fridge.",
+    "note": "A refrigerator with a freezer section (215 + 79 litres). Often simply called a large fridge or sometimes an American fridge.",
     "icônes": "🍅",
     "formule": "empreinte amortie * nombre",
     "unité": "kgCO2e"
   },
-  "divers . électroménager . appareils . mini réfrigérateur . empreinte amortie": {
-    "titre": "Dampened mini fridge footprint",
-    "formule": "87.6 / (10 * coefficient préservation)",
+  "divers . électroménager . appareils . petit réfrigérateur . empreinte amortie": {
+    "titre": "Cushioned small refrigerator footprint",
+    "formule": "petit réfrigérateur . empreinte / (10 * coefficient préservation)",
     "unité": "kgCO2e",
     "optimized": true
   },
-  "divers . électroménager . appareils . mini réfrigérateur . nombre": {
-    "titre": "Number of mini-fridges",
-    "question": "How many mini-fridges do you have?",
+  "divers . électroménager . appareils . petit réfrigérateur . empreinte": {
+    "titre": "Small refrigerator footprint",
+    "formule": "257 / 2",
+    "unité": "kgCO2e",
+    "note": "As there is no emission factor for a small (sub-floor) fridge in the Empreinte database, we have chosen to consider its footprint to be equivalent to that of a half-cabinet size combined fridge. \nA sub-floor fridge has an average capacity of just over 100 litres, including 15 litres for freezing, compared with 200 + 80 litres for a combined fridge. It weighs between 25 and 35 kg, compared with 60 to 70 kg for a combined fridge.\n",
+    "optimized": true
+  },
+  "divers . électroménager . appareils . petit réfrigérateur . nombre": {
+    "titre": "Number of small fridges",
+    "question": "How many small fridges do you have?",
     "plancher": 0,
     "par défaut": 0
   },
-  "divers . électroménager . appareils . mini réfrigérateur": {
-    "titre": "Mini fridge",
+  "divers . électroménager . appareils . petit réfrigérateur": {
+    "titre": "small fridge",
     "icônes": "🥒",
     "formule": "empreinte amortie * nombre",
     "unité": "kgCO2e"
@@ -9160,7 +9167,7 @@
     "titre": "motorization"
   },
   "transport . voiture . motorisation . thermique": {
-    "titre": "Thermal (diesel/petrol)"
+    "titre": "Thermal (diesel/petrol/LPG)"
   },
   "transport . voiture . motorisation . électrique": {
     "titre": "Electric"
@@ -9242,7 +9249,7 @@
         ]
       }
     },
-    "note": "The dominance of the diesel-gasoline combination is overwhelming <a href=\"https://www.leprogres.fr/magazine-automobile/2021/03/27/quels-sont-les-carburants-les-plus-utilises-dans-votre-commune\">.</a>\n\nOn the other hand, among new vehicles, gasoline now dominates.\n\nThe emission factor associated with E85 biofuel is not representative of the environmental consequences of biofuel use.\nIn fact, given the problems associated with land-use change and other environmental impacts linked to the cultivation of corn, for example, **biofuels** are not taken into account\n(the emission factor of the carbon base being particularly uncertain). See our discussions <a href=\"https://github.com/datagir/nosgestesclimat/pull/1324\">here</a>.\n",
+    "note": "The dominance of diesel and petrol is overwhelming <a href=\"https://www.leprogres.fr/magazine-automobile/2021/03/27/quels-sont-les-carburants-les-plus-utilises-dans-votre-commune\">.</a>\n\nHowever, among new vehicles, petrol now dominates.\n\nThe emission factor associated with E85 biofuel is not representative of the environmental consequences of using biofuels.\nIn view of the problems associated with land use change and other environmental impacts associated with the cultivation of maize, for example, **biofuels** are not taken into account\n(the carbon base emission factor being particularly uncertain). See our discussions <a href=\"https://github.com/datagir/nosgestesclimat/pull/1324\">here</a>.\n\nLPG (Liquefied Petroleum Gas) is a <a href=\"https://fr.wikipedia.org/wiki/Gaz_de_p%C3%A9trole_liqu%C3%A9fi%C3%A9\">residue from oil extraction that used to be burnt</a>. \nIt has a smaller carbon footprint per litre than petrol or diesel vehicles, although its consumption is slightly higher, which slightly offsets the gain.\nBut while CO2e emissions are almost the same for LPG as for other fuels, it is <a href=\"https://agirpourlatransition.ademe.fr/particuliers/conso/conso-responsable/comment-choisir-voiture-deux-roues-moins-polluant\">in terms of harmful particle emissions</a> that LPG comes out much better than other thermal fuels.\n",
     "titre": "fuel"
   },
   "transport . voiture . thermique . carburant . gazole B7 ou B10": {
@@ -9255,7 +9262,7 @@
     "titre": "E85 gasoline (biofuels)"
   },
   "transport . voiture . thermique . carburant . GPL": {
-    "titre": "GPL (Gaz de Pétrole Liquéfiés)"
+    "titre": "LPG (Liquefied Petroleum Gas)"
   },
   "transport . voiture . notif carburant": {
     "type": "notification",
