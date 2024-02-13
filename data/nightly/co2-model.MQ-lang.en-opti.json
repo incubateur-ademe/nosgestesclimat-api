@@ -9214,6 +9214,10 @@
         {
           "si": "carburant = 'essence E85'",
           "alors": 1.11
+        },
+        {
+          "si": "carburant = 'GPL'",
+          "alors": 1.86
         }
       ]
     },
@@ -9239,7 +9243,8 @@
         "possibilités": [
           "gazole B7 ou B10",
           "essence E5 ou E10",
-          "essence E85"
+          "essence E85",
+          "GPL"
         ]
       }
     },
@@ -9254,6 +9259,9 @@
   },
   "transport . voiture . thermique . carburant . essence E85": {
     "titre": "E85 gasoline (biofuels)"
+  },
+  "transport . voiture . thermique . carburant . GPL": {
+    "titre": "GPL (Gaz de Pétrole Liquéfiés)"
   },
   "transport . voiture . notif carburant": {
     "type": "notification",
