@@ -9275,7 +9275,7 @@
   "transport . voiture . notif carburant": {
     "type": "notification",
     "formule": "thermique . carburant = 'essence E85'",
-    "description": "Your vehicle runs on biofuel: in addition to the carbon footprint of biofuels, we need to be aware that they also have a footprint on the soil: this soil could be used to grow cereals to feed us, or serve as biodiversity refuges.\nThis is what we call \"land-use change\" here, for the purposes of biofuel production. Unfortunately, the climate impact of this land-use change is difficult to quantify and particularly uncertain.\n\nWe have chosen to include this option in the test, but it should be noted that this result **is not representative of the likely environmental consequences associated with the use of biofuels**\n",
+    "description": "Your vehicle runs on biofuel: in addition to the carbon footprint of biofuels, we need to be aware that they also have a footprint on the soil: this soil could be used to grow cereals to feed us or serve as a biodiversity refuge.\nThis is what is known as \"land use change\" here, for the purposes of biofuel production. Unfortunately, the impact on the climate of this change of use is difficult to quantify and particularly uncertain.\n\nWe have chosen to include this option in the test, but it should be noted that this result **is not representative of the likely environmental consequences associated with the use of biofuels**\n",
     "titre": "fuel notification"
   },
   "transport . voiture . électrique . empreinte au kilomètre": {
