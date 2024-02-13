@@ -1177,7 +1177,7 @@
       "recalcul": {
         "règle": "logement",
         "avec": {
-          "logement . saisie habitants": "logement . habitants + nombre colocataires",
+          "logement . habitants": "logement . habitants + nombre colocataires",
           "logement . vacances": 0
         }
       }
@@ -1189,7 +1189,7 @@
       "recalcul": {
         "règle": "divers . numérique . appareils",
         "avec": {
-          "logement . saisie habitants": "logement . habitants + nombre colocataires"
+          "logement . habitants": "logement . habitants + nombre colocataires"
         }
       }
     }
@@ -1199,7 +1199,7 @@
       "recalcul": {
         "règle": "divers . électroménager . appareils",
         "avec": {
-          "logement . saisie habitants": "logement . habitants + nombre colocataires"
+          "logement . habitants": "logement . habitants + nombre colocataires"
         }
       }
     }
@@ -1209,7 +1209,7 @@
       "recalcul": {
         "règle": "divers . ameublement",
         "avec": {
-          "logement . saisie habitants": "logement . habitants + nombre colocataires",
+          "logement . habitants": "logement . habitants + nombre colocataires",
           "divers . ameublement . meubles . matelas": 0,
           "divers . ameublement . meubles . lit": 0
         }
@@ -1530,7 +1530,7 @@
       "recalcul": {
         "règle": "transport . voiture",
         "avec": {
-          "transport . voiture . saisie voyageurs": 1,
+          "transport . voiture . voyageurs": 1,
           "transport . voiture . km": "boulot . distance"
         }
       }
@@ -1541,7 +1541,7 @@
       "recalcul": {
         "règle": "transport . voiture",
         "avec": {
-          "transport . voiture . saisie voyageurs": "boulot . covoiturage . nombre de voyageurs",
+          "transport . voiture . voyageurs": "boulot . covoiturage . nombre de voyageurs",
           "transport . voiture . km": "boulot . distance"
         }
       }
@@ -1991,23 +1991,27 @@
   "alimentation . boisson . chaude . café . nombre": {
     "question": "Nombre de cafés par semaine",
     "par défaut": 10,
+    "plancher": 0,
     "unité": "tasse/semaine",
     "note": "Un français moyen boit 500 tasses de café par an ([source](https://fr.statista.com/themes/10144/le-cafe-en-france/#topFacts))"
   },
   "alimentation . boisson . chaude . thé . nombre": {
     "question": "Nombre de thés par semaine",
     "par défaut": 3,
+    "plancher": 0,
     "unité": "tasse/semaine",
     "note": "Un français moyen consomme 250g de thé par an ([source](https://www.francesoir.fr/lifestyle-vie-quotidienne/le-boom-de-la-consommation-en-france)), soit 5 grammes par semaine. Nous avons estimé que cela correspondait approximativement à 3 tasses par semaine."
   },
   "alimentation . boisson . chaude . chocolat chaud . nombre": {
     "question": "Nombre de chocolats chauds par semaine",
     "par défaut": 0,
+    "plancher": 0,
     "unité": "tasse/semaine"
   },
   "alimentation . boisson . chaude . chicorée . nombre": {
     "question": "Nombre de tasses de chicorée par semaine",
     "par défaut": 0,
+    "plancher": 0,
     "unité": "tasse/semaine"
   },
   "alimentation . boisson . tasse de café": {
@@ -2176,6 +2180,7 @@
       "importante": 5
     },
     "par défaut": 1,
+    "plancher": 0,
     "unité": "l/semaine",
     "note": "La consommation de sodas et boissons sucrées en France est en moyenne de 50,9 litres par habitant ([source](https://www.sante-et-nutrition.com/consommation-soda-france/)) soit à peu près 1 litre par semaine."
   },
@@ -2199,6 +2204,7 @@
       "importante": 3
     },
     "par défaut": 1.5,
+    "plancher": 0,
     "unité": "l/semaine",
     "note": "La consommation d'alcool en France est de 79,6 litres d'alcool, tous alcools confondus, soit à peu près 1,5 litres par semaine ([source](https://www.insee.fr/fr/statistiques/4319377#graphique-figure2))"
   },
@@ -2487,6 +2493,7 @@
   "alimentation . plats . végétalien . nombre": {
     "question": "Nombre de plats végétaliens par semaine",
     "par défaut": 0,
+    "plancher": 0,
     "unité": "repas/semaine"
   },
   "alimentation . plats . végétarien": {
@@ -2513,6 +2520,7 @@
   "alimentation . plats . viande 1 . nombre": {
     "question": "Nombre de plats viande 1 par semaine",
     "par défaut": 5,
+    "plancher": 0,
     "unité": "repas/semaine"
   },
   "alimentation . plats . viande 2": {
@@ -2526,6 +2534,7 @@
   "alimentation . plats . viande 2 . nombre": {
     "question": "Nombre de plats viande 2 par semaine",
     "par défaut": 2,
+    "plancher": 0,
     "unité": "repas/semaine"
   },
   "alimentation . plats . poisson 1": {
@@ -2538,6 +2547,7 @@
   "alimentation . plats . poisson 1 . nombre": {
     "question": "Nombre de plats poisson 1 par semaine",
     "par défaut": 2,
+    "plancher": 0,
     "unité": "repas/semaine"
   },
   "alimentation . plats . poisson 2": {
@@ -2551,6 +2561,7 @@
   "alimentation . plats . poisson 2 . nombre": {
     "question": "Nombre de plats poisson 2 par semaine",
     "par défaut": 0,
+    "plancher": 0,
     "unité": "repas/semaine"
   },
   "alimentation . planétaire": {
@@ -3020,6 +3031,7 @@
   "divers . ameublement . meubles . armoire . nombre": {
     "titre": "Nombre d'armoires",
     "question": "Combien d'armoires possédez-vous ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . ameublement . meubles . armoire": {
@@ -3037,6 +3049,7 @@
   "divers . ameublement . meubles . canapé . nombre": {
     "titre": "Nombre de canapés",
     "question": "Combien de canapés possédez-vous ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . ameublement . meubles . canapé": {
@@ -3054,6 +3067,7 @@
   "divers . ameublement . meubles . matelas . nombre": {
     "titre": "Nombre de matelas",
     "question": "Combien de matelas possédez-vous ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . ameublement . meubles . matelas": {
@@ -3071,6 +3085,7 @@
   "divers . ameublement . meubles . lit . nombre": {
     "titre": "Nombre de lits",
     "question": "Combien de lits possédez-vous ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . ameublement . meubles . lit": {
@@ -3088,6 +3103,7 @@
   "divers . ameublement . meubles . table . nombre": {
     "titre": "Nombre de tables",
     "question": "Combien de tables possédez-vous ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . ameublement . meubles . table": {
@@ -3105,6 +3121,7 @@
   "divers . ameublement . meubles . chaise . nombre": {
     "titre": "Nombre de chaises",
     "question": "Combien de chaises possédez-vous ?",
+    "plancher": 0,
     "par défaut": 4
   },
   "divers . ameublement . meubles . chaise": {
@@ -3129,6 +3146,7 @@
   "divers . ameublement . meubles . petit meuble . nombre": {
     "titre": "Nombre de petits meubles",
     "question": "Combien de petits meubles possédez-vous ?",
+    "plancher": 0,
     "par défaut": 3
   },
   "divers . ameublement . meubles . petit meuble": {
@@ -3154,6 +3172,7 @@
   "divers . ameublement . meubles . grand meuble . nombre": {
     "titre": "Nombre de grands meubles",
     "question": "Combien de grands meubles (non inclu ailleurs) possédez-vous ?",
+    "plancher": 0,
     "par défaut": 5
   },
   "divers . ameublement . meubles . grand meuble": {
@@ -3210,6 +3229,7 @@
   },
   "divers . animaux domestiques . empreinte . chats . nombre": {
     "question": "Combien de chats possédez-vous dans votre foyer ?",
+    "plancher": 0,
     "par défaut": 0.49
   },
   "divers . animaux domestiques . empreinte . chats . empreinte": {
@@ -3277,6 +3297,7 @@
   },
   "divers . animaux domestiques . empreinte . petit chien . nombre": {
     "question": "Combien de chiens possédez-vous dans votre foyer ?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . animaux domestiques . empreinte . petit chien . empreinte": {
@@ -3308,6 +3329,7 @@
   },
   "divers . animaux domestiques . empreinte . chien moyen . nombre": {
     "question": "Combien de chiens possédez-vous dans votre foyer ?",
+    "plancher": 0,
     "par défaut": 0.25
   },
   "divers . animaux domestiques . empreinte . chien moyen . empreinte": {
@@ -3339,6 +3361,7 @@
   },
   "divers . animaux domestiques . empreinte . gros chien . nombre": {
     "question": "Combien de chiens possédez-vous dans votre foyer ?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . animaux domestiques . empreinte . gros chien . empreinte": {
@@ -3594,6 +3617,7 @@
   "divers . électroménager . appareils . réfrigérateur . nombre": {
     "titre": "Nombre de réfrigérateur",
     "question": "Combien de réfrigérateurs possédez-vous ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . réfrigérateur": {
@@ -3612,6 +3636,7 @@
   "divers . électroménager . appareils . mini réfrigérateur . nombre": {
     "titre": "Nombre de mini réfrigérateur",
     "question": "Combien de mini réfrigérateur possédez-vous ?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . électroménager . appareils . mini réfrigérateur": {
@@ -3629,6 +3654,7 @@
   "divers . électroménager . appareils . congélateur . nombre": {
     "titre": "Nombre de congélateur",
     "question": "Combien de congélateurs possédez-vous ?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . électroménager . appareils . congélateur": {
@@ -3646,6 +3672,7 @@
   "divers . électroménager . appareils . lave-linge . nombre": {
     "titre": "Nombre de lave-linge",
     "question": "Combien de lave-linge possédez-vous ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . lave-linge": {
@@ -3663,6 +3690,7 @@
   "divers . électroménager . appareils . sèche-linge . nombre": {
     "titre": "Nombre de sèche-linge",
     "question": "Combien de sèche-linge possédez-vous ?",
+    "plancher": 0,
     "par défaut": {
       "variations": [
         {
@@ -3717,6 +3745,7 @@
   "divers . électroménager . appareils . hotte . nombre": {
     "titre": "Nombre de hotte",
     "question": "Combien de hotte possédez-vous ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . hotte": {
@@ -3734,6 +3763,7 @@
   "divers . électroménager . appareils . four . nombre": {
     "titre": "Nombre de four",
     "question": "Combien de fours possédez-vous ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . four": {
@@ -3751,6 +3781,7 @@
   "divers . électroménager . appareils . micro-onde . nombre": {
     "titre": "Nombre de micro-onde",
     "question": "Combien de micro-ondes possédez-vous ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . micro-onde": {
@@ -3768,6 +3799,7 @@
   "divers . électroménager . appareils . plaques . nombre": {
     "titre": "Nombre de plaques",
     "question": "Combien de plaques possédez-vous ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . plaques": {
@@ -3785,6 +3817,7 @@
   "divers . électroménager . appareils . bouilloire . nombre": {
     "titre": "Nombre de bouilloire",
     "question": "Combien de bouilloire possédez-vous ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . bouilloire": {
@@ -3802,6 +3835,7 @@
   "divers . électroménager . appareils . cafetière . nombre": {
     "titre": "Nombre de cafetière",
     "question": "Combien de cafetière possédez-vous ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . cafetière": {
@@ -3819,6 +3853,7 @@
   "divers . électroménager . appareils . aspirateur . nombre": {
     "titre": "Nombre de aspirateur",
     "question": "Combien de aspirateur possédez-vous ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . aspirateur": {
@@ -3836,6 +3871,7 @@
   "divers . électroménager . appareils . robot cuisine . nombre": {
     "titre": "Nombre de robot cuisine",
     "question": "Combien de robot cuisine possédez-vous ?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . électroménager . appareils . robot cuisine": {
@@ -4428,6 +4464,7 @@
     "question": "Combien d'heures passez-vous par jour sur internet hors bureau (envoi de mails, surf Web, streaming vidéo, etc.) ?",
     "description": "Comptez seulement une estimation à la louche de vos heures d'utilisation personnelle (soir, week-end) car ce que vous faites au travail entre dans la comptabilité de votre entreprise ou organisation.",
     "unité": "h/jour",
+    "plancher": 0,
     "par défaut": 2.3,
     "suggestions": {
       "zéro": 0,
@@ -4552,6 +4589,7 @@
   "divers . numérique . appareils . téléphone . nombre": {
     "titre": "Nombre de téléphones",
     "question": "Utilisez-vous un téléphone ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . numérique . appareils . téléphone . empreinte": {
@@ -4571,6 +4609,7 @@
     "titre": "Nombre d'appareils photos",
     "note": "On range l'appareil photo dans la catégorie numérique vu la rareté des appareils argentiques aujourd'hui.",
     "question": "Utilisez-vous un appareil photo ?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . home cinéma": {
@@ -4582,6 +4621,7 @@
   "divers . numérique . appareils . home cinéma . nombre": {
     "titre": "Nombre de home cinéma",
     "question": "Utilisez-vous un home cinéma ?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . ordinateur portable": {
@@ -4593,6 +4633,7 @@
   "divers . numérique . appareils . ordinateur portable . nombre": {
     "titre": "Nombre d'ordinateurs portables",
     "question": "Utilisez-vous un ordinateur portable ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . numérique . appareils . ordinateur fixe": {
@@ -4605,6 +4646,7 @@
   "divers . numérique . appareils . ordinateur fixe . nombre": {
     "titre": "Nombre d'ordinateurs fixes",
     "question": "Utilisez-vous un ordinateur fixe ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . numérique . appareils . tablette": {
@@ -4616,6 +4658,7 @@
   "divers . numérique . appareils . tablette . nombre": {
     "titre": "Nombre de tablettes",
     "question": "Utilisez-vous une tablette ?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . TV": {
@@ -4628,6 +4671,7 @@
   "divers . numérique . appareils . TV . nombre": {
     "titre": "Nombre de TV",
     "question": "Utilisez-vous une TV ?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . numérique . appareils . vidéoprojecteur": {
@@ -4639,6 +4683,7 @@
   "divers . numérique . appareils . vidéoprojecteur . nombre": {
     "titre": "Nombre de vidéoprojecteurs",
     "question": "Utilisez-vous un vidéoprojecteur ?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . enceinte bluetooth": {
@@ -4650,6 +4695,7 @@
   "divers . numérique . appareils . enceinte bluetooth . nombre": {
     "titre": "Nombre d'enceinte bluetooth",
     "question": "Utilisez-vous une enceinte bluetooth ?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . enceinte vocale": {
@@ -4661,6 +4707,7 @@
   "divers . numérique . appareils . enceinte vocale . nombre": {
     "titre": "Nombre d'enceinte vocale",
     "question": "Utilisez-vous une enceinte vocale ?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . montre connectée": {
@@ -4672,6 +4719,7 @@
   "divers . numérique . appareils . montre connectée . nombre": {
     "titre": "Nombre de montres connectées",
     "question": "Utilisez-vous une montre connectée ?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . console de salon": {
@@ -4683,6 +4731,7 @@
   "divers . numérique . appareils . console de salon . nombre": {
     "titre": "Nombre de consoles de salon",
     "question": "Utilisez-vous une console de salon ?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . console portable": {
@@ -4694,6 +4743,7 @@
   "divers . numérique . appareils . console portable . nombre": {
     "titre": "Nombre de consoles portables",
     "question": "Utilisez-vous un console portable ?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . produits consommables": {
@@ -4769,6 +4819,7 @@
   "divers . tabac . consommation par semaine": {
     "question": "Quelle est votre consommation par semaine de tabac ?",
     "description": "💡 Renseignez ici votre consommation de paquets de cigarettes par semaine. On considère qu'un paquet contient 20 cigarettes.\nSi vous fumez des roulées, pensez à adapter votre calcul.\n\nÀ noter que l'impact du tabac n'est pas seulement carbone : il est à l'origine de déforestation, de l'utilisation importante d'eau et de terres agricoles !\n\n> Pour le moment, nous ne considérons que les cigarettes classiques.\n> La cigarette électronique n'est pas encore prise en compte dans nos calculs, faute de données !\n",
+    "plancher": 0,
     "par défaut": 0.5,
     "suggestions": {
       "❌ Je ne fume jamais": 0,
@@ -4857,6 +4908,7 @@
   },
   "divers . textile . t-shirt . nombre": {
     "question": "Nombre de t-shirt achetés sur une année",
+    "plancher": 0,
     "par défaut": 4
   },
   "divers . textile . t-shirt": {
@@ -4867,6 +4919,7 @@
   },
   "divers . textile . pantalon . nombre": {
     "question": "Nombre de pantalons/jeans achetés sur une année",
+    "plancher": 0,
     "par défaut": 2
   },
   "divers . textile . pantalon": {
@@ -4877,6 +4930,7 @@
   },
   "divers . textile . short . nombre": {
     "question": "Nombre de shorts achetés sur une année",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . textile . short": {
@@ -4888,6 +4942,7 @@
   },
   "divers . textile . sweat . nombre": {
     "question": "Nombre de sweats achetés sur une année",
+    "plancher": 0,
     "par défaut": 2
   },
   "divers . textile . sweat": {
@@ -4900,6 +4955,7 @@
   },
   "divers . textile . robe . nombre": {
     "question": "Nombre de robes achetées sur une année",
+    "plancher": 0,
     "par défaut": 2
   },
   "divers . textile . robe": {
@@ -4910,6 +4966,7 @@
   },
   "divers . textile . chemise . nombre": {
     "question": "Nombre de chemises achetées sur une année",
+    "plancher": 0,
     "par défaut": 2
   },
   "divers . textile . chemise": {
@@ -4920,6 +4977,7 @@
   },
   "divers . textile . pull . nombre": {
     "question": "Nombre de pulls achetés sur une année",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . textile . pull": {
@@ -4931,6 +4989,7 @@
   },
   "divers . textile . chaussure . nombre": {
     "question": "Nombre de chaussures achetées sur une année",
+    "plancher": 0,
     "par défaut": 2
   },
   "divers . textile . chaussure": {
@@ -4942,6 +5001,7 @@
   },
   "divers . textile . manteau . nombre": {
     "question": "Nombre de manteaux achetés sur une année",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . textile . manteau": {
@@ -4952,6 +5012,7 @@
   },
   "divers . textile . petit article . nombre": {
     "question": "Nombre de petits articles génériques achetés sur une année",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . textile . petit article": {
@@ -4964,6 +5025,7 @@
   },
   "divers . textile . gros article . nombre": {
     "question": "Nombre de gros articles génériques achetés sur une année",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . textile . gros article": {
@@ -5221,6 +5283,7 @@
   "logement . chauffage . gaz . consommation": {
     "icônes": "🔥",
     "question": "Quelle est la consommation annuelle de gaz de votre foyer ?",
+    "plancher": 0,
     "par défaut": "parc français . chauffage . consommation gaz par m2 * surface",
     "unité": "kWh",
     "aide": "estimation via le coût",
@@ -5234,7 +5297,6 @@
   "logement . chauffage . gaz . avertissement biogaz": {
     "formule": "biogaz",
     "type": "notification",
-    "sévérité": "avertissement",
     "description": "Vous constaterez que le choix du biogaz réduit énormément l'empreinte climat du gaz que vous consommez, mais notez bien que la production actuelle est incapable de passer à l'échelle : la réduction globale de toute consommation de gaz reste essentielle, que l'on consomme du biogaz ou du gaz fossile.\n"
   },
   "logement . chauffage . gaz . intensité carbone gaz utilisateur": {
@@ -5268,7 +5330,9 @@
   },
   "logement . chauffage . biogaz . part": {
     "question": "Quelle est la part de biogaz garantie par votre contrat de gaz ?",
-    "description": "Il existe peu de vendeurs de gaz proposant des contrats 100% biogaz, mais il en existe (en septembre 2022). \n\nPar contre, le premier vendeur de gaz français propose à ses clients une option biogaz avec une proportion reglable moyennant un coût supplémentaire (significatif mais qui ne fait pas non plus doubler la facture). N'hésitez pas à en parler à un conseiller.\n",
+    "plancher": 0,
+    "plafond": 100,
+    "description": "Il existe peu de vendeurs de gaz proposant des contrats 100% biogaz, mais il en existe (en septembre 2022). \nPar contre, le premier vendeur de gaz français propose à ses clients une option biogaz avec une proportion reglable moyennant un coût supplémentaire (significatif mais qui ne fait pas non plus doubler la facture). N'hésitez pas à en parler à un conseiller.\n",
     "par défaut": "20%",
     "unité": "%"
   },
@@ -5295,6 +5359,7 @@
   },
   "logement . chauffage . bouteille gaz . consommation": {
     "question": "Quelle est votre consommation annuelle en bouteilles de gaz (13 kg) ?",
+    "plancher": 0,
     "par défaut": "parc français . chauffage . consommation moyenne gaz cuisson / énergie par bouteille",
     "unité": "bouteille",
     "aide": "estimation via le poids",
@@ -5350,6 +5415,7 @@
   },
   "logement . chauffage . citerne propane . consommation": {
     "question": "Quelle est la consommation annuelle de gaz propane en citerne de votre foyer ?",
+    "plancher": 0,
     "par défaut": "parc français . chauffage . consommation gaz par m2 * surface / énergie par kg",
     "unité": "kg",
     "aide": "estimation via le coût",
@@ -5397,6 +5463,7 @@
   },
   "logement . chauffage . fioul . consommation": {
     "question": "Quelle est la consommation annuelle de fioul domestique de votre foyer ?",
+    "plancher": 0,
     "unité": "l",
     "description": "Astuce : Vous trouverez vos consommations annuelles d'énergie sur votre facture de fioul ou sur votre compte en ligne sur le site de votre fournisseur.\n",
     "par défaut": "parc français . chauffage . consommation fioul par m2 * fioul kWh au litre * surface",
@@ -5469,6 +5536,7 @@
   },
   "logement . chauffage . bois . type . granulés . consommation": {
     "question": "Quelle est la consommation annuelle de bois en granulés de votre foyer ?",
+    "plancher": 0,
     "unité": "kWh",
     "aide": "estimation via le coût",
     "par défaut": "parc français . chauffage . consommation bois par m2 * surface",
@@ -5489,6 +5557,7 @@
   },
   "logement . chauffage . bois . type . bûches . consommation": {
     "question": "Quelle la consommation annuelle de bois en bûches de votre foyer ?",
+    "plancher": 0,
     "aide": "estimation via le coût",
     "description": "La consommation de bois de chauffage se compte traditionnellement en stères, ce qui correspond approximativement à un mètre cube de bûches.\n\n![](https://upload.wikimedia.org/wikipedia/commons/7/7c/Raummeter_hg.jpg)\n",
     "unité": "stère",
@@ -5544,6 +5613,7 @@
   "logement . chauffage . réseau de chaleur . consommation": {
     "icônes": "🔥",
     "question": "Quelle est votre consommation annuelle d'énergie via le réseau de chaleur raccordé à votre foyer ?",
+    "plancher": 0,
     "par défaut": "parc français . chauffage . consommation réseau de chaleur par m2 * surface",
     "aide": "estimation via le prix",
     "unité": "kWh",
@@ -5697,7 +5767,6 @@
   },
   "logement . climatisation . rappel kWh": {
     "type": "notification",
-    "sévérité": "information",
     "description": "Vous avez une climatisation ? Sa consommation d'électricité sera simplement à inclure dans la facture d'électricité, comme tous les appareils électriques du logement. Sont prises en compte ici, **les fuites de gaz frigorigènes**.\n",
     "formule": "présent"
   },
@@ -5726,7 +5795,8 @@
   "logement . climatisation . nombre": {
     "applicable si": "présent",
     "question": "Combien de climatiseurs électriques possédez-vous ?",
-    "par défaut": 1
+    "par défaut": 1,
+    "plancher": 0
   },
   "logement . climatisation . empreinte unitaire": {
     "unité": "kgCO2e/climatiseur",
@@ -5808,6 +5878,7 @@
   "logement . électricité . consommation": {
     "icônes": "⚡",
     "question": "Quelle est la consommation annuelle d'électricité de votre foyer ?",
+    "plancher": 0,
     "unité": "kWh",
     "par défaut": {
       "variations": [
@@ -6114,38 +6185,24 @@
     },
     "unité": "kgCO2e"
   },
-  "logement . saisie habitants": {
+  "logement . habitants": {
+    "titre": "Nombre de personnes dans le logement",
     "question": "Combien de personnes vivent chez vous ?",
     "description": "Il s'agit de savoir combien de personnes partagent votre logement et toutes les consommations qu'il entraîne (construction, chauffage, etc).\n\n> Si vous vivez seul, répondez `1`.\n\n> Si vous vivez avec votre conjoint et un enfant, répondez `3`.\n\n> Si vous êtes séparé avec un enfant qui alterne entre votre logement et un autre, vous pouvez saisir `1,5`.\n",
     "par défaut": 2.2,
+    "plancher": 1,
+    "avertissement": "Le nombre d'habitants ne peut pas être nul ni inférieur à 1. Vous êtes le premier habitant de votre logement.\n\nEn effet, l'empreinte du logement et d'autres postes comme l'électroménager étant divisées par le nombre d'habitants, il doit être supérieur à 1.\n\nNous ne prenons donc pas aujourd'hui en compte les logements vides que vous possédez, ou un logement que vous louez dans lequel ni vous ni personne ne vivez.\n",
     "note": "valeur par défaut d'après https://www.insee.fr/fr/statistiques/2381486.",
     "suggestions": {
       "j'habite seul": 1,
       "deux personnes": 2
     }
   },
-  "logement . habitants": {
-    "formule": {
-      "variations": [
-        {
-          "si": "saisie habitants < 1",
-          "alors": 1
-        },
-        {
-          "sinon": "saisie habitants"
-        }
-      ]
-    }
-  },
-  "logement . notif minimum habitants": {
-    "type": "notification",
-    "sévérité": "invalide",
-    "formule": "saisie habitants < 1",
-    "description": "Le nombre d'habitants ne peut pas être nul ni inférieur à 1. Vous êtes le premier habitant de votre logement.\n\nEn effet, l'empreinte du logement et d'autres postes comme l'électroménager étant divisées par le nombre d'habitants, il doit être supérieur à 1.\n\nNous ne prenons donc pas aujourd'hui en compte les logements vides que vous possédez, ou un logement que vous louez dans lequel ni vous ni personne ne vivez.\n"
-  },
   "logement . surface": {
     "titre": "Surface",
     "question": "Quelle est la surface de votre logement ?",
+    "plancher": 1,
+    "avertissement": "La surface de votre logement ne peut-être nulle.\n",
     "par défaut": {
       "variations": [
         {
@@ -6178,12 +6235,6 @@
     },
     "unité": "m2"
   },
-  "logement . notif minimum surface": {
-    "type": "notification",
-    "sévérité": "invalide",
-    "formule": "surface = 0",
-    "description": "La surface de votre logement ne peut-être nulle.\n"
-  },
   "logement . appartement": {
     "titre": "Appartement",
     "question": "Votre logement est-il un appartement ?",
@@ -6192,6 +6243,7 @@
   },
   "logement . âge": {
     "question": "Quel est l'âge de votre logement ?",
+    "plancher": 0,
     "par défaut": 45,
     "unité": "an",
     "note": "En France, 24% du parc de logements date d'avant 1949 et 24% entre 1949 et 1974 selon l'[INSEE](https://www.insee.fr/fr/statistiques/fichier/2586377/LOGFRA17.pdf).\n\nPour Paris, [cette carte](https://www.comeetie.fr/galerie/BatiParis) interactive est fascinante si la question de l'âge de ses logements vous intéresse.\n",
@@ -6549,6 +6601,7 @@
     "question": "Combien de nuits passez-vous à l'hôtel ou chambre d'hôtes sur l'année ?",
     "unité": "nuit",
     "description": "💡 Déclarez ici les nuits passées dans un hôtel, une chambre privée ou chambre d'hôtes.\n",
+    "plancher": 0,
     "par défaut": "moyenne",
     "note": "En combinant plusieurs données de [l'enquête mobilité des français de 2019](https://www.statistiques.developpement-durable.gouv.fr/resultats-detailles-de-lenquete-mobilite-des-personnes-de-2019?rubrique=60&dossier=1345),\non peut retrouver une valeur moyenne en nuitées / pers / an dans les hébergements hôtel, pension de famille, village de vacances ou gîte.\n",
     "suggestions": {
@@ -6591,6 +6644,7 @@
     "question": "Combien de nuits passez-vous en camping sur l'année ?",
     "unité": "nuit",
     "description": "💡 Déclarez ici les nuits passées en camping (tente, hamac, bungalow...).\n",
+    "plancher": 0,
     "par défaut": "moyenne",
     "note": "En combinant plusieurs données de [l'enquête mobilité des français de 2019](https://www.statistiques.developpement-durable.gouv.fr/resultats-detailles-de-lenquete-mobilite-des-personnes-de-2019?rubrique=60&dossier=1345),\non peut retrouver une valeur moyenne en nuitées / pers / an dans les hébergements camping.\n",
     "suggestions": {
@@ -6633,6 +6687,7 @@
     "question": "Combien de nuits passez-vous en auberge de jeunesse sur l'année ?",
     "unité": "nuit",
     "description": "💡 Déclarez ici les nuits passées en auberge de jeunesse (dortoir).\n",
+    "plancher": 0,
     "par défaut": "moyenne",
     "note": "En combinant plusieurs données de [l'enquête mobilité des français de 2019](https://www.statistiques.developpement-durable.gouv.fr/resultats-detailles-de-lenquete-mobilite-des-personnes-de-2019?rubrique=60&dossier=1345),\non peut retrouver une valeur moyenne en nuitées / pers / an dans les hébergements auberge de jeunesse.\n",
     "suggestions": {
@@ -6676,6 +6731,7 @@
     "question": "Combien de nuits passez-vous en locations meublées sur l'année ?",
     "unité": "nuit",
     "description": "💡 Déclarez ici les nuits passées en location meublée (Airbnb, Abritel...).\n",
+    "plancher": 0,
     "par défaut": "moyenne",
     "note": "En combinant plusieurs données de [l'enquête mobilité des français de 2019](https://www.statistiques.developpement-durable.gouv.fr/resultats-detailles-de-lenquete-mobilite-des-personnes-de-2019?rubrique=60&dossier=1345),\non peut retrouver une valeur moyenne en nuitées / pers / an dans les hébergements location.\n",
     "suggestions": {
@@ -6719,6 +6775,7 @@
     "question": "Combien de nuits passez-vous en échange de maison sur l'année ?",
     "unité": "nuit",
     "description": "💡 Déclarez ici les nuits passées en échange de maison (HomeExchange, SwitchHome...)\n",
+    "plancher": 0,
     "par défaut": "moyenne",
     "note": "En combinant plusieurs données de [l'enquête mobilité des français de 2019](https://www.statistiques.developpement-durable.gouv.fr/resultats-detailles-de-lenquete-mobilite-des-personnes-de-2019?rubrique=60&dossier=1345),\non peut retrouver une valeur moyenne en nuitées / pers / an dans les hébergements de tous types. Que répondent les échangeurs de maison ? Nous faisons le pari que cela rentre dans la catégorie \"autre\".\n",
     "suggestions": {
@@ -7333,6 +7390,7 @@
     },
     "unité": "h",
     "par défaut": "durée moyenne",
+    "plancher": 0,
     "note": "La caractérisation \"court courrier\" par le temps de trajet est donnée par la règle `court courrier . durée max` = 2.17h."
   },
   "transport . avion . court courrier . durée moyenne": {
@@ -7372,6 +7430,7 @@
     },
     "unité": "h",
     "par défaut": "durée moyenne",
+    "plancher": 0,
     "note": "La caractérisation \"moyen courrier\" par le temps de trajet est donnée par la règle `court courrier . durée max`=2.17h et `moyen courrier . durée max` = 6.48h."
   },
   "transport . avion . moyen courrier . durée moyenne": {
@@ -7411,6 +7470,7 @@
     },
     "unité": "h",
     "par défaut": "durée moyenne",
+    "plancher": 0,
     "note": "La caractérisation \"long courrier\" par le temps de trajet est donnée par la règle `moyen courrier . durée max` = 6.48h."
   },
   "transport . avion . long courrier . durée moyenne": {
@@ -7453,7 +7513,8 @@
       "2h / jour": 14
     },
     "unité": "h/semaine",
-    "par défaut": "3 h/semaine"
+    "par défaut": "3 h/semaine",
+    "plancher": 0
   },
   "transport . deux roues": {
     "icônes": "🛵",
@@ -7489,6 +7550,7 @@
   "transport . deux roues . km": {
     "question": "Combien de km faites-vous à l'année avec votre scooter ou moto ?",
     "par défaut": "km annuels moyen",
+    "plancher": 0,
     "unité": "km",
     "suggestions": {
       "zéro": 0,
@@ -7966,6 +8028,7 @@
     "question": "Combien d'heures par an voyagez-vous en ferry ou croisière ?",
     "description": "Pour l'instant, nous ne prenons pas en compte les options qui peuvent augmenter ou diminuer l'empreinte d'une traversée en ferry : \n  - voiture embarquée à bord\n  - remplissage de la cabine ou réservation d'un siège\n  - utilisation des services à bord (restaurant, boutiques)\n  - et bien sûr la vitesse du bateau (plus un bateau est rapide, plus il consomme).\n\nLe calcul est donc fait pour une traversée type.\n",
     "par défaut": 8,
+    "plancher": 0,
     "unité": "h",
     "suggestions": {
       "Cherbourg ⇄ 🇬🇧 Poole": 8,
@@ -8001,6 +8064,7 @@
       "2h / jour": 14
     },
     "unité": "h/semaine",
+    "plancher": 0,
     "par défaut": 3
   },
   "transport . mobilité douce": {
@@ -8169,6 +8233,7 @@
       "💳 grand voyageur plus ultra": 25000
     },
     "unité": "km",
+    "plancher": 0,
     "par défaut": 1000
   },
   "transport": {
@@ -8301,6 +8366,7 @@
     "question": "Quelle distance parcourez-vous à l'année en camping-car ?",
     "description": "Attention, ces km de camping car ne doivent pas être renseignés dans les km voiture (une question à laquelle vous avez probablement déjà répondu), ce sont deux questions différentes.\n",
     "par défaut": 8869,
+    "plancher": 0,
     "unité": "km",
     "note": "D'après la fédération des campeurs, caravaniers et camping-caristes, un camping-cariste fait en moyenne 8869 km par an ([source](https://ffcc.fr/actualite/qui-sont-les-camping-caristes-et-les-vanlifers-en-2021/))"
   },
@@ -8350,6 +8416,7 @@
     "description": "Attention, ces km en van ne doivent pas être renseignés dans les km voiture (une question à laquelle vous avez probablement déjà répondu), ce sont deux questions différentes.\n",
     "par défaut": 9310,
     "unité": "km",
+    "plancher": 0,
     "note": "D'après la fédération des campeurs, caravaniers et camping-caristes, un \"vanlifer\" fait en moyenne 9310 km par an ([source](https://ffcc.fr/actualite/qui-sont-les-camping-caristes-et-les-vanlifers-en-2021/))"
   },
   "transport . vacances . van . empreinte au kilomètre": {
@@ -8425,6 +8492,7 @@
     "description": "Ne comptez que les kilomètres de déplacement personnel (courses, loisirs, famille, etc.) et de déplacement domicile travail pour rejoindre votre lieu de travail habituel.\n\nPar exemple, si vous êtes en mission professionnelle dans un autre département ou un autre pays, cela rentre dans la comptabilité de votre entreprise : ne le comptez pas ici.\n",
     "par défaut": "km annuels moyen",
     "unité": "km",
+    "plancher": 0,
     "suggestions": {
       "zéro": 0,
       "vacances": 2000,
@@ -8508,35 +8576,18 @@
     "formule": "(usage + construction amortie) / voyageurs",
     "unité": "kgCO2e"
   },
-  "transport . voiture . saisie voyageurs": {
+  "transport . voiture . voyageurs": {
+    "titre": "Nombre de voyageurs moyen dans la voiture",
     "question": "Quel est le nombre moyen de voyageurs dans la voiture ?",
     "description": "Une voiture consomme à peu près autant qu'elle ait 1, 2 ou 5 voyageurs à bord. Voyager à plusieurs, c'est donc potentiellement diviser par 5 l'empreinte individuelle !\n\n🤔 Mais cette question n'est pas facile : il est probable que dans une année vous soyez parti en vacances à 3, ayez pris la voiture quotidiennement tout seul, etc.\n\nEssayez d'estimer une moyenne approximative : si tous les jours vous prenez la voiture tout seul, mettez 1 ou 1,2.\nSi vous ne la prenez qu'en famille ou entre amis, mettez 3 ou 4.\n\n> Dans une prochaine évolution du simulateur, nous pourrons séparer les questions par type de trajets : vacances, domicile-travail, quotidiens avec un nombre de voyageurs personnalisable.\n\nBien sûr, si vous vous faites conduire ou si vous prenez le taxi, le chauffeur ne compte pas, car il est au service de votre déplacement.\n",
+    "plancher": 1,
+    "avertissement": "Le nombre de voyageurs ne peut pas être nul. Au volant de votre voiture, vous en êtes le premier voyageur.\n",
     "par défaut": 1.2,
     "suggestions": {
       "je suis seul": 1,
       "deux": 2,
       "cinq": 5
     }
-  },
-  "transport . voiture . voyageurs": {
-    "titre": "Nombre de voyageurs moyen dans la voiture",
-    "formule": {
-      "variations": [
-        {
-          "si": "saisie voyageurs < 1",
-          "alors": 1
-        },
-        {
-          "sinon": "saisie voyageurs"
-        }
-      ]
-    }
-  },
-  "transport . voiture . notif minimum voyageurs": {
-    "type": "notification",
-    "sévérité": "invalide",
-    "formule": "saisie voyageurs < 1",
-    "description": "Le nombre de voyageurs ne peut pas être nul. Au volant de votre voiture, vous en êtes le premier voyageur.\n"
   },
   "transport . voiture . usage": {
     "formule": "km * empreinte usage au kilomètre",

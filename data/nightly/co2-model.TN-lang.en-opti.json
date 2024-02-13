@@ -1239,7 +1239,7 @@
       "recalcul": {
         "règle": "logement",
         "avec": {
-          "logement . saisie habitants": "logement . habitants + nombre colocataires",
+          "logement . habitants": "logement . habitants + nombre colocataires",
           "logement . vacances": 0
         }
       }
@@ -1252,7 +1252,7 @@
       "recalcul": {
         "règle": "divers . numérique . appareils",
         "avec": {
-          "logement . saisie habitants": "logement . habitants + nombre colocataires"
+          "logement . habitants": "logement . habitants + nombre colocataires"
         }
       }
     },
@@ -1263,7 +1263,7 @@
       "recalcul": {
         "règle": "divers . électroménager . appareils",
         "avec": {
-          "logement . saisie habitants": "logement . habitants + nombre colocataires"
+          "logement . habitants": "logement . habitants + nombre colocataires"
         }
       }
     },
@@ -1274,7 +1274,7 @@
       "recalcul": {
         "règle": "divers . ameublement",
         "avec": {
-          "logement . saisie habitants": "logement . habitants + nombre colocataires",
+          "logement . habitants": "logement . habitants + nombre colocataires",
           "divers . ameublement . meubles . matelas": 0,
           "divers . ameublement . meubles . lit": 0
         }
@@ -1616,7 +1616,7 @@
       "recalcul": {
         "règle": "transport . voiture",
         "avec": {
-          "transport . voiture . saisie voyageurs": 1,
+          "transport . voiture . voyageurs": 1,
           "transport . voiture . km": "boulot . distance"
         }
       }
@@ -1628,7 +1628,7 @@
       "recalcul": {
         "règle": "transport . voiture",
         "avec": {
-          "transport . voiture . saisie voyageurs": "boulot . covoiturage . nombre de voyageurs",
+          "transport . voiture . voyageurs": "boulot . covoiturage . nombre de voyageurs",
           "transport . voiture . km": "boulot . distance"
         }
       }
@@ -2098,6 +2098,7 @@
   "alimentation . boisson . chaude . café . nombre": {
     "question": "Number of coffees per week",
     "par défaut": 10,
+    "plancher": 0,
     "unité": "tasse/semaine",
     "note": "The average French person drinks 500 cups of coffee a year ( <a href=\"https://fr.statista.com/themes/10144/le-cafe-en-france/#topFacts\">source</a>)",
     "titre": "number"
@@ -2105,6 +2106,7 @@
   "alimentation . boisson . chaude . thé . nombre": {
     "question": "Number of teas per week",
     "par défaut": 3,
+    "plancher": 0,
     "unité": "tasse/semaine",
     "note": "The average French person consumes 250g of tea a year ( <a href=\"https://www.francesoir.fr/lifestyle-vie-quotidienne/le-boom-de-la-consommation-en-france\">source</a>), or 5 grams a week. We have estimated that this corresponds to approximately 3 cups a week.",
     "titre": "number"
@@ -2112,12 +2114,14 @@
   "alimentation . boisson . chaude . chocolat chaud . nombre": {
     "question": "Number of hot chocolates per week",
     "par défaut": 0,
+    "plancher": 0,
     "unité": "tasse/semaine",
     "titre": "number"
   },
   "alimentation . boisson . chaude . chicorée . nombre": {
     "question": "Number of cups of chicory per week",
     "par défaut": 0,
+    "plancher": 0,
     "unité": "tasse/semaine",
     "titre": "number"
   },
@@ -2298,6 +2302,7 @@
       "important": 5
     },
     "par défaut": 1,
+    "plancher": 0,
     "unité": "l/semaine",
     "note": "Consumption of soft drinks and sugar-sweetened beverages in France averages 50.9 liters per capita ( <a href=\"https://www.sante-et-nutrition.com/consommation-soda-france/\">source</a>), or around 1 liter per week."
   },
@@ -2323,6 +2328,7 @@
       "important": 3
     },
     "par défaut": 1.5,
+    "plancher": 0,
     "unité": "l/semaine",
     "note": "Alcohol consumption in France is 79.6 liters, all alcohols combined, or about 1.5 liters per week ( <a href=\"https://www.insee.fr/fr/statistiques/4319377#graphique-figure2\">source</a>)"
   },
@@ -2602,7 +2608,7 @@
     },
     "question": "Choose your lunch and dinner dishes for a typical week",
     "titre": "Footprint of 14 meals",
-    "description": "Choose the dishes that represent your typical week. \n\nA priori, you'll have 14: 7 lunches and 7 dinners. But you can also eat less, or more - it's perfectly possible!\n\n> We're currently working to ensure that the menus associated with your meals are as representative as possible of your habits, so don't hesitate to go further by browsing <a href=\"https://nosgestesclimat.fr/documentation/alimentation/plats\">the documentation</a>.\n",
+    "description": "Choose the dishes that represent your typical week. \n\nA priori, you'll have 14: 7 lunches and 7 dinners. But you can also eat less, or more - it's perfectly possible!\n\n> We're currently working to ensure that the menus associated with your meals are as representative as possible of your habits, so don't hesitate to go further by browsing the documentation.\n",
     "formule": {
       "somme": [
         "végétalien",
@@ -2627,6 +2633,7 @@
   "alimentation . plats . végétalien . nombre": {
     "question": "Number of vegan dishes per week",
     "par défaut": 0,
+    "plancher": 0,
     "unité": "repas/semaine",
     "titre": "number"
   },
@@ -2655,6 +2662,7 @@
   "alimentation . plats . viande 1 . nombre": {
     "question": "Number of meat dishes 1 per week",
     "par défaut": 5,
+    "plancher": 0,
     "unité": "repas/semaine",
     "titre": "number"
   },
@@ -2669,6 +2677,7 @@
   "alimentation . plats . viande 2 . nombre": {
     "question": "Number of meat dishes 2 per week",
     "par défaut": 2,
+    "plancher": 0,
     "unité": "repas/semaine",
     "titre": "number"
   },
@@ -2683,6 +2692,7 @@
   "alimentation . plats . poisson 1 . nombre": {
     "question": "Number of fish dishes 1 per week",
     "par défaut": 2,
+    "plancher": 0,
     "unité": "repas/semaine",
     "titre": "number"
   },
@@ -2697,6 +2707,7 @@
   "alimentation . plats . poisson 2 . nombre": {
     "question": "Number of fish dishes 2 per week",
     "par défaut": 0,
+    "plancher": 0,
     "unité": "repas/semaine",
     "titre": "number"
   },
@@ -3183,6 +3194,7 @@
   "divers . ameublement . meubles . armoire . nombre": {
     "titre": "Number of cabinets",
     "question": "How many cabinets do you have?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . ameublement . meubles . armoire": {
@@ -3200,6 +3212,7 @@
   "divers . ameublement . meubles . canapé . nombre": {
     "titre": "Number of sofas",
     "question": "How many sofas do you have?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . ameublement . meubles . canapé": {
@@ -3218,6 +3231,7 @@
   "divers . ameublement . meubles . matelas . nombre": {
     "titre": "Number of mattresses",
     "question": "How many mattresses do you have?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . ameublement . meubles . matelas": {
@@ -3235,6 +3249,7 @@
   "divers . ameublement . meubles . lit . nombre": {
     "titre": "Number of beds",
     "question": "How many beds do you have?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . ameublement . meubles . lit": {
@@ -3252,6 +3267,7 @@
   "divers . ameublement . meubles . table . nombre": {
     "titre": "Number of tables",
     "question": "How many tables do you have?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . ameublement . meubles . table": {
@@ -3269,6 +3285,7 @@
   "divers . ameublement . meubles . chaise . nombre": {
     "titre": "Number of chairs",
     "question": "How many chairs do you have?",
+    "plancher": 0,
     "par défaut": 4
   },
   "divers . ameublement . meubles . chaise": {
@@ -3293,6 +3310,7 @@
   "divers . ameublement . meubles . petit meuble . nombre": {
     "titre": "Number of small furniture items",
     "question": "How many small pieces of furniture do you have?",
+    "plancher": 0,
     "par défaut": 3
   },
   "divers . ameublement . meubles . petit meuble": {
@@ -3318,6 +3336,7 @@
   "divers . ameublement . meubles . grand meuble . nombre": {
     "titre": "Number of large pieces of furniture",
     "question": "How many large pieces of furniture (not included elsewhere) do you own?",
+    "plancher": 0,
     "par défaut": 5
   },
   "divers . ameublement . meubles . grand meuble": {
@@ -3375,6 +3394,7 @@
   },
   "divers . animaux domestiques . empreinte . chats . nombre": {
     "question": "How many cats do you have in your household?",
+    "plancher": 0,
     "par défaut": 0.49,
     "titre": "number"
   },
@@ -3448,6 +3468,7 @@
   },
   "divers . animaux domestiques . empreinte . petit chien . nombre": {
     "question": "How many dogs do you have in your household?",
+    "plancher": 0,
     "par défaut": 0,
     "titre": "number"
   },
@@ -3481,6 +3502,7 @@
   },
   "divers . animaux domestiques . empreinte . chien moyen . nombre": {
     "question": "How many dogs do you have in your household?",
+    "plancher": 0,
     "par défaut": 0.25,
     "titre": "number"
   },
@@ -3514,6 +3536,7 @@
   },
   "divers . animaux domestiques . empreinte . gros chien . nombre": {
     "question": "How many dogs do you have in your household?",
+    "plancher": 0,
     "par défaut": 0,
     "titre": "number"
   },
@@ -3780,6 +3803,7 @@
   "divers . électroménager . appareils . réfrigérateur . nombre": {
     "titre": "Number of refrigerators",
     "question": "How many refrigerators do you have?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . réfrigérateur": {
@@ -3798,6 +3822,7 @@
   "divers . électroménager . appareils . mini réfrigérateur . nombre": {
     "titre": "Number of mini-fridges",
     "question": "How many mini-fridges do you have?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . électroménager . appareils . mini réfrigérateur": {
@@ -3815,6 +3840,7 @@
   "divers . électroménager . appareils . congélateur . nombre": {
     "titre": "Number of freezers",
     "question": "How many freezers do you own?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . électroménager . appareils . congélateur": {
@@ -3832,6 +3858,7 @@
   "divers . électroménager . appareils . lave-linge . nombre": {
     "titre": "Number of washing machines",
     "question": "How many washing machines do you have?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . lave-linge": {
@@ -3849,6 +3876,7 @@
   "divers . électroménager . appareils . sèche-linge . nombre": {
     "titre": "Number of dryers",
     "question": "How many dryers do you have?",
+    "plancher": 0,
     "par défaut": {
       "variations": [
         {
@@ -3903,6 +3931,7 @@
   "divers . électroménager . appareils . hotte . nombre": {
     "titre": "Number of hoods",
     "question": "How many hoods do you have?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . hotte": {
@@ -3920,6 +3949,7 @@
   "divers . électroménager . appareils . four . nombre": {
     "titre": "Number of ovens",
     "question": "How many furnaces do you own?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . four": {
@@ -3937,6 +3967,7 @@
   "divers . électroménager . appareils . micro-onde . nombre": {
     "titre": "Number of microwaves",
     "question": "How many microwaves do you own?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . micro-onde": {
@@ -3954,6 +3985,7 @@
   "divers . électroménager . appareils . plaques . nombre": {
     "titre": "Number of cooktops",
     "question": "How many cooktops do you have?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . plaques": {
@@ -3971,6 +4003,7 @@
   "divers . électroménager . appareils . bouilloire . nombre": {
     "titre": "Number of kettles",
     "question": "How many kettles do you have?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . bouilloire": {
@@ -3988,6 +4021,7 @@
   "divers . électroménager . appareils . cafetière . nombre": {
     "titre": "Number of coffee machines",
     "question": "How many coffee makers do you have?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . cafetière": {
@@ -4005,6 +4039,7 @@
   "divers . électroménager . appareils . aspirateur . nombre": {
     "titre": "Number of vacuum cleaners",
     "question": "How many vacuum cleaners do you have?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . électroménager . appareils . aspirateur": {
@@ -4022,6 +4057,7 @@
   "divers . électroménager . appareils . robot cuisine . nombre": {
     "titre": "Number of food processors",
     "question": "How many food processors do you have?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . électroménager . appareils . robot cuisine": {
@@ -4652,6 +4688,7 @@
     "question": "How many hours a day do you spend on the Internet outside the office (sending e-mails, surfing the Web, streaming video, etc.)?",
     "description": "Just make a rough estimate of your personal hours of use (evenings, weekends), because what you do at work is included in your company's or organization's accounts.",
     "unité": "h/jour",
+    "plancher": 0,
     "par défaut": 2.3,
     "suggestions": {
       "zero": 0,
@@ -4781,6 +4818,7 @@
   "divers . numérique . appareils . téléphone . nombre": {
     "titre": "Number of phones",
     "question": "Do you use a telephone?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . numérique . appareils . téléphone . empreinte": {
@@ -4801,6 +4839,7 @@
     "titre": "Number of cameras",
     "note": "We put the camera in the digital category because of the scarcity of silver cameras today.",
     "question": "Do you use a camera?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . home cinéma": {
@@ -4813,6 +4852,7 @@
   "divers . numérique . appareils . home cinéma . nombre": {
     "titre": "Number of home theaters",
     "question": "Do you use a home theater?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . ordinateur portable": {
@@ -4825,6 +4865,7 @@
   "divers . numérique . appareils . ordinateur portable . nombre": {
     "titre": "Number of laptops",
     "question": "Do you use a laptop computer?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . numérique . appareils . ordinateur fixe": {
@@ -4838,6 +4879,7 @@
   "divers . numérique . appareils . ordinateur fixe . nombre": {
     "titre": "Number of desktop computers",
     "question": "Do you use a fixed computer?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . numérique . appareils . tablette": {
@@ -4850,6 +4892,7 @@
   "divers . numérique . appareils . tablette . nombre": {
     "titre": "Number of tablets",
     "question": "Do you use a tablet?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . TV": {
@@ -4863,6 +4906,7 @@
   "divers . numérique . appareils . TV . nombre": {
     "titre": "Number of TVs",
     "question": "Do you use a TV?",
+    "plancher": 0,
     "par défaut": 1
   },
   "divers . numérique . appareils . vidéoprojecteur": {
@@ -4875,6 +4919,7 @@
   "divers . numérique . appareils . vidéoprojecteur . nombre": {
     "titre": "Number of video projectors",
     "question": "Do you use a video projector?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . enceinte bluetooth": {
@@ -4887,6 +4932,7 @@
   "divers . numérique . appareils . enceinte bluetooth . nombre": {
     "titre": "Number of bluetooth speakers",
     "question": "Do you use a bluetooth speaker?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . enceinte vocale": {
@@ -4899,6 +4945,7 @@
   "divers . numérique . appareils . enceinte vocale . nombre": {
     "titre": "Number of voice speakers",
     "question": "Do you use a voice speaker?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . montre connectée": {
@@ -4911,6 +4958,7 @@
   "divers . numérique . appareils . montre connectée . nombre": {
     "titre": "Number of connected watches",
     "question": "Do you use a connected watch?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . console de salon": {
@@ -4923,6 +4971,7 @@
   "divers . numérique . appareils . console de salon . nombre": {
     "titre": "Number of home consoles",
     "question": "Do you use a home console?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . numérique . appareils . console portable": {
@@ -4935,6 +4984,7 @@
   "divers . numérique . appareils . console portable . nombre": {
     "titre": "Number of portable consoles",
     "question": "Do you use a portable console?",
+    "plancher": 0,
     "par défaut": 0
   },
   "divers . produits consommables": {
@@ -5013,6 +5063,7 @@
   "divers . tabac . consommation par semaine": {
     "question": "How much do you smoke each week?",
     "description": "💡 Enter your weekly cigarette consumption here. A pack is considered to contain 20 cigarettes.\nIf you smoke rolls, remember to adapt your calculation.\n\nNote that the impact of tobacco isn't just carbon: it's also responsible for deforestation, and the significant use of water and farmland!\n\n> For the moment, we're only considering conventional cigarettes.\n> Electronic cigarettes are not yet included in our calculations, due to lack of data!\n",
+    "plancher": 0,
     "par défaut": 0.5,
     "suggestions": {
       "❌ I never smoke": 0,
@@ -5105,6 +5156,7 @@
   },
   "divers . textile . t-shirt . nombre": {
     "question": "Number of t-shirts purchased in a year",
+    "plancher": 0,
     "par défaut": 4,
     "titre": "number"
   },
@@ -5117,6 +5169,7 @@
   },
   "divers . textile . pantalon . nombre": {
     "question": "Number of pants/jeans purchased in a year",
+    "plancher": 0,
     "par défaut": 2,
     "titre": "number"
   },
@@ -5129,6 +5182,7 @@
   },
   "divers . textile . short . nombre": {
     "question": "Number of shorts purchased in a year",
+    "plancher": 0,
     "par défaut": 1,
     "titre": "number"
   },
@@ -5141,6 +5195,7 @@
   },
   "divers . textile . sweat . nombre": {
     "question": "Number of sweatshirts purchased in a year",
+    "plancher": 0,
     "par défaut": 2,
     "titre": "number"
   },
@@ -5154,6 +5209,7 @@
   },
   "divers . textile . robe . nombre": {
     "question": "Number of dresses purchased in a year",
+    "plancher": 0,
     "par défaut": 2,
     "titre": "number"
   },
@@ -5166,6 +5222,7 @@
   },
   "divers . textile . chemise . nombre": {
     "question": "Number of shirts purchased in a year",
+    "plancher": 0,
     "par défaut": 2,
     "titre": "number"
   },
@@ -5178,6 +5235,7 @@
   },
   "divers . textile . pull . nombre": {
     "question": "Number of sweaters purchased in a year",
+    "plancher": 0,
     "par défaut": 1,
     "titre": "number"
   },
@@ -5190,6 +5248,7 @@
   },
   "divers . textile . chaussure . nombre": {
     "question": "Number of shoes purchased in a year",
+    "plancher": 0,
     "par défaut": 2,
     "titre": "number"
   },
@@ -5202,6 +5261,7 @@
   },
   "divers . textile . manteau . nombre": {
     "question": "Number of coats purchased in a year",
+    "plancher": 0,
     "par défaut": 1,
     "titre": "number"
   },
@@ -5214,6 +5274,7 @@
   },
   "divers . textile . petit article . nombre": {
     "question": "Number of small generic items purchased in a year",
+    "plancher": 0,
     "par défaut": 1,
     "titre": "number"
   },
@@ -5227,6 +5288,7 @@
   },
   "divers . textile . gros article . nombre": {
     "question": "Number of large generic items purchased in a year",
+    "plancher": 0,
     "par défaut": 1,
     "titre": "number"
   },
@@ -5493,6 +5555,7 @@
   "logement . chauffage . gaz . consommation": {
     "icônes": "🔥",
     "question": "What is your annual household gas consumption?",
+    "plancher": 0,
     "par défaut": "parc français . chauffage . consommation gaz par m2 * surface",
     "unité": "kWh",
     "aide": "estimation via le coût",
@@ -5508,7 +5571,6 @@
   "logement . chauffage . gaz . avertissement biogaz": {
     "formule": "biogaz",
     "type": "notification",
-    "sévérité": "avertissement",
     "description": "You will find that choosing biogas greatly reduces the climate footprint\nof the gas you consume, but note that current production is unable to\nscale up: the overall reduction of all gas consumption remains\nessential, whether you consume biogas or fossil gas.\n",
     "titre": "biogas warning"
   },
@@ -5546,7 +5608,9 @@
   },
   "logement . chauffage . biogaz . part": {
     "question": "How much biogas is guaranteed by your gas contract?",
-    "description": "There are few gas vendors offering 100% biogas contracts, but there are some (as of September 2022). \n\nOn the other hand, France's leading gas seller offers its customers a biogas option with an adjustable proportion at an additional cost (significant, but which doesn't double the bill either). Don't hesitate to talk to one of our advisors.\n",
+    "plancher": 0,
+    "plafond": 100,
+    "description": "There are few gas sellers offering 100% biogas contracts, but there are some (in September 2022). \nOn the other hand, France's leading gas retailer offers its customers a biogas option with an adjustable proportion at an additional cost (which is significant but does not double the bill). Don't hesitate to talk to an advisor.\n",
     "par défaut": "20%",
     "unité": "%",
     "titre": "share"
@@ -5575,6 +5639,7 @@
   },
   "logement . chauffage . bouteille gaz . consommation": {
     "question": "What is your annual consumption of gas bottles (13 kg)?",
+    "plancher": 0,
     "par défaut": "parc français . chauffage . consommation moyenne gaz cuisson / énergie par bouteille",
     "unité": "bouteille",
     "aide": "estimation via le poids",
@@ -5633,6 +5698,7 @@
   },
   "logement . chauffage . citerne propane . consommation": {
     "question": "What is your household's annual consumption of propane gas in tanks?",
+    "plancher": 0,
     "par défaut": "parc français . chauffage . consommation gaz par m2 * surface / énergie par kg",
     "unité": "kg",
     "aide": "estimation via le coût",
@@ -5685,6 +5751,7 @@
   },
   "logement . chauffage . fioul . consommation": {
     "question": "What is the annual consumption of heating oil in your household?",
+    "plancher": 0,
     "unité": "l",
     "description": "Tip: You can find your annual energy consumption on your oil bill or on your online account on your supplier's website.\n",
     "par défaut": "parc français . chauffage . consommation fioul par m2 * fioul kWh au litre * surface",
@@ -5761,6 +5828,7 @@
   },
   "logement . chauffage . bois . type . granulés . consommation": {
     "question": "What is the annual wood pellet consumption of your household?",
+    "plancher": 0,
     "unité": "kWh",
     "aide": "estimation via le coût",
     "par défaut": "parc français . chauffage . consommation bois par m2 * surface",
@@ -5784,6 +5852,7 @@
   },
   "logement . chauffage . bois . type . bûches . consommation": {
     "question": "What is your household's annual wood consumption?",
+    "plancher": 0,
     "aide": "estimation via le coût",
     "description": "Traditionally, firewood consumption is measured in steres, which is roughly equivalent to one cubic metre of logs.\n\n![](https://upload.wikimedia.org/wikipedia/commons/7/7c/Raummeter_hg.jpg)\n",
     "unité": "stère",
@@ -5843,6 +5912,7 @@
   "logement . chauffage . réseau de chaleur . consommation": {
     "icônes": "🔥",
     "question": "What is your annual energy consumption via the heating network connected to your home?",
+    "plancher": 0,
     "par défaut": "parc français . chauffage . consommation réseau de chaleur par m2 * surface",
     "aide": "estimation via le prix",
     "unité": "kWh",
@@ -6017,7 +6087,6 @@
   },
   "logement . climatisation . rappel kWh": {
     "type": "notification",
-    "sévérité": "information",
     "description": "Do you have an air conditioner? Its electricity consumption will simply be included in the electricity bill, like all electrical appliances in the home. Refrigerant gas leaks are taken into account here.\n",
     "formule": "présent",
     "titre": "recall kWh"
@@ -6049,6 +6118,7 @@
     "applicable si": "présent",
     "question": "How many electric air conditioners do you have?",
     "par défaut": 1,
+    "plancher": 0,
     "titre": "number"
   },
   "logement . climatisation . empreinte unitaire": {
@@ -6138,6 +6208,7 @@
   "logement . électricité . consommation": {
     "icônes": "⚡",
     "question": "What is your household's annual electricity consumption?",
+    "plancher": 0,
     "unité": "kWh",
     "par défaut": {
       "variations": [
@@ -6467,41 +6538,24 @@
     },
     "unité": "kgCO2e"
   },
-  "logement . saisie habitants": {
+  "logement . habitants": {
+    "titre": "Number of people in the dwelling",
     "question": "How many people live in your home?",
     "description": "We need to know how many people share your home and all the\nconsumption it entails (construction, heating, etc.).\n\n> If you live alone, answer `1`.\n\n> If you live with your spouse and a child, answer `3`.\n\n> If you are separated with a child who alternates between your home and\n> another, you can enter `1.5`.\n",
     "par défaut": 2.2,
+    "plancher": 1,
+    "avertissement": "The number of inhabitants cannot be zero or less than 1. You are the first inhabitant of your home.\n\nAs the footprint of the home and other items such as household appliances are divided by the number of inhabitants, it must be greater than 1.\n\nWe therefore do not take into account empty homes that you own, or rented accommodation in which neither you nor anyone else lives.\n",
     "note": "default value according to https://www.insee.fr/fr/statistiques/2381486.",
     "suggestions": {
       "i live alone": 1,
       "two persons": 2
-    },
-    "titre": "inhabitants input"
-  },
-  "logement . habitants": {
-    "formule": {
-      "variations": [
-        {
-          "si": "saisie habitants < 1",
-          "alors": 1
-        },
-        {
-          "sinon": "saisie habitants"
-        }
-      ]
-    },
-    "titre": "inhabitants"
-  },
-  "logement . notif minimum habitants": {
-    "type": "notification",
-    "sévérité": "invalide",
-    "formule": "saisie habitants < 1",
-    "description": "The number of inhabitants cannot be zero or less than 1. You are the first inhabitant of your dwelling.\n\nAs the footprint of the home and other items such as household appliances are divided by the number of inhabitants, it must be greater than 1.\n\nSo we don't take into account empty homes you own, or rented accommodation in which neither you nor anyone else lives.\n",
-    "titre": "minimum notification inhabitants"
+    }
   },
   "logement . surface": {
     "titre": "Surface",
     "question": "What is the surface area of your home?",
+    "plancher": 1,
+    "avertissement": "The surface area of your home cannot be zero.\n",
     "par défaut": {
       "variations": [
         {
@@ -6534,13 +6588,6 @@
     },
     "unité": "m2"
   },
-  "logement . notif minimum surface": {
-    "type": "notification",
-    "sévérité": "invalide",
-    "formule": "surface = 0",
-    "description": "The area of your home cannot be zero.\n",
-    "titre": "minimum surface notification"
-  },
   "logement . appartement": {
     "titre": "Flat",
     "question": "Is your home a flat?",
@@ -6549,6 +6596,7 @@
   },
   "logement . âge": {
     "question": "How old is your home?",
+    "plancher": 0,
     "par défaut": 45,
     "unité": "an",
     "note": "In France, 24% of the housing stock dates from before 1949 and 24% from between 1949 and 1974, according to <a href=\"https://www.insee.fr/fr/statistiques/fichier/2586377/LOGFRA17.pdf\">INSEE</a>.\n\nFor Paris, <a href=\"https://www.comeetie.fr/galerie/BatiParis\">this</a> interactive <a href=\"https://www.comeetie.fr/galerie/BatiParis\">map</a> is fascinating if you're interested in the age of its housing stock.\n",
@@ -6937,6 +6985,7 @@
     "question": "How many nights a year do you spend in a hotel or B&B?",
     "unité": "nuit",
     "description": "💡 Declare here nights spent in a hotel, private room or bed and breakfast.\n",
+    "plancher": 0,
     "par défaut": "moyenne",
     "note": "By combining several data from <a href=\"https://www.statistiques.developpement-durable.gouv.fr/resultats-detailles-de-lenquete-mobilite-des-personnes-de-2019?rubrique=60&dossier=1345\">the 2019 French mobility survey</a>,\nwe can find an average value in nights / pers / year in hotel, guesthouse, holiday village or bed and breakfast.\n",
     "suggestions": {
@@ -6982,6 +7031,7 @@
     "question": "How many nights a year do you spend camping?",
     "unité": "nuit",
     "description": "💡 Declare here nights spent camping (tent, hammock, bungalow...).\n",
+    "plancher": 0,
     "par défaut": "moyenne",
     "note": "By combining several data from <a href=\"https://www.statistiques.developpement-durable.gouv.fr/resultats-detailles-de-lenquete-mobilite-des-personnes-de-2019?rubrique=60&dossier=1345\">the 2019 French mobility survey</a>,\nwe can find an average value in overnight stays / pers / year in camping accommodations.\n",
     "suggestions": {
@@ -7027,6 +7077,7 @@
     "question": "How many nights a year do you spend in youth hostels?",
     "unité": "nuit",
     "description": "💡 Declare here any nights spent in a youth hostel (dormitory).\n",
+    "plancher": 0,
     "par défaut": "moyenne",
     "note": "By combining several data from <a href=\"https://www.statistiques.developpement-durable.gouv.fr/resultats-detailles-de-lenquete-mobilite-des-personnes-de-2019?rubrique=60&dossier=1345\">the 2019 French mobility survey</a>,\nwe can find an average value in nights / pers / year in youth hostel accommodation.\n",
     "suggestions": {
@@ -7073,6 +7124,7 @@
     "question": "How many nights do you spend in furnished rentals over the year?",
     "unité": "nuit",
     "description": "💡 Declare here nights spent in furnished rentals (Airbnb, Abritel...).\n",
+    "plancher": 0,
     "par défaut": "moyenne",
     "note": "By combining several data from <a href=\"https://www.statistiques.developpement-durable.gouv.fr/resultats-detailles-de-lenquete-mobilite-des-personnes-de-2019?rubrique=60&dossier=1345\">the 2019 French mobility survey</a>,\nwe can find an average value in nights / pers / year in rental accommodation.\n",
     "suggestions": {
@@ -7119,6 +7171,7 @@
     "question": "How many nights do you spend in home exchange over the year?",
     "unité": "nuit",
     "description": "💡 Declare here nights spent in home exchange (HomeExchange, SwitchHome...)\n",
+    "plancher": 0,
     "par défaut": "moyenne",
     "note": "By combining several data from <a href=\"https://www.statistiques.developpement-durable.gouv.fr/resultats-detailles-de-lenquete-mobilite-des-personnes-de-2019?rubrique=60&dossier=1345\">the 2019 French mobility survey</a>,\nwe can find an average value in nights / pers / year in accommodations of all types. How do home exchangers respond? We're betting it falls into the \"other\" category.\n",
     "suggestions": {
@@ -7778,6 +7831,7 @@
     },
     "unité": "h",
     "par défaut": "durée moyenne",
+    "plancher": 0,
     "note": "The characterization \"short haul\" by travel time is given by the rule `short haul . max duration` = 2.17h.",
     "titre": "flight hours"
   },
@@ -7819,6 +7873,7 @@
     },
     "unité": "h",
     "par défaut": "durée moyenne",
+    "plancher": 0,
     "note": "The characterization \"medium haul\" by the travel time is given by the rule `short haul . max duration` = 2.17h and `medium haul . max duration` = 6.48h.",
     "titre": "flight hours"
   },
@@ -7860,6 +7915,7 @@
     },
     "unité": "h",
     "par défaut": "durée moyenne",
+    "plancher": 0,
     "note": "The characterization \"long haul\" by the travel time is given by the rule `medium haul . max duration` = 6.48h.",
     "titre": "flight hours"
   },
@@ -7906,6 +7962,7 @@
     },
     "unité": "h/semaine",
     "par défaut": "3 h/semaine",
+    "plancher": 0,
     "titre": "hours per week"
   },
   "transport . deux roues": {
@@ -7946,6 +8003,7 @@
   "transport . deux roues . km": {
     "question": "How many kilometers do you drive per year with your scooter or motorcycle?",
     "par défaut": "km annuels moyen",
+    "plancher": 0,
     "unité": "km",
     "suggestions": {
       "zero": 0,
@@ -8471,6 +8529,7 @@
     "question": "How many hours a year do you travel by ferry or cruise?",
     "description": "For the moment, we do not take into account the options that can increase or decrease the footprint of a ferry crossing: \n  - car on board\n  - filling the cabin or reserving a seat\n  - use of services on board (restaurant, stores)\n  - and of course the speed of the boat (the faster a boat is, the more it consumes).\n\nThe calculation is made for a typical crossing.\n",
     "par défaut": 8,
+    "plancher": 0,
     "unité": "h",
     "suggestions": {
       "Cherbourg ⇄ 🇬🇧 Poole": 8,
@@ -8508,6 +8567,7 @@
       "2h / day": 14
     },
     "unité": "h/semaine",
+    "plancher": 0,
     "par défaut": 3,
     "titre": "hours per week"
   },
@@ -8688,6 +8748,7 @@
       "💳 great traveler plus ultra": 25000
     },
     "unité": "km",
+    "plancher": 0,
     "par défaut": 1000,
     "titre": "km"
   },
@@ -8828,6 +8889,7 @@
     "question": "How far do you travel per year in your motorhome?",
     "description": "Please note that these motorhome miles should not be entered in the car\nmiles (a question you have probably already answered), they are two\ndifferent questions.\n",
     "par défaut": 8869,
+    "plancher": 0,
     "unité": "km",
     "note": "According to the French federation of campers, caravanners and motor-home owners, motor-home owners travel an average of 8,869 km per year ( <a href=\"https://ffcc.fr/actualite/qui-sont-les-camping-caristes-et-les-vanlifers-en-2021/\">source</a>)"
   },
@@ -8882,6 +8944,7 @@
     "description": "Please note that these van kilometres should not be entered in the car kilometers (a question you have probably already answered), as they are two different questions.\n",
     "par défaut": 9310,
     "unité": "km",
+    "plancher": 0,
     "note": "According to the French federation of campers, caravanners and motor-home owners, a \"vanlifer\" travels an average of 9,310 km a year ( <a href=\"https://ffcc.fr/actualite/qui-sont-les-camping-caristes-et-les-vanlifers-en-2021/\">source</a>)"
   },
   "transport . vacances . van . empreinte au kilomètre": {
@@ -8960,6 +9023,7 @@
     "description": "Only count kilometers for personal travel (shopping, leisure, family, etc.) and for commuting to your usual place of work.\n\nFor example, if you're on a business assignment in another department or another country, this is included in your company's accounts: don't count it here.\n",
     "par défaut": "km annuels moyen",
     "unité": "km",
+    "plancher": 0,
     "suggestions": {
       "zero": 0,
       "vacations": 2000,
@@ -9051,37 +9115,18 @@
     "unité": "kgCO2e",
     "titre": "calculated footprint"
   },
-  "transport . voiture . saisie voyageurs": {
+  "transport . voiture . voyageurs": {
+    "titre": "Average number of passengers in the car",
     "question": "What is the average number of passengers in the car?",
     "description": "A car consumes roughly the same amount of fuel whether it has 1, 2 or 5 passengers on board. So travelling with several people means potentially dividing your individual footprint by 5!\n\n🤔 But this is not an easy question: it's likely that in the course of a year you'll have gone on vacation with 3 people, taken the car every day on your own, and so on.\n\nTry to estimate a rough average: if every day you take the car by yourself, put 1 or 1.2.\nIf you only drive with family or friends, put 3 or 4.\n\n> In a future development of the simulator, we'll be able to separate the questions by type of journey: vacation, home-work, daily with a customizable number of travellers.\n\nOf course, if you're driving yourself or taking a cab, the driver doesn't count, as he's there to help you make your journey.\n",
+    "plancher": 1,
+    "avertissement": "The number of passengers cannot be zero. At the wheel of your car, you are the first passenger.\n",
     "par défaut": 1.2,
     "suggestions": {
       "only one": 1,
       "two": 2,
       "five": 5
-    },
-    "titre": "passenger entry"
-  },
-  "transport . voiture . voyageurs": {
-    "titre": "Average number of passengers in the car",
-    "formule": {
-      "variations": [
-        {
-          "si": "saisie voyageurs < 1",
-          "alors": 1
-        },
-        {
-          "sinon": "saisie voyageurs"
-        }
-      ]
     }
-  },
-  "transport . voiture . notif minimum voyageurs": {
-    "type": "notification",
-    "sévérité": "invalide",
-    "formule": "saisie voyageurs < 1",
-    "description": "The number of passengers can't be zero. At the wheel of your car, you are the first passenger.\n",
-    "titre": "minimum passenger notification"
   },
   "transport . voiture . usage": {
     "formule": "km * empreinte usage au kilomètre",
