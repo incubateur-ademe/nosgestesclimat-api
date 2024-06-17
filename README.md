@@ -1,3 +1,7 @@
+> [!CAUTION]
+> This project is now **deprecated** as it is not used do not hesitate to [raise an issue in this repository](https://github.com/incubateur-ademe/nosgestesclimat-api/issues/new), or directicly in [the main repo of Nos Gestes Climat](https://github.com/incubateur-ademe/nosgestesclimat/issues/new) projet.
+
+
 # nosgestesclimat-api
 
 API pour modèle Publicodes de Nos Gestes Climat.
